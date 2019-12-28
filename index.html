@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 <head>
 	<meta charset="UTF-8">
 	<title>Hue.EDU</title>
@@ -84,6 +92,33 @@
 		  background-color: #FFFFFF;
 		  color: #66B2FF;
 		}
+
+		.dot_numbers {
+			float: left;
+			font-weight: "400";
+			font-size: 20px;
+			line-height: 1.75em;
+			padding-left: 46px;
+			padding-top: 20px;
+			padding-right: 100px;
+			padding-bottom: 50px;
+		}
+
+		.bar_numbers {
+			float: left;
+			padding-left: 100px;
+		}
+
+		.gopher_example {
+			float: left;
+			padding-left: 230px;
+		}
+
+		.color_numbers {
+			float: left;
+			padding-top: 50px;
+			padding-left: 185px;
+		}
 	</style>
 
 </head>
@@ -115,9 +150,48 @@
 		<a href="0-6.html">6</a>
 	</div>
 
-	<img src="images/0-0/dot_numbers.png" width=200 height=800 hspace=20 vspace=20>
-	<img src="images/0-0/bar_numbers_positive.png" width=300 height=300 hspace=20 vspace=20>
-	<img src="images/0-0/bar_numbers_negative.png" width=300 height=300 hspace=20 vspace=20>
-	<img src="images/0-0/color_numbers.png" width=750 height=100 hspace=18 vspace=10>
+	<div class='dot_numbers'>
+		0
+		<br>1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+		<br>2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>10 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>11 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+		<br>12 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>13 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>14 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>15 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>16 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>17 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>18 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>19 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>20 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$ &nbsp; $\bullet$
+	</div>
+
+	<div class='bar_numbers'>
+		<img src="images/0-0/bar_numbers.png" width=900 height=500 hspace=20 vspace=20>
+	</div>
+	<div class='gopher_example'>
+		<img src="images/0-0/gopher.png" width=650 height=350 hspace=20 vspace=20>
+	</div>
+	<div class='color_numbers'>
+		<img src="images/0-0/color_numbers.png" width=750 height=100 hspace=18 vspace=10>
+	</div>
 
 </body>
