@@ -36,75 +36,63 @@
 		
 		.header a {
 		  	text-decoration: none;
-			font-size: 18px;
+			font-size: 16px;
 			font-weight: bold;
 			color: white;
 		}
 
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
+		a.sub_active {
+			background-color: #FFFFFF;
+			color: #66B2FF;
 		}
 
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 0.75% 5.2025%;
-		  text-decoration: none;
-		  font-size: 16px;
+		td {
+			padding: 0.4%;
 		}
 
-		.main-nav a:hover {
+		td.main_active {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.main-nav a.active {
+		td.main_access:hover {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.sub-nav {
-		  overflow: hidden;
+		td.main_access:hover a {			
 		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 0.5% 4.5%;
-		  text-decoration: none;
-		  font-size: 16px;
+		td.sub {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a:hover {
+		td.sub_access {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access:hover {			
 		  background-color: #FFFFFF;
 		  color: #66B2FF;
 		}
 
-		.sub-nav a.active {
+		td.sub_access:hover a {			
 		  background-color: #FFFFFF;
 		  color: #66B2FF;
 		}
 
-		.logo {
-			padding-top: 0.6%;
-			padding-left: 2.5%;
-			padding-right: 1.75%;
-			width: 8.3%;
+		td.sub_active {			
+		  background-color: #FFFFFF;
+		  color: #000066;
 		}
 
 		.logo_image {
-			width: 90%;
-		}
-
-		.static {
-			text-align: top;
-			width: '100%';
+			width: 80%;
+			padding: 1%;
 		}
 
 		.dot_numbers {
@@ -112,9 +100,8 @@
 			font-weight: "400";
 			font-size: 16px;
 			line-height: 0.8em;
-			padding-left: 7.75%;
-			padding-top: 1.75%;
-			padding-right: 5%;
+			margin-top: 6.5%;
+			margin-left: 30%;
 		}
 
 		.bar_numbers {
@@ -141,12 +128,12 @@
 			float: right;
 			font-weight: "400";
 			font-size: 20px;
-			padding: 50px;
-			border-width: 2px;
+			padding: 30px;
+			border-width: 1px;
 			border-style: solid;
 			border-color: #C0C0C0;
-			margin-top: 1.25%;
-			margin-right: 8%;
+			margin-top: 12.5%;
+			margin-right: 15%;
 			width: 400px;
 		}
 
@@ -162,120 +149,124 @@
 </head>
 <body>
 	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
-		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" class="logo_image">
-		</div>
-		<div class='main-nav'>
-			<a class="active" href="index.html">0</a>
-			<a href="1-0.html">1</a>
-			<a href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
-		</div>
+		<table style="width:100%; border: none; border-collapse: collapse;">
+			<tr>
+				<td class="main" style="width:10%; text-align: center"><img src="images/Logo_cut.png" class="logo_image"></td>
+				<td class="main_active" style="text-align: center"><a class="active" href="index.html">0</a></td>
+				<td class="main_access" style="text-align: center"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center"><a href="5-0.html">5</a></td>
+				<td class="main" style="width: 30%; text-align: right; padding-right: 2.5%"><a href='info.html'>INFO</a></td>
+			</tr>
+			<tr>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="index.html">#</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-1.html">+</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-2.html">&#215;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-3.html">&#247;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html">^</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-5.html">&#8730;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-6.html">&#402;</a></td>
+				<td class="sub" style="width: 30%; text-align: right; padding-right: 2.5%"></td>
+			</tr>
+		</table>
 	</header>
 
-	<div class="sub-nav">
-		<a class="active" href="index.html">#</a>
-		<a href="0-1.html">+</a>
-		<a href="0-2.html">&#215;</a>
-		<a href="0-3.html">&#247;</a>
-		<a href="0-4.html">^</a>
-		<a href="0-5.html">&#8730;</a>
-		<a href="0-6.html">&#402;</a>
-	</div>
-
-	<div class="static">
-		<div class='dot_numbers'>
-			0
-			<br>
-			<br>1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-			<br>
-			<br>2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>
-			<br>3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>10 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>11 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-			<br><br>12 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$
-			<br><br>13 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>14 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>15 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>16 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>17 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>18 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>19 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br><br>20 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
-		</div>
-
-		<div class='dot_numbers'>
-			-1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-			<br><br>-2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-10 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-11 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-			<br><br>-12 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp; $\circ$
-			<br><br>-13 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-14 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-15 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-16 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-17 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-18 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-19 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br><br>-20 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
-		</div>
-
-		<div class='calculator'>
-			<form action="#" class="form-inline">
-			  
-			  <input type="text" id="first" class="form-control" placeholder="#">
-			  
-			</form>
-
-			<p id="result"></p>
-		</div>
-	</div>
-
-	<table style="width:100%">
+	<table style="width:100%; vertical-align: top">
 		<tr>
-			<td><img src="images/0-0/bar_numbers.png" width=115% hspace=3% vspace=5%></td>
 			<td>
-				<img src="images/0-0/gopher.png" width=67.5% hspace=25% vspace=7.5%>
-				<img src="images/0-0/color_numbers.png" width=60% hspace=28% vspace=0>
+			<div class='dot_numbers'>
+				0
+				<br>
+				<br>1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br>
+				<br>2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>
+				<br>3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>10 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>11 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>12 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp; $\bullet$
+				<br><br>13 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>14 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>15 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>16 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>17 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>18 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>19 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br><br>20 &nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; $\bullet$
+			</div>
+			</td>
+			<td>
+			<div class='dot_numbers'>
+				-1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>-2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-10 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-11 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>-12 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp; $\circ$
+				<br><br>-13 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-14 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-15 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-16 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-17 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-18 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-19 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br><br>-20 &nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; $\circ$
+			</div>
+			</td>
+			<td style="vertical-align: top">
+			<div class='calculator'>
+				<form action="#" class="form-inline">
+				  
+				  <input type="text" id="first" class="form-control" placeholder="#">
+				  
+				</form>
+
+				<p id="result" style="line-height: 0.9em"></p>
+			</div>
+			</td>
+		</tr>
+	</table>
+
+	<table style="width:100%; margin-bottom: 5%; margin-top: 5%">
+		<tr>
+			<td><img src="images/0-0/bar_numbers.png" width=110% hspace=6% vspace=5%></td>
+			<td>
+				<img src="images/0-0/gopher.png" width=67.5% hspace=23% vspace=7.5%>
+				<img src="images/0-0/color_numbers.png" width=60% hspace=25% vspace=0>
 			</td>
 		</tr>
 	</table>

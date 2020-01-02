@@ -19,8 +19,8 @@
 		.header div.info {
 			text-align: right;
 			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
+			padding-right: 1.5%;
+			padding-top: 0.6%;
 			float: right;
 		}
 
@@ -30,59 +30,63 @@
 		
 		.header a {
 		  	text-decoration: none;
-			font-size: 20px;
+			font-size: 16px;
 			font-weight: bold;
 			color: white;
 		}
 
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
+		a.sub_active {
+			background-color: #FFFFFF;
+			color: #66B2FF;
 		}
 
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td {
+			padding: 0.4%;
 		}
 
-		.main-nav a:hover {
+		td.main_active {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.main-nav a.active {
+		td.main_access:hover {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.sub-nav {
-		  overflow: hidden;
+		td.main_access:hover a {			
 		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td.sub {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a:hover {
+		td.sub_access {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access:hover {			
 		  background-color: #FFFFFF;
 		  color: #66B2FF;
 		}
 
-		.sub-nav a.active {
+		td.sub_access:hover a {			
 		  background-color: #FFFFFF;
 		  color: #66B2FF;
+		}
+
+		td.sub_active {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		}
+
+		.logo_image {
+			width: 80%;
+			padding: 1%;
 		}
 
 		p {
@@ -98,20 +102,18 @@
 </head>
 <body>
 	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
-		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
-		</div>
-		<div class='main-nav'>
-			<a href="index.html">0</a>
-			<a href="1-0.html">1</a>
-			<a href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
-		</div>
+		<table style="width:100%; border: none; border-collapse: collapse;">
+			<tr>
+				<td class="main" style="width:10%; text-align: center"><img src="images/Logo_cut.png" class="logo_image"></td>
+				<td class="main_access" style="text-align: center"><a href="index.html">0</a></td>
+				<td class="main_access" style="text-align: center"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center"><a href="5-0.html">5</a></td>
+				<td class="main" style="width: 30%; text-align: right; padding-right: 2.5%"><a href='info.html'>INFO</a></td>
+			</tr>
+		</table>
 	</header>
 
 	<div>
