@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
+	<title>Hue Edu</title>
 	<style>
 		body {
 		  margin: 0;
@@ -19,8 +25,8 @@
 		.header div.info {
 			text-align: right;
 			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
+			padding-right: 1%;
+			padding-top: 0.6%;
 			float: right;
 		}
 
@@ -30,92 +36,1409 @@
 		
 		.header a {
 		  	text-decoration: none;
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: bold;
 			color: white;
 		}
 
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
+		a.sub_active {
+			background-color: #FFFFFF;
+			color: #66B2FF;
 		}
 
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td {
+			padding: 0.4%;
 		}
 
-		.main-nav a:hover {
+		td a {
+		    display:block;
+		    width:100%;
+		}
+
+		td.main_active {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.main-nav a.active {
+		td.main_access:hover {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.sub-nav {
-		  overflow: hidden;
+		td.main_access:hover a {			
 		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td.sub {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a:hover {
+		td.sub_access {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access:hover {			
 		  background-color: #FFFFFF;
 		  color: #66B2FF;
 		}
 
-		.sub-nav a.active {
+		td.sub_access:hover a {			
 		  background-color: #FFFFFF;
 		  color: #66B2FF;
 		}
+
+		td.sub_active {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		}
+
+		.logo_image {
+			width: 80%;
+			padding: 0%;
+		}
+
+		.calculator {
+			float: right;
+			font-weight: "400";
+			font-size: 20px;
+			padding: 30px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #C0C0C0;
+			margin-top: 12.5%;
+			width: 400px;
+		}
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		p.dot_addition {
+			font-size: 50px;
+			line-height: 1.5em;
+		}
+
+		div.hill_addition {
+			padding: 5%;
+		}
+
+		div.bar_addition {
+			padding: 5%;
+		}
+
+		table.add_examples {
+			padding-left: 0%;
+			font-size: 17px;
+		}
+
+		table.sub_examples {
+			padding-left: 0%;
+			font-size: 17px;
+		}
+
+		@media screen and (max-width: 1200px) {
+		  .calculator {
+		    display: none;
+		  }
+		  .mobile-calculator {
+			float: right;
+			font-weight: "400";
+			font-size: 20px;
+			padding: 30px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #C0C0C0;
+			margin-top: 12.5%;
+			width: 400px;
+		}
+		}
+
 	</style>
-
 </head>
 <body>
 	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
-		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
-		</div>
-		<div class='main-nav'>
-			<a class="active" href="index.html">0</a>
-			<a href="1-0.html">1</a>
-			<a href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
-		</div>
+		<table style="width:100%; border: none; border-collapse: collapse;">
+			<tr>
+				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%"><img src="images/logo_cut.png" class="logo_image"></td>
+				<td class="main_active" style="text-align: center; width: 7.5%"><a href="0-1.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
+			</tr>
+			<tr>
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_access" href="0-0.html">#</a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="0-1.html">+</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-2.html">&#215;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-3.html">&#247;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html">^</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-5.html">&#8730;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-6.html">&#402;</a></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+			</tr>
+		</table>
 	</header>
 
-	<div class="sub-nav">
-		<a href="index.html">0</a>
-		<a class="active" href="0-1.html">1</a>
-		<a href="0-2.html">2</a>
-		<a href="0-3.html">3</a>
-		<a href="0-4.html">4</a>
-		<a href="0-5.html">5</a>
-		<a href="0-6.html">6</a>
-	</div>
+	<table style="width:84%; margin-left: 9.5%; margin-top: 2.5%; margin-bottom: 4%">
+		<tr>
+			<td style="width:25%"><p class="dot_addition">
+				$\bullet$ &nbsp;&nbsp; + &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; = &nbsp;&nbsp; $\bullet$ $\bullet$
+				<br>
+				$\circ$ &nbsp;&nbsp; + &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; = &nbsp;&nbsp; $\circ$ $\circ$
+				<br>
+				$\bullet$ &nbsp;&nbsp; + &nbsp;&nbsp; $\circ$ &nbsp;&nbsp; = &nbsp;&nbsp; 0
+				<br>
+				$\circ$ &nbsp;&nbsp; + &nbsp;&nbsp; $\bullet$ &nbsp;&nbsp; = &nbsp;&nbsp; 0
+			</p></td>
+			<td style="width:30%; text-align: center; padding-left: 5%"><div class="bar_addition">
+				<img src="images/0-1/bar_addition.png" width="85%">
+			</div></td>
+			<td style="width:30%; text-align: center;; padding-left: 5%"><div class="hill_addition">
+				<img src="images/0-1/hill_addition.png" width="85%">
+			</div></td>
+		</tr>
+	</table>
 
-	<p>ADDITION</p>
+	<table class="calc_table" style="width:80%; margin-left: 10%; padding-top: 2.5%; padding-bottom: 2.5%; border-width: 2px; border-style: solid; font-size: 18px;">
+		<tr style="width:100%">
+			<td style="width:27.5%; padding-left: 5%">
+				<form action="#" class="form-inline">
+				  <input type="text" style="font-size: 16px" id="first" class="form-control" placeholder=" #">				  
+				</form>
+			</td>
+			<td style="width:7.5%; text-align: center"> + </td>
+			<td style="width:27.5%">
+				<form action="#" class="form-inline">
+				  <input type="text" style="font-size: 16px" id="second" class="form-control" placeholder=" #">				  
+				</form>				
+			</td>
+			<td style="width:7.5%; text-align: center"> = </td>
+			<td style="width:27.5%">
+				<p id="answer" style="line-height: 0.9em">  </p>
+			</td>
+		</tr>
+		<tr style="width:100%">
+			<td style="width:25%; padding-left: 5%; vertical-align:top">
+				<p id="result_one" style="line-height: 0.9em"> <br> 0 </p>
+			</td>
+			<td style="text-align:center; vertical-align:top"> <br> + </td>
+			<td style="vertical-align:top">
+				<p id="result_two" style="line-height: 0.9em"> <br> 0 </p>
+			</td>
+			<td style="text-align:center; vertical-align:top"> <br> = </td>
+			<td style="vertical-align:top">
+				<p id="result_three" style="line-height: 0.9em"> <br> 0 </p>
+			</td>
+		</tr>
+	</table>
+
+	<table class="add_examples" style="margin-top: 3.5%">
+		<tr style="width:100%">
+			<td style="width: 4%"></td>
+			<td style="width:12%"><p class="add_examples">
+				&nbsp; 0 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 0
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 1
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 2
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 10
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 11
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 12
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 13
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 14
+				<br>
+				&nbsp; 0 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 15
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				&nbsp; 1 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 1
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 2
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 11
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 12
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 13
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 14
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 15
+				<br>
+				&nbsp; 1 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 16
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				&nbsp; 2 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 2
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 12
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 13
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 14
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 15
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 16
+				<br>
+				&nbsp; 2 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 17
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				&nbsp; 3 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 13
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 14
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 15
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 16
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 17
+				<br>
+				&nbsp; 3 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 18
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				&nbsp; 4 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 14
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 15
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 16
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 17
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 18
+				<br>
+				&nbsp; 4 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 19
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				&nbsp; 5 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 15
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 16
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 17
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 18
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 19
+				<br>
+				&nbsp; 5 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 20
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				&nbsp; 6 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 15
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 16
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 17
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 18
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 19
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 20
+				<br>
+				&nbsp; 6 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 21
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				&nbsp; 7 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 15
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 16
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 17
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 18
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 19
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 20
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 21
+				<br>
+				&nbsp; 7 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 22
+			</p></td>
+			<td style="width: 4%"></td>
+		</tr>
+	</table>
+	<table class="add_examples">
+		<tr style="width:100%">
+			<td style="width: 4%"></td>
+			<td style="width:12%"><p class="add_examples">
+				&nbsp; 8 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 15
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 16
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 17
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 18
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 19
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 20
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 21
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 22
+				<br>
+				&nbsp; 8 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 23
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				&nbsp; 9 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 15
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 16
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 17
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 18
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 19
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 20
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 21
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 22
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 23
+				<br>
+				&nbsp; 9 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 24
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				10 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				10 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				10 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				10 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				10 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				10 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 15
+				<br>
+				10 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 16
+				<br>
+				10 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 17
+				<br>
+				10 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 18
+				<br>
+				10 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 19
+				<br>
+				10 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 20
+				<br>
+				10 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 21
+				<br>
+				10 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 22
+				<br>
+				10 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 23
+				<br>
+				10 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 24
+				<br>
+				10 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 25
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				11 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				11 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				11 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				11 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				11 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 15
+				<br>
+				11 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 16
+				<br>
+				11 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 17
+				<br>
+				11 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 18
+				<br>
+				11 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 19
+				<br>
+				11 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 20
+				<br>
+				11 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 21
+				<br>
+				11 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 22
+				<br>
+				11 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 23
+				<br>
+				11 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 24
+				<br>
+				11 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 25
+				<br>
+				11 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 26
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				12 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				12 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				12 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				12 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 15
+				<br>
+				12 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 16
+				<br>
+				12 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 17
+				<br>
+				12 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 18
+				<br>
+				12 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 19
+				<br>
+				12 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 20
+				<br>
+				12 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 21
+				<br>
+				12 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 22
+				<br>
+				12 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 23
+				<br>
+				12 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 24
+				<br>
+				12 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 25
+				<br>
+				12 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 26
+				<br>
+				12 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 27
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				13 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				13 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				13 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 15
+				<br>
+				13 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 16
+				<br>
+				13 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 17
+				<br>
+				13 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 18
+				<br>
+				13 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 19
+				<br>
+				13 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 20
+				<br>
+				13 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 21
+				<br>
+				13 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 22
+				<br>
+				13 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 23
+				<br>
+				13 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 24
+				<br>
+				13 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 25
+				<br>
+				13 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 26
+				<br>
+				13 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 27
+				<br>
+				13 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 28
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				14 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				14 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 15
+				<br>
+				14 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 16
+				<br>
+				14 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 17
+				<br>
+				14 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 18
+				<br>
+				14 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 19
+				<br>
+				14 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 20
+				<br>
+				14 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 21
+				<br>
+				14 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 22
+				<br>
+				14 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 23
+				<br>
+				14 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 24
+				<br>
+				14 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 25
+				<br>
+				14 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 26
+				<br>
+				14 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 27
+				<br>
+				14 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 28
+				<br>
+				14 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 29
+			</p></td>
+			<td style="width:12%"><p class="add_examples">
+				15 &nbsp; + &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 15
+				<br>
+				15 &nbsp; + &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 16
+				<br>
+				15 &nbsp; + &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 17
+				<br>
+				15 &nbsp; + &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 18
+				<br>
+				15 &nbsp; + &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 19
+				<br>
+				15 &nbsp; + &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; 20
+				<br>
+				15 &nbsp; + &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; 21
+				<br>
+				15 &nbsp; + &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; 22
+				<br>
+				15 &nbsp; + &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; 23
+				<br>
+				15 &nbsp; + &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; 24
+				<br>
+				15 &nbsp; + &nbsp; 10 &nbsp; = &nbsp; 25
+				<br>
+				15 &nbsp; + &nbsp; 11 &nbsp; = &nbsp; 26
+				<br>
+				15 &nbsp; + &nbsp; 12 &nbsp; = &nbsp; 27
+				<br>
+				15 &nbsp; + &nbsp; 13 &nbsp; = &nbsp; 28
+				<br>
+				15 &nbsp; + &nbsp; 14 &nbsp; = &nbsp; 29
+				<br>
+				15 &nbsp; + &nbsp; 15 &nbsp; = &nbsp; 30
+			</p></td>
+			<td style="width: 4%"></td>
+		</tr>
+	</table>
+
+	<p class="subtraction_rule" style="font-size: 30px; font-weight: 400; text-align: center; margin-top: 1.5%">A &nbsp; +&nbsp; -B &nbsp; = &nbsp; A &nbsp;&#8722;&nbsp; B</p>
+
+	<table class="sub_examples" style="margin-top: 1.5%">
+		<tr style="width:100%">
+			<td style="width: 4%"></td>
+			<td style="width:12%"><p class="sub_examples">
+				&nbsp; 0 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; -0
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; -1
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; -2
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; -3
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; -4
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp; -5
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp; -6
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; -7
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; -8
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; -9
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp; 10 &nbsp; = &nbsp; -10
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp; 11 &nbsp; = &nbsp; -11
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp; 12 &nbsp; = &nbsp; -12
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -13
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -14
+				<br>
+				&nbsp; 0 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -15
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				&nbsp; 1 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 1
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 0
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; -1
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; -2
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; -3
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; -4
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; -5
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; -6
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; -7
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; -8
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp; -9
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp; 11 &nbsp; = &nbsp; -10
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp; 12 &nbsp; = &nbsp; -11
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -12
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -13
+				<br>
+				&nbsp; 1 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -14
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				&nbsp; 2 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 2
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 1
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 0
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; -1
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; -2
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; -3
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; -4
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; -5
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; -6
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; -7
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp; -8
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp; 11 &nbsp; = &nbsp;&nbsp; -9
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp; 12 &nbsp; = &nbsp; -10
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -11
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -12
+				<br>
+				&nbsp; 2 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -13
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				&nbsp; 3 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 3
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 2
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 1
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 0
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; -1
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; -2
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; -3
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; -4
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; -5
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; -6
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp; -7
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp; 11 &nbsp; = &nbsp;&nbsp; -8
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp; 12 &nbsp; = &nbsp;&nbsp; -9
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -10
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -11
+				<br>
+				&nbsp; 3 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -12
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				&nbsp; 4 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 4
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 3
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 2
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 1
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 0
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; -1
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; -2
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; -3
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; -4
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; -5
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp; -6
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp; 11 &nbsp; = &nbsp;&nbsp; -7
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp; 12 &nbsp; = &nbsp;&nbsp; -8
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp; 13 &nbsp; = &nbsp;&nbsp; -9
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -10
+				<br>
+				&nbsp; 4 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -11
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				&nbsp; 5 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 5
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 4
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 3
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 2
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 1
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 0
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; -1
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; -2
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; -3
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; -4
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp; -5
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp; 11 &nbsp; = &nbsp;&nbsp; -6
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp; 12 &nbsp; = &nbsp;&nbsp; -7
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp; 13 &nbsp; = &nbsp;&nbsp; -8
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp; 14 &nbsp; = &nbsp;&nbsp; -9
+				<br>
+				&nbsp; 5 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -10
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				&nbsp; 6 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 2
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 1
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 0
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp; -1
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; -2
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; -3
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp; 10 &nbsp; = &nbsp; -4
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp; 11 &nbsp; = &nbsp; -5
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp; 12 &nbsp; = &nbsp; -6
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -7
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -8
+				<br>
+				&nbsp; 6 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -9
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				&nbsp; 7 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 2
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 1
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 0
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp; -1
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; -2
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp; 10 &nbsp; = &nbsp; -3
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp; 11 &nbsp; = &nbsp; -4
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp; 12 &nbsp; = &nbsp; -5
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -6
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -7
+				<br>
+				&nbsp; 7 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -8
+			</p></td>
+			<td style="width: 4%"></td>
+		</tr>
+	</table>
+	<table class="sub_examples" style="margin-bottom: 2.5%">
+		<tr style="width:100%">
+			<td style="width: 4%"></td>
+			<td style="width:12%"><p class="sub_examples">
+				&nbsp; 8 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 2
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 1
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; 0
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp; -1
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp; 10 &nbsp; = &nbsp; -2
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp; 11 &nbsp; = &nbsp; -3
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp; 12 &nbsp; = &nbsp; -4
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -5
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -6
+				<br>
+				&nbsp; 8 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -7
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				&nbsp; 9 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 2
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; 1
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; 0
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp; 10 &nbsp; = &nbsp; -1
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp; 11 &nbsp; = &nbsp; -2
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp; 12 &nbsp; = &nbsp; -3
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -4
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -5
+				<br>
+				&nbsp; 9 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -6
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				10 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				10 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				10 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				10 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				10 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				10 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				10 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				10 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				10 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; 2
+				<br>
+				10 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; 1
+				<br>
+				10 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp; 0
+				<br>
+				10 &nbsp; - &nbsp; 11 &nbsp; = &nbsp; -1
+				<br>
+				10 &nbsp; - &nbsp; 12 &nbsp; = &nbsp; -2
+				<br>
+				10 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -3
+				<br>
+				10 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -4
+				<br>
+				10 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -5
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				11 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				11 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				11 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				11 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				11 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				11 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				11 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				11 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				11 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				11 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; 2
+				<br>
+				11 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp; 1
+				<br>
+				11 &nbsp; - &nbsp; 11 &nbsp; = &nbsp;&nbsp; 0
+				<br>
+				11 &nbsp; - &nbsp; 12 &nbsp; = &nbsp; -1
+				<br>
+				11 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -2
+				<br>
+				11 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -3
+				<br>
+				11 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -4
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				12 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				12 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				12 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				12 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				12 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				12 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				12 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				12 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				12 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				12 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; 3
+				<br>
+				12 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp; 2
+				<br>
+				12 &nbsp; - &nbsp; 11 &nbsp; = &nbsp;&nbsp; 1
+				<br>
+				12 &nbsp; - &nbsp; 12 &nbsp; = &nbsp;&nbsp; 0
+				<br>
+				12 &nbsp; - &nbsp; 13 &nbsp; = &nbsp; -1
+				<br>
+				12 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -2
+				<br>
+				12 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -3
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				13 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				13 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				13 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				13 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				13 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				13 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				13 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				13 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				13 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				13 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; 4
+				<br>
+				13 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp; 3
+				<br>
+				13 &nbsp; - &nbsp; 11 &nbsp; = &nbsp;&nbsp; 2
+				<br>
+				13 &nbsp; - &nbsp; 12 &nbsp; = &nbsp;&nbsp; 1
+				<br>
+				13 &nbsp; - &nbsp; 13 &nbsp; = &nbsp;&nbsp; 0
+				<br>
+				13 &nbsp; - &nbsp; 14 &nbsp; = &nbsp; -1
+				<br>
+				13 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -2
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				14 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp; 14
+				<br>
+				14 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp; 13
+				<br>
+				14 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp; 12
+				<br>
+				14 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp; 11
+				<br>
+				14 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp; 10
+				<br>
+				14 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 9
+				<br>
+				14 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp; 8
+				<br>
+				14 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp; 7
+				<br>
+				14 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp; 6
+				<br>
+				14 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp; 5
+				<br>
+				14 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp; 4
+				<br>
+				14 &nbsp; - &nbsp; 11 &nbsp; = &nbsp;&nbsp; 3
+				<br>
+				14 &nbsp; - &nbsp; 12 &nbsp; = &nbsp;&nbsp; 2
+				<br>
+				14 &nbsp; - &nbsp; 13 &nbsp; = &nbsp;&nbsp; 1
+				<br>
+				14 &nbsp; - &nbsp; 14 &nbsp; = &nbsp;&nbsp; 0
+				<br>
+				14 &nbsp; - &nbsp; 15 &nbsp; = &nbsp; -1
+			</p></td>
+			<td style="width:12%"><p class="sub_examples">
+				15 &nbsp; - &nbsp;&nbsp; 0 &nbsp;&nbsp; = &nbsp;&nbsp; 15
+				<br>
+				15 &nbsp; - &nbsp;&nbsp; 1 &nbsp;&nbsp; = &nbsp;&nbsp; 14
+				<br>
+				15 &nbsp; - &nbsp;&nbsp; 2 &nbsp;&nbsp; = &nbsp;&nbsp; 13
+				<br>
+				15 &nbsp; - &nbsp;&nbsp; 3 &nbsp;&nbsp; = &nbsp;&nbsp; 12
+				<br>
+				15 &nbsp; - &nbsp;&nbsp; 4 &nbsp;&nbsp; = &nbsp;&nbsp; 11
+				<br>
+				15 &nbsp; - &nbsp;&nbsp; 5 &nbsp;&nbsp; = &nbsp;&nbsp; 10
+				<br>
+				15 &nbsp; - &nbsp;&nbsp; 6 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 9
+				<br>
+				15 &nbsp; - &nbsp;&nbsp; 7 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 8
+				<br>
+				15 &nbsp; - &nbsp;&nbsp; 8 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 7
+				<br>
+				15 &nbsp; - &nbsp;&nbsp; 9 &nbsp;&nbsp; = &nbsp;&nbsp;&nbsp; 6
+				<br>
+				15 &nbsp; - &nbsp; 10 &nbsp; = &nbsp;&nbsp;&nbsp; 5
+				<br>
+				15 &nbsp; - &nbsp; 11 &nbsp; = &nbsp;&nbsp;&nbsp; 4
+				<br>
+				15 &nbsp; - &nbsp; 12 &nbsp; = &nbsp;&nbsp;&nbsp; 3
+				<br>
+				15 &nbsp; - &nbsp; 13 &nbsp; = &nbsp;&nbsp;&nbsp; 2
+				<br>
+				15 &nbsp; - &nbsp; 14 &nbsp; = &nbsp;&nbsp;&nbsp; 1
+				<br>
+				15 &nbsp; - &nbsp; 15 &nbsp; = &nbsp;&nbsp;&nbsp; 0
+			</p></td>
+			<td style="width: 4%"></td>
+		</tr>
+	</table>
+
+	<img src="images/0-1/long_addition.png" style="margin-left: 12.5%; margin-top: 1%;" width="75%">
+
+	<p class="addition_process" style="text-align: center; line-height: 1.85em; margin-top: 4.5%; font-size: 30px;font-weight: 500">
+		123 + 456 &nbsp;= &nbsp;100 + 400 &nbsp;+ &nbsp;20 + 50 &nbsp;+ &nbsp;3 + 6 &nbsp;= &nbsp;579
+		<br>
+		123 &#8722; 456 &nbsp;= &nbsp;100 &#8722; 400 &nbsp;+ &nbsp;20 &#8722; 50 &nbsp;+ &nbsp;3 &#8722; 6 &nbsp;= &nbsp;-333
+		<br>
+		<br>
+		ABC + DEF &nbsp;= &nbsp;A00 + D00&nbsp; + &nbsp;B0 + E0&nbsp; + &nbsp;C + F&nbsp;
+		<br> 
+		ABC &#8722; DEF &nbsp;= &nbsp;A00 &#8722; D00&nbsp; + &nbsp;B0 &#8722; E0&nbsp; + &nbsp;C &#8722; F&nbsp;
+	</p>
+	
+	<img src="images/0-0/color_numbers.png" width=30% vspace=0 style="margin-left:35%; margin-top: 2.5%">
+
+	<p style="text-align: center; margin-bottom: 2.5%; margin-top: 2.5%">Ⓒ MBC Output 2020 </p>
+
+	<script type="text/javascript">
+		var first = document.getElementById('first');
+		var second = document.getElementById('second');
+		var answer = document.getElementById('answer');
+		var result1 = document.getElementById('result_one');
+		var result2 = document.getElementById('result_two');
+		var result3 = document.getElementById('result_three');
+
+		first.addEventListener("input", show);
+		second.addEventListener("input", show);
+
+		function show() {
+		  
+			var num1 = parseFloat(first.value) || 0;
+			var num2 = parseFloat(second.value) || 0;
+			var num3 = num1 + num2
+			answer.innerHTML = num3
+
+			if (num1 < -500 || num1 > 500 || num2 < -500 || num2 > 500) {
+				result3.innerHTML = 'ERR';
+				result2.innerHTML = 'ERR';
+				result1.innerHTML = 'ERR';
+			}
+
+			if (num1 <= 500 && num1 >= 0) {
+				var left = num1 % 10
+				var rows = (num1 - left) / 10
+
+				var per_row = String('&#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf <br>')
+				var per_left = String("&#x25cf &nbsp;&nbsp; ")
+
+				result1.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+			}
+			else if (num1 >= -500) {
+				num1 = -1 * num1
+				var left = num1 % 10
+				var rows = (num1 - left) / 10
+
+				var per_row = '&#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb <br>'
+				var per_left = '&#x25cb &nbsp;&nbsp; '
+
+				result1.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+			}
+			else if (num1 < -500 || num1 > 500) {
+				result1.innerHTML = 'ERR';
+			}
+
+
+			if (num2 <= 500 && num2 >= 0) {
+				var left = num2 % 10
+				var rows = (num2 - left) / 10
+
+				var per_row = String('&#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf <br>')
+				var per_left = String("&#x25cf &nbsp;&nbsp; ")
+
+				result2.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+			}
+			else if (num2 >= -500) {
+				num2 = -1 * num2
+				var left = num2 % 10
+				var rows = (num2 - left) / 10
+
+				var per_row = '&#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb <br>'
+				var per_left = '&#x25cb &nbsp;&nbsp; '
+
+				result2.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+			}
+			else if (num2 < -500 || num2 > 500) {
+				result2.innerHTML = 'ERR';
+			}
+
+
+			if (num3 >= 0) {
+				var left = num3 % 10
+				var rows = (num3 - left) / 10
+
+				var per_row = String('&#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf <br>')
+				var per_left = String("&#x25cf &nbsp;&nbsp; ")
+
+				result3.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+			}
+			else {
+				num3 = -1 * num3
+				var left = num3 % 10
+				var rows = (num3 - left) / 10
+
+				var per_row = '&#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb <br>'
+				var per_left = '&#x25cb &nbsp;&nbsp; '
+
+				result3.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+			}
+		}
+	</script>
 
 </body>
 </html>

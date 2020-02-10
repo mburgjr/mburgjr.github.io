@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
+	<title>Hue Edu</title>
 	<style>
 		body {
 		  margin: 0;
@@ -19,8 +20,8 @@
 		.header div.info {
 			text-align: right;
 			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
+			padding-right: 1%;
+			padding-top: 0.6%;
 			float: right;
 		}
 
@@ -30,89 +31,129 @@
 		
 		.header a {
 		  	text-decoration: none;
-			font-size: 20px;
+			font-size: 16px;
 			font-weight: bold;
 			color: white;
 		}
 
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
+		a.sub_active {
+			background-color: #FFFFFF;
+			color: #66B2FF;
 		}
 
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td {
+			padding: 0.4%;
 		}
 
-		.main-nav a:hover {
+		td a {
+		    display:block;
+		    width:100%;
+		}
+
+		td.main_active {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.main-nav a.active {
+		td.main_access:hover {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.sub-nav {
-		  overflow: hidden;
+		td.main_access:hover a {			
 		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td.sub {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a:hover {
+		td.sub_access {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access:hover {			
 		  background-color: #FFFFFF;
 		  color: #66B2FF;
 		}
 
-		.sub-nav a.active {
+		td.sub_access:hover a {			
 		  background-color: #FFFFFF;
 		  color: #66B2FF;
+		}
+
+		td.sub_active {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		}
+
+		.logo_image {
+			width: 80%;
+			padding: 0%;
+		}
+
+		.calculator {
+			float: right;
+			font-weight: "400";
+			font-size: 20px;
+			padding: 30px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #C0C0C0;
+			margin-top: 12.5%;
+			width: 400px;
+		}
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		p.dot_addition {
+			font-size: 36px;
+			line-height: 1.5em;
+			padding-left: 7.5%;
+			padding-top: 2.5%;
+		}
+
+		p {
+			text-align: center;
+			margin-top: 4%;
+			margin-left: 27.5%;
+			width: 45%;
+			line-height: 1.75em;
+			font-size: 16px;
 		}
 	</style>
-
 </head>
 <body>
 	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
-		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
-		</div>
-		<div class='main-nav'>
-			<a href="index.html">0</a>
-			<a class="active" href="1-0.html">1</a>
-			<a href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
-		</div>
+		<table style="width:100%; border: none; border-collapse: collapse;">
+			<tr>
+				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%"><img src="images/logo_cut.png" class="logo_image"></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="0-0.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
+			</tr>
+		</table>
 	</header>
 
-	<div class="sub-nav">
-		<a class="active" href="1-0.html">0</a>
-		<a href="1-1.html">1</a>
-		<a href="1-2.html">2</a>
-		<a href="1-3.html">3</a>
-		<a href="1-4.html">4</a>
-		<a href="1-5.html">5</a>
-		<a href="1-6.html">6</a>
+	<div>
+		<p>
+			Coming soon...
+		</p>
+		<p style="text-align: center; margin-bottom: 2.5%; font-weight:400">Ⓒ MBC Output 2020 </p>
 	</div>
 
 </body>
+</html>

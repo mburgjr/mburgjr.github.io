@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
+	<title>Hue Edu</title>
 	<style>
 		body {
 		  margin: 0;
@@ -19,7 +20,7 @@
 		.header div.info {
 			text-align: right;
 			vertical-align: top;
-			padding-right: 1.5%;
+			padding-right: 1%;
 			padding-top: 0.6%;
 			float: right;
 		}
@@ -42,6 +43,11 @@
 
 		td {
 			padding: 0.4%;
+		}
+
+		td a {
+		    display:block;
+		    width:100%;
 		}
 
 		td.main_active {			
@@ -86,7 +92,30 @@
 
 		.logo_image {
 			width: 80%;
-			padding: 1%;
+			padding: 0%;
+		}
+
+		.calculator {
+			float: right;
+			font-weight: "400";
+			font-size: 20px;
+			padding: 30px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #C0C0C0;
+			margin-top: 12.5%;
+			width: 400px;
+		}
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		p.dot_addition {
+			font-size: 36px;
+			line-height: 1.5em;
+			padding-left: 7.5%;
+			padding-top: 2.5%;
 		}
 
 		p {
@@ -98,20 +127,23 @@
 			font-size: 16px;
 		}
 	</style>
-
 </head>
 <body>
 	<header class='header'>
 		<table style="width:100%; border: none; border-collapse: collapse;">
 			<tr>
-				<td class="main" style="width:10%; text-align: center"><img src="images/Logo_cut.png" class="logo_image"></td>
-				<td class="main_access" style="text-align: center"><a href="index.html">0</a></td>
-				<td class="main_access" style="text-align: center"><a href="1-0.html">1</a></td>
-				<td class="main_access" style="text-align: center"><a href="2-0.html">2</a></td>
-				<td class="main_access" style="text-align: center"><a href="3-0.html">3</a></td>
-				<td class="main_access" style="text-align: center"><a href="4-0.html">4</a></td>
-				<td class="main_access" style="text-align: center"><a href="5-0.html">5</a></td>
-				<td class="main" style="width: 30%; text-align: right; padding-right: 2.5%"><a href='info.html'>INFO</a></td>
+				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%"><img src="images/logo_cut.png" class="logo_image"></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="0-0.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
 			</tr>
 		</table>
 	</header>
@@ -131,11 +163,12 @@
 			<br> 4: Mechanics
 			<br> 5: Electronics
 		</p>
-		<p class="contact">
+		<p class="contact" style="margin-bottom: -1.75%">
 			Built by <b>MBC OUTPUT</b>
 			<br><b>CEO:</b> <i>Michael Burgess</i>
 			<br><b>CONTACT: <a href="mailto:mbcoutput@gmail.com">MBCOUTPUT@GMAIL.COM</a></b>
 		</p>
+		<p style="text-align: center; margin-bottom: 2.5%; font-weight:400">Ⓒ MBC Output 2020 </p>
 	</div>
 
 </body>

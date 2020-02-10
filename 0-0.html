@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="icon" href="images/link_logo.png">
+<head>
+	<meta charset="UTF-8">
+	<title>Hue Edu</title>
+	<style>
+		body {
+		  margin: 0;
+		  font-family: Arial;
+		  text-decoration: none;
+		}
+
+		.header {
+			background-color: #000066;
+			text-align: left;
+			color: white;
+		}
+
+		.header div.info {
+			text-align: right;
+			vertical-align: top;
+			padding-right: 1%;
+			padding-top: 0.6%;
+			float: right;
+		}
+
+		.header div.logo {
+			float: left;
+		}
+		
+		.header a {
+		  	text-decoration: none;
+			font-size: 18px;
+			font-weight: bold;
+			color: white;
+		}
+
+		a.sub_active {
+			background-color: #FFFFFF;
+			color: #66B2FF;
+		}
+
+		td {
+			padding: 0.4%;
+		}
+
+		td a {
+		    display:block;
+		    width:100%;
+		}
+
+		td.main_active {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.main_access:hover {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.main_access:hover a {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access:hover {			
+		  background-color: #FFFFFF;
+		  color: #66B2FF;
+		}
+
+		td.sub_access:hover a {			
+		  background-color: #FFFFFF;
+		  color: #66B2FF;
+		}
+
+		td.sub_active {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		}
+
+		.logo_image {
+			width: 80%;
+			padding: 0%;
+		}
+
+		.dot_numbers {
+			float: left;
+			font-weight: "400";
+			font-size: 16px;
+			line-height: 0.8em;
+			margin-top: 5%;
+			width: 500px;
+			padding-left: 17.5%;
+			padding-right: 10%;
+		}
+
+		.bar_numbers {
+			float: left;
+			margin-left: 1%;
+			padding-top: 2.25%;
+			padding-right: 2.5%;
+			width: 50%;
+		}
+
+		.gopher_example {
+			float: left;
+			padding-top: 0%;
+			width: 30%;
+		}
+
+		.color_numbers {
+			float: left;
+			padding-top: 2%;
+			padding-bottom: 2%;
+		}
+
+		.calculator {
+			float: right;
+			font-weight: "400";
+			font-size: 20px;
+			padding: 30px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #C0C0C0;
+			margin-top: 12.5%;
+			width: 400px;
+		}
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		p {
+			font-weight: bold;
+			font-size: 20;
+		}
+
+		.form-control {
+	        font-size: 18px;
+		}
+
+		@media screen and (max-width: 1200px) {
+		  .calculator {
+		    display: none;
+		  }
+		  .mobile-calculator {
+			float: right;
+			font-weight: "400";
+			font-size: 20px;
+			padding: 30px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #C0C0C0;
+			margin-top: 12.5%;
+			width: 400px;
+		}
+		}
+
+	</style>
+</head>
+<body>
+	<header class='header'>
+		<table style="width:100%; border: none; border-collapse: collapse;">
+			<tr>
+				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%"><img src="images/logo_cut.png" class="logo_image"></td>
+				<td class="main_active" style="text-align: center; width: 7.5%"><a href="0-0.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
+			</tr>
+			<tr>
+				<td class="sub"></td>
+				<td class="sub_active" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_active" href="0-0.html">#</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-1.html">+</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-2.html">&#215;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-3.html">&#247;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html">^</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-5.html">&#8730;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-6.html">&#402;</a></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+			</tr>
+		</table>
+	</header>
+
+	<table style="vertical-align: top">
+		<tr>
+			<td style="width:36%">
+			<div class='dot_numbers'>
+				&nbsp;0
+				<br>
+				<br>&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br>
+				<br>&nbsp;2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br>
+				<br>&nbsp;3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>&nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>&nbsp;6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>&nbsp;7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>&nbsp;8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>&nbsp;9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br><br>10 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br><br>11 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>12 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp;  $\bullet$
+				<br><br>13 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>14 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>15 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>16 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>17 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>18 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>19 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+				<br><br>20 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
+			</div>
+			</td>
+			<td style="width:36%">
+			<div class='dot_numbers'>
+				&nbsp;&nbsp;0
+				<br>
+				<br>&nbsp;&#8722;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br>
+				<br>&nbsp;&#8722;2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br>
+				<br>&nbsp;&#8722;3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&nbsp;&#8722;4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&nbsp;&#8722;5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&nbsp;&#8722;6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&nbsp;&#8722;7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&nbsp;&#8722;8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&nbsp;&#8722;9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br><br>&#8722;10 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br><br>&#8722;11 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&#8722;12 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp;  $\circ$
+				<br><br>&#8722;13 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&#8722;14 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&#8722;15 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&#8722;16 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&#8722;17 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&#8722;18 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&#8722;19 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+				<br><br>&#8722;20 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
+			</div>
+			</td>
+			<td style="vertical-align: top; text-align: left; width: 28%">
+			<div class='calculator'>
+				<form action="#" class="form-inline">
+				  
+				  <input type="text" id="first" class="form-control" placeholder=" #A">
+				  
+				</form>
+
+				<p id="result" style="line-height: 0.95em"></p>
+			</div>
+			</td>
+		</tr>
+	</table>
+
+	<table style="width:100%; margin-bottom: 2.5%; margin-top: 2.5%">
+		<tr>
+			<td><img src="images/0-0/bar_numbers.png" width=110% hspace=12.5% vspace=5%></td>
+			<td>
+				<img src="images/0-0/gopher.png" width=67.5% vspace=7.5% style="margin-left:25%">
+				<img src="images/0-0/color_numbers.png" width=60% vspace=0 style="margin-left:28.5%">
+			</td>
+		</tr>
+	</table>
+
+	<div class='mobile-calculator'>
+		<form action="#" class="form-inline">
+		  
+		  <input type="text" id="first" class="form-control" placeholder=" #">
+		  
+		</form>
+
+		<p id="result" style="line-height: 0.9em"></p>
+	</div>
+
+	<p style="text-align: center; margin-bottom: 2.5%; font-weight:400">Ⓒ MBC Output 2020 </p>
+
+	<script type="text/javascript">
+		var first = document.getElementById('first');
+		var result = document.getElementById('result');
+
+		first.addEventListener("input", show);
+
+		function show() {
+		  
+			var num = parseFloat(first.value) || 0;
+
+			if (num < -300 || num > 300) {
+				result.innerHTML = 'ERR';
+			}
+
+			if (num <= 300 && num >= 0) {
+				var left = num % 10
+				var rows = (num - left) / 10
+
+				var per_row = String('&#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf <br>')
+				var per_left = String("&#x25cf &nbsp;&nbsp; ")
+
+				result.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+			}
+			else if (num >= -300) {
+				num = -1 * num
+				var left = num % 10
+				var rows = (num - left) / 10
+
+				var per_row = '&#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb <br>'
+				var per_left = '&#x25cb &nbsp;&nbsp; '
+
+				result.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+			}
+			else if (num < -300 || num > 300) {
+				result.innerHTML = 'ERR';
+			}
+		}
+	</script>
+
+</body>
+</html>
