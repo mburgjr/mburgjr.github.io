@@ -10,11 +10,16 @@
 	<meta charset="UTF-8">
 	<title>Hue Edu</title>
 	<style>
+
 		body {
 		  margin: 0;
 		  font-family: Arial;
 		  text-decoration: none;
 		  width: 100%;
+		}
+
+		.wrapper {
+		  font-size: 1vw;
 		}
 
 		a {
@@ -192,7 +197,7 @@
 		</table>
 	</header>
 
-	<div style="width: 50rem; margin: 0 auto;">
+	<div class="wrapper" id="wrapper" style="width: 100em; margin: 0 auto;">
 	<table style="width: 100%; margin-top: 5%">
 		<tr style="width: 100%">
 			<td style="width: 10%">
@@ -2077,6 +2082,12 @@
 
 		first.addEventListener("input", show);
 		second.addEventListener("input", show);
+
+		window.onload = function () {
+			var tenth = 0.009*screen.width;
+			var fsize = `${tenth}px`;
+			document.getElementById("wrapper").style.fontSize = fsize;
+		};
 
 		function show() {
 		  
