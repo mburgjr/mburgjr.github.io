@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
-	<style>
+	<title>Hue Edu</title>
+		<style>
 		body {
 		  margin: 0;
 		  font-family: Arial;
 		  text-decoration: none;
+		  align-self: center;
+		  width: 100%;
+		}
+
+		a {
+		  text-decoration: none;			
 		}
 
 		.header {
 			background-color: #000066;
 			text-align: left;
 			color: white;
+			width: 100%;
 		}
 
 		.header div.info {
 			text-align: right;
 			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
+			padding-right: 1%;
+			padding-top: 0.6%;
 			float: right;
 		}
 
@@ -30,89 +38,593 @@
 		
 		.header a {
 		  	text-decoration: none;
-			font-size: 20px;
+			font-size: 1vw;
 			font-weight: bold;
 			color: white;
 		}
 
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
+		a.sub_active {
+			background-color: #FFFFFF;
+			color: #000066;
 		}
 
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td {
+			padding: 0.4%;
 		}
 
-		.main-nav a:hover {
+		td a {
+		    display:block;
+		    width:100%;
+		}
+
+		td.main_active {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.main-nav a.active {
+		td.main_access:hover {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.sub-nav {
-		  overflow: hidden;
+		td.main_access:hover a {			
 		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td.sub {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a:hover {
+		td.sub_access {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access a {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		  font-size: 1.1vw;
+		}
+
+		td.sub_access:hover {			
 		  background-color: #FFFFFF;
-		  color: #66B2FF;
+		  color: #000066;
 		}
 
-		.sub-nav a.active {
+		td.sub_access:hover a {			
 		  background-color: #FFFFFF;
-		  color: #66B2FF;
+		  color: #000066;
 		}
+
+		td.sub_active {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		}
+
+		td.sub_active a {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		  font-size: 1.1vw;
+		}
+
+		.logo_image {
+			width: 80%;
+			padding: 0%;
+		}
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		.fraction {
+		    display: inline-block;
+		    text-align: center;    
+		}
+
+		.denominator{
+		    border-top: 1px solid #000;
+		    display: block;
+		}
+
+		#q_button {
+			border-width: 0.25rem;
+			border-style: solid;
+			border-color: #000066;
+		}
+
+		#q_button:hover {
+			border-width: 0.25rem;
+			border-style: solid;
+			border-color: #66B2FF;
+		}
+
 	</style>
-
 </head>
 <body>
 	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
-		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
-		</div>
-		<div class='main-nav'>
-			<a href="index.html">0</a>
-			<a class="active" href="1-0.html">1</a>
-			<a href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
-		</div>
+		<table style="width:100%; border: none; border-collapse: collapse;">
+			<tr>
+				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%; padding-bottom: 0.5%"><img src="images/logo_cut.png" class="logo_image"></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="0-0.html">0</a></td>
+				<td class="main_active" style="text-align: center; width: 7.5%"><a href="1-1.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
+			</tr>
+			<tr>
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_access" href="1-0.html">&#9724;</a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="1-1.html">&Theta;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-2.html">&#9699;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-3.html"><span style="font-size: 1.35vw">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-4.html">_</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-5.html">_</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-6.html">_</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-Q.html">?</a></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+			</tr>
+		</table>
 	</header>
 
-	<div class="sub-nav">
-		<a href="1-0.html">0</a>
-		<a class="active" href="1-1.html">1</a>
-		<a href="1-2.html">2</a>
-		<a href="1-3.html">3</a>
-		<a href="1-4.html">4</a>
-		<a href="1-5.html">5</a>
-		<a href="1-6.html">6</a>
+	<div style="width: 110rem; margin: 0 auto;">
+	<img src="images/1-1/ang_intro.png" width="65%" style="margin-left: 17.5%; margin-top: 5%">
+	<p style="text-align: center; width: 100%; font-size: 2rem;">
+		&pi; = 3.141592653...
+	</p>
+
+	<table style="width: 90%; margin-left: 5%; margin-top: 5%; text-align: center; border-style: solid; border-color: black; border-width: 0.25rem">
+		<tr style="width: 100%">
+			<td style="width: 33.33%; padding-top: 5%; padding-right: 5%">
+				<img src="images/1-1/ang_def.png" width="75%">
+
+			</td>
+			<td style="width: 33.33%; padding: 5%; font-size: 2.15rem">
+				<img src="images/1-1/ang_def_circle.png" width="95%">
+
+			</td>
+			<td style="width: 33.34%; padding-top: 6.5%; padding-right: 6.5%;">
+				<img src="images/1-1/ang_def_right.png" width="100%">
+
+			</td>
+		</tr>
+	</table>
+
+	<table style="width: 90%; margin-left: 5%; margin-top: 5%; text-align: center">
+		<tr style="width: 100%">
+			<td style="width: 50%; padding-top: 2.5%; padding-right: 5%">
+				<img src="images/1-1/ang_compare.png" width="100%">
+
+			</td>
+			<td style="width: 50%; padding: 5%; font-size: 2.25rem; line-height: 2em">
+				A &nbsp;>&nbsp; B , &nbsp;&nbsp;&nbsp; P &nbsp;=&nbsp; R &#215; &theta;
+				<br>
+				P<sub>A</sub> &nbsp;=&nbsp; R &#215; A , &nbsp;&nbsp;&nbsp; P<sub>B</sub> &nbsp;=&nbsp; R &#215; B
+				<br>
+				&rarr; &nbsp; P<sub>A</sub> &nbsp;>&nbsp; P<sub>B</sub>
+			</td>
+		</tr>
+	</table>
+
+	<img src="images/1-1/ang_rocket.png" width="75%" style="margin-left: 12.5%; margin-top: 1%">
+	
+	<table style="width: 90%; margin-left: 5%; margin-top: 10%; border-style: solid; border-color: black; border-width: 0.25rem; padding: 5%">
+		<tr style="width: 100%;">
+			<td style="width: 25%; text-align: center;">
+				<div id="shape_input" style="border-style: solid; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 90%; margin-left: 5%; margin-top: -0.25rem; border-width: 0.25rem; font-size: 1.5rem">
+					&theta; &nbsp;=&nbsp; <input id="theta" type="text" value="0" style="font-size: 1.75rem; width: 40%"/>
+					<br>
+					<br>
+					<button type="button" style="font-size: 1.25rem" onclick="drawAngle('rad')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &pi; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					<button type="button" style="font-size: 1.25rem" onclick="drawAngle('deg')">&nbsp;&nbsp;&nbsp;&nbsp; 180&#176; &nbsp;&nbsp;&nbsp;&nbsp;</button>
+				</div>
+			</td>
+			<td style="width: 50%">
+				<canvas id="canvas" style="width: 100%">
+
+				</canvas>
+			</td>
+			<td style="width: 25%">
+				<div style="border-style: solid; border-color: black; padding-top: 7.5%; padding-bottom: 7.5%; width: 90%; margin-left: 5%; border-width: 0.25rem; font-size: 1.75rem; text-align: left;">
+					&nbsp;&nbsp;&nbsp;&nbsp; &theta; &nbsp;&nbsp;=&nbsp; <span id="output_one1">0.0000000</span>
+					<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp; &theta;&#176; &nbsp;=&nbsp; <span id="output_one">0.0000000&#176;</span>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<table style="width: 90%; margin-left: 5%; margin-top: -0.25rem; border-style: solid; border-color: black; border-width: 0.25rem; padding: 5%">
+		<tr style="width: 100%;">
+			<td style="width: 25%; text-align: center;">
+				<div id="shape_input" style="border-style: solid; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 90%; margin-left: 5%; margin-top: -0.25rem; border-width: 0.25rem; font-size: 1.5rem">
+					&alpha; &nbsp;=&nbsp; <input id="alpha" type="text" value="0" style="font-size: 1.75rem; width: 40%"/>
+					<br>
+					<br>
+					&theta; &nbsp;=&nbsp; <input id="theta_tri" type="text" value="0" style="font-size: 1.75rem; width: 40%"/>
+					<br>
+					<br>
+					<button type="button" style="font-size: 1.25rem" onclick="drawShape('rad')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &pi; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					<button type="button" style="font-size: 1.25rem" onclick="drawShape('deg')">&nbsp;&nbsp;&nbsp;&nbsp; 180&#176; &nbsp;&nbsp;&nbsp;&nbsp;</button>
+				</div>
+			</td>
+			<td style="width: 50%">
+				<canvas id="canvas2" style="width: 100%">
+
+				</canvas>
+			</td>
+			<td style="width: 25%">
+				<div style="border-style: solid; border-color: black; padding-top: 7.5%; padding-bottom: 7.5%; width: 90%; margin-left: 5%; border-width: 0.25rem; font-size: 1.75rem; text-align: left;">
+					&nbsp;&nbsp;&nbsp;&nbsp; &phi; &nbsp;=&nbsp; <span id="output_A">0.0000000</span>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<img src="images/1-1/ang_right.png" width="40%" style="margin-left: 30%; margin-top: 6.5%">
+
+	<table style="width: 90%; margin-top: 6.5%; margin-left: 5%; border-style: solid; border-color: black; border-width: 0.25rem; border-collapse: collapse; text-align: center; font-size: 2.25rem; line-height: 2em">
+		<tr style="width: 100%">
+			<td style="width: 60%; padding-top: 6.5%; padding-bottom: 5%; padding-left: 2.5%; padding-right: 2.5%; border-style: solid; border-color: black; border-width: 0.25rem;">
+				<img src="images/1-1/ang_rect.png" width="60%">
+				&nbsp;<br><br>
+				&theta;&#176; + &theta;&#176; + &theta;&#176; + &theta;&#176; &nbsp;=&nbsp; 360&#176;
+				<br>
+				&theta;&#176; &nbsp;=&nbsp; 360&#176; <i>/</i> 4 , &nbsp; &theta; &nbsp;=&nbsp; 2&pi; <i>/</i> 4
+				<br>
+				90&#176; + 90&#176; + 90&#176; + 90&#176; &nbsp;=&nbsp; 360&#176;
+				<br>
+				&pi;/2 + &pi;/2 + &pi;/2 + &pi;/2 &nbsp;=&nbsp; 2&pi;
+			</td>
+			<td style="width: 40%; padding-top: 6.5%; padding-bottom: 5%; padding-left: 6.5%; padding-right: 2.5%; border-style: solid; border-color: black; border-width: 0.25rem;">
+				<img src="images/1-1/ang_circle.png" width="55%">
+				&nbsp;<br><br>
+				&theta;&#176; &nbsp;=&nbsp; 360&#176; , &nbsp; &theta; &nbsp;=&nbsp; 2&pi; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<br>
+				360&#176; &nbsp;=&nbsp; 360&#176; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<br>
+				2&pi; &nbsp;=&nbsp; 2&pi; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+	</table>
+
+	<table style="width: 90%; margin-top: -0.2rem; margin-left: 5%; border-style: solid; border-color: black; border-width: 0.25rem; border-collapse: collapse; text-align: center; font-size: 2.25rem; line-height: 1em">
+		<tr style="width: 100%">
+			<td style="width: 100%; padding-left: 10%; padding-right: 10%; padding-bottom: 2.5%; padding-top: 2.5%">
+				<table style="width: 100%">
+					<tr style="width: 100%">
+						<td style="width: 40%">
+							<img src="images/1-1/ang_tri.png" width="85%">
+						</td>
+						<td style="width: 10%">
+						</td>
+						<td style="width: 50%">
+							<br>
+							<img src="images/1-1/ang_tri_reasoning.png" width="55%" style="margin-top: 2.5%">
+							<br>
+							<b>&darr;</b>
+							<p style="line-height: 2em">
+								&theta;&#176; &nbsp;+&nbsp; &phi;&#176; &nbsp;+&nbsp; &alpha;&#176; &nbsp; = &nbsp; 360&#176; / 2 &nbsp;=&nbsp; 180&#176;
+								<br>
+								&theta; &nbsp;+&nbsp; &phi; &nbsp;+&nbsp; &alpha; &nbsp; = &nbsp; 2&pi; / 2 &nbsp;=&nbsp; &pi;
+							</p>
+						</td>					
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<table style="width: 90%; margin-top: -0.2rem; margin-left: 5%; border-style: solid; border-color: black; border-width: 0.25rem; border-collapse: collapse; text-align: center; font-size: 2rem; line-height: 2em">
+		<tr style="width: 100%">
+			<td style="width: 45%; border-style: solid; border-color: black; border-width: 0.25rem; padding-top: 5%; padding-bottom: 4%; font-size: 2rem; line-height: 1.75em">
+				<img src="images/1-1/ang_tri_equ.png" width="55%">
+				&nbsp;<br><br>
+				S &nbsp;=&nbsp; S &nbsp;=&nbsp; S
+				<br>
+				3 &#215; &theta;&#176; &nbsp;=&nbsp; 180&#176; &nbsp;&rarr;&nbsp; &theta;&#176; &nbsp;=&nbsp; 60&#176;
+				<br>
+				3 &#215; &theta; &nbsp;=&nbsp; &pi; &nbsp;&rarr;&nbsp; &theta; &nbsp;=&nbsp; &pi;/3
+			</td>
+			<td style="width: 55%; border-style: solid; border-color: black; border-width: 0.25rem; padding-top: 3.5%; padding-bottom: 4%; font-size: 2.25rem; line-height: 1.75em">
+				<img src="images/1-1/ang_tri_right.png" width="45%">
+				&nbsp;<br><br>
+				B &nbsp;=&nbsp; A<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.1rem solid #000; padding-top: 0px;">&thinsp;2</span></span>
+				<br>
+				&theta;&#176; &nbsp;=&nbsp; 90&#176; , &nbsp; &theta; &nbsp;=&nbsp; &pi;/2
+				<br>
+				&theta;&#176; + &phi;&#176; + &phi;&#176; &nbsp;=&nbsp; 180&#176; , &nbsp; &theta; + &phi; + &phi; &nbsp;=&nbsp; &pi;;
+				<br>
+				&rarr; &nbsp; &phi;&#176; &nbsp;=&nbsp; 45&#176; , &nbsp; &phi; &nbsp;=&nbsp; &pi;/4
+			</td>
+		</tr>
+	</table>
+
+	<p style="text-align: center; width: 100%; font-size: 2.25rem; margin-top: 6.5%; line-height: 2em">
+		360&#176; &harr; 2&pi; , &nbsp;&nbsp; 180&#176; &harr; &pi;
+		<br>
+		&theta;&#176; &nbsp;=&nbsp; (180&#176; / &pi;) &#215; &theta; , &nbsp;&nbsp; &theta; &nbsp;=&nbsp; (&pi; / 180&#176;) &#215; &theta;&#176;
+	</p>
+	<table style="width: 70%; margin-left: 10%; font-size: 2.25rem; line-height: 2em; margin-top: 3.5%">
+		<tr style="width: 100%">
+			<td style="width: 50%; text-align: right; padding-right: 10%;">
+				<img src="images/1-1/ang_Pconv.png" width="45%">
+			</td>
+			<td style="width: 50%; padding-left: 10%; text-align: left;">
+				P = &theta; &#215; R
+				<br>
+				P = &theta;&#176; &#215; (&pi; / 180&#176;) &#215; R
+				<br>
+				&theta; &uarr;&nbsp; &rarr; &nbsp;P &uarr; , &nbsp;&nbsp; R &uarr;&nbsp; &rarr;&nbsp; P &uarr;
+			</td>
+		</td>
+	</table>
+
+	<table style="width: 90%; margin-left: 5%; margin-top: 6.5%; text-align: center; border-style: solid; border-color: black; border-width: 0.25rem; border-collapse: collapse; font-size: 2.25rem; line-height: 2em">
+		<tr style="width: 100%">
+			<td style="width: 7.5%"></td>
+			<td style="width: 30%; padding: 5%;">
+				A&#176; + B&#176; &nbsp;=&nbsp; C&#176;
+			</td>
+			<td style="width: 60%; padding-top: 5%; padding-bottom: 1.5%;">
+				<img src="images/1-1/ang_add.png" width="65%">
+			</td>
+			<td style="width: 2.5%"></td>
+		</tr>
+		<tr style="width: 100%; border-style: solid; border-color: black; border-width: 0.25rem;">
+			<td style="width: 7.5%"></td>
+			<td style="width: 30%; padding: 5%;">
+				&theta;&#176; + 360&#176; &nbsp;=&nbsp; &theta;&#176;
+				<br>
+				&theta; + 2&pi; &nbsp;=&nbsp; &theta;
+			</td>
+			<td style="width: 60%; padding-top: 5%; padding-bottom: 1.5%;">
+				<img src="images/1-1/ang_over.png" width="65%">
+			</td>
+			<td style="width: 2.5%"></td>
+		</tr>
+		<tr style="width: 100%">
+			<td style="width: 7.5%"></td>
+			<td style="width: 30%; padding: 5%;">
+				-&theta;&#176; &nbsp;=&nbsp; 360&#176; - &theta;&#176;
+				<br>
+				-&theta; &nbsp;=&nbsp; 2&pi; - &theta;
+			</td>
+			<td style="width: 60%; padding-top: 4%; padding-bottom: 4%;">
+				<img src="images/1-1/ang_neg.png" width="65%">
+			</td>
+			<td style="width: 2.5%"></td>
+		</tr>
+	</table>
+	
+	<img src="images/1-1/ang_line.png" width="35%" style="margin-top: 6.5%; margin-left: 32.5%">
+	<p style="width: 100%; text-align: center; font-size: 2.5rem; line-height: 2em">
+		<br>
+		&theta;&#176; &nbsp;+&nbsp; &phi;&#176; &nbsp;=&nbsp; 180&#176;
+		<br>
+		&theta; &nbsp;+&nbsp; &phi; &nbsp;=&nbsp; &pi;
+	</p>
+
+	<div id="q_button" style="width: 30%; margin-left: 35%; background-color: #000066; font-size: 1.5rem; text-align: center; margin-top: 6.5%; font-weight: bold; padding: 0.35%">
+		<a href="1-Q.html" style="color: white; width: 100%; display:block;">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
+	</div>
+	<p style="text-align: center; margin-bottom: 2.5%; margin-top: 2%; font-size: 1rem">Ⓒ MBC Output 2020 </p>
 	</div>
 
+	<script type="text/javascript">
+		
+        window.onload = function () {
+		  	document.getElementById("output_A").innerHTML = '0.0000000';
+		  	document.getElementById("output_one1").innerHTML = '0.0000000';
+		  	document.getElementById("output_one").innerHTML = '0.0000000&#176;';
+        };
+
+        function drawAngle(method) {
+		  	var theta = document.getElementById("theta").value;
+		  	theta = theta.replace("pi", "3.141592653");
+		  	theta = theta.replace("π", "3.141592653");
+		  	theta = eval(theta);
+
+	       	if (method == 'deg') {
+	       		theta = theta % 360;
+	       		var A1 = theta.toPrecision(8);
+	       		document.getElementById("output_one").innerHTML = A1.toString() + '&#176;';
+	       		theta = (theta * (Math.PI / 180));
+	       		var A = theta.toPrecision(8);
+	       		document.getElementById("output_one1").innerHTML = A;
+	       	}
+	       	else if (method == 'rad') {
+	       		if (theta == 0 || theta % (2*Math.PI) !== 0) {
+	       			theta = theta % (2*Math.PI);
+	       		}
+	       		document.getElementById("output_one1").innerHTML = theta.toPrecision(8);
+	       		var A = (theta * (180 / Math.PI)).toPrecision(8);
+	       		var A = A.toString() + '&#176;';
+	       		document.getElementById("output_one").innerHTML = A;
+	       	}
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.8*Math.min(canvas.width, canvas.height);
+		  	var R = max_size/2;
+
+			ctx.fillStyle = "#DB0000";
+			ctx.strokeStyle = "#000000";
+			ctx.lineWidth = 20;
+
+
+			var W = R - R*Math.min(Math.cos(theta), 0);
+			if (theta < Math.PI / 2) {
+				var W = R;
+			}
+			else if (theta <= Math.PI) {
+				var W = R + R*Math.cos(theta);
+			}
+			else {
+				var W = 0;
+			}
+			if (theta < Math.PI / 2) {
+				var H = R*Math.sin(theta);
+			}
+			else if (theta <= Math.PI) {
+				var H = R;
+			}
+			else if (theta <= 1.5*Math.PI){
+				var H = R + R*Math.sin(theta);
+			}
+			else {
+				var H = 0;
+			}
+			var x_center = canvas.width/2 - W/2;
+			var y_center = canvas.height/2 + H/2;
+
+   			ctx.beginPath();
+			ctx.moveTo(x_center, y_center);
+			ctx.lineTo(x_center + R, y_center);
+  			ctx.stroke();
+  			ctx.beginPath();
+			ctx.moveTo(x_center, y_center);
+			ctx.lineTo(x_center + R*Math.cos(theta), y_center - R*Math.sin(theta));
+  			ctx.stroke();
+  			ctx.beginPath();
+  			ctx.arc(x_center, y_center, R, 0, -theta, true);
+  			ctx.stroke();
+        }
+
+        function drawShape(method) {
+  			var canvas = document.getElementById('canvas2');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var alpha = document.getElementById("alpha").value;
+		  	var theta = document.getElementById("theta_tri").value;
+		  	alpha = alpha.replace("pi", "3.141592653");
+		  	alpha = alpha.replace("π", "3.141592653");
+		  	theta = theta.replace("pi", "3.141592653");
+		  	theta = theta.replace("π", "3.141592653");
+		  	alpha = eval(alpha);
+		  	theta = eval(theta);
+
+		  	var max_size = 0.75*Math.min(canvas.width, canvas.height);
+
+		  	if (method == 'deg' && (alpha + theta < 180)) {
+		  		var phi = 180 - alpha - theta;
+	    		var A = phi.toPrecision(8);
+	    		document.getElementById("output_A").innerHTML = A;
+
+	    		phi = phi*Math.PI/180;
+	    		theta = theta*Math.PI/180;
+	    		alpha = alpha*Math.PI/180;
+		  	}
+		  	else if (method == 'rad' && (alpha + theta < Math.PI)) {
+		  		var phi = Math.PI - alpha - theta;
+        		var A = phi.toPrecision(8);
+        		document.getElementById("output_A").innerHTML = A;
+		  	}
+
+		  	var a = Math.sin(theta)/Math.sin(alpha);
+		  	var b = Math.sin(phi)/Math.sin(alpha);
+		  	var c = 1;
+
+	  		var center_x = canvas.width/2;
+	  		var center_y = canvas.height/2;
+
+		  	if (theta >= Math.PI/2) {
+		  		var ht = a*Math.sin(phi);
+		  		var wt = a*Math.cos(phi);
+
+		  		var scale = max_size / Math.max(ht, wt);
+		  		ht = scale*ht;
+		  		wt = scale*wt;
+		  		a = scale*a;
+		  		b = scale*b;
+		  		c = scale*c;
+
+		  		var BX = center_x + wt/2;
+		  		var BY = center_y + ht/2;
+		  		var AX = BX - c;
+		  		var AY = center_y + ht/2;
+		  		var CX = BX - wt;
+		  		var CY = center_y - ht/2;
+
+		  	}
+		  	else if (theta < Math.PI/2 && phi < Math.PI/2) {
+		  		var ht = b*Math.sin(theta);
+		  		var wt = c;
+
+		  		var scale = max_size / Math.max(ht, wt);
+		  		ht = scale*ht;
+		  		wt = scale*wt;
+		  		a = scale*a;
+		  		b = scale*b;
+		  		c = scale*c;
+
+		  		var AX = center_x - wt/2;
+		  		var AY = center_y + ht/2;
+		  		var BX = AX + wt;
+		  		var BY = center_y + ht/2;
+		  		var CX = AX + b*Math.cos(theta);
+		  		var CY = center_y - ht/2;
+
+		  	}
+		  	else {
+		  		var ht = b*Math.sin(theta);
+		  		var wt = b*Math.cos(theta);
+
+		  		var scale = max_size / Math.max(ht, wt);
+		  		ht = scale*ht;
+		  		wt = scale*wt;
+		  		a = scale*a;
+		  		b = scale*b;
+		  		c = scale*c;
+
+		  		var AX = center_x - wt/2;
+		  		var AY = center_y + ht/2;
+		  		var BX = AX + c;
+		  		var BY = center_y + ht/2;
+		  		var CX = AX + b*Math.cos(theta);
+		  		var CY = center_y - ht/2;
+		  	}
+
+		  	console.log(a);
+		  	console.log(b);
+		  	console.log(c);
+		  	console.log(AX);
+		  	console.log(AY);
+		  	console.log(BX);
+		  	console.log(BY);
+		  	console.log(CX);
+		  	console.log(CY);
+
+		  	if (a > 0 && b > 0 && c > 0) {
+				ctx.strokeStyle = "#000000";
+				ctx.lineWidth = 30;
+			  	ctx.beginPath();
+				ctx.moveTo(AX, AY);
+				ctx.lineTo(BX, BY);
+				ctx.lineTo(CX, CY);
+				ctx.lineTo(AX, AY);
+	  			ctx.stroke();
+	  		}
+        }
+
+	</script>
+
 </body>
+</html>

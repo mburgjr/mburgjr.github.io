@@ -14,6 +14,7 @@
 		  margin: 0;
 		  font-family: Arial;
 		  text-decoration: none;
+		  width: 100%;
 		}
 
 		.header {
@@ -36,7 +37,7 @@
 		
 		.header a {
 		  	text-decoration: none;
-			font-size: 0.9vw;
+			font-size: 1vw;
 			font-weight: bold;
 			color: white;
 		}
@@ -80,19 +81,31 @@
 		  color: #FFFFFF;
 		}
 
+		td.sub_access a {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		  font-size: 1.1vw;
+		}
+
 		td.sub_access:hover {			
 		  background-color: #FFFFFF;
-		  color: #66B2FF;
+		  color: #000066;
 		}
 
 		td.sub_access:hover a {			
 		  background-color: #FFFFFF;
-		  color: #66B2FF;
+		  color: #000066;
 		}
 
 		td.sub_active {			
 		  background-color: #FFFFFF;
 		  color: #000066;
+		}
+
+		td.sub_active a {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		  font-size: 1.1vw;
 		}
 
 		.logo_image {
@@ -103,8 +116,8 @@
 		.dot_numbers {
 			float: left;
 			font-weight: "400";
-			font-size: 0.85vw;
-			line-height: 0.8em;
+			font-size: 1.25rem;
+			line-height: 0.7em;
 			margin-top: 5%;
 			width: 100%;
 			padding-left: 17.5%;
@@ -134,7 +147,7 @@
 		.calculator {
 			float: right;
 			font-weight: "400";
-			font-size: 0.9vw;
+			font-size: 1rem;
 			padding: 7.5%;
 			border-width: 1px;
 			border-style: solid;
@@ -149,11 +162,11 @@
 
 		p {
 			font-weight: bold;
-			font-size: 0.9vw;
+			font-size: 1rem;
 		}
 
 		.form-control {
-	        font-size: 0.9vw;
+	        font-size: 1rem;
 		}
 
 	</style>
@@ -162,7 +175,7 @@
 	<header class='header'>
 		<table style="width:100%; border: none; border-collapse: collapse;">
 			<tr>
-				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%"><img src="images/logo_cut.png" class="logo_image" width="100%"></td>
+				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%; padding-bottom: 0.5%"><img src="images/logo_cut.png" class="logo_image" width="100%"></td>
 				<td class="main_active" style="text-align: center; width: 7.5%"><a href="0-0.html">0</a></td>
 				<td class="main_access" style="text-align: center; width: 7.5%"><a href="1-0.html">1</a></td>
 				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
@@ -184,7 +197,7 @@
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html">^</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-5.html">&#8730;</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-6.html">&#402;</a></td>
-				<td class="sub"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-Q.html">?</a></td>
 				<td class="sub"></td>
 				<td class="sub"></td>
 				<td class="sub"></td>
@@ -192,109 +205,245 @@
 		</table>
 	</header>
 
-	<table style="vertical-align: top; width: 100%">
-		<tr style="width:100%">
-			<td style="width:33%">
-			<div class='dot_numbers'>
-				&nbsp;0
-				<br>
-				<br>&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br>
-				<br>&nbsp;2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br>
-				<br>&nbsp;3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>&nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>&nbsp;6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>&nbsp;7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>&nbsp;8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>&nbsp;9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br><br>10 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br><br>11 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>12 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp;  $\bullet$
-				<br><br>13 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>14 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>15 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>16 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>17 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>18 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>19 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-				<br><br>20 &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$ &nbsp;&nbsp;&nbsp;&nbsp; $\bullet$
-			</div>
+	<div style="width: 110rem; margin: 0 auto;">
+	<table style="width: 100%,; text-align: center; margin-top: 5%">
+		<tr style="width: 100%">
+			<td style="width: 25%">
 			</td>
-			<td style="width:33%">
-			<div class='dot_numbers'>
-				&nbsp;&nbsp;0
-				<br>
-				<br>&nbsp;&#8722;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br>
-				<br>&nbsp;&#8722;2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br>
-				<br>&nbsp;&#8722;3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&nbsp;&#8722;4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&nbsp;&#8722;5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&nbsp;&#8722;6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&nbsp;&#8722;7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&nbsp;&#8722;8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&nbsp;&#8722;9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br><br>&#8722;10 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br><br>&#8722;11 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&#8722;12 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp;  $\circ$
-				<br><br>&#8722;13 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&#8722;14 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&#8722;15 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&#8722;16 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&#8722;17 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&#8722;18 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&#8722;19 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-				<br><br>&#8722;20 &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$ &nbsp;&nbsp;&nbsp;&nbsp; $\circ$
-			</div>
+			<td style="width: 20%">
+				<img src="images/0-0/num_intro_people.png" width=100%>
 			</td>
-			<td style="vertical-align: top; text-align: left; width: 34%; padding-right: 10%">
-				<div class='calculator' style="">
-					<form action="#" class="form-inline">
+			<td style="width: 10%">
+			</td>
+			<td style="width: 20%; text-align: center">
+				<img src="images/0-0/num_intro_hill.png" width=100%>
+			</td>
+			<td style="width: 25%">
+			</td>
+		</tr>
+	</table>
+
+	<table style="vertical-align: top; width: 100%; margin-top: 5%; font-size: 1rem">
+		<tr style="width: 100%">
+			<td style="width: 5%">
+			</td>
+			<td style="width: 55%; border-style: solid; border-color: black; padding: 1%">
+				<table style="width:100%; border-collapse: collapse;">
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;0
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;0
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679;</span>
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;-1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;-2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;-3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;-4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;-5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;-6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%"> 
+							&nbsp;7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;-7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;-8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							&nbsp;-9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							11 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679;</span>
+						</td>
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-11 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							13 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-13 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							17 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-17 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							18 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-18 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+					<tr style="width:100%">
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+						</td>
+						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
+							-20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td style="width:7.5%">
+			</td>
+			<td style="width: 25%; vertical-align: top; border-style: solid; text-align: left">
+				<div style="margin-top: 5%">
+					<form action="#" class="form-inline" style="text-align: center">
 					  
 					  <input type="text" id="first" class="form-control" placeholder=" A">
 					  
 					</form>
 
-					<p id="result" style="line-height: 1.1em"></p>
+					<p id="result" style="line-height: 1.1em; border-style: solid; border-color: lightgray; padding: 5%; margin-left: 10%; margin-right: 10%; margin-top: 5%"></p>
 				</div>
 			</td>
-		</tr>
-	</table>
-
-	<table style="width:100%; margin-bottom: 2.5%; margin-top: 2.5%">
-		<tr>
-			<td><img src="images/0-0/bar_numbers.png" width=110% hspace=12.5% vspace=5%></td>
-			<td>
-				<img src="images/0-0/gopher.png" width=67.5% vspace=7.5% style="margin-left:25%">
-				<img src="images/0-0/color_numbers.png" width=60% vspace=0 style="margin-left:28.5%">
+			<td style="width: 7.5%">
 			</td>
 		</tr>
 	</table>
 
-	<p style="text-align: center; margin-bottom: 2.5%; font-weight:400">Ⓒ MBC Output 2020 </p>
+	<table style="width:100%; margin-bottom: 2.5%; margin-top: 7.5%">
+		<tr style="width: 100%">
+			<td style="width: 55%; text-align: center">
+				<img src="images/0-0/bar_numbers.png" width=80%>
+				<p style="font-size: 2.75rem; text-align: center; margin-top: 7.5%"> 
+					+ &nbsp;>&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 3rem">&#9679; &nbsp; &#9679; &nbsp; &#9679;</span> &nbsp; > &nbsp; <span style="font-size: 3rem">&#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+					<br>- &nbsp;<&nbsp; + &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 3rem">&#9675; &nbsp; &#9675; &nbsp; &#9675;</span> &nbsp; < &nbsp; <span style="font-size: 3rem">&#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+				</p>
+			</td>
+			<td style="width: 45%; text-align: center; vertical-align: center">
+				<p style="font-size: 2.75rem; text-align: center"> 
+					&nbsp;A &nbsp; = &nbsp; <span style="font-size: 3rem">&#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
+					<br> -A &nbsp; = &nbsp; <span style="font-size: 3rem">&#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
+				</p>
+				<img src="images/0-0/gopher.png" width=80% style="margin-top: 3.5%">
+				<img src="images/0-0/color_numbers.png" width=75% style="margin-top: 5%">
+			</td>
+		</tr>
+	</table>
+
+	<p style="margin-top:5%; text-align: center; font-size: 2.5rem; font-weight: 400; line-height: 2em">
+		A &nbsp;=&nbsp; 0, 1, 2, 3, 4, 5...
+		<br>B &nbsp;=&nbsp; 0, 1, 2, 3, 4, 5...
+	</p>
+
+	<p style="text-align: center; margin-bottom: 2.5%; margin-top: 5%; font-weight:400; font-size: 1rem">Ⓒ MBC Output 2020 </p>
+	</div>
 
 	<script type="text/javascript">
 		var first = document.getElementById('first');
@@ -306,11 +455,11 @@
 		  
 			var num = parseFloat(first.value) || 0;
 
-			if (num < -300 || num > 300) {
+			if (num < -500 || num > 500) {
 				result.innerHTML = 'ERR';
 			}
 
-			if (num <= 300 && num >= 0) {
+			if (num <= 500 && num >= 0) {
 				var left = num % 10
 				var rows = (num - left) / 10
 
@@ -319,7 +468,7 @@
 
 				result.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
 			}
-			else if (num >= -300) {
+			else if (num >= -500) {
 				num = -1 * num
 				var left = num % 10
 				var rows = (num - left) / 10
@@ -329,7 +478,7 @@
 
 				result.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
 			}
-			else if (num < -300 || num > 300) {
+			else if (num < -500 || num > 500) {
 				result.innerHTML = 'ERR';
 			}
 		}

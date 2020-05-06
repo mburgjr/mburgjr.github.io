@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
+	<title>Hue Edu</title>
 	<style>
 		body {
 		  margin: 0;
 		  font-family: Arial;
 		  text-decoration: none;
+		  width: 100%;
 		}
 
 		.header {
@@ -19,9 +29,25 @@
 		.header div.info {
 			text-align: right;
 			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
+			padding-right: 1%;
+			padding-top: 0.6%;
 			float: right;
+		}
+
+		#q_button {
+			border-width: 0.25rem;
+			border-style: solid;
+			border-color: #000066;
+		}
+
+		#q_button:hover {
+			border-width: 0.25rem;
+			border-style: solid;
+			border-color: #66B2FF;
+		}
+
+		a {
+		  text-decoration: none;			
 		}
 
 		.header div.logo {
@@ -30,92 +56,714 @@
 		
 		.header a {
 		  	text-decoration: none;
-			font-size: 20px;
+			font-size: 1vw;
 			font-weight: bold;
 			color: white;
 		}
 
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
+		a.sub_active {
+			background-color: #FFFFFF;
+			color: #000066;
 		}
 
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td {
+			padding: 0.4%;
 		}
 
-		.main-nav a:hover {
+		td a {
+		    display:block;
+		    width:100%;
+		}
+
+		td.main_active {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.main-nav a.active {
+		td.main_access:hover {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.sub-nav {
-		  overflow: hidden;
+		td.main_access:hover a {			
 		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td.sub {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a:hover {
+		td.sub_access {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access a {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		  font-size: 1.1vw;
+		}
+
+		td.sub_access:hover {			
 		  background-color: #FFFFFF;
-		  color: #66B2FF;
+		  color: #000066;
 		}
 
-		.sub-nav a.active {
+		td.sub_access:hover a {			
 		  background-color: #FFFFFF;
-		  color: #66B2FF;
+		  color: #000066;
 		}
+
+		td.sub_active {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		}
+
+		td.sub_active a {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		  font-size: 1.1vw;
+		}
+
+		.logo_image {
+			width: 80%;
+			padding: 0%;
+		}
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		table.div_examples {
+			padding-left: 0%;
+			line-height: 1.25em;
+			font-size: 1.1rem;
+		}
+
+		.fraction, .numerator, .denominator {
+		    padding: 0 5px;
+		    width: 0.65rem;
+		}
+
+		.fraction {
+		    display: inline-block;
+		    text-align: center;    
+		}
+
+		.denominator{
+		    border-top: 1px solid #000;
+		    display: block;
+		}
+
+		input{
+			width: 25%;
+			font-size: 1.05rem;
+		}
+
+		button{
+			height: 1.55rem;
+			width: 5%;
+			font-size: 1.9rem;
+			font-weight: bold;
+			vertical-align: middle;
+			text-align: center;
+			background-color: #000066;
+			border-style: solid;
+			border-color: #66B2FF;
+			color: white;
+		}
+
 	</style>
-
 </head>
 <body>
 	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
-		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
-		</div>
-		<div class='main-nav'>
-			<a class="active" href="index.html">0</a>
-			<a href="1-0.html">1</a>
-			<a href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
-		</div>
+		<table style="width:100%; border: none; border-collapse: collapse;">
+			<tr>
+				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%; padding-bottom: 0.5%"><img src="images/logo_cut.png" class="logo_image"></td>
+				<td class="main_active" style="text-align: center; width: 7.5%"><a href="0-6.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
+			</tr>
+			<tr>
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_access" href="0-0.html">#</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-1.html">+</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-2.html">&#215;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-3.html">&#247;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html">^</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-5.html">&#8730;</a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="0-6.html">&#402;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-Q.html">?</a></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+			</tr>
+		</table>
 	</header>
 
-	<div class="sub-nav">
-		<a href="index.html">0</a>
-		<a href="0-1.html">1</a>
-		<a href="0-2.html">2</a>
-		<a href="0-3.html">3</a>
-		<a href="0-4.html">4</a>
-		<a href="0-5.html">5</a>
-		<a class="active" href="0-6.html">6</a>
+	<div style="width: 110rem; margin: 0 auto;">
+	<table style="width: 100%; font-size: 2.25rem; margin-top: 6.5%">
+		<tr style="width: 100%">
+			<td style="width: 10%"></td>
+			<td style="width: 30%; text-align: center;">
+				A &rarr; &#9633; &rarr; B
+			</td>
+			<td style="width: 20%; text-align: center;">
+				&#9633; &nbsp;=&nbsp; &#402;
+			</td>
+			<td style="width: 30%; text-align: center;">
+				X &rarr; &#9633; &rarr; Y
+			</td>
+			<td style="width: 10%"></td>
+		</tr>
+	</table>
+
+	<table class="main" style="width:95%; margin-left: 2.5%; margin-top: 6.5%; border-style: solid; border-color: black; border-width: 0.2rem">
+		<tr style="width:100%">
+			<td style="width:35%; font-size: 2.25rem; font-weight: bold; line-height: 1em; text-align: center">
+				<br>&#402;(x) &nbsp;=&nbsp; y
+				<br>&nbsp;&nbsp;&nbsp;&uarr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&uarr;
+				<br>&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+				<img src="images/0-6/graph_xline.png" width="80%" style="margin-top: 15%">
+				<img src="images/0-6/graph_train.png" width="80%" style="margin-top: 5%">
+				<img src="images/0-6/graph_ytrain.png" width="80%" style="margin-top: 5%">
+			</td>
+			<td style="width:37.5%; padding-left: 2.5%; padding-right: 2.5%; padding-top: 5%; padding-bottom: 3.5%; border-left-style: solid; border-right-style: solid; border-color: lightgray; font-size: 1.9rem; text-align: center; line-height: 1.75em">
+				<img src="images/0-6/graph_main.png" width="90%">
+				<br><br>
+				y = mx + b
+				<br>
+				m = 1/2, &nbsp; b = 3
+			</td>
+			<td style="width:27.5%; font-size: 1.75rem; line-height: 1.75em; text-align: left; padding-left: 3.5%">
+				<span style="font-size: 2.25rem"><b>&bull; &nbsp; (x, y) &nbsp;=&nbsp; (#, #)</b></span>
+				<br>
+				<br> x &nbsp;=&nbsp; 6
+				<br> y &nbsp;=&nbsp; (6<i>/</i>2) + 3 &nbsp;=&nbsp; 3 + 3 &nbsp;=&nbsp; 6
+				<br> (x, y) &nbsp;=&nbsp; (6, 6)
+				<br>
+				<br> x &nbsp;=&nbsp; 0
+				<br> y &nbsp;=&nbsp; (0<i>/</i>2) + 3 &nbsp;=&nbsp; 3 &nbsp;=&nbsp; b
+				<br> (x, y) &nbsp;=&nbsp; (0, 3)
+			</td>
+		</tr>
+	</table>
+
+	<table style="width: 100%; margin-top: 7.5%; text-align: center;">
+		<tr style="width: 100%">
+			<td style="width: 50%; font-size: 1.35rem">
+				y &nbsp;=&nbsp; <input type="text" id="inred" value="0" />
+				<button type="button" class="graph" id="redg"></button>
+				<br><br>n &nbsp;=&nbsp;
+                <input type="text" id="xmax" class="value" maxlength="2" value="5" style="width:25%">
+                <button type="button"></button>
+			</td>
+
+		    <td style="width: 50%">
+			    <table style="width: 50%; font-size: 1.25rem"> 
+			        <tr>
+			            <td>
+			            </td>
+			            <td style="text-align: center">
+			                <p id="pos_y">&nbsp;&nbsp;5</p>
+			            </td>
+			            <td>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td style="text-align: right;">
+			                <p id="neg_x">-5</p>
+			            </td>
+			            <td style="text-align: center; padding-left: 3.5%">
+			                <div id="MGC-Calculator" style="width:100%"></div>
+			            </td>
+			            <td style="text-align: left; padding-left: 3.5%">
+			                <p id="pos_x">5</p>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td>
+			            </td>
+			            <td style="text-align: center">
+			                <p id="neg_y">&nbsp;-5</p>
+			            </td>
+			            <td>
+			            </td>
+			        </tr>
+			    </table>
+			</td>
+		</tr>
+	</table>
+
+	<table class="examples" style="width:90%; margin-left: 5%; margin-top: 7.5%; font-size: 1.5rem; border-collapse: collapse;">
+		<tr style="width:100%">
+			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
+				<img src="images/0-6/graph_linear.png" width="70%">
+				<br>y = mx + b
+			</td>
+			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
+				<img src="images/0-6/graph_quadratic.png" width="70%">
+				<br>y = x<sup>2</sup>
+			</td>
+			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
+				<img src="images/0-6/graph_cubic.png" width="70%">
+				<br>y = x<sup>3</sup>
+			</td>
+		</tr>
+		<tr style="width:100%;">
+			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
+				<img src="images/0-6/graph_exp.png" width="70%">
+				<br>y = b<sup>x</sup>
+			</td>
+			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
+				<img src="images/0-6/graph_inv.png" width="70%">
+				<br>y = x<sup>-1</sup>
+			</td>
+			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
+				<img src="images/0-6/graph_root.png" width="70%">
+				<br>y = x<sup>1<i>/</i>2</sup>
+			</td>
+		</tr>
+	</table>
+
+	<table style="width: 90%; margin-left: 5%; margin-top: 7.5%; text-align: center; font-size: 1.65rem;">
+		<tr style="width: 100%">
+			<td style="width: 33%">
+				<img src="images/0-6/graph_dm.png" width="80%">
+				<br><br>y = mx + b &nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+			<td style="width: 34%">
+				<img src="images/0-6/graph_db.png" width="80%">
+				<br><br>y = mx + b &nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+			<td style="width: 33%">
+				<img src="images/0-6/graph_da.png" width="80%">
+				<br><br>y = ax<sup>2</sup>
+			</td>
+		</tr>
+	</table>
+
+	<table style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-style: solid; border-color: black;">
+		<tr style="width: 100%">
+			<td style="width: 35%; text-align: center; padding-left: 3.5%; padding-top: 5%; padding-bottom: 5%">
+				<img src="images/0-6/graph_3d.png" width="100%">
+			</td>
+			<td style="width: 30%; text-align: center; font-size: 1.5rem; line-height: 2.5em; padding: 5%">
+				Ax &nbsp;+&nbsp; By &nbsp;+&nbsp; C &nbsp;=&nbsp; z
+				<br>
+				<br>x &nbsp;=&nbsp; 0 &nbsp;&nbsp;&nbsp;&Rightarrow;&nbsp;&nbsp;&nbsp; z &nbsp;=&nbsp; By &nbsp;+&nbsp; C
+				<br>y &nbsp;=&nbsp; 0 &nbsp;&nbsp;&nbsp;&Rightarrow;&nbsp;&nbsp;&nbsp; z &nbsp;=&nbsp; Ax &nbsp;+&nbsp; C
+				<br>z &nbsp;=&nbsp; 0 &nbsp;&nbsp;&nbsp;&Rightarrow;&nbsp;&nbsp;&nbsp; y &nbsp;=&nbsp; -(A/B)x &nbsp;+&nbsp; (C/B)
+				<br>
+			</td>
+			<td style="width: 35%; text-align: center; padding-right: 3.5%; padding-top: 5%; padding-bottom: 5%">
+				<img src="images/0-6/graph_z0.png" width="90%">
+			</td>
+		</tr>
+	</table>
+
+	<table style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-style: solid; border-color: black;">
+		<tr style="width: 100%">
+			<td style="width: 25%; line-height: 1.25em; font-size: 1.9rem; text-align: center; padding: 2.5%">
+				( x , y )
+				<br>&Uparrow;
+				<br>A &nbsp;&#215;&nbsp; A &nbsp;=&nbsp; A<sup>2</sup>
+				<br><br><br>( x , y , z )
+				<br>&Uparrow;
+				<br>A &nbsp;&#215;&nbsp; A &nbsp;&#215;&nbsp; A &nbsp;=&nbsp; A<sup>3</sup>
+			</td>
+			<td style="width: 37.50%; text-align: center; padding: 5%; border-left-style: solid; border-right-style: solid; border-color: lightgray">
+				<img src="images/0-6/graph_table.png" width="77.5%">
+			</td>
+			<td style="width: 37.50%; text-align: center; padding: 5%">
+				<img src="images/0-6/graph_building.png" width="70%">				
+			</td>
+		</tr>
+	</table>
+
+	<p style="text-align: center; margin-top: 5%; font-size: 2.25rem; line-height: 5rem">
+		&#402;(x) &nbsp;=&nbsp; y &nbsp; &rarr; &nbsp; &#402;<sup>-1</sup>(y) &nbsp;=&nbsp; x
+		<br>&#402;<sup>-1</sup>(&#402;(x)) &nbsp;=&nbsp; x
+	</p>
+	
+	<div id="q_button" style="width: 30%; margin-left: 35%; background-color: #000066; font-size: 1.5rem; text-align: center; margin-top: 5%; font-weight: bold; padding: 0.35%">
+		<a href="0-Q.html" style="color: white; width: 100%; display:block;">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
+	</div>
+	<p style="text-align: center; margin-bottom: 2.5%; margin-top: 2%; font-size: 1rem">Ⓒ MBC Output 2020 </p>
 	</div>
 
-	<p>FUNCTIONS</p>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var calc = new MGC.Calculator("MGC-Calculator");
+			
+			$(".graph").click(function(){
+				var id = this.id.substring(0, 3);
+				
+				if($("#in" + id).attr("readonly") !== "readonly"){
+					var func = $("#in" + id).val();
+					var color = $("." + id + "div").css("background-color");
+					
+					calc.clearFunc(func, color);
+					if(calc.graphFunc(func, color)){ 
+						//check expression validity
+					}
+					else{
+						$("#in" + id).val("ERR");
+					}
+				}
+			});
 
+			$("#xmax").change(function(){
+				calc.setMax($(this).val(), "x");
+				$("#xmin").val("-" + $(this).val());
+
+				var pos_x = document.getElementById('pos_x');
+				pos_x.innerHTML = $(this).val();
+				var pos_y = document.getElementById('pos_y');
+				pos_y.innerHTML = $(this).val();
+				var neg_x = document.getElementById('neg_x');
+				neg_x.innerHTML = -$(this).val();
+				var neg_y = document.getElementById('neg_y');
+				neg_y.innerHTML = -$(this).val();
+			});
+				
+		});
+
+		var MGC = {};
+
+		//MGC Calculator
+		MGC.Calculator = function(id){
+			"use strict";
+			var thisCalc = this;
+
+			var xMax = 5;
+			var xMaxVal = 40;
+			var xScale = 1;
+			var yMax = 5;
+			var yMaxVal = 40;
+			var yScale = 1;
+			
+			/*
+				-start coordinates-
+				The coordinate (0, 0) on the canvas is the 
+				upper-left hand corner. This is updated
+				according to the current scales and max/mins
+			*/
+			var xStart = 0;
+			var yStart = 0;
+			
+			//arrays for drawing every function graph
+			var funcArr = []; //array of functions
+			var colorArr = []; //array of functions
+			
+			//canvas and context
+			var canvas = null;
+			var context = null;
+
+			canvas = createCanvas(); //make a canvas for the graph output
+			
+			if(document.getElementById(id) === null){ //append canvas to the body
+				document.body.appendChild(canvas);
+			}
+			else{ //append canvas to the element at id
+				document.getElementById(id).appendChild(canvas);
+			}
+			
+			context = getContext(canvas); //init context
+
+			drawGraph(); //draw an empty grid
+			
+			/*start public methods*/	
+			this.graphFunc = function(func, color){
+				func = func.toLowerCase();
+				func = func.replace("^", "**");
+				
+				if(cleanExp(func) !== null){
+					funcArr.push(func); //save function
+					colorArr.push(color); //save color
+					drawGraph(); //draw new graph
+					return true;
+				}
+				else{
+					return false;
+				}
+				
+			};
+			
+			this.clearFunc = function(func, color){
+				var i = colorArr.indexOf(color);
+				
+				if(i > -1){
+					funcArr.splice(i, 1); //remove function name
+					colorArr.splice(i, 1); //remove color
+					drawGraph(); //draw new graph
+				}
+			};
+			
+			this.setMax = function(value, axis){
+					//value currently has to be symmetrical
+					//also between 0 and 100
+					if(value > 0 && value < 100){ 
+						if(axis === "x"){
+							xMax = value;
+							xMaxVal = canvas.width / 2 / xMax;
+							yMax = xMax;
+							yMaxVal = xMaxVal;
+						}				
+						drawGraph();
+					}
+					
+			};
+			
+			/*
+				will eventually need public get and set 
+				functions for all values:
+				---scale
+				---min
+				---canvas size
+			*/
+			/*end public methods*/
+			
+			/*start private methods*/
+			function createCanvas(){
+				//create a canvas
+				canvas = document.createElement("canvas");
+				
+				if(canvas === null){ //check canvas
+					throw MGC.Errors.canvasErr;
+				}
+				
+				//add and initalize canvas
+				canvas.appendChild(document.createTextNode(MGC.Errors.tagErr));
+				canvas.height = 400;
+				canvas.width = 400;
+				
+				return canvas;
+			}
+			
+			function getContext(){
+				//get a context
+				context = canvas.getContext("2d");
+				
+				if(context === null){ //check 2D context
+					throw MGC.Error.contextErr;
+				}
+				
+				return context;
+			}
+			
+			function drawGraph(){
+			
+				//update starting positions
+				xStart = 0.5 * canvas.width;
+				yStart = 0.5 * canvas.height;
+				
+				//draw a white background
+				context.fillStyle = "#ffffff";
+				context.fillRect(0, 0, canvas.width, canvas.height);
+				
+				context.lineWidth = 1; //set line width for grid
+				context.strokeStyle = "#cccccc";
+				context.beginPath();
+				
+				//set up the grid
+				for(var i = 0; i < canvas.width; i++){
+					context.moveTo(i * (xMaxVal / xScale), 0);
+					context.lineTo(i * (xMaxVal / xScale), canvas.width);
+					
+					context.moveTo(0, i * (yMaxVal / yScale));
+					context.lineTo(canvas.height, i * (yMaxVal / yScale));
+				}
+				
+				//draw the grid
+				context.stroke();
+				context.closePath();
+				
+				context.lineWidth = 1; //set line width for axises
+				
+				//draw x and y axis
+				context.beginPath();
+				context.moveTo(0, yStart);
+				context.lineTo(canvas.width, yStart);
+				context.moveTo(xStart, 0);
+				context.lineTo(xStart, canvas.height);
+				context.strokeStyle = "#000000";
+				context.stroke();
+				context.closePath();
+				
+				context.lineWidth = 3; //reset line width
+				
+				//draw the functions in the array
+				for(i = 0; i < funcArr.length; i++){
+					drawFunction(i);
+				}
+			}
+			
+			function drawFunction(i){
+				var func = cleanExp(funcArr[i]);
+				var color = colorArr[i];
+				var x, y, max, min;
+
+				if(func === null){ //invalid expression
+					thisCalc.clearFunc(funcArr[i]);
+					alert("ERR");
+					return;
+				}
+				
+				max = (canvas.width - xStart) / xScale;
+				min = -xStart / xScale;
+				
+				context.beginPath();
+				context.lineWidth = 3;
+				context.strokeStyle = '#DB0000';
+				
+				//move to first coordinate
+				x = xScale * min;
+				
+				try{ //expression might not evaluate
+						y = xMaxVal * eval(func);
+				}
+				catch(err){
+					thisCalc.clearFunc(funcArr[i]);
+					alert("ERR");
+					return;
+				}
+					
+				context.moveTo(xStart + x, yStart - y);
+				
+				for(var j = min + 1; j <= max; j++){
+					x = xScale * j;
+					
+					try{ //expression might not evaluate
+						y = xMaxVal * eval(func);
+					}
+					catch(err){
+						thisCalc.clearFunc(funcArr[i]);
+						alert("ERR");
+						return;
+					}
+					
+					context.lineTo(xStart + x, yStart - y);
+				
+				}
+				
+				context.stroke();
+				context.closePath();
+			}
+			
+			function cleanExp(exp){
+				var result = "";
+				
+				//remove spaces
+				exp = exp.replace(/\s/g, '');
+				
+				//attempt to stop some code injection
+				if(exp.indexOf("var") !== -1 || exp.indexOf("func") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("{") !== -1 || exp.indexOf("}") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("[") !== -1 || exp.indexOf("]") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("=") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp === ""){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				
+				for(var i = 0; i < exp.length; i++){
+					
+					if(i+2 < exp.length && exp[i+1] === "^"){
+						result += "pow(x, " + exp[i+2] + ")";
+						i += 2;
+					}
+					else{
+						result += exp[i];
+					}
+					
+				}
+				
+				//scale x
+				result = result.replace(/x/gi, "x/xMaxVal");
+				
+				//replace special numbers
+				result = result.replace(/e/gi, "Math.E");
+				result = result.replace(/pi/gi, "Math.PI");		
+				
+				return result;
+			}
+			
+			function pow(x, e){
+				return Math.pow(x, e);
+			}
+			
+			function sin(x){
+				return Math.sin(x);
+			}
+				
+			function asin(x){
+				return Math.asin(x);
+			}
+			
+			function arcsin(x){
+				return Math.asin(x);
+			}
+			
+			function cos(x){
+				return Math.cos(x);
+			}
+			
+			function acos(x){
+				return Math.acos(x);
+			}
+			
+			function arccos(x){
+				return Math.acos(x);
+			}
+			
+			function tan(x){
+				return Math.tan(x);
+			}
+			
+			function atan(x){
+				return Math.atan(x);
+			}
+			
+			function arctan(x){
+				return Math.atan(x);
+			}
+			
+			function log(x){
+				return Math.log(x);
+			}
+			/*end private methods*/
+		};
+
+		//MGC Errors
+		MGC.Errors = {
+			tagErr		:	"Your browser does not seem to support the canvas tag.",
+			canvasErr	:	"MGC_CANVAS_ERR: could not create a canvas element",
+			contextErr	:	"MGC_CONTEXT_ERR: could not get a 2d context",
+			expWarn		:	"MGC_EXPRESSION_WARNING: expression contains illegal characters"
+		};
+	</script>
 </body>
 </html>

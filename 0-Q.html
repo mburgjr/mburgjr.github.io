@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<link rel="icon" href="images/link_logo.png">
+<head>
+	<meta charset="UTF-8">
+	<title>Hue Edu</title>
+	<style>
+		body {
+		  margin: 0;
+		  font-family: Arial;
+		  text-decoration: none;
+		  width: 100%;
+		}
+
+		.header {
+			background-color: #000066;
+			text-align: left;
+			color: white;
+		}
+
+		.header div.info {
+			text-align: right;
+			vertical-align: top;
+			padding-right: 1%;
+			padding-top: 0.6%;
+			float: right;
+		}
+
+		.header div.logo {
+			float: left;
+		}
+		
+		.header a {
+		  	text-decoration: none;
+			font-size: 1vw;
+			font-weight: bold;
+			color: white;
+		}
+
+		a.sub_active {
+			background-color: #FFFFFF;
+			color: #000066;
+		}
+
+		td.main_active {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.main_access:hover {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.main_access:hover a {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access a {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		  font-size: 1.1vw;
+		}
+
+		td.sub_access:hover {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		}
+
+		td.sub_access:hover a {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		}
+
+		td.sub_active {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		}
+
+		td.sub_active a {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		  font-size: 1.1vw;
+		}
+
+		.logo_image {
+			width: 80%;
+			padding: 0%;
+		}
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		table.div_examples {
+			padding-left: 0%;
+			line-height: 1.25em;
+			font-size: 1.1rem;
+		}
+
+		.fraction, .numerator, .denominator {
+		    padding: 0 5px;
+		    width: 0.65rem;
+		}
+
+		.fraction {
+		    display: inline-block;
+		    text-align: center;    
+		}
+
+		.denominator{
+		    border-top: 1px solid #000;
+		    display: block;
+		}
+
+		#submit_answer{
+			height: 2.75rem;
+			width: 10%;
+			font-weight: bold;
+			vertical-align: middle;
+			text-align: center;
+			border-style: solid;
+			border-color: #DB0000;
+			background-color: #DB0000;
+			border-width: 0.25rem;
+			margin-bottom: 0.3rem;
+		}
+
+		#submit_answer:hover {
+			border-color: #A00000;
+			background-color: #DB0000;
+		}
+
+		#next{
+			height: 2.9rem;
+			width: 30%;
+			font-weight: bold;
+			vertical-align: middle;
+			text-align: center;
+			border-style: solid;
+			border-color: #000066;
+			background-color: #000066;
+			font-size: 2.65rem;
+			color: white;
+			font-weight: bold;
+			vertical-align: center;
+			text-align: center;
+			border-width: 0.25rem;
+			margin-left: 35%;
+			margin-top: 5%;
+		}
+
+		#next:hover {
+			border-color: #66B2FF;
+			background-color: #000066;
+		}
+
+		tr.active {
+			font-weight: bold;
+			border-style: solid;
+			border-right-style: none;
+			border-left-color: #000066;
+			border-bottom-color: #000066;
+			border-top-color: #000066;
+			color: #000066;
+			border-width: 0.25rem;
+		}
+
+		tr.inactive {
+			font-weight: bold;
+			color: #000066;
+			border-style: solid;
+			border-color: #000066;
+			border-width: 0.25rem;
+		}
+
+		tr.inactive:hover {
+			color: white;
+			background-color: #000066;
+		}
+
+	</style>
+</head>
+<body>
+	<header class='header'>
+		<table style="width:100%; border: none; border-collapse: collapse;">
+			<tr>
+				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%; padding-bottom: 0.5%"><img src="images/logo_cut.png" class="logo_image"></td>
+				<td class="main_active" style="text-align: center; width: 7.5%"><a href="0-Q.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
+			</tr>
+			<tr>
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_access" href="0-0.html">#</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-1.html">+</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-2.html">&#215;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-3.html">&#247;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html">^</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-5.html">&#8730;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-6.html">&#402;</a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="0-Q.html">?</a></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+			</tr>
+		</table>
+	</header>
+
+	<div style="width: 110rem; margin: 0 auto;">
+	<table style="width: 80%; margin-left: 8.15%; margin-top: 6%; height: 50%; border-style: solid; border-color: #66B2FF; border-width: 0.25rem; border-collapse: collapse; border-spacing: 0px">
+		<tr style="width: 100%; height: 100%">
+			<td style="width: 7.5%; height: 100%; padding: 0px">
+				<table style="width: 100%; height: 100%; border-collapse: collapse; border-style: solid; border-color: white">
+					<tr class="active" id="tab_0" style="font-size: 1.5rem; height:16.6667%; text-align: center;">
+						<td style="" onclick="changeTab('tab_0')">A</td>
+					</tr>
+					<tr class="inactive" id="tab_1" style="font-size: 1.5rem; height:16.6667%; text-align: center; width: 100%">
+						<td style="" onclick="changeTab('tab_1')">+</td>
+					</tr>
+					<tr class="inactive" id="tab_2" style="font-size: 1.5rem; height:16.6667%; text-align: center; width: 100%">
+						<td style="" onclick="changeTab('tab_2')">&#215;</td>
+					</tr>
+					<tr class="inactive" id="tab_3" style="font-size: 1.5rem; height:16.6667%; text-align: center; width: 100%">
+						<td style="" onclick="changeTab('tab_3')">&#247;</td>
+					</tr>
+					<tr class="inactive" id="tab_4" style="font-size: 1.5rem; height:16.6667%; text-align: center; width: 100%">
+						<td style="" onclick="changeTab('tab_4')">^</td>
+					</tr>
+					<tr class="inactive" id="tab_5" style="font-size: 1.5rem; height:16.6667%; text-align: center; width: 100%">
+						<td style="" onclick="changeTab('tab_5')">&#8730;</td>
+					</tr>
+				</table>
+			</td>
+			<td style="width: 92.5%; height: 100%; padding: 0px">
+				<table style="width: 100%; height: 100%; border-collapse: collapse;">
+					<tr style="width: 100%">
+						<td style="width: 100%; text-align: center; border-style: solid; height: 100%; font-size: 2.15rem; padding-top: 6.5%; border-width: 0.25rem; line-height: 1.5em; padding-bottom: 5%; border-color: #000066; border-left-style: none;">
+							<p id="question" style="font-size: 2.65rem"><span id="q_1">0</span><sup></sup><span id="q_op"> &nbsp;&#215;&nbsp; </span><span id="q_2">0</span> &nbsp;=&nbsp; ?</p>
+							? &nbsp;=&nbsp;&nbsp; <input type="text" id="answer" style="width: 35%; font-size: 2.15rem">
+							<button type="button" id="submit_answer" onclick="checkAnswer()"></button>
+							<p id="response" style="height: 2.4rem; font-size: 2.15rem"><span id="r_eval"></span> &nbsp; <span id="r_correct"></span> </p>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<button type="button" id="next" onclick="randomQuestion()"> </button>
+
+	<table style="width: 100%; margin-bottom: 1%; margin-top: 1%; font-size: 1.05rem">
+		<tr style="width: 100%">
+			<td style="width: 33.333%">
+			</td>
+			<td style="width: 33.333%">
+				<p style="text-align: center; vertical-align: bottom;">Ⓒ MBC Output 2020 </p>
+			</td>
+			<td id="score" style="width: 33.333%; text-align: right; padding-right: 2.5%; font-size: 1.9rem; vertical-align: top">
+				<span id="score_correct">0</span> <i>/</i> <span id="score_total">0</span> &nbsp;=&nbsp; <span id="score_perc">0</span>% &nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+	</table>
+	</div>
+
+	<script type="text/javascript">
+        // document.getElementById("txt_1").value = getSavedValue("txt_1");    // set the value to this input
+        // document.getElementById("txt_2").value = getSavedValue("txt_2");   // set the value to this input
+        /* Here you can add more inputs to set value. if it's saved */
+
+        window.onload = function () {
+        	randomQuestion();
+        	localStorage.setItem('active_tab', 'tab_0');
+
+        	var correct = localStorage.getItem("correct");
+        	var total = localStorage.getItem("total");
+
+		  	document.getElementById("score_correct").innerHTML = correct.toString();
+		  	document.getElementById("score_total").innerHTML = total.toString();
+        	var perc = Math.floor(100*correct/total);
+		  	document.getElementById("score_perc").innerHTML = perc.toString();
+        };
+
+        function changeTab(tab){
+        	console.log(localStorage.getItem('active_tab'));
+        	var active_tab = localStorage.getItem('active_tab');
+			document.getElementById(active_tab).classList.remove('active');
+        	document.getElementById(active_tab).classList.add('inactive');
+
+        	var active_tab = tab;
+			document.getElementById(active_tab).classList.remove('inactive');
+        	document.getElementById(active_tab).classList.add('active');
+        	localStorage.setItem('active_tab', tab);
+        	randomQuestion();
+        }
+
+        function checkAnswer(){
+        	var q1 = parseFloat(document.getElementById("q_1").textContent);
+        	var q2 = parseFloat(document.getElementById("q_2").textContent);
+        	var op = document.getElementById("q_op").textContent.toString();
+        	var a = parseFloat(document.getElementById("answer").value);
+			var correct = parseFloat(document.getElementById("score_correct").textContent);
+			var total = parseFloat(document.getElementById("score_total").textContent);
+
+        	if (op == "  +  ") {
+        		var q3 = q1 + q2;
+        		if (q3 == a) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 3.1rem">&#10004;</span> &nbsp; ' + q3;
+        			correct = correct + 1;
+        		}
+        		else {
+        			document.getElementById("response").innerHTML = '<span style="color: red; font-size: 2.9rem">&#10008;</span> &nbsp; ' + q3;
+        		}
+
+        	}
+        	else if (op == "  -  ") {
+        		var q3 = q1 - q2;
+        		if (q3 == a) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 3.1rem">&#10004;</span> &nbsp; ' + q3;
+        			correct = correct + 1;
+        		}
+        		else {
+        			document.getElementById("response").innerHTML = '<span style="color: red; font-size: 2.9rem">&#10008;</span> &nbsp; ' + q3;
+        		}
+
+        	}
+        	else if (op == "  ×  ") {
+        		var q3 = q1 * q2;
+        		console.log(q3);
+        		if (q3 == a) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 3.1rem">&#10004;</span> &nbsp; ' + q3;
+        			correct = correct + 1;
+        		}
+        		else {
+        			document.getElementById("response").innerHTML = '<span style="color: red; font-size: 2.9rem">&#10008;</span> &nbsp; ' + q3;
+        		}
+        		
+        	}
+        	else if (op == "  /  ") {
+        		var q3 = q1 / q2;
+        		if (q3 == a) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 3.1rem">&#10004;</span> &nbsp; ' + q3;
+        			correct = correct + 1;
+        		}
+        		else {
+        			document.getElementById("response").innerHTML = '<span style="color: red; font-size: 2.9rem">&#10008;</span> &nbsp; ' + q3;
+        		}
+
+        	}
+        	else {
+        		if (op.split("/").length - 1 > 0) {
+        			var exp = 1/parseFloat(op.slice(-1));
+        			var q3 = Math.pow(q1, exp);
+        		}
+        		else {  
+        			var exp = parseFloat(op.slice(-1));     			
+        			var q3 = Math.pow(q1, exp);
+        		}
+        		if (q3 == a) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 3.1rem">&#10004;</span> &nbsp; ' + q3;
+        			correct = correct + 1;
+        		}
+        		else {
+        			document.getElementById("response").innerHTML = '<span style="color: red; font-size: 2.9rem">&#10008;</span> &nbsp; ' + q3;
+        		}
+        	}
+
+        	total = total + 1;
+		  	document.getElementById("score_correct").innerHTML = correct.toString();
+		  	document.getElementById("score_total").innerHTML = total.toString();
+        	var perc = Math.floor(100*correct/total);
+		  	document.getElementById("score_perc").innerHTML = perc.toString();
+
+		  	localStorage.setItem("correct", correct);
+		  	localStorage.setItem("total", total);
+        }
+
+        function randomQuestion() {
+        	document.getElementById("answer").value = '';
+        	document.getElementById("response").innerHTML ='';
+
+        	var active_tab = localStorage.getItem('active_tab');
+
+        	if (active_tab == 'tab_0'){
+        		operator_int = Math.floor(Math.random() * 6);
+        	}
+        	else if (active_tab == 'tab_1') {
+        		operator_int = Math.floor(Math.random() * 2);
+        	}
+        	else if (active_tab == 'tab_2') {
+        		operator_int = 2;
+        	}
+        	else if (active_tab == 'tab_3') {
+        		operator_int = 3;
+        	}
+        	else if (active_tab == 'tab_4') {
+        		operator_int = 4;
+        	}
+        	else if (active_tab == 'tab_5') {
+        		operator_int = 5;
+        	}
+
+        	if (operator_int == 0){
+		  		document.getElementById("q_op").innerHTML = " &nbsp;+&nbsp; ";
+		  		var q1 = Math.floor(Math.random() * 300);
+		  		var q2 = Math.floor(Math.random() * 300);
+		  		document.getElementById("q_1").innerHTML = q1.toString();
+		  		document.getElementById("q_2").innerHTML = q2.toString();
+        	}
+			else if (operator_int == 1){
+		  		document.getElementById("q_op").innerHTML = " &nbsp;-&nbsp; ";
+		  		var q1 = Math.floor(Math.random() * 300);
+		  		var q2 = Math.floor(Math.random() * 300);
+		  		document.getElementById("q_1").innerHTML = q1.toString();
+		  		document.getElementById("q_2").innerHTML = q2.toString();
+        	}
+			else if (operator_int == 2){
+		  		document.getElementById("q_op").innerHTML = " &nbsp;&#215;&nbsp; ";
+		  		var q1 = Math.floor(Math.random() * 13);
+		  		var q2 = Math.floor(Math.random() * 13);
+		  		document.getElementById("q_1").innerHTML = q1.toString();
+		  		document.getElementById("q_2").innerHTML = q2.toString();
+        	}
+        	else if (operator_int == 3){
+		  		document.getElementById("q_op").innerHTML = " &nbsp;<i>/</i>&nbsp; ";
+		  		var n = Math.floor(Math.random() * 2);
+		  		if (n == 0) {
+		  			var q1 = Math.floor(Math.random() * 12) + 1;
+		  			var q2 = Math.floor(Math.random() * 12) + 1;
+		  			q1 = q1*q2;
+			  		document.getElementById("q_1").innerHTML = q1.toString();
+			  		document.getElementById("q_2").innerHTML = q2.toString();
+		  		}
+		  		else if (n == 1) {
+			  		var q1 = Math.floor(Math.random() * 145);
+			  		var q2 = Math.floor(Math.random() * 4);
+			  		if (q2 == 0){
+			  			q2 = 2;
+			  		}
+			  		else if (q2 == 1){
+			  			q2 = 4;
+			  		}
+			  		else if (q2 == 2){
+			  			q2 = 5;
+			  		}
+			  		else if (q2 == 3){
+			  			q2 = 10;
+			  		}
+			  		document.getElementById("q_1").innerHTML = q1.toString();
+			  		document.getElementById("q_2").innerHTML = q2.toString();
+		  		}
+        	}
+        	else if (operator_int == 4){
+		  		document.getElementById("q_2").innerHTML = "";
+		  		var n = Math.floor(Math.random() * 4);
+		  		if (n == 0) {
+			  		var q1 = Math.floor(Math.random() * 13);
+			  		var q2 = Math.floor(Math.random() * 2);
+			  	}
+		  		else if (n == 1) {
+			  		var q1 = Math.floor(Math.random() * 13);
+			  		var q2 = 2;
+			  	}
+		  		else if (n == 2) {
+			  		var q1 = Math.floor(Math.random() * 6);
+			  		var q2 = 3;
+			  	}
+		  		else if (n == 3) {
+			  		var q1 = Math.floor(Math.random() * 3) + 1;
+			  		var q2 = Math.floor(Math.random() * 2) + 4;
+			  	}
+		  		document.getElementById("q_1").innerHTML = q1.toString();
+		  		document.getElementById("q_op").innerHTML = ' <sup>' + q2.toString() + '</sup>';
+        	}
+        	else if (operator_int == 5){
+		  		document.getElementById("q_2").innerHTML = "";
+		  		document.getElementById("q_2").innerHTML = "";
+		  		var n = Math.floor(Math.random() * 4);
+		  		if (n == 0) {
+			  		var a = Math.floor(Math.random() * 13);
+			  		var b = Math.floor(Math.random() * 2);
+			  	}
+		  		else if (n == 1) {
+			  		var a = Math.floor(Math.random() * 13);
+			  		var b = 2;
+			  	}
+		  		else if (n == 2) {
+			  		var a = Math.floor(Math.random() * 6);
+			  		var b = 3;
+			  	}
+		  		else if (n == 3) {
+			  		var a = Math.floor(Math.random() * 3) + 1;
+			  		var b = Math.floor(Math.random() * 2) + 4;
+			  	}
+			  	var q1 = Math.pow(a, b);
+			  	var q2 = b;
+
+		  		document.getElementById("q_1").innerHTML = q1.toString();
+		  		document.getElementById("q_op").innerHTML = ' <sup>1 <i>/</i> ' + q2.toString() + '</sup>';
+        	}
+		}
+	</script>
+</body>
+</html>

@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
-	<style>
+	<title>Hue Edu</title>
+		<style>
 		body {
 		  margin: 0;
 		  font-family: Arial;
 		  text-decoration: none;
+		  align-self: center;
+		  width: 100%;
+		}
+
+		a {
+		  text-decoration: none;			
 		}
 
 		.header {
 			background-color: #000066;
 			text-align: left;
 			color: white;
+			width: 100%;
 		}
 
 		.header div.info {
 			text-align: right;
 			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
+			padding-right: 1%;
+			padding-top: 0.6%;
 			float: right;
 		}
 
@@ -30,89 +38,658 @@
 		
 		.header a {
 		  	text-decoration: none;
-			font-size: 20px;
+			font-size: 1vw;
 			font-weight: bold;
 			color: white;
 		}
 
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
+		a.sub_active {
+			background-color: #FFFFFF;
+			color: #000066;
 		}
 
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td {
+			padding: 0.4%;
 		}
 
-		.main-nav a:hover {
+		td a {
+		    display:block;
+		    width:100%;
+		}
+
+		td.main_active {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.main-nav a.active {
+		td.main_access:hover {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
 		}
 
-		.sub-nav {
-		  overflow: hidden;
+		td.main_access:hover a {			
 		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
+		td.sub {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
 		}
 
-		.sub-nav a:hover {
+		td.sub_access {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		}
+
+		td.sub_access a {			
+		  background-color: #66B2FF;
+		  color: #FFFFFF;
+		  font-size: 1.1vw;
+		}
+
+		td.sub_access:hover {			
 		  background-color: #FFFFFF;
-		  color: #66B2FF;
+		  color: #000066;
 		}
 
-		.sub-nav a.active {
+		td.sub_access:hover a {			
 		  background-color: #FFFFFF;
-		  color: #66B2FF;
+		  color: #000066;
 		}
+
+		td.sub_active {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		}
+
+		td.sub_active a {			
+		  background-color: #FFFFFF;
+		  color: #000066;
+		  font-size: 1.1vw;
+		}
+
+		.logo_image {
+			width: 80%;
+			padding: 0%;
+		}
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		.fraction {
+		    display: inline-block;
+		    text-align: center;    
+		}
+
+		.denominator{
+		    border-top: 1px solid #000;
+		    display: block;
+		}
+
+		#q_button {
+			border-width: 0.25rem;
+			border-style: solid;
+			border-color: #000066;
+		}
+
+		#q_button:hover {
+			border-width: 0.25rem;
+			border-style: solid;
+			border-color: #66B2FF;
+		}
+
 	</style>
-
 </head>
 <body>
 	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
-		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
-		</div>
-		<div class='main-nav'>
-			<a href="index.html">0</a>
-			<a class="active" href="1-0.html">1</a>
-			<a href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
-		</div>
+		<table style="width:100%; border: none; border-collapse: collapse;">
+			<tr>
+				<td class="main" style="width: 10%; text-align: center; padding-top: 0.75%; padding-bottom: 0.5%"><img src="images/logo_cut.png" class="logo_image"></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="0-0.html">0</a></td>
+				<td class="main_active" style="text-align: center; width: 7.5%"><a href="1-3.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
+			</tr>
+			<tr>
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_access" href="1-0.html">&#9724;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-1.html">&Theta;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-2.html">&#9699;</a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="1-3.html"><span style="font-size: 1.35vw">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-4.html">_</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-5.html">_</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-6.html">_</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-Q.html">?</a></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+				<td class="sub"></td>
+			</tr>
+		</table>
 	</header>
 
-	<div class="sub-nav">
-		<a href="1-0.html">0</a>
-		<a href="1-1.html">1</a>
-		<a href="1-2.html">2</a>
-		<a class="active" href="1-3.html">3</a>
-		<a href="1-4.html">4</a>
-		<a href="1-5.html">5</a>
-		<a href="1-6.html">6</a>
+	<div style="width: 110rem; margin: 0 auto;">
+	<table style="width: 85%; margin-top: 5.5%; text-align: center; margin-left: 7.5%">
+		<tr style="width: 100%">
+			<td style="width: 47.5%; font-size: 2rem; line-height: 2em">
+				<img src="images/1-3/trig_intro_tri.png" width="45%" style="margin-bottom: 1.5%">
+				<br>
+				<br> &nbsp;&nbsp;&nbsp; H > A , &nbsp;&nbsp; H > B
+				<br> &nbsp;&nbsp;&nbsp; &#402;(&theta;) = sin(&theta;) , &nbsp;&nbsp; &#402;(&theta;) = cos(&theta;) , &nbsp;&nbsp; &#402;(&theta;) = tan(&theta;)
+			</td>
+			<td style="width: 5%">
+			</td>
+			<td style="width: 47.5%">
+				<img src="images/1-3/trig_intro_H.png" width="77.5%" style="">
+				<img src="images/1-3/trig_intro_th.png" width="77.5%" style="margin-top: 7.5%">
+			</td>
+		</tr>		
+	</table>
+
+	<table style="width: 90%; margin-top: 5%; text-align: center; margin-left: 5%; border-collapse: collapse; border-color: black; border-width: 0.25rem; border-style: solid; text-align: center; font-size: 2rem; line-height: 2em">
+		<tr style="width: 100%">
+			<td style="width: 52.5%; border-top-style: solid; border-right-style: solid; border-right-color: lightgray; padding-top: 2.5%; padding-bottom: 0.5%">
+				<table style="width: 100%">
+					<tr style="width: 100%">
+						<td style="width: 55%">
+							<img src="images/1-3/trig_sin_def_th.png" width="91.5%" style="">
+						</td>
+						<td style="width: 45%">
+							sin(&theta;) &nbsp;=&nbsp; B <i>/</i> H
+							<br>
+							<span style="font-size: 1.85rem">( 0 &nbsp;&leq;&nbsp; sin(&theta;) &nbsp;&leq;&nbsp; 1 )</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td style="width: 47.5%; border-top-style: solid; padding-top: 2.5%; padding-bottom: 2.5%; padding-left: 3.5%">
+				<table style="width: 100%">
+					<tr style="width: 100%">
+						<td style="width: 50%">
+							<img src="images/1-3/trig_sin_def_phi.png" width="95%" style="">
+						</td>
+						<td style="width: 50%">
+							sin(&phi;) = A <i>/</i> H
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr style="width: 100%">
+			<td style="width: 52.5%; border-top-style: solid; border-right-style: solid; border-right-color: lightgray; padding-top: 2.5%; padding-bottom: 0.5%;">
+				<table style="width: 100%">
+					<tr style="width: 100%">
+						<td style="width: 55%; padding-right: 6.5%">
+							<img src="images/1-3/trig_cos_def_th.png" width="91.5%" style="">
+						</td>
+						<td style="width: 45%">
+							cos(&theta;) &nbsp;=&nbsp; A <i>/</i> H
+							<br>
+							<span style="font-size: 1.85rem">( 0 &nbsp;&leq;&nbsp; cos(&theta;) &nbsp;&leq;&nbsp; 1 )</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td style="width: 47.5%; border-top-style: solid; padding-top: 2.5%; padding-bottom: 3.5%; padding-left: 3.5%">
+				<table style="width: 100%">
+					<tr style="width: 100%">
+						<td style="width: 50%">
+							<img src="images/1-3/trig_cos_def_phi.png" width="95%" style="">
+						</td>
+						<td style="width: 50%">
+							cos(&phi;) = B <i>/</i> H
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>		
+		<tr style="width: 100%">
+			<td style="width: 52.5%; border-top-style: solid; border-right-style: solid; border-right-color: lightgray; padding-top: 2.5%; padding-bottom: 0.5%">
+				<table style="width: 100%">
+					<tr style="width: 100%">
+						<td style="width: 55%">
+							<img src="images/1-3/trig_tan_def_th.png" width="91.5%" style="">
+						</td>
+						<td style="width: 45%">
+							tan(&theta;) &nbsp;=&nbsp; B <i>/</i> A
+							<br>
+							<span style="font-size: 1.85rem">( -&infin; &nbsp;<&nbsp; tan(&theta;) &nbsp;<&nbsp; &infin; )</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td style="width: 47.5%; border-top-style: solid; padding-top: 2.5%; padding-bottom: 2.5%; padding-left: 3.5%">
+				<table style="width: 100%">
+					<tr style="width: 100%">
+						<td style="width: 50%">
+							<img src="images/1-3/trig_tan_def_phi.png" width="97.5%" style="">
+						</td>
+						<td style="width: 50%">
+							tan(&phi;) = A <i>/</i> B
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+	<img src="images/1-3/trig_tan_equ.png" width="45%" style="margin-top: 7.5%; margin-left: 25%">
+
+	<table style="width: 80%; margin-top: 7.5%; text-align: center; margin-left: 10%; font-size: 1.95rem; line-height: 1.75em; border-style: solid; border-color: black; border-width: 0.25rem;">
+		<tr style="width: 100%">
+			<td style="width: 42.5%;">
+				<img src="images/1-3/trig_triangle.png" width="75%" style="margin-bottom: 1.5%">
+			</td>
+			<td style="width: 1%">
+			</td>
+			<td style="width: 56.5%; text-align: left; padding-top: 5%; padding-bottom: 5%">
+				sin(&theta;) &nbsp;=&nbsp; B/H &nbsp;&nbsp;&rarr;&nbsp;&nbsp; B &nbsp;=&nbsp; Hsin(&theta;)
+				<br>cos(&theta;) &nbsp;=&nbsp; A/H &nbsp;&nbsp;&rarr;&nbsp;&nbsp; A &nbsp;=&nbsp; Bsin(&theta;)
+				<br>tan(&theta;) &nbsp;=&nbsp; B/A &nbsp;&nbsp;&rarr;&nbsp;&nbsp; B &nbsp;=&nbsp; Atan(&theta;)
+				<br>
+				<br>A &nbsp;=&nbsp; Hcos(&theta;) &nbsp;=&nbsp; Hsin(&phi;) &nbsp;=&nbsp; Btan(&phi;) &nbsp;=&nbsp; B/tan(&theta;)
+				<br>B &nbsp;=&nbsp; Hsin(&theta;) &nbsp;=&nbsp; Hcos(&phi;) &nbsp;=&nbsp; Atan(&theta;) &nbsp;=&nbsp; A/tan(&phi;)
+				<br>H &nbsp;=&nbsp; A/cos(&theta;) &nbsp;=&nbsp; B/sin(&theta;) &nbsp;=&nbsp; A/sin(&phi;) &nbsp;=&nbsp; B/cos(&phi;)
+			</td>
+		</tr>		
+	</table>
+
+	<table style="width: 90%; margin-top: 7.5%; text-align: center; margin-left: 5%">
+		<tr style="width: 100%">
+			<td style="width: 62.5%;">
+				<img src="images/1-3/trig_unitcircle.png" width="92.5%" style="margin-bottom: 1.5%">
+			</td>
+			<td style="width: 2.5%">
+			</td>
+			<td style="width: 35%">
+				<img src="images/1-3/trig_R.png" width="90%" style="">
+			</td>
+		</tr>		
+	</table>
+
+	<table style="width: 96%; margin-top: 7.5%; text-align: center; margin-left: 2%; font-size: 1.8rem; line-height: 1.75em; border-style: solid; border-color: black; border-width: 0.25rem;">
+		<tr style="width: 100%">
+			<td style="width: 2.5%">
+			</td>
+			<td style="width: 19%; padding-top: 5%; padding-bottom: 5%;">
+				<img src="images/1-3/trig_circ0.png" width="90%" style="margin-bottom: 2.5%;">
+				sin(&theta;) &nbsp;=&nbsp; 0
+				<br> cos(&theta;) &nbsp;=&nbsp; 1
+				<br> tan(&theta;) &nbsp;=&nbsp; 1/0 &nbsp;=&nbsp; &infin;
+			</td>
+			<td style="width: 19%; padding-top: 5%; padding-bottom: 5%">
+				<img src="images/1-3/trig_circ1.png" width="90%" style="margin-bottom: 2.5%;">
+				sin(&theta;) &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;2</span></span>&nbsp;/&nbsp;2
+				<br> cos(&theta;) &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;2</span></span>&nbsp;/&nbsp;2
+				<br> tan(&theta;) &nbsp;=&nbsp; 1
+			</td>
+			<td style="width: 19%; padding-top: 5%; padding-bottom: 5%">
+				<img src="images/1-3/trig_circ2.png" width="90%" style="margin-bottom: 2.5%;">
+				sin(&theta;) &nbsp;=&nbsp; 1
+				<br> cos(&theta;) &nbsp;=&nbsp; 0
+				<br> tan(&theta;) &nbsp;=&nbsp; 0/1 &nbsp;=&nbsp; 0
+			</td>
+			<td style="width: 19%; padding-top: 5%; padding-bottom: 5%">
+				<img src="images/1-3/trig_circ3.png" width="90%" style="margin-bottom: 2.5%;">
+				sin(&theta;) &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;2</span></span>&nbsp;/&nbsp;2
+				<br> cos(&theta;) &nbsp;=&nbsp; -<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;2</span></span>&nbsp;/&nbsp;2
+				<br> tan(&theta;) &nbsp;=&nbsp; -1
+			</td>
+			<td style="width: 19%; padding-top: 5%; padding-bottom: 5%">
+				<img src="images/1-3/trig_circ4.png" width="90%" style="margin-bottom: 2.5%;">
+				sin(&theta;) &nbsp;=&nbsp; 0
+				<br> cos(&theta;) &nbsp;=&nbsp; -1
+				<br> tan(&theta;) &nbsp;=&nbsp; -1/0 &nbsp;=&nbsp; -&infin;
+			</td>
+			<td style="width: 2.5%">
+			</td>
+		</tr>		
+	</table>
+
+	<img src="images/1-3/trig_sin_graph.png" width="80%" style="margin-top: 6.5%; margin-left: 8.5%">
+	<img src="images/1-3/trig_cos_graph.png" width="80%" style="margin-top: 2.5%; margin-left: 8.5%">
+	<img src="images/1-3/trig_tan_graph.png" width="80%" style="margin-top: 2.5%; margin-left: 8.5%">
+
+	<table style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-style: solid; border-color: black; border-width: 0.2rem; padding: 6.5%">
+		<tr style="width: 100%;">
+			<td style="width: 22.5%; text-align: center;">
+				<div id="shape_input" style="border-style: solid; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 90%; margin-left: 5%; margin-top: -0.25rem; border-width: 0.2rem; font-size: 1.5rem">
+					&theta; &nbsp;=&nbsp; <input id="theta" type="text" value="0" style="font-size: 1.75rem; width: 50%"/>
+					<br>
+					<br>
+					<button type="button" style="font-size: 1.25rem" onclick="drawTriangle('rad')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &pi; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					<button type="button" style="font-size: 1.25rem" onclick="drawTriangle('deg')">&nbsp;&nbsp;&nbsp;&nbsp; 180&#176; &nbsp;&nbsp;&nbsp;&nbsp;</button>
+				</div>
+			</td>
+			<td style="width: 5%">
+			</td>
+			<td style="width: 37.5%; padding: 0%">
+				<canvas id="canvas" style="width: 100%; padding: 0%">
+				</canvas>
+			</td>
+			<td style="width: 5%">
+			</td>
+			<td style="width: 30%; padding-top: 5%; padding-bottom: 5%">
+				<div style="border-style: solid; border-color: black; padding-top: 7.5%; padding-bottom: 7.5%; width: 90%; margin-left: 5%; border-width: 0.2rem; font-size: 1.75rem; text-align: left;">
+					&nbsp;&nbsp;&nbsp;&nbsp; sin(&theta;) &nbsp;=&nbsp; <span id="sin_res">0.0000000</span>
+					<br><br>&nbsp;&nbsp;&nbsp;&nbsp; cos(&theta;) &nbsp;=&nbsp; <span id="cos_res">0.0000000</span>
+					<br><br>&nbsp;&nbsp;&nbsp;&nbsp; tan(&theta;) &nbsp;=&nbsp; <span id="tan_res">0.0000000</span>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<table style="width: 85%; margin-top: 7.5%; text-align: center; margin-left: 7.5%; font-size: 1.5rem; line-height: 1.65em; border-collapse: collapse; border-color: black; border-width: 0.25rem;">
+		<tr style="width: 100%">
+			<td style="width: 10%; padding: 1%; border-style: solid; background-color: gray; color: white; font-weight: 400; border-color: black;">
+				&theta;
+			</td>
+			<td style="width: 15%; padding: 1%; border-style: solid; background-color: gray; color: white; font-weight: 400; border-color: black;">
+				0
+			</td>
+			<td style="width: 15%; padding: 1%; border-style: solid; font-size: 1.65rem; background-color: gray; color: white; font-weight: 400; border-color: black;">
+				<sup>&pi;</sup> &frasl; <sub>6</sub>
+			</td>
+			<td style="width: 15%; padding: 1%; border-style: solid; font-size: 1.65rem; background-color: gray; color: white; font-weight: 400; border-color: black;">
+				<sup>&pi;</sup> &frasl; <sub>4</sub>
+			</td>
+			<td style="width: 15%; padding: 1%; border-style: solid; font-size: 1.65rem; background-color: gray; color: white; font-weight: 400; border-color: black;">
+				<sup>&pi;</sup> &frasl; <sub>3</sub>
+			</td>
+			<td style="width: 15%; padding: 1%; border-style: solid; font-size: 1.65rem; background-color: gray; color: white; font-weight: 400; border-color: black;">
+				<sup>&pi;</sup> &frasl; <sub>2</sub>
+			</td>
+			<td style="width: 15%; padding: 1%; border-style: solid; background-color: gray; color: white; font-weight: 400; border-color: black;">
+				&pi;
+			</td>
+		</tr>
+		<tr style="width: 100%">
+			<td style="width: 10%; padding: 2%; border-style: solid; background-color: gray; color: white; font-weight: 400; border-color: black;">
+				sin(&theta;)
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				0
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;1</span></span> / 2 &nbsp;=&nbsp; 1 / 2
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;2</span></span> / 2
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;3</span></span> / 2
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;4</span></span> / 2 &nbsp;=&nbsp; 1
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				0
+			</td>
+		</tr>
+		<tr style="width: 100%">
+			<td style="width: 10%; padding: 2%; border-style: solid; background-color: gray; color: white; font-weight: 400; border-color: black;">
+				cos(&theta;)
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;4</span></span> / 2 &nbsp;=&nbsp; 1
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;3</span></span> / 2
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;2</span></span> / 2
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;1</span></span> / 2 &nbsp;=&nbsp; 1 / 2
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				0
+			</td>
+			<td style="width: 15%; padding: 2%; border-style: solid;">
+				-1
+			</td>
+		</tr>
+		<tr style="width: 100%">
+			<td style="width: 10%; padding: 1.5%; border-style: solid; background-color: gray; color: white; font-weight: 400; border-color: black;">
+				tan(&theta;)
+			</td>
+			<td style="width: 15%; padding: 1.5%; border-style: solid;">
+				0 / 1 &nbsp;=&nbsp; 0
+			</td> 
+			<td style="width: 15%; padding: 1.5%; border-style: solid;">
+				1 / <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;3</span></span>
+			</td>
+			<td style="width: 15%; padding: 1.5%; border-style: solid;">
+				1
+			</td>
+			<td style="width: 15%; padding: 1.5%; border-style: solid;">
+				<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;3</span></span>
+			</td>
+			<td style="width: 15%; padding: 1.5%; border-style: solid;">
+				1 / 0 &nbsp;=&nbsp; &infin;
+			</td>
+			<td style="width: 15%; padding: 1.5%; border-style: solid;">
+				0 / (-1) &nbsp;=&nbsp; 0
+			</td> 
+		</tr>		
+	</table>
+
+	<table style="width: 90%; margin-left: 5%; margin-top: 7.5%; text-align: center; font-size: 1.95rem; line-height: 3.5rem;">
+		<tr style="width: 100%">
+			<td style="width: 40%">
+				<img src="images/1-3/trig_pythid.png" width="70%" style="">
+			</td>
+			<td style="width: 60%">
+				a = cos(&theta;) , &nbsp;&nbsp; b = sin(&theta;) , &nbsp;&nbsp; c = 1
+				<br>(cos(&theta;))<sup>2</sup> &nbsp;+&nbsp; (sin(&theta;))<sup>2</sup> &nbsp;=&nbsp; 1
+				<br>
+				<br>&theta; = &pi;/3
+				<br>a = cos(&pi;/3) = <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">3</span></span>/2 , &nbsp;&nbsp; b = sin(&pi;/3) = 1/2 , &nbsp;&nbsp; c = 1
+				<br>a<sup>2</sup> &nbsp;+&nbsp; b<sup>2</sup> &nbsp;=&nbsp; 3/4 &nbsp;+&nbsp; 1/4 &nbsp;=&nbsp; 1
+			</td>
+		</tr>
+	</table>
+
+	<table style="width: 98%; margin-left: 1%; margin-top: 7.5%; border-collapse: collapse; border-color: black; border-width: 0.25rem; border-style: solid; text-align: center; line-height: 4.5rem; font-size: 1.9rem">
+		<tr style="width: 100%;">
+			<td style="width: 45%; padding: 5%">
+				sin(&theta;) &nbsp;=&nbsp; sin(&theta; + 2&pi;) &nbsp;=&nbsp; sin(&theta; - 2&pi;)
+				<br>cos(&theta;) &nbsp;=&nbsp; cos(&theta; + 2&pi;) &nbsp;=&nbsp; cos(&theta; - 2&pi;)
+				<br>tan(&theta;) &nbsp;=&nbsp; tan(&theta; + 2&pi;) &nbsp;=&nbsp; tan(&theta; - 2&pi;)
+			</td>
+			<td style="width: 55%; padding: 3.5%">
+				<img src="images/1-3/trig_rule1.png" width="95%" style="">
+			</td>
+		</tr>
+	</table>
+	<table style="width: 98%; margin-left: 1%; margin-top: -0.25rem; border-collapse: collapse; border-color: black; border-width: 0.25rem; border-style: solid; text-align: center; line-height: 4rem; font-size: 1.825rem">
+		<tr style="width: 100%; border-top-style: solid;">
+			<td style="width: 45%; padding-bottom: 6%; padding-top: 6%; padding-left: 5%;">
+				<img src="images/1-3/trig_rule2.png" width="90%" style="">
+			</td>
+			<td style="width: 2%">
+			</td>
+			<td style="width: 23%">
+				cos(&theta;) &nbsp;=&nbsp; -cos(&theta; + &pi;)
+				<br>sin(&theta;) &nbsp;=&nbsp; -sin(&theta; + &pi;)
+				<br>cos(0) &nbsp;=&nbsp; 1 &nbsp;=&nbsp; -cos(&pi;)
+				<br>sin(0) &nbsp;=&nbsp; 0 &nbsp;=&nbsp; -sin(&pi;)
+			</td>
+			<td style="width: 25%">
+				cos(&theta;) &nbsp;=&nbsp; sin(&theta; + &pi;/2)
+				<br>sin(&theta;) &nbsp;=&nbsp; cos(&theta; - &pi;/2)
+				<br>cos(0) &nbsp;=&nbsp; 1 &nbsp;=&nbsp; sin(&pi;/2)
+				<br>sin(0) &nbsp;=&nbsp; 0 &nbsp;=&nbsp; cos(-&pi;/2)
+			</td>
+			<td style="width: 5%">
+			</td>
+		</tr>
+	</table>
+
+	<table style="width: 60%; margin-left: 20%; text-align: center; margin-top: 6.5%">
+		<tr style="width: 100%">
+			<td style="width: 50%">
+				<img src="images/1-3/trig_csc.png" width="60%" style="">
+			</td>
+			<td style="width: 50%">
+				<img src="images/1-3/trig_sec.png" width="60%" style="">
+			</td>
+		</tr>
+	</table>
+	
+	<img src="images/1-3/trig_cot.png" width="30%" style="margin-left: 35%; margin-top: 5%">
+
+	<table style="width: 96%; margin-left: 2%; margin-top: 6.5%; border-collapse: collapse; border-color: black; border-width: 0.25rem; border-style: solid; text-align: center; line-height: 4.5rem; font-size: 2rem">
+		<tr style="width: 100%;">
+			<td style="width: 30%; padding-left: 2.5%">
+				<img src="images/1-3/trig_triangle.png" width="92.5%" style="">
+			</td>
+			<td style="width: 35%; padding-bottom: 5%; padding-top: 5%">
+				&#402;(x) = y &nbsp;&rarr;&nbsp; &#402;<sup>-1</sup>(y) = x
+				<br>sin(x) = y &nbsp;&rarr;&nbsp; sin<sup>-1</sup>(y) = x
+				<br>
+				<br>sin(&theta;) = B/H &nbsp;&rarr;&nbsp; &theta; = sin<sup>-1</sup>(B/H)
+				<br>cos(&theta;) = A/H &nbsp;&rarr;&nbsp; &theta; = cos<sup>-1</sup>(A/H)
+				<br>tan(&theta;) = B/A &nbsp;&rarr;&nbsp; &theta; = tan<sup>-1</sup>(B/A)
+			</td>
+			<td style="width: 35%; padding-bottom: 5%; padding-top: 5%; padding-right: 2.5%">
+				sin(&phi;) = A/H &nbsp;&rarr;&nbsp; &phi; = sin<sup>-1</sup>(A/H)
+				<br>cos(&phi;) = B/H &nbsp;&rarr;&nbsp; &phi; = cos<sup>-1</sup>(B/H)
+				<br>tan(&phi;) = A/B &nbsp;&rarr;&nbsp; &phi; = tan<sup>-1</sup>(A/B)
+			</td>
+		</tr>
+	</table>
+
+	<div id="q_button" style="width: 30%; margin-left: 35%; background-color: #000066; font-size: 1.5rem; text-align: center; margin-top: 6.5%; font-weight: bold; padding: 0.35%">
+		<a href="1-Q.html" style="color: white; width: 100%; display:block;">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
+	</div>
+	<p style="text-align: center; margin-bottom: 2.5%; margin-top: 2%; font-size: 1rem">Ⓒ MBC Output 2020 </p>
 	</div>
 
+	<script type="text/javascript">
+		
+        window.onload = function () {
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.85*Math.min(canvas.width, canvas.height);
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 30;
+			ctx.beginPath();
+			ctx.moveTo(center_x, 0);
+			ctx.lineTo(center_x, canvas.height);
+			ctx.moveTo(0, center_y);
+			ctx.lineTo(canvas.width, center_y);
+			ctx.stroke();
+			
+			ctx.strokeStyle = "#808080";
+			ctx.beginPath();
+			ctx.arc(canvas.width/2, canvas.height/2, max_size/2, 0, Math.PI * 2, false);
+          	ctx.stroke();
+
+		  	document.getElementById("sin_res").innerHTML = '0.0000000';
+		  	document.getElementById("cos_res").innerHTML = '0.0000000';
+		  	document.getElementById("tan_res").innerHTML = '0.0000000';
+        };
+
+        function drawTriangle(method) {
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.85*Math.min(canvas.width, canvas.height);
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 30;
+			ctx.beginPath();
+			ctx.moveTo(center_x, 0);
+			ctx.lineTo(center_x, canvas.height);
+			ctx.moveTo(0, center_y);
+			ctx.lineTo(canvas.width, center_y);
+			ctx.stroke();
+
+			ctx.strokeStyle = "#808080";
+			ctx.beginPath();
+			ctx.arc(canvas.width/2, canvas.height/2, max_size/2, 0, Math.PI * 2, false);
+          	ctx.stroke();
+
+		  	var theta = document.getElementById("theta").value;
+		  	theta = theta.replace("pi", "3.141592653");
+		  	theta = theta.replace("π", "3.141592653");
+		  	theta = eval(theta);
+
+	       	if (method == 'deg') {
+	       		theta = theta % 360;
+	       		theta = (theta * (Math.PI / 180));
+	       	}
+
+    		var sin = Math.sin(theta);
+    		var cos = Math.cos(theta);
+    		var tan = Math.tan(theta);
+
+    		if (Math.abs(cos) < 0.000001) {
+    			cos = 0;
+    		}
+    		if (Math.abs(sin) < 0.000001) {
+    			sin = 0;
+    		}
+    		if (tan > 100000) {
+    			document.getElementById("tan_res").innerHTML = '&infin;';
+    		}
+    		else if (tan < -100000) {
+    			document.getElementById("tan_res").innerHTML = '-&infin;';
+    		}
+    		else {
+    			if (Math.abs(tan) < 0.000001) {
+    				tan = 0
+    			}
+    			document.getElementById("tan_res").innerHTML = tan.toPrecision(8);
+    		}
+    		document.getElementById("sin_res").innerHTML = sin.toPrecision(8);
+    		document.getElementById("cos_res").innerHTML = cos.toPrecision(8);
+    		console.log(cos);
+
+    		var R = max_size/2;
+			ctx.strokeStyle = "#000000";
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x + R*cos, center_y - R*sin);
+			ctx.stroke();
+
+			ctx.strokeStyle = "#DB0000";
+			ctx.beginPath();
+			ctx.moveTo(center_x + R*cos, center_y);			
+			ctx.lineTo(center_x + R*cos, center_y - R*sin);
+			ctx.stroke();
+
+			ctx.strokeStyle = "#075AAA";
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x + R*cos, center_y);
+			ctx.stroke();
+        }
+
+	</script>
+
 </body>
+</html>
