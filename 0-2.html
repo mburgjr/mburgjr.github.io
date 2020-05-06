@@ -2084,7 +2084,7 @@
 		second.addEventListener("input", show);
 
 		window.onload = function () {
-			var tenth = 0.01*window.screen.width;
+			var tenth = 0.01*window.screen.width * window.devicePixelRatio;
 			var fsize = `${tenth}px`;
 			document.getElementById("wrapper").style.fontSize = fsize;
 			// document.getElementById("body").style.fontSize = fsize;
