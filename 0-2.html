@@ -16,7 +16,6 @@
 		  font-family: Arial;
 		  text-decoration: none;
 		  width: 100%;
-		  font-size: 62.5%;
 		}
 
 		.wrapper {
@@ -59,7 +58,7 @@
 		
 		.header a {
 		  	text-decoration: none;
-			font-size: 1vw;
+			font-size: 1vmax;
 			font-weight: bold;
 			color: white;
 		}
@@ -106,7 +105,7 @@
 		td.sub_access a {			
 		  background-color: #66B2FF;
 		  color: #FFFFFF;
-		  font-size: 1.1vw;
+		  font-size: 1.1vmax;
 		}
 
 		td.sub_access:hover {			
@@ -127,7 +126,7 @@
 		td.sub_active a {			
 		  background-color: #FFFFFF;
 		  color: #000066;
-		  font-size: 1.1vw;
+		  font-size: 1.1vmax;
 		}
 
 		.logo_image {
@@ -2083,11 +2082,16 @@
 		first.addEventListener("input", show);
 		second.addEventListener("input", show);
 
-		window.onload = function () {
-			var tenth = 0.01*window.screen.width * window.devicePixelRatio;
+		function updateSize() {
+			var tenth = 0.01 * window.width * window.devicePixelRatio;
 			var fsize = `${tenth}px`;
 			document.getElementById("wrapper").style.fontSize = fsize;
-			// document.getElementById("body").style.fontSize = fsize;
+			document.getElementById("body").style.fontSize = fsize;
+		};
+
+		window.onload = function () {
+			updateSize();
+			setInterval(updateSize, 20);
 		};
 
 		function show() {
