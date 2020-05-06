@@ -163,7 +163,7 @@
 
 	</style>
 </head>
-<body>
+<body id="body">
 	<header class='header'>
 		<table style="width:100%; border: none; border-collapse: collapse;">
 			<tr>
@@ -211,7 +211,6 @@
 			<td style="width: 10%">
 			</td>
 		</tr>
-		
 	</table>
 
 	<table style="width:100%; margin-top: 6.5%">
@@ -2087,6 +2086,7 @@
 			var tenth = 0.01*window.screen.width;
 			var fsize = `${tenth}px`;
 			document.getElementById("wrapper").style.fontSize = fsize;
+			document.getElementById("body").style.fontSize = fsize;
 		};
 
 		function show() {
