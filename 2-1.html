@@ -1,118 +1,853 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
+	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
 	<style>
-		body {
-		  margin: 0;
-		  font-family: Arial;
-		  text-decoration: none;
+
+		input {
+			width: 50%
 		}
 
-		.header {
-			background-color: #000066;
-			text-align: left;
-			color: white;
-		}
-
-		.header div.info {
-			text-align: right;
-			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
-			float: right;
-		}
-
-		.header div.logo {
-			float: left;
-		}
-		
-		.header a {
-		  	text-decoration: none;
-			font-size: 20px;
-			font-weight: bold;
-			color: white;
-		}
-
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
-		}
-
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
-
-		.main-nav a:hover {
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		.main-nav a.active {
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		.sub-nav {
-		  overflow: hidden;
-		  background-color: #66B2FF;
-		}
-
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
-
-		.sub-nav a:hover {
-		  background-color: #FFFFFF;
-		  color: #66B2FF;
-		}
-
-		.sub-nav a.active {
-		  background-color: #FFFFFF;
-		  color: #66B2FF;
-		}
 	</style>
-
 </head>
-<body>
-	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="1-0.html">1</a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="2-1.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-0.html">&Delta;</a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="2-1.html">&#402;'(x)</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-2.html"><span style="font-size: 1.5em">&#8978;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-3.html"><span style="font-size: 0.95em">lim</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-4.html">&#8721;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-5.html">&int;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-6.html"><span style="font-size: 1.25em">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-7.html"><span style="font-size: 1.05em">u</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-8.html"><span style="font-size: 1.1em">&orarr;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-Q.html">?</a></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button10" type="button" onclick="scrollToIndex(10)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button11" type="button" onclick="scrollToIndex(11)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button12" type="button" onclick="scrollToIndex(12)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button13" type="button" onclick="scrollToIndex(13)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button14" type="button" onclick="scrollToIndex(14)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button15" type="button" onclick="scrollToIndex(15)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button16" type="button" onclick="scrollToIndex(16)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button17" type="button" onclick="scrollToIndex(17)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button18" type="button" onclick="scrollToIndex(18)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button19" type="button" onclick="scrollToIndex(19)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button20" type="button" onclick="scrollToIndex(20)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button21" type="button" onclick="scrollToIndex(21)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button22" type="button" onclick="scrollToIndex(22)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button23" type="button" onclick="scrollToIndex(23)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button24" type="button" onclick="scrollToIndex(24)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button25" type="button" onclick="scrollToIndex(25)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button26" type="button" onclick="scrollToIndex(26)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button27" type="button" onclick="scrollToIndex(27)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+
+		<table id="scroll_item0" style="margin-top: 5%; text-align: center; width: 90%; margin-left: 5%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 40%">
+					y &nbsp;=&nbsp; &#402;(x) &nbsp;+&nbsp; g(x)
+					<br>dy / dx &nbsp;=&nbsp; ?
+				</td>
+				<td style="width: 60%">
+					<img src="images/2/2-1/div_add_f_concept.png" width="80%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item1" style="width: 90%; border-radius: 3.5em; margin-left: 5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 52.5%; text-align: center; font-size: 1.75em; line-height: 2.05em; padding: 5%; padding-right: 0%; padding-left: 7.5%">
+					y &nbsp;=&nbsp; &#402;(x) &nbsp;+&nbsp; g(x)
+					<br>&Delta;&#402; &nbsp;=&nbsp; &#402;(x + &Delta;x) - &#402;(x)
+					<br>&Delta;g &nbsp;=&nbsp; g(x + &Delta;x) - g(x)
+					<br>&Delta;y &nbsp;=&nbsp; (&#402;(x + &Delta;x) + g(x + &Delta;x)) - (&#402;(x) - g(x))
+					<br>&Delta;y &nbsp;=&nbsp; &Delta;&#402; + &Delta;g
+					<br>dy / dx &nbsp;=&nbsp; &Delta;y / &Delta;x &nbsp;=&nbsp; (&Delta;&#402; + &Delta;g) / &Delta;x
+					<br>y' &nbsp;=&nbsp; &#402;'(x) + g'(x)
+				</td>
+				<td style="width: 47.5%; padding: 5%; text-align: center; padding-left: 5%; padding-bottom: 3.5%; padding-top: 6.5%">
+					<img src="images/2/2-1/div_add_def.png" width="70%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item2" style="margin-top: 6.5%">
+			<p style="font-size: 1.5em; line-height: 1.85em; text-align: center;">
+				y(x) &nbsp; = &nbsp; &#402;(x) &nbsp;+&nbsp; g(x) , &nbsp; &nbsp; y(x + &Delta;) &nbsp; = &nbsp; &#402;(x + &Delta;x) &nbsp;+&nbsp; g(x + &Delta;x)
+				<br>y'(x) &nbsp; = &nbsp; (y(x + &Delta;) &nbsp;-&nbsp; y(x)) / &Delta;x &nbsp; = &nbsp; (&#402;(x + &Delta;x) &nbsp;+&nbsp; g(x + &Delta;x) &nbsp;-&nbsp; &#402;(x) &nbsp;-&nbsp; g(x)) / &Delta;x
+				<br>y'(x) &nbsp; = &nbsp; (&#402;(x + &Delta;x) - &#402;(x) &nbsp;+&nbsp; g(x + &Delta;x) - g(x)) / &Delta;x
+				<br>y'(x) &nbsp; = &nbsp; (&#402;(x + &Delta;x) - &#402;(x)) / &Delta;x &nbsp; + &nbsp; (g(x + &Delta;x) - g(x)) / &Delta;x &nbsp; = &nbsp; &#402;'(x) &nbsp;+&nbsp; g'(x)
+			</p>
+			
+			<img src="images/2/2-1/div_add_proof.png" width="80%" style="margin-left: 10%; margin-top: 2.5%">
 		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
+
+		<div style="width: 97.5%; margin-left: 1.25%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item3" style="width: 100.1%; font-size: 1.6em; line-height: 1.95em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; 6 , &nbsp; g(x) &nbsp;=&nbsp; x 
+						<br>y &nbsp;=&nbsp; &#402;(x) + g(x) &nbsp;=&nbsp; x + 6
+						<br>x &nbsp;=&nbsp; 8 &nbsp; &rarr;
+						<br>&#402;'(x) &nbsp;=&nbsp; 0 , &nbsp; g'(x) &nbsp;=&nbsp; 1
+						<br>y' &nbsp;=&nbsp; 1 &nbsp;=&nbsp; &#402;'(x) + g'(x)
+						</td>
+					<td style="width: 60%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-1/div_add_graph1.png" width="100%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; border-bottom-style: solid; border-width: medium; font-size: 0.95em">
+						&#402;(x) &nbsp;=&nbsp; 0.5x , &nbsp; g(x) &nbsp;=&nbsp; 0.25x + 2
+						<br>y &nbsp;=&nbsp; &#402;(x) + g(x) &nbsp;=&nbsp; 0.75x + 2
+						<br>x &nbsp;=&nbsp; 4 &nbsp; &rarr;
+						<br>&#402;'(x) &nbsp;=&nbsp; 0.5 , &nbsp; g'(x) &nbsp;=&nbsp; 0.25
+						<br>y' &nbsp;=&nbsp; 0.75 &nbsp;=&nbsp; &#402;'(x) + g'(x)
+					</td>
+					<td style="width: 60%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-1/div_add_graph2.png" width="100%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; font-size: 0.95em">
+						&#402;(x) &nbsp;=&nbsp; x(x - 10) &nbsp;=&nbsp; x<sup>2</sup> - 10x ,<br>g(x) &nbsp;=&nbsp; 1.5x
+						<br>y &nbsp;=&nbsp; &#402;(x) + g(x) &nbsp;=&nbsp; x<sup>2</sup> - 8.5x
+						<br>x &nbsp;=&nbsp; 5 &nbsp; &rarr;
+						<br>&#402;'(x) &nbsp;=&nbsp; 0 , &nbsp; g'(x) &nbsp;=&nbsp; 1.5
+						<br>y' &nbsp;=&nbsp; 1.5 &nbsp;=&nbsp; &#402;'(x) + g'(x)
+					</td>
+					<td style="width: 60%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 2.5%;">
+						<img src="images/2/2-1/div_add_graph3.png" width="100%" style="">	
+					</td>		
+				</tr>
+			</table>
 		</div>
-		<div class='main-nav'>
-			<a href="index.html">0</a>
-			<a href="1-0.html">1</a>
-			<a class="active" href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
+
+		<table style="margin-top: 5%; text-align: center; width: 90%; margin-left: 5%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					y &nbsp;=&nbsp; ax<sup>b</sup> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dy / dx &nbsp;=&nbsp; ?
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item4" style="width: 90%; border-radius: 3.5em; margin-left: 5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 35%; text-align: center;">
+					<img src="images/2/2-1/div_linslope.png" width="75%" style="">
+				</td>
+				<td style="width: 30%; text-align: center; font-size: 1.75em; line-height: 1.95em; padding-bottom: 3.5%; padding-top: 3.5%">
+					y &nbsp;=&nbsp; ax
+					<br>&Delta;y &nbsp;=&nbsp; a&Delta;x
+					<br>dy / dx &nbsp;=&nbsp; &Delta;y / &Delta;x &nbsp;=&nbsp; a<sub>&nbsp;</sub>
+					<br>
+					<div style="padding: 0.5%; border-style: solid; margin: 5%; border-radius: 1em; padding-bottom: 1%; padding-right: 1.5%; padding-left: 1.5%">
+						y &nbsp;=&nbsp; ax<sup>b</sup> , &nbsp; b &ne; 0
+						<br>dy / dx &nbsp;=&nbsp; b &#215; ax<sup>b-1</sup><sub>&nbsp;</sub></div>
+					y &nbsp;=&nbsp; ax<sup>1</sup> &nbsp;=&nbsp; ax
+					<br>dy / dx &nbsp;=&nbsp; 1 &#215; ax<sup>0</sup> &nbsp;=&nbsp; a
+				</td>
+				<td style="width: 35%; text-align: center;">
+					<img src="images/2/2-1/div_quadQ.png" width="75%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item5" style="width: 80%; margin-left: 10%; margin-top: 6.5%; font-size: 1.5em; line-height: 1.6em;">
+			<tr style="width: 100%">
+				<td style="width: 60%; text-align: right; padding-right: 10%">
+					y(x) &nbsp;=&nbsp; ax<sup>0</sup> &nbsp;=&nbsp; a , &nbsp; y(x + &Delta;x) &nbsp;=&nbsp; a<sup>&nbsp;</sup>
+					<br>&Delta;y &nbsp;=&nbsp; y(x + &Delta;x) - y(x) &nbsp;=&nbsp; a - a &nbsp;=&nbsp; 0<sup>&nbsp;</sup>
+					<br>y'(x) &nbsp;=&nbsp; dy/dx &nbsp;=&nbsp; &Delta;y/&Delta;x &nbsp;=&nbsp; 0 / &Delta;x &nbsp;=&nbsp; 0<sup>&nbsp;</sup>
+					<br>&rarr; &nbsp; y &nbsp;=&nbsp; a &nbsp;&rarr;&nbsp; dy/dx &nbsp;=&nbsp; 0<sup>&nbsp;</sup>
+				</td>
+				<td style="width: 40%; text-align: left;">
+					b &nbsp;=&nbsp; 0
+					<br>&rarr; &nbsp; dy/dx &nbsp;&ne;&nbsp; bax<sup>b-1</sup>
+					<br>&rarr; &nbsp; dy/dx &nbsp;=&nbsp; 0
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 60%; text-align: left; padding-top: 3.5%">
+					y(x) &nbsp;=&nbsp; ax<sup>1</sup> &nbsp;=&nbsp; ax
+					<br>y(x + &Delta;x) &nbsp;=&nbsp; a(x + &Delta;x) &nbsp;=&nbsp; ax + a&Delta;x<sup>&nbsp;</sup>
+					<br>&Delta;y &nbsp;=&nbsp; y(x + &Delta;x) - y(x) &nbsp;=&nbsp; ax + a&Delta;x - ax &nbsp;=&nbsp; a&Delta;x<sup>&nbsp;</sup>
+					<br>y'(x) &nbsp;=&nbsp; dy/dx &nbsp;=&nbsp; &Delta;y/&Delta;x &nbsp;=&nbsp; a&Delta;x / &Delta;x &nbsp;=&nbsp; a<sup>&nbsp;</sup>
+					<br>&rarr; &nbsp; y &nbsp;=&nbsp; ax &nbsp;&rarr;&nbsp; dy/dx &nbsp;=&nbsp; a<sup>&nbsp;</sup>
+					<br>
+					<br>y(x) &nbsp;=&nbsp; ax<sup>2</sup>
+					<br>y(x + &Delta;x) &nbsp;=&nbsp; a(x + &Delta;x)<sup>2</sup> &nbsp;=&nbsp; ax<sup>2</sup> + 2ax&Delta;x + a&Delta;x<sup>2</sup>
+					<br>&Delta;x &nbsp;<<&nbsp; 1 &nbsp; &nbsp;&rarr; &nbsp;&nbsp; &Delta;x<sup>2</sup> &nbsp;<<&nbsp; &Delta;x ,&nbsp;&nbsp; &Delta;x<sup>2</sup> &nbsp;&asymp;&nbsp; 0
+					<br>y(x + &Delta;x) &nbsp;=&nbsp; ax<sup>2</sup> + 2ax&Delta;x
+					<br>&Delta;y &nbsp;=&nbsp; y(x + &Delta;x) - y(x) &nbsp;=&nbsp; ax<sup>2</sup> + 2ax&Delta;x - ax<sup>2</sup> &nbsp;=&nbsp; 2ax&Delta;x
+					<br>y'(x) &nbsp;=&nbsp; dy/dx &nbsp;=&nbsp; &Delta;y/&Delta;x &nbsp;=&nbsp; 2ax&Delta;x / &Delta;x &nbsp;=&nbsp; 2ax<sup>&nbsp;</sup>
+					<br>&rarr; &nbsp; y &nbsp;=&nbsp; ax<sup>2</sup> &nbsp;&rarr;&nbsp; dy/dx &nbsp;=&nbsp; 2ax
+					<br>&rarr; &nbsp; y &nbsp;=&nbsp; ax<sup>b</sup> &nbsp;&rarr;&nbsp; dy/dx &nbsp;=&nbsp; bax<sup>b-1</sup>
+				</td>
+				<td style="width: 40%; text-align: center; padding-top: 2.5%">
+					<img src="images/2/2-1/div_order.png" width="55%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 97.5%; margin-left: 1.25%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item6" style="width: 100.1%; font-size: 1.55em; line-height: 1.75em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-left: 5%; padding-right: 2.5%; padding-top: 2.5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium; font-size: 0.975em; text-align: center;">
+						&#402;(x) &nbsp;=&nbsp; x<sup>2</sup> + 2x - 8
+						<br>&#402;'(x) &nbsp;=&nbsp; 2 &#215; x<sup>2 - 1</sup> &nbsp;+&nbsp; 2x<sup>1 - 1</sup> &nbsp;-&nbsp; 0
+						<br>&#402;'(x) &nbsp;=&nbsp; 2x<sup>1</sup> + 2x<sup>0</sup> &nbsp;=&nbsp; 2x + 2
+						<br>( x<sup>0</sup> &nbsp;=&nbsp; 1 ,&nbsp; x &nbsp;&in;&nbsp; &#8477; )
+						</td>
+					<td style="width: 60%; padding-right: 5%; padding-top: 3.5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium;">
+						<img src="images/2/2-1/div_power_graph1.png" width="92.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-left: 5%; padding-right: 2.5%; padding-top: 2.5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium; font-size: 0.95em; text-align: center;">
+						&#402;(x) &nbsp;=&nbsp; 2x + 2
+						<br>&#402;'(x) &nbsp;=&nbsp; 1 &#215; 2x<sup>1 - 1</sup> &nbsp;+&nbsp; 0
+						<br>&#402;'(x) &nbsp;=&nbsp; 2x<sup>0</sup> &nbsp;=&nbsp; 2<sub>&nbsp;</sub>
+						<br>&#402;'(x<sub>1</sub>) &nbsp;=&nbsp; &#402;'(x<sub>2</sub>) &nbsp;=&nbsp; 2<sup>&nbsp;</sup>
+						<br>x<sub>1</sub> ,&nbsp; x<sub>2</sub> &nbsp;&in;&nbsp; &#8477;
+					</td>
+					<td style="width: 60%; padding-right: 5%; padding-top: 3.5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium;">
+						<img src="images/2/2-1/div_power_graph2.png" width="92.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-left: 5%; padding-right: 2.5%; padding-top: 2.5%; padding-bottom: 2.5%; font-size: 0.95em; text-align: center;">
+						&#402;(x) &nbsp;=&nbsp; 2
+						<br>b &nbsp;=&nbsp; 0 &nbsp;&rarr;&nbsp; &#402;'(x) &nbsp;=&nbsp; 0<sub>&nbsp;</sub>
+						<br>&#402;(x<sub>1</sub>) &nbsp;=&nbsp; &#402;(x<sub>2</sub>) &nbsp;=&nbsp; 2<sup>&nbsp;</sup>
+						<br>x<sub>1</sub> ,&nbsp; x<sub>2</sub> &nbsp;&in;&nbsp; &#8477;
+					</td>
+					<td style="width: 60%; padding-right: 5%; padding-top: 3.5%; padding-bottom: 2.5%;">
+						<img src="images/2/2-1/div_power_graph3.png" width="92.5%" style="">	
+					</td>		
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item7" style="margin-top: 6.5%">
+			<img src="images/2/2-1/div_power_concept.png" width="80%" style="margin-left: 10%;">
+			<p style="font-size: 2em; line-height: 2em; text-align: center; margin-top: 3.5%">
+				&#402;(x) &nbsp; &rarr; &nbsp; &#402;'(x) &nbsp; &rarr; &nbsp; ... &nbsp; &rarr; &nbsp; 0
+			</p>
+		</div>
+
+		<table id="scroll_item8" style="margin-top: 6.5%; text-align: center; width: 85%; margin-left: 7.5%; font-size: 2em; line-height: 2em; border-style: solid; border-width: medium; border-radius: 1.5em; border-color: black">
+			<tr style="width: 100%">
+				<td style="width: 100%; padding: 4.25%; padding-bottom: 4%">
+					<img src="images/2/2-1/div_power_rule_trick.png" width="80%" style="">	
+				</td>
+			</tr>
+		</table>
+
+		<table style="margin-top: 5%; text-align: center; width: 90%; margin-left: 5%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					y &nbsp;=&nbsp; &#402;(x) &#215; g(x) &nbsp;=&nbsp; &#402;(x) g(x) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dy / dx &nbsp;=&nbsp; ?
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item9" style="width: 90%; border-radius: 3.5em; margin-left: 5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 55%; text-align: center; font-size: 1.75em; line-height: 2em; padding-bottom: 3.5%; padding-top: 3.5%">
+					y &nbsp;=&nbsp; &#402;(x) &#215; g(x)
+					<br>dy/dx &nbsp;=&nbsp; &#402;'(x)g(x) &nbsp;+&nbsp; &#402;(x)g'(x)
+					<br>dy/dx &nbsp;=&nbsp; &#402;'g &nbsp;+&nbsp; &#402;g'
+					<br>
+					<br><span style="font-size: 0.75em; line-height: 0.75em">&#402;(x) &nbsp;=&nbsp; x , &nbsp; g(x) &nbsp;=&nbsp; -x + 5 &nbsp; &rarr; &nbsp; &#402;'(x) &nbsp;=&nbsp; 1 , &nbsp; g'(x) &nbsp;=&nbsp; -1
+					<br>y &nbsp;=&nbsp; x &#215; (-x + 5) &nbsp;=&nbsp; -x<sup>2</sup> + 5x &nbsp; &rarr; &nbsp; dy/dx &nbsp;=&nbsp; -2x + 5
+					<br>dy/dx &nbsp;=&nbsp; &#402;'(x)g(x) &nbsp;+&nbsp; &#402;(x)g'(x)
+					<br>dy/dx &nbsp;=&nbsp; 1 &#215; (-x + 5) &nbsp;+&nbsp; x &#215; -1 &nbsp;=&nbsp; -2x + 5</span>
+				</td>
+				<td style="width: 45%; text-align: center; padding: 5%; padding-right: 6.5%; padding-left: 0%">
+					<img src="images/2/2-1/div_product_def.png" width="80%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item10" style="width: 100%; margin-top: 6.5%">
+			<img src="images/2/2-1/div_product_wrong.png" width="58%" style="margin-left: 21%">
+			<img src="images/2/2-1/div_product_right.png" width="60%" style="margin-left: 20%; margin-top: 1.5%">
+		</div>
+
+		<div id="scroll_item11" style="margin-top: 5%;">
+			<table style="width: 90%; margin-left: 5%; font-size: 1.5em; line-height: 1.85em;">
+				<tr style="width: 100%">
+					<td style="width: 55%; text-align: left;">
+						y(x) &nbsp;=&nbsp; &#402;(x) &#215; g(x) &nbsp;=&nbsp; &#402; &#215; g
+						<br>y(x + &Delta;x) &nbsp;=&nbsp; &#402;(x + &Delta;x) &#215; g(x + &Delta;x) &nbsp;=&nbsp; (&#402; + &Delta;&#402;) &#215; (g + &Delta;g)
+						<br>y(x + &Delta;x) &nbsp;=&nbsp; &#402;g &nbsp;+&nbsp; g&Delta;&#402; &nbsp;+&nbsp; &#402;&Delta;g &nbsp;+&nbsp; &Delta;&#402;&Delta;g
+						<br>&Delta;y &nbsp;=&nbsp; y(x + &Delta;x) &nbsp;-&nbsp; y(x) &nbsp;=&nbsp; &#402;g &nbsp;+&nbsp; g&Delta;&#402; &nbsp;+&nbsp; &#402;&Delta;g &nbsp;+&nbsp; &Delta;&#402;&Delta;g &nbsp;-&nbsp; &#402;g
+						<br>&Delta;y &nbsp;=&nbsp; g&Delta;&#402; &nbsp;+&nbsp; &#402;&Delta;g &nbsp;+&nbsp; &Delta;&#402;&Delta;g
+						<br>&Delta;&#402; << 1 , &nbsp; &Delta;g << 1 &nbsp; &rarr; &nbsp; &Delta;&#402;&Delta;g &nbsp;&asymp;&nbsp; 0
+						<br>&rarr; &nbsp; &Delta;y &nbsp;=&nbsp; g&Delta;&#402; &nbsp;+&nbsp; &#402;&Delta;g
+						<br>dy/dx &nbsp;=&nbsp; &Delta;y/&Delta;x &nbsp;=&nbsp; (g&Delta;&#402; &nbsp;+&nbsp; &#402;&Delta;g) / &Delta;x &nbsp;=&nbsp; g&Delta;&#402;/&Delta;x &nbsp;+&nbsp; &#402;&Delta;g/&Delta;x
+						<br>dy/dx &nbsp;=&nbsp; g(d&#402;/dx) &nbsp;+&nbsp; &#402;(dg/dx) &nbsp;=&nbsp; g(x)&#402;'(x) &nbsp;+&nbsp; &#402;(x)g'(x)
+					</td>
+					<td style="width: 45%; text-align: center; padding-left: 5%">
+						<img src="images/2/2-1/div_product_proof.png" width="95%" style="">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div style="width: 97.5%; margin-left: 1.25%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item12" style="width: 100.1%; font-size: 1.6em; line-height: 1.85em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; border-bottom-style: solid; border-width: medium; font-size: 0.95em">
+						&#402;(x) &nbsp;=&nbsp; 1.5 ,&nbsp; g(x) &nbsp;=&nbsp; x
+						<br>&#402;'(x) &nbsp;=&nbsp; 0 ,&nbsp; g'(x) &nbsp;=&nbsp; 1
+						<br>y &nbsp;=&nbsp; &#402;(x) g(x) &nbsp;=&nbsp; 1.5x
+						<br>dy/dx &nbsp;=&nbsp; g(x)&#402;'(x) + &#402;(x)g'(x)
+						<br>dy/dx &nbsp;=&nbsp; 0x &nbsp;+&nbsp; 1.5 &#215; 1
+						<br>dy/dx &nbsp;=&nbsp; 1.5
+						</td>
+					<td style="width: 60%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-1/div_product_graph1.png" width="100%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; border-bottom-style: solid; border-width: medium; font-size: 0.9em">
+						&#402;(x) &nbsp;=&nbsp; x ,&nbsp; g(x) &nbsp;=&nbsp; -x + 4
+						<br>&#402;'(x) &nbsp;=&nbsp; 1 ,&nbsp; g'(x) &nbsp;=&nbsp; -1
+						<br>y &nbsp;=&nbsp; &#402;(x) g(x) &nbsp;=&nbsp; -x<sup>2</sup> + 4x
+						<br>dy/dx &nbsp;=&nbsp; g(x)&#402;'(x) + &#402;(x)g'(x)
+						<br>dy/dx &nbsp;=&nbsp; (-x + 4) &nbsp;+&nbsp; -x
+						<br>dy/dx &nbsp;=&nbsp; -2x + 4
+						<br>x &nbsp;=&nbsp; 2 &nbsp; &rarr; &nbsp; dy/dx &nbsp;=&nbsp; 0
+					</td>
+					<td style="width: 60%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-1/div_product_graph2.png" width="100%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; font-size: 0.9em;">
+						&#402;(x) &nbsp;=&nbsp; -x<sup>2</sup> + 8x ,&nbsp; g(x) &nbsp;=&nbsp; -0.5x + 3
+						<br>&#402;'(x) &nbsp;=&nbsp; -2x + 8 ,&nbsp; g'(x) &nbsp;=&nbsp; -0.5
+						<br>y &nbsp;=&nbsp; &#402;(x) g(x) &nbsp;=&nbsp; 0.5x<sup>3</sup> - 7x<sup>2</sup> + 24x
+						<br>dy/dx &nbsp;=&nbsp; g(x)&#402;'(x) + &#402;(x)g'(x)
+						<br>dy/dx &nbsp;=&nbsp; (-2x + 8)(-0.5x + 3) - 0.5(-x<sup>2</sup> + 8x)
+						<br>dy/dx &nbsp;=&nbsp; 1.5x<sup>2</sup> - 14x + 24
+						<br>x = 4 &nbsp;&rarr;&nbsp; &#402;(4) &nbsp;=&nbsp; 16 ,&nbsp; g(4) &nbsp;=&nbsp; 1
+						<br>&#402;'(4) &nbsp;=&nbsp; 0 ,&nbsp; g'(4) &nbsp;=&nbsp; -0.5
+						<br>dy/dx &nbsp;=&nbsp; 0(1) + -0.5(16) &nbsp;=&nbsp; -8
+					</td>
+					<td style="width: 60%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 3.5%;">
+						<img src="images/2/2-1/div_product_graph3.png" width="100%" style="">	
+					</td>		
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item13" style="margin-top: 8.5%">
+			<img src="images/2/2-1/div_product_shape.png" width="85%" style="margin-left: 7.5%">
+		</div>
+
+		<table id="scroll_item14" style="margin-top: 7.5%; text-align: center; width: 85%; margin-left: 7.5%; font-size: 2em; line-height: 2em; border-style: solid; border-width: medium; border-radius: 1.5em; border-color: black">
+			<tr style="width: 100%">
+				<td style="width: 100%; padding: 4.25%; padding-bottom: 3%">
+					<img src="images/2/2-1/div_product_rule_trick.png" width="92.5%" style="">	
+				</td>
+			</tr>
+		</table>
+
+		<table style="margin-top: 5%; text-align: center; width: 90%; margin-left: 5%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					y &nbsp;=&nbsp; &#402;(x) / g(x) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dy / dx &nbsp;=&nbsp; ?
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item15" style="width: 90%; border-radius: 3.5em; margin-left: 5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 55%; text-align: center; font-size: 1.75em; line-height: 1.95em; padding-bottom: 3.5%; padding-top: 3.5%">
+					y &nbsp;=&nbsp; &#402;(x) / g(x)
+					<br>dy/dx &nbsp;=&nbsp; (&#402;'g &nbsp;-&nbsp; &#402;g') / g<sup>2</sup>
+					<br><img src="images/2/2-1/div_quot_rule_def.png" width="70%" style="margin: 3.5%; margin-bottom: -3.5%">
+					<br>
+					<br><span style="font-size: 0.75em; line-height: 0.75em">&#402;(x) &nbsp;=&nbsp; x<sup>2</sup> , &nbsp; g(x) &nbsp;=&nbsp; x &nbsp; &rarr; &nbsp; &#402;'(x) &nbsp;=&nbsp; 2x , &nbsp; g'(x) &nbsp;=&nbsp; 1
+					<br>y &nbsp;=&nbsp; x<sup>2</sup> / x &nbsp;=&nbsp; x &nbsp; &rarr; &nbsp; dy/dx &nbsp;=&nbsp; 1
+					<br>dy/dx &nbsp;=&nbsp; (&#402;'(x)g(x) &nbsp;-&nbsp; &#402;(x)g'(x)) / g(x)<sup>2</sup>
+					<br>dy/dx &nbsp;=&nbsp; (2x<sup>2</sup> &nbsp;-&nbsp; x<sup>2</sup>) / x<sup>2</sup> &nbsp;=&nbsp; 1
+				</td>
+				<td style="width: 45%; text-align: center; padding: 5%; padding-right: 6.5%; padding-left: 0%">
+					<img src="images/2/2-1/div_quot_intro.png" width="80%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item16" style="width: 100%; margin-top: 6.5%">
+			<img src="images/2/2-1/div_quot_wrong.png" width="58%" style="margin-left: 21%">
+			<img src="images/2/2-1/div_quot_right.png" width="60%" style="margin-left: 20%; margin-top: 1.5%">
+		</div>
+
+		<div id="scroll_item17" style="margin-top: 5%;">
+			<table style="width: 90%; margin-left: 5%; font-size: 1.5em; line-height: 1.85em;">
+				<tr style="width: 100%">
+					<td style="width: 55%; text-align: left; padding-left: 3.5%">
+						y(x) &nbsp;=&nbsp; &#402;(x) / g(x) &nbsp;=&nbsp; &#402; / g
+						<br>y(x + &Delta;x) &nbsp;=&nbsp; &#402;(x + &Delta;x) / g(x + &Delta;x) &nbsp;=&nbsp; (&#402; + &Delta;&#402;) / (g + &Delta;g)
+						<br>&Delta;y &nbsp;=&nbsp; y(x + &Delta;x) &nbsp;-&nbsp; y(x) &nbsp;=&nbsp; (&#402; + &Delta;&#402;) / (g + &Delta;g) - (&#402; / g)
+						<br>&Delta;y &nbsp;=&nbsp; (g(&#402; + &Delta;&#402;) - &#402;(g + &Delta;g)) / g(g + &Delta;g)
+						<br>&Delta;y &nbsp;=&nbsp; (g&#402; + g&Delta;&#402;) - &#402;g - f&Delta;g) / g(g + &Delta;g)
+						<br>&Delta;y &nbsp;=&nbsp; (g&Delta;&#402; - &#402;&Delta;g) / g(g + &Delta;g)
+						<br>&Delta;x &nbsp;&asymp;&nbsp; 0 &nbsp; &rarr; &nbsp; g &nbsp;&asymp;&nbsp; g + &Delta;g &nbsp; &rarr; &nbsp; g(g + &Delta;g) &nbsp;&asymp;&nbsp; g<sup>2</sup>
+						<br>&rarr; &nbsp; &Delta;y &nbsp;=&nbsp; (g&Delta;&#402; - &#402;&Delta;g) / g<sup>2</sup>
+						<br>dy/dx &nbsp;=&nbsp; &Delta;y/&Delta;x &nbsp;=&nbsp; (g&Delta;&#402; - &#402;&Delta;g) / (g<sup>2</sup>&Delta;x)
+						<br>dy/dx &nbsp;=&nbsp; (g(&Delta;&#402;/&Delta;x) - &#402;(&Delta;g/&Delta;x)) / g<sup>2</sup>
+						<br>dy/dx &nbsp;=&nbsp; (g(d&#402;/dx) - &#402;(dg/dx)) / g<sup>2</sup>
+						<br>dy/dx &nbsp;=&nbsp; (g(x)&#402;'(x) - &#402;(x)g'(x)) / g(x)<sup>2</sup>
+					</td>
+					<td style="width: 45%; text-align: center; padding-left: 5%">
+						<img src="images/2/2-1/div_quot_proof.png" width="100%" style="">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item18" style="margin-top: 5%">
+			<img src="images/2/2-1/div_quot_rships.png" width="40%" style="margin-left: 30%;">
+		</div>
+
+		<div style="width: 97.5%; margin-left: 1.25%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item19" style="width: 100.1%; font-size: 1.6em; line-height: 1.85em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; border-bottom-style: solid; border-width: medium; font-size: 0.95em">
+						&#402;(x) &nbsp;=&nbsp; 1.5x ,&nbsp; g(x) &nbsp;=&nbsp; 1.5
+						<br>&#402;'(x) &nbsp;=&nbsp; 1.5 ,&nbsp; g'(x) &nbsp;=&nbsp; 0
+						<br>y &nbsp;=&nbsp; &#402;(x) / g(x) &nbsp;=&nbsp; x
+						<br>dy/dx &nbsp;=&nbsp; (&#402;'(x)g(x) - &#402;(x)g'(x)) / (g(x)<sup>2</sup>)
+						<br>dy/dx &nbsp;=&nbsp; (1.5 &#215; 1.5 &nbsp;+&nbsp; 0 &#215; 1.5x) / (2.25)
+						<br>dy/dx &nbsp;=&nbsp; 1
+						</td>
+					<td style="width: 60%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-1/div_quot_graph1.png" width="100%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; border-bottom-style: solid; border-width: medium; font-size: 0.9em">
+						&#402;(x) &nbsp;=&nbsp; -x<sup>2</sup> + 4x ,&nbsp; g(x) &nbsp;=&nbsp; x
+						<br>&#402;'(x) &nbsp;=&nbsp; -2x + 4 ,&nbsp; g'(x) &nbsp;=&nbsp; 1
+						<br>y &nbsp;=&nbsp; &#402;(x) / g(x) &nbsp;=&nbsp; -x + 4
+						<br>dy/dx &nbsp;=&nbsp; (&#402;'(x)g(x) - &#402;(x)g'(x)) / (g(x)<sup>2</sup>)
+						<br>dy/dx &nbsp;=&nbsp; ((-2x + 4) &#215; x - (-x<sup>2</sup> + 4x) &#215; 1) / x<sup>2</sup>
+						<br>dy/dx &nbsp;=&nbsp; (-2x<sup>2</sup> + 4x + x<sup>2</sup> - 4x) / x<sup>2</sup> &nbsp;=&nbsp; -1
+					</td>
+					<td style="width: 60%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-1/div_quot_graph2.png" width="100%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; font-size: 0.8em;">
+						&#402;(x) &nbsp;=&nbsp; 0.5x<sup>3</sup> - 7x<sup>2</sup> + 24x ,&nbsp; g(x) &nbsp;=&nbsp; -x<sup>2</sup> + 8x
+						<br>&#402;'(x) &nbsp;=&nbsp; 1.5x<sup>2</sup> - 14x + 24 ,&nbsp; g'(x) &nbsp;=&nbsp; -2x + 8
+						<br>y &nbsp;=&nbsp; &#402;(x) / g(x) &nbsp;=&nbsp; (0.5x<sup>3</sup> - 7x<sup>2</sup> + 24x) / (-x<sup>2</sup> + 8x)
+						<br>y &nbsp;=&nbsp; x (-0.5x + 3) (-x + 8) / (x (-x + 8))
+						<br>y &nbsp;=&nbsp; -0.5x + 3
+						<br>dy/dx &nbsp;=&nbsp; (&#402;'(x)g(x) - &#402;(x)g'(x)) / (g(x)<sup>2</sup>)
+						<br>dy/dx &nbsp;=&nbsp; ((1.5x<sup>2</sup> - 14x + 24)(-x<sup>2</sup> + 8x)<br>- (0.5x<sup>3</sup> - 7x<sup>2</sup> + 24x)(-2x + 8)) / (-x<sup>2</sup> + 8x)<sup>2</sup>
+						<br>dy/dx &nbsp;=&nbsp; (0.25x<sup>4</sup> - 4x<sup>3</sup> + 16x<sup>2</sup>) / (-x<sup>2</sup> + 8x)<sup>2</sup>
+						<br>dy/dx &nbsp;=&nbsp; (0.5x<sup>2</sup> - 4x)<sup>2</sup> / (-x<sup>2</sup> + 8x)<sup>2</sup>
+						<br>dy/dx &nbsp;=&nbsp; -0.5
+					</td>
+					<td style="width: 60%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 3.5%;">
+						<img src="images/2/2-1/div_quot_graph3.png" width="100%" style="">	
+					</td>		
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item20" style="width: 100%; margin-top: 8.5%; font-size: 1.5em; line-height: 1.85em; text-align: center;">
+			<img src="images/2/2-1/div_quot_shape.png" width="85%" style="margin-bottom: 2.5%">
+			<br>
+			y &nbsp;=&nbsp; &#402;(x) / g(x) &nbsp;=&nbsp; &#402;(x) &#215; g(x)<sup>-1</sup>
+			<br>dy/dx &nbsp;=&nbsp; &#402;'(x)g(x)<sup>-1</sup> &nbsp;+&nbsp; &#402;(x)(g(x)<sup>-1</sup>)' &nbsp;=&nbsp; &#402;'(x)g(x)<sup>-1</sup> &nbsp;+&nbsp; -&#402;(x)g'(x)g(x)<sup>-2</sup>
+			<br>dy/dx &nbsp;=&nbsp; &#402;'(x)g(x)g(x)<sup>-2</sup> &nbsp;-&nbsp; &#402;(x)g'(x)g(x)<sup>-2</sup> &nbsp;=&nbsp; (&#402;'(x)g(x) &nbsp;-&nbsp; &#402;(x)g'(x)) &#215; g(x)<sup>-2</sup>
+			<br>dy/dx &nbsp;=&nbsp; (&#402;'(x)g(x) &nbsp;-&nbsp; &#402;(x)g'(x)) / g(x)<sup>2</sup>
+		</div>
+
+		<table id="scroll_item21" style="margin-top: 6.5%; text-align: center; width: 90%; margin-left: 5%; font-size: 2em; line-height: 2em; border-style: solid; border-width: medium; border-radius: 1.5em; border-color: black">
+			<tr style="width: 100%">
+				<td style="width: 100%; padding: 4.25%; padding-bottom: 3%">
+					<img src="images/2/2-1/div_quot_rule_trick.png" width="95%" style="">	
+				</td>
+			</tr>
+		</table>
+
+		<table style="margin-top: 5%; text-align: center; width: 90%; margin-left: 5%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					y &nbsp;=&nbsp; &#402;(g(x)) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dy / dx &nbsp;=&nbsp; ?
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item22" style="width: 90%; border-radius: 3.5em; margin-left: 5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center; font-size: 1.75em; line-height: 1.95em; padding: 5%; padding-left: 10%">
+					y &nbsp;=&nbsp; &#402;(g(x))
+					<br>dy/dx &nbsp;=&nbsp; g'(x) &#402;'(g(x))
+					<br>
+					<br><span style="font-size: 0.85em">g(x) &nbsp;=&nbsp; x
+					<br>&rarr; &nbsp; &#402;(g(x)) &nbsp;=&nbsp; &#402;(x) ,&nbsp; g'(x) &nbsp;=&nbsp; 1
+					<br>dy/dx &nbsp;=&nbsp; g'(x) &#402;'(g(x)) &nbsp;=&nbsp; &#402;'(x)</span>
+				</td>
+				<td style="width: 50%; text-align: center; padding: 5%; padding-right: 6.5%; padding-left: 0%">
+					<img src="images/2/2-1/div_chain_intro.png" width="95%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item23" style="width: 100%; margin-top: 6.5%; font-size: 1.5em; line-height: 1.85em; text-align: center;">
+			<img src="images/2/2-1/div_chain_block.png" width="90%" style="margin-bottom: 5%">
+			<br>
+			<img src="images/2/2-1/div_chain_proof.png" width="55%" style="margin-bottom: 0%">
+		</div>
+
+		<div style="width: 97.5%; margin-left: 1.25%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item24" style="width: 100.1%; font-size: 1.6em; line-height: 1.85em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 35%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; border-bottom-style: solid; border-width: medium; font-size: 0.95em">
+						&#402;(x) &nbsp;=&nbsp; x<sup>2</sup> + 1 ,&nbsp; g(x) &nbsp;=&nbsp; 2
+						<br>&#402;'(x) &nbsp;=&nbsp; 2x ,&nbsp; g'(x) &nbsp;=&nbsp; 0
+						<br>y &nbsp;=&nbsp; &#402;(g(x)) &nbsp;=&nbsp; 2<sup>2</sup> + 1 &nbsp;=&nbsp; 5
+						<br>dy/dx &nbsp;=&nbsp; g'(x) &#402;'(g(x))
+						<br>dy/dx &nbsp;=&nbsp; 0 &#215; 2(2) &nbsp;=&nbsp; 0
+						</td>
+					<td style="width: 65%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-1/div_chain_graph1.png" width="100%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 35%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; border-bottom-style: solid; border-width: medium; font-size: 0.9em">
+						&#402;(x) &nbsp;=&nbsp; 1.5x ,&nbsp; g(x) &nbsp;=&nbsp; 2x/3
+						<br>&#402;'(x) &nbsp;=&nbsp; 1.5 ,&nbsp; g'(x) &nbsp;=&nbsp; 2/3
+						<br>y &nbsp;=&nbsp; &#402;(g(x)) &nbsp;=&nbsp; 1.5(2x/3) &nbsp;=&nbsp; x
+						<br>dy/dx &nbsp;=&nbsp; g'(x) &#402;'(g(x))
+						<br>dy/dx &nbsp;=&nbsp; 2/3 &#215; 1.5 &nbsp;=&nbsp; 1
+					</td>
+					<td style="width: 65%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-1/div_chain_graph2.png" width="100%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 35%; padding: 3.5%; padding-top: 5%; padding-bottom: 5%; font-size: 0.9em;">
+						&#402;(x) &nbsp;=&nbsp; x<sup>2</sup> + 1 ,&nbsp; g(x) &nbsp;=&nbsp; 1.5x
+						<br>&#402;'(x) &nbsp;=&nbsp; 2x ,&nbsp; g'(x) &nbsp;=&nbsp; 1.5
+						<br>y &nbsp;=&nbsp; &#402;(g(x)) &nbsp;=&nbsp; (1.5x)<sup>2</sup> + 1
+						<br>y &nbsp;=&nbsp; 2.25x<sup>2</sup> + 1
+						<br>dy/dx &nbsp;=&nbsp; g'(x) &#402;'(g(x))
+						<br>dy/dx &nbsp;=&nbsp; 1.5 &#215; 2(1.5x) &nbsp;=&nbsp; 4.5x
+					</td>
+					<td style="width: 65%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 3.5%;">
+						<img src="images/2/2-1/div_chain_graph3.png" width="100%" style="">	
+					</td>		
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item25" style="width: 100%; margin-top: 7.5%; font-size: 1.5em; line-height: 1.85em; text-align: center;">
+			<img src="images/2/2-1/div_chain_concept.png" width="95%" style="">
+		</div>
+
+		<table id="scroll_item26" style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 1.5em; font-size: 1.5em; padding: 5%">
+			<tr style="width: 100%;">
+				<td style="width: 25%; text-align: center; line-height: 2em">
+					<div id="shape_input" style="border-style: solid; border-width: medium; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 95%; margin-left: 5%; margin-top: -0.125em; border-radius: 1em">
+						&#402;(x) &nbsp;=&nbsp; <input id="f" type="text" value="0" style="font-size: 1em; width: 45%"/>
+						<br>
+						x &nbsp;=&nbsp; <input id="x" type="text" value="0" style="font-size: 1em; width: 52.5%"/>
+						<br>
+						<button type="button" class="calc_button" style="font-size: 0.75em; border-style: solid; border-width: medium; border-color: black; border-radius: 0em; width: 80%;" onclick="drawVec()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</td>
+				<td style="width: 50%">
+					<canvas id="canvas" style="width: 100%">
+					</canvas>
+				</td>
+				<td style="width: 25%">
+					<div style="border-style: solid; border-width: medium; border-color: black; padding-top: 7.5%; padding-bottom: 7.5%; width: 90%; margin-left: 5%; text-align: center; border-radius: 1em">
+						&#402;'(x) &nbsp;=&nbsp; <span id="output_l">0.00000</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item27" style="width: 100%; margin-top: 6.5%; font-size: 1.65em; line-height: 1.85em; text-align: center; margin-bottom: 8.5%">
+			&#402;(x) &nbsp;=&nbsp; x<sup>10</sup> (x + 1)<sup>5</sup> &nbsp;+&nbsp; (2x + 6)<sup>2</sup> &nbsp;+&nbsp; 20x &nbsp;+&nbsp; 100
+			<br>&rarr; &nbsp; 10 &#215; x<sup>10 - 1</sup> (x + 1)<sup>5</sup> &nbsp;+&nbsp; 1 &#215; 5 &#215; x<sup>10</sup> (x + 1)<sup>5 - 1</sup> &nbsp;+&nbsp; 2 &#215; 2 &#215; (2x + 6)<sup>2 - 1</sup> &nbsp;+&nbsp; 20
+			<br>&rarr; &nbsp; 10x<sup>9</sup> (x + 1)<sup>5</sup> &nbsp;+&nbsp; 5x<sup>10</sup> (x + 1)<sup>4</sup> &nbsp;+&nbsp; 4(2x + 6)<sup>1</sup> &nbsp;+&nbsp; 20
+			<br>&rarr; &nbsp; 10x<sup>9</sup> (x + 1)<sup>5</sup> &nbsp;+&nbsp; 5x<sup>10</sup> (x + 1)<sup>4</sup> &nbsp;+&nbsp; 8x &nbsp;+&nbsp; 24 &nbsp;+&nbsp; 20
+			<br>&#402;'(x) &nbsp;=&nbsp; 10x<sup>9</sup> (x + 1)<sup>5</sup> &nbsp;+&nbsp; 5x<sup>10</sup> (x + 1)<sup>4</sup> &nbsp;+&nbsp; 8x &nbsp;+&nbsp; 44
+			<br>
+			<br>&#402;(x) &nbsp;=&nbsp; x((2x + 3)/(x + 4))<sup>6</sup> &nbsp;-&nbsp; (x + 1)<sup>4</sup>
+			<br>&rarr; &nbsp; 1 &#215; ((2x + 3)/(x + 4))<sup>6</sup> &nbsp;+&nbsp; x &#215; 6 &#215; ((2 &#215; (x + 4) &nbsp;-&nbsp; (2x + 3) &#215; 1) / (x + 4)<sup>2</sup>)<sup>5</sup> &nbsp;-&nbsp; 1 &#215; 4 &#215; (x + 1)<sup>4 - 1</sup>
+			<br>&rarr; &nbsp; ((2x + 3)/(x + 4))<sup>6</sup> &nbsp;+&nbsp; 6x((2x + 8 - 2x - 3) / (x + 4)<sup>2</sup>)<sup>5</sup> &nbsp;-&nbsp; 4(x + 1)<sup>3</sup>
+			<br>&rarr; &nbsp; ((2x + 3)/(x + 4))<sup>6</sup> &nbsp;+&nbsp; 6x(5/(x + 4)<sup>2</sup>)<sup>5</sup> &nbsp;-&nbsp; 4(x + 1)<sup>3</sup>
+			<br>&#402;'(x) &nbsp;=&nbsp; ((2x + 3)/(x + 4))<sup>6</sup> &nbsp;+&nbsp; 18750x/(x + 4)<sup>10</sup> &nbsp;-&nbsp; 4(x + 1)<sup>3</sup>
+		</div>
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="2-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
 		</div>
 	</header>
 
-	<div class="sub-nav">
-		<a href="2-0.html">0</a>
-		<a class="active" href="2-1.html">1</a>
-		<a href="2-2.html">2</a>
-		<a href="2-3.html">3</a>
-		<a href="2-4.html">4</a>
-		<a href="2-5.html">5</a>
-		<a href="2-6.html">6</a>
-	</div>
+	<script type="text/javascript" src="standard_functions.js"></script>
+	<script type="text/javascript">
+        window.onload = function () {
+			standard_onload();
+
+		  	document.getElementById("output_l").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+        };
+
+        function drawVec() {
+		  	document.getElementById("output_l").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.95*Math.min(canvas.width, canvas.height);
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+
+			ctx.fillStyle = "#DB0000";
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 25;
+
+			var Ox = canvas.width/2;
+			var Oy = canvas.height/2;
+
+		  	var x = document.getElementById("x").value;
+		  	x = read(x);
+		  	var f = document.getElementById("f").value;
+			f = f.split("^").join("**");
+			f = f.split("×").join("*");
+			f = f.split("pi").join("(3.141592653)");
+			f = f.split("&pi;").join("(3.141592653)");
+			f = f.split("π").join("(3.141592653)");
+			f = f.split("sin").join("Math.sin");
+			f = f.split("cos").join("Math.cos");
+			f = f.split("tan").join("Math.tan");
+			f = f.split("sec").join("Math.sec");
+			f = f.split("csc").join("Math.csc");
+			f = f.split("cot").join("Math.cot");
+			f = f.split("asin").join("Math.asin");
+			f = f.split("acos").join("Math.acos");
+			f = f.split("atan").join("Math.atan");
+			f = f.split("asec").join("Math.asec");
+			f = f.split("acsc").join("Math.acsc");
+			f = f.split("acot").join("Math.acot");
+			f = f.split("sin**-1").join("Math.asin");
+			f = f.split("cos**-1").join("Math.acos");
+			f = f.split("tan**-1").join("Math.atan");
+			f = f.split("sec**-1").join("Math.asec");
+			f = f.split("csc**-1").join("Math.acsc");
+			f = f.split("cot**-1").join("Math.acot");
+			f = f.split("arcsin").join("Math.asin");
+			f = f.split("arccos").join("Math.acos");
+			f = f.split("arctan").join("Math.atan");
+			f = f.split("arcsec").join("Math.asec");
+			f = f.split("arccsc").join("Math.acsc");
+			f = f.split("arccot").join("Math.acot");
+			f = f.split("e").join("Math.E");
+			f = f.split("0(").join("0*(");
+			f = f.split("1(").join("1*(");
+			f = f.split("2(").join("2*(");
+			f = f.split("3(").join("3*(");
+			f = f.split("4(").join("4*(");
+			f = f.split("5(").join("5*(");
+			f = f.split("6(").join("6*(");
+			f = f.split("7(").join("7*(");
+			f = f.split("8(").join("8*(");
+			f = f.split("9(").join("9*(");
+			f = f.split("x(").join("x*(");
+			f = f.split("0x").join("0*x");
+			f = f.split("1x").join("1*x");
+			f = f.split("2x").join("2*x");
+			f = f.split("3x").join("3*x");
+			f = f.split("4x").join("4*x");
+			f = f.split("5x").join("5*x");
+			f = f.split("6x").join("6*x");
+			f = f.split("7x").join("7*x");
+			f = f.split("8x").join("8*x");
+			f = f.split("9x").join("9*x");
+			f = f.split("xx").join("x*x");
+
+			var f0 = f.replace(/x/gi, x.toString());
+			var dx = 0.00000000001;
+			var f1 = f.replace(/x/gi, (x + dx).toString());
+			var dy = eval(f1) - eval(f0);
+
+			var deriv = dy/dx;
+			if (Math.abs(deriv % 1) < 0.001) {
+				deriv = Math.round(deriv);
+			};
+
+			var y = deriv;
+			var x = 1;
+
+    		var B = x;
+    		var H = y;
+    		var W = 0.0;
+
+		  	var norm = y/x;
+		  	if ( Math.abs(norm) < 1 ) { var l = norm.toFixed(5); }
+		  	else { var l = norm.toPrecision(6); };
+		  	if (norm > 100000000) {
+		  		l = '&infin;';
+		  	}
+		  	else if (norm < -100000000) {
+		  		l = '-&infin;';
+		  	};
+			document.getElementById("output_l").innerHTML = l;
+
+			if (B > 0 || H > 0) {
+				ctx.fillStyle = "#DB0000";
+				ctx.strokeStyle = "#C0C0C0";
+				ctx.lineWidth = 30;
+
+				var ratio = W/H;
+				var max = Math.max(B, H);
+				H = max_size*H/max;
+				B = max_size*B/max;
+				W = ratio*H;
+
+				var zeroX = canvas.width/2 - B/2;
+				var zeroY = canvas.height/2 - H/2;
+
+				ctx.beginPath();
+				ctx.moveTo(zeroX, canvas.height - zeroY);
+				ctx.lineTo(zeroX + B, canvas.height - zeroY);
+				ctx.lineTo(zeroX + B, canvas.height - zeroY - H);
+				ctx.stroke()
+
+				ctx.strokeStyle = "#000000";
+				ctx.beginPath();
+				ctx.moveTo(zeroX, canvas.height - zeroY);
+				ctx.lineTo(zeroX + B, canvas.height - zeroY - H);
+      			ctx.stroke();
+    		};
+        };
+
+	</script>
 
 </body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
+</html>

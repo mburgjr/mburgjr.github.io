@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" href="images/link_logo.png">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
+	<style>
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		.fraction {
+		    display: inline-block;
+		    text-align: center;    
+		}
+
+		.denominator{
+		    border-top: 1px solid #000;
+		    display: block;
+		}
+
+		#submit_answer{
+			height: 3.15em;
+			width: 12.5%;
+			font-weight: bold;
+			vertical-align: middle;
+			text-align: center;
+			border-style: solid; 
+			border-width: medium;
+			border-color: #DB0000;
+			background-color: #DB0000;
+			border-width: 0.35em;
+			margin-bottom: 0.3em;
+		}
+
+		#submit_answer:hover {
+			border-color: #A00000;
+			background-color: #DB0000;
+		}
+
+		#next{
+			height: 0.85em;
+			width: 30%;
+			font-weight: bold;
+			vertical-align: middle;
+			text-align: center;
+			border-style: solid; 
+			border-width: medium;
+			border-color: #000066;
+			background-color: #000066;
+			font-size: 2.65em;
+			color: white;
+			font-weight: bold;
+			vertical-align: center;
+			text-align: center;
+			border-width: 0.1em;
+		}
+
+		#next:hover {
+			border-color: #66B2FF;
+			background-color: #000066;
+		}
+
+		td.active {
+			background-color: white;
+			color: #000066;
+		}
+
+		td.inactive {
+			color: white;
+			border-color: #000066;
+		}
+
+		td.inactive:hover {
+			color: #000066;
+			background-color: white;
+		}
+	</style>
+</head>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="1-Q.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-0.html"><span style="font-size: 1.2em">&#9632;</span></a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="1-1.html">&Theta;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-2.html"><span style="font-size: 0.9em">&#9699;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-3.html"><span style="font-size: 1.25em">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-4.html">&#8737;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-5.html"><span style="font-size: 1.05em">&nearr;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-6.html"><span style="font-size: 1.05em">&#8630;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-7.html"><span style="font-size: 1.5em">&bull;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-8.html"><span style="font-size: 1.2em">&#10541;</span></a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="1-Q.html">?</a></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div class="wrapper" id="wrapper">
+
+	<div style="width: 80%; margin-left: 7.5%; margin-top: 6.5%; height: 50%; border-style: solid; border-width: 0.25vmax; border-color: #66B2FF; padding: 0em; border-radius: 1em; text-align: center;">
+		<div style="margin: -0.05em; height: 100%; border-style: solid; border-width: 0.225vmax; border-color: #000066; padding: 0px; border-radius: 0.85em;">
+			<table style="width: 100%; margin: -0.05em; height: 100%; padding: 0px; border-radius: 0.85em; border-collapse: collapse;">
+				<tr style="width: 100%; margin: -0.05em;">
+					<td style="width: 6.5%; padding: 0px; margin: -0.05em; border-radius: 0.75em; padding-top: 0.1em; padding-left: 0.05em">
+						<table style="width: 100%; height: 99.9%; border-collapse: collapse; background-color: #000066; border-bottom-left-radius: 0.5em; border-top-left-radius: 0.5em; color: white; text-align: center;">
+							<tr style="width: 100%; height: 10%">
+								<td id="tab_0" class="active" onclick="changeTab('tab_0')" style="width: 100%; border-top-left-radius: 0.55em; font-weight: bold; font-size: 1.15em;">
+									A
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 10%">
+								<td id="tab_1" class="inactive" onclick="changeTab('tab_1')" style="width: 100%; font-weight: bold; font-size: 1.15em;">
+									&#9632;
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 10%">
+								<td id="tab_2" class="inactive" onclick="changeTab('tab_2')" style="width: 100%; font-weight: bold; font-size: 1.15em;">
+									&Theta;
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 10%">
+								<td id="tab_3" class="inactive" onclick="changeTab('tab_3')" style="width: 100%; font-weight: bold; font-size: 1.15em;">
+									<span style="font-size: 0.9em">&#9699;</span>
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 10%">
+								<td id="tab_4" class="inactive" onclick="changeTab('tab_4')" style="width: 100%; font-weight: bold; font-size: 1.15em;">
+									<span style="font-size: 1.25em">&#8767;</span>
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 10%">
+								<td id="tab_5" class="inactive" onclick="changeTab('tab_5')" style="width: 100%; font-weight: bold; font-size: 1.15em;">
+									&#8737;
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 10%">
+								<td id="tab_6" class="inactive" onclick="changeTab('tab_6')" style="width: 100%; font-weight: bold; font-size: 1.15em;">
+									<span style="font-size: 1.05em">&nearr;</span>
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 10%">
+								<td id="tab_7" class="inactive" onclick="changeTab('tab_7')" style="width: 100%; font-weight: bold; font-size: 1.15em;">
+									<span style="font-size: 1.05em">&#8630;</span>
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 10%">
+								<td id="tab_8" class="inactive" onclick="changeTab('tab_8')" style="width: 100%; font-weight: bold; font-size: 1.15em;">
+									<span style="font-size: 1.5em">&bull;</span>
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 10%">
+								<td id="tab_9" class="inactive" onclick="changeTab('tab_9')" style="width: 100%; border-bottom-left-radius: 0.55em; font-weight: bold; font-size: 1.15em;">
+									<span style="font-size: 1.2em">&#10541;</span>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="width: 46.75%; text-align: center; height: 100%; font-size: 1.85em; padding-top: 6.5%; line-height: 1.25em; padding-bottom: 5%; border-color: #000066; border-left-style: none;">	
+						<canvas id="canvas" style="width: 90%; padding-left: 10%">
+
+						</canvas>
+					</td>
+					<td style="width: 46.75%; text-align: center; font-size: 1.75em; padding-top: 6.5%; line-height: 1.5em; padding-bottom: 5%; padding-right: 7.5%">
+						<p id="question" style="font-size: 1em">&nbsp;</p>
+						? &nbsp;=&nbsp; <input type="text" id="answer" style="width: 60%; font-size: 0.8em; padding: 0.1em; padding-left: 0.25em">
+						<button type="button" style="border-top-right-radius: 1em; border-bottom-right-radius: 1em; width: 7.5%; outline: none; height: 2.95em; margin-top: 0.3em;" id="submit_answer" onclick="checkAnswer()"></button>
+						<p id="response" style="height: 1.1em; font-size: 1em; padding-right: 3.5%"><span id="r_eval"></span> &nbsp; <span id="r_correct"></span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<table style="width: 100%; margin-bottom: 1%; margin-top: 3.5%; font-size: 1em">
+		<tr style="width: 100%">
+			<td id="score" style="width: 100%; text-align: center; padding-right: 2.5%; font-size: 1.25em; vertical-align: top">
+				<button type="button" style="border-radius: 0.25em; outline: none" id="next" onclick="randomQuestion()"> </button>
+				<br>
+				<br>
+				&nbsp; <span id="score_correct">0</span> <i>/</i> <span id="score_total">0</span> &nbsp;=&nbsp; <span id="score_perc">0</span>%
+			</td>
+		</tr>
+	</table>
+	</div>
+
+	<script type="text/javascript" src="standard_functions.js"></script>
+	<script type="text/javascript">
+		
+        window.onload = function () {
+        	standard_onload();
+
+        	var correct = localStorage.getItem("correct1");
+        	var total = localStorage.getItem("total1");
+
+		  	document.getElementById("score_correct").innerHTML = correct.toString();
+		  	document.getElementById("score_total").innerHTML = total.toString();
+        	var perc = Math.floor(100*correct/total);
+		  	document.getElementById("score_perc").innerHTML = perc.toString();
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			canvas.setAttribute('height', 1.2*canvas.height);
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+			localStorage.setItem('active_tab', 'tab_0');
+        	localStorage.setItem('answered', 'False');
+		  	randomQuestion();
+		  	
+		  	document.addEventListener('keyup', (e) => {
+			  if (e.code === "Space" && document.getElementById('answer') !== document.activeElement){
+			  	randomQuestion();
+			  };
+			});
+        };
+
+        function changeTab(tab){
+        	var active_tab = localStorage.getItem('active_tab');
+			document.getElementById(active_tab).classList.remove('active');
+        	document.getElementById(active_tab).classList.add('inactive');
+
+        	var active_tab = tab;
+			document.getElementById(active_tab).classList.remove('inactive');
+        	document.getElementById(active_tab).classList.add('active');
+        	localStorage.setItem('active_tab', tab);
+        	localStorage.setItem('answered', 'False');
+        	randomQuestion();
+        };
+
+        function reduce(numerator,denominator){
+		  var gcd = function gcd(a,b){
+		    return b ? gcd(b, a%b) : a;
+		  };
+		  gcd = gcd(numerator,denominator);
+		  return [numerator/gcd, denominator/gcd];
+		};
+
+        function checkAnswer(){
+        	var op = localStorage.getItem('operator');
+        	var a = document.getElementById("answer").value;
+		  	a = read(a);
+			var correct = parseFloat(document.getElementById("score_correct").textContent);
+			var total = parseFloat(document.getElementById("score_total").textContent);
+			var correct0 = correct;
+
+        	if (op == 1) {
+        		var shape_int = localStorage.getItem('q_type1');
+        		var AP = localStorage.getItem('q_type2');
+
+        		if (shape_int == 0) {
+        			var s = localStorage.getItem('q_input1');
+        			if (AP == 'A') {
+        				var q3 = s*s;
+					  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+					  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+					  	else { q3 = parseFloat(q3).toPrecision(8); };
+        				if (Math.abs(a - q3)/a < 0.001) {
+		        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+		        			correct = correct + 1;
+        				}
+        				else {
+        					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();
+        				};
+        			}
+        			else {
+        				var q3 = 4*s;
+					  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+					  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+					  	else { q3 = parseFloat(q3).toPrecision(8); };
+        				if (Math.abs(a - q3)/a < 0.001) {
+		        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+		        			correct = correct + 1;
+        				}
+        				else {
+        					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+        				};
+        			};
+        		}
+        		else if (shape_int == 1) {
+        			var B = localStorage.getItem('q_input1');
+        			var H = localStorage.getItem('q_input2');
+        			var W = localStorage.getItem('q_input3');
+        			if (AP == 'A') {
+        				var q3 = B*H/2;
+					  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+					  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+					  	else { q3 = parseFloat(q3).toPrecision(8); };
+        				if (Math.abs(a - q3)/a < 0.001) {
+		        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+		        			correct = correct + 1;
+        				}
+        				else {
+        					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();
+        				};
+        			}
+        			else {
+        				var q3 = B + Math.sqrt(W*W + H*H) + Math.sqrt(H*H + (B - W)*(B - W));
+					  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+					  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+					  	else { q3 = parseFloat(q3).toPrecision(8); };
+        				if (Math.abs(a - q3)/a < 0.001) {
+		        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+		        			correct = correct + 1;
+        				}
+        				else {
+        					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+        				};
+        			};
+        		}
+        		else if (shape_int == 2) {
+        			var rd_int = localStorage.getItem('q_input1');        			
+        			var R = localStorage.getItem('q_input2');
+        			if (AP == 'A') {
+        				if (rd_int == 'D') {
+        					R = R/2;
+        				}
+        				var q3 = Math.PI*R*R;
+					  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+					  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+					  	else { q3 = parseFloat(q3).toPrecision(8); };
+        				if (Math.abs(a - q3)/a < 0.001) {
+		        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+		        			correct = correct + 1;
+        				}
+        				else {
+        					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();
+        				};
+        			}
+        			else {
+        				if (rd_int == 'D') {
+        					R = R/2;
+        				}
+        				var q3 = 2*Math.PI*R;
+					  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+					  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+					  	else { q3 = parseFloat(q3).toPrecision(8); };
+        				if (Math.abs(a - q3)/a < 0.001) {
+		        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+		        			correct = correct + 1;
+        				}
+        				else {
+        					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+        				};
+        			};
+        		}
+        		else {
+        			var L = localStorage.getItem('q_input1');
+        			var W = localStorage.getItem('q_input2');
+        			if (AP == 'A') {
+        				var q3 = L*W;
+					  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+					  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+					  	else { q3 = parseFloat(q3).toPrecision(8); };
+        				if (Math.abs(a - q3)/a < 0.001) {
+		        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+		        			correct = correct + 1;
+        				}
+        				else {
+        					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();
+        				};
+        			}
+        			else {
+        				var q3 = 2*L + 2*W;
+					  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+					  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+					  	else { q3 = parseFloat(q3).toPrecision(8); };
+        				if (Math.abs(a - q3)/a < 0.001) {
+		        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+		        			correct = correct + 1;
+        				}
+        				else {
+        					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+        				};
+        			};
+        		};
+        	}
+        	else if (op == 2) {
+				var RD = localStorage.getItem('q_type1');
+				var v = localStorage.getItem('q_input1');
+
+				if (RD == 'R') {
+					var q3 = 180*v/Math.PI;
+				  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+				  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+				  	else { q3 = parseFloat(q3).toPrecision(8); };
+    				if (Math.abs(a - q3)/a < 0.001) {
+	        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString() + '&deg;';
+	        			correct = correct + 1;
+    				}
+    				else {
+    					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString() + '&deg;';        					
+    				};
+				}
+				else {
+					var q3 = Math.PI*v/180;
+				  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+				  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+				  	else { q3 = parseFloat(q3).toPrecision(8); };
+    				if (Math.abs(a - q3)/a < 0.001) {
+	        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+	        			correct = correct + 1;
+    				}
+    				else {
+    					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+    				};
+				};
+        	}
+        	else if (op == 3) {
+	    		var A = localStorage.getItem('q_input1');
+	    		var B = localStorage.getItem('q_input2');
+	    		var q3 = Math.sqrt(A*A + B*B);
+			  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+			  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+			  	else { q3 = parseFloat(q3).toPrecision(8); };
+    			if (Math.abs(a - q3)/a < 0.001) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+        			correct = correct + 1;
+				}
+				else {
+					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+				};
+        	}
+        	else if (op == 4) {
+        		var side = localStorage.getItem('q_type1');
+        		var q3 = localStorage.getItem('q_input' + side.toString());
+			  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+			  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+			  	else { q3 = parseFloat(q3).toPrecision(8); };
+    			if (Math.abs(a - q3)/a < 0.001) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+        			correct = correct + 1;
+				}
+				else {
+					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+				};
+        	}
+        	else if (op == 5) {
+        		var q3 = localStorage.getItem('q_input1');
+			  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+			  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+			  	else { q3 = parseFloat(q3).toPrecision(8); };
+    			if (Math.abs(a - q3)/a < 0.001) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+        			correct = correct + 1;
+				}
+				else {
+					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+				};
+        	}
+        	else if (op == 6) {
+	    		var x = localStorage.getItem('q_input1');
+	    		var y = localStorage.getItem('q_input2');
+	    		var z = localStorage.getItem('q_input3');
+	    		var q3 = Math.sqrt(x*x + y*y + z*z);
+			  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+			  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+			  	else { q3 = parseFloat(q3).toPrecision(8); };
+    			if (Math.abs(a - q3)/a < 0.001) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+        			correct = correct + 1;
+				}
+				else {
+					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+				};
+        	}
+        	else if (op == 7) {
+        		var q3 = localStorage.getItem('q_input1');
+			  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+			  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+			  	else { q3 = parseFloat(q3).toPrecision(8); };
+    			if (Math.abs(a - q3)/a < 0.001) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+        			correct = correct + 1;
+				}
+				else {
+					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+				};
+        	}
+        	else if (op == 8) {
+        		var q3 = localStorage.getItem('q_input1');
+			  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+			  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+			  	else { q3 = parseFloat(q3).toPrecision(8); };
+    			if (Math.abs(a - q3)/a < 0.001) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+        			correct = correct + 1;
+				}
+				else {
+					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+				};
+        	}
+        	else if (op == 9) {
+        		var q3 = localStorage.getItem('q_input1');
+			  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+			  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+			  	else { q3 = parseFloat(q3).toPrecision(8); };
+    			if (Math.abs(a - q3)/a < 0.001) {
+        			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+        			correct = correct + 1;
+				}
+				else {
+					document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+				};
+        	};
+
+        	var answered = localStorage.getItem('answered');
+
+        	if (answered == 'False') {
+	        	total = total + 1;
+			  	document.getElementById("score_correct").innerHTML = correct.toString();
+			  	document.getElementById("score_total").innerHTML = total.toString();
+	        	var perc = Math.floor(100*correct/total);
+			  	document.getElementById("score_perc").innerHTML = perc.toString();
+
+			  	localStorage.setItem("correct1", correct);
+			  	localStorage.setItem("total1", total);
+			};
+
+		  	if (correct > correct0) {
+        		localStorage.setItem('answered', 'True');
+        	};
+        };
+
+        function randomQuestion() {
+        	document.getElementById("answer").value = '';
+        	document.getElementById("response").innerHTML ='';
+        	localStorage.setItem('answered', 'False');
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			canvas.setAttribute('height', 1.2*canvas.height);
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size =  0.85*Math.min(canvas.width, canvas.height);
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+        	var active_tab = localStorage.getItem('active_tab');
+        	var operator_int = 0;
+
+        	if (active_tab == 'tab_0'){
+        		operator_int = Math.floor(Math.random() * 9) + 1;
+        	}
+        	else if (active_tab == 'tab_1') {
+        		operator_int = 1;
+        	}
+        	else if (active_tab == 'tab_2') {
+        		operator_int = 2;
+        	}
+        	else if (active_tab == 'tab_3') {
+        		operator_int = 3;
+        	}
+        	else if (active_tab == 'tab_4') {
+        		operator_int = 4;
+        	}
+        	else if (active_tab == 'tab_5') {
+        		operator_int = 5;
+        	}
+        	else if (active_tab == 'tab_6') {
+        		operator_int = 6;
+        	}
+        	else if (active_tab == 'tab_7') {
+        		operator_int = 7;
+        	}
+        	else if (active_tab == 'tab_8') {
+        		operator_int = 8;
+        	}
+        	else if (active_tab == 'tab_9') {
+        		operator_int = 9;
+        	};
+
+        	localStorage.setItem('operator', operator_int);
+
+        	if (operator_int == 9) {
+        		document.getElementById("question").style.fontSize = "0.9em";
+        	}
+        	else {
+        		document.getElementById("question").style.fontSize = "1em";
+        	};
+
+        	if (operator_int == 1){
+        		max_size = 0.75*max_size;
+        		var shape_int = Math.floor(Math.random() * 4);
+        		var AP_int = Math.floor(Math.random() * 2);
+        		localStorage.setItem('q_type1', shape_int);
+
+        		if (shape_int == 0) {
+        			var s = Math.floor(Math.random() * 20) + 1;
+		    		localStorage.setItem('q_input1', s);
+
+        			if (AP_int == 0) {
+		  				document.getElementById("question").innerHTML = 'S &nbsp;=&nbsp; ' + s.toString() + '<br>A &nbsp;=&nbsp; ?';
+        				localStorage.setItem('q_type2', 'A');
+        			}
+        			else {
+		  				document.getElementById("question").innerHTML = 'S &nbsp;=&nbsp; ' + s.toString() + '<br>P &nbsp;=&nbsp; ?';
+        				localStorage.setItem('q_type2', 'P');
+        			};
+
+					ctx.fillStyle = "#DB0000";
+					ctx.strokeStyle = "#000000";
+					ctx.lineWidth = 50;
+					ctx.strokeRect(canvas.width/2 - max_size/2, canvas.height/2 - max_size/2, max_size, max_size);
+	    			ctx.fillRect(canvas.width/2 - max_size/2, canvas.height/2 - max_size/2, max_size, max_size);
+        		}
+        		else if (shape_int == 1) {
+        			var B = Math.floor(Math.random() * 10) + 1;
+        			var H = Math.floor(Math.random() * 10) + 1;
+        			var W = Math.floor(Math.random() * (B + 1));
+		    		localStorage.setItem('q_input1', B);
+		    		localStorage.setItem('q_input2', H);
+		    		localStorage.setItem('q_input3', W);
+
+        			if (AP_int == 0) {
+		  				document.getElementById("question").innerHTML = 'B &nbsp;=&nbsp; ' + B.toString() + ' , &nbsp; H &nbsp;=&nbsp; ' + H.toString() + '<br>W &nbsp;=&nbsp; ' + W.toString() + ', &nbsp; A &nbsp;=&nbsp; ?';
+        				localStorage.setItem('q_type2', 'A');
+        			}
+        			else {
+		  				document.getElementById("question").innerHTML = 'B &nbsp;=&nbsp; ' + B.toString() + ' , &nbsp; H &nbsp;=&nbsp; ' + H.toString() + '<br>W &nbsp;=&nbsp; ' + W.toString() + ', &nbsp; P &nbsp;=&nbsp; ?';
+        				localStorage.setItem('q_type2', 'P');
+        			};
+
+					var ratio = W/H;
+					var max = Math.max(B, H);
+					H = max_size*H/max;
+					B = max_size*B/max;
+					W = ratio*H;
+
+					var zeroX = canvas.width/2 - B/2;
+					var zeroY = canvas.height/2 - H/2;
+
+					ctx.fillStyle = "#DB0000";
+					ctx.strokeStyle = "#000000";
+					ctx.lineWidth = 50;
+    				ctx.beginPath();
+					ctx.moveTo(zeroX, canvas.height - zeroY);
+					ctx.lineTo(zeroX + W, canvas.height - zeroY - H);
+					ctx.lineTo(zeroX + B, canvas.height - zeroY);
+					ctx.lineTo(zeroX, canvas.height - zeroY);
+          			ctx.stroke();
+          			ctx.fill();    
+
+					ctx.fillStyle = "#000000";
+					ctx.font = "225px Arial";
+          			ctx.fillText("B", zeroX + B/2 - 50, zeroY + H + 300);
+          			ctx.fillText("H", zeroX - 300, zeroY + H/2);
+          			ctx.fillText("W", zeroX + W/2 - 150, zeroY - 200);    			
+        		}
+        		else if (shape_int == 2) {
+        			var R = Math.floor(Math.random() * 20) + 1;
+        			var rd_int = Math.floor(Math.random() * 2);
+
+        			if (rd_int == 0) {
+			    		localStorage.setItem('q_input1', 'R');
+			    		localStorage.setItem('q_input2', R);
+	        			if (AP_int == 0) {
+			  				document.getElementById("question").innerHTML = 'R &nbsp;=&nbsp; ' + R.toString() + '<br>A &nbsp;=&nbsp; ?';
+	        				localStorage.setItem('q_type2', 'A');
+	        			}
+	        			else {
+			  				document.getElementById("question").innerHTML = 'R &nbsp;=&nbsp; ' + R.toString() + '<br>P &nbsp;=&nbsp; ?';
+	        				localStorage.setItem('q_type2', 'P');
+	        			};
+	        		}
+	        		else {
+			    		localStorage.setItem('q_input1', 'D');
+			    		localStorage.setItem('q_input2', R);
+	        			if (AP_int == 0) {
+			  				document.getElementById("question").innerHTML = 'D &nbsp;=&nbsp; ' + R.toString() + '<br>A &nbsp;=&nbsp; ?';
+	        				localStorage.setItem('q_type2', 'A');
+	        			}
+	        			else {
+			  				document.getElementById("question").innerHTML = 'D &nbsp;=&nbsp; ' + R.toString() + '<br>P &nbsp;=&nbsp; ?';
+	        				localStorage.setItem('q_type2', 'P');
+	        			};
+	        		};
+
+					ctx.fillStyle = "#DB0000";
+					ctx.strokeStyle = "#000000";
+					ctx.lineWidth = 30;
+					ctx.arc(canvas.width/2, canvas.height/2, max_size/2, 0, Math.PI * 2, false);
+	    			ctx.fill();
+          			ctx.stroke();
+					ctx.lineWidth = 28;
+    				ctx.beginPath();
+					ctx.moveTo(canvas.width/2, canvas.height/2);
+					ctx.lineTo(canvas.width/2 + max_size/2, canvas.height/2);
+          			ctx.stroke();
+
+          			if (rd_int == 1) {
+	    				ctx.beginPath();
+						ctx.moveTo(canvas.width/2, canvas.height/2);
+						ctx.lineTo(canvas.width/2 - max_size/2, canvas.height/2);
+	          			ctx.stroke();          				
+          			};
+        		}
+        		else {
+        			var L = Math.floor(Math.random() * 20) + 1;
+        			var W = Math.floor(Math.random() * 20) + 1;
+		    		localStorage.setItem('q_input1', L);
+		    		localStorage.setItem('q_input2', W);
+
+        			if (AP_int == 0) {
+		  				document.getElementById("question").innerHTML = 'L &nbsp;=&nbsp; ' + L.toString() + ' , &nbsp; W &nbsp;=&nbsp; ' + W.toString() + '<br>A &nbsp;=&nbsp; ?';
+        				localStorage.setItem('q_type2', 'A');
+        			}
+        			else {
+		  				document.getElementById("question").innerHTML = 'L &nbsp;=&nbsp; ' + L.toString() + ' , &nbsp; W &nbsp;=&nbsp; ' + W.toString() + '<br>P &nbsp;=&nbsp; ?';
+        				localStorage.setItem('q_type2', 'P');
+        			};
+
+					ctx.fillStyle = "#DB0000";
+					ctx.strokeStyle = "#000000";
+					ctx.lineWidth = 50;
+
+					var max = Math.max(L, W);
+					L = max_size*L/max;
+					W = max_size*W/max;
+
+					ctx.strokeRect(canvas.width/2 - L/2, canvas.height/2 - W/2, L, W);
+	    			ctx.fillRect(canvas.width/2 - L/2, canvas.height/2 - W/2, L, W);
+        		};
+        	}
+			else if (operator_int == 2){
+        		if (Math.random() > 0.5) {
+        			var n = Math.floor(Math.random() * 60);
+        			var frac = reduce(n, 30);
+        			var radString = frac[0].toString() + 'π/' + frac[1].toString();
+        			if (n == 30) {
+        				radString = 'π';
+        			}
+        			else if (frac[1] == 1 || frac[0] == 0) {
+        				radString = frac[0].toString() + 'π';
+        			}
+        			else if (frac[0] == 1) {
+        				radString = 'π/' + frac[1].toString();
+        			};
+        		}
+        		else {
+        			var n = Math.floor(Math.random() * 24);
+        			var frac = reduce(n, 12);
+        			var radString = frac[0].toString() + 'π/' + frac[1].toString();
+        			if (n == 12) {
+        				radString = 'π';
+        			}
+        			else if (frac[1] == 1 || frac[0] == 0) {
+        				radString = frac[0].toString() + 'π';
+        			}
+        			else if (frac[0] == 1) {
+        				radString = 'π/' + frac[1].toString();
+        			};
+        		};
+
+    			var rad = frac[0]*Math.PI/frac[1];
+        		if (Math.random() > 0.5) {
+        			if (Math.abs(rad) < 1) { var g = rad.toFixed(5); }
+        			else { var g = rad.toPrecision(6) };
+	  				document.getElementById("question").innerHTML = '&theta; &nbsp;=&nbsp; ' + radString + ' &nbsp;=&nbsp; ' + g.toString() + '<br>&theta;&deg; &nbsp;=&nbsp; ?';
+    				localStorage.setItem('q_type1', 'R');
+    				localStorage.setItem('q_input1', rad);
+        		}
+        		else {
+        			var deg = Math.round(rad*180/Math.PI);
+	  				document.getElementById("question").innerHTML = '&theta;&deg; &nbsp;=&nbsp; ' + deg.toString() + '&deg;<br>&theta; &nbsp;=&nbsp; ?';
+    				localStorage.setItem('q_type1', 'D');
+    				localStorage.setItem('q_input1', deg);
+        		};
+
+        		max_size = 0.9*max_size;
+				ctx.strokeStyle = "#C0C0C0";
+				ctx.lineWidth = 30;
+				ctx.arc(canvas.width/2, canvas.height/2, max_size/2, 2*Math.PI, 0, false);
+				ctx.stroke();
+
+				ctx.strokeStyle = "#000000";
+    			ctx.beginPath();
+				ctx.arc(canvas.width/2, canvas.height/2, max_size/2, -rad, 0, false);
+  				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(canvas.width/2, canvas.height/2);
+				ctx.lineTo(canvas.width/2 + max_size/2, canvas.height/2);
+      			ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(canvas.width/2, canvas.height/2);
+				ctx.lineTo(canvas.width/2 + (max_size/2)*Math.cos(rad), canvas.height/2 - (max_size/2)*Math.sin(rad));
+      			ctx.stroke();
+        	}
+        	else if (operator_int == 3){
+        		var k = Math.floor(Math.random()*10);
+        		if (k == 0) {
+        			var n = Math.floor(Math.random()*5) + 1;
+        			var a = n;
+        			var b = n;
+        		}
+        		else if (k == 1) {
+        			var a = 7;
+        			var b = 24;
+        		}
+        		else if (k == 2) {
+        			var a = 8;
+        			var b = 15;
+        		}
+        		else if (k == 3) {
+        			var a = 5;
+        			var b = 12;
+        		}
+        		else if (k == 4) {
+        			var a = 10;
+        			var b = 24;
+        		}
+        		else {
+        			var a = 3;
+        			var b = 4;
+        			var c = Math.floor(Math.random()*3) + 1;
+        			a = a*c; b = b*c;
+        		}
+
+				if (Math.random() > 0.5) {
+					a0 = a;
+					a = b;
+					b = a0;
+				};
+
+		  		document.getElementById("question").innerHTML = 'A &nbsp;=&nbsp; ' + a.toString() + ' , &nbsp; B &nbsp;=&nbsp; ' + b.toString() + '<br>H &nbsp;=&nbsp; ?';
+	    		localStorage.setItem('q_input1', a);
+	    		localStorage.setItem('q_input2', b);
+
+	    		max_size = 0.85*max_size;
+	    		var H = a; var B = b; var W = 0;
+				var ratio = W/H;
+				var max = Math.max(B, H);
+				H = max_size*H/max;
+				B = max_size*B/max;
+				W = ratio*H;
+
+				var zeroX = canvas.width/2 - B/2;
+				var zeroY = canvas.height/2 - H/2 + 100;
+
+				ctx.fillStyle = "#DB0000";
+				ctx.strokeStyle = "#000000";
+				ctx.lineWidth = 30;
+				ctx.beginPath();
+				ctx.moveTo(zeroX, canvas.height - zeroY);
+				ctx.lineTo(zeroX + W, canvas.height - zeroY - H);
+				ctx.lineTo(zeroX + B, canvas.height - zeroY);
+				ctx.lineTo(zeroX, canvas.height - zeroY);
+      			ctx.stroke(); 
+
+				ctx.fillStyle = "#000000";
+				ctx.font = "225px Arial";
+      			ctx.fillText("B", zeroX + B/2 - 50, zeroY + H + 100);
+      			ctx.fillText("A", zeroX - 300, zeroY + H/2 - 100);
+      			ctx.fillText("H", zeroX + B/2 + 150, zeroY + H/2 - 300);
+        	}
+        	else if (operator_int == 4){
+        		var q = Math.random();
+        		// Special triangle angles of order [A, B, 90]
+        		if (q < 0.2) {
+        			var angs = [Math.PI/12, 5*Math.PI/12, Math.PI/2];
+        			var angStr = ['π/12', '5π/12'];
+        		}
+        		else if (q < 0.6) {
+        			var angs = [Math.PI/6, Math.PI/3, Math.PI/2];
+        			var angStr = ['π/6', 'π/3'];
+        		}
+        		else {
+        			var angs = [Math.PI/4, Math.PI/4, Math.PI/2];
+        			var angStr = ['π/4', 'π/4'];
+        		};
+
+        		if (Math.random() > 0.5) {
+        			var a1 = angs[0]; var a2 = angs[1];
+        			var as1 = angStr[0]; var as2 = angStr[1];
+        			angs = [a2, a1, angs[2]];
+        			angStr = [as2, as1, angStr[2]];
+        		};
+
+        		var s = Math.floor(Math.random() * 10) + 1;
+        		var p = Math.floor(Math.random() * 12);
+        		// Choose index set where first is angle given, second is side length given, third is side length to find
+        		if (p == 0) { var i = [0, 0, 1]; }
+        		else if (p == 1) { var i = [0, 0, 2]; }
+        		else if (p == 2) { var i = [0, 1, 0]; }
+        		else if (p == 3) { var i = [0, 1, 2]; }
+        		else if (p == 4) { var i = [0, 2, 0]; }
+        		else if (p == 5) { var i = [0, 2, 1]; }
+        		else if (p == 6) { var i = [1, 0, 1]; }
+        		else if (p == 7) { var i = [1, 0, 2]; }
+        		else if (p == 8) { var i = [1, 1, 0]; }
+        		else if (p == 9) { var i = [1, 1, 2]; }
+        		else if (p == 10) { var i = [1, 2, 0]; }
+        		else if (p == 11) { var i = [1, 2, 1]; }
+
+        		// S is side lengths of order [a, b, H]
+        		var S = [Math.sin(angs[0]), Math.sin(angs[1]), 1];
+        		var k = s/S[i[1]]; // Scale to chosen side
+        		S = [k*S[0], k*S[1], k*S[2]];
+	    		localStorage.setItem('q_type1', i[2] + 1);
+	    		localStorage.setItem('q_input1', S[0]); // Store
+	    		localStorage.setItem('q_input2', S[1]);
+	    		localStorage.setItem('q_input3', S[2]);
+
+	    		max_size = 0.85*max_size;
+	    		var B = S[1]; var H = S[0]; var W = 0;
+				var ratio = W/H;
+				var max = Math.max(B, H);
+				H = max_size*H/max;
+				B = max_size*B/max;
+				W = ratio*H;
+
+				var zeroX = canvas.width/2 - B/2;
+				var zeroY = canvas.height/2 - H/2 + 100;
+
+				ctx.fillStyle = "#DB0000";
+				ctx.strokeStyle = "#000000";
+				ctx.lineWidth = 30;
+				ctx.beginPath();
+				ctx.moveTo(zeroX, canvas.height - zeroY);
+				ctx.lineTo(zeroX + W, canvas.height - zeroY - H);
+				ctx.lineTo(zeroX + B, canvas.height - zeroY);
+				ctx.lineTo(zeroX, canvas.height - zeroY);
+      			ctx.stroke();
+
+				ctx.fillStyle = "#000000";
+				ctx.font = "225px Arial";
+				if (i[0] == 0) {
+					// Draw A as Theta
+					ctx.fillText('θ', zeroX + B + 200, zeroY + H + 50);
+				}
+				else {
+					// Draw B as Theta
+					ctx.fillText('θ', zeroX - 300, zeroY - 250);
+				};
+
+				if (i[1] == 0) {
+					// Draw a
+					ctx.fillText(s.toString(), zeroX - 300, zeroY + H/2 - 100);
+				}
+				else if (i[1] == 1) {
+					// Draw b
+					ctx.fillText(s.toString(), zeroX + B/2 - 50, zeroY + H + 100);
+				}
+				else {
+					// Draw h
+      				ctx.fillText(s.toString(), zeroX + B/2 + 150, zeroY + H/2 - 300);					
+				};
+				if (i[2] == 0) {
+					// Draw a
+					ctx.fillText("A", zeroX - 300, zeroY + H/2 - 100);
+		  			document.getElementById("question").innerHTML = '&theta; &nbsp;=&nbsp; ' + angStr[i[0]] + '<br>A &nbsp;=&nbsp; ?';
+				}
+				else if (i[2] == 1) {
+					// Draw b
+					ctx.fillText("B", zeroX + B/2 - 50, zeroY + H + 100);
+		  			document.getElementById("question").innerHTML = '&theta; &nbsp;=&nbsp; ' + angStr[i[0]] + '<br>B &nbsp;=&nbsp; ?';
+				}
+				else {
+					// Draw h
+      				ctx.fillText("H", zeroX + B/2 + 150, zeroY + H/2 - 300);
+		  			document.getElementById("question").innerHTML = '&theta; &nbsp;=&nbsp; ' + angStr[i[0]] + '<br>H &nbsp;=&nbsp; ?';
+				};
+        	}
+        	else if (operator_int == 5){
+        		var q = Math.random();
+        		var pA = [Math.PI/12, Math.PI/6, Math.PI/5, Math.PI/4, Math.PI/3, 7*Math.PI/12, 0.6*Math.PI, 2*Math.PI/3, 0.75*Math.PI];
+        		var pAstr = ['7π/12', 'π/6', 'π/5', 'π/4', 'π/3', '7π/12', '3π/5', '2π/3', '3π/4'];
+        		var A = [0, 0, 0]; var drawA = [0, 0, 0];
+        		var S = [0, 0, 0]; var drawS = [0, 0, 0];
+        		if (q < 0.2) {
+        			// SSS
+        			var s1 = Math.floor(Math.random()*9) + 2;
+        			var s2 = Math.floor(Math.random()*9) + 2;
+        			var s3 = Math.floor(Math.random()*9) + 2;
+        			S = [s1, s2, s3];
+        			if (S[0] > S[1]) {
+        				S = [S[1], S[0], S[2]];
+        			};
+        			if (S[2] > S[1]) {
+        				S = [S[0], S[2], S[1]];
+        			};
+
+        			if (S[0] + S[2] <= S[1]) {
+        				if (S[2] > S[0]) { S[0] = S[2] }
+        				else { S[2] = S[0] };
+        			};
+        			if (S[0] + S[2] <= S[1]) {
+        				S[0] = S[0] + 4;
+        				S[2] = S[2] + 4;
+        			};
+
+        			A[0] = Math.acos((S[1]*S[1] + S[2]*S[2] - S[0]*S[0])/(2*S[1]*S[2]));
+        			A[1] = Math.acos((S[0]*S[0] + S[2]*S[2] - S[1]*S[1])/(2*S[0]*S[2]));
+        			A[2] = Math.acos((S[1]*S[1] + S[0]*S[0] - S[2]*S[2])/(2*S[0]*S[1]));
+
+        			var ti = Math.floor(Math.random() * 3);
+        			drawS = [1, 1, 1];
+        			drawA[ti] = -1;
+					localStorage.setItem('q_input1', A[ti]);
+        		}
+        		else if (q < 0.6) {
+        			// SSA
+        			var s1 = Math.floor(Math.random()*9) + 2;
+        			var s2 = Math.floor(Math.random()*9) + 2;
+        			var a3i = Math.floor(Math.random() * 9);
+        			var a3 = pA[a3i];
+
+        			var s3 = Math.sqrt(s1*s1 + s2*s2 - 2*s1*s2*Math.cos(a3));
+        			S = [s1, s2, s3];
+        			A = [0, 0, a3];
+
+        			A[0] = Math.acos((S[1]*S[1] + S[2]*S[2] - S[0]*S[0])/(2*S[1]*S[2]));
+        			A[1] = Math.acos((S[0]*S[0] + S[2]*S[2] - S[1]*S[1])/(2*S[0]*S[2]));
+        			drawS = [1, 1, 0];
+        			drawA = [0, 0, 1];
+        			drawAstr = [0, 0, pAstr[a3i]];
+
+        			var qa = Math.floor(Math.random() * 3);
+        			if (qa == 0) { 
+        				drawS[2] = -1; 
+						localStorage.setItem('q_input1', S[2]);
+        			}
+        			else if (qa == 1) { 
+        				drawA[0] = -1;
+						localStorage.setItem('q_input1', A[0]);
+					}
+        			else { 
+        				drawA[1] = -1; 
+						localStorage.setItem('q_input1', A[1]);
+        			};
+
+        			if (S[0] > S[1]) {
+        				S = [S[1], S[0], S[2]];
+        				A = [A[1], A[0], A[2]];
+        				drawS = [drawS[1], drawS[0], drawS[2]];
+        				drawA = [drawA[1], drawA[0], drawA[2]];
+        				drawAstr = [drawAstr[1], drawAstr[0], drawAstr[2]];
+        			};
+        			if (S[2] > S[1]) {
+        				S = [S[0], S[2], S[1]];
+        				A = [A[0], A[2], A[1]];
+        				drawS = [drawS[0], drawS[2], drawS[1]];
+        				drawA = [drawA[0], drawA[2], drawA[1]];
+        				drawAstr = [drawAstr[0], drawAstr[2], drawAstr[1]];
+        			};
+        		}
+        		else {
+        			// AAS 
+        			var s1 = Math.floor(Math.random()*9) + 2;
+        			var a2i = Math.floor(Math.random() * 9);
+        			var a2 = pA[a2i];
+        			var a3i = Math.floor(Math.random() * 9);
+        			var a3 = pA[a3i];
+        			if (a2 + a3 >= Math.PI) { a3i = a3i - 2; a3 = pA[a3i]; };
+        			if (a2 + a3 >= Math.PI) { a3i = 1; a3 = pA[1]; };
+
+        			var a1 = Math.PI - a2 - a3;
+        			var s2 = Math.sin(a2)*a1/Math.sin(a1);
+        			var s3 = Math.sqrt(s1*s1 + s2*s2 - 2*s1*s2*Math.cos(a3));
+        			S = [s1, s2, s3];
+        			A = [a1, a2, a3];
+        			drawS = [1, 0, 0];
+        			drawA = [0, 1, 1];
+        			drawAstr = [0, pAstr[a2i], pAstr[a3i]];
+
+        			var qa = Math.floor(Math.random() * 3);
+        			if (qa == 0) { 
+        				drawS[1] = -1; 
+						localStorage.setItem('q_input1', S[1]);
+        			}
+        			else if (qa == 1) { 
+        				drawS[2] = -1; 
+						localStorage.setItem('q_input1', S[2]);
+					}
+        			else { 
+        				drawA[0] = -1; 
+						localStorage.setItem('q_input1', A[0]);
+        			};
+
+        			if (S[0] > S[1]) {
+        				S = [S[1], S[0], S[2]];
+        				A = [A[1], A[0], A[2]];
+        				drawS = [drawS[1], drawS[0], drawS[2]];
+        				drawA = [drawA[1], drawA[0], drawA[2]];
+        				drawAstr = [drawAstr[1], drawAstr[0], drawAstr[2]];
+        			};
+        			if (S[2] > S[1]) {
+        				S = [S[0], S[2], S[1]];
+        				A = [A[0], A[2], A[1]];
+        				drawS = [drawS[0], drawS[2], drawS[1]];
+        				drawA = [drawA[0], drawA[2], drawA[1]];
+        				drawAstr = [drawAstr[0], drawAstr[2], drawAstr[1]];
+        			};
+        		};
+
+				var B = S[1];
+        		var H = S[0]*Math.sin(A[2]);
+        		var W = S[0]*Math.cos(A[2]);
+				var ratio = W/H;
+				var max = Math.max(B, H);
+				H = max_size*H/max;
+				B = max_size*B/max;
+				W = ratio*H;
+
+				var zeroX = canvas.width/2 - B/2;
+				var zeroY = canvas.height/2 - H/2 + 100;
+
+				ctx.fillStyle = "#DB0000";
+				ctx.strokeStyle = "#000000";
+				ctx.lineWidth = 30;
+				ctx.beginPath();
+				ctx.moveTo(zeroX, canvas.height - zeroY);
+				ctx.lineTo(zeroX + W, canvas.height - zeroY - H);
+				ctx.lineTo(zeroX + B, canvas.height - zeroY);
+				ctx.lineTo(zeroX, canvas.height - zeroY);
+      			ctx.stroke();
+
+				ctx.fillStyle = "#000000";
+				ctx.font = "225px Arial";
+				var topline = '';
+				var bottomline = '';
+      			if (drawS[0] == 1) {
+					ctx.fillText(S[0].toString(), zeroX + W/2 - 350, zeroY + H/2 - 300);
+      			};
+      			if (drawS[1] == 1) {
+					ctx.fillText(S[1].toString(), zeroX + B/2 - 50, zeroY + H + 100);
+      			};
+      			if (drawS[2] == 1) {
+      				ctx.fillText(S[2].toString(), zeroX + W + (B-W)/2 + 150, zeroY + H/2 - 300);
+      			};
+      			if (drawA[0] == 1) {
+      				ctx.fillText("α", zeroX + B + 200, zeroY + H);
+      				topline = topline + '&alpha; &nbsp;=&nbsp; ' + drawAstr[0];
+      			};
+      			if (drawA[1] == 1) {
+      				ctx.fillText("φ", zeroX + W - 50, zeroY - 350);
+      				if (topline != '') {
+      					topline = topline + ' , &nbsp; &phi; &nbsp;=&nbsp; ' + drawAstr[1];
+      				}
+      				else {
+						topline = '&phi; &nbsp;=&nbsp; ' + drawAstr[1];
+      				};
+      			};
+      			if (drawA[2] == 1) {
+      				ctx.fillText("θ", zeroX - 250, zeroY + H);
+      				if (topline != '') {
+      					topline = topline + ' , &nbsp; &theta; &nbsp;=&nbsp; ' + drawAstr[2];
+      				}
+      				else {
+						topline = '&theta; &nbsp;=&nbsp; ' + drawAstr[2];
+      				};
+      			};
+      			if (drawS[0] == -1) {
+					ctx.fillText("A", zeroX + W/2 - 350, zeroY + H/2 - 300);
+					bottomline = 'A &nbsp;=&nbsp; ?';
+      			};
+      			if (drawS[1] == -1) {
+					ctx.fillText("B", zeroX + B/2 - 50, zeroY + H + 100);
+					bottomline = 'B &nbsp;=&nbsp; ?';
+      			};
+      			if (drawS[2] == -1) {
+      				ctx.fillText("C", zeroX + W + (B-W)/2 + 150, zeroY + H/2 - 300);
+					bottomline = 'C &nbsp;=&nbsp; ?';
+      			};
+      			if (drawA[0] == -1) {
+      				ctx.fillText("α", zeroX + B + 200, zeroY + H);
+					bottomline = 'α &nbsp;=&nbsp; ?';
+      			};
+      			if (drawA[1] == -1) {
+      				ctx.fillText("φ", zeroX + W - 50, zeroY - 350);
+					bottomline = 'φ &nbsp;=&nbsp; ?';
+      			};
+      			if (drawA[2] == -1) {
+      				ctx.fillText("θ", zeroX - 250, zeroY + H);
+					bottomline = 'θ &nbsp;=&nbsp; ?';
+      			};
+
+      			if (topline == '') {
+      				var P = S[0] + S[1] + S[2];
+      				topline = 'P &nbsp;=&nbsp; ' + P.toString();
+      			};
+		  		document.getElementById("question").innerHTML = topline + '<br>' + bottomline;
+        	}
+        	else if (operator_int == 6){
+        		if (Math.random() > 0.5) {
+        			// 2D
+        			var x = Math.floor(Math.random()*12) + 1;
+        			var y = Math.floor(Math.random()*12) + 1;
+
+        			if (Math.random() > 0.7) { x = -x; };
+        			if (Math.random() > 0.7) { y = -y; };
+
+				  	var norm = Math.sqrt(x*x + y*y);
+				  	max_size = 1.25*max_size;
+				  	var center_x = canvas.width/2;
+				  	var center_y = canvas.height/2;
+					var u_x = 0.5*max_size*x/norm;
+					var u_y = 0.5*max_size*y/norm;
+					var xt = center_x + u_x;
+					var yt = center_y - u_y;
+
+					ctx.strokeStyle = "#C0C0C0";
+					ctx.lineWidth = 30;
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y - max_size/2);
+					ctx.lineTo(center_x, center_y + max_size/2);
+					ctx.moveTo(center_x - max_size/2, center_y);
+					ctx.lineTo(max_size/2 + center_x, center_y);
+					ctx.stroke();
+
+					ctx.strokeStyle = "#DB0000";
+					ctx.beginPath();
+					ctx.moveTo(xt, center_y);
+					ctx.lineTo(xt, yt);
+					ctx.stroke();
+					ctx.strokeStyle = "#075AAA";
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(xt, center_y);
+					ctx.stroke();
+					ctx.strokeStyle = "#000000";
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(xt, yt);
+					ctx.stroke();
+
+		  			document.getElementById("question").innerHTML = 'v&#773; &nbsp;=&nbsp; < ' + x.toString() + ' , ' + y.toString() + ' ><br>||v&#773;|| &nbsp;=&nbsp; ?';
+		    		localStorage.setItem('q_input1', x);
+		    		localStorage.setItem('q_input2', y);
+		    		localStorage.setItem('q_input3', 0);
+        		}
+        		else {
+        			// 3D
+        			var x = Math.floor(Math.random()*12) + 1;
+        			var y = Math.floor(Math.random()*12) + 1;
+        			var z = Math.floor(Math.random()*12) + 1;
+
+        			if (Math.random() > 0.7) { x = -x; };
+        			if (Math.random() > 0.7) { y = -y; };
+        			if (Math.random() > 0.7) { z = -z; };
+
+				  	var norm = 1.25*Math.sqrt(x*x + y*y + z*z);
+				  	var center_x = canvas.width/2;
+				  	var center_y = canvas.height/2;
+
+				  	max_size = 0.65*max_size;
+					ctx.strokeStyle = "#A9A9A9";
+					ctx.lineWidth = 30;
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(center_x, center_y + max_size);
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+					ctx.stroke();
+
+					ctx.strokeStyle = "#C0C0C0";
+					ctx.lineWidth = 30;
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(center_x, center_y - max_size);
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+					ctx.stroke();
+
+					var u_x = 0.75*max_size*x/norm;
+					var u_y = 0.75*max_size*y/norm;
+					var u_z = 0.75*max_size*z/norm;
+					var xt = center_x - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8);
+					var yt = center_y - u_z + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8);
+					if (z < 0) {
+						ctx.strokeStyle = "#000000";
+			   			ctx.beginPath();
+						ctx.moveTo(center_x, center_y);
+						ctx.lineTo(xt, yt);
+			  			ctx.stroke();
+			  		};
+					ctx.strokeStyle = "#075AAA";
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(center_x - u_x*Math.cos(Math.PI/8), center_y + u_x*Math.sin(Math.PI/8));
+					ctx.stroke();
+					ctx.strokeStyle = "#DB0000";
+					ctx.beginPath();
+					ctx.moveTo(center_x - u_x*Math.cos(Math.PI/8), center_y + u_x*Math.sin(Math.PI/8));
+					ctx.lineTo(center_x - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8), center_y + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8));
+					ctx.stroke();
+					if (x != y) {
+						ctx.strokeStyle = "#00995F";
+						ctx.beginPath();
+						ctx.moveTo(center_x - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8), center_y + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8));
+						ctx.lineTo(xt, yt);
+						ctx.stroke();
+					};
+					if (z > 0) {
+						ctx.strokeStyle = "#000000";
+			   			ctx.beginPath();
+						ctx.moveTo(center_x, center_y);
+						ctx.lineTo(xt, yt);
+			  			ctx.stroke();
+			  		};
+					if (x == y) {
+						ctx.strokeStyle = "#00995F";
+						ctx.beginPath();
+						ctx.moveTo(center_x - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8), center_y + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8));
+						ctx.lineTo(xt, yt);
+						ctx.stroke();
+					};
+
+		  			document.getElementById("question").innerHTML = 'v&#773; &nbsp;=&nbsp; < ' + x.toString() + ' , ' + y.toString() + ' , ' + z.toString() + ' ><br>||v&#773;|| &nbsp;=&nbsp; ?';
+		    		localStorage.setItem('q_input1', x);
+		    		localStorage.setItem('q_input2', y);
+		    		localStorage.setItem('q_input3', z);
+        		};
+        	}
+        	else if (operator_int == 7){
+        		if (Math.random() > 0.5) {
+        			var x = Math.floor(Math.random()*20) + 1;
+        			var y = Math.floor(Math.random()*20) + 1;
+
+        			if (Math.random() > 0.7) { x = -x; };
+        			if (Math.random() > 0.7) { y = -y; };
+
+				  	var norm = Math.sqrt(x*x + y*y);
+				  	max_size = 1.25*max_size;
+				  	var center_x = canvas.width/2;
+				  	var center_y = canvas.height/2;
+					var u_x = 0.5*max_size*x/norm;
+					var u_y = 0.5*max_size*y/norm;
+					var xt = center_x + u_x;
+					var yt = center_y - u_y;
+
+					ctx.strokeStyle = "#C0C0C0";
+					ctx.lineWidth = 30;
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y - max_size/2);
+					ctx.lineTo(center_x, center_y + max_size/2);
+					ctx.moveTo(center_x - max_size/2, center_y);
+					ctx.lineTo(max_size/2 + center_x, center_y);
+					ctx.stroke();
+
+					ctx.strokeStyle = "#DB0000";
+					ctx.beginPath();
+					ctx.moveTo(xt, center_y);
+					ctx.lineTo(xt, yt);
+					ctx.stroke();
+					ctx.strokeStyle = "#075AAA";
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(xt, center_y);
+					ctx.stroke();
+					ctx.strokeStyle = "#000000";
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(xt, yt);
+					ctx.stroke();
+
+					if (Math.random() > 0.5) {
+			  			document.getElementById("question").innerHTML = 'v&#773; &nbsp;=&nbsp; < ' + x.toString() + ' , ' + y.toString() + ' ><br>v&#773;<sub>&theta;</sub> &nbsp;=&nbsp; < r , &theta; > , &nbsp; r &nbsp;=&nbsp; ?';
+			    		localStorage.setItem('q_input1', norm);
+					}
+					else {
+			  			document.getElementById("question").innerHTML = 'v&#773; &nbsp;=&nbsp; < ' + x.toString() + ' , ' + y.toString() + ' ><br>v&#773;<sub>&theta;</sub> &nbsp;=&nbsp; < r , &theta; > , &nbsp; &theta; &nbsp;=&nbsp; ?';
+			    		localStorage.setItem('q_input1', Math.atan(y/x));
+					};
+        		}
+        		else {
+        			var r = Math.floor(Math.random()*20) + 1;
+		    		if (Math.random() > 0.5) {
+		    			var n = Math.floor(Math.random() * 60);
+		    			var frac = reduce(n, 30);
+		    			var radString = frac[0].toString() + 'π/' + frac[1].toString();
+		    			if (n == 30) {
+		    				radString = 'π';
+		    			}
+		    			else if (frac[1] == 1 || frac[0] == 0) {
+		    				radString = frac[0].toString() + 'π';
+		    			}
+		    			else if (frac[0] == 1) {
+		    				radString = 'π/' + frac[1].toString();
+		    			};
+		    		}
+		    		else {
+		    			var n = Math.floor(Math.random() * 24);
+		    			var frac = reduce(n, 12);
+		    			var radString = frac[0].toString() + 'π/' + frac[1].toString();
+		    			if (n == 12) {
+		    				radString = 'π';
+		    			}
+		    			else if (frac[1] == 1 || frac[0] == 0) {
+		    				radString = frac[0].toString() + 'π';
+		    			}
+		    			else if (frac[0] == 1) {
+		    				radString = 'π/' + frac[1].toString();
+		    			};
+		    		};
+
+					var rad = frac[0]*Math.PI/frac[1];
+					var x = r*Math.cos(rad);
+					var y = r*Math.sin(rad);
+        		
+				  	var norm = r;
+				  	max_size = 1.25*max_size;
+				  	var center_x = canvas.width/2;
+				  	var center_y = canvas.height/2;
+					var u_x = 0.5*max_size*x/norm;
+					var u_y = 0.5*max_size*y/norm;
+					var xt = center_x + u_x;
+					var yt = center_y - u_y;
+
+					ctx.strokeStyle = "#C0C0C0";
+					ctx.lineWidth = 30;
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y - max_size/2);
+					ctx.lineTo(center_x, center_y + max_size/2);
+					ctx.moveTo(center_x - max_size/2, center_y);
+					ctx.lineTo(max_size/2 + center_x, center_y);
+					ctx.stroke();
+
+					ctx.strokeStyle = "#DB0000";
+					ctx.beginPath();
+					ctx.moveTo(xt, center_y);
+					ctx.lineTo(xt, yt);
+					ctx.stroke();
+					ctx.strokeStyle = "#075AAA";
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(xt, center_y);
+					ctx.stroke();
+					ctx.strokeStyle = "#000000";
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(xt, yt);
+					ctx.stroke();
+
+					if (Math.random() > 0.5) {
+			  			document.getElementById("question").innerHTML = 'v&#773;<sub>&theta;</sub> &nbsp;=&nbsp; < ' + r.toString() + ' , ' + radString + ' ><br>v&#773; &nbsp;=&nbsp; < x , y > , &nbsp; x &nbsp;=&nbsp; ?';
+			    		localStorage.setItem('q_input1', x);
+					}
+					else {
+			  			document.getElementById("question").innerHTML = 'v&#773;<sub>&theta;</sub> &nbsp;=&nbsp; < ' + r.toString() + ' , ' + radString + ' ><br>v&#773; &nbsp;=&nbsp; < x , y > , &nbsp; y &nbsp;=&nbsp; ?';
+			    		localStorage.setItem('q_input1', y);
+					};
+        		};
+        	}
+        	else if (operator_int == 8){
+        		var q = Math.random();
+        		if (q < 0.5) {
+        			if (Math.random() > 0.5) {
+	        			var x1 = Math.floor(Math.random()*9) + 1;
+	        			var y1 = Math.floor(Math.random()*9) + 1;
+	        			var x2 = Math.floor(Math.random()*9) + 1;
+	        			var y2 = Math.floor(Math.random()*9) + 1;
+
+	        			if (Math.random() > 0.7) { x1 = -x1; };
+	        			if (Math.random() > 0.7) { y1 = -y1; };
+	        			if (Math.random() > 0.7) { x2 = -x2; };
+	        			if (Math.random() > 0.7) { y2 = -y2; };
+
+					  	var norm1 = Math.sqrt(x1*x1 + y1*y1);
+					  	var norm2 = Math.sqrt(x2*x2 + y2*y2);
+					  	var norm = Math.max(norm1, norm2);
+					  	max_size = 1.25*max_size;
+					  	var center_x = canvas.width/2;
+					  	var center_y = canvas.height/2;
+
+						ctx.strokeStyle = "#C0C0C0";
+						ctx.lineWidth = 30;
+						ctx.beginPath();
+						ctx.moveTo(center_x, center_y - max_size/2);
+						ctx.lineTo(center_x, center_y + max_size/2);
+						ctx.moveTo(center_x - max_size/2, center_y);
+						ctx.lineTo(max_size/2 + center_x, center_y);
+						ctx.stroke();
+
+						var u_x = 0.5*max_size*x1/norm;
+						var u_y = 0.5*max_size*y1/norm;
+						var xt = center_x + u_x;
+						var yt = center_y - u_y;
+						ctx.strokeStyle = "#DB0000";
+						ctx.beginPath();
+						ctx.moveTo(center_x, center_y);
+						ctx.lineTo(xt, yt);
+						ctx.stroke();
+
+						var u_x = 0.5*max_size*x2/norm;
+						var u_y = 0.5*max_size*y2/norm;
+						var xt = center_x + u_x;
+						var yt = center_y - u_y;
+						ctx.strokeStyle = "#075AAA";
+						ctx.beginPath();
+						ctx.moveTo(center_x, center_y);
+						ctx.lineTo(xt, yt);
+						ctx.stroke();
+
+						var dot = x1*x2 + y1*y2;
+			  			document.getElementById("question").innerHTML = 'u&#773; &nbsp;=&nbsp; < ' + x1.toString() + ' , ' + y1.toString() + ' ><br>v&#773; &nbsp;=&nbsp; < ' + x2.toString() + ' , ' + y2.toString() + ' > , &nbsp; u&#773; &nbsp;&bull;&nbsp; v&#773; &nbsp;=&nbsp; ?';
+			    		localStorage.setItem('q_input1', dot);
+        			}
+        			else {
+		    			var x1 = Math.floor(Math.random()*9) + 1;
+		    			var y1 = Math.floor(Math.random()*9) + 1;
+		    			var z1 = Math.floor(Math.random()*9) + 1;
+		    			var x2 = Math.floor(Math.random()*9) + 1;
+		    			var y2 = Math.floor(Math.random()*9) + 1;
+		    			var z2 = Math.floor(Math.random()*9) + 1;
+
+	        			if (Math.random() > 0.7) { x1 = -x1; };
+	        			if (Math.random() > 0.7) { y1 = -y1; };
+	        			if (Math.random() > 0.7) { z1 = -z1; };
+	        			if (Math.random() > 0.7) { x2 = -x2; };
+	        			if (Math.random() > 0.7) { y2 = -y2; };
+	        			if (Math.random() > 0.7) { z2 = -z2; };
+
+	        			max_size = 0.65*max_size;
+					  	var center_x = canvas.width/2;
+					  	var center_y = canvas.height/2;
+
+						ctx.strokeStyle = "#A9A9A9";
+						ctx.lineWidth = 25;
+						ctx.beginPath();
+						ctx.moveTo(center_x, center_y);
+						ctx.lineTo(center_x, center_y + max_size);
+						ctx.moveTo(center_x, center_y);
+						ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+						ctx.moveTo(center_x, center_y);
+						ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+						ctx.stroke();
+
+						ctx.strokeStyle = "#C0C0C0";
+						ctx.lineWidth = 25;
+						ctx.beginPath();
+						ctx.moveTo(center_x, center_y);
+						ctx.lineTo(center_x, center_y - max_size);
+						ctx.moveTo(center_x, center_y);
+						ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+						ctx.moveTo(center_x, center_y);
+						ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+						ctx.stroke();
+
+						ctx.lineWidth = 30;
+
+						var Ox = canvas.width/2;
+						var Oy = canvas.height/2;
+
+					  	var norm1 = Math.sqrt(x1*x1 + y1*y1 + z1*z1);
+					  	var norm2 = Math.sqrt(x2*x2 + y2*y2 + z2*z2);
+					  	var norm = 1.25*Math.max(norm1, norm2);
+
+						var u_x = max_size*x1/norm;
+						var u_y = max_size*y1/norm;
+						var u_z = max_size*z1/norm;
+						var xt = Ox - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8);
+						var yt = Oy - u_z + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8);
+
+						ctx.strokeStyle = "#DB0000";
+			   			ctx.beginPath();
+						ctx.moveTo(Ox, Oy);
+						ctx.lineTo(xt, yt);
+			  			ctx.stroke();
+
+						var u_x = max_size*x2/norm;
+						var u_y = max_size*y2/norm;
+						var u_z = max_size*z2/norm;
+						var xt = Ox - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8);
+						var yt = Oy - u_z + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8);
+
+						ctx.strokeStyle = "#075AAA";
+			   			ctx.beginPath();
+						ctx.moveTo(Ox, Oy);
+						ctx.lineTo(xt, yt);
+			  			ctx.stroke();
+
+						var dot = x1*x2 + y1*y2 + z1*z2;
+			  			document.getElementById("question").innerHTML = 'u&#773; &nbsp;=&nbsp; < ' + x1.toString() + ' , ' + y1.toString() + ' , ' + z1.toString() + ' ><br>v&#773; &nbsp;=&nbsp; < ' + x2.toString() + ' , ' + y2.toString() + ' , ' + z2.toString() + ' > , &nbsp; u&#773; &nbsp;&bull;&nbsp; v&#773; &nbsp;=&nbsp; ?';
+			    		localStorage.setItem('q_input1', dot);
+        			};
+        		}
+        		else if (q < 0.75) {
+        			var x1 = Math.floor(Math.random()*20) + 1;
+        			var y1 = Math.floor(Math.random()*20) + 1;
+
+        			if (Math.random() > 0.5) {
+	        			var x2 = Math.floor(Math.random()*20) + 1;
+	        			var y2 = x2*y1/x1;
+
+	        			if (Math.random() > 0.7) { x1 = -x1; x2 = -x2; };
+	        			if (Math.random() > 0.7) { y1 = -y1; y2 = -y2; };
+
+						localStorage.setItem('q_input1', y2);
+			  			document.getElementById("question").innerHTML = 'u&#773; &nbsp;=&nbsp; < ' + x1.toString() + ' , ' + y1.toString() + ' ><br>v&#773; &nbsp;=&nbsp; < ' + x2.toString() + ' , ? > , &nbsp; u&#773; &nbsp;||&nbsp; v&#773;';
+	        		}
+	        		else {
+	        			var y2 = Math.floor(Math.random()*20) + 1;
+	        			var x2 = y2*x1/y1;
+
+	        			if (Math.random() > 0.7) { x1 = -x1; x2 = -x2; };
+	        			if (Math.random() > 0.7) { y1 = -y1; y2 = -y2; };
+
+						localStorage.setItem('q_input1', x2);
+			  			document.getElementById("question").innerHTML = 'u&#773; &nbsp;=&nbsp; < ' + x1.toString() + ' , ' + y1.toString() + ' ><br>v&#773; &nbsp;=&nbsp; < ? , ' + y2.toString() + ' > , &nbsp; u&#773; &nbsp;||&nbsp; v&#773;';
+	        		};
+
+				  	var norm1 = Math.sqrt(x1*x1 + y1*y1);
+				  	var norm2 = Math.sqrt(x2*x2 + y2*y2);
+				  	var norm = Math.max(norm1, norm2);
+				  	max_size = 1.25*max_size;
+				  	var center_x = canvas.width/2;
+				  	var center_y = canvas.height/2;
+
+					ctx.strokeStyle = "#C0C0C0";
+					ctx.lineWidth = 30;
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y - max_size/2);
+					ctx.lineTo(center_x, center_y + max_size/2);
+					ctx.moveTo(center_x - max_size/2, center_y);
+					ctx.lineTo(max_size/2 + center_x, center_y);
+					ctx.stroke();
+
+					var u_x = 0.5*max_size*x1/norm;
+					var u_y = 0.5*max_size*y1/norm;
+					var xt = center_x + u_x;
+					var yt = center_y - u_y;
+					ctx.strokeStyle = "#DB0000";
+					ctx.beginPath();
+					ctx.moveTo(center_x - max_size*0.15, center_y);
+					ctx.lineTo(xt - max_size*0.15, yt);
+					ctx.stroke();
+
+					var u_x = 0.5*max_size*x2/norm;
+					var u_y = 0.5*max_size*y2/norm;
+					var xt = center_x + u_x;
+					var yt = center_y - u_y;
+					ctx.strokeStyle = "#075AAA";
+					ctx.beginPath();
+					ctx.moveTo(center_x + max_size*0.15, center_y);
+					ctx.lineTo(xt + max_size*0.15, yt);
+					ctx.stroke();
+        		}
+        		else {
+        			var x1 = Math.floor(Math.random()*20) + 1;
+        			var y1 = Math.floor(Math.random()*20) + 1;
+
+        			if (Math.random() > 0.5) {
+	        			var x2 = Math.floor(Math.random()*20) + 1;
+	        			if (Math.random() > 0.7) { x1 = -x1; };
+	        			if (Math.random() > 0.7) { y1 = -y1; };
+	        			if (Math.random() > 0.7) { x2 = -x2; };
+
+	        			var y2 = -x1*x2/y1;
+						localStorage.setItem('q_input1', y2);
+			  			document.getElementById("question").innerHTML = 'u&#773; &nbsp;=&nbsp; < ' + x1.toString() + ' , ' + y1.toString() + ' ><br>v&#773; &nbsp;=&nbsp; < ' + x2.toString() + ' , ? > , &nbsp; u&#773; &nbsp;&perp;&nbsp; v&#773;';
+	        		}
+	        		else {
+	        			var y2 = Math.floor(Math.random()*20) + 1;
+	        			if (Math.random() > 0.7) { x1 = -x1; };
+	        			if (Math.random() > 0.7) { y1 = -y1; };
+	        			if (Math.random() > 0.7) { y2 = -y2; };
+
+	        			var x2 = -y1*y2/x1;
+						localStorage.setItem('q_input1', x2);
+			  			document.getElementById("question").innerHTML = 'u&#773; &nbsp;=&nbsp; < ' + x1.toString() + ' , ' + y1.toString() + ' ><br>v&#773; &nbsp;=&nbsp; < ? , ' + y2.toString() + ' > , &nbsp; u&#773; &nbsp;&perp;&nbsp; v&#773;';
+	        		};
+
+				  	var norm1 = Math.sqrt(x1*x1 + y1*y1);
+				  	var norm2 = Math.sqrt(x2*x2 + y2*y2);
+				  	var norm = Math.max(norm1, norm2);
+				  	max_size = 1.25*max_size;
+				  	var center_x = canvas.width/2;
+				  	var center_y = canvas.height/2;
+
+					ctx.strokeStyle = "#C0C0C0";
+					ctx.lineWidth = 30;
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y - max_size/2);
+					ctx.lineTo(center_x, center_y + max_size/2);
+					ctx.moveTo(center_x - max_size/2, center_y);
+					ctx.lineTo(max_size/2 + center_x, center_y);
+					ctx.stroke();
+
+					var u_x = 0.5*max_size*x1/norm;
+					var u_y = 0.5*max_size*y1/norm;
+					var xt = center_x + u_x;
+					var yt = center_y - u_y;
+					ctx.strokeStyle = "#DB0000";
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(xt, yt);
+					ctx.stroke();
+
+					var u_x = 0.5*max_size*x2/norm;
+					var u_y = 0.5*max_size*y2/norm;
+					var xt = center_x + u_x;
+					var yt = center_y - u_y;
+					ctx.strokeStyle = "#075AAA";
+					ctx.beginPath();
+					ctx.moveTo(center_x, center_y);
+					ctx.lineTo(xt, yt);
+					ctx.stroke();
+        		};
+
+        		// DO U || V, U = <x1, y1> , V = <x2, ? >
+        		// DO U perp V, U = <x1, y1> , V = <x2, ? >
+        		// (both with semi generic pictures)
+        		// alongside regular dotting 2d and 3d (split all of them 25% each)
+        	}
+        	else if (operator_int == 9) {
+    			var x1 = Math.floor(Math.random()*9) + 1;
+    			var y1 = Math.floor(Math.random()*9) + 1;
+    			var z1 = Math.floor(Math.random()*9) + 1;
+    			var x2 = Math.floor(Math.random()*9) + 1;
+    			var y2 = Math.floor(Math.random()*9) + 1;
+    			var z2 = Math.floor(Math.random()*9) + 1;
+
+    			var negs = 0;
+    			if (Math.random() > 0.7) { x1 = -x1; negs = negs + 1; };
+    			if (Math.random() > 0.7) { y1 = -y1; negs = negs + 1; };
+    			if (Math.random() > 0.7) { z1 = -z1; negs = negs + 1; };
+    			if (Math.random() > 0.7 && negs < 3 ) { x2 = -x2; negs = negs + 1; };
+    			if (Math.random() > 0.7 && negs < 3 ) { y2 = -y2; negs = negs + 1; };
+    			if (Math.random() > 0.7 && negs < 3 ) { z2 = -z2; negs = negs + 1; };
+
+				var x3 = y1*z2 - y2*z1;
+				var y3 = z1*x2 - z2*x1;
+				var z3 = x1*y2 - y1*x2;
+
+    			var q = Math.floor(Math.random() * 3);
+    			if (q == 0) {
+			    	localStorage.setItem('q_input1', x3);
+			  		document.getElementById("question").innerHTML = 'u&#773; &nbsp;=&nbsp; < ' + x1.toString() + ' , ' + y1.toString() + ' , ' + z1.toString() + ' >,&nbsp; v&#773; &nbsp;=&nbsp; < ' + x2.toString() + ' , ' + y2.toString() + ' , ' + z2.toString() + ' ><br>u&#773; &#215; v&#773; &nbsp;=&nbsp; < x , y , z > , &nbsp; x &nbsp;=&nbsp; ?';
+    			}
+    			else if (q == 1) {
+			    	localStorage.setItem('q_input1', y3);
+			  		document.getElementById("question").innerHTML = 'u&#773; &nbsp;=&nbsp; < ' + x1.toString() + ' , ' + y1.toString() + ' , ' + z1.toString() + ' >,&nbsp; v&#773; &nbsp;=&nbsp; < ' + x2.toString() + ' , ' + y2.toString() + ' , ' + z2.toString() + ' ><br>u&#773; &#215; v&#773; &nbsp;=&nbsp; < x , y , z > , &nbsp; y &nbsp;=&nbsp; ?';
+    			}
+    			else {
+			    	localStorage.setItem('q_input1', z3);
+			  		document.getElementById("question").innerHTML = 'u&#773; &nbsp;=&nbsp; < ' + x1.toString() + ' , ' + y1.toString() + ' , ' + z1.toString() + ' >,&nbsp; v&#773; &nbsp;=&nbsp; < ' + x2.toString() + ' , ' + y2.toString() + ' , ' + z2.toString() + ' ><br>u&#773; &#215; v&#773; &nbsp;=&nbsp; < x , y , z > , &nbsp; z &nbsp;=&nbsp; ?';
+    			};
+
+			  	var max_size = 0.65*Math.min(canvas.width, canvas.height);
+
+			  	var center_x = canvas.width/2;
+			  	var center_y = canvas.height/2;
+
+				ctx.strokeStyle = "#A9A9A9";
+				ctx.lineWidth = 25;
+				ctx.beginPath();
+				ctx.moveTo(center_x, center_y);
+				ctx.lineTo(center_x, center_y + max_size);
+				ctx.moveTo(center_x, center_y);
+				ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+				ctx.moveTo(center_x, center_y);
+				ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+				ctx.stroke();
+
+				ctx.strokeStyle = "#C0C0C0";
+				ctx.lineWidth = 25;
+				ctx.beginPath();
+				ctx.moveTo(center_x, center_y);
+				ctx.lineTo(center_x, center_y - max_size);
+				ctx.moveTo(center_x, center_y);
+				ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+				ctx.moveTo(center_x, center_y);
+				ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+				ctx.stroke();
+
+				ctx.lineWidth = 30;
+				var Ox = canvas.width/2;
+				var Oy = canvas.height/2;
+			  	var norm1 = Math.sqrt(x1*x1 + y1*y1 + z1*z1);
+			  	var norm2 = Math.sqrt(x2*x2 + y2*y2 + z2*z2);
+			  	var norm3 = Math.sqrt(x3*x3 + y3*y3 + z3*z3);
+			  	var norm = 1.5*Math.max(norm1, norm2, norm3);
+
+				var u_x = max_size*x1/norm;
+				var u_y = max_size*y1/norm;
+				var u_z = max_size*z1/norm;
+				var xt = Ox - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8);
+				var yt = Oy - u_z + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8);
+
+				ctx.strokeStyle = "#DB0000";
+	   			ctx.beginPath();
+				ctx.moveTo(Ox, Oy);
+				ctx.lineTo(xt, yt);
+	  			ctx.stroke();
+
+				var u_x = max_size*x2/norm;
+				var u_y = max_size*y2/norm;
+				var u_z = max_size*z2/norm;
+				var xt = Ox - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8);
+				var yt = Oy - u_z + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8);
+
+				ctx.strokeStyle = "#075AAA";
+	   			ctx.beginPath();
+				ctx.moveTo(Ox, Oy);
+				ctx.lineTo(xt, yt);
+	  			ctx.stroke();
+
+				var x3 = y1*z2 - y2*z1;
+				var y3 = z1*x2 - z2*x1;
+				var z3 = x1*y2 - y1*x2;
+				var u_x = max_size*x3/norm;
+				var u_y = max_size*y3/norm;
+				var u_z = max_size*z3/norm;
+				var xt = Ox - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8);
+				var yt = Oy - u_z + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8);
+
+				ctx.strokeStyle = "#00995F";
+	   			ctx.beginPath();
+				ctx.moveTo(Ox, Oy);
+				ctx.lineTo(xt, yt);
+	  			ctx.stroke();
+        	};
+		}
+	</script>
+
+</body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
+</html>

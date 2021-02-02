@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<link rel="icon" href="images/link_logo.png">
+<head>
+	<meta charset="UTF-8">
+	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
+	<style>
+
+		input {
+			width: 50%
+		}
+
+	</style>
+</head>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="1-0.html">1</a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="2-8.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-0.html">&Delta;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-1.html">&#402;'(x)</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-2.html"><span style="font-size: 1.5em">&#8978;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-3.html"><span style="font-size: 0.95em">lim</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-4.html">&#8721;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-5.html">&int;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-6.html"><span style="font-size: 1.25em">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-7.html"><span style="font-size: 1.05em">u</span></a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="2-8.html"><span style="font-size: 1.1em">&orarr;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-Q.html">?</a></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button10" type="button" onclick="scrollToIndex(10)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button11" type="button" onclick="scrollToIndex(11)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button12" type="button" onclick="scrollToIndex(12)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button13" type="button" onclick="scrollToIndex(13)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button14" type="button" onclick="scrollToIndex(14)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button15" type="button" onclick="scrollToIndex(15)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+
+		<table id="scroll_item0" style="margin-top: 2.5%; text-align: center; width: 95%; margin-left: 2.5%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 62.5%; padding: 5%; padding-left: 2.5%;">
+					<img src="images/2/2-8/applic_diff_intro_1.png" width="100%" style="">
+				</td>
+				<td style="width: 37.5%; padding: 5%; padding-left: 2.5%; padding-right: 2.5%">
+					<img src="images/2/2-8/applic_diff_intro_2.png" width="100%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item1" style="width: 100%; margin-left: 0%; padding: 0px; margin-top: 2.25%; border-radius: 3.5em; border-style: solid; border-width: medium; text-align: center; font-size: 1.65em; line-height: 2em; padding-bottom: 0%">
+			<table style="width: 100.1%; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 35%; padding: 5%; border-width: medium; padding-right: 2.5%; padding-bottom: 2.5%">
+						&int; &#402;(x) dx &nbsp;=&nbsp; &Sum; &Delta;&#402; dx
+						<br>h(x) &nbsp;=&nbsp; &#402;(x) - g(x)
+						<br>&Delta;h &nbsp;=&nbsp; &Delta;&#402; - &Delta;g
+						<br>&int; h(x) dx &nbsp;=&nbsp; &Sum; (&Delta;&#402; - &Delta;g) dx
+						<br>=&nbsp; &Sum; &Delta;&#402; dx &nbsp;-&nbsp; &Sum; &Delta;g dx
+						<br>=&nbsp; &int; &#402;(x) dx &nbsp;-&nbsp; &int; g(x) dx
+						</td>
+					<td style="width: 65%; padding: 5%; border-width: medium; padding-right: 2.5%; padding-left: 0%; padding-top: 6.5%; padding-bottom: 1.5%">
+						<img src="images/2/2-8/applic_diff_def.png" width="95%" style="margin-bottom: 2.5%">
+					</td>		
+				</tr>
+			</table>
+			<div style="padding-bottom: 3.5%">
+				<span style="font-size: 1.15em;">&int; &#402;(x) - g(x) dx &nbsp; = &nbsp; &int; &#402;(x) dx &nbsp;-&nbsp; &int; g(x) dx</span>
+			</div>
+		</div>
+
+		<table id="scroll_item2" style="margin-top: 7.5%; text-align: center; width: 96%; margin-left: 2%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<img src="images/2/2-8/applic_diff_g0.png" width="100%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item3" style="width: 95%; margin-left: 2.5%; margin-top: 5%; border-radius: 2.5em; border-style: solid; border-width: medium; border-color: black;">
+			<table style="width: 100%; font-size: 1.5em; line-height: 1.85em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-left: 10%; padding-right: 0%; text-align: left; border-width: medium; border-color: black; border-bottom-style: solid">
+						&#402;(x) &nbsp;=&nbsp; x + 3 , &nbsp; g(x) &nbsp;=&nbsp; 0.5x + 1<sub>&nbsp;</sub>
+						<br>h(x) &nbsp;=&nbsp; &#402;(x) - g(x) &nbsp;=&nbsp; 0.5x + 2<sub>&nbsp;</sub>
+						<br>&int; &#402;(x) dx &nbsp;=&nbsp; 0.5x<sup>2</sup> + 3x + C
+						<br>&int; g(x) dx &nbsp;=&nbsp; 0.25x<sup>2</sup> + x + C
+						<br>A(x) &nbsp;=&nbsp; &int; h(x) dx &nbsp;=&nbsp; 0.25x<sup>2</sup> + 2x + C
+						<br>A(0) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; C &nbsp;=&nbsp; 0
+						<br>A(1) &nbsp;=&nbsp; 2.25 , &nbsp; A(2) &nbsp;=&nbsp; 5
+					</td>
+					<td style="width: 50%; padding: 5%; text-align: center; border-width: medium; border-color: black; border-bottom-style: solid; padding-left: 0%">
+						<img src="images/2/2-8/applic_diff_ex1.png" width="100%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-left: 10%; padding-right: 0%; text-align: left; border-width: medium; border-color: black; border-bottom-style: solid">
+						&#402;(x) &nbsp;=&nbsp; x , &nbsp; g(x) &nbsp;=&nbsp; x<sup>2</sup>
+						<br>&#402;(x) &nbsp;=&nbsp; g(x) , &nbsp; x &nbsp;=&nbsp; x<sup>2</sup> &nbsp; &rarr; &nbsp; x &nbsp;=&nbsp; 0 ,&nbsp; 1
+						<br>&#402;(x) &nbsp;>&nbsp; g(x) , &nbsp; 0 &nbsp;&leq;&nbsp; x &nbsp;&leq;&nbsp; 1<sup>&nbsp;</sup>
+						<br>h(x) &nbsp;=&nbsp; &#402;(x) - g(x) &nbsp;=&nbsp; x - x<sup>2</sup><sub>&nbsp;</sub>
+						<br>&int; &#402;(x) dx &nbsp;=&nbsp; x<sup>2</sup>/2 + C , &nbsp; &int; g(x) dx &nbsp;=&nbsp; x<sup>3</sup>/3 + C
+						<br>A &nbsp;=&nbsp; <sub><sub>0 </sub></sub>&int;<sup><sup> 1</sup></sup> h(x) dx &nbsp;=&nbsp; (x<sup>2</sup>/2 &nbsp;-&nbsp; x<sup>3</sup>/3) <sup> 1</sup> | <sub>0</sub>
+						<br>=&nbsp; (1/2 - 1/3) - (0 - 0) &nbsp;=&nbsp; 1/2 - 1/3 &nbsp;=&nbsp; 0.1667
+					</td>
+					<td style="width: 50%; padding: 5%; text-align: center; border-width: medium; border-color: black; border-bottom-style: solid; padding-left: 0%">
+						<img src="images/2/2-8/applic_diff_ex2.png" width="50%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-left: 10%; padding-right: 0%; text-align: left; border-width: medium; border-color: black">
+						&#402;(x) &nbsp;=&nbsp; x - 4 , &nbsp; g(x) &nbsp;=&nbsp; 6<sub>&nbsp;</sub>
+						<br>h(x) &nbsp;=&nbsp; &#402;(x) - g(x) &nbsp;=&nbsp; x - 10<sub>&nbsp;</sub>
+						<br>&int; &#402;(x) dx &nbsp;=&nbsp; 0.5x<sup>2</sup> - 4x + C
+						<br>&int; g(x) dx &nbsp;=&nbsp; 6x + C
+						<br>A(x) &nbsp;=&nbsp; &int; h(x) dx &nbsp;=&nbsp; 0.5x<sup>2</sup> - 10x + C
+						<br>A(0) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; C &nbsp;=&nbsp; 0
+						<br>&#402;(x) &nbsp;=&nbsp; g(x) , &nbsp; x - 4 &nbsp;=&nbsp; 6 &nbsp; &rarr; &nbsp; x &nbsp;=&nbsp; 10
+						<br>A(10) &nbsp;=&nbsp; 0.5(100) - 100 + 0 &nbsp;=&nbsp; -50
+					</td>
+					<td style="width: 50%; padding: 5%; text-align: center; border-width: medium; border-color: black; padding-left: 0%">
+						<img src="images/2/2-8/applic_diff_ex3.png" width="100%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item4" style="margin-top: 6.5%; text-align: center; width: 100%; margin-left: 0%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<img src="images/2/2-8/applic_diff_planes.png" width="50%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item5" style="margin-top: 5%; text-align: center; width: 100%; margin-left: 0%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<img src="images/2/2-8/applic_diff_neg.png" width="97.5%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item6" style="width: 100%; margin-left: 0%; padding: 0px; margin-top: 3.5%; border-radius: 3.5em; border-style: solid; border-width: medium; border-color: black; text-align: center; font-size: 1.65em; line-height: 2em; padding-bottom: 0%">
+			<table style="width: 100.1%; border-collapse: collapse; border-bottom-style: solid; border-width: medium; border-color: black;">
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 3.5%; padding-top: 5%">
+						<img src="images/2/2-8/applic_avg_intro.png" width="40%" style="margin-bottom: 0%">
+					</td>		
+				</tr>
+			</table>
+			<table style="width: 100.1%; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 55%; padding: 3.5%; padding-right: 0%; padding-left: 5%">
+						<img src="images/2/2-8/applic_avg_formula.png" width="80%" style="margin-bottom: 0%">
+						<br>| b - a | &nbsp;=&nbsp; &Sum; dx
+						<br>| b - a | &nbsp;>&nbsp; 0 , &nbsp; dx &nbsp;>&nbsp; 0
+					</td>
+					<td style="width: 45%; padding: 5%; padding-left: 2.5%; padding-bottom: 2.5%">
+						<img src="images/2/2-8/applic_avg_def.png" width="65%" style="margin-bottom: 0%">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item7" style="margin-top: 6.5%; text-align: center; width: 100%; margin-left: 0%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 35%; padding-left: 5%">
+					avg(&#402;(x)) &nbsp;&geq;&nbsp; min(&#402;(x))
+				</td>
+				<td style="width: 30%">
+					<img src="images/2/2-8/applic_avg_minmax.png" width="45%" style="">
+				</td>
+				<td style="width: 35%; padding-right: 5%">
+					avg(&#402;(x)) &nbsp;&leq;&nbsp; max(&#402;(x))
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item8" style="margin-top: 5%; text-align: center; width: 100%; margin-left: 0%; font-size: 1.5em; line-height: 1.95em">
+			<tr style="width: 100%">
+				<td style="width: 60%">
+					&#402;<sub>0</sub> &nbsp;=&nbsp; &#402;(x<sub>0</sub>) &nbsp;=&nbsp; &#402;(a) , &nbsp; A<sub>0</sub> &nbsp;=&nbsp; &#402;(x<sub>0</sub>) dx &nbsp;=&nbsp; &#402;(a) dx
+					<br>avg<sub>0</sub> &nbsp;=&nbsp; (A<sub>0</sub>) / dx &nbsp;=&nbsp; &#402;(a) dx / dx &nbsp;=&nbsp; &#402;(a)
+					<br>
+					<br>A<sub>1</sub> &nbsp;=&nbsp; (&#402;(x<sub>0</sub>) + &#402;(x<sub>1</sub>)) dx &nbsp;=&nbsp; (&#402;(a) + &#402;(a + dx)) dx
+					<br>avg<sub>1</sub> &nbsp;=&nbsp; (A<sub>1</sub>) / (dx + dx) &nbsp;=&nbsp; (&#402;(a) + &#402;(a + dx)) / 2
+					<br>| avg<sub>1</sub> - &#402;(a) | &nbsp;=&nbsp; | avg<sub>1</sub> - &#402;(a + dx) |<br>=&nbsp; | &#402;(a + dx) - &#402;(a) | / 2 &nbsp;=&nbsp; | &#402;(a) - &#402;(a + dx) | / 2
+					<br>
+					<br>| b - a | &nbsp;=&nbsp; dx + dx + dx + ... &nbsp; &rarr; &nbsp; avg(&#402;(x)) &nbsp;=&nbsp; 1 / | b - a | &int; &#402;(x) dx
+				</td>
+				<td style="width: 40%">
+					<img src="images/2/2-8/applic_avg_proof.png" width="80%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item9" style="margin-top: 3.5%; text-align: center; width: 100%; margin-left: 0%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<img src="images/2/2-8/applic_avg_bar_progression.png" width="95%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item10" style="width: 95%; margin-left: 2.5%; margin-top: 6.5%; border-radius: 2.5em; border-style: solid; border-width: medium; border-color: black;">
+			<table style="width: 100%; font-size: 1.5em; line-height: 1.5em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 55%; padding: 5%; padding-left: 10%; padding-right: 0%; text-align: left; border-width: medium; border-color: black; border-bottom-style: solid">
+						&#402;(x) &nbsp;=&nbsp; 0.5x + 3 , &nbsp; a &nbsp;=&nbsp; 0 , &nbsp; b &nbsp;=&nbsp; 8<sub>&nbsp;</sub>
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; 1/8 <sub><sub>0 </sub></sub>&int;<sup><sup> 8</sup></sup> &#402;(x) dx &nbsp;=&nbsp; 1/8 <sub><sub>0 </sub></sub>&int;<sup><sup> 8</sup></sup> 0.5x + 3 dx
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; 1/8 (0.25x<sup>2</sup> + 3x) <sub><sub>0 </sub></sub>|<sup><sup> 8</sup></sup>
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; 5 , &nbsp; 0 &nbsp;&leq;&nbsp; x &nbsp;&leq;&nbsp; 8<sup>&nbsp;</sup><sub>&nbsp;</sub>
+						<br>=&nbsp; (&#402;(a) + &#402;(b)) / 2 &nbsp;=&nbsp; (3 + 7) / 2 &nbsp;=&nbsp; 5<sup>&nbsp;</sup>
+					</td>
+					<td style="width: 45%; padding: 5%; text-align: center; border-width: medium; border-color: black; border-bottom-style: solid; padding-left: 0%">
+						<img src="images/2/2-8/applic_avg_ex1.png" width="55%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 55%; padding: 5%; padding-left: 10%; padding-right: 0%; text-align: left; border-width: medium; border-color: black; border-bottom-style: solid">
+						&#402;(x) &nbsp;=&nbsp; sin(x) , &nbsp; a &nbsp;=&nbsp; 0 , &nbsp; b &nbsp;=&nbsp; 2&pi;<sub>&nbsp;</sub>
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; 1/(2&pi;) <sub><sub>0 </sub></sub>&int;<sup><sup> 2&pi;</sup></sup> sin(x) dx
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; 1/(2&pi;) (-cos(x)) <sub><sub>0 </sub></sub>|<sup><sup> 2&pi;</sup></sup>
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; (-1 &minus; (-1)) / (2&pi;) &nbsp;=&nbsp; 0 , &nbsp; 0 &nbsp;&leq;&nbsp; x &nbsp;&leq;&nbsp; 2&pi;<sup>&nbsp;</sup><sub>&nbsp;</sub>
+						<br>=&nbsp; 1/2 (<sub><sub>0 </sub></sub>&int;<sup><sup> &pi;</sup></sup> &#402;(x) dx &nbsp;+&nbsp; <sub><sub>&pi; </sub></sub>&int;<sup><sup> 2&pi;</sup></sup> &#402;(x) dx) &nbsp;=&nbsp; (1 - 1) / 2 &nbsp;=&nbsp; 0<sup>&nbsp;</sup>
+						<br><sub><sub>0 </sub></sub>&int;<sup><sup> &pi;</sup></sup> sin(x) dx &nbsp;=&nbsp; 1 , &nbsp; <sub><sub>&pi; </sub></sub>&int;<sup><sup> 2&pi;</sup></sup> &#402;(x) dx &nbsp;=&nbsp; -1
+					</td>
+					<td style="width: 45%; padding: 5%; text-align: center; border-width: medium; border-color: black; border-bottom-style: solid; padding-left: 0%">
+						<img src="images/2/2-8/applic_avg_ex2.png" width="55%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 55%; padding: 5%; padding-left: 10%; padding-right: 0%; text-align: left; border-width: medium; border-color: black; border-bottom-style: solid">
+						&#402;(x) &nbsp;=&nbsp; x<sup>2</sup> , &nbsp; a &nbsp;=&nbsp; 0 , &nbsp; b &nbsp;=&nbsp; 10<sub>&nbsp;</sub>
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; 1/10 <sub><sub>0 </sub></sub>&int;<sup><sup> 10</sup></sup> &#402;(x) dx &nbsp;=&nbsp; 1/10 <sub><sub>0 </sub></sub>&int;<sup><sup> 10</sup></sup> x<sup>2</sup> dx
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; 1/10 (x<sup>3</sup>/3) <sub><sub>0 </sub></sub>|<sup><sup> 10</sup></sup>
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; 10<sup>3</sup> / 30 &nbsp;=&nbsp; 33.333 , &nbsp; 0 &nbsp;&leq;&nbsp; x &nbsp;&leq;&nbsp; 10<sup>&nbsp;</sup><sub>&nbsp;</sub>
+						<br>min(&#402;(x)) &nbsp;=&nbsp; 0 , &nbsp; max(&#402;(x)) &nbsp;=&nbsp; &#402;(10) &nbsp;=&nbsp; 100<sup>&nbsp;</sup>
+					</td>
+					<td style="width: 45%; padding: 5%; text-align: center; border-width: medium; border-color: black; border-bottom-style: solid; padding-left: 0%">
+						<img src="images/2/2-8/applic_avg_ex3.png" width="55%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 55%; padding: 5%; padding-left: 10%; padding-right: 0%; text-align: left">
+						&#402;(x) &nbsp;=&nbsp; -(x - 1) (x - 5) &nbsp;=&nbsp; -x<sup>2</sup> + 6x - 5<sub>&nbsp;</sub>
+						<br>a &nbsp;=&nbsp; 1 , &nbsp; b &nbsp;=&nbsp; 5<sub>&nbsp;</sub><sup>&nbsp;</sup> , &nbsp; 0 &nbsp;&leq;&nbsp; x &nbsp;&leq;&nbsp; 10<sup>&nbsp;</sup><sub>&nbsp;</sub>
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; 1/4 <sub><sub>1 </sub></sub>&int;<sup><sup> 5</sup></sup> &#402;(x) dx &nbsp;=&nbsp; 1/10 <sub><sub>1 </sub></sub>&int;<sup><sup> 5</sup></sup> -x<sup>2</sup> + 6x - 5 dx
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; 1/4 (-x<sup>3</sup>/3 + 3x<sup>2</sup> - 5x) <sub><sub>1 </sub></sub>|<sup><sup> 5</sup></sup>
+						<br>avg(&#402;(x)) &nbsp;=&nbsp; ((25/3) - (-7/3)) / 4 &nbsp;=&nbsp; 2.667<sup>&nbsp;</sup><sub>&nbsp;</sub>
+						<br>min(&#402;(x)) &nbsp;=&nbsp; 0 , &nbsp; max(&#402;(x)) &nbsp;=&nbsp; &#402;(3) &nbsp;=&nbsp; 3<sup>&nbsp;</sup>
+					</td>
+					<td style="width: 45%; padding: 5%; text-align: center; padding-left: 0%">
+						<img src="images/2/2-8/applic_avg_ex4.png" width="55%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item11" style="margin-top: 6.5%; text-align: center; width: 100%; margin-left: 0%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<img src="images/2/2-8/applic_avg_shapes.png" width="95%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item12" style="width: 100%; margin-left: 0%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium; border-color: black; text-align: center; font-size: 1.5em; line-height: 2em; padding-bottom: 0%">
+			<table style="width: 100.1%; border-collapse: collapse; ">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; padding-left: 6.5%">
+						<img src="images/2/2-8/applic_avg_sum_formula.png" width="55%" style="margin-bottom: 2.5%">
+						<br>{ 0, 1 } &nbsp; &rarr; &nbsp; avg &nbsp;=&nbsp; (0 + 1) / 2 &nbsp;=&nbsp; 0.5
+						<br>{ 0, 1, 2, 3, 4 } &nbsp; &rarr; &nbsp; avg &nbsp;=&nbsp; (0 + 1 + 2 + 3 + 4) / 5 &nbsp;=&nbsp; 2
+						<br>{ 3, 5, 10 } &nbsp; &rarr; &nbsp; avg &nbsp;=&nbsp; (3 + 5 + 10) / 3 &nbsp;=&nbsp; 6
+						<br>{ 100, 60, 80 } &nbsp; &rarr; &nbsp; avg &nbsp;=&nbsp; (100 + 60 + 80) / 3 &nbsp;=&nbsp; 80
+					</td>
+					<td style="width: 50%; padding: 5%; padding-bottom: 2.5%; padding-left: 2.5%">
+						<img src="images/2/2-8/applic_avg_dots.png" width="80%" style="margin-bottom: 0%">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item13" style="margin-top: 6.5%; text-align: center; width: 100%; margin-left: 0%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 55%">
+					<img src="images/2/2-8/applic_avg_height.png" width="70%" style="">
+				</td>
+				<td style="width: 45%">
+					<img src="images/2/2-8/applic_avg_coins.png" width="67.5%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item14" style="width: 100%; margin-left: 0%; padding: 0px; margin-top: 3.5%; border-radius: 3.5em; border-style: solid; border-width: medium; border-color: black; text-align: center; font-size: 1.65em; line-height: 2em; padding-bottom: 0%">
+			<table style="width: 100.1%; border-collapse: collapse; border-bottom-style: solid; border-width: medium; border-color: black;">
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 3.5%; padding-top: 5%; padding-left: 2.5%; padding-right: 5%">
+						<img src="images/2/2-8/applic_rot_intro.png" width="87.5%" style="margin-bottom: 0%">
+					</td>		
+				</tr>
+			</table>
+			<table style="width: 100.1%; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 45%; padding: 3.5%; padding-right: 0%; padding-left: 5%; padding-top: 1.5%">
+						<span style="font-size: 1.5em; line-height: 2.5em">V &nbsp;=&nbsp; &pi; &nbsp;&int;&nbsp; &#402;(x)<sup>2</sup> dx</span>
+						<br>k &nbsp;&int; &#402;(x) dx &nbsp; &rarr; &nbsp; s<sup>2</sup> &nbsp; &rarr; &nbsp; A
+						<br>k &nbsp;&int; &#402;(x) &#215; &#402;(x) dx &nbsp; &rarr; &nbsp; s<sup>3</sup> &nbsp; &rarr; &nbsp; V
+					</td>
+					<td style="width: 55%; padding: 5%; padding-left: 2.5%; padding-right: 6.5%;">
+						<img src="images/2/2-8/applic_rot_def.png" width="95%" style="margin-bottom: 0%">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item15" style="margin-top: 6.5%; text-align: center; width: 75%; margin-left: 12.5%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 65%; padding-right: 2.5%">
+					<img src="images/2/2-8/applic_rot_cyl_v.png" width="92.5%" style="">
+				</td>
+				<td style="width: 35%">
+					&pi; R<sup>2</sup> &nbsp; &harr; &nbsp; &pi; (&#402;(x))<sup>2</sup>
+					<br>R &nbsp; &harr; &nbsp; &#402;(x)
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item16" style="margin-top: 3.5%; text-align: center; width: 95%; margin-left: 2.5%; font-size: 1.5em; line-height: 1.85em">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding-right: 2.5%">
+					A &nbsp;=&nbsp; &int; &#402;(x) dx &nbsp;=&nbsp; &Sum; &#402;(x) dx
+					<br>A &nbsp;=&nbsp; &Sum; &Delta;A &nbsp; &rarr; &nbsp; &Delta;A &nbsp;=&nbsp; &#402;(x) dx
+					<br>
+					<br>A &nbsp;=&nbsp; &pi; R<sup>2</sup>
+					<br>R &nbsp;=&nbsp; &#402;(x) &nbsp; &rarr; &nbsp; A &nbsp;=&nbsp; &pi; (&#402;(x))<sup>2</sup>
+					<br>&Delta;V &nbsp;=&nbsp; A dx &nbsp;=&nbsp; &pi; (&#402;(x))<sup>2</sup> dx
+					<br><sup>&nbsp;</sup>V &nbsp;=&nbsp; &Sum; &Delta;V<sup>&nbsp;</sup>
+					<br>V &nbsp;=&nbsp; &Sum; &pi; (&#402;(x))<sup>2</sup> dx &nbsp;=&nbsp; &int; &pi; (&#402;(x))<sup>2</sup> dx
+					<br>
+					<br>&#402;(x) &nbsp;=&nbsp; R , &nbsp; h &nbsp;=&nbsp; &Sum; dx
+					<br>V &nbsp;=&nbsp; &pi; R<sup>2</sup> h
+				</td>
+				<td style="width: 50%">
+					<img src="images/2/2-8/applic_rot_proof1.png" width="65%" style="margin-bottom: 2.5%">
+					<br>
+					<img src="images/2/2-8/applic_rot_proof2.png" width="75%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item17" style="width: 95%; margin-left: 2.5%; margin-top: 5%; border-radius: 2.5em; border-style: solid; border-width: medium; border-color: black;">
+			<table style="width: 100%; font-size: 1.5em; line-height: 1.85em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-left: 8.5%; padding-right: 0%; text-align: left; border-width: medium; border-color: black; border-bottom-style: solid">
+						&#402;(x) &nbsp;=&nbsp; x/3 + 6
+						<br>V &nbsp;=&nbsp; &pi; &nbsp;&int; (&#402;(x))<sup>2</sup> dx &nbsp;=&nbsp; &pi; &nbsp;&int; (x/3 + 6)<sup>2</sup> dx
+						<br>V &nbsp;=&nbsp; &pi; &nbsp;&int; x<sup>2</sup>/9 + 4x + 36 dx
+						<br>=&nbsp; &pi; (x<sup>3</sup>/27 + 2x<sup>2</sup> + 36x + C)
+						<br>V(x) &nbsp;=&nbsp; &pi; (x<sup>3</sup>/27 + 2x<sup>2</sup> + 36x)
+					</td>
+					<td style="width: 50%; padding: 5%; text-align: center; border-width: medium; border-color: black; border-bottom-style: solid; padding-left: 0%">
+						<img src="images/2/2-8/applic_rot_ex1.png" width="100%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-left: 10%; padding-right: 0%; text-align: left; border-width: medium; border-color: black; border-bottom-style: solid">
+						&#402;(x) &nbsp;=&nbsp; x<sup>1/2</sup>
+						<br>V &nbsp;=&nbsp; &pi; &nbsp;&int; (&#402;(x))<sup>2</sup> dx &nbsp;=&nbsp; &pi; &nbsp;&int; (x<sup>1/2</sup>)<sup>2</sup> dx
+						<br>V &nbsp;=&nbsp; &pi; &nbsp;&int; x dx &nbsp;=&nbsp; &pi; (x<sup>2</sup>/2 + C)
+						<br>V(x) &nbsp;=&nbsp; (&pi;/2) x<sup>2</sup>
+					</td>
+					<td style="width: 50%; padding: 5%; text-align: center; border-width: medium; border-color: black; border-bottom-style: solid; padding-left: 0%">
+						<img src="images/2/2-8/applic_rot_ex2.png" width="100%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-left: 8.5%; padding-right: 0%; text-align: left; border-width: medium; border-color: black">
+						&#402;(x) &nbsp;=&nbsp; cos(x)
+						<br>V &nbsp;=&nbsp; &pi; &nbsp;&int; (&#402;(x))<sup>2</sup> dx &nbsp;=&nbsp; &pi; &nbsp;&int; (9/4) cos<sup>2</sup>(x) dx
+						<br>V &nbsp;=&nbsp; 9&pi;/4 &nbsp;&int; (1 + cos(2x)) / 2 dx
+						<br>=&nbsp; 9&pi;/4 (x/2 &nbsp;+&nbsp; sin(2x)/4 &nbsp;+&nbsp; C) 
+						<br>V(x) &nbsp;=&nbsp; 9&pi;x/8 &nbsp;+&nbsp; 9&pi;sin(2x)/16
+					</td>
+					<td style="width: 50%; padding: 5%; text-align: center; border-width: medium; border-color: black; padding-left: 0%">
+						<img src="images/2/2-8/applic_rot_ex3.png" width="100%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item18" style="margin-top: 6.5%; text-align: center; width: 100%; margin-left: 0%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<img src="images/2/2-8/applic_rot_pottery.png" width="55%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item19" style="width: 100%; margin-left: 0%; padding: 0px; margin-top: 3.5%; border-radius: 3.5em; border-style: solid; border-width: medium; border-color: black; text-align: center; font-size: 1.65em; line-height: 2em; padding-bottom: 0%">
+			<table style="width: 100.1%; border-collapse: collapse; border-bottom-style: solid; border-width: medium; border-color: black;">
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 3.5%; padding-top: 5%; padding-left: 5%; padding-right: 5%">
+						<img src="images/2/2-8/applic_surf_intro.png" width="85%" style="margin-bottom: 0%">
+					</td>		
+				</tr>
+			</table>
+			<table style="width: 100.1%; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 45%; padding: 3.5%; padding-right: 0%; padding-left: 5%; padding-top: 3.5%;">
+						<img src="images/2/2-8/applic_surf_formula.png" width="85%" style="margin-bottom: 2.5%">
+						<br>k &nbsp;&int; &#402;(x) dx &nbsp; &rarr; &nbsp; s<sup>2</sup> &nbsp; &rarr; &nbsp; A
+					</td>
+					<td style="width: 55%; padding: 5%; padding-left: 2.5%; padding-right: 6.5%; padding-bottom: 3.5%">
+						<img src="images/2/2-8/applic_surf_def.png" width="95%" style="margin-bottom: 0%">
+					</td>
+				</tr>
+			</table>
+			<img src="images/2/2-8/applic_surf_sum.png" width="45%" style="margin-bottom: 2.5%; margin-top: -3.5%">
+		</div>
+
+		<div id="scroll_item20" style="margin-top: 6.5%; text-align: center; width: 100%; margin-left: 0%; font-size: 1.5em; line-height: 1.85em">
+			<table style="width: 100%;">
+				<tr style="width: 100%">
+					<td style="width: 60%">
+						<img src="images/2/2-8/applic_surf_proof_tri.png" width="90%" style="">
+					</td>
+					<td style="width: 40%">
+						<img src="images/2/2-8/applic_surf_proof_cyl.png" width="70%" style="">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item21" style="margin-top: 1.5%; text-align: center; width: 100%; margin-left: 0%; font-size: 1.55em; line-height: 1.85em">
+			<tr style="width: 100%">
+				<td style="width: 50%">
+					dx &nbsp; &rarr; &nbsp; 0
+					<br>H<sup>2</sup> &nbsp;=&nbsp; dx<sup>2</sup> + d&#402;<sup>2</sup>
+					<br>H<sup>2</sup> &nbsp;=&nbsp; dx<sup>2</sup> (1 + (d&#402;/dx)<sup>2</sup>) &nbsp;=&nbsp; dx<sup>2</sup> (1 + (&#402;'(x))<sup>2</sup>)
+					<br>H &nbsp;=&nbsp; dx <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1 + (&#402;'(x))<sup><sub><sup>2</sup></sub></sup></span></span>
+					<br>
+					<br>R &nbsp;=&nbsp; &#402;(x)
+					<br>C &nbsp;=&nbsp; 2&pi; R &nbsp;=&nbsp; 2&pi; &#402;(x)
+					<br>&Delta;S &nbsp;=&nbsp; 2&pi; &#402;(x) H &nbsp;=&nbsp; 2&pi; &#402;(x) <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1 + (&#402;'(x))<sup><sub><sup>2</sup></sub></sup></span></span> dx
+					<br>S &nbsp;=&nbsp; &Sum; &Delta;S &nbsp;=&nbsp; &int; 2&pi; &#402;(x) <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1 + (&#402;'(x))<sup><sub><sup>2</sup></sub></sup></span></span> dx
+				</td>
+				<td style="width: 50%">
+					<img src="images/2/2-8/applic_surf_proof.png" width="70%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item22" style="width: 95%; margin-left: 2.5%; margin-top: 5%; border-radius: 2.5em; border-style: solid; border-width: medium; border-color: black;">
+			<table style="width: 100%; font-size: 1.45em; line-height: 1.65em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-left: 5%; padding-right: 0%; text-align: left; border-width: medium; border-color: black; border-bottom-style: solid">
+						&#402;(x) &nbsp;=&nbsp; 10 , &nbsp; &#402;'(x) &nbsp;=&nbsp; 0 , &nbsp; 10 &nbsp;&leq;&nbsp; x &nbsp;&leq;&nbsp; 30
+						<br>S &nbsp;=&nbsp; 2&pi; <sub><sub>10 </sub></sub>&int;<sup><sup> 30</sup></sup> &#402;(x) <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1 + (&#402;'(x))<sup><sub><sup>2</sup></sub></sup></span></span> dx<sup>&nbsp;</sup>
+						<br>S &nbsp;=&nbsp; 2&pi; <sub><sub>10 </sub></sub>&int;<sup><sup> 30</sup></sup> 10 <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1<sup><sub><sup>2</sup></sub></sup></span></span> dx<sup>&nbsp;</sup>
+						<br>S &nbsp;=&nbsp; 2&pi; <sub><sub>10 </sub></sub>&int;<sup><sup> 30</sup></sup> 10 dx<sup>&nbsp;</sup>
+						<br>S &nbsp;=&nbsp; 2&pi; (10x) <sub><sub>10 </sub></sub>|<sup><sup> 30</sup></sup> &nbsp;=&nbsp; 2&pi; (10(30) - 10(10))
+						<br>S &nbsp;=&nbsp; 2&pi; (10 &#215; 20) &nbsp;=&nbsp; 400&pi;
+					</td>
+					<td style="width: 50%; padding: 5%; text-align: center; border-width: medium; border-color: black; border-bottom-style: solid; padding-left: 0%">
+						<img src="images/2/2-8/applic_surf_ex1.png" width="100%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-left: 5%; padding-right: 0%; text-align: left; border-width: medium; border-color: black; border-bottom-style: solid">
+						&#402;(x) &nbsp;=&nbsp; 3 - x/2 , &nbsp; &#402;'(x) &nbsp;=&nbsp; -1/2
+						<br>S(x) &nbsp;=&nbsp; 2&pi; &int; &#402;(x) <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1 + (&#402;'(x))<sup><sub><sup>2</sup></sub></sup></span></span> dx<sup>&nbsp;</sup>
+						<br>S(x) &nbsp;=&nbsp; 2&pi; &int; (3 - x/2) <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1 + 1/4</span></span> dx<sup>&nbsp;</sup>
+						<br>S(x) &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 5</span></span> &pi; &int; (3 - x/2) dx<sup>&nbsp;</sup> &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 5</span></span> &pi; (3x - x<sup>2</sup>/4 + C)
+						<br>S(0) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; C &nbsp;=&nbsp; 0<sup>&nbsp;</sup>
+						<br>S(x) &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 5</span></span> &pi; (3x - x<sup>2</sup>/4)
+					</td>
+					<td style="width: 50%; padding: 5%; text-align: center; border-width: medium; border-color: black; border-bottom-style: solid; padding-left: 0%">
+						<img src="images/2/2-8/applic_surf_ex2.png" width="100%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-left: 5%; padding-right: 0%; text-align: left; border-width: medium; border-color: black">
+						&#402;(x) &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 9 - x<sup><sub><sup>2</sup></sub></sup></span></span> , &nbsp; &#402;'(x) &nbsp;=&nbsp; -x / <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 9 - x<sup><sub><sup>2</sup></sub></sup></span></span>
+						<br>S &nbsp;=&nbsp; 2&pi; <sub><sub>-3 </sub></sub>&int;<sup><sup> 3</sup></sup> &#402;(x) <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1 + (&#402;'(x))<sup><sub><sup>2</sup></sub></sup></span></span> dx<sup>&nbsp;</sup>
+						<br>S &nbsp;=&nbsp; 2&pi; <sub><sub>-3 </sub></sub>&int;<sup><sup> 3</sup></sup> (3 - x/2) <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1 + (x<sup><sub><sup>2</sup></sub></sup> / (9 - x<sup><sub><sup>2</sup></sub></sup>))</span></span> dx<sup>&nbsp;</sup><sub>&nbsp;</sub>
+						<br>1 + (x<sup>2</sup> / (9 - x<sup>2</sup>)) &nbsp;=&nbsp; ((9 - x<sup>2</sup>) / (9 - x<sup>2</sup>)) + (x<sup>2</sup> / (9 - x<sup>2</sup>))<br>=&nbsp; (9 - x<sup>2</sup> + x<sup>2</sup>) / (9 - x<sup>2</sup>)) &nbsp;=&nbsp; 9 / (9 - x<sup>2</sup>)<sub>&nbsp;</sub>
+						<br>S &nbsp;=&nbsp; 2&pi; <sub><sub>-3 </sub></sub>&int;<sup><sup> 3</sup></sup> (9 - x<sup>2</sup>) (9 / (9 - x<sup>2</sup>)) dx<sup>&nbsp;</sup> &nbsp;=&nbsp; 2&pi; <sub><sub>-3 </sub></sub>&int;<sup><sup> 3</sup></sup> 9 dx<sup>&nbsp;</sup>
+						<br>S &nbsp;=&nbsp; 2&pi; (9x) <sub><sub>-3 </sub></sub>|<sup><sup> 3</sup></sup> &nbsp;=&nbsp; 2&pi; (9(3) - 9(-3)) &nbsp;=&nbsp; 108&pi;
+					</td>
+					<td style="width: 50%; padding: 5%; text-align: center; border-width: medium; border-color: black; padding-left: 0%">
+						<img src="images/2/2-8/applic_surf_ex3.png" width="100%" style="margin-top: 2.5%">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item23" style="margin-top: 7.5%; text-align: center; width: 100%; margin-left: 0%; font-size: 1.5em; line-height: 1.85em">
+			<table style="width: 100%;">
+				<tr style="width: 100%">
+					<td style="width: 100%">
+						<img src="images/2/2-8/applic_rot_direction.png" width="90%" style="">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item24" style="width: 98%; margin-left: 1%; padding: 0px; margin-top: 3.5%; border-radius: 3.5em; border-style: solid; border-width: medium; text-align: center;">
+			<table style="width: 100.1%; font-size: 1.5em; line-height: 1.95em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 33.33%; border-width: medium; padding-left: 1.5%; padding-top: 7.5%;">
+						<img src="images/2/2-8/applic_inv_f.png" width="75%" style="margin-bottom: 10%">
+						</td>
+					<td style="width: 33.33%; border-width: medium; padding-top: 5%;">
+						<img src="images/2/2-8/applic_inv_xhat.png" width="80%" style="margin-bottom: 5%">
+						</td>
+					<td style="width: 33.33%; border-width: medium; padding-right: 1.5%; padding-top: 1.5%;">
+						<img src="images/2/2-8/applic_inv_yhat.png" width="80%" style="margin-bottom: 5%">
+					</td>
+				</tr>
+			</table>
+			<table style="width: 100.1%; font-size: 1.5em; line-height: 1.95em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 33.33%; border-width: medium; padding-left: 1.5%; padding-bottom: 3.5%">
+						y &nbsp;=&nbsp; &#402;(x)
+						<br>x &nbsp;=&nbsp; &#402;<sup>-1</sup>(y)
+						</td>
+					<td style="width: 33.33%; border-width: medium; padding-bottom: 3.5%">
+						g(x) &nbsp;=&nbsp; &#402;(x)
+						<br>S &nbsp;=&nbsp; 2&pi; &nbsp;&int; &#402;(x) <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1 + (&#402;'(x))<sup><sub><sup>2</sup></sub></sup></span></span> dx
+						<br>V &nbsp;=&nbsp; &pi; &nbsp;&int; &#402;(x)<sup>2</sup> dx</span>
+						</td>
+					<td style="width: 33.33%; border-width: medium; padding-right: 1.5%; padding-bottom: 3.5%">
+						g(x) &nbsp;=&nbsp; &#402;<sup>-1</sup>(y)
+						<br>S &nbsp;=&nbsp; 2&pi; &nbsp;&int; &#402;(x) <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> 1 + ((&#402;<sup><sub><sup>-1 </sup></sub></sup>(y))')<sup><sub><sup>2</sup></sub></sup></span></span> dx
+						<br>V &nbsp;=&nbsp; &pi; &nbsp;&int; (&#402;<sup>-1</sup>(y))<sup>2</sup> dx</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div id="scroll_item25" style="margin-top: 6.5%; text-align: center; width: 98%; margin-left: 1%; font-size: 1.5em; line-height: 1.75em">
+			<table style="width: 100%;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding-left: 3.5%">
+						<img src="images/2/2-8/applic_inv_ex1_f.png" width="80%" style="">
+					</td>
+					<td style="width: 50%; padding-right: 3.5%">
+						<img src="images/2/2-8/applic_inv_ex1_finv.png" width="80%" style="">
+					</td>
+				</tr>
+			</table>
+			y &nbsp; = &nbsp; &#402;(x) &nbsp; = &nbsp; x , &nbsp; x &nbsp; = &nbsp; &#402;<sup>-1</sup>(y) &nbsp; = &nbsp; y<sub>&nbsp;</sub>
+			<br>V<sub>x</sub> &nbsp; = &nbsp; &pi; &nbsp;&int; &#402;(x)<sup>2</sup> dx &nbsp; = &nbsp; &pi; &nbsp;&int; x<sup>2</sup> dx  &nbsp; = &nbsp; (&pi;/3) x<sup>3</sup>
+			<br>V<sub>y</sub> &nbsp; = &nbsp; &pi; &nbsp;&int; &#402;<sup>-1</sup>(y)<sup>2</sup> dy &nbsp; = &nbsp; &pi; &nbsp;&int; y<sup>2</sup> dy &nbsp; = &nbsp; (&pi;/3) y<sup>3</sup>
+			<br>y &nbsp; = &nbsp; x &nbsp; &rarr; &nbsp; V<sub>y</sub> &nbsp; = &nbsp; (&pi;/3) x<sup>3</sup> &nbsp; = &nbsp; V<sub>x</sub>
+			<table style="width: 100%;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding-top: 5%; padding-left: 3.5%">
+						<img src="images/2/2-8/applic_inv_ex2_f.png" width="80%" style="">
+					</td>
+					<td style="width: 50%; padding-top: 5%; padding-right: 3.5%">
+						<img src="images/2/2-8/applic_inv_ex2_finv.png" width="80%" style="">
+					</td>
+				</tr>
+			</table>
+			y &nbsp; = &nbsp; &#402;(x) &nbsp; = &nbsp; x<sup>2</sup> + 1 , &nbsp; x &nbsp; = &nbsp; &#402;<sup>-1</sup>(y) &nbsp; = &nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.075em solid #000; padding-top: 0px;"> y - 1</span></span><sub>&nbsp;</sub>
+			<br>V<sub>x</sub> &nbsp; = &nbsp; &pi; &nbsp;&int; &#402;(x)<sup>2</sup> dx &nbsp; = &nbsp; &pi; &nbsp;&int; (x<sup>2</sup> + 1)<sup>2</sup> dx &nbsp; = &nbsp; &pi; &nbsp;&int; x<sup>4</sup> + 2x<sup>2</sup> + 1 dx</span> &nbsp; = &nbsp; &pi; (x<sup>5</sup>/5 &nbsp;+&nbsp; (2/3)x<sup>3</sup> &nbsp;+&nbsp; x)
+			<br>V<sub>y</sub> &nbsp; = &nbsp; &pi; &nbsp;&int; &#402;<sup>-1</sup>(y)<sup>2</sup> dy &nbsp; = &nbsp; &pi; &nbsp;&int; (y - 1) dy &nbsp; = &nbsp; &pi; (y<sup>2</sup>/2 &nbsp;-&nbsp; y) &nbsp; = &nbsp; &pi;y (y/2 - 1)
+			<br>y &nbsp; = &nbsp; x<sup>2</sup> + 1 &nbsp; &rarr; &nbsp; V<sub>y</sub> &nbsp; = &nbsp; &pi; (x<sup>2</sup> + 1) ((x<sup>2</sup> + 1)/2 - 1) &nbsp; &ne; &nbsp; V<sub>x</sub>
+		</div>
+
+		<table id="scroll_item8" class="calc_table" style="width:95%; margin-top: 6.5%; margin-bottom: 3.5%; border-radius: 2.5em; margin-left: 2.5%; padding-top: 2.5%; padding-bottom: 2.5%; font-size: 0.95em; border-style: solid; border-color: black; border-width: medium">
+			<tr style="width:100%">
+			    <td style="width: 35%; font-size: 1.65em; line-height: 2em; vertical-align: center; padding-left: 5%">
+			    	<p style="border-style: solid; border-width: medium; border-color: lightgray; padding: 7.5%; width: 100%; text-align: center; border-radius: 1em; padding-bottom: 15%; padding-top: 15%">
+						<input id="x_lower" type="text" value="0" style="font-size: 1em; width: 17.5%"/> &nbsp;&le;&nbsp; x &nbsp;&le;&nbsp; <input id="x_upper" type="text" value="0" style="font-size: 1em; width: 17.5%"/>
+						<br>
+						&#402;(x) &nbsp;=&nbsp; <input id="y" type="text" value="0" style="font-size: 1em; width: 45%"/>
+				    	<br>
+						<button id="calc_button" type="button" class="graph" onclick="getAnswer('avg(&#402;(x))')" style="font-size: 0.75em; line-height: 0.5em; width: 25%; height: 1.85em; color: black; border-style: solid; border-width: medium; border-color: black; margin-right: 0%; margin-left: 0%; margin-top: 10%; border-bottom-left-radius: 0.65em; border-top-left-radius: 0.65em;">avg</button>
+						<button id="calc_button" type="button" class="graph" onclick="getAnswer('V')" style="font-size: 0.75em; line-height: 0.5em; width: 25%; height: 1.85em; color: black; border-style: solid; border-width: medium; border-color: black; margin-right: 0%; margin-left: 0%">V</button>
+						<button id="calc_button" type="button" class="graph" onclick="getAnswer('S')" style="font-size: 0.75em; line-height: 0.5em; width: 25%; height: 1.85em; color: black; border-style: solid; border-width: medium; border-color: black; margin-right: 0%; margin-left: 0%; border-bottom-right-radius: 0.65em; border-top-right-radius: 0.65em;">S</button>
+				    </p>
+				</td>
+				<td style="width: 30%; padding-right: 10%; padding-left: 10%">
+				    <table style="width: 50%; font-size: 1em;"> 
+				        <tr>
+				            <td>
+				            </td>
+				            <td style="text-align: center">
+				                <p id="pos_y">&nbsp;&nbsp;5</p>
+				            </td>
+				            <td>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td style="text-align: right;">
+				                <p id="neg_x">-5</p>
+				            </td>
+				            <td style="text-align: center; padding-left: 3.5%">
+				                <div id="MGC-Calculator" style="width:100%"></div>
+				            </td>
+				            <td style="text-align: left; padding-left: 3.5%">
+				                <p id="pos_x">5</p>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td>
+				            </td>
+				            <td style="text-align: center">
+				                <p id="neg_y">&nbsp;-5</p>
+				            </td>
+				            <td>
+				            </td>
+				        </tr>
+				    </table>
+				</td>
+			    <td style="width: 35%; font-size: 1.65em; line-height: 2em; vertical-align: center; padding-right: 7.5%; padding-left: -5%">
+			    	<p style="border-style: solid; border-width: medium; border-color: lightgray; padding: 2.5%; width: 105%; text-align: center; border-radius: 1em; font-size: 1.05em">
+			    		<span id="answer_var" style="width: 50%; font-size: 1em">V</span> &nbsp;=&nbsp; <span id="answer_val" style="width: 50%; font-size: 1em"></span>
+			    	</p>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="2-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
+		</div>
+	</header>
+
+	<script type="text/javascript" src="standard_functions.js"></script>
+	<script type="text/javascript">
+		window.onscroll = function() {scrollFunction()};
+
+		function viewportToPixels(value) {
+		  var parts = value.match(/([0-9\.]+)(vh|vw)/)
+		  var q = Number(parts[1])
+		  var side = window[['innerHeight', 'innerWidth'][['vh', 'vw'].indexOf(parts[2])]]
+		  return side * (q/100)
+		};
+
+		function scrollFunction() {
+			// Move dots
+			var scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+			scrollTop = scrollTop + window.innerHeight/2;
+			var height = document.getElementById("scroll_buttons").offsetHeight;
+			scrollTop = scrollTop - height/2;
+			var header_ht = Math.max(viewportToPixels('4.5vh'), viewportToPixels('4.5vw'));
+			scrollTop = scrollTop - header_ht;
+			document.getElementById("scroll_buttons").style.marginTop = scrollTop.toString() + 'px';
+
+			// Check if dot is active, update css
+			var inZone = 'none';
+			var numOfDots = 16;
+			var tolerance = 100; // px
+			var scroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+			localStorage.setItem('scroll', scroll);
+
+			for (index = 0; index < numOfDots; index++) {
+				if (inZone == 'none') {
+					var vmax = Math.max(viewportToPixels('1vh'), viewportToPixels('1vw'));
+					var header_ht = 5*vmax;
+					var above = document.getElementById("scroll_item" + index.toString()).offsetTop;
+					var height = document.getElementById("scroll_item" + index.toString()).offsetHeight;
+					var mid = Math.max(above + height/2, 0);
+
+					var view_radius = window.innerHeight/2;
+					var y = mid - view_radius + 3.5*vmax;
+					if (height > (window.innerHeight - 5*vmax) && mid != 0) {
+						y = mid - height/2 - 2.5*vmax;
+					};
+
+					var pos = scroll + window.innerHeight/2;
+					var top = above + 4*vmax;
+					var bottom = above + height + 4*vmax;
+
+					if ((y >= scroll - tolerance && y <= scroll + tolerance) || (pos >= top && pos <= bottom)) {
+						inZone = index;
+					};
+				};
+			};
+
+			var totalH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+			if (scroll > totalH - innerHeight - tolerance) {
+				inZone = numOfDots - 1 ;
+			};
+			if (scroll < tolerance) {
+				inZone = 0 ;
+			};
+
+			for (index = 0; index < numOfDots; index++) {
+				if (inZone == index) {
+					document.getElementById("scroll_button" + index.toString()).style.backgroundColor = '#DB0000';
+				}
+				else {
+					document.getElementById("scroll_button" + index.toString()).style.backgroundColor = '#66B2FF';
+				};
+			};
+		};
+
+		function scrollToIndex(index) {
+			// Scroll to view
+			var vmax = Math.max(viewportToPixels('1vh'), viewportToPixels('1vw'));
+			var header_ht = 5*vmax;
+			var above = document.getElementById("scroll_item" + index.toString()).offsetTop;
+			var height = document.getElementById("scroll_item" + index.toString()).offsetHeight;
+			var mid = Math.max(above + height/2, 0);
+
+			var view_radius = window.innerHeight/2;
+			var y = mid - view_radius + 3.5*vmax;
+			if (height > (window.innerHeight - 5*vmax) && mid != 0) {
+				y = mid - height/2 - 2.5*vmax;
+			};
+			window.scrollTo(0, y);
+
+			scrollFunction();
+
+		};
+
+		function updateSize() {
+			var tenth = 0.0085 * window.innerWidth * window.devicePixelRatio;
+			var fsize = `${tenth}px`;
+			document.getElementById("wrapper").style.fontSize = fsize;
+			document.getElementById("header_wrapper").style.fontSize = fsize;
+			document.getElementById("body").style.fontSize = fsize;
+
+			var browserZoomLevel = Math.round(window.devicePixelRatio * 100);
+			var width = window.innerWidth * window.devicePixelRatio;
+			if (browserZoomLevel > 100) {
+				document.getElementById("header").style.width = width.toString() + 'px';
+				document.getElementById("header").style.maxWidth = null;
+				document.getElementById("b_header").style.width = width.toString() + 'px';
+				document.getElementById("b_header").style.maxWidth = null;
+				document.getElementById("body").style.width = width.toString() + 'px';
+				document.getElementById("body").style.maxWidth = null;
+			}
+			else {
+				document.getElementById("header").style.width = '100vw';
+				document.getElementById("header").style.maxWidth = '100%';
+				document.getElementById("b_header").style.width = '100vw';
+				document.getElementById("b_header").style.maxWidth = '100%';
+				document.getElementById("body").style.width = '100vw';
+				document.getElementById("body").style.maxWidth = '100%';
+
+			};
+		};
+
+        function read(x) {
+		  	x = x.split("^").join("**");
+		  	x = x.split("pi").join("(3.141592653)");
+		  	x = x.split("&pi;").join("(3.141592653)");
+		  	x = x.split("π").join("(3.141592653)");
+			x = x.split("×").join("*");
+			x = x.split("sin").join("Math.sin");
+			x = x.split("cos").join("Math.cos");
+			x = x.split("tan").join("Math.tan");
+			x = x.split("sec").join("Math.sec");
+			x = x.split("csc").join("Math.csc");
+			x = x.split("cot").join("Math.cot");
+			x = x.split("asin").join("Math.asin");
+			x = x.split("acos").join("Math.acos");
+			x = x.split("atan").join("Math.atan");
+			x = x.split("asec").join("Math.asec");
+			x = x.split("acsc").join("Math.acsc");
+			x = x.split("acot").join("Math.acot");
+			x = x.split("sin**-1").join("Math.asin");
+			x = x.split("cos**-1").join("Math.acos");
+			x = x.split("tan**-1").join("Math.atan");
+			x = x.split("sec**-1").join("Math.asec");
+			x = x.split("csc**-1").join("Math.acsc");
+			x = x.split("cot**-1").join("Math.acot");
+			x = x.split("arcsin").join("Math.asin");
+			x = x.split("arccos").join("Math.acos");
+			x = x.split("arctan").join("Math.atan");
+			x = x.split("arcsec").join("Math.asec");
+			x = x.split("arccsc").join("Math.acsc");
+			x = x.split("arccot").join("Math.acot");
+			x = x.split("e").join("Math.E");
+			x = x.split("0(").join("0*(");
+			x = x.split("1(").join("1*(");
+			x = x.split("2(").join("2*(");
+			x = x.split("3(").join("3*(");
+			x = x.split("4(").join("4*(");
+			x = x.split("5(").join("5*(");
+			x = x.split("6(").join("6*(");
+			x = x.split("7(").join("7*(");
+			x = x.split("8(").join("8*(");
+			x = x.split("9(").join("9*(");
+			x = x.split("x(").join("x*(");
+			x = x.split("y(").join("y*(");
+			x = x.split("0x").join("0*x");
+			x = x.split("1x").join("1*x");
+			x = x.split("2x").join("2*x");
+			x = x.split("3x").join("3*x");
+			x = x.split("4x").join("4*x");
+			x = x.split("5x").join("5*x");
+			x = x.split("6x").join("6*x");
+			x = x.split("7x").join("7*x");
+			x = x.split("8x").join("8*x");
+			x = x.split("9x").join("9*x");
+			x = x.split("xx").join("x*x");
+			x = x.split("yx").join("y*x");
+		  	x = eval(x);
+			return x
+        };
+
+		$(window).resize(function() { 
+        	updateSize();
+		});
+
+        window.onload = function () {
+			updateSize();
+
+			if (!localStorage.getItem("scroll")) {
+				window.scrollTo(0, localStorage.getItem("scroll"));
+			};
+			scrollFunction();
+
+		  	document.getElementById("answer_var").innerHTML = 'V';
+		  	document.getElementById("answer_val").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+        };
+
+        function getAnswer(input) {
+        	document.getElementById("answer_var").innerHTML = input;
+
+			var a = parseFloat(document.getElementById("x_lower").value);
+			var b = parseFloat(document.getElementById("x_upper").value);
+			var f = document.getElementById("y").value;
+
+			f = f.replace("^", "**");
+			f = f.replace("×", "*");
+			f = f.replace("pi", "(3.141592653)");
+			f = f.replace("&pi;", "(3.141592653)");
+			f = f.replace("π", "(3.141592653)");
+			f = f.replace("sin", "Math.sin");
+			f = f.replace("cos", "Math.cos");
+			f = f.replace("tan", "Math.tan");
+			f = f.replace("sec", "Math.sec");
+			f = f.replace("csc", "Math.csc");
+			f = f.replace("cot", "Math.cot");
+			f = f.replace("asin", "Math.asin");
+			f = f.replace("acos", "Math.acos");
+			f = f.replace("atan", "Math.atan");
+			f = f.replace("asec", "Math.asec");
+			f = f.replace("acsc", "Math.acsc");
+			f = f.replace("acot", "Math.acot");
+			f = f.replace("sin**-1", "Math.asin");
+			f = f.replace("cos**-1", "Math.acos");
+			f = f.replace("tan**-1", "Math.atan");
+			f = f.replace("sec**-1", "Math.asec");
+			f = f.replace("csc**-1", "Math.acsc");
+			f = f.replace("cot**-1", "Math.acot");
+			f = f.replace("arcsin", "Math.asin");
+			f = f.replace("arccos", "Math.acos");
+			f = f.replace("arctan", "Math.atan");
+			f = f.replace("arcsec", "Math.asec");
+			f = f.replace("arccsc", "Math.acsc");
+			f = f.replace("arccot", "Math.acot");
+			f = f.replace("e", "Math.E");
+			f = f.replace("0(", "0*(");
+			f = f.replace("1(", "1*(");
+			f = f.replace("2(", "2*(");
+			f = f.replace("3(", "3*(");
+			f = f.replace("4(", "4*(");
+			f = f.replace("5(", "5*(");
+			f = f.replace("6(", "6*(");
+			f = f.replace("7(", "7*(");
+			f = f.replace("8(", "8*(");
+			f = f.replace("9(", "9*(");
+			f = f.replace("x(", "x*(");
+			f = f.replace("0x", "0*x");
+			f = f.replace("1x", "1*x");
+			f = f.replace("2x", "2*x");
+			f = f.replace("3x", "3*x");
+			f = f.replace("4x", "4*x");
+			f = f.replace("5x", "5*x");
+			f = f.replace("6x", "6*x");
+			f = f.replace("7x", "7*x");
+			f = f.replace("8x", "8*x");
+			f = f.replace("9x", "9*x");
+			f = f.replace("xx", "x*x");
+
+			if (a == b){
+				return;
+			};
+
+			if (input == 'V') {
+				var max_y = 0;
+				var min_y = 0;
+				var x = a;
+				var int = 0;
+				var delta = 0.0001*Math.abs(b - a);
+				while (x + delta <= b) {
+					y = eval(f.replace(/x/gi, x.toString()));
+					y_next = eval(f.replace(/x/gi, (x + delta).toString()));
+					int = int + delta*(y*y + y_next*y_next)/2;
+					x = x + delta;
+				};
+				int = int * Math.PI;
+			}
+			else if (input == 'S') {
+				var max_y = 0;
+				var min_y = 0;
+				var x = a;
+				var int = 0;
+				var delta = 0.0001*Math.abs(b - a);
+				while (x + delta <= b) {
+					y_prev = eval(f.replace(/x/gi, (x - delta).toString()));
+					y = eval(f.replace(/x/gi, x.toString()));
+					y_next = eval(f.replace(/x/gi, (x + delta).toString()));
+					y_next2 = eval(f.replace(/x/gi, (x + 2*delta).toString()));
+
+					y = y*Math.sqrt(1 + ((y_next - y_prev)/(2*delta))**2);
+					y_next = y_next*Math.sqrt(1 + ((y_next2 - y)/(2*delta))**2);
+
+					int = int + delta*(y + y_next)/2;
+					x = x + delta;
+				};
+				int = int * 2 * Math.PI;
+			}
+			else {
+				var max_y = 0;
+				var min_y = 0;
+				var x = a;
+				var int = 0;
+				var delta = 0.0001*Math.abs(b - a);
+				while (x + delta <= b) {
+					y = eval(f.replace(/x/gi, x.toString()));
+					y_next = eval(f.replace(/x/gi, (x + delta).toString()));
+					int = int + delta*(y + y_next)/2;
+					x = x + delta;
+				};
+				int = int / (b - a);
+			};
+
+		  	if ( Math.abs(int) < 1 ) { var I = int.toFixed(5); }
+		  	else { var I = int.toPrecision(6); };
+		  	if (int > 1000000000000) {
+		  		I = '&infin;';
+		  	}
+		  	else if (int < -1000000000000) {
+		  		I = '-&infin;';
+		  	};
+			document.getElementById("answer_val").innerHTML = I;
+        };
+
+		$(document).ready(function(){
+			var calc = new MGC.Calculator("MGC-Calculator");
+			
+			$(".graph").click(function(){
+				var id = this.id.substring(0, 3);
+				
+				if($("#in" + id).attr("readonly") !== "readonly"){
+					calc.clearFunc(func, color);
+					var a = parseFloat(document.getElementById("x_lower").value);
+					var b = parseFloat(document.getElementById("x_upper").value);
+					var f = document.getElementById("y").value;
+					f = f.replace("^", "**");
+					f = f.replace("×", "*");
+					f = f.replace("pi", "(3.141592653)");
+					f = f.replace("&pi;", "(3.141592653)");
+					f = f.replace("π", "(3.141592653)");
+					f = f.replace("sin", "Math.sin");
+					f = f.replace("cos", "Math.cos");
+					f = f.replace("tan", "Math.tan");
+					f = f.replace("sec", "Math.sec");
+					f = f.replace("csc", "Math.csc");
+					f = f.replace("cot", "Math.cot");
+					f = f.replace("asin", "Math.asin");
+					f = f.replace("acos", "Math.acos");
+					f = f.replace("atan", "Math.atan");
+					f = f.replace("asec", "Math.asec");
+					f = f.replace("acsc", "Math.acsc");
+					f = f.replace("acot", "Math.acot");
+					f = f.replace("sin**-1", "Math.asin");
+					f = f.replace("cos**-1", "Math.acos");
+					f = f.replace("tan**-1", "Math.atan");
+					f = f.replace("sec**-1", "Math.asec");
+					f = f.replace("csc**-1", "Math.acsc");
+					f = f.replace("cot**-1", "Math.acot");
+					f = f.replace("arcsin", "Math.asin");
+					f = f.replace("arccos", "Math.acos");
+					f = f.replace("arctan", "Math.atan");
+					f = f.replace("arcsec", "Math.asec");
+					f = f.replace("arccsc", "Math.acsc");
+					f = f.replace("arccot", "Math.acot");
+					f = f.replace("e", "Math.E");
+					f = f.replace("0(", "0*(");
+					f = f.replace("1(", "1*(");
+					f = f.replace("2(", "2*(");
+					f = f.replace("3(", "3*(");
+					f = f.replace("4(", "4*(");
+					f = f.replace("5(", "5*(");
+					f = f.replace("6(", "6*(");
+					f = f.replace("7(", "7*(");
+					f = f.replace("8(", "8*(");
+					f = f.replace("9(", "9*(");
+					f = f.replace("x(", "x*(");
+					f = f.replace("0x", "0*x");
+					f = f.replace("1x", "1*x");
+					f = f.replace("2x", "2*x");
+					f = f.replace("3x", "3*x");
+					f = f.replace("4x", "4*x");
+					f = f.replace("5x", "5*x");
+					f = f.replace("6x", "6*x");
+					f = f.replace("7x", "7*x");
+					f = f.replace("8x", "8*x");
+					f = f.replace("9x", "9*x");
+					f = f.replace("xx", "x*x");
+					var func = f;
+
+					if (a != b) {
+						var max_y = 0;
+						var min_y = 0;
+						var x = a;
+						var int = 0;
+						var delta = 0.0001*Math.abs(b - a);
+						while (x + delta <= b) {
+							y = eval(f.replace(/x/gi, x.toString()));
+							y_next = eval(f.replace(/x/gi, (x + delta).toString()));
+							int = int + delta*(y + y_next)/2;
+
+							if (y > max_y) {
+								max_y = y;
+							};
+							if (y < min_y) {
+								min_y = y;
+							};
+							x = x + delta;
+						};
+
+					  	if ( Math.abs(int) < 1 ) { var I = int.toFixed(5); }
+					  	else { var I = int.toPrecision(6); };
+					  	if (int > 1000000000000) {
+					  		I = '&infin;';
+					  	}
+					  	else if (int < -1000000000000) {
+					  		I = '-&infin;';
+					  	};
+					};
+
+					var m = Math.max(a, b, Math.abs(max_y), Math.abs(min_y));
+			    	m = Math.ceil(m/5) + 1;
+			    	m = m*5;
+
+			    	if (m < 150) {
+						var color = $("." + id + "div").css("background-color");
+						
+						if(calc.graphFunc(func, color)){ 
+							//check expression validity
+						}
+						else{
+							$("#in" + id).val("ERR");
+						}
+
+						calc.setMax(m, "x");
+
+						var pos_x = document.getElementById('pos_x');
+						pos_x.innerHTML = m;
+						var pos_y = document.getElementById('pos_y');
+						pos_y.innerHTML = m;
+						var neg_x = document.getElementById('neg_x');
+						neg_x.innerHTML = -m;
+						var neg_y = document.getElementById('neg_y');
+						neg_y.innerHTML = -m;
+					}
+					else {
+						m = 5;
+						calc.setMax(m, "x");
+
+						var pos_x = document.getElementById('pos_x');
+						pos_x.innerHTML = m;
+						var pos_y = document.getElementById('pos_y');
+						pos_y.innerHTML = m;
+						var neg_x = document.getElementById('neg_x');
+						neg_x.innerHTML = -m;
+						var neg_y = document.getElementById('neg_y');
+						neg_y.innerHTML = -m;						
+					};
+				}
+			});
+
+			$("#xmax").change(function(){
+				calc.setMax($(this).val(), "x");
+				$("#xmin").val("-" + $(this).val());
+
+				var pos_x = document.getElementById('pos_x');
+				pos_x.innerHTML = $(this).val();
+				var pos_y = document.getElementById('pos_y');
+				pos_y.innerHTML = $(this).val();
+				var neg_x = document.getElementById('neg_x');
+				neg_x.innerHTML = -$(this).val();
+				var neg_y = document.getElementById('neg_y');
+				neg_y.innerHTML = -$(this).val();
+			});
+				
+		});
+
+		var MGC = {};
+
+		//MGC Calculator
+		MGC.Calculator = function(id){
+			"use strict";
+			var thisCalc = this;
+
+			var xMax = 5;
+			var xMaxVal = 40;
+			var xScale = 1;
+			var yMax = 5;
+			var yMaxVal = 40;
+			var yScale = 1;
+			
+			/*
+				-start coordinates-
+				The coordinate (0, 0) on the canvas is the 
+				upper-left hand corner. This is updated
+				according to the current scales and max/mins
+			*/
+			var xStart = 0;
+			var yStart = 0;
+			
+			//arrays for drawing every function graph
+			var funcArr = []; //array of functions
+			var colorArr = []; //array of functions
+			
+			//canvas and context
+			var canvas = null;
+			var context = null;
+
+			canvas = createCanvas(); //make a canvas for the graph output
+			
+			if(document.getElementById(id) === null){ //append canvas to the body
+				document.body.appendChild(canvas);
+			}
+			else{ //append canvas to the element at id
+				document.getElementById(id).appendChild(canvas);
+			}
+			
+			context = getContext(canvas); //init context
+
+			drawGraph(); //draw an empty grid
+			
+			/*start public methods*/	
+			this.graphFunc = function(func, color){
+				func = func.toLowerCase();
+				func = func.replace("^", "**");
+				
+				if(cleanExp(func) !== null){
+					funcArr.push(func); //save function
+					colorArr.push(color); //save color
+					drawGraph(); //draw new graph
+					return true;
+				}
+				else{
+					return false;
+				}
+				
+			};
+			
+			this.clearFunc = function(func, color){
+				var i = colorArr.indexOf(color);
+				
+				if(i > -1){
+					funcArr.splice(i, 1); //emove function name
+					colorArr.splice(i, 1); //emove color
+					drawGraph(); //draw new graph
+				}
+			};
+			
+			this.setMax = function(value, axis){
+					//value currently has to be symmetrical
+					//also between 0 and 1000
+					if(value > 0 && value < 1000){ 
+						if(axis === "x"){
+							xMax = value;
+							xMaxVal = canvas.width / 2 / xMax;
+							yMax = xMax;
+							yMaxVal = xMaxVal;
+						}				
+						drawGraph();
+					}
+					
+			};
+			
+			/*
+				will eventually need public get and set 
+				functions for all values:
+				---scale
+				---min
+				---canvas size
+			*/
+			/*end public methods*/
+			
+			/*start private methods*/
+			function createCanvas(){
+				//create a canvas
+				canvas = document.createElement("canvas");
+				
+				if(canvas === null){ //check canvas
+					throw MGC.Errors.canvasErr;
+				}
+				
+				//add and initalize canvas
+				canvas.appendChild(document.createTextNode(MGC.Errors.tagErr));
+				canvas.height = 400;
+				canvas.width = 400;
+				
+				return canvas;
+			}
+			
+			function getContext(){
+				//get a context
+				context = canvas.getContext("2d");
+				
+				if(context === null){ //check 2D context
+					throw MGC.Error.contextErr;
+				}
+				
+				return context;
+			}
+			
+			function drawGraph(){
+			
+				//update starting positions
+				xStart = 0.5 * canvas.width;
+				yStart = 0.5 * canvas.height;
+				
+				//draw a white background
+				context.fillStyle = "#ffffff";
+				context.fillRect(0, 0, canvas.width, canvas.height);
+				
+				context.lineWidth = 1; //set line width for grid
+				context.strokeStyle = "#cccccc";
+				context.beginPath();
+				
+				//set up the grid
+				for(var i = 0; i < canvas.width; i++){
+					context.moveTo(i * (xMaxVal / xScale), 0);
+					context.lineTo(i * (xMaxVal / xScale), canvas.width);
+					
+					context.moveTo(0, i * (yMaxVal / yScale));
+					context.lineTo(canvas.height, i * (yMaxVal / yScale));
+				}
+				
+				//draw the grid
+				context.stroke();
+				context.closePath();
+				
+				context.lineWidth = 1; //set line width for axises
+				
+				//draw x and y axis
+				context.beginPath();
+				context.moveTo(0, yStart);
+				context.lineTo(canvas.width, yStart);
+				context.moveTo(xStart, 0);
+				context.lineTo(xStart, canvas.height);
+				context.strokeStyle = "#000000";
+				context.stroke();
+				context.closePath();
+				
+				context.lineWidth = 3; //reset line width
+				
+				//draw the functions in the array
+				for(i = 0; i < funcArr.length; i++){
+					drawFunction(i);
+				}
+			}
+			
+			function drawFunction(i){
+				var func = cleanExp(funcArr[i]);
+				var color = colorArr[i];
+				var x, y, max, min;
+
+				if(func === null){ //invalid expression
+					thisCalc.clearFunc(funcArr[i]);
+					alert("ERR");
+					return;
+				}
+				
+				max = (canvas.width - xStart) / xScale;
+				min = -xStart / xScale;
+				
+				context.beginPath();
+				context.lineWidth = 3;
+				context.strokeStyle = '#DB0000';
+				
+				//move to first coordinate
+				x = xScale * min;
+				
+				try{ //expression might not evaluate
+					y = xMaxVal * eval(func);
+				}
+				catch(err){
+					try {
+						var f = funcArr[i].replace(/x/gi, '*x');
+						func = cleanExp(f);
+						y = xMaxVal * eval(func);
+					}
+					catch(e) {
+						thisCalc.clearFunc(funcArr[i]);
+						alert("ERR");
+						return;
+					};
+				}
+					
+				context.moveTo(xStart + x, yStart - y);
+				
+				for(var j = min + 1; j <= max; j++){
+					x = xScale * j;
+					
+					try{ //expression might not evaluate
+						y = xMaxVal * eval(func);
+					}
+					catch(err){
+						thisCalc.clearFunc(funcArr[i]);
+						alert("ERR");
+						return;
+					}
+					
+					context.lineTo(xStart + x, yStart - y);
+				
+				}
+				
+				context.stroke();
+				context.closePath();
+			}
+			
+			function cleanExp(exp){
+				var result = "";
+				
+				//emove spaces
+				exp = exp.replace(/\s/g, '');
+				
+				//attempt to stop some code injection
+				if(exp.indexOf("var") !== -1 || exp.indexOf("func") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("{") !== -1 || exp.indexOf("}") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("[") !== -1 || exp.indexOf("]") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("=") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp === ""){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				
+				for(var i = 0; i < exp.length; i++){
+					
+					if(i+2 < exp.length && exp[i+1] === "^"){
+						result += "pow(x, " + exp[i+2] + ")";
+						i += 2;
+					}
+					else{
+						result += exp[i];
+					}
+					
+				}
+				
+				//scale x
+				result = result.replace(/x/gi, "x/xMaxVal");
+				
+				//replace special numbers
+				result = result.replace(/e/gi, "Math.E");
+				result = result.replace(/pi/gi, "Math.PI");		
+				
+				return result;
+			}
+			
+			function pow(x, e){
+				return Math.pow(x, e);
+			}
+			
+			function sin(x){
+				return Math.sin(x);
+			}
+				
+			function asin(x){
+				return Math.asin(x);
+			}
+			
+			function arcsin(x){
+				return Math.asin(x);
+			}
+			
+			function cos(x){
+				return Math.cos(x);
+			}
+			
+			function acos(x){
+				return Math.acos(x);
+			}
+			
+			function arccos(x){
+				return Math.acos(x);
+			}
+			
+			function tan(x){
+				return Math.tan(x);
+			}
+			
+			function atan(x){
+				return Math.atan(x);
+			}
+			
+			function arctan(x){
+				return Math.atan(x);
+			}
+			
+			function log(x){
+				return Math.log(x);
+			}
+			/*end private methods*/
+		};
+
+		//MGC Errors
+		MGC.Errors = {
+			tagErr		:	"Your browser does not seem to support the canvas tag.",
+			canvasErr	:	"MGC_CANVAS_ERR: could not create a canvas element",
+			contextErr	:	"MGC_CONTEXT_ERR: could not get a 2d context",
+			expWarn		:	"MGC_EXPRESSION_WARNING: expression contains illegal characters"
+		};
+
+
+	</script>
+
+</body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
+</html>

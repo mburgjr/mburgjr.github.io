@@ -12,125 +12,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
 	<style>
-		body {
-		  margin: 0;
-		  font-family: Arial;
-		  text-decoration: none;
-		  width: 100%;
-		}
-
-		.header {
-			background-color: #000066;
-			text-align: left;
-			color: white;
-		}
-
-		.header div.info {
-			text-align: right;
-			vertical-align: top;
-			padding-right: 1%;
-			padding-top: 0.6%;
-			float: right;
-		}
-
-		#q_button {
-			border-width: 0.25rem;
-			border-style: solid;
-			border-color: #000066;
-		}
-
-		#q_button:hover {
-			border-width: 0.25rem;
-			border-style: solid;
-			border-color: #66B2FF;
-		}
-
-		a {
-		  text-decoration: none;			
-		}
-
-		.header div.logo {
-			float: left;
-		}
-		
-		.header a {
-		  	text-decoration: none;
-			font-size: 1vw;
-			font-weight: bold;
-			color: white;
-		}
-
-		a.sub_active {
-			background-color: #FFFFFF;
-			color: #000066;
-		}
-
-		td {
-			padding: 0.4%;
-		}
-
-		td a {
-		    display:block;
-		    width:100%;
-		}
-
-		td.main_active {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.main_access:hover {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.main_access:hover a {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub_access {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub_access a {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		  font-size: 1.1vw;
-		}
-
-		td.sub_access:hover {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_access:hover a {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_active {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_active a {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		  font-size: 1.1vw;
-		}
-
-		.logo_image {
-			width: 80%;
-			padding: 0%;
-		}
 
 		.mobile-calculator {
 			display: none;
@@ -139,12 +22,12 @@
 		table.div_examples {
 			padding-left: 0%;
 			line-height: 1.25em;
-			font-size: 1.1rem;
+			font-size: 1.1em;
 		}
 
 		.fraction, .numerator, .denominator {
 		    padding: 0 5px;
-		    width: 0.65rem;
+		    width: 0.65em;
 		}
 
 		.fraction {
@@ -159,250 +42,457 @@
 
 		input{
 			width: 25%;
-			font-size: 1.05rem;
+			font-size: 1.05em;
 		}
 
-		button{
-			height: 1.55rem;
+		button.graph:hover {
+			background-color: #66B2FF;
+		}
+
+		button.graph {
+			height: 0.75em;
 			width: 5%;
-			font-size: 1.9rem;
+			font-size: 1.9em;
 			font-weight: bold;
 			vertical-align: middle;
 			text-align: center;
 			background-color: #000066;
-			border-style: solid;
+			border-style: solid; 
+			border-width: medium;
 			border-color: #66B2FF;
 			color: white;
 		}
 
 	</style>
 </head>
-<body>
-	<header class='header'>
-		<table style="width:100%; border: none; border-collapse: collapse;">
-			<tr>
-				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%; padding-bottom: 0.5%"><img src="images/logo_cut.png" class="logo_image"></td>
-				<td class="main_active" style="text-align: center; width: 7.5%"><a href="0-6.html">0</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="1-0.html">1</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="0-6.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
 			</tr>
-			<tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
 				<td class="sub" style="text-align: center"></td>
 				<td class="sub_access" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_access" href="0-0.html">#</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-1.html">+</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-2.html">&#215;</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-3.html">&#247;</a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html">^</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html"><span style="font-size: 0.95em">^</span></a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-5.html">&#8730;</a></td>
-				<td class="sub_active" style="text-align: center"><a class="sub_active" href="0-6.html">&#402;</a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="0-6.html"><span style="font-size: 0.95em">&#402;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-7.html"><span style="padding-bottom: 50%">&#9697;</span></a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-Q.html">?</a></td>
-				<td class="sub"></td>
-				<td class="sub"></td>
 				<td class="sub"></td>
 			</tr>
 		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+
+		<div id="scroll_item0" style="margin-top: 5%">
+			<table style="width: 100%; font-size: 2.25em;">
+				<tr style="width: 100%">
+					<td style="width: 10%"></td>
+					<td style="width: 30%; text-align: center;">
+						A &rarr; &#9633; &rarr; B
+					</td>
+					<td style="width: 20%; text-align: center;">
+						&#9633; &nbsp;=&nbsp; &#402;
+					</td>
+					<td style="width: 30%; text-align: center;">
+						X &rarr; &#9633; &rarr; Y
+					</td>
+					<td style="width: 10%"></td>
+				</tr>
+			</table>								
+			<img src="images/0/0-6/fut_concept.png" width="55%" style="margin-top: 5%; margin-left: 22.5%">
+		</div>
+
+		<div style="width: 95%; margin-left: 2.5%; padding: 0px; margin-top: 5%; border-radius: 2.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item1" class="main" style="width:100.1%; margin: -0.1em; border-collapse: collapse;">
+				<tr style="width:100%">
+					<td style="width:55%; font-size: 2em; font-weight: bold; line-height: 1em; text-align: center; padding-top: 2.5%; border-bottom-style: solid; border-width: medium; padding-bottom: 5%; padding-right: 0%; padding-left: 7.5%">
+						<img src="images/0/0-6/graph_xline.png" width="75%" style="margin-top: 5%">
+						<img src="images/0/0-6/graph_train.png" width="75%" style="margin-top: 5%">
+						<img src="images/0/0-6/graph_ytrain.png" width="75%" style="margin-top: 5%">
+					</td>
+					<td style="width:45%; font-size: 1.75em; line-height: 1.75em; text-align: center; padding-top: 2.5%; border-bottom-style: solid; border-width: medium; padding-bottom: 5%; padding-left: 0%; padding-right: 7.5%">
+						<br>&#402;(x) &nbsp;=&nbsp; y
+						<br>
+						<br>&nbsp;<span style="font-size: 1.1em">&bull; &nbsp; ( x, y ) &nbsp;=&nbsp; ( #, # )</span>
+						<br>&nbsp;&nbsp; # &nbsp;&in;&nbsp; &#8477; , &nbsp; ( #, # ) &nbsp;&in;&nbsp; &#8477;<sup>2</sup>
+						<br>&nbsp;&nbsp; <span style="font-size: 0.85em">&#8477; &nbsp;=&nbsp; 0, 0.01, 0.02, ... 10 ... 100 ... &infin;
+						<br>&nbsp;&nbsp; x &nbsp;=&nbsp; 0 &rarr; 0.01 &rarr; ... &rarr; 100 &rarr; ... &rarr; &infin;</span>
+						<br>
+						<br><img src="images/0/0-6/fut_point_circ.png" width="60%" style="margin-top: 5%">
+					</td>
+				</tr>
+				<tr style="width:100%">
+					<td style="width:55%; padding: 5%; font-size: 1.5em; text-align: center; line-height: 1.5em">
+						<img src="images/0/0-6/graph_main.png" width="70%">
+					</td>
+					<td style="width:45%; font-size: 1.65em; line-height: 1.55em; text-align: left; padding: 5%; padding-left: 5%">
+						y &nbsp;=&nbsp; mx + b
+						<br>m &nbsp;=&nbsp; 1/2 , &nbsp;&nbsp; b &nbsp;=&nbsp; 3
+						<br>y &nbsp;=&nbsp; x/2 + 3
+						<br>
+						<br> x &nbsp;=&nbsp; 6
+						<br> y &nbsp;=&nbsp; (6<i>/</i>2) + 3 &nbsp;=&nbsp; 3 + 3 &nbsp;=&nbsp; 6
+						<br> &rarr;&nbsp; (x, y) &nbsp;=&nbsp; (6, 6)
+						<br>
+						<br> x &nbsp;=&nbsp; 0
+						<br> y &nbsp;=&nbsp; (0<i>/</i>2) + 3 &nbsp;=&nbsp; 3 &nbsp;=&nbsp; b
+						<br> &rarr;&nbsp; (x, y) &nbsp;=&nbsp; (0, 3)
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item2" style="width: 100%; margin-top: 7.5%; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 50%; font-size: 1.35em; text-align: center;">
+					<div style="width:50%; margin-left: 35%; border-color: black; border-style: solid; border-width: medium; padding-top: 5%; padding-bottom: 5%; border-radius: 1em">
+						y &nbsp;=&nbsp; <input type="text" id="inred" value="0" style="width:50%"/>
+						<button type="button" class="graph" id="redg" style="border-radius: 0.15em; margin-bottom: 0.075em; outline: none;"></button>
+						<br><br>n &nbsp;=&nbsp;
+		                <input type="text" id="xmax" class="value" maxlength="2" value="5" style="width:50%">
+		                <button type="button" class="graph" style="border-radius: 0.15em; margin-bottom: 0.075em; outline: none;"></button>
+		            </div>
+		            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 0.85em; line-height: 0.85em">a &#215; x &nbsp;=&nbsp; "a*x" ,&nbsp;&nbsp; x<sup>2</sup> &nbsp;=&nbsp; "x^2"</span>
+				</td>
+
+			    <td style="width: 50%">
+				    <table style="width: 50%; font-size: 1.25em"> 
+				        <tr>
+				            <td>
+				            </td>
+				            <td style="text-align: center">
+				                <p id="pos_y">&nbsp;&nbsp;5</p>
+				            </td>
+				            <td>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td style="text-align: right;">
+				                <p id="neg_x">-5</p>
+				            </td>
+				            <td style="text-align: center; padding-left: 3.5%">
+				                <div id="MGC-Calculator" style="width:100%"></div>
+				            </td>
+				            <td style="text-align: left; padding-left: 3.5%">
+				                <p id="pos_x">5</p>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td>
+				            </td>
+				            <td style="text-align: center">
+				                <p id="neg_y">&nbsp;-5</p>
+				            </td>
+				            <td>
+				            </td>
+				        </tr>
+				    </table>
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 95%; margin-left: 2.5%; padding: 0px; margin-top: 7.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item3" class="examples" style="width:100.1%; margin: -0.1em; font-size: 1.5em; border-collapse: collapse;">
+				<tr style="width:100%">
+					<td style="width:33%; text-align: center; border-bottom-style: solid; border-width: medium; border-right-style: solid; border-width: medium; border-color: black; padding: 2.5%">
+						<img src="images/0/0-6/graph_linear.png" width="70%">
+						<br>y = mx + b
+					</td>
+					<td style="width:33%; text-align: center; border-bottom-style: solid; border-width: medium; border-right-style: solid; border-width: medium; border-color: black; padding: 2.5%">
+						<img src="images/0/0-6/graph_quadratic.png" width="70%">
+						<br>y = x<sup>2</sup>
+					</td>
+					<td style="width:33%; text-align: center; border-bottom-style: solid; border-width: medium; border-color: black; padding: 2.5%">
+						<img src="images/0/0-6/graph_cubic.png" width="70%">
+						<br>y = x<sup>3</sup>
+					</td>
+				</tr>
+				<tr style="width:100%;">
+					<td style="width:33%; text-align: center; border-right-style: solid; border-width: medium; border-color: black; padding: 2.5%">
+						<img src="images/0/0-6/graph_exp.png" width="70%">
+						<br>y = b<sup>x</sup>
+					</td>
+					<td style="width:33%; text-align: center; border-right-style: solid; border-width: medium; border-color: black; padding: 2.5%">
+						<img src="images/0/0-6/graph_inv.png" width="70%">
+						<br>y = x<sup>-1</sup>
+					</td>
+					<td style="width:33%; text-align: center; border-color: black; padding: 2.5%">
+						<img src="images/0/0-6/graph_root.png" width="70%">
+						<br>y = x<sup>1<i>/</i>2</sup>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item4" style="width: 90%; margin-left: 5%; margin-top: 7.5%; text-align: center; font-size: 1.65em;">
+			<tr style="width: 100%">
+				<td style="width: 33%">
+					<img src="images/0/0-6/graph_dm.png" width="80%">
+					<br><br>y = mx + b &nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+				<td style="width: 34%">
+					<img src="images/0/0-6/graph_db.png" width="80%">
+					<br><br>y = mx + b &nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+				<td style="width: 33%">
+					<img src="images/0/0-6/graph_da.png" width="80%">
+					<br><br>y = ax<sup>2</sup>
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item5" style="margin-top: 7.5%; width: 80%; margin-left: 5%; padding: 5%; padding-top: 2%; padding-bottom: 2.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 1.5em">
+			<table style="width: 100%; text-align: center; font-size: 1.65em; line-height: 0.95em;">
+				<tr style="width: 100%">
+					<td style="width: 100%">
+						<br>
+						&#402;(x) &nbsp;=&nbsp; y &nbsp;=&nbsp; (x + 2) (x + 1) &nbsp;=&nbsp; x<sup>2</sup> + 3x + 2
+						<br><br>
+					</td>
+				</tr>
+			</table>
+			<table style="width: 100%; margin-top: 2.5%; border-style: solid; border-width: medium; border-color: black; text-align: center; font-size: 1.25em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 12%; border-style: solid; border-width: medium; background-color: #696969; color: white; border-color: black; padding: 2%">
+						x
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						-5
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						-4
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						-3
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						-2
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						-1
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						0
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						1
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						2
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						3
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						4
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						5
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 12%; border-style: solid; border-width: medium; background-color: #696969; color: white; border-color: black; padding: 2%">
+						y
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						12
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						6
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						2
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						0
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						0
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						2
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						6
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						12
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						20
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						30
+					</td>
+					<td style="width: 8%; border-style: solid; border-width: medium; padding: 2%">
+						42
+					</td>
+				</tr>
+			</table>
+			<table style="width: 100%; text-align: center; font-size: 1.65em; line-height: 0.95em;">
+				<tr style="width: 100%">
+					<td style="width: 100%">
+						<br><br>
+						&#402;(-5) &nbsp;=&nbsp; y &nbsp;=&nbsp; (-5 + 2) (-5 + 1) &nbsp;=&nbsp; -3 (-4) &nbsp;=&nbsp; 12
+						<br><br>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item6" style="width: 98%; margin-left: 1%; margin-top: 7.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 2.5em">
+			<tr style="width: 100%">
+				<td style="width: 35%; text-align: center; padding-left: 3.5%; padding-top: 5%; padding-bottom: 5%">
+					<img src="images/0/0-6/graph_3d.png" width="90%">
+				</td>
+				<td style="width: 30%; text-align: center; font-size: 1.35em; line-height: 2.5em; padding: 5%">
+					Ax &nbsp;+&nbsp; By &nbsp;+&nbsp; C &nbsp;=&nbsp; z
+					<br>
+					<br>x &nbsp;=&nbsp; 0 &nbsp;&nbsp;&nbsp;&Rightarrow;&nbsp;&nbsp;&nbsp; z &nbsp;=&nbsp; By &nbsp;+&nbsp; C
+					<br>y &nbsp;=&nbsp; 0 &nbsp;&nbsp;&nbsp;&Rightarrow;&nbsp;&nbsp;&nbsp; z &nbsp;=&nbsp; Ax &nbsp;+&nbsp; C
+					<br>z &nbsp;=&nbsp; 0 &nbsp;&nbsp;&nbsp;&Rightarrow;
+					<br>y &nbsp;=&nbsp; -(A/B)x &nbsp;+&nbsp; (C/B)
+					<br>
+				</td>
+				<td style="width: 35%; text-align: center; padding-right: 3.5%; padding-top: 5%; padding-bottom: 5%">
+					<img src="images/0/0-6/graph_z0.png" width="85%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item7" style="width: 95%; margin-left: 2.5%; margin-top: 7.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 2.5em">
+			<tr style="width: 100%">
+				<td style="width: 25%; line-height: 1.5em; font-size: 1.65em; text-align: center; padding: 2.5%">
+					( x , y )
+					<br>&Uparrow;
+					<br>A &nbsp;&#215;&nbsp; A &nbsp;=&nbsp; A<sup>2</sup>
+					<br><br><br>( x , y , z )
+					<br>&Uparrow;
+					<br>A &nbsp;&#215;&nbsp; A &nbsp;&#215;&nbsp; A &nbsp;=&nbsp; A<sup>3</sup>
+				</td>
+				<td style="width: 37.50%; text-align: center; padding: 5%; border-left-style: solid; border-width: medium; border-right-style: solid; border-width: medium; border-color: lightgray">
+					<img src="images/0/0-6/graph_table.png" width="77.5%">
+				</td>
+				<td style="width: 37.50%; text-align: center; padding: 5%">
+					<img src="images/0/0-6/graph_building.png" width="70%">				
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item8" style="margin-top: 6.5%; margin-bottom: 5%;">
+			<p style="text-align: center; font-size: 1.85em; line-height: 2.25em">
+				&#402;(x) &nbsp;=&nbsp; y &nbsp; &rarr; &nbsp; &#402;<sup>-1 </sup>(y) &nbsp;=&nbsp; x
+				<br>&#402;<sup>-1 </sup>(&#402;(x)) &nbsp;=&nbsp; &#402;<sup>-1 </sup>(y) &nbsp;=&nbsp; x
+			</p>
+				
+			<table style="width: 90%; margin-left: 5%; font-size: 1.75em; margin-top: 1.5%; line-height: 2em; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 50%">
+						<img src="images/0/0-6/graph_inv_fut.png" width="50%">	
+					</td>
+					<td style="width: 50%">
+						y &nbsp;=&nbsp; &#402;(x) &nbsp;=&nbsp; 3x &nbsp;+&nbsp; 2
+						<br>x &nbsp;=&nbsp; &#402;<sup>-1 </sup>(y)
+						<br>y &nbsp;=&nbsp; 3(&#402;<sup>-1 </sup>(y)) &nbsp;+&nbsp; 2
+						<br>&#402;<sup>-1 </sup>(y) &nbsp;=&nbsp; (y - 2)/3 &nbsp;=&nbsp; y/3 &nbsp;-&nbsp; 2/3
+					</td>
+				</tr>
+			</table>
+			
+			<img src="images/0/0-6/graph_inv_fut_g.png" width="45%" style="margin-top: 2.5%; margin-left: 27.5%">
+		</div>
+
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="0-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
+		</div>
 	</header>
 
-	<div style="width: 110rem; margin: 0 auto;">
-	<table style="width: 100%; font-size: 2.25rem; margin-top: 6.5%">
-		<tr style="width: 100%">
-			<td style="width: 10%"></td>
-			<td style="width: 30%; text-align: center;">
-				A &rarr; &#9633; &rarr; B
-			</td>
-			<td style="width: 20%; text-align: center;">
-				&#9633; &nbsp;=&nbsp; &#402;
-			</td>
-			<td style="width: 30%; text-align: center;">
-				X &rarr; &#9633; &rarr; Y
-			</td>
-			<td style="width: 10%"></td>
-		</tr>
-	</table>
-
-	<table class="main" style="width:95%; margin-left: 2.5%; margin-top: 6.5%; border-style: solid; border-color: black; border-width: 0.2rem">
-		<tr style="width:100%">
-			<td style="width:35%; font-size: 2.25rem; font-weight: bold; line-height: 1em; text-align: center">
-				<br>&#402;(x) &nbsp;=&nbsp; y
-				<br>&nbsp;&nbsp;&nbsp;&uarr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&uarr;
-				<br>&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
-				<img src="images/0-6/graph_xline.png" width="80%" style="margin-top: 15%">
-				<img src="images/0-6/graph_train.png" width="80%" style="margin-top: 5%">
-				<img src="images/0-6/graph_ytrain.png" width="80%" style="margin-top: 5%">
-			</td>
-			<td style="width:37.5%; padding-left: 2.5%; padding-right: 2.5%; padding-top: 5%; padding-bottom: 3.5%; border-left-style: solid; border-right-style: solid; border-color: lightgray; font-size: 1.9rem; text-align: center; line-height: 1.75em">
-				<img src="images/0-6/graph_main.png" width="90%">
-				<br><br>
-				y = mx + b
-				<br>
-				m = 1/2, &nbsp; b = 3
-			</td>
-			<td style="width:27.5%; font-size: 1.75rem; line-height: 1.75em; text-align: left; padding-left: 3.5%">
-				<span style="font-size: 2.25rem"><b>&bull; &nbsp; (x, y) &nbsp;=&nbsp; (#, #)</b></span>
-				<br>
-				<br> x &nbsp;=&nbsp; 6
-				<br> y &nbsp;=&nbsp; (6<i>/</i>2) + 3 &nbsp;=&nbsp; 3 + 3 &nbsp;=&nbsp; 6
-				<br> (x, y) &nbsp;=&nbsp; (6, 6)
-				<br>
-				<br> x &nbsp;=&nbsp; 0
-				<br> y &nbsp;=&nbsp; (0<i>/</i>2) + 3 &nbsp;=&nbsp; 3 &nbsp;=&nbsp; b
-				<br> (x, y) &nbsp;=&nbsp; (0, 3)
-			</td>
-		</tr>
-	</table>
-
-	<table style="width: 100%; margin-top: 7.5%; text-align: center;">
-		<tr style="width: 100%">
-			<td style="width: 50%; font-size: 1.35rem">
-				y &nbsp;=&nbsp; <input type="text" id="inred" value="0" />
-				<button type="button" class="graph" id="redg"></button>
-				<br><br>n &nbsp;=&nbsp;
-                <input type="text" id="xmax" class="value" maxlength="2" value="5" style="width:25%">
-                <button type="button"></button>
-			</td>
-
-		    <td style="width: 50%">
-			    <table style="width: 50%; font-size: 1.25rem"> 
-			        <tr>
-			            <td>
-			            </td>
-			            <td style="text-align: center">
-			                <p id="pos_y">&nbsp;&nbsp;5</p>
-			            </td>
-			            <td>
-			            </td>
-			        </tr>
-			        <tr>
-			            <td style="text-align: right;">
-			                <p id="neg_x">-5</p>
-			            </td>
-			            <td style="text-align: center; padding-left: 3.5%">
-			                <div id="MGC-Calculator" style="width:100%"></div>
-			            </td>
-			            <td style="text-align: left; padding-left: 3.5%">
-			                <p id="pos_x">5</p>
-			            </td>
-			        </tr>
-			        <tr>
-			            <td>
-			            </td>
-			            <td style="text-align: center">
-			                <p id="neg_y">&nbsp;-5</p>
-			            </td>
-			            <td>
-			            </td>
-			        </tr>
-			    </table>
-			</td>
-		</tr>
-	</table>
-
-	<table class="examples" style="width:90%; margin-left: 5%; margin-top: 7.5%; font-size: 1.5rem; border-collapse: collapse;">
-		<tr style="width:100%">
-			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
-				<img src="images/0-6/graph_linear.png" width="70%">
-				<br>y = mx + b
-			</td>
-			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
-				<img src="images/0-6/graph_quadratic.png" width="70%">
-				<br>y = x<sup>2</sup>
-			</td>
-			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
-				<img src="images/0-6/graph_cubic.png" width="70%">
-				<br>y = x<sup>3</sup>
-			</td>
-		</tr>
-		<tr style="width:100%;">
-			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
-				<img src="images/0-6/graph_exp.png" width="70%">
-				<br>y = b<sup>x</sup>
-			</td>
-			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
-				<img src="images/0-6/graph_inv.png" width="70%">
-				<br>y = x<sup>-1</sup>
-			</td>
-			<td style="width:33%; text-align: center; border-style: solid; border-color: black; padding: 1.5%">
-				<img src="images/0-6/graph_root.png" width="70%">
-				<br>y = x<sup>1<i>/</i>2</sup>
-			</td>
-		</tr>
-	</table>
-
-	<table style="width: 90%; margin-left: 5%; margin-top: 7.5%; text-align: center; font-size: 1.65rem;">
-		<tr style="width: 100%">
-			<td style="width: 33%">
-				<img src="images/0-6/graph_dm.png" width="80%">
-				<br><br>y = mx + b &nbsp;&nbsp;&nbsp;&nbsp;
-			</td>
-			<td style="width: 34%">
-				<img src="images/0-6/graph_db.png" width="80%">
-				<br><br>y = mx + b &nbsp;&nbsp;&nbsp;&nbsp;
-			</td>
-			<td style="width: 33%">
-				<img src="images/0-6/graph_da.png" width="80%">
-				<br><br>y = ax<sup>2</sup>
-			</td>
-		</tr>
-	</table>
-
-	<table style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-style: solid; border-color: black;">
-		<tr style="width: 100%">
-			<td style="width: 35%; text-align: center; padding-left: 3.5%; padding-top: 5%; padding-bottom: 5%">
-				<img src="images/0-6/graph_3d.png" width="100%">
-			</td>
-			<td style="width: 30%; text-align: center; font-size: 1.5rem; line-height: 2.5em; padding: 5%">
-				Ax &nbsp;+&nbsp; By &nbsp;+&nbsp; C &nbsp;=&nbsp; z
-				<br>
-				<br>x &nbsp;=&nbsp; 0 &nbsp;&nbsp;&nbsp;&Rightarrow;&nbsp;&nbsp;&nbsp; z &nbsp;=&nbsp; By &nbsp;+&nbsp; C
-				<br>y &nbsp;=&nbsp; 0 &nbsp;&nbsp;&nbsp;&Rightarrow;&nbsp;&nbsp;&nbsp; z &nbsp;=&nbsp; Ax &nbsp;+&nbsp; C
-				<br>z &nbsp;=&nbsp; 0 &nbsp;&nbsp;&nbsp;&Rightarrow;&nbsp;&nbsp;&nbsp; y &nbsp;=&nbsp; -(A/B)x &nbsp;+&nbsp; (C/B)
-				<br>
-			</td>
-			<td style="width: 35%; text-align: center; padding-right: 3.5%; padding-top: 5%; padding-bottom: 5%">
-				<img src="images/0-6/graph_z0.png" width="90%">
-			</td>
-		</tr>
-	</table>
-
-	<table style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-style: solid; border-color: black;">
-		<tr style="width: 100%">
-			<td style="width: 25%; line-height: 1.25em; font-size: 1.9rem; text-align: center; padding: 2.5%">
-				( x , y )
-				<br>&Uparrow;
-				<br>A &nbsp;&#215;&nbsp; A &nbsp;=&nbsp; A<sup>2</sup>
-				<br><br><br>( x , y , z )
-				<br>&Uparrow;
-				<br>A &nbsp;&#215;&nbsp; A &nbsp;&#215;&nbsp; A &nbsp;=&nbsp; A<sup>3</sup>
-			</td>
-			<td style="width: 37.50%; text-align: center; padding: 5%; border-left-style: solid; border-right-style: solid; border-color: lightgray">
-				<img src="images/0-6/graph_table.png" width="77.5%">
-			</td>
-			<td style="width: 37.50%; text-align: center; padding: 5%">
-				<img src="images/0-6/graph_building.png" width="70%">				
-			</td>
-		</tr>
-	</table>
-
-	<p style="text-align: center; margin-top: 5%; font-size: 2.25rem; line-height: 5rem">
-		&#402;(x) &nbsp;=&nbsp; y &nbsp; &rarr; &nbsp; &#402;<sup>-1</sup>(y) &nbsp;=&nbsp; x
-		<br>&#402;<sup>-1</sup>(&#402;(x)) &nbsp;=&nbsp; x
-	</p>
-	
-	<div id="q_button" style="width: 30%; margin-left: 35%; background-color: #000066; font-size: 1.5rem; text-align: center; margin-top: 5%; font-weight: bold; padding: 0.35%">
-		<a href="0-Q.html" style="color: white; width: 100%; display:block;">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
-	</div>
-	<p style="text-align: center; margin-bottom: 2.5%; margin-top: 2%; font-size: 1rem">Ⓒ MBC Output 2020 </p>
-	</div>
-
+	<script type="text/javascript" src="standard_functions.js"></script>
 	<script type="text/javascript">
+		
+        window.onload = function () {
+			standard_onload();
+		};
+
 		$(document).ready(function(){
 			var calc = new MGC.Calculator("MGC-Calculator");
 			
@@ -413,13 +503,14 @@
 					var func = $("#in" + id).val();
 					var color = $("." + id + "div").css("background-color");
 					
+					console.log(func);
 					calc.clearFunc(func, color);
-					if(calc.graphFunc(func, color)){ 
-						//check expression validity
+					try {
+						calc.graphFunc(func, color);
 					}
-					else{
-						$("#in" + id).val("ERR");
-					}
+					catch(e) {
+						$("#in" + id).val("ERR");					
+					};
 				}
 			});
 
@@ -504,8 +595,8 @@
 				var i = colorArr.indexOf(color);
 				
 				if(i > -1){
-					funcArr.splice(i, 1); //remove function name
-					colorArr.splice(i, 1); //remove color
+					funcArr.splice(i, 1); //emove function name
+					colorArr.splice(i, 1); //emove color
 					drawGraph(); //draw new graph
 				}
 			};
@@ -631,12 +722,19 @@
 				x = xScale * min;
 				
 				try{ //expression might not evaluate
-						y = xMaxVal * eval(func);
+					y = xMaxVal * eval(func);
 				}
 				catch(err){
-					thisCalc.clearFunc(funcArr[i]);
-					alert("ERR");
-					return;
+					try {
+						var f = funcArr[i].replace(/x/gi, '*x');
+						func = cleanExp(f);
+						y = xMaxVal * eval(func);
+					}
+					catch(e) {
+						thisCalc.clearFunc(funcArr[i]);
+						alert("ERR");
+						return;
+					};
 				}
 					
 				context.moveTo(xStart + x, yStart - y);
@@ -664,7 +762,7 @@
 			function cleanExp(exp){
 				var result = "";
 				
-				//remove spaces
+				//emove spaces
 				exp = exp.replace(/\s/g, '');
 				
 				//attempt to stop some code injection
@@ -766,4 +864,7 @@
 		};
 	</script>
 </body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
 </html>

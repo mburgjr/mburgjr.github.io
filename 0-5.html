@@ -5,137 +5,24 @@
 </script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
 <link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
 	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
 	<style>
-		body {
-		  margin: 0;
-		  font-family: Arial;
-		  text-decoration: none;
-		  width: 100%;
-		}
-
-		a {
-		  text-decoration: none;			
-		}
-
-		.header {
-			background-color: #000066;
-			text-align: left;
-			color: white;
-		}
-
-		.header div.info {
-			text-align: right;
-			vertical-align: top;
-			padding-right: 1%;
-			padding-top: 0.6%;
-			float: right;
-		}
-
-		#q_button {
-			border-width: 0.25rem;
-			border-style: solid;
-			border-color: #000066;
-		}
-
-		#q_button:hover {
-			border-width: 0.25rem;
-			border-style: solid;
-			border-color: #66B2FF;
-		}
-
-		.header div.logo {
-			float: left;
-		}
-		
-		.header a {
-		  	text-decoration: none;
-			font-size: 1vw;
-			font-weight: bold;
-			color: white;
-		}
-
-		a.sub_active {
-			background-color: #FFFFFF;
-			color: #000066;
-		}
-
-		td {
-			padding: 0.4%;
-		}
-
-		td a {
-		    display:block;
-		    width:100%;
-		}
-
-		td.main_active {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.main_access:hover {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.main_access:hover a {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub_access {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub_access a {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		  font-size: 1.1vw;
-		}
-
-		td.sub_access:hover {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_access:hover a {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_active {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_active a {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		  font-size: 1.1vw;
-		}
-
-		.logo_image {
-			width: 80%;
-			padding: 0%;
-		}
 
 		.calculator {
 			float: right;
 			font-weight: "400";
-			font-size: 1.1rem;
+			font-size: 1em;
 			padding: 7.5%;
 			border-width: 1px;
-			border-style: solid;
+			border-style: solid; 
+			border-width: medium;
 			border-color: #C0C0C0;
 			margin-top: 12.5%;
 			width: 300px;
@@ -147,7 +34,7 @@
 
 		.examples {
 			padding-left: 0%;
-			font-size: 1.075rem;
+			font-size: .95em;
 			line-height: 1.5em;
 			width: 100%;
 			text-align: center;
@@ -158,7 +45,7 @@
 
 		.fraction, .numerator, .denominator {
 		    padding: 0 5px;
-		    width: 0.65rem;
+		    width: 0.65em;
 		}
 
 		.fraction {
@@ -173,937 +60,1020 @@
 
 	</style>
 </head>
-<body>
-	<header class='header'>
-		<table style="width:100%; border: none; border-collapse: collapse;">
-			<tr>
-				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%; padding-bottom: 0.5%"><img src="images/logo_cut.png" class="logo_image"></td>
-				<td class="main_active" style="text-align: center; width: 7.5%"><a href="0-5.html">0</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="1-0.html">1</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="0-5.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
 			</tr>
-			<tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
 				<td class="sub" style="text-align: center"></td>
 				<td class="sub_access" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_access" href="0-0.html">#</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-1.html">+</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-2.html">&#215;</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-3.html">&#247;</a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html">^</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html"><span style="font-size: 0.95em">^</span></a></td>
 				<td class="sub_active" style="text-align: center"><a class="sub_active" href="0-5.html">&#8730;</a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-6.html">&#402;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-6.html"><span style="font-size: 0.95em">&#402;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-7.html"><span style="padding-bottom: 50%">&#9697;</span></a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-Q.html">?</a></td>
-				<td class="sub"></td>
-				<td class="sub"></td>
 				<td class="sub"></td>
 			</tr>
 		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button10" type="button" onclick="scrollToIndex(10)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+		<table id="scroll_item0" style="width:100%; margin-top: 6.5%">
+			<tr style="width: 100%; text-align: center;">
+				<td style="width: 7.5%">
+				</td>
+				<td style="width: 40%">
+					<img src="images/0/0-5/root_intro_ex.png" width="97.5%">
+				</td>
+				<td style="width: 5%">
+				</td>
+				<td style="width: 40%">
+					<img src="images/0/0-5/root_intro_gen.png" width="87.5%">				
+				</td>
+				<td style="width: 7.5%">
+				</td>
+			</tr>		
+		</table>
+
+		<table id="scroll_item1" style="width: 95%; margin-left: 2.5%; padding: 0px; margin-top: 6%; border-radius: 2.5em; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width:100%">
+				<td style="text-align: center; width: 35%; vertical-align: center; padding-left: 1.5%">
+					<img src="images/0/0-5/root_symbol.png" width="55%" style="">
+					<img src="images/0/0-5/root_main.png" width="90%" style="margin-top: 15%">
+				</td>
+				<td style="text-align: center; width: 35%; font-size: 2.05em; border-right-style: solid; border-width: medium; border-left-style: solid; border-color: lightgray; padding-top: 2.5%">
+					A <sup>B</sup> &nbsp;=&nbsp; C &nbsp; &rarr; &nbsp; A &nbsp;=&nbsp; C <sup>1/B</sup>
+					<img src="images/0/0-5/root_dots.png" width="75%" style="margin-top: 20%">
+				</td>
+				<td style="text-align: center; width: 30%; padding-top: 2.5%; padding-bottom: 2.5%; padding-right: 1%;">
+					<img src="images/0/0-5/root_shapes.png" width="60%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item2" style="width:100%; margin-top: 5%">
+			<tr>
+				<td style="text-align: center; width: 50%">
+					<img src="images/0/0-5/root_graph.png" width="75%" style="padding-left: 15%">
+				</td>
+				</td>
+				<td style="text-align: center; width: 50%">
+					<img src="images/0/0-5/root_graph_exp.png" width="75%" style="padding-right: 15%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item3" class="calc_table" style="width:85%; margin-top: 7.5%; margin-left: 7.5%; padding-top: 3.5%; padding-bottom: 5%; font-size: 1em; border-style: solid; border-width: medium; border-color: black; border-radius: 1em">
+			<tr style="width:100%">
+				<td style="width: 7.5%">
+				</td>
+				<td style="width:25%;">
+					<form action="#" class="form-inline">
+					  <input type="text" style="font-size: 1em; width: 100%" id="first" class="form-control" placeholder=" A">				  
+					</form>
+					<br>&nbsp;
+				</td>
+				<td style="width:5%; text-align: center"> √ <br>&nbsp;<br>&nbsp;</td>
+				<td style="width:25%">
+					<form action="#" class="form-inline">
+					  <input type="text" style="font-size: 1em; width: 100%" id="second" class="form-control" placeholder=" B">				  
+					</form>
+					<br>&nbsp;		
+				</td>
+				<td style="width:5%; text-align: center"> = <br>&nbsp;<br>&nbsp;</td>
+				<td style="width:25%">
+					<p id="answer" style="line-height: 0.9em"> 0 </p>
+					<br>&nbsp;
+				</td>
+				<td style="width: 7.5%; padding-bottom: 7.5%">
+				</td>
+			</tr>
+			<tr style="width:100%">
+				<td style="width: 7.5%;">
+				</td>
+				<td style="width:25%; vertical-align:top; border-style: solid; border-width: medium; border-color: lightgray; padding-left: 2%; border-radius: 0.5em;">
+					<p id="result_one" style="line-height: 0.9em"> 0 </p>
+				</td>
+				<td style="width:5%; text-align:center; vertical-align: center;"> <br> √ <br>&nbsp;</td>
+				<td style="width:25%; vertical-align:top; border-style: solid; border-width: medium; border-color: lightgray; padding-left: 2%; border-radius: 0.5em;">
+					<p id="result_two" style="line-height: 0.9em"> 0 </p>
+				</td>
+				<td style="width:5%; text-align:center; vertical-align: center;"> <br> = <br>&nbsp;</td>
+				<td style="width:25%; vertical-align:top; border-style: solid; border-width: medium; border-color: lightgray; padding-left: 2%; border-radius: 0.5em;">
+					<p id="result_three" style="line-height: 0.9em">  </p>
+				</td>
+				<td style="width: 7.5%">
+				</td>
+			</tr>
+		</table>
+
+		<p id="scroll_item4" style="text-align: center; font-size: 1.85em; line-height: 2em; margin-top: 6.5%"><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8732;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;"><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A&nbsp;</span></span></span></span> &nbsp;=&nbsp; (A<span style="font-size: 0.9em"><sup>1/2</sup></span>)<span style="font-size: 0.9em"><sup>1/2</sup></span> &nbsp;=&nbsp; A<span style="font-size: 0.9em"><sup>1/4</sup></span>
+			<br><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8732;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;16&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;"><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;16&nbsp;</span></span></span></span> &nbsp;=&nbsp; (4)<span style="font-size: 0.9em"><sup>1/2</sup></span> &nbsp;=&nbsp; 2
+		</p>
+
+		<div style="width: 100%; margin-left: 0%; padding: 0px; margin-top: 6.5%; border-radius: 1em; border-style: solid; border-width: medium;">
+			<table id="scroll_item5" class="examples" style="width: 100.15%; margin: -0.1em; border-collapse: collapse;">
+				<tr style="width:100%">
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-left-style: none; border-top-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
+							<br>
+							&nbsp;1 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;
+							<br>
+							&nbsp;2 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							&nbsp;3 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							&nbsp;4 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							&nbsp;5 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							&nbsp;6 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							&nbsp;7 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							&nbsp;8 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							&nbsp;9 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							10 <sup>1 <i>/</i> 0</sup>&nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 2&nbsp;&nbsp;
+							<br>
+							&nbsp;3 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 3&nbsp;&nbsp;
+							<br>
+							&nbsp;4 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 4&nbsp;&nbsp;
+							<br>
+							&nbsp;5 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 5&nbsp;&nbsp;
+							<br>
+							&nbsp;6 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 6&nbsp;&nbsp;
+							<br>
+							&nbsp;7 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 7&nbsp;&nbsp;
+							<br>
+							&nbsp;8 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 8&nbsp;&nbsp;
+							<br>
+							&nbsp;9 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 9&nbsp;&nbsp;
+							<br>
+							10 <sup>1 <i>/</i> 1</sup>&nbsp;&nbsp; = &nbsp; 10
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1.414
+							<br>
+							&nbsp;3 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1.732
+							<br>
+							&nbsp;4 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;5 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.236
+							<br>
+							&nbsp;6 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.450
+							<br>
+							&nbsp;7 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.646
+							<br>
+							&nbsp;8 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.828
+							<br>
+							&nbsp;9 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							10 <sup>1 <i>/</i> 2</sup>&nbsp;&nbsp; = &nbsp; 3.162
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.260
+							<br>
+							&nbsp;3 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.442
+							<br>
+							&nbsp;4 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.587
+							<br>
+							&nbsp;5 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.710
+							<br>
+							&nbsp;6 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.817
+							<br>
+							&nbsp;7 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.913
+							<br>
+							&nbsp;8 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;9 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 2.080
+							<br>
+							10 <sup>1 <i>/</i> 3</sup>&nbsp;&nbsp; = &nbsp; 2.154
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.189
+							<br>
+							&nbsp;3 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.316
+							<br>
+							&nbsp;4 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.414
+							<br>
+							&nbsp;5 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.495
+							<br>
+							&nbsp;6 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.565
+							<br>
+							&nbsp;7 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.627
+							<br>
+							&nbsp;8 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.682
+							<br>
+							&nbsp;9 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.732
+							<br>
+							10 <sup>1 <i>/</i> 4</sup>&nbsp;&nbsp; = &nbsp; 1.778
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.149
+							<br>
+							&nbsp;3 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.246
+							<br>
+							&nbsp;4 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.320
+							<br>
+							&nbsp;5 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.380
+							<br>
+							&nbsp;6 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.431
+							<br>
+							&nbsp;7 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.476
+							<br>
+							&nbsp;8 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.516
+							<br>
+							&nbsp;9 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.552
+							<br>
+							10 <sup>1 <i>/</i> 5</sup>&nbsp;&nbsp; = &nbsp; 1.585
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.122
+							<br>
+							&nbsp;3 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.201
+							<br>
+							&nbsp;4 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.260
+							<br>
+							&nbsp;5 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.308
+							<br>
+							&nbsp;6 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.348
+							<br>
+							&nbsp;7 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.383
+							<br>
+							&nbsp;8 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.414
+							<br>
+							&nbsp;9 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.442
+							<br>
+							10 <sup>1 <i>/</i> 6</sup>&nbsp;&nbsp; = &nbsp; 1.468
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-right-style: none; border-top-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.104
+							<br>
+							&nbsp;3 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.170
+							<br>
+							&nbsp;4 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.219
+							<br>
+							&nbsp;5 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.258
+							<br>
+							&nbsp;6 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.292
+							<br>
+							&nbsp;7 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.320
+							<br>
+							&nbsp;8 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.346
+							<br>
+							&nbsp;9 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.369
+							<br>
+							10 <sup>1 <i>/</i> 7</sup>&nbsp;&nbsp; = &nbsp; 1.389
+						</p>
+					</td>
+				</tr>
+				<tr style="width:100%">
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-left-style: none; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							&nbsp;1 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;
+							<br>
+							&nbsp;2 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
+							<br>
+							&nbsp;3 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
+							<br>
+							&nbsp;4 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
+							<br>
+							&nbsp;5 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
+							<br>
+							&nbsp;6 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
+							<br>
+							&nbsp;7 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
+							<br>
+							&nbsp;8 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
+							<br>
+							&nbsp;9 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
+							<br>
+							10 <sup>1 <i>/</i> 0</sup>&nbsp;&nbsp; = &nbsp; 0&nbsp;
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.5&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;3 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.333
+							<br>
+							&nbsp;4 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.25&nbsp;&nbsp;
+							<br>
+							&nbsp;5 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.2&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;6 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.167
+							<br>
+							&nbsp;7 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.143
+							<br>
+							&nbsp;8 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.125
+							<br>
+							&nbsp;9 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.111
+							<br>
+							10 <sup>-1 <i>/</i> 1</sup>&nbsp;&nbsp; = &nbsp; 0.1&nbsp;&nbsp;&nbsp;&nbsp;
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.707
+							<br>
+							&nbsp;3 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.577
+							<br>
+							&nbsp;4 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.5&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;5 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.447
+							<br>
+							&nbsp;6 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.408
+							<br>
+							&nbsp;7 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.378
+							<br>
+							&nbsp;8 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.354
+							<br>
+							&nbsp;9 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.333
+							<br>
+							10 <sup>-1 <i>/</i> 2</sup>&nbsp;&nbsp; = &nbsp; 0.316
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.794
+							<br>
+							&nbsp;3 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.693
+							<br>
+							&nbsp;4 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.630
+							<br>
+							&nbsp;5 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.585
+							<br>
+							&nbsp;6 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.550
+							<br>
+							&nbsp;7 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.523
+							<br>
+							&nbsp;8 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.5&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;9 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.481
+							<br>
+							10 <sup>-1 <i>/</i> 3</sup>&nbsp;&nbsp; = &nbsp; 0.464
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.841
+							<br>
+							&nbsp;3 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.760
+							<br>
+							&nbsp;4 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.707
+							<br>
+							&nbsp;5 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.669
+							<br>
+							&nbsp;6 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.639
+							<br>
+							&nbsp;7 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.615
+							<br>
+							&nbsp;8 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.595
+							<br>
+							&nbsp;9 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.577
+							<br>
+							10 <sup>-1 <i>/</i> 4</sup>&nbsp;&nbsp; = &nbsp; 0.562
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.871
+							<br>
+							&nbsp;3 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.803
+							<br>
+							&nbsp;4 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.758
+							<br>
+							&nbsp;5 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.725
+							<br>
+							&nbsp;6 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.699
+							<br>
+							&nbsp;7 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.678
+							<br>
+							&nbsp;8 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.660
+							<br>
+							&nbsp;9 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.644
+							<br>
+							10 <sup>-1 <i>/</i> 5</sup>&nbsp;&nbsp; = &nbsp; 0.631
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.891
+							<br>
+							&nbsp;3 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.833
+							<br>
+							&nbsp;4 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.794
+							<br>
+							&nbsp;5 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.765
+							<br>
+							&nbsp;6 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.742
+							<br>
+							&nbsp;7 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.723
+							<br>
+							&nbsp;8 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.707
+							<br>
+							&nbsp;9 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.693
+							<br>
+							10 <sup>-1 <i>/</i> 6</sup>&nbsp;&nbsp; = &nbsp; 0.681
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-right-style: none; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							&nbsp;0 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;1 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							&nbsp;2 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.906
+							<br>
+							&nbsp;3 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.855
+							<br>
+							&nbsp;4 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.820
+							<br>
+							&nbsp;5 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.795
+							<br>
+							&nbsp;6 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.774
+							<br>
+							&nbsp;7 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.757
+							<br>
+							&nbsp;8 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.743
+							<br>
+							&nbsp;9 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.731
+							<br>
+							10 <sup>-1 <i>/</i> 7</sup>&nbsp;&nbsp; = &nbsp; 0.720
+						</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item6" style="width: 100%; margin-top: 5%">
+			<tr style="width: 100%">
+				<td style="width: 30%">
+					<p style="text-align: center; font-size: 1.85em; line-height: 1.5em">
+						A &nbsp;&#215;&nbsp; A &nbsp; = &nbsp; -A &nbsp;&#215;&nbsp; -A
+						<br>
+						&darr;
+						<br>
+						(A &nbsp;&#215;&nbsp; A) <sup>1/2</sup> &nbsp; = &nbsp; &plusmn; A
+					</p>
+				</td>
+				<td style="width: 30%">
+					<p style="text-align: center; font-size: 1.85em; line-height: 1.5em">
+						2 &nbsp;&#215;&nbsp; 2 &nbsp; = &nbsp; -2 &nbsp;&#215;&nbsp; -2 &nbsp; = &nbsp; 4
+						<br>
+						&darr;
+						<br>
+						(2 &nbsp;&#215;&nbsp; 2) <sup>1/2</sup> &nbsp; = &nbsp; 4 <sup>1/2</sup> &nbsp; = &nbsp; &plusmn; 2
+					</p>
+				</td>
+				<td style="width: 40%">
+					<p style="text-align: center; font-size: 1.85em; line-height: 1.5em">
+						A <sup>-1<i>/</i>2</sup> &nbsp;&nbsp;=&nbsp;&nbsp; (A <sup>1/2</sup>)<sup>-1</sup> &nbsp;&nbsp;=&nbsp;&nbsp; 1 <i>/</i> (A <sup>1/2</sup>)
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 100%; margin-left: 0%; padding: 0px; margin-top: 5%; border-radius: 1em; border-style: solid; border-width: medium;">
+			<table id="scroll_item7" class="examples" style="width: 100.15%; margin: -0.1em; border-collapse: collapse;">
+				<tr style="width:100%">
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-left-style: none; border-top-style: none; border-color: black;">
+						<p class="examples">
+							0 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							0 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0
+							<br>
+							0 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0
+							<br>
+							0 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0
+							<br>
+							0 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0
+							<br>
+							0 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0
+							<br>
+							0 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0
+							<br>
+							0 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							1 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							2 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							2 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							2 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1.414
+							<br>
+							2 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.260
+							<br>
+							2 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.189
+							<br>
+							2 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.149
+							<br>
+							2 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.122
+							<br>
+							2 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.104
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							3 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							3 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							3 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1.732
+							<br>
+							3 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.442
+							<br>
+							3 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.316
+							<br>
+							3 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.246
+							<br>
+							3 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.201
+							<br>
+							3 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.170
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							4 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							4 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							4 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							4 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.587
+							<br>
+							4 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.414
+							<br>
+							4 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.320
+							<br>
+							4 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.260
+							<br>
+							4 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.219
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							5 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							5 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							5 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.236
+							<br>
+							5 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.710
+							<br>
+							5 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.495
+							<br>
+							5 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.380
+							<br>
+							5 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.308
+							<br>
+							5 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.258
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-top-style: none; border-color: black;">
+						<p class="examples">
+							6 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							6 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							6 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.449
+							<br>
+							6 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.817
+							<br>
+							6 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.565
+							<br>
+							6 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.431
+							<br>
+							6 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.348
+							<br>
+							6 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.292
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-right-style: none; border-top-style: none; border-color: black;">
+						<p class="examples">
+							7 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							7 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							7 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.646
+							<br>
+							7 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.913
+							<br>
+							7 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.627
+							<br>
+							7 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.476
+							<br>
+							7 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.383
+							<br>
+							7 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.320
+						</p>
+					</td>
+				</tr>
+				<tr style="width:100%">
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-left-style: none; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							0 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;
+							<br>
+							0 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							0 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							0 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							0 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							0 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							0 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+							<br>
+							0 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1em">&#8734;</span>
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							1 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1
+							<br>
+							1 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							2 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							2 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.5&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							2 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.707
+							<br>
+							2 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.794
+							<br>
+							2 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.841
+							<br>
+							2 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.871
+							<br>
+							2 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.891
+							<br>
+							2 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.906
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							3 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							3 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.333
+							<br>
+							3 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.577
+							<br>
+							3 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.693
+							<br>
+							3 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.760
+							<br>
+							3 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.803
+							<br>
+							3 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.833
+							<br>
+							3 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.855
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							4 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							4 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.25&nbsp;&nbsp;
+							<br>
+							4 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.5&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							4 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.630
+							<br>
+							4 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.707
+							<br>
+							4 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.758
+							<br>
+							4 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.794
+							<br>
+							4 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.820
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							5 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							5 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.2&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							5 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.447
+							<br>
+							5 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.585
+							<br>
+							5 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.669
+							<br>
+							5 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.725
+							<br>
+							5 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.765
+							<br>
+							5 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.795
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							6 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							6 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.167
+							<br>
+							6 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.408
+							<br>
+							6 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.550
+							<br>
+							6 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.639
+							<br>
+							6 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.699
+							<br>
+							6 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.742
+							<br>
+							6 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.774
+						</p>
+					</td>
+					<td style="width:12.5%; border-style: solid; border-width: medium; border-right-style: none; border-bottom-style: none; border-color: black;">
+						<p class="examples">
+							7 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<br>
+							7 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.143
+							<br>
+							7 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.378
+							<br>
+							7 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.523
+							<br>
+							7 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.615
+							<br>
+							7 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.678
+							<br>
+							7 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.723
+							<br>
+							7 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.757
+						</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item8" style="margin-top: 6.5%;">
+			<table style="width: 90%; margin-left: 5%; font-size: 1.75em; line-height: 2.125em; text-align: center;"> 
+				<tr style="width: 100%">
+					<td style="width: 50%; padding-left: 2.5%">
+						<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A&nbsp;</span> <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A&nbsp;</span> &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A &#215; A&nbsp;</span> &nbsp;=&nbsp; A
+						<br>A<sup>1/2</sup> A<sup>1/2</sup> &nbsp;=&nbsp; (A<sup>1/2</sup>)<sup>2</sup> &nbsp;=&nbsp; A
+						<br><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;2&nbsp;</span> <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;2&nbsp;</span> &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;4&nbsp;</span> &nbsp;=&nbsp; 2
+					</td>
+					<td style="width: 50%; padding-right: 2.5%">
+						<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8731;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A&nbsp;</span> <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8731;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A&nbsp;</span> <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8731;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A&nbsp;</span> &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8731;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A &#215; A &#215; A&nbsp;</span> &nbsp;=&nbsp; A
+						<br>A<sup>1/3</sup> A<sup>1/3</sup> A<sup>1/3</sup> &nbsp;=&nbsp; (A<sup>1/3</sup>)<sup>3</sup> &nbsp;=&nbsp; A
+						<br><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8731;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;2&nbsp;</span> <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8731;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;2&nbsp;</span> <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8731;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;2&nbsp;</span> &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8731;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;8&nbsp;</span> &nbsp;=&nbsp; 2
+					</td>
+				</tr>
+			</table>
+
+			<p style="text-align: center; font-size: 1.75em; line-height: 1.5em; margin-top: 5%"><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A &#215; A &#215; B&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; A &#215; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;B&nbsp;</span></span></p>
+
+			<p style="text-align: center; font-size: 1.75em; line-height: 1.5em"><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;18&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;9 &#215; 2&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;3 &#215; 3 &#215; 2&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; 3 <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;2&nbsp;</span></span></p>
+		</div>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 6.5%; border-radius: 2.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item9" style="margin: -0.1em; width: 100.1%; font-size: 1.65em; text-align: center; line-height: 1.75em; border-collapse: collapse;">
+				<tr style="width: 100%; border-color: lightgray">
+					<td style="width:50%; padding: 5%; border-bottom-style: solid; border-width: medium; border-right-style: solid; border-width: medium; border-color: lightgray; padding-bottom: 6%">
+						A > 1,&nbsp; B > 1 &nbsp; &rarr; &nbsp; A <sup>B</sup> > A
+						<br>
+						A = 2,&nbsp; B = 2 &nbsp; &rarr; &nbsp; 2 <sup>2</sup> = 4 > 2
+					</td>
+					<td style="width:50%; padding: 5%; border-bottom-style: solid; border-width: medium; border-color: lightgray; padding-bottom: 6%">
+						A > 1,&nbsp; B < 1 &nbsp; &rarr; &nbsp; A <sup>B</sup> < A
+						<br>
+						A = 2,&nbsp; B = 0.5 &nbsp; &rarr; &nbsp; 2 <sup>0.5</sup> = 1.414 < 2
+					</td>
+				</tr>
+				<tr style="width: 100%; border-color: lightgray">
+					<td style="width:50%; padding: 5%; border-right-style: solid; border-width: medium; border-color: lightgray; padding-bottom: 6%">
+						A < 1,&nbsp; B > 1 &nbsp; &rarr;&nbsp; A <sup>B</sup> < A
+						<br>
+						A = 0.5,&nbsp; B = 2 &nbsp; &rarr; &nbsp; 0.5 <sup>2</sup> = 0.25 < 0.5
+					</td>
+					<td style="width:50%; padding: 5%; font-size: 0.975em; padding-bottom: 6%">
+						A < 1,&nbsp; B < 1 &nbsp; &rarr; &nbsp; A <sup>B</sup> > A
+						<br>
+						A = 0.5,&nbsp; B = 0.5 &nbsp; &rarr; &nbsp; 0.5 <sup>0.5</sup> = 0.707 > 0.5
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item10" style="margin-top: 7.5%; margin-bottom: 3%">
+			<p style="text-align: center; font-size: 1.8em; line-height: 2.35em;"> 
+				A <sup>2</sup> &nbsp; = &nbsp; A &#215; A &nbsp; = &nbsp; -A &#215; -A &nbsp;&nbsp; &rarr; &nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A &#215; A&nbsp;</span></span> &nbsp; = &nbsp; &plusmn; A
+				<br>
+				A <sup>3</sup> &nbsp; = &nbsp; A &#215; A &#215; A &nbsp; &ne; &nbsp; -A &#215; -A &#215; -A &nbsp;&nbsp; &rarr; &nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8731;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A &#215; A &#215; A&nbsp;</span></span> &nbsp; = &nbsp; A &nbsp; &ne; &nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&#8731;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;-A &#215; -A &#215; -A&nbsp;</span></span> &nbsp; = &nbsp; -A
+				<br>&darr;<br>
+				A <sup>2</sup> > 0, &nbsp; A <sup>4</sup> > 0 &nbsp;&nbsp; &rarr; &nbsp;&nbsp; A <sup>2K</sup> > 0
+				<br>&darr;<br>
+				B = <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;A&nbsp;</span></span>, &nbsp; A &ge; 0
+				<br>
+				i &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;-1&nbsp;</span></span> &nbsp;&nbsp; &rarr; &nbsp;&nbsp; i <sup>2</sup> < 0
+			</p>
+			<p style="text-align: center; font-size: 1.9em; line-height: 1.5em;"><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;-64&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;64 &#215; -1&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;8 &#215; 8 &#215; -1&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; 8 <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&nbsp;-1&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; 8i</p>
+		</div>
+
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="0-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
+		</div>
 	</header>
 
-	<div style="width: 110rem; margin: 0 auto;">
-	<table style="width:100%; margin-top: 6.5%">
-		<tr style="width: 100%; text-align: center;">
-			<td style="width: 7.5%">
-			</td>
-			<td style="width: 40%">
-				<img src="images/0-5/root_intro_ex.png" width="97.5%">
-			</td>
-			<td style="width: 5%">
-			</td>
-			<td style="width: 40%">
-				<img src="images/0-5/root_intro_gen.png" width="87.5%">				
-			</td>
-			<td style="width: 7.5%">
-			</td>
-		</tr>		
-	</table>
-
-	<table style="width:95%; margin-left: 2.5%; margin-top: 6%; border-collapse: collapse; border-style: solid; border-width: 0.2rem; border-color: black">
-		<tr style="width:100%">
-			<td style="text-align: center; width: 35%; vertical-align: center; padding-left: 1.5%">
-				<img src="images/0-5/root_symbol.png" width="55%" style="">
-				<img src="images/0-5/root_main.png" width="90%" style="margin-top: 15%">
-			</td>
-			<td style="text-align: center; width: 35%; font-size: 2.15rem; border-right-style: solid; border-left-style: solid; border-color: lightgray; padding-top: 2.5%">
-				A <sup>B</sup> &nbsp;=&nbsp; C &nbsp; &rarr; &nbsp; A &nbsp;=&nbsp; C <sup>1/B</sup>
-				<img src="images/0-5/root_dots.png" width="75%" style="margin-top: 20%">
-			</td>
-			<td style="text-align: center; width: 30%; padding-top: 2.5%; padding-bottom: 2.5%">
-				<img src="images/0-5/root_shapes.png" width="62.5%">
-			</td>
-		</tr>
-	</table>
-
-	<table style="width:100%; margin-top: 5%">
-		<tr>
-			<td style="text-align: center; width: 50%">
-				<img src="images/0-5/root_graph.png" width="75%" style="padding-left: 15%">
-			</td>
-			</td>
-			<td style="text-align: center; width: 50%">
-				<img src="images/0-5/root_graph_exp.png" width="75%" style="padding-right: 15%">
-			</td>
-		</tr>
-	</table>
-
-	<table class="calc_table" style="width:85%; margin-top: 7.5%; margin-left: 7.5%; padding-top: 2.5%; padding-bottom: 5%; border-width: 0.2rem; border-style: solid; border-color: black; font-size: 1.1rem;">
-		<tr style="width:100%">
-			<td style="width: 7.5%">
-			</td>
-			<td style="width:25%;">
-				<form action="#" class="form-inline">
-				  <input type="text" style="font-size: 1.1rem" id="first" class="form-control" placeholder=" A">				  
-				</form>
-			</td>
-			<td style="width:5%; text-align: center"> √ </td>
-			<td style="width:25%">
-				<form action="#" class="form-inline">
-				  <input type="text" style="font-size: 1.1rem" id="second" class="form-control" placeholder=" B">				  
-				</form>				
-			</td>
-			<td style="width:5%; text-align: center"> = </td>
-			<td style="width:25%">
-				<p id="answer" style="line-height: 0.9em"> 0 </p>
-			</td>
-			<td style="width: 7.5%; padding-bottom: 7.5%">
-			</td>
-		</tr>
-		<tr style="width:100%">
-			<td style="width: 7.5%;">
-			</td>
-			<td style="width:25%; vertical-align:top; border-style: solid; border-color: lightgray; padding-left: 3%">
-				<p id="result_one" style="line-height: 0.9em"> 0 </p>
-			</td>
-			<td style="width:5%; text-align:center; vertical-align:top"> <br> √ </td>
-			<td style="width:25%; vertical-align:top; border-style: solid; border-color: lightgray; padding-left: 3%">
-				<p id="result_two" style="line-height: 0.9em"> 0 </p>
-			</td>
-			<td style="width:5%; text-align:center; vertical-align:top"> <br> = </td>
-			<td style="width:25%; vertical-align:top; border-style: solid; border-color: lightgray; padding-left: 3%">
-				<p id="result_three" style="line-height: 0.9em">  </p>
-			</td>
-			<td style="width: 7.5%">
-			</td>
-		</tr>
-	</table>
-
-	<table class="examples" style="margin-top: 7.5%; width: 100%; border-collapse: collapse;">
-		<tr style="width:100%">
-			<td style="width: 2%"></td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
-					<br>
-					&nbsp;1 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;
-					<br>
-					&nbsp;2 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					&nbsp;3 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					&nbsp;4 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					&nbsp;5 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					&nbsp;6 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					&nbsp;7 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					&nbsp;8 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					&nbsp;9 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					10 <sup>1 <i>/</i> 0</sup>&nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 2&nbsp;&nbsp;
-					<br>
-					&nbsp;3 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 3&nbsp;&nbsp;
-					<br>
-					&nbsp;4 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 4&nbsp;&nbsp;
-					<br>
-					&nbsp;5 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 5&nbsp;&nbsp;
-					<br>
-					&nbsp;6 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 6&nbsp;&nbsp;
-					<br>
-					&nbsp;7 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 7&nbsp;&nbsp;
-					<br>
-					&nbsp;8 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 8&nbsp;&nbsp;
-					<br>
-					&nbsp;9 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 9&nbsp;&nbsp;
-					<br>
-					10 <sup>1 <i>/</i> 1</sup>&nbsp;&nbsp; = &nbsp; 10
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1.414214
-					<br>
-					&nbsp;3 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1.732051
-					<br>
-					&nbsp;4 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;5 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.236068
-					<br>
-					&nbsp;6 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.449489
-					<br>
-					&nbsp;7 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.645751
-					<br>
-					&nbsp;8 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.828427
-					<br>
-					&nbsp;9 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					10 <sup>1 <i>/</i> 2</sup>&nbsp;&nbsp; = &nbsp; 3.162278
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.259921
-					<br>
-					&nbsp;3 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.442250
-					<br>
-					&nbsp;4 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.587401
-					<br>
-					&nbsp;5 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.709976
-					<br>
-					&nbsp;6 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.817121
-					<br>
-					&nbsp;7 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.912931
-					<br>
-					&nbsp;8 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;9 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 2.080083
-					<br>
-					10 <sup>1 <i>/</i> 3</sup>&nbsp;&nbsp; = &nbsp; 2.154435
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.189207
-					<br>
-					&nbsp;3 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.316074
-					<br>
-					&nbsp;4 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.414214
-					<br>
-					&nbsp;5 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.495348
-					<br>
-					&nbsp;6 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.565085
-					<br>
-					&nbsp;7 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.626577
-					<br>
-					&nbsp;8 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.681793
-					<br>
-					&nbsp;9 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.732051
-					<br>
-					10 <sup>1 <i>/</i> 4</sup>&nbsp;&nbsp; = &nbsp; 1.778279
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.148698
-					<br>
-					&nbsp;3 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.245731
-					<br>
-					&nbsp;4 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.319508
-					<br>
-					&nbsp;5 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.379730
-					<br>
-					&nbsp;6 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.430969
-					<br>
-					&nbsp;7 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.475773
-					<br>
-					&nbsp;8 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.515717
-					<br>
-					&nbsp;9 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.551846
-					<br>
-					10 <sup>1 <i>/</i> 5</sup>&nbsp;&nbsp; = &nbsp; 1.584893
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.122462
-					<br>
-					&nbsp;3 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.200937
-					<br>
-					&nbsp;4 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.259921
-					<br>
-					&nbsp;5 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.307660
-					<br>
-					&nbsp;6 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.348006
-					<br>
-					&nbsp;7 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.383088
-					<br>
-					&nbsp;8 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.414214
-					<br>
-					&nbsp;9 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.442250
-					<br>
-					10 <sup>1 <i>/</i> 6</sup>&nbsp;&nbsp; = &nbsp; 1.467799
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.104090
-					<br>
-					&nbsp;3 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.169931
-					<br>
-					&nbsp;4 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.219014
-					<br>
-					&nbsp;5 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.258499
-					<br>
-					&nbsp;6 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.291708
-					<br>
-					&nbsp;7 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.320469
-					<br>
-					&nbsp;8 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.345900
-					<br>
-					&nbsp;9 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.368738
-					<br>
-					10 <sup>1 <i>/</i> 7</sup>&nbsp;&nbsp; = &nbsp; 1.389495
-				</p>
-			</td>
-			<td style="width: 2%"></td>
-		</tr>
-	</table>				
-	<table class="examples" style="margin-top:-0.5%; width: 100%; margin-top: -0.2rem; border-collapse: collapse;">
-		<tr style="width:100%">
-			<td style="width: 2%"></td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					&nbsp;1 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;
-					<br>
-					&nbsp;2 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
-					<br>
-					&nbsp;3 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
-					<br>
-					&nbsp;4 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
-					<br>
-					&nbsp;5 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
-					<br>
-					&nbsp;6 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
-					<br>
-					&nbsp;7 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
-					<br>
-					&nbsp;8 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
-					<br>
-					&nbsp;9 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 0&nbsp;
-					<br>
-					10 <sup>1 <i>/</i> 0</sup>&nbsp;&nbsp; = &nbsp; 0&nbsp;
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;3 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.333333
-					<br>
-					&nbsp;4 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;5 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;6 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.166667
-					<br>
-					&nbsp;7 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.142857
-					<br>
-					&nbsp;8 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.125&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;9 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.111111
-					<br>
-					10 <sup>-1 <i>/</i> 1</sup>&nbsp;&nbsp; = &nbsp; 0.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.707107
-					<br>
-					&nbsp;3 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.577350
-					<br>
-					&nbsp;4 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;5 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.447214
-					<br>
-					&nbsp;6 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.408248
-					<br>
-					&nbsp;7 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.377964
-					<br>
-					&nbsp;8 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.353553
-					<br>
-					&nbsp;9 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.333333
-					<br>
-					10 <sup>-1 <i>/</i> 2</sup>&nbsp;&nbsp; = &nbsp; 0.316228
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.793701
-					<br>
-					&nbsp;3 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.693361
-					<br>
-					&nbsp;4 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.629961
-					<br>
-					&nbsp;5 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.584804
-					<br>
-					&nbsp;6 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.550321
-					<br>
-					&nbsp;7 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.522758
-					<br>
-					&nbsp;8 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;9 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.480750
-					<br>
-					10 <sup>-1 <i>/</i> 3</sup>&nbsp;&nbsp; = &nbsp; 0.464159
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.840896
-					<br>
-					&nbsp;3 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.759836
-					<br>
-					&nbsp;4 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.707107
-					<br>
-					&nbsp;5 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.668740
-					<br>
-					&nbsp;6 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.638943
-					<br>
-					&nbsp;7 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.614788
-					<br>
-					&nbsp;8 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.594604
-					<br>
-					&nbsp;9 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.577350
-					<br>
-					10 <sup>-1 <i>/</i> 4</sup>&nbsp;&nbsp; = &nbsp; 0.562341
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.870551
-					<br>
-					&nbsp;3 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.802742
-					<br>
-					&nbsp;4 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.757858
-					<br>
-					&nbsp;5 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.724780
-					<br>
-					&nbsp;6 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.698827
-					<br>
-					&nbsp;7 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.677611
-					<br>
-					&nbsp;8 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.659754
-					<br>
-					&nbsp;9 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.644394
-					<br>
-					10 <sup>-1 <i>/</i> 5</sup>&nbsp;&nbsp; = &nbsp; 0.630957
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.890899
-					<br>
-					&nbsp;3 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.832683
-					<br>
-					&nbsp;4 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.793701
-					<br>
-					&nbsp;5 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.764724
-					<br>
-					&nbsp;6 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.741836
-					<br>
-					&nbsp;7 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.723020
-					<br>
-					&nbsp;8 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.707107
-					<br>
-					&nbsp;9 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.693361
-					<br>
-					10 <sup>-1 <i>/</i> 6</sup>&nbsp;&nbsp; = &nbsp; 0.681292
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					&nbsp;0 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;1 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					&nbsp;2 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.905724
-					<br>
-					&nbsp;3 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.854751
-					<br>
-					&nbsp;4 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.820335
-					<br>
-					&nbsp;5 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.794597
-					<br>
-					&nbsp;6 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.774169
-					<br>
-					&nbsp;7 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.757307
-					<br>
-					&nbsp;8 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.742997
-					<br>
-					&nbsp;9 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.730600
-					<br>
-					10 <sup>-1 <i>/</i> 7</sup>&nbsp;&nbsp; = &nbsp; 0.719686
-				</p>
-			</td>
-			<td style="width: 2%"></td>
-		</tr>
-	</table>
-
-	<table style="width: 100%; margin-top: 5%">
-		<tr style="width: 100%">
-			<td style="width: 30%">
-				<p style="text-align: center; font-size: 2.15rem; line-height: 1.5em">
-					A &nbsp;&#215;&nbsp; A &nbsp; = &nbsp; -A &nbsp;&#215;&nbsp; -A
-					<br>
-					&darr;
-					<br>
-					(A &nbsp;&#215;&nbsp; A) <sup>1/2</sup> &nbsp; = &nbsp; &plusmn; A
-				</p>
-			</td>
-			<td style="width: 30%">
-				<p style="text-align: center; font-size: 2.15rem; line-height: 1.5em">
-					2 &nbsp;&#215;&nbsp; 2 &nbsp; = &nbsp; -2 &nbsp;&#215;&nbsp; -2 &nbsp; = &nbsp; 4
-					<br>
-					&darr;
-					<br>
-					(2 &nbsp;&#215;&nbsp; 2) <sup>1/2</sup> &nbsp; = &nbsp; 4 <sup>1/2</sup> &nbsp; = &nbsp; &plusmn; 2
-				</p>
-			</td>
-			<td style="width: 40%">
-				<p style="text-align: center; font-size: 2.15rem; line-height: 1.5em">
-					A <sup>-1<i>/</i>2</sup> &nbsp;&nbsp;=&nbsp;&nbsp; (A <sup>1/2</sup>)<sup>-1</sup> &nbsp;&nbsp;=&nbsp;&nbsp; 1 <i>/</i> (A <sup>1/2</sup>)
-				</p>
-			</td>
-		</tr>
-	</table>
-
-	<table class="examples" style="margin-top: 5%; width: 100%; border-collapse: collapse;">
-		<tr style="width:100%">
-			<td style="width: 2%"></td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					0 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					0 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0
-					<br>
-					0 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0
-					<br>
-					0 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0
-					<br>
-					0 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0
-					<br>
-					0 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0
-					<br>
-					0 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0
-					<br>
-					0 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					1 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					2 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					2 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					2 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1.414214
-					<br>
-					2 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.259921
-					<br>
-					2 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.189207
-					<br>
-					2 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.148698
-					<br>
-					2 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.122462
-					<br>
-					2 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.104090
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					3 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					3 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					3 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1.732051
-					<br>
-					3 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.442250
-					<br>
-					3 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.316074
-					<br>
-					3 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.245731
-					<br>
-					3 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.200937
-					<br>
-					3 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.169931
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					4 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					4 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					4 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					4 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.587401
-					<br>
-					4 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.414214
-					<br>
-					4 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.319508
-					<br>
-					4 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.259921
-					<br>
-					4 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.219014
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					5 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					5 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					5 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.236068
-					<br>
-					5 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.709976
-					<br>
-					5 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.495349
-					<br>
-					5 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.379730
-					<br>
-					5 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.307660
-					<br>
-					5 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.258499
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					6 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					6 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					6 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.449490
-					<br>
-					6 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.817121
-					<br>
-					6 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.565085
-					<br>
-					6 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.430969
-					<br>
-					6 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.348006
-					<br>
-					6 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.291708
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					7 <sup>1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					7 <sup>1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					7 <sup>1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 2.645751
-					<br>
-					7 <sup>1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1.912931
-					<br>
-					7 <sup>1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1.626577
-					<br>
-					7 <sup>1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1.475773
-					<br>
-					7 <sup>1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1.383088
-					<br>
-					7 <sup>1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1.320469
-				</p>
-			</td>
-			<td style="width: 2%"></td>
-		</tr>
-	</table>
-	<table class="examples" style="margin-top:-0.2rem; width: 100%; border-collapse: collapse;">
-		<tr style="width:100%">
-			<td style="width: 2%"></td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					0 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;
-					<br>
-					0 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					0 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					0 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					0 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					0 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					0 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-					<br>
-					0 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; <span style="font-size: 1.1rem">&#8734;</span>
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					1 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 1
-					<br>
-					1 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 1
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					2 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					2 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					2 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.707107
-					<br>
-					2 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.793701
-					<br>
-					2 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.840896
-					<br>
-					2 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.870551
-					<br>
-					2 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.890899
-					<br>
-					2 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.905724
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					3 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					3 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.333333
-					<br>
-					3 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.577350
-					<br>
-					3 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.693361
-					<br>
-					3 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.759836
-					<br>
-					3 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.802742
-					<br>
-					3 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.832683
-					<br>
-					3 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.854751
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					4 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					4 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					4 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					4 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.629961
-					<br>
-					4 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.707107
-					<br>
-					4 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.757858
-					<br>
-					4 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.793701
-					<br>
-					4 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.820335
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					5 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					5 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					5 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.447214
-					<br>
-					5 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.584804
-					<br>
-					5 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.668740
-					<br>
-					5 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.724780
-					<br>
-					5 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.764724
-					<br>
-					5 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.794597
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					6 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					6 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.166667
-					<br>
-					6 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.408248
-					<br>
-					6 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.550321
-					<br>
-					6 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.638943
-					<br>
-					6 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.698827
-					<br>
-					6 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.741836
-					<br>
-					6 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.774169
-				</p>
-			</td>
-			<td style="width:12%; border-style: solid; border-width: 0.2rem; border-color: black;">
-				<p class="examples">
-					7 <sup>-1 <i>/</i> 0</sup> &nbsp;&nbsp; = &nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<br>
-					7 <sup>-1 <i>/</i> 1</sup> &nbsp;&nbsp; = &nbsp; 0.142857
-					<br>
-					7 <sup>-1 <i>/</i> 2</sup> &nbsp;&nbsp; = &nbsp; 0.377964
-					<br>
-					7 <sup>-1 <i>/</i> 3</sup> &nbsp;&nbsp; = &nbsp; 0.522758
-					<br>
-					7 <sup>-1 <i>/</i> 4</sup> &nbsp;&nbsp; = &nbsp; 0.614788
-					<br>
-					7 <sup>-1 <i>/</i> 5</sup> &nbsp;&nbsp; = &nbsp; 0.677611
-					<br>
-					7 <sup>-1 <i>/</i> 6</sup> &nbsp;&nbsp; = &nbsp; 0.723020
-					<br>
-					7 <sup>-1 <i>/</i> 7</sup> &nbsp;&nbsp; = &nbsp; 0.757307
-				</p>
-			</td>
-			<td style="width: 2%"></td>
-		</tr>
-	</table>
-
-	<p style="text-align: center; font-size: 2.15rem; line-height: 1.5em; margin-top: 7.5%"><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;A &#215; A &#215; B&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; A &#215; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;B&nbsp;</span></span></p>
-
-	<p style="text-align: center; font-size: 2.15rem; line-height: 1.5em"><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;18&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;9 &#215; 2&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;3 &#215; 3 &#215; 2&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; 3 <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;2&nbsp;</span></span></p>
-
-
-	<table style="width: 90%; margin-left: 5%; border-style: solid; border-color: black; border-width: 0.2rem; margin-top: 7.5%; font-size: 2rem; text-align: center; line-height: 1.75em">
-		<tr style="width: 100%">
-			<td style="width:47.5%; padding: 5%; padding-bottom: 2.5%">
-				A > 1,&nbsp; B > 1 &nbsp; &rarr; &nbsp; A <sup>B</sup> > A
-				<br>
-				A = 2,&nbsp; B = 2 &nbsp; &rarr; &nbsp; 2 <sup>2</sup> = 4 > 2
-			</td>
-			<td style="width:52.5%; padding: 5%; padding-bottom: 2.5%">
-				A > 1,&nbsp; B < 1 &nbsp; &rarr; &nbsp; A <sup>B</sup> < A
-				<br>
-				A = 2,&nbsp; B = 0.5 &nbsp; &rarr; &nbsp; 2 <sup>0.5</sup> = 1.414 < 2
-			</td>
-		</tr>
-		<tr style="width: 100%">
-			<td style="width:47.5%; padding: 5%; padding-top: 2.5%">
-				A < 1,&nbsp; B > 1 &nbsp; &rarr;&nbsp; A <sup>B</sup> < A
-				<br>
-				A = 0.5,&nbsp; B = 2 &nbsp; &rarr; &nbsp; 0.5 <sup>2</sup> = 0.25 < 0.5
-			</td>
-			<td style="width:52.5%; padding: 5%; padding-top: 2.5%">
-				A < 1,&nbsp; B < 1 &nbsp; &rarr; &nbsp; A <sup>B</sup> > A
-				<br>
-				A = 0.5,&nbsp; B = 0.5 &nbsp; &rarr; &nbsp; 0.5 <sup>0.5</sup> = 0.707 > 0.5
-			</td>
-		</tr>
-	</table>
-
-	<p style="text-align: center; font-size: 1.9rem; line-height: 2.35em; margin-top: 7.5%"> 
-		A <sup>2</sup> &nbsp; = &nbsp; A &#215; A &nbsp; = &nbsp; -A &#215; -A &nbsp;&nbsp; &rarr; &nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;A &#215; A&nbsp;</span></span> &nbsp; = &nbsp; &plusmn; A
-		<br>
-		A <sup>3</sup> &nbsp; = &nbsp; A &#215; A &#215; A &nbsp; &ne; &nbsp; -A &#215; -A &#215; -A &nbsp;&nbsp; &rarr; &nbsp;&nbsp; <sup>3</sup><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;A &#215; A &#215; A&nbsp;</span></span> &nbsp; = &nbsp; A &nbsp; &ne; &nbsp; <sup>3</sup><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;-A &#215; -A &#215; -A&nbsp;</span></span> &nbsp; = &nbsp; -A
-		<br>&darr;<br>
-		A <sup>2</sup> > 0, &nbsp; A <sup>4</sup> > 0 &nbsp;&nbsp; &rarr; &nbsp;&nbsp; A <sup>2K</sup> > 0
-		<br>&darr;<br>
-		B = <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;A&nbsp;</span></span>, &nbsp; A &ge; 0
-		<br>
-		i &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;-1&nbsp;</span></span> &nbsp;&nbsp; &rarr; &nbsp;&nbsp; i <sup>2</sup> < 0
-	</p>
-	<p style="text-align: center; font-size: 2.1rem; line-height: 1.5em;"><span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;-64&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;64 &#215; -1&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;8 &#215; 8 &#215; -1&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; 8 <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&nbsp;-1&nbsp;</span></span> &nbsp;&nbsp;=&nbsp;&nbsp; 8i</p>
-	
-	<div id="q_button" style="width: 30%; margin-left: 35%; background-color: #000066; font-size: 1.5rem; text-align: center; margin-top: 7.5%; font-weight: bold; padding: 0.35%">
-		<a href="0-Q.html" style="color: white; width: 100%; display:block;">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
-	</div>
-	<p style="text-align: center; margin-bottom: 2.5%; margin-top: 2%; font-size: 1rem">Ⓒ MBC Output 2020 </p>
-	</div>
-
+	<script type="text/javascript" src="standard_functions.js"></script>
 	<script type="text/javascript">
+
 		var first = document.getElementById('first');
 		var second = document.getElementById('second');
 		var answer = document.getElementById('answer');
@@ -1113,6 +1083,10 @@
 
 		first.addEventListener("input", show);
 		second.addEventListener("input", show);
+
+		window.onload = function () {
+			standard_onload();
+		};
 
 		function show() {
 		  	
@@ -1211,8 +1185,12 @@
 			else {
 				result3.innerHTML = 'ERR';
 			}
-		}
+		};
+		
 	</script>
 
 </body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
 </html>

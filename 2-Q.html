@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" href="images/link_logo.png">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
+	<style>
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		.fraction {
+		    display: inline-block;
+		    text-align: center;    
+		}
+
+		.denominator{
+		    border-top: 1px solid #000;
+		    display: block;
+		}
+
+		#submit_answer{
+			height: 3.15em;
+			width: 12.5%;
+			font-weight: bold;
+			vertical-align: middle;
+			text-align: center;
+			border-style: solid; 
+			border-width: medium;
+			border-color: #DB0000;
+			background-color: #DB0000;
+			border-width: 0.35em;
+			margin-bottom: 0.3em;
+		}
+
+		#submit_answer:hover {
+			border-color: #A00000;
+			background-color: #DB0000;
+		}
+
+		#next{
+			height: 0.85em;
+			width: 30%;
+			font-weight: bold;
+			vertical-align: middle;
+			text-align: center;
+			border-style: solid; 
+			border-width: medium;
+			border-color: #000066;
+			background-color: #000066;
+			font-size: 2.65em;
+			color: white;
+			font-weight: bold;
+			vertical-align: center;
+			text-align: center;
+			border-width: 0.1em;
+		}
+
+		#next:hover {
+			border-color: #66B2FF;
+			background-color: #000066;
+		}
+
+		td.active {
+			background-color: white;
+			color: #000066;
+		}
+
+		td.inactive {
+			color: white;
+			border-color: #000066;
+		}
+
+		td.inactive:hover {
+			color: #000066;
+			background-color: white;
+		}
+	</style>
+</head>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="1-0.html">1</a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="2-Q.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-0.html">&Delta;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-1.html">&#402;'(x)</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-2.html"><span style="font-size: 1.5em">&#8978;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-3.html"><span style="font-size: 0.95em">lim</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-4.html">&#8721;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-5.html">&int;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-6.html"><span style="font-size: 1.25em">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-7.html"><span style="font-size: 1.05em">u</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-8.html"><span style="font-size: 1.1em">&orarr;</span></a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="2-Q.html">?</a></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div class="wrapper" id="wrapper">
+
+	<div style="width: 80%; margin-left: 7.5%; margin-top: 6%; height: 50vh; border-style: solid; border-width: 0.25vmax; border-color: #66B2FF; padding: 0em; border-radius: 1em; text-align: center;">
+		<div style="margin: -0.05em; height: 100%; border-style: solid; border-width: 0.225vmax; border-color: #000066; padding: 0px; border-radius: 0.85em;">
+			<table style="width: 100%; margin: -0.05em; height: 100%; padding: 0px; border-radius: 0.85em; border-collapse: collapse;">
+				<tr style="width: 100%; margin: -0.05em;">
+					<td style="width: 6.5%; padding: 0px; margin: -0.05em; border-radius: 0.75em; padding-top: 0.1em; padding-left: 0.05em">
+						<table style="width: 100%; height: 99.9%; border-collapse: collapse; background-color: #000066; border-bottom-left-radius: 0.5em; border-top-left-radius: 0.5em; color: white; text-align: center;">
+							<tr style="width: 100%; height: 12.5%">
+								<td id="tab_0" class="active" onclick="changeTab('tab_0')" style="width: 100%; border-top-left-radius: 0.55em; font-weight: bold; font-size: 1.15em;">
+									A
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 12.5%">
+								<td id="tab_1" class="inactive" onclick="changeTab('tab_1')" style="width: 100%; font-weight: bold; font-size: 1.05em;">
+									&#402;'(x)
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 12.5%">
+								<td id="tab_2" class="inactive" onclick="changeTab('tab_2')" style="width: 100%; font-weight: bold; font-size: 1.5em;">
+									&#8978;
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 12.5%">
+								<td id="tab_3" class="inactive" onclick="changeTab('tab_3')" style="width: 100%; font-weight: bold; font-size: 1.05em;">
+									lim
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 12.5%">
+								<td id="tab_4" class="inactive" onclick="changeTab('tab_4')" style="width: 100%; font-weight: bold; font-size: 1.25em;">
+									&int;
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 12.5%">
+								<td id="tab_5" class="inactive" onclick="changeTab('tab_5')" style="width: 100%; font-weight: bold; font-size: 1.25em;">
+									&#8767;
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 12.5%">
+								<td id="tab_6" class="inactive" onclick="changeTab('tab_6')" style="width: 100%; font-weight: bold; font-size: 1.15em;">
+									u
+								</td>
+							</tr>
+							<tr style="width: 100%; height: 12.5%">
+								<td id="tab_7" class="inactive" onclick="changeTab('tab_7')" style="width: 100%; font-weight: bold; font-size: 1.15em; border-bottom-left-radius: 0.55em;">
+									&orarr;
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="width: 93.5%; text-align: center; font-size: 1.65em; padding-top: 6.5%; line-height: 1.5em; padding-bottom: 5%;">
+						<p id="question" style="font-size: 1em">&nbsp;</p>
+						? &nbsp;=&nbsp; <input type="text" id="answer" style="width: 60%; font-size: 0.8em; padding: 0.1em; padding-left: 0.25em">
+						<button type="button" style="border-top-right-radius: 1em; border-bottom-right-radius: 1em; width: 7.5%; outline: none; height: 3.35em; margin-top: 0.3em;" id="submit_answer" onclick="checkAnswer()"></button>
+						<p id="response" style="height: 1.1em; font-size: 1em; padding-right: 3.5%"><span id="r_eval"></span> &nbsp; <span id="r_correct"></span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<table style="width: 100%; margin-bottom: 1%; margin-top: 3.5%; font-size: 1em">
+		<tr style="width: 100%">
+			<td id="score" style="width: 100%; text-align: center; padding-right: 2.5%; font-size: 1.25em; vertical-align: top">
+				<button type="button" id="next" style="border-radius: 0.25em; outline: none" onclick="randomQuestion()"> </button>
+				<br>
+				<br>
+				&nbsp; <span id="score_correct">0</span> <i>/</i> <span id="score_total">0</span> &nbsp;=&nbsp; <span id="score_perc">0</span>%
+			</td>
+		</tr>
+	</table>
+	</div>
+
+	<script type="text/javascript" src="standard_functions.js"></script>
+	<script type="text/javascript">
+		
+        window.onload = function () {
+			standard_onload();
+
+        	var correct = localStorage.getItem("correct2");
+        	var total = localStorage.getItem("total2");
+
+		  	document.getElementById("score_correct").innerHTML = correct.toString();
+		  	document.getElementById("score_total").innerHTML = total.toString();
+        	var perc = Math.floor(100*correct/total);
+		  	document.getElementById("score_perc").innerHTML = perc.toString();
+
+			localStorage.setItem('active_tab', 'tab_0');
+        	localStorage.setItem('answered', 'False');
+		  	randomQuestion();
+
+		  	document.addEventListener('keyup', (e) => {
+			  if (e.code === "Space" && document.getElementById('answer') !== document.activeElement){
+			  	randomQuestion();
+			  };
+			});
+        };
+
+        function changeTab(tab){
+        	var active_tab = localStorage.getItem('active_tab');
+			document.getElementById(active_tab).classList.remove('active');
+        	document.getElementById(active_tab).classList.add('inactive');
+
+        	var active_tab = tab;
+			document.getElementById(active_tab).classList.remove('inactive');
+        	document.getElementById(active_tab).classList.add('active');
+        	localStorage.setItem('active_tab', tab);
+        	localStorage.setItem('answered', 'False');
+        	randomQuestion();
+        };
+
+        function reduce(numerator,denominator){
+		  var gcd = function gcd(a,b){
+		    return b ? gcd(b, a%b) : a;
+		  };
+		  gcd = gcd(numerator,denominator);
+		  return [numerator/gcd, denominator/gcd];
+		};
+
+        function checkAnswer(){
+        	var op = localStorage.getItem('operator');
+        	var a = document.getElementById("answer").value;
+		  	a = read(a);
+			var correct = parseFloat(document.getElementById("score_correct").textContent);
+			var total = parseFloat(document.getElementById("score_total").textContent);
+			var correct0 = correct;
+
+			var q3 = localStorage.getItem('q_output');
+		  	if ( q3 % 0.0000001 == 0 ) { q3 = q3; }
+		  	else if ( Math.abs(q3) < 1 ) { q3 = parseFloat(q3).toFixed(8); }
+		  	else { q3 = parseFloat(q3).toPrecision(8); };
+			if (Math.abs(a - q3)/a < 0.001) {
+    			document.getElementById("response").innerHTML = '<span style="color: green; font-size: 2.1em">&#10004;</span> &nbsp; ' + q3.toString();
+    			correct = correct + 1;
+			}
+			else {
+				document.getElementById("response").innerHTML = '<span style="color: red; font-size: 1.75em">&#10008;</span> &nbsp; ' + q3.toString();        					
+			};
+
+        	var answered = localStorage.getItem('answered');
+
+        	if (answered == 'False') {
+	        	total = total + 1;
+			  	document.getElementById("score_correct").innerHTML = correct.toString();
+			  	document.getElementById("score_total").innerHTML = total.toString();
+	        	var perc = Math.floor(100*correct/total);
+			  	document.getElementById("score_perc").innerHTML = perc.toString();
+
+			  	localStorage.setItem("correct2", correct);
+			  	localStorage.setItem("total2", total);
+			};
+
+		  	if (correct > correct0) {
+        		localStorage.setItem('answered', 'True');
+        	};
+        }
+
+        function randomQuestion() {
+        	document.getElementById("answer").value = '';
+        	document.getElementById("response").innerHTML ='';
+        	localStorage.setItem('answered', 'False');
+
+        	var active_tab = localStorage.getItem('active_tab');
+        	var operator_int = 0;
+
+        	if (active_tab == 'tab_0'){
+        		operator_int = Math.floor(Math.random() * 7) + 1;
+        	}
+        	else if (active_tab == 'tab_1') {
+        		operator_int = 1;
+        	}
+        	else if (active_tab == 'tab_2') {
+        		operator_int = 2;
+        	}
+        	else if (active_tab == 'tab_3') {
+        		operator_int = 3;
+        	}
+        	else if (active_tab == 'tab_4') {
+        		operator_int = 4;
+        	}
+        	else if (active_tab == 'tab_5') {
+        		operator_int = 5;
+        	}
+        	else if (active_tab == 'tab_6') {
+        		operator_int = 6;
+        	}
+        	else if (active_tab == 'tab_7') {
+        		operator_int = 7;
+        	};
+
+        	localStorage.setItem('operator', operator_int);
+
+        	if (operator_int == 9) {
+        		document.getElementById("question").style.fontSize = "0.9em";
+        	}
+        	else {
+        		document.getElementById("question").style.fontSize = "1em";
+        	};
+
+        	if (operator_int == 1){
+        		var function_int = Math.floor(Math.random() * 3);
+        		var complexity = Math.random();
+        		if (function_int == 0) {
+        			var x_0 = Math.floor(Math.random() * 21);
+        			if (Math.random() < 0.5) { x_0 = -x_0 };
+					var a = Math.floor(Math.random() * 19);
+        			if (Math.random() < 0.5) { a = -a };
+					var b = Math.floor(Math.random() * 19);
+    				if (Math.random() < 0.5) { b = -b };
+
+					if (complexity > 0.25) {
+						var c = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c = -c };
+					};
+					if (complexity > 0.5) {
+						var d = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { d = -d };
+					};
+					if (complexity > 0.75) {
+						var e = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { e = -e };
+					};
+
+					if (complexity <= 0.25) {
+						var answer = a;
+						var coeffs = [a, b];
+					}
+					else if (complexity > 0.25) {
+						var coeffs = [a, b, c];
+						var answer = 2*a*x_0 + b;
+					}
+					else if (complexity > 0.5) {
+						var coeffs = [a, b, c, d];
+						var answer = 3*a*x_0*x_0 + 2*b*x_0 + c;
+					}
+					else if (complexity > 0.75) {
+						var coeffs = [a, b, c, d, e];
+						var answer = 4*a*x_0*x_0*x_0 + 3*b*x_0*x_0 + 2*c*x_0 + d;
+					};
+					var f_string = '';
+					for (var i = 0; i < coeffs.length; i++) {
+						if (coeffs[i] != 0) {
+							if (f_string != '' && coeffs[i] > 0) {
+								f_string += ' &nbsp;+&nbsp; '
+							};
+							if (f_string != '' && coeffs[i] < 0) {
+								f_string += ' &nbsp;-&nbsp; '
+							};
+							if (f_string == '' && val < 0) {
+								f_string += '-'
+							};
+							var exp = coeffs.length - i - 1
+							if (exp == 0) {
+								f_string += Math.abs(coeffs[i]).toString()
+							}
+							else if (exp == 1) {
+								if (Math.abs(coeffs[i]) != 1) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								f_string += 'x'
+							}
+							else {
+								if (Math.abs(coeffs[i]) != 1) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								f_string += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+        		}
+        		else if (function_int == 1) {
+        			var x_0 = Math.floor(Math.random() * 21);
+        			if (Math.random() < 0.5) { x_0 = -x_0 };
+					var a1 = Math.floor(Math.random() * 19);
+        			if (Math.random() < 0.5) { a1 = -a1 };
+					var b1 = Math.floor(Math.random() * 19);
+    				if (Math.random() < 0.5) { b1 = -b1 };
+					var a2 = Math.floor(Math.random() * 19);
+        			if (Math.random() < 0.5) { a2 = -a2 };
+					var b2 = Math.floor(Math.random() * 19);
+    				if (Math.random() < 0.5) { b2 = -b2 };
+
+    				if (a1 == 0) {
+    					a1 = 1;
+    				};
+    				if (a2 == 0) {
+    					a2 = 1;
+    				};
+
+					var f_string1 = '';
+					var f_string2 = '';
+
+        			if (complexity <= 0.4) {
+        				var coeffs1 = [a1, b1];
+        				var coeffs2 = [a2, b2];
+        				var answer = a1*(a2*x_0 + b2) + a2*(a1*x_0 + b1);
+        			}
+        			else if (complexity < 0.6) {
+						var c2 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c2 = -c2 };
+        				var coeffs1 = [a1, b1];
+        				var coeffs2 = [a2, b2, c2];
+        				var answer = a1*(a2*x_0*x_0 + b2*x_0 + c2) + (2*a2*x_0 + b2)*(a1*x_0 + b1);
+        			}
+        			else if (complexity < 0.8) {
+						var c1 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c1 = -c1 };
+        				var coeffs1 = [a1, b1, c1];
+        				var coeffs2 = [a2, b2];
+        				var answer = a2*(a1*x_0*x_0 + b1*x_0 + c1) + (2*a1*x_0 + b1)*(a2*x_0 + b2);
+        			}
+        			else {
+						var c1 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c1 = -c1 };
+						var c2 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c2 = -c2 };
+        				if (a1 >= 10) {
+        					a1 = Math.floor(Math.random() * 10);
+        				};
+        				if (a2 >= 10) {
+        					a2 = Math.floor(Math.random() * 10);
+        				};
+        				if (b2 >= 10) {
+        					b2 = Math.floor(Math.random() * 10);
+        				};
+        				var coeffs1 = [a1, b1, c1];
+        				var coeffs2 = [a2, b2, c2];
+        				var answer = (2*a1*x_0 + b1)*(a2*x_0*x_0 + b2*x_0 + c2) + (2*a2*x_0 + b2)*(a1*x_0*x_0 + b1*x_0 + c1);
+        			};
+
+					for (var i = 0; i < coeffs1.length; i++) {
+						if (coeffs1[i] != 0) {
+							if (f_string1 != '' && coeffs1[i] > 0) {
+								f_string1 += ' + '
+							};
+							if (f_string1 != '' && coeffs1[i] < 0) {
+								f_string1 += ' - '
+							};
+							if (f_string1 == '' && val < 0) {
+								f_string1 += '-'
+							};
+							var exp = coeffs1.length - i - 1
+							if (exp == 0) {
+								f_string1 += Math.abs(coeffs1[i]).toString()
+							}
+							else if (exp == 1) {
+								if (Math.abs(coeffs1[i]) != 1) {
+									f_string1 += Math.abs(coeffs1[i]).toString()
+								}
+								f_string1 += 'x'
+							}
+							else {
+								if (Math.abs(coeffs1[i]) != 1) {
+									f_string1 += Math.abs(coeffs1[i]).toString()
+								}
+								f_string1 += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+					for (var i = 0; i < coeffs2.length; i++) {
+						if (coeffs2[i] != 0) {
+							if (f_string2 != '' && coeffs2[i] > 0) {
+								f_string2 += ' + '
+							};
+							if (f_string2 != '' && coeffs2[i] < 0) {
+								f_string2 += ' - '
+							};
+							if (f_string2 == '' && val < 0) {
+								f_string2 += '-'
+							};
+							var exp = coeffs2.length - i - 1
+							if (exp == 0) {
+								f_string2 += Math.abs(coeffs2[i]).toString()
+							}
+							else if (exp == 1) {
+								if (Math.abs(coeffs2[i]) != 1) {
+									f_string2 += Math.abs(coeffs2[i]).toString()
+								}
+								f_string2 += 'x'
+							}
+							else {
+								if (Math.abs(coeffs2[i]) != 1) {
+									f_string2 += Math.abs(coeffs2[i]).toString()
+								}
+								f_string2 += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+
+        			var f_string = '(' + f_string1 + ') (' + f_string2 + ')';
+        		}
+        		else {
+        			var x_0 = Math.floor(Math.random() * 21);
+        			if (Math.random() < 0.5) { x_0 = -x_0 };
+					var a1 = Math.floor(Math.random() * 19);
+        			if (Math.random() < 0.5) { a1 = -a1 };
+					var b1 = Math.floor(Math.random() * 19);
+    				if (Math.random() < 0.5) { b1 = -b1 };
+					var a2 = Math.floor(Math.random() * 19);
+        			if (Math.random() < 0.5) { a2 = -a2 };
+					var b2 = Math.floor(Math.random() * 19);
+    				if (Math.random() < 0.5) { b2 = -b2 };
+
+    				if (a1 == 0) {
+    					a1 = 1;
+    				};
+    				if (a2 == 0) {
+    					a2 = 1;
+    				};
+
+					var f_string1 = '';
+					var f_string2 = '';
+
+        			if (complexity <= 0.4) {
+        				var coeffs1 = [a1, b1];
+        				var coeffs2 = [a2, b2];
+        				var answer = (a1*(a2*x_0 + b2) + a2*(a1*x_0 + b1))/((a2*x_0 + b2)**2);
+        			}
+        			else if (complexity < 0.6) {
+						var c2 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c2 = -c2 };
+        				var coeffs1 = [a1, b1];
+        				var coeffs2 = [a2, b2, c2];
+        				var answer = (a1*(a2*x_0*x_0 + b2*x_0 + c2) - (2*a2*x_0 + b2)*(a1*x_0 + b1))/((a2*x_0*x_0 + b2*x_0 + c2)**2);
+        			}
+        			else if (complexity < 0.8) {
+						var c1 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c1 = -c1 };
+        				var coeffs1 = [a1, b1, c1];
+        				var coeffs2 = [a2, b2];
+        				var answer = (-a2*(a1*x_0*x_0 + b1*x_0 + c1) + (2*a1*x_0 + b1)*(a2*x_0 + b2))/((a2*x_0 + b2)**2);
+        			}
+        			else {
+						var c1 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c1 = -c1 };
+						var c2 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c2 = -c2 };
+        				if (a1 >= 10) {
+        					a1 = Math.floor(Math.random() * 10);
+        				};
+        				if (a2 >= 10) {
+        					a2 = Math.floor(Math.random() * 10);
+        				};
+        				if (b2 >= 10) {
+        					b2 = Math.floor(Math.random() * 10);
+        				};
+        				var coeffs1 = [a1, b1, c1];
+        				var coeffs2 = [a2, b2, c2];
+        				var answer = ((2*a1*x_0 + b1)*(a2*x_0*x_0 + b2*x_0 + c2) - (2*a2*x_0 + b2)*(a1*x_0*x_0 + b1*x_0 + c1))/((a2*x_0*x_0 + b2*x_0 + c2)**2);
+        			};
+
+					for (var i = 0; i < coeffs1.length; i++) {
+						if (coeffs1[i] != 0) {
+							if (f_string1 != '' && coeffs1[i] > 0) {
+								f_string1 += ' + '
+							};
+							if (f_string1 != '' && coeffs1[i] < 0) {
+								f_string1 += ' - '
+							};
+							if (f_string1 == '' && val < 0) {
+								f_string1 += '-'
+							};
+							var exp = coeffs1.length - i - 1
+							if (exp == 0) {
+								f_string1 += Math.abs(coeffs1[i]).toString()
+							}
+							else if (exp == 1) {
+								if (Math.abs(coeffs1[i]) != 1) {
+									f_string1 += Math.abs(coeffs1[i]).toString()
+								}
+								f_string1 += 'x'
+							}
+							else {
+								if (Math.abs(coeffs1[i]) != 1) {
+									f_string1 += Math.abs(coeffs1[i]).toString()
+								}
+								f_string1 += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+					for (var i = 0; i < coeffs2.length; i++) {
+						if (coeffs2[i] != 0) {
+							if (f_string2 != '' && coeffs2[i] > 0) {
+								f_string2 += ' + '
+							};
+							if (f_string2 != '' && coeffs2[i] < 0) {
+								f_string2 += ' - '
+							};
+							if (f_string2 == '' && val < 0) {
+								f_string2 += '-'
+							};
+							var exp = coeffs2.length - i - 1
+							if (exp == 0) {
+								f_string2 += Math.abs(coeffs2[i]).toString()
+							}
+							else if (exp == 1) {
+								if (Math.abs(coeffs2[i]) != 1) {
+									f_string2 += Math.abs(coeffs2[i]).toString()
+								}
+								f_string2 += 'x'
+							}
+							else {
+								if (Math.abs(coeffs2[i]) != 1) {
+									f_string2 += Math.abs(coeffs2[i]).toString()
+								}
+								f_string2 += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+
+        			var f_string = '(' + f_string1 + ') / (' + f_string2 + ')';
+        		};
+
+        		f_string = '<sup>&nbsp;</sup>' + f_string
+				document.getElementById("question").innerHTML = '&#402;(x) &nbsp;=&nbsp;' + f_string + "<br>x<sub>0</sub> &nbsp;=&nbsp; " + x_0.toString() + " &nbsp; &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; ?";
+        		localStorage.setItem('q_output', answer);
+        	}
+			else if (operator_int == 2){
+        		var function_int = Math.floor(Math.random() * 3);
+        		var complexity = Math.random();
+
+				var a = Math.floor(Math.random() * 16);
+    			if (Math.random() < 0.5) { a = -a };
+				var b = Math.floor(Math.random() * 16);
+				if (Math.random() < 0.5) { b = -b };
+				var c = Math.floor(Math.random() * 16);
+				if (Math.random() < 0.5) { c = -c };
+
+				if (a == 0) {
+					a = 1;
+				};
+
+				if (complexity > 0.4) {
+					var d = Math.floor(Math.random() * 16);
+    				if (Math.random() < 0.5) { d = -d };
+				};
+
+				if (complexity < 0.4) {
+					var coeffs = [a, b, c];
+					var answer_x = -b / (2*a);
+					var answer = a*(answer_x)**2 + b*(answer_x) + c;
+					var max = -a / Math.abs(a);
+
+					var f_string = '';
+					for (var i = 0; i < coeffs.length; i++) {
+						if (coeffs[i] != 0) {
+							if (f_string != '' && coeffs[i] > 0) {
+								f_string += ' &nbsp;+&nbsp; '
+							};
+							if (f_string != '' && coeffs[i] < 0) {
+								f_string += ' &nbsp;-&nbsp; '
+							};
+							if (f_string == '' && val < 0) {
+								f_string += '-'
+							};
+							var exp = coeffs.length - i - 1
+							if (exp == 0) {
+								f_string += Math.abs(coeffs[i]).toString()
+							}
+							else if (exp == 1) {
+								if (Math.abs(coeffs[i]) != 1) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								f_string += 'x'
+							}
+							else {
+								if (Math.abs(coeffs[i]) != 1) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								f_string += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+				}
+				else if (complexity <= 0.75) {
+					var coeffs = [a, b, c, d];
+					var quad1 = -2*b / (6*a);
+					var quad2 = Math.sqrt(4*b**2 - 24*a*c) / (6*a);
+					if (Math.random() < 0.5) { quad2 = -quad2 };
+
+					var answer_x = quad1 + quad2;
+					var answer_x_alt = quad1 - quad2;
+					var answer = a*(answer_x)**3 + b*(answer_x)**2 + c*(answer_x) + d;
+					var max = -1;
+					if (6*answer_x + 2*b < 0) { max = 1; };
+
+					var f_string = '';
+					for (var i = 0; i < coeffs.length; i++) {
+						if (coeffs[i] != 0) {
+							if (f_string != '' && coeffs[i] > 0) {
+								f_string += ' &nbsp;+&nbsp; '
+							};
+							if (f_string != '' && coeffs[i] < 0) {
+								f_string += ' &nbsp;-&nbsp; '
+							};
+							if (f_string == '' && val < 0) {
+								f_string += '-'
+							};
+							var exp = coeffs.length - i - 1
+							if (exp == 0) {
+								f_string += Math.abs(coeffs[i]).toString()
+							}
+							else if (exp == 1) {
+								if (Math.abs(coeffs[i]) != 1) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								f_string += 'x'
+							}
+							else {
+								if (Math.abs(coeffs[i]) != 1) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								f_string += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+				}
+				else {
+					var c1 = Math.floor(Math.random() * 10);
+					if (Math.random() < 0.5) { c1 = -c1 };
+					var c2 = Math.floor(Math.random() * 10);
+					if (Math.random() < 0.5) { c2 = -c2 };
+					var c3 = Math.floor(Math.random() * 10);
+					if (Math.random() < 0.5) { c3 = -c3 };
+					var k = 4;
+
+					var a = k;
+					var b = k*(-c1 - c2 - c3);
+					var c = k*(c1*c2 + c2*c3 + c3*c1);
+					var d = -k*c1*c2*c3;
+					var e = k;
+
+					var coeffs = [[a, 4], [b, 3], [c, 2], [d, 1], [e, 1]];
+					var f_string = '';
+					for (var i = 0; i < coeffs.length; i++) {
+						var val = coeffs[i][0] / coeffs[i][1]
+						if (val != 0) {
+							if (f_string != '' && val > 0) {
+								f_string += ' + '
+							};
+							if (f_string != '' && val < 0) {
+								f_string += ' - '
+							};
+							if (f_string == '' && val < 0) {
+								f_string += '-'
+							};
+							var exp = coeffs.length - i - 1
+							if (val % 1 == 0) {
+								var coeffs_str = parseInt(Math.abs(val)).toString() + '';
+							}
+							else {
+								var frac = reduce(coeffs[i][0], coeffs[i][1])
+								var coeffs_str = '(' + Math.abs(frac[0]).toString() + '/' + Math.abs(frac[1]).toString() + ')';
+							};
+							if (exp == 0) {
+								f_string += coeffs_str
+							}
+							else if (exp == 1) {
+								if (Math.abs(val) != 1) {
+									f_string += coeffs_str
+								}
+								f_string += 'x'
+							}
+							else {
+								if (Math.abs(val) != 1) {
+									f_string += coeffs_str
+								}
+								f_string += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+
+					var max = 1;
+					if (Math.random() < 0.5) { max = -max };
+
+					var f = [a/4, b/3, c/2, d, e]
+					f1 = f[0]*(c1**4) + f[1]*(c1**3) + f[2]*(c1**2) + f[3]*c1 + f[4];
+					f2 = f[0]*(c2**4) + f[1]*(c2**3) + f[2]*(c2**2) + f[3]*c2 + f[4];
+					f3 = f[0]*(c3**4) + f[1]*(c3**3) + f[2]*(c3**2) + f[3]*c3 + f[4];
+
+					if (max == 1) {
+						if (f1 >= f2 && f1 >= f3) {
+							var answer_x = c1;
+							var answer = f1;
+						};
+						if (f2 >= f1 && f2 >= f3) {
+							var answer_x = c2;
+							var answer = f2;
+						};
+						if (f3 >= f1 && f3 >= f2) {
+							var answer_x = c3;
+							var answer = f3;
+						};
+					}
+					else {
+						if (f1 <= f2 && f1 <= f3) {
+							var answer_x = c1;
+							var answer = f1;
+						};
+						if (f2 <= f1 && f2 <= f3) {
+							var answer_x = c2;
+							var answer = f2;
+						};
+						if (f3 <= f1 && f3 <= f2) {
+							var answer_x = c3;
+							var answer = f3;
+						};
+					};
+				};
+
+        		f_string = '<sup>&nbsp;</sup>' + f_string
+        		if (max == 1) {
+        			document.getElementById("question").innerHTML = '&#402;(x) &nbsp;=&nbsp;' + f_string + "<br>max(&#402;(x)) &nbsp;=&nbsp; ?";
+        		}
+        		else {
+        			document.getElementById("question").innerHTML = '&#402;(x) &nbsp;=&nbsp;' + f_string + "<br>min(&#402;(x)) &nbsp;=&nbsp; ?";
+        		}
+        		localStorage.setItem('q_output', answer);
+        	}
+        	else if (operator_int == 3){
+        		var q_type = Math.random();
+
+        		if (q_type < 0.05) {
+					var k = Math.floor(Math.random() * 16);
+    				if (Math.random() < 0.5) { k = -k };
+
+    				var answer = k;
+    				if (Math.random() > 0.5) {
+    					var q_string = "&#402;(x) &nbsp;=&nbsp; " + k.toString() + "<br>lim <sub>x &rarr; &infin; </sub> &#402;(x) &nbsp;=&nbsp; ?";
+    				}
+    				else {
+    					var q_string = "&#402;(x) &nbsp;=&nbsp; " + k.toString() + "<br>lim <sub>x &rarr; -&infin; </sub> &#402;(x) &nbsp;=&nbsp; ?";
+    				};
+        		}
+        		else if (q_type < 0.225) {
+					var a1 = Math.ceil(Math.random() * 10);
+        			if (Math.random() < 0.5) { a1 = -a1 };
+					var b1 = Math.ceil(Math.random() * 10);
+    				if (Math.random() < 0.5) { b1 = -b1 };
+					var a2 = Math.ceil(Math.random() * 10);
+        			if (Math.random() < 0.5) { a2 = -a2 };
+					var b2 = Math.ceil(Math.random() * 10);
+    				if (Math.random() < 0.5) { b2 = -b2 };
+
+					var x_p = Math.random();
+					var f1_p = Math.random();
+					var f2_p = Math.random();
+					if (x_p < 0.333) {
+						var x_0 = '&pi;/2';
+						var x_0_val = Math.PI/2;
+					}
+					else if (x_p < 0.667) {
+						var x_0 = '5&pi;/2';
+						var x_0_val = 5*Math.PI/2;
+					}
+					else {
+						var x_0 = '-3&pi;/2';
+						var x_0_val = -3*Math.PI/2;
+					};
+					if (f1_p < 0.35) {
+						var f1 = a1*Math.tan(x_0_val);
+						b1 = 0;
+						var f1_string = a1.toString() + ' tan(x)';
+					}
+					else if (f1_p < 0.7) {
+						var f1 = b1*Math.sec(x_0_val);
+						a1 = 0;
+						var f1_string = b1.toString() + ' sec(x)';
+					}
+					else {
+						var f1 = a1*Math.tan(x_0_val) + b1*Math.sec(x_0_val);
+						if (b1 > 0) { var f1_string = a1.toString() + ' tan(x) + ' + b1.toString() + ' sec(x)'; }
+						else { var f1_string = a1.toString() + ' tan(x) - ' + Math.abs(b1).toString() + ' sec(x)'; };
+					};
+					if (f2_p < 0.35) {
+						var f2 = a2*Math.tan(x_0_val);
+						b2 = 0;
+						var f2_string = a2.toString() + ' tan(x)';
+					}
+					else if (f2_p < 0.7) {
+						var f2 = b2*Math.sec(x_0_val);
+						a2 = 0;
+						var f2_string = b2.toString() + ' sec(x)';
+					}
+					else {
+						var f2 = a2*Math.tan(x_0_val) + b2*Math.sec(x_0_val);
+						if (b1 > 0) { var f2_string = a2.toString() + ' tan(x) + ' + b2.toString() + ' sec(x)'; }
+						else { var f2_string = a2.toString() + ' tan(x) - ' + Math.abs(b2).toString() + ' sec(x)'; };
+					};
+
+					var q_string = "&#402;(x) &nbsp;=&nbsp; (" + f1_string + ') / (' + f2_string + ")<br>lim <sub>x &rarr; " + x_0 + " </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; ?";
+					var answer = (a1 + b1)/(a2 + b2);
+        		}
+        		else if (q_type < 0.85) {
+					var a = Math.ceil(Math.random() * 18);
+        			if (Math.random() < 0.5) { a = -a };
+					var b = Math.ceil(Math.random() * 18);
+    				if (Math.random() < 0.5) { b = -b };
+					var c = Math.ceil(Math.random() * 18);
+        			if (Math.random() < 0.5) { c = -c };
+
+					var f_p = Math.random();
+
+					if (f_p < 0.25) {
+						if (a > 0) {
+							var q_string = "&#402;(x) &nbsp;=&nbsp; (x - " + a.toString() + ") / (x - " + a.toString() + ")<br>lim <sub>x &rarr; " + a.toString() + " </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; ?";
+						}
+						else {
+							var q_string = "&#402;(x) &nbsp;=&nbsp; (x + " + Math.abs(a).toString() + ") / (x + " + Math.abs(a).toString() + ")<br>lim <sub>x &rarr; " + a.toString() + " </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; ?";
+						}
+						var answer = 1;
+					} 
+					else if (f_p < 0.65) {
+						if (a + b != 0) {
+							var f1_string = 'x<sup>2</sup> + ' + (a+b).toString() + 'x + ' + (a*b).toString();
+						}
+						else {
+							var f1_string = 'x<sup>2</sup> + ' + (a*b).toString();
+						}
+						var f2_string = 'x + ' + (a).toString();
+						f1_string = f1_string.replace('+ -', '- ').replace('+ -', '- ');
+						f2_string = f2_string.replace('+ -', '- ');
+
+						var answer = 2*a - (a + b);
+						var q_string = "&#402;(x) &nbsp;=&nbsp; (" + f1_string + ") / (" + f2_string + ")<br>lim <sub>x &rarr; " + a.toString() + " </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; ?";
+						if (Math.random() > 0.5) {	
+							var q_string = "&#402;(x) &nbsp;=&nbsp; (" + f2_string + ") / (" + f1_string + ")<br>lim <sub>x &rarr; " + a.toString() + " </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; ?";
+							var answer = 1/answer;
+						};
+					} 
+					else {
+						if (a + b != 0) {
+							var f1_string = 'x<sup>2</sup> + ' + (a+b).toString() + 'x + ' + (a*b).toString();
+						}
+						else {
+							var f1_string = 'x<sup>2</sup> + ' + (a*b).toString();
+						}
+						if (a + b != 0) {
+							var f2_string = 'x<sup>2</sup> + ' + (a+c).toString() + 'x + ' + (a*c).toString();
+						}
+						else {
+							var f2_string = 'x<sup>2</sup> + ' + (a*c).toString();
+						}
+						f1_string = f1_string.replace('+ -', '- ').replace('+ -', '- ');
+						f2_string = f2_string.replace('+ -', '- ').replace('+ -', '- ');
+
+						var answer = (2*a - (a + b))/(2*a - (a + c));
+						var q_string = "&#402;(x) &nbsp;=&nbsp; (" + f1_string + ") / (" + f2_string + ")<br>lim <sub>x &rarr; " + a.toString() + " </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; ?";
+						if (Math.random() > 0.5) {	
+							var q_string = "&#402;(x) &nbsp;=&nbsp; (" + f2_string + ") / (" + f1_string + ")<br>lim <sub>x &rarr; " + a.toString() + " </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; ?";
+							var answer = 1/answer;
+						};
+					};
+        		}
+        		else {
+					var a1 = Math.floor(Math.random() * 19);
+        			if (Math.random() < 0.5) { a1 = -a1 };
+					var b1 = Math.floor(Math.random() * 19);
+    				if (Math.random() < 0.5) { b1 = -b1 };
+					var a2 = Math.floor(Math.random() * 19);
+        			if (Math.random() < 0.5) { a2 = -a2 };
+					var b2 = Math.floor(Math.random() * 19);
+    				if (Math.random() < 0.5) { b2 = -b2 };
+
+    				if (a1 == 0) {
+    					a1 = 1;
+    				};
+    				if (a2 == 0) {
+    					a2 = 1;
+    				};
+
+					var f_string1 = '';
+					var f_string2 = '';
+
+        			if (complexity <= 0.4) {
+        				var coeffs1 = [a1, b1];
+        				var coeffs2 = [a2, b2];
+        				var answer = (a1*(a2*x_0 + b2) + a2*(a1*x_0 + b1))/((a2*x_0 + b2)**2);
+        			}
+        			else if (complexity < 0.6) {
+						var c2 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c2 = -c2 };
+        				var coeffs1 = [a1, b1];
+        				var coeffs2 = [a2, b2, c2];
+        				var answer = (a1*(a2*x_0*x_0 + b2*x_0 + c2) - (2*a2*x_0 + b2)*(a1*x_0 + b1))/((a2*x_0*x_0 + b2*x_0 + c2)**2);
+        			}
+        			else if (complexity < 0.8) {
+						var c1 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c1 = -c1 };
+        				var coeffs1 = [a1, b1, c1];
+        				var coeffs2 = [a2, b2];
+        				var answer = (-a2*(a1*x_0*x_0 + b1*x_0 + c1) + (2*a1*x_0 + b1)*(a2*x_0 + b2))/((a2*x_0 + b2)**2);
+        			}
+        			else {
+						var c1 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c1 = -c1 };
+						var c2 = Math.floor(Math.random() * 19);
+        				if (Math.random() < 0.5) { c2 = -c2 };
+        				if (a1 >= 10) {
+        					a1 = Math.floor(Math.random() * 10);
+        				};
+        				if (a2 >= 10) {
+        					a2 = Math.floor(Math.random() * 10);
+        				};
+        				if (b2 >= 10) {
+        					b2 = Math.floor(Math.random() * 10);
+        				};
+        				var coeffs1 = [a1, b1, c1];
+        				var coeffs2 = [a2, b2, c2];
+        				var answer = ((2*a1*x_0 + b1)*(a2*x_0*x_0 + b2*x_0 + c2) - (2*a2*x_0 + b2)*(a1*x_0*x_0 + b1*x_0 + c1))/((a2*x_0*x_0 + b2*x_0 + c2)**2);
+        			};
+
+					for (var i = 0; i < coeffs1.length; i++) {
+						if (coeffs1[i] != 0) {
+							if (f_string1 != '' && coeffs1[i] > 0) {
+								f_string1 += ' + '
+							};
+							if (f_string1 != '' && coeffs1[i] < 0) {
+								f_string1 += ' - '
+							};
+							var exp = coeffs1.length - i - 1
+							if (exp == 0) {
+								f_string1 += Math.abs(coeffs1[i]).toString()
+							}
+							else if (exp == 1) {
+								if (Math.abs(coeffs1[i]) != 1) {
+									f_string1 += Math.abs(coeffs1[i]).toString()
+								}
+								f_string1 += 'x'
+							}
+							else {
+								if (Math.abs(coeffs1[i]) != 1) {
+									f_string1 += Math.abs(coeffs1[i]).toString()
+								}
+								f_string1 += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+					for (var i = 0; i < coeffs2.length; i++) {
+						if (coeffs2[i] != 0) {
+							if (f_string2 != '' && coeffs2[i] > 0) {
+								f_string2 += ' + '
+							};
+							if (f_string2 != '' && coeffs2[i] < 0) {
+								f_string2 += ' - '
+							};
+							var exp = coeffs2.length - i - 1
+							if (exp == 0) {
+								f_string2 += Math.abs(coeffs2[i]).toString()
+							}
+							else if (exp == 1) {
+								if (Math.abs(coeffs2[i]) != 1) {
+									f_string2 += Math.abs(coeffs2[i]).toString()
+								}
+								f_string2 += 'x'
+							}
+							else {
+								if (Math.abs(coeffs2[i]) != 1) {
+									f_string2 += Math.abs(coeffs2[i]).toString()
+								}
+								f_string2 += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+
+					var x_0 = Math.floor(Math.random() * 16);
+    				if (Math.random() < 0.5) { x_0 = -x_0 };
+        			var f_string = '(' + f_string1 + ') / (' + f_string2 + ')';
+    				var q_string = "&#402;(x) &nbsp;=&nbsp; " + f_string + "<br>lim <sub>x &rarr; " + x_0.toString() + " </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; ?";
+    				var answer = (a1*x_0*x_0 + b1*x_0 + c1)/(a2*x_0*x_0 + b2*x_0 + c2);
+        		};
+        		localStorage.setItem('q_output', answer);
+        		document.getElementById("question").innerHTML = '<sub>&nbsp;</sub><sup>&nbsp;</sup>' + q_string + '<sup>&nbsp;</sup>';
+        	}
+        	else if (operator_int == 4){
+
+        		var complexity = Math.random();
+
+				var a = Math.floor(Math.random() * 16);
+    			if (Math.random() < 0.5) { a = -a };
+				var b = Math.floor(Math.random() * 16);
+				if (Math.random() < 0.5) { b = -b };
+				var c = Math.floor(Math.random() * 16);
+				if (Math.random() < 0.5) { c = -c };
+				var d = Math.floor(Math.random() * 16);
+				if (Math.random() < 0.5) { d = -d };
+
+				var x_b = Math.ceil(Math.random() * 21);
+				var x_a = Math.floor(Math.random() * x_b);
+	    		if (Math.random() < 0.25) { x_copy = x_b; x_b = -x_a; x_a = -x_copy; };
+    			if (Math.random() < 0.25) {
+    				var mid = x_b;
+    				x_b = x_a;
+    				x_a = mid;
+    			};
+
+				var f_string = '';
+				if (complexity < 0.225) {
+					var answer = ((a/2)*x_b**2 + (b)*x_b) - ((a/2)*x_a**2 + (b)*x_a);
+					var coeffs = [a, b];
+				}
+				else if (complexity < 0.575) {
+					var answer = ((a/3)*x_b**3 + (b/2)*x_b**2 + c*x_b) - ((a/3)*x_a**3 + (b/2)*x_a**2 + c*x_a);
+					var coeffs = [a, b, c];
+				}
+				else if (complexity < 0.8) {
+					var answer = ((a/4)*x_b**4 + (b/3)*x_b**3 + (c/2)*x_b**2 + d*x_b) - ((a/4)*x_a**4 + (b/3)*x_a**3 + (c/2)*x_a**2 + d*x_a);
+					var coeffs = [a, b, c, d];
+				}
+				else {
+					var coeffs = [];
+					var exp_p = Math.random();
+					if (exp_p < 0.2) {
+						f_string = a.toString() + 'x<sup>1/2</sup>';
+						var exp = 1.5;
+					}
+					if (exp_p < 0.4) {
+						f_string = a.toString() + 'x<sup>3/2</sup>';
+						var exp = 2.5;
+					}
+					if (exp_p < 0.6) {
+						f_string = a.toString() + 'x<sup>-1/2</sup>';
+						var exp = 0.5;
+					}
+					if (exp_p < 0.8) {
+						f_string = a.toString() + 'x<sup>-2</sup>';
+						var exp = -1;
+					}
+					else {
+						f_string = a.toString() + 'x<sup>-3</sup>';
+						var exp = -2;
+					}
+					var answer = (a/exp)*(x_b)**(exp) - (a/exp)*(x_a)**(exp);
+				};
+
+				if (f_string == '') {
+					for (var i = 0; i < coeffs.length; i++) {
+						if (coeffs[i] != 0) {
+							if (f_string != '' && coeffs[i] > 0) {
+								f_string += ' &nbsp;+&nbsp; '
+							};
+							if (f_string != '' && coeffs[i] < 0) {
+								f_string += ' &nbsp;-&nbsp; '
+							};
+							var exp = coeffs.length - i - 1
+							if (exp == 0) {
+								f_string += Math.abs(coeffs[i]).toString()
+							}
+							else if (exp == 1) {
+								if (Math.abs(coeffs[i]) != 1) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								f_string += 'x'
+							}
+							else {
+								if (Math.abs(coeffs[i]) != 1) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								f_string += 'x<sup>' + exp.toString() + '</sup>'
+							};
+						};
+					};
+				};
+
+        		document.getElementById("question").innerHTML = '<sub>&nbsp;</sub><sup>&nbsp;</sup>&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br><sub><sub>" + x_a.toString() + "</sub></sub> &int; <sup><sup>" + x_b.toString() + "</sup></sup> &nbsp;&#402;(x) dx &nbsp;=&nbsp; ?";
+        		localStorage.setItem('q_output', answer);
+        	}
+        	else if (operator_int == 5){
+        		var p = Math.random();
+        		if (p < 0.4) {
+					var f_p = Math.random();
+					if (f_p < 0.3) {
+						// just one with all 3 ints
+						var f_p1 = Math.random();
+						var a1 = 0; var b1 = 0; var c1 = 0;
+						var a2 = 0; var b2 = 0; var c2 = 0;
+						var a3 = 0; var b3 = 0; var c3 = 0;
+						var a4 = 0; var b4 = 0; var c4 = 0;
+		        		if (f_p1 < 0.25) {
+							var a1 = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { a1 = -a1 };
+							var b1 = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { b1 = -b1 };
+							var c1 = Math.floor(Math.random() * 13);
+							if (Math.random() < 0.5) { c1 = -c1 };
+						}
+		        		else if (f_p1 < 0.5) {
+							var a2 = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { a2 = -a2 };
+							var b2 = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { b2 = -b2 };
+							var c2 = Math.floor(Math.random() * 13);
+							if (Math.random() < 0.5) { c2 = -c2 };
+						}
+		        		else if (f_p1 < 0.75) {
+							var a3 = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { a3 = -a3 };
+							var b3 = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { b3 = -b3 };
+							var c3 = Math.floor(Math.random() * 13);
+							if (Math.random() < 0.5) { c3 = -c3 };
+						}
+		        		else if (f_p1 <= 1) {
+							var a4 = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { a4 = -a4 };
+							var b4 = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { b4 = -b4 };
+							var c4 = Math.floor(Math.random() * 13);
+							if (Math.random() < 0.5) { c4 = -c4 };
+						};
+					}
+					else if (f_p < 0.6) {
+						var f_p2 = Math.random();
+						var g_p2 = Math.random();
+						var a1 = 0; var b1 = 0; var c1 = 0;
+						var a2 = 0; var b2 = 0; var c2 = 0;
+						var a3 = 0; var b3 = 0; var c3 = 0;
+						var a4 = 0; var b4 = 0; var c4 = 0;
+
+						var v_i = Math.ceil(Math.random() * 12);
+						if (Math.random() < 0.5) { v_i = -v_i };
+						if (Math.random() > 0.5) {
+							var v_j = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { v_j = -v_j };
+							var v_k = 0;
+						}
+						else {
+							var v_k = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { v_k = -v_k };
+							var v_j = 1;
+						};
+						if (f_p2 < 0.25) {
+							var a1 = v_i; var b1 = v_j; var c1 = v_k; 
+						}
+						else if (f_p2 < 0.5) {
+							var a2 = v_i; var b2 = v_j; var c2 = v_k; 
+						}
+						else if (f_p2 < 0.75) {
+							var a3 = v_i; var b3 = v_j; var c3 = v_k; 
+						}
+						else {
+							var a4 = v_i; var b4 = v_j; var c4 = v_k; 
+						};
+
+						var v_i = Math.ceil(Math.random() * 12);
+						if (Math.random() < 0.5) { v_i = -v_i };
+						if (Math.random() > 0.5) {
+							var v_j = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { v_j = -v_j };
+							var v_k = 0;
+						}
+						else {
+							var v_k = Math.ceil(Math.random() * 12);
+							if (Math.random() < 0.5) { v_k = -v_k };
+							var v_j = 1;
+						};
+						if (g_p2 < 0.25) {
+							if (a1 == 0) { var a1 = v_i; var b1 = v_j; var c1 = v_k; }
+							else {
+								var a2 = v_i; var b2 = v_j; var c2 = v_k;
+							};
+						}
+						else if (g_p2 < 0.5) {
+							if (a2 == 0) { var a2 = v_i; var b2 = v_j; var c2 = v_k; }
+							else {
+								var a1 = v_i; var b1 = v_j; var c1 = v_k;
+							};
+						}
+						else if (g_p2 < 0.75) {
+							if (a3 == 0) { var a3 = v_i; var b3 = v_j; var c3 = v_k; }
+							else {
+								var a4 = v_i; var b4 = v_j; var c4 = v_k;
+							};
+						}
+						else {
+							if (a4 == 0) { var a4 = v_i; var b4 = v_j; var c4 = v_k; }
+							else {
+								var a3 = v_i; var b3 = v_j; var c3 = v_k;
+							};
+						};
+					}
+					else if (f_p < 0.9) {
+						var f_p3 = Math.random();
+						var a1 = 0; var b1 = 0; var c1 = 0;
+						var a2 = 0; var b2 = 0; var c2 = 0;
+						var a3 = 0; var b3 = 0; var c3 = 0;
+						var a4 = 0; var b4 = 0; var c4 = 0;
+						if (f_p3 < 0.25) { var use1 = 0; var use2 = 1; var use3 = 1; var use4 = 1; }
+						else if (f_p3 < 0.5) { var use1 = 1; var use2 = 0; var use3 = 1; var use4 = 1; }
+						else if (f_p3 < 0.75) { var use1 = 1; var use2 = 1; var use3 = 0; var use4 = 1; }
+						else { var use1 = 1; var use2 = 1; var use3 = 1; var use4= 0; }
+
+						if (use1 == 1) {
+							var p1 = Math.random();
+							if (p1 < 0.333) {
+								var a1 = Math.ceil(Math.random() * 12);
+								if (Math.random() < 0.5) { a1 = -a1 };
+								var b1 = 1;
+							}
+							else if (p1 < 0.667) {
+								var b1 = Math.ceil(Math.random() * 12);
+								if (Math.random() < 0.5) { b1 = -b1 };
+								var a1 = 1;
+							}
+							else { var a1 = 1; var b1 = 1; };
+ 						};
+						if (use2 == 1) {
+							var p2 = Math.random();
+							if (p2 < 0.333) {
+								var a2 = Math.ceil(Math.random() * 12);
+								if (Math.random() < 0.5) { a2 = -a2 };
+								var b2 = 1;
+							}
+							else if (p2 < 0.667) {
+								var b2 = Math.ceil(Math.random() * 12);
+								if (Math.random() < 0.5) { b2 = -b2 };
+								var a2 = 1;
+							}
+							else { var a2 = 1; var b2 = 1; };
+						};
+						if (use3 == 1) {
+							var p3 = Math.random();
+							if (p3 < 0.5) {
+								var a3 = Math.ceil(Math.random() * 12);
+								if (Math.random() < 0.5) { a3 = -a3 };
+								var b3 = 1;
+							}
+							else if (p3 < 0.667) {
+								var b3 = Math.ceil(Math.random() * 12);
+								if (Math.random() < 0.5) { b3 = -b3 };
+								var a3 = 1;
+							}
+							else { var a3 = 1; var b3 = 1; };
+						};
+						if (use4 == 1) {
+							var p4 = Math.random();
+							if (p4 < 0.667) {
+								var a4 = Math.ceil(Math.random() * 12);
+								if (Math.random() < 0.5) { a4 = -a4 };
+								var b4 = 1;
+							}
+							else if (p4 < 0.667) {
+								var b4 = Math.ceil(Math.random() * 12);
+								if (Math.random() < 0.5) { b4 = -b4 };
+								var a4 = 1;
+							}
+							else { var a4 = 1; var b4 = 1; };
+						};
+					}
+					else {
+						var a1 = 1; var b1 = 0; var c1 = 0;
+						var a2 = 1; var b2 = 0; var c2 = 0;
+						var a3 = 1; var b3 = 0; var c3 = 0;
+						var a4 = 1; var b4 = 0; var c4 = 0;
+					};
+
+					var coeffs_total = [a1,b1,c1,a2,b2,c2,a3,b3,c3,a4,b4,c4];
+
+					var f_string = '';
+					var d_p = Math.random();
+					if (d_p < 0.45) {
+						var x_p = Math.random();
+						if (a4 != 0 || a3 != 0) {
+							if (x_p < 0.2) { var x_0 = '0'; var x_0_val = 0; }
+							else if (x_p < 0.4) { var x_0 = '&pi;'; var x_0_val = Math.PI; }
+							else if (x_p < 0.6) { var x_0 = '&pi;/4'; var x_0_val = Math.PI/4; }
+							else if (x_p < 0.8) { var x_0 = '3&pi;/4'; var x_0_val = Math.PI*0.75; }
+							else { var x_0 = '2&pi;'; var x_0_val = 2*Math.PI; }
+						}
+						else {
+							if (x_p < 0.2) { var x_0 = '0'; var x_0_val = 0; }
+							else if (x_p < 0.4) { var x_0 = '&pi;'; var x_0_val = Math.PI; }
+							else if (x_p < 0.6) { var x_0 = '&pi;/2'; var x_0_val = Math.PI/2; }
+							else if (x_p < 0.8) { var x_0 = '3&pi;/2'; var x_0_val = Math.PI*1.5; }
+							else { var x_0 = '2&pi;'; var x_0_val = 2*Math.PI; }
+						};
+						if (Math.random() > 0.75) { x_0 = '-' + x_0; x_0_val = -x_0_val; };
+
+						for (var i = 0; i < 4; i++) {
+							var a = coeffs_total[i*3 + 0];
+							var b = coeffs_total[i*3 + 1];
+							var c = coeffs_total[i*3 + 2];
+							if (a != 0) {
+								if (f_string != '' && a > 0) { f_string += ' &nbsp;+&nbsp; ' };
+								if (f_string != '' && a < 0) { f_string += ' &nbsp;-&nbsp; ' };
+								if (f_string == '' && a < 0) { f_string += '-' };
+								if (i == 0) { var t_string = 'sin'; }
+								else if (i == 1) { var t_string = 'cos'; }
+								else if (i == 2) { var t_string = 'tan'; }
+								else if (i == 3) { var t_string = 'sec'; };
+								if (Math.abs(a) != 1) { f_string += Math.abs(a).toString() + t_string + '('; }
+								else if (a == -1 && f_string == '') { f_string += '-' + t_string + '('; }
+								else { f_string += t_string + '('; };
+								if (Math.abs(b) != 1) { f_string += b.toString(); }
+								else if (b == -1) { f_string += '-' };
+								f_string += 'x';
+								if (c > 0) { f_string += ' + ' };
+								if (c < 0) { f_string += ' - ' };
+								if (c != 0) { f_string += Math.abs(c).toString(); };
+								f_string += ')';
+							};
+						};
+						var q_string = '&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br>x<sub>0</sub> &nbsp;=&nbsp; " + x_0.toString() + " &nbsp; &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; ?";
+						var answer = a1*b1*Math.cos(b1*x_0_val + c1) - a2*b2*Math.sin(b2*x_0_val + c2) + a3*b3*(1/Math.cos(b3*x_0_val + c3))**2 + a4*b4*(1/Math.cos(b4*x_0_val + c4))*Math.tan(b4*x_0_val + c4);
+					}
+					else {
+						var i_b = Math.floor(Math.random() * 6);
+						var i_a = Math.floor(Math.random() * i_b);
+						if (i_a == i_b) {
+							i_b = i_a + 1;
+							if (i_b == 6) { i_b = 5; i_a = 4; };
+						};
+
+						if (i_a == 0) { var x_a = '0'; var x_a_val = 0; }
+						else if (i_a == 1) { var x_a = '&pi;/4'; var x_a_val = Math.PI/4; }
+						else if (i_a == 2) { 
+							var x_a = '3&pi;/4'; var x_a_val = 3*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_a = '3&pi;/2'; var x_a_val = 3*Math.PI/2; };
+						}
+						else if (i_a == 3) { var x_a = '&pi;'; var x_a_val = Math.PI; }
+						else if (i_a == 4) { 
+							var x_a = '5&pi;/4'; var x_a_val = 5*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_a = '3&pi;/2'; var x_a_val = 3*Math.PI/2; };
+						}
+						else if (i_a == 5) { var x_a = '2&pi;'; var x_a_val = Math.PI; };
+
+						if (i_b == 0) { var x_b = '0'; var x_b_val = 0; }
+						else if (i_b == 1) { var x_b = '&pi;/4'; var x_b_val = Math.PI/4; }
+						else if (i_b == 2) { 
+							var x_b = '3&pi;/4'; var x_b_val = 3*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_b = '3&pi;/2'; var x_b_val = 3*Math.PI/2; };
+						}
+						else if (i_b == 3) { var x_b = '&pi;'; var x_b_val = Math.PI; }
+						else if (i_b == 4) { 
+							var x_b = '5&pi;/4'; var x_b_val = 5*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_b = '3&pi;/2'; var x_b_val = 3*Math.PI/2; };
+						}
+						else if (i_b == 5) { var x_b = '2&pi;'; var x_b_val = Math.PI; };
+
+						if (Math.random() > 0.75) { 
+							var x_copy = x_a; x_a = x_b; x_b = x_copy;
+							var x_copy_val = x_a_val; x_a_val = x_b_val; x_b_val = x_copy_val;
+						};
+
+						var coeffs_total = [a1*b1, b1, c1, a2*b2, b2, c2, a3*b3, b3, c3, a4*b4, b4, c4];
+
+						for (var i = 0; i < 4; i++) {
+							var a = coeffs_total[i*3 + 0];
+							var b = coeffs_total[i*3 + 1];
+							var c = coeffs_total[i*3 + 2];
+							if (a != 0) {
+								if (f_string != '' && a > 0) { f_string += ' &nbsp;+&nbsp; ' };
+								if (f_string != '' && a < 0) { f_string += ' &nbsp;-&nbsp; ' };
+								if (f_string == '' && a < 0) { f_string += '-' };
+								if (i == 0) { var t_string = 'cos'; }
+								else if (i == 1) { var t_string = 'sin'; }
+								else if (i == 2) { var t_string = 'sec<sup>2</sup>'; }
+								else if (i == 3) { var t_string = 'sec'; };
+								if (Math.abs(a) != 1) { f_string += Math.abs(a).toString() + t_string + '('; }
+								else if (a == -1 && f_string == '') { f_string += '-' + t_string + '('; }
+								else { f_string += t_string + '('; };
+								if (Math.abs(b) != 1) { f_string += b.toString(); }
+								else if (b == -1) { f_string += '-' };
+								f_string += 'x';
+								if (c > 0) { f_string += ' + ' };
+								if (c < 0) { f_string += ' - ' };
+								if (c != 0) { f_string += Math.abs(c).toString(); };
+								f_string += ')';
+								if (i == 3) {
+									f_string += ' tan(';
+									if (Math.abs(b) != 1) { f_string += b.toString(); }
+									else if (b == -1) { f_string += '-' };
+									f_string += 'x';
+									if (c > 0) { f_string += ' + ' };
+									if (c < 0) { f_string += ' - ' };
+									if (c != 0) { f_string += Math.abs(c).toString(); };
+									f_string += ')';
+								};
+							};
+						};
+						var q_string = '&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br><sub><sub>" + x_a.toString() + "</sub></sub> &int; <sup><sup>" + x_b.toString() + "</sup></sup> &nbsp;&#402;(x) dx &nbsp;=&nbsp; ?";
+						var answer = a1*(Math.sin(b1*x_b_val + c1) - Math.sin(b1*x_a_val + c1)) + a2*(Math.cos(b2*x_b_val + c2) - Math.cos(b2*x_a_val + c2)) + a3*(Math.tan(b3*x_b_val + c3) - 1/Math.cos(b3*x_a_val + c3)) + a4*(1/Math.cos(b4*x_b_val + c4) - Math.tan(b4*x_a_val + c4));
+					};
+					
+					document.getElementById("question").innerHTML = '<sub>&nbsp;</sub><sup>&nbsp;</sup>' + q_string;
+        			localStorage.setItem('q_output', answer);
+				}
+				else if (p < 0.6) {
+
+					if (Math.random() > 0.5) {
+						var A = Math.ceil(Math.random() * 12);
+						if (Math.random() < 0.5) { A = -A; };
+					}
+					else { var A = 1; };
+
+					if (Math.random() > 0.5) {
+						var x_exp = Math.floor(Math.random() * 4);
+						if (Math.random() < 0.25) { x_exp = -x_exp; };
+					}
+					else { var x_exp = 0; };
+
+					if (Math.random() > 0.5) {
+						var sin_exp = Math.floor(Math.random() * 4);
+						if (Math.random() < 0.25) { sin_exp = -sin_exp; };
+					}
+					else { var sin_exp = 0; };
+
+					if (Math.random() > 0.5) {
+						var cos_exp = Math.floor(Math.random() * 4);
+						if (Math.random() < 0.25) { cos_exp = -cos_exp; };
+					}
+					else { var cos_exp = 0; };
+
+					if (Math.random() > 0.5) {
+						var C = Math.ceil(Math.random() * 12);
+						if (Math.random() < 0.5) { C = -C; };
+					}
+					else { var C = 0; };
+
+					if (x_exp == 0 && sin_exp == 0 && cos_exp == 0) { x_exp = 1; sin_exp = 1; cos_ep = 1; };
+					var f_string = '';
+
+					if (Math.abs(A) != 1) { f_string += A.toString(); }
+					else if (A == -1) { f_string += '-'; };
+
+					if (Math.abs(x_exp) == 1) { f_string += 'x '; }
+					else if (Math.abs(x_exp) != 0) { f_string += 'x<sup>' + x_exp.toString() + '</sup> '; }
+
+					if (sin_exp == 1) { f_string += 'sin(x) '; }
+					else if (Math.abs(sin_exp) != 0) { f_string += 'sin<sup>' + sin_exp.toString() + '</sup>(x) '; }
+
+					if (cos_exp == 1) { f_string += 'cos(x) '; }
+					else if (Math.abs(cos_exp) != 0) { f_string += 'cos<sup>' + cos_exp.toString() + '</sup>(x) '; }
+
+					if (C > 0) { f_string += '&nbsp;+&nbsp; ' + C.toString() + ' '; };
+					if (C < 0) { f_string += '&nbsp;-&nbsp; ' + Math.abs(C).toString() + ' '; };
+
+					if (x_p < 0.1667) { var x_0 = '0'; var x_0_val = 0; }
+					else if (x_p < 0.3333) { var x_0 = '&pi;/4'; var x_0_val = Math.PI/4; }
+					else if (x_p < 0.5) { var x_0 = '&pi;/2'; var x_0_val = Math.PI/2; }
+					else if (x_p < 0.6667) { var x_0 = '&pi;'; var x_0_val = Math.PI; }
+					else if (x_p < 0.8333) { var x_0 = '3&pi;/2'; var x_0_val = Math.PI*1.5; }
+					else { var x_0 = '2&pi;'; var x_0_val = 2*Math.PI; };
+
+					var q_string = '&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br>x<sub>0</sub> &nbsp;=&nbsp; " + x_0 + " &nbsp; &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; ?";
+					var answer = A*(x_exp*(x_0_val**(x_exp - 1))*(Math.sin(x_0_val)**(sin_exp))*(Math.cos(x_0_val)**(cos_exp)) + (x_0_val**(x_exp))*sin_exp*Math.cos(x_0_val)*(Math.sin(x_0_val)**(sin_exp-1))*(Math.cos(x_0_val)**(cos_exp)) - (x_0_val**(x_exp))*(Math.sin(x_0_val)**(sin_exp))*cos_exp*Math.sin(x_0_val)*(Math.cos(x_0_val)**(cos_exp-1)));
+					document.getElementById("question").innerHTML = '<sub>&nbsp;</sub><sup>&nbsp;</sup>' + q_string;
+        			localStorage.setItem('q_output', answer);
+				}
+				else {
+					if (Math.random() > 0.5) {
+						var e1 = Math.ceil(Math.random() * 3);
+						if (Math.random() < 0.25) { e1 = -e1; };
+						if (Math.random() > 0.5) {
+							var a1 = Math.ceil(Math.random() * 6);
+							if (Math.random() < 0.25) { a1 = -a1; };
+						}
+						else { var a1 = 1; };
+					}
+					else { var e1 = 0; var a1 = 0; };
+
+					if (Math.random() > 0.5) {
+						var e2 = Math.ceil(Math.random() * 3);
+						if (Math.random() < 0.25) { e2 = -e2; };
+						if (Math.random() > 0.5) {
+							var a2 = Math.ceil(Math.random() * 6);
+							if (Math.random() < 0.25) { a2 = -a2; };
+						}
+						else { var a2 = 1; };
+					}
+					else { var e2 = 0; var a2 = 0; };
+
+					if (Math.random() > 0.5) {
+						var e3 = Math.ceil(Math.random() * 3);
+						if (Math.random() < 0.25) { e3 = -e3; };
+						if (Math.random() > 0.5) {
+							var a3 = Math.ceil(Math.random() * 6);
+							if (Math.random() < 0.25) { a3 = -a3; };
+						}
+						else { var a3 = 1; };
+					}
+					else { var e3 = 0; var a3 = 0; };
+
+					if (Math.random() > 0.5) {
+						var e4 = Math.ceil(Math.random() * 3);
+						if (Math.random() < 0.25) { e4 = -e4; };
+						if (Math.random() > 0.5) {
+							var a4 = Math.ceil(Math.random() * 6);
+							if (Math.random() < 0.25) { a4 = -a4; };
+						}
+						else { var a4 = 1; };
+					}
+					else { var e4 = 0; var a4 = 0; };
+
+					if ([a1, e1, a2, e2, a3, e3, a4, e4] == [0, 0, 0, 0, 0, 0, 0, 0]) {
+						var c_p = Math.random();
+						if (c_p < 0.25) {
+							var e1 = Math.ceil(Math.random() * 3);
+							if (Math.random() < 0.25) { e1 = -e1; };
+							if (Math.random() > 0.5) {
+								var a1 = Math.ceil(Math.random() * 6);
+								if (Math.random() < 0.25) { a1 = -a1; };
+							}
+							else { var a1 = 1; };
+						}
+						else if (c_p < 0.5) {
+							var e2 = Math.ceil(Math.random() * 3);
+							if (Math.random() < 0.25) { e2 = -e2; };
+							if (Math.random() > 0.5) {
+								var a2 = Math.ceil(Math.random() * 6);
+								if (Math.random() < 0.25) { a2 = -a2; };
+							}
+							else { var a2 = 1; };
+						}
+						else if (c_p < 0.75) {
+							var e3 = Math.ceil(Math.random() * 3);
+							if (Math.random() < 0.25) { e3 = -e3; };
+							if (Math.random() > 0.5) {
+								var a3 = Math.ceil(Math.random() * 6);
+								if (Math.random() < 0.25) { a3 = -a3; };
+							}
+							else { var a3 = 1; };
+						}
+						else {
+							var e4 = Math.ceil(Math.random() * 3);
+							if (Math.random() < 0.25) { e4 = -e4; };
+							if (Math.random() > 0.5) {
+								var a4 = Math.ceil(Math.random() * 6);
+								if (Math.random() < 0.25) { a4 = -a4; };
+							}
+							else { var a4 = 1; };
+						};
+					};
+
+					var f_string = '';
+					var q_string = '';
+					var d_p = Math.random();
+					if (d_p < 0.45) {
+						var x_p = Math.random();
+						if (a4 != 0 || a3 != 0) {
+							if (x_p < 0.2) { var x_0 = '0'; var x_0_val = 0; }
+							else if (x_p < 0.4) { var x_0 = '&pi;'; var x_0_val = Math.PI; }
+							else if (x_p < 0.6) { var x_0 = '&pi;/4'; var x_0_val = Math.PI/4; }
+							else if (x_p < 0.8) { var x_0 = '3&pi;/4'; var x_0_val = Math.PI*0.75; }
+							else { var x_0 = '2&pi;'; var x_0_val = 2*Math.PI; }
+						}
+						else {
+							if (x_p < 0.2) { var x_0 = '0'; var x_0_val = 0; }
+							else if (x_p < 0.4) { var x_0 = '&pi;'; var x_0_val = Math.PI; }
+							else if (x_p < 0.6) { var x_0 = '&pi;/2'; var x_0_val = Math.PI/2; }
+							else if (x_p < 0.8) { var x_0 = '3&pi;/2'; var x_0_val = Math.PI*1.5; }
+							else { var x_0 = '2&pi;'; var x_0_val = 2*Math.PI; }
+						};
+						if (Math.random() > 0.75) { x_0 = '-' + x_0; x_0_val = -x_0_val; };
+
+						if (a1 > 0) {
+							if (Math.abs(a1) != 1 && f_string == '') { f_string += a1.toString(); }
+							else if (a1 == -1 && f_string == '') { f_string += '-';}
+							else if (Math.abs(a1) != 1) { f_string += Math.abs(a1); };
+							if (e1 == 1) { f_string += 'sin(x)'; }
+							else { f_string += 'sin<sup>' + e1.toString() + '</sup>(x)'; };
+						};
+						if (a2 > 0) {
+							if (f_string != '' && a2 > 0) { f_string += ' &nbsp;+&nbsp; ' }
+							else if (f_string != '' && a2 < 0) { f_string += ' &nbsp;-&nbsp; ' };
+							if (Math.abs(a2) != 1 && f_string == '') { f_string += a2.toString(); }
+							else if (a2 == -1 && f_string == '') { f_string += '-';}
+							else if (Math.abs(a2) != 1) { f_string += Math.abs(a2); };
+							if (e2 == 1) { f_string += 'cos(x)'; }
+							else { f_string += 'cos<sup>' + e2.toString() + '</sup>(x)'; };
+						};
+						if (a3 > 0) {
+							if (f_string != '' && a3 > 0) { f_string += ' &nbsp;+&nbsp; ' }
+							else if (f_string != '' && a3 < 0) { f_string += ' &nbsp;-&nbsp; ' };
+							if (Math.abs(a3) != 1 && f_string == '') { f_string += a3.toString(); }
+							else if (a3 == -1 && f_string == '') { f_string += '-';}
+							else if (Math.abs(a3) != 1) { f_string += Math.abs(a3); };
+							if (e3 == 1) { f_string += 'tan(x)'; }
+							else { f_string += 'tan<sup>' + e3.toString() + '</sup>(x)'; };
+						};
+						if (a4 > 0) {
+							if (f_string != '' && a4 > 0) { f_string += ' &nbsp;+&nbsp; ' }
+							else if (f_string != '' && a4 < 0) { f_string += ' &nbsp;-&nbsp; ' };
+							if (Math.abs(a4) != 1 && f_string == '') { f_string += a4.toString(); }
+							else if (a4 == -1 && f_string == '') { f_string += '-';}
+							else if (Math.abs(a4) != 1) { f_string += Math.abs(a4); };
+							if (e4 == 1) { f_string += 'sec(x)'; }
+							else { f_string += 'sec<sup>' + e4.toString() + '</sup>(x)'; };
+						};
+
+						q_string = '&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br>x<sub>0</sub> &nbsp;=&nbsp; " + x_0 + " &nbsp; &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; ?";
+						var answer = e1*a1*Math.cos(x_0_val)*(Math.sin(x_0_val)**(e1-1)) - e2*a2*Math.sin(x_0_val)*(Math.cos(x_0_val)**(e2-1)) + e3*a3*(((1/Math.cos(x_0_val))**2)**(e3-1)) + e4*a4*((1/Math.cos(x_0_val)*Math.tan(x_0_val))**(e4-1));
+					}
+					else {
+						var i_b = Math.floor(Math.random() * 6);
+						var i_a = Math.floor(Math.random() * i_b);
+						if (i_a == i_b) {
+							i_b = i_a + 1;
+							if (i_b == 7) { i_b = 6; i_a = 5; };
+						};
+
+						if (i_a == 0) { var x_a = '0'; var x_a_val = 0; }
+						else if (i_a == 1) { var x_a = '&pi;/4'; var x_a_val = Math.PI/4; }
+						else if (i_a == 2) { 
+							var x_a = '3&pi;/4'; var x_a_val = 3*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_a = '3&pi;/2'; var x_a_val = 3*Math.PI/2; };
+						}
+						else if (i_a == 3) { var x_a = '&pi;'; var x_a_val = Math.PI; }
+						else if (i_a == 4) { 
+							var x_a = '5&pi;/4'; var x_a_val = 5*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_a = '3&pi;/2'; var x_a_val = 3*Math.PI/2; };
+						}
+						else if (i_a == 5) { var x_a = '2&pi;'; var x_a_val = Math.PI; };
+
+						if (i_b == 0) { var x_b = '0'; var x_b_val = 0; }
+						else if (i_b == 1) { var x_b = '&pi;/4'; var x_b_val = Math.PI/4; }
+						else if (i_b == 2) { 
+							var x_b = '3&pi;/4'; var x_b_val = 3*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_b = '3&pi;/2'; var x_b_val = 3*Math.PI/2; };
+						}
+						else if (i_b == 3) { var x_b = '&pi;'; var x_b_val = Math.PI; }
+						else if (i_b == 4) { 
+							var x_b = '5&pi;/4'; var x_b_val = 5*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_b = '3&pi;/2'; var x_b_val = 3*Math.PI/2; };
+						}
+						else if (i_b == 5) { var x_b = '2&pi;'; var x_b_val = Math.PI; };
+
+						if (a1 > 0 && a2 > 0 && a3 > 0 || a1 > 0 && a2 > 0 && a4 > 0) {
+							var a3 = 0; var e3 = 0; var a4 = 0; var e4 = 0;
+						};
+						if (a1 > 0 && a4 > 0 && a3 > 0 || a3 > 0 && a2 > 0 && a4 > 0) {
+							var a1 = 0; var e1 = 0; var a2 = 0; var e2 = 0;
+						};
+
+						if (Math.random() > 0.75) { 
+							var x_copy = x_a; x_a = x_b; x_b = x_copy;
+							var x_copy_val = x_a_val; x_a_val = x_b_val; x_b_val = x_copy_val;
+						};
+
+						var answer = (a1*(Math.sin(x_b_val)**(e1)) + a2*(Math.sin(x_b_val)**(e2)) + a3*(Math.tan(x_b_val)**(e3)) + a4*(Math.cos(x_b_val)**(-e4))) - (a1*(Math.sin(x_b_val)**(e1)) + a2*(Math.sin(x_b_val)**(e2)) + a3*(Math.tan(x_b_val)**(e3)) + a4*((1/Math.cos(x_b_val))**(e4)));
+						a1 = e1*a1; e1 += -1;
+						a2 = -e2*a2; e2 += -1;
+						a3 = e3*a3; e3 += -1;
+						a4 = e4*a4;
+
+						if (a1 > 0) {
+							if (Math.abs(a1) != 1 && f_string == '') { f_string += a1.toString(); }
+							else if (a1 == -1 && f_string == '') { f_string += '-'; }
+							else if (Math.abs(a1) != 1) { f_string += Math.abs(a1); };
+							if (e1 == 1) { f_string += 'cos(x) sin(x)'; }
+							else if (e1 == 0) { f_string += 'cos(x)'; }
+							else { f_string += 'cos(x) sin<sup>' + e1.toString() + '</sup>(x)'; };
+						};
+						if (a2 > 0) {
+							if (f_string != '' && a2 > 0) { f_string += ' &nbsp;+&nbsp; '; }
+							else if (f_string != '' && a2 < 0) { f_string += ' &nbsp;-&nbsp; '; };
+							if (Math.abs(a2) != 1 && f_string == '') { f_string += a2.toString(); }
+							else if (a2 == -1 && f_string == '') { f_string += '-'; }
+							else if (Math.abs(a2) != 1) { f_string += Math.abs(a2); };
+							if (e2 == 1) { f_string += 'sin(x) cos(x)'; }
+							else if (e2 == 0) { f_string += 'sin(x)'; }
+							else { f_string += 'sin(x) cos<sup>' + e2.toString() + '</sup>(x)'; };
+						};
+						if (a3 > 0) {
+							if (f_string != '' && a3 > 0) { f_string += ' &nbsp;+&nbsp; '; }
+							else if (f_string != '' && a3 < 0) { f_string += ' &nbsp;-&nbsp; '; };
+							if (Math.abs(a3) != 1 && f_string == '') { f_string += a3.toString(); }
+							else if (a3 == -1 && f_string == '') { f_string += '-' }
+							else if (Math.abs(a3) != 1) { f_string += Math.abs(a3) };
+							if (e3 == 1) { f_string += 'sec<sup>2</sup>(x) tan(x)'; }
+							else if (e3 == 0) { f_string += 'sec<sup>2</sup>(x)'; }
+							else { f_string += 'sec<sup>2</sup>(x) tan<sup>' + e3.toString() + '</sup>(x)'; };
+						};
+						if (a4 > 0) {
+							if (f_string != '' && a4 > 0) { f_string += ' &nbsp;+&nbsp; ' }
+							else if (f_string != '' && a4 < 0) { f_string += ' &nbsp;-&nbsp; ' };
+							if (Math.abs(a4) != 1 && f_string == '') { f_string += a4.toString(); }
+							else if (a4 == -1 && f_string == '') { f_string += '-'; }
+							else if (Math.abs(a4) != 1) { f_string += Math.abs(a4); };
+							if (e4 == 1) { f_string += 'tan(x) sec<sup>2</sup>(x)'; }
+							else if (e4 == 0) { f_string += 'tan(x) sec(x)'; }
+							else { f_string += 'tan(x) sec<sup>' + e4.toString() + '</sup>(x)'; };
+
+						};
+						q_string = '&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br><sub><sub>" + x_a.toString() + "</sub></sub> &int; <sup><sup>" + x_b.toString() + "</sup></sup> &nbsp;&#402;(x) dx &nbsp;=&nbsp; ?";
+					};
+
+					document.getElementById("question").innerHTML = '<sub>&nbsp;</sub><sup>&nbsp;</sup>' + q_string;
+        			localStorage.setItem('q_output', answer);
+				};
+        	}
+        	else if (operator_int == 6){
+        		if (Math.random() < 0.4) {
+        			var f_p = Math.ceil(Math.random() * 4);
+        			var g_p = Math.ceil(Math.random() * 4);
+        			if (f_p == g_p) { g_p = (f_p + 1) % 4 };
+
+        			if (f_p == 3) { f_c = Math.floor(Math.random() * 10); }
+        			else { f_c = Math.ceil(Math.random() * 5); };
+        			if (g_p == 3) { g_c = Math.floor(Math.random() * 10); }
+        			else { g_c = Math.ceil(Math.random() * 5); };
+
+					if (g_p == 0) { g_p = f_p; f_p = 0;  };
+
+					if (!(f_p == 0 && g_p == 3)) {
+						var i_b = Math.floor(Math.random() * 6);
+						var i_a = Math.floor(Math.random() * i_b);
+						if (i_a == i_b) {
+							i_b = i_a + 1;
+							if (i_b == 7) { i_b = 6; i_a = 5; };
+						};
+
+						if (i_a == 0) { var x_a = '0'; var x_a_val = 0; }
+						else if (i_a == 1) { var x_a = '&pi;/4'; var x_a_val = Math.PI/4; }
+						else if (i_a == 2) { 
+							var x_a = '3&pi;/4'; var x_a_val = 3*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_a = '3&pi;/2'; var x_a_val = 3*Math.PI/2; };
+						}
+						else if (i_a == 3) { var x_a = '&pi;'; var x_a_val = Math.PI; }
+						else if (i_a == 4) { 
+							var x_a = '5&pi;/4'; var x_a_val = 5*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_a = '3&pi;/2'; var x_a_val = 3*Math.PI/2; };
+						}
+						else if (i_a == 5) { var x_a = '2&pi;'; var x_a_val = Math.PI; };
+
+						if (i_b == 0) { var x_b = '0'; var x_b_val = 0; }
+						else if (i_b == 1) { var x_b = '&pi;/4'; var x_b_val = Math.PI/4; }
+						else if (i_b == 2) { 
+							var x_b = '3&pi;/4'; var x_b_val = 3*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_b = '3&pi;/2'; var x_b_val = 3*Math.PI/2; };
+						}
+						else if (i_b == 3) { var x_b = '&pi;'; var x_b_val = Math.PI; }
+						else if (i_b == 4) { 
+							var x_b = '5&pi;/4'; var x_b_val = 5*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_b = '3&pi;/2'; var x_b_val = 3*Math.PI/2; };
+						}
+						else if (i_b == 5) { var x_b = '2&pi;'; var x_b_val = Math.PI; };
+					}
+					else {
+						var x_b_val = Math.ceil(Math.random() * 12); var x_b = x_b_val.toString();
+						var x_a_val = Math.ceil(Math.random() * x_b_val); var x_a = x_a_val.toString();
+					};
+
+					var f_string = ''; var A1 = 1; var A2 = 1;
+					if (f_p == 0) {
+						var f_val_b = (x_b_val)**f_c; var f_val_a = (x_a_val)**f_c;
+						A1 *= f_c;
+						if (f_c != 1 && f_c != 2) {
+							var df_str = 'x<sup>' + (f_c-1).toString() + '</sup>';
+							var f_str = 'x<sup>' + f_c.toString() + '</sup>';
+						}
+						else if (f_c != 1) {
+							var df_str = 'x';
+							var f_str = 'x<sup>' + f_c.toString() + '</sup>';
+						}
+						else { var df_str = ''; var f_str = 'x'; };
+					}
+					else if (f_p == 1) {
+						var f_val_b = Math.sin(x_b_val); var f_val_a = Math.sin(x_a_val);
+						A1 *= f_c;
+						if (f_c != 1 && f_c != 2) {
+							var df_str = 'cos(x) sin<sup>' + (f_c-1).toString() + '</sup>(x)';
+							var f_str = 'cos(x) sin<sup>' + (f_c).toString() + '</sup>(x)';
+						}
+						else if (f_c != 1) {
+							var df_str = 'cos(x) sin(x)';
+							var f_str = 'cos(x) sin<sup>' + (f_c).toString() + '</sup>(x)';
+						}
+						else { var df_str = 'cos(x)'; var f_str = 'sin(x)'; };
+					}
+					else if (f_p == 2) {
+						var f_val_b = Math.cos(x_b_val); var f_val_a = Math.cos(x_a_val);
+						A1 *= -f_c;
+						if (f_c != 1 && f_c != 2) {
+							var df_str = 'sin(x) cos<sup>' + (f_c-1).toString() + '</sup>(x)';
+							var f_str = 'sin(x) cos<sup>' + (f_c).toString() + '</sup>(x)';
+						}
+						else if (f_c != 1) {
+							var df_str = 'sin(x) cos(x)';
+							var f_str = 'sin(x) cos<sup>' + (f_c).toString() + '</sup>(x)';
+						}
+						else { var df_str = 'sin(x)'; var f_str = 'cos(x)'; };
+					}
+					else {
+						var f_val_b = (x_b_val + f_c)**0.5; var f_val_a = (x_b_val + f_c)**0.5;
+						A1 *= 0.5;
+						var df_str = '(x + ' + f_c.toString() + ')<sup>-1/2</sup>';
+						var f_str = '(x + ' + f_c.toString() + ')<sup>1/2</sup>';
+					};
+
+					if (g_p == 0) {
+						var g_val_b = (x_b_val)**g_c;
+						var g_val_a = (x_a_val)**g_c;
+						A2 *= f_c;
+						if (g_c != 1 && g_c != 2) {
+							var dg_str = g_c.toString() + 'x<sup>' + (g_c-1).toString() + '</sup>';
+							var g_str = 'x<sup>' + g_c.toString() + '</sup>';
+						}
+						else if (g_c != 1) {
+							var dg_str = 'x';
+							var g_str = 'x<sup>' + g_c.toString() + '</sup>';
+						}
+						else { var dg_str = ''; var g_str = 'x'; };
+					}
+					else if (g_p == 1) {
+						var g_val_b = Math.sin(x_b_val); var g_val_a = Math.sin(x_a_val);
+						A2 *= g_c;
+						if (g_c != 1 && g_c != 2) {
+							var dg_str = 'cos(x) sin<sup>' + (g_c-1).toString() + '</sup>(x)';
+							var g_str = 'cos(x) sin<sup>' + (g_c).toString() + '</sup>(x)';
+						}
+						else if (g_c != 1) {
+							var dg_str = 'cos(x) sin(x)';
+							var g_str = 'cos(x) sin<sup>' + (g_c).toString() + '</sup>(x)';
+						}
+						else { var dg_str = 'cos(x)'; var g_str = 'sin(x)'; };
+					}
+					else if (g_p == 2) {
+						var g_val_b = Math.cos(x_b_val); var g_val_a = Math.cos(x_a_val);
+						A2 *= -g_c;
+						if (g_c != 1 && g_c != 2) {
+							var dg_str = 'sin(x) cos<sup>' + (g_c-1).toString() + '</sup>(x)';
+							var g_str = 'sin(x) cos<sup>' + (g_c).toString() + '</sup>(x)';
+						}
+						else if (g_c != 1) {
+							var dg_str = 'sin(x) cos(x)';
+							var g_str = 'sin(x) cos<sup>' + (g_c).toString() + '</sup>(x)';
+						}
+						else { var dg_str = 'sin(x)'; var g_str = 'cos(x)'; };
+					}
+					else {
+						var g_val_b = (x_b_val + g_c)**0.5; var g_val_a = (x_b_val + g_c)**0.5;
+						A2 *= 0.5;
+						var dg_str = '(x + ' + g_c.toString() + ')<sup>-1/2</sup>';
+						var g_str = '(x + ' + g_c.toString() + ')<sup>1/2</sup>';
+					};
+
+					var f_string = '';
+					if (Math.abs(A1) != 1) { f_string += A1.toString(); }
+					else if (A1 == -1) { f_string += '-'; };
+					f_string += df_str;
+					if (df_str != '') { f_string += ' '; };
+					f_string += g_str;
+
+					if (Math.abs(A2) > 0) { f_string += ' &nbsp;+&nbsp; '; }
+					else { f_string += ' &nbsp;-&nbsp; '; };
+					if (Math.abs(A2) != 1) { f_string += A2.toString(); };
+					f_string += dg_str;
+					if (dg_str != '') { f_string += ' '; };
+					f_string += f_str;
+
+					var answer = f_val_b*g_val_b - f_val_a*g_val_a;
+					var q_string = '&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br><sub><sub>" + x_a.toString() + "</sub></sub> &int; <sup><sup>" + x_b.toString() + "</sup></sup> &nbsp;&#402;(x) dx &nbsp;=&nbsp; ?";
+					document.getElementById("question").innerHTML = '<sub>&nbsp;</sub><sup>&nbsp;</sup>' + q_string;
+        			localStorage.setItem('q_output', answer);
+        		}
+        		else {
+        			var p = Math.random();
+        			if (p < 0.333) {
+        				var e_p = Math.random();
+        				if (e_p < 0.2) { var exp = 0.333333; var exp_str = '1/3'; }
+        				else if (e_p < 0.4) { var exp = 0.5; var exp_str = '1/2'; }
+        				else if (e_p < 0.6) { var exp = 2; var exp_str = '2'; }
+        				else if (e_p < 0.8) { var exp = 3; var exp_str = '3'; }
+        				else { var exp = 4; var exp_str = '4'; };
+        				if (Math.random > 0.7) { exp = -1*exp; exp_str = '-' + exp_str; };
+
+						var a = Math.ceil(Math.random() * 9);
+						var b = Math.floor(Math.random() * 15);
+						var x_b_val = Math.ceil(Math.random() * 12); var x_b = x_b_val.toString();
+						var x_a_val = Math.ceil(Math.random() * x_b_val); var x_a = x_a_val.toString();
+						if (Math.random > 0.75) { 
+							x_a_val = -x_a_val; x_b_val = -x_b_val;
+							x_b = '-' + x_b; x_a = '-' + x_a;
+						};
+
+						var f_string = '(';
+						if (Math.abs(a) != 1) { f_string += a.toString(); }
+						else if (a == -1) { f_string += '-'; };
+						f_string += 'x';
+						if (b > 0) { f_string += ' + ' + b.toString(); }
+						else if (b < 0) { f_string += ' - ' + Math.abs(b).toString(); };
+						f_string += ')<sup>' + exp_str + '</sup>';
+
+						var answer = (1/(a*exp + a))*((a*x_b_val + b)**(exp+1) - (a*x_a_val + b)**(exp+1));
+        			}
+        			else if (p < 0.667) {
+        				var e_p = Math.random();
+        				if (e_p < 0.2) { var exp = 0.333333; var exp_str = '1/3'; }
+        				else if (e_p < 0.4) { var exp = 0.5; var exp_str = '1/2'; }
+        				else if (e_p < 0.6) { var exp = 2; var exp_str = '2'; }
+        				else if (e_p < 0.8) { var exp = 3; var exp_str = '3'; }
+        				else { var exp = 4; var exp_str = '4'; };
+        				if (Math.random > 0.7) { exp = -1*exp; exp_str = '-' + exp_str; };
+
+						var a = Math.ceil(Math.random() * 9);
+						var b = Math.floor(Math.random() * 15);
+						var x_b_val = Math.ceil(Math.random() * 12); var x_b = x_b_val.toString();
+						var x_a_val = Math.ceil(Math.random() * x_b_val); var x_a = x_a_val.toString();
+						if (Math.random > 0.75) { 
+							x_a_val = -x_a_val; x_b_val = -x_b_val;
+							x_b = '-' + x_b; x_a = '-' + x_a;
+						};
+
+						var f_string = 'x (';
+						if (Math.abs(a) != 1) { f_string += a.toString(); }
+						else if (a == -1) { f_string += '-'; };
+						f_string += 'x';
+						if (b > 0) { f_string += ' + ' + b.toString(); }
+						else if (b < 0) { f_string += ' - ' + Math.abs(b).toString(); };
+						f_string += ')<sup>' + exp_str + '</sup>';
+
+						var answer = ((x_a_val/(a*exp + a))*(a*x_b_val + b)**(exp+1) - (x_a_val/(a*exp + a))*(a*x_a_val + b)**(exp+1)) - (1/(a*exp + 2*a))*((a*x_b_val + b)**(exp+2) - (a*x_a_val + b)**(exp+2));
+        			}
+        			else {
+						var a = Math.ceil(Math.random() * 9);
+						if (Math.random() > 0.75) { a = -a; };
+						var exp = Math.ceil(Math.random() * 4) + 1;
+						var t = Math.floor(Math.random() * 2);
+						if (t == 0) { var trig = 'sin'; }
+						else { var trig = 'cos'; };
+
+						var f_string = '';
+						if (Math.abs(a) != 1) { f_string += a.toString(); }
+						else if (a == -1) { f_string += '-'; };
+
+						f_string += 'x';
+						if (exp != 2) { f_string += '<sup>' + exp.toString() + '</sup>' };
+						f_string += ' ' + trig + '(x<sup>' + exp.toString() + '</sup>)';
+
+						var i_b = Math.floor(Math.random() * 6);
+						var i_a = Math.floor(Math.random() * i_b);
+						if (i_a == i_b) {
+							i_b = i_a + 1;
+							if (i_b == 7) { i_b = 6; i_a = 5; };
+						};
+
+						if (i_a == 0) { var x_a = '0'; var x_a_val = 0; }
+						else if (i_a == 1) { var x_a = '&pi;/4'; var x_a_val = Math.PI/4; }
+						else if (i_a == 2) { 
+							var x_a = '3&pi;/4'; var x_a_val = 3*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_a = '3&pi;/2'; var x_a_val = 3*Math.PI/2; };
+						}
+						else if (i_a == 3) { var x_a = '&pi;'; var x_a_val = Math.PI; }
+						else if (i_a == 4) { 
+							var x_a = '5&pi;/4'; var x_a_val = 5*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_a = '3&pi;/2'; var x_a_val = 3*Math.PI/2; };
+						}
+						else if (i_a == 5) { var x_a = '2&pi;'; var x_a_val = Math.PI; };
+
+						if (i_b == 0) { var x_b = '0'; var x_b_val = 0; }
+						else if (i_b == 1) { var x_b = '&pi;/4'; var x_b_val = Math.PI/4; }
+						else if (i_b == 2) { 
+							var x_b = '3&pi;/4'; var x_b_val = 3*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_b = '3&pi;/2'; var x_b_val = 3*Math.PI/2; };
+						}
+						else if (i_b == 3) { var x_b = '&pi;'; var x_b_val = Math.PI; }
+						else if (i_b == 4) { 
+							var x_b = '5&pi;/4'; var x_b_val = 5*Math.PI/4; 
+							if (a4 == 0 && a3 == 0) { var x_b = '3&pi;/2'; var x_b_val = 3*Math.PI/2; };
+						}
+						else if (i_b == 5) { var x_b = '2&pi;'; var x_b_val = Math.PI; };
+
+						if (t == 0) {
+							var answer = (a/exp)*(Math.cos(x_b_val**exp) - Math.cos(x_a_val**exp));
+						}
+						else if (t == 1) {
+							var answer = -(a/exp)*(Math.sin(x_b_val**exp) - Math.sin(x_a_val**exp));
+						};
+        			};
+
+					var q_string = '&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br><sub><sub>" + x_a.toString() + "</sub></sub> &int; <sup><sup>" + x_b.toString() + "</sup></sup> &nbsp;&#402;(x) dx &nbsp;=&nbsp; ?";
+					document.getElementById("question").innerHTML = '<sub>&nbsp;</sub><sup>&nbsp;</sup>' + q_string;
+        			localStorage.setItem('q_output', answer);
+        		};
+        	}
+        	else if (operator_int == 7){
+        		var p = Math.random();
+        		if (p < 0.333) {
+	        		var complexity = Math.random();
+					var a = Math.floor(Math.random() * 16);
+	    			if (Math.random() < 0.5) { a = -a };
+					var b = Math.floor(Math.random() * 16);
+					if (Math.random() < 0.5) { b = -b };
+					var c = Math.floor(Math.random() * 16);
+					if (Math.random() < 0.5) { c = -c };
+					var d = Math.floor(Math.random() * 16);
+					if (Math.random() < 0.5) { d = -d };
+
+					var x_b = Math.ceil(Math.random() * 21);
+					var x_a = Math.floor(Math.random() * x_b);
+	    			if (Math.random() < 0.25) { x_copy = x_b; x_b = -x_a; x_a = -x_copy; };
+
+					var f_string = '';
+					if (complexity < 0.225) {
+						var answer = ((a/2)*x_b**2 + (b)*x_b) - ((a/2)*x_a**2 + (b)*x_a);
+						var coeffs = [a, b];
+					}
+					else if (complexity < 0.575) {
+						var answer = ((a/3)*x_b**3 + (b/2)*x_b**2 + c*x_b) - ((a/3)*x_a**3 + (b/2)*x_a**2 + c*x_a);
+						var coeffs = [a, b, c];
+					}
+					else if (complexity < 0.8) {
+						var answer = ((a/4)*x_b**4 + (b/3)*x_b**3 + (c/2)*x_b**2 + d*x_b) - ((a/4)*x_a**4 + (b/3)*x_a**3 + (c/2)*x_a**2 + d*x_a);
+						var coeffs = [a, b, c, d];
+					}
+					else {
+						var coeffs = [];
+						var exp_p = Math.random();
+						if (exp_p < 0.2) {
+							f_string = a.toString() + 'x<sup>1/2</sup>';
+							var exp = 1.5;
+						}
+						if (exp_p < 0.4) {
+							f_string = a.toString() + 'x<sup>3/2</sup>';
+							var exp = 2.5;
+						}
+						if (exp_p < 0.6) {
+							f_string = a.toString() + 'x<sup>-1/2</sup>';
+							var exp = 0.5;
+						}
+						if (exp_p < 0.8) {
+							f_string = a.toString() + 'x<sup>-2</sup>';
+							var exp = -1;
+						}
+						else {
+							f_string = a.toString() + 'x<sup>-3</sup>';
+							var exp = -2;
+						}
+						var answer = (a/exp)*(x_b)**(exp) - (a/exp)*(x_a)**(exp);
+					};
+
+					if (f_string == '') {
+						for (var i = 0; i < coeffs.length; i++) {
+							if (coeffs[i] != 0) {
+								if (f_string != '' && coeffs[i] > 0) {
+									f_string += ' &nbsp;+&nbsp; '
+								};
+								if (f_string != '' && coeffs[i] < 0) {
+									f_string += ' &nbsp;-&nbsp; '
+								};
+								var exp = coeffs.length - i - 1
+								if (exp == 0) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								else if (exp == 1) {
+									if (Math.abs(coeffs[i]) != 1) {
+										f_string += Math.abs(coeffs[i]).toString()
+									}
+									f_string += 'x'
+								}
+								else {
+									if (Math.abs(coeffs[i]) != 1) {
+										f_string += Math.abs(coeffs[i]).toString()
+									}
+									f_string += 'x<sup>' + exp.toString() + '</sup>'
+								};
+							};
+						};
+					};
+					answer = answer / (x_b - x_a);
+	        		document.getElementById("question").innerHTML = '<sub>&nbsp;</sub><sup>&nbsp;</sup>&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br>" + x_a.toString() + " &nbsp;&leq;&nbsp; x &nbsp;&leq;&nbsp; " + x_b.toString() + " &nbsp; &nbsp; avg(&#402;(x)) &nbsp;=&nbsp; ?";
+	        		localStorage.setItem('q_output', answer);
+        		}
+        		else if (p < 0.667) {
+	        		var complexity = Math.random();
+					var a = Math.floor(Math.random() * 16);
+	    			if (Math.random() < 0.5) { a = -a };
+					var b = Math.floor(Math.random() * 16);
+					if (Math.random() < 0.5) { b = -b };
+					var c = Math.floor(Math.random() * 16);
+					if (Math.random() < 0.5) { c = -c };
+					var d = Math.floor(Math.random() * 16);
+					if (Math.random() < 0.5) { d = -d };
+
+					var x_b = Math.ceil(Math.random() * 21);
+					var x_a = Math.floor(Math.random() * x_b);
+	    			if (Math.random() < 0.25) { x_copy = x_b; x_b = -x_a; x_a = -x_copy; };
+
+					var f_string = '';
+					if (complexity < 0.3) {
+						var v_b = (1/(3*a))*(a*x_b + b)**3;
+						var v_a = (1/(3*a))*(a*x_a + b)**3;
+						var answer = Math.PI*(v_b - v_a);
+						var coeffs = [a, b];
+						var axis = 'x';
+					}
+					else if (complexity < 0.6) {
+						var v_b = (1/(3*a))*(x_b)**3;
+						var v_a = (1/(3*a))*(x_a)**3;
+						var answer = Math.PI*(v_b - v_a);
+						var coeffs = [a, b];
+						var axis = 'y';
+					}
+					else {
+						var v_b = (x_b/30)*(6*a*a*x_b**4 + 15*a*b*x_b**3 + (20*a*c + 10*b*b)*x_b**2 + 30*b*c*x_b + 30*c**2);
+						var v_a = (x_a/30)*(6*a*a*x_a**4 + 15*a*b*x_a**3 + (20*a*c + 10*b*b)*x_a**2 + 30*b*c*x_a + 30*c**2);
+						var answer = Math.PI*(v_b - v_a);
+						var coeffs = [a, b, c];
+						var axis = 'x';
+					};
+
+					if (f_string == '') {
+						for (var i = 0; i < coeffs.length; i++) {
+							if (coeffs[i] != 0) {
+								if (f_string != '' && coeffs[i] > 0) {
+									f_string += ' &nbsp;+&nbsp; '
+								};
+								if (f_string != '' && coeffs[i] < 0) {
+									f_string += ' &nbsp;-&nbsp; '
+								};
+								var exp = coeffs.length - i - 1
+								if (exp == 0) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								else if (exp == 1) {
+									if (Math.abs(coeffs[i]) != 1) {
+										f_string += Math.abs(coeffs[i]).toString()
+									}
+									f_string += 'x'
+								}
+								else {
+									if (Math.abs(coeffs[i]) != 1) {
+										f_string += Math.abs(coeffs[i]).toString()
+									}
+									f_string += 'x<sup>' + exp.toString() + '</sup>'
+								};
+							};
+						};
+					};
+
+	        		document.getElementById("question").innerHTML = '<sub>&nbsp;</sub><sup>&nbsp;</sup>&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br>" + x_a.toString() + " &nbsp;&leq;&nbsp; x &nbsp;&leq;&nbsp; " + x_b.toString() + " &nbsp; &nbsp; V<sub>" + axis + "</sub> &nbsp;=&nbsp; ?";
+	        		localStorage.setItem('q_output', answer);
+        		}
+        		else {
+	        		var complexity = Math.random();
+					var a = Math.floor(Math.random() * 16);
+	    			if (Math.random() < 0.5) { a = -a };
+					var b = Math.floor(Math.random() * 16);
+					if (Math.random() < 0.5) { b = -b };
+					var c = Math.floor(Math.random() * 16);
+					if (Math.random() < 0.5) { c = -c };
+					var d = Math.floor(Math.random() * 16);
+					if (Math.random() < 0.5) { d = -d };
+
+					var x_b = Math.ceil(Math.random() * 21);
+					var x_a = Math.floor(Math.random() * x_b);
+	    			if (Math.random() < 0.25) { x_copy = x_b; x_b = -x_a; x_a = -x_copy; };
+
+					var f_string = '';
+					if (complexity < 0.3) {
+						var v_b = (a*x_b + b)*Math.sqrt(1 + a);
+						var v_a = (a*x_a + b)*Math.sqrt(1 + a);
+						var answer = 2*Math.PI*(v_b - v_a);
+						var coeffs = [a, b];
+						var axis = 'x';
+					}
+					else if (complexity < 0.6) {
+						var v_b = x_b*Math.sqrt(1 + 1/a);
+						var v_a = x_a*Math.sqrt(1 + 1/a);
+						var answer = 2*Math.PI*(v_b - v_a);
+						var coeffs = [a, b];
+						var axis = 'y';
+					}
+					else if (complexity < 0.875) {
+						var a_i = Math.floor(Math.random() * 4);
+						if (a_i == 0) { a = 1 }
+						else if (a_i == 1) { a = 2 }
+						else if (a_i == 2) { a = 8 }
+						else if (a_i == 3) { a = 3 };
+						var v_b = ((2*a*x_b**2 + 1)**1.5)*(3*a*x_b**2 - 1)/(30*a);
+						var v_a = ((2*a*x_a**2 + 1)**1.5)*(3*a*x_a**2 - 1)/(30*a);
+						var answer = 2*Math.PI*(v_b - v_a);
+						var coeffs = [a];
+						var axis = 'x';
+						if (a != 1) {
+							var f_string = a.toString() + 'x<sup>3</sup>';
+						}
+						else { var f_string = 'x<sup>3</sup>'; }
+					}
+					else {
+						var v_b = ((2*a*x_b + 1)**1.5)*(a*(3*x_b*(5*a*x_b - 2) + 35*c) + 2)/(105*a**2);
+						var v_a = ((2*a*x_a + 1)**1.5)*(a*(3*x_a*(5*a*x_a - 2) + 35*c) + 2)/(105*a**2);
+						var answer = 2*Math.PI*(v_b - v_a);
+						var coeffs = [a, c];
+						var f_string = a.toString() + 'x<sup>3</sup>';
+						if (Math.abs(a) != 1) { var f_string = a.toString() + 'x<sup>2</sup>'; }
+						else if (a == -1) { var f_string = '-x<sup>2</sup>'; }
+						else { var f_string = 'x<sup>2</sup>'; };
+						if (c > 0) { f_string += ' &nbsp;+&nbsp; ' + c.toString(); };
+						if (c < 0) { f_string += ' &nbsp;-&nbsp; ' + Math.abs(c).toString(); };
+					};
+
+					if (f_string == '') {
+						for (var i = 0; i < coeffs.length; i++) {
+							if (coeffs[i] != 0) {
+								if (f_string != '' && coeffs[i] > 0) {
+									f_string += ' &nbsp;+&nbsp; '
+								};
+								if (f_string != '' && coeffs[i] < 0) {
+									f_string += ' &nbsp;-&nbsp; '
+								};
+								var exp = coeffs.length - i - 1
+								if (exp == 0) {
+									f_string += Math.abs(coeffs[i]).toString()
+								}
+								else if (exp == 1) {
+									if (Math.abs(coeffs[i]) != 1) {
+										f_string += Math.abs(coeffs[i]).toString()
+									}
+									f_string += 'x'
+								}
+								else {
+									if (Math.abs(coeffs[i]) != 1) {
+										f_string += Math.abs(coeffs[i]).toString()
+									}
+									f_string += 'x<sup>' + exp.toString() + '</sup>'
+								};
+							};
+						};
+					};
+
+	        		document.getElementById("question").innerHTML = '<sub>&nbsp;</sub><sup>&nbsp;</sup>&#402;(x) &nbsp;=&nbsp; ' + f_string + "<br>" + x_a.toString() + " &nbsp;&leq;&nbsp; x &nbsp;&leq;&nbsp; " + x_b.toString() + " &nbsp; &nbsp; S<sub>x</sub> &nbsp;=&nbsp; ?";
+	        		localStorage.setItem('q_output', answer);
+        		};
+        	};
+		};
+	</script>
+
+</body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
+</html>

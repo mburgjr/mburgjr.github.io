@@ -1,118 +1,984 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
+	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
 	<style>
-		body {
-		  margin: 0;
-		  font-family: Arial;
-		  text-decoration: none;
-		}
-
-		.header {
-			background-color: #000066;
-			text-align: left;
-			color: white;
-		}
-
-		.header div.info {
-			text-align: right;
-			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
-			float: right;
-		}
-
-		.header div.logo {
-			float: left;
-		}
-		
-		.header a {
-		  	text-decoration: none;
-			font-size: 20px;
-			font-weight: bold;
-			color: white;
-		}
-
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
-		}
-
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
-
-		.main-nav a:hover {
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		.main-nav a.active {
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		.sub-nav {
-		  overflow: hidden;
-		  background-color: #66B2FF;
-		}
-
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
-
-		.sub-nav a:hover {
-		  background-color: #FFFFFF;
-		  color: #66B2FF;
-		}
-
-		.sub-nav a.active {
-		  background-color: #FFFFFF;
-		  color: #66B2FF;
-		}
 	</style>
-
 </head>
-<body>
-	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="1-6.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-0.html"><span style="font-size: 1.2em">&#9632;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-1.html">&Theta;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-2.html"><span style="font-size: 0.9em">&#9699;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-3.html"><span style="font-size: 1.25em">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-4.html">&#8737;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-5.html"><span style="font-size: 1.05em">&nearr;</span></a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="1-6.html"><span style="font-size: 1.05em">&#8630;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-7.html"><span style="font-size: 1.5em">&bull;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-8.html"><span style="font-size: 1.2em">&#10541;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-Q.html">?</a></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button10" type="button" onclick="scrollToIndex(10)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button11" type="button" onclick="scrollToIndex(11)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button12" type="button" onclick="scrollToIndex(12)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button13" type="button" onclick="scrollToIndex(13)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button14" type="button" onclick="scrollToIndex(14)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button15" type="button" onclick="scrollToIndex(15)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button16" type="button" onclick="scrollToIndex(16)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button17" type="button" onclick="scrollToIndex(17)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button18" type="button" onclick="scrollToIndex(18)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button19" type="button" onclick="scrollToIndex(19)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+
+		<table id="scroll_item0" style="width: 95%; margin-top: 5%; margin-left: 2.5%; font-size: 1.85em; line-height: 2em; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 60%; font-size: 1.1em; padding-right: 5%; padding-bottom: 2.5%">
+					&nbsp;&nbsp;P<sub> (x, y)</sub> &nbsp;=&nbsp; P<sub> (r, &theta;)</sub>
+					<br><br>
+					<img src="images/1/1-6/polar_intro.png" width="87.5%" style="">				
+				</td>
+				<td style="width: 40%; padding-left: 3.5%">
+					<img src="images/1/1-6/polar_intro_base.png" width="30%" style="">
+					<table style="width: 100%">
+						<tr style="width: 100%">
+							<td style="width: 40%; line-height: 1.45em; padding-left: 5%">
+								&theta; &darr; ,&nbsp; r &uarr;
+								<br>x &uarr;
+								<br>&nbsp;
+							</td>
+							<td style="width: 60%;">
+								<img src="images/1/1-6/polar_intro_x.png" width="60%" style="">
+							</td>
+						</tr>
+						<tr style="width: 100%">
+							<td style="width: 40%; line-height: 1.45em; padding-left: 5%">
+								&theta; &uarr; ,&nbsp; r &uarr;
+								<br>y &uarr;
+								<br>&nbsp;
+							</td>
+							<td style="width: 60%;">
+								<img src="images/1/1-6/polar_intro_y.png" width="37.5%" style="">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>		
+		</table>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 3.5%; border-radius: 2.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item1" style="width: 100.1%; font-size: 1.75em; line-height: 2em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 100%; border-bottom-style: solid; border-width: medium;">
+						<table style="width: 100%">
+							<tr style="width: 100%">
+								<td style="width: 50%; padding-top: 5.5%; padding-bottom: 4%; padding-left: 10%">
+									( x, y ) &nbsp; &rarr; &nbsp; ( r, &theta; )
+									<br>v<sub>(x, y)</sub> &nbsp;=&nbsp; < x, y > &nbsp; &rarr; &nbsp; v<sub>(r, &theta;)</sub> &nbsp;=&nbsp; < r, &theta; >
+									<br>( x, y ) &nbsp;&ne;&nbsp; ( r, &theta; ) , &nbsp; v<sub>(x, y)</sub> &nbsp;&ne;&nbsp; v<sub>(r, &theta;)</sub>
+									<br><br>
+									<img src="images/1/1-6/polar_defn.png" width="47.5%" style="">
+								</td>
+								<td style="width: 50%; padding-top: 6.5%; padding-bottom: 5%; padding-right: 7.5%">
+									<img src="images/1/1-6/polar_tri.png" width="75%" style="">	
+								</td>			
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 100%; text-align: left; padding-top: 7.5%; padding-bottom: 5%">
+						<img src="images/1/1-6/polar_xyconcept.png" width="65%" style="margin-left: 17%;">
+						<img src="images/1/1-6/polar_pendulum.png" width="66.5%" style="margin-left: 19.35%;">
+					</td>
+				</tr>		
+			</table>
 		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
+
+		<table id="scroll_item2" style="width: 90%; margin-left: 5%; margin-top: 5.5%; font-size: 1.65em; line-height: 1.85em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 7.5%">
+				</td>
+				<td style="width: 20%; padding-top: 3.5%">
+					P &nbsp;=&nbsp; (1, 0)
+					<br>x = 1 , &nbsp; y = 0
+				</td>
+				<td style="width: 40%; padding-top: 3.5%">
+					<img src="images/1/1-6/polar_ex1.png" width="55%" style="">
+				</td>
+				<td style="width: 25%; padding-top: 3.5%">
+					r &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">1 + 0</span></span> &nbsp;=&nbsp; 1
+					<br>&theta; &nbsp;=&nbsp; tan<sup>-1</sup>(0/1) &nbsp;=&nbsp; 0
+				</td>
+				<td style="width: 7.5%">
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 7.5%">
+				</td>
+				<td style="width: 20%; padding-top: 2.5%">
+					P &nbsp;=&nbsp; (1, 1)
+					<br>x = 1 , &nbsp; y = 1
+				</td>
+				<td style="width: 40%; padding-top: 2.5%; padding-right: 2.5%">
+					<img src="images/1/1-6/polar_ex2.png" width="52.5%" style="">
+				</td>
+				<td style="width: 25%; padding-top: 2.5%">
+					r &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">1 + 1</span></span> &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span>
+					<br>&theta; &nbsp;=&nbsp; tan<sup>-1</sup>(1/1) &nbsp;=&nbsp; &pi;/4
+				</td>
+				<td style="width: 7.5%">
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 7.5%">
+				</td>
+				<td style="width: 20%; padding-top: 2.5%">
+					P &nbsp;=&nbsp; (4, 3)
+					<br>x = 4 , &nbsp; y = 3
+					<br>&nbsp;
+				</td>
+				<td style="width: 40%; padding-top: 2.5%; padding-right: 2.5%">
+					<img src="images/1/1-6/polar_ex3.png" width="55%" style="">
+				</td>
+				<td style="width: 25%; padding-top: 2.5%">
+					r &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">16 + 9</span></span> &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">25</span></span> &nbsp;=&nbsp; 5
+					<br>&theta; &nbsp;=&nbsp; tan<sup>-1</sup>(3/4) &nbsp;&asymp;&nbsp; 0.6435
+					<br>&nbsp;
+				</td>
+				<td style="width: 7.5%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item3" style="width: 90%; margin-left: 5%; margin-top:5%; border-style: solid; border-width: medium; border-color: black; border-radius: 1.5em; padding: 5%; font-size: 1.5em">
+			<tr style="width: 100%;">
+				<td style="width: 25%; text-align: center;">
+					<div id="shape_input" style="border-style: solid; border-width: medium; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 90%; margin-left: 5%; margin-top: -0.125em; border-radius: 1em;">
+						<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < x, y >
+						<br>
+						<br>
+						x &nbsp;=&nbsp; <input id="x" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						y &nbsp;=&nbsp; <input id="y" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						<button type="button" class="calc_button" style="font-size: 0.75em; border-style: solid; border-width: medium; border-color: black; border-radius: 0.5em;" onclick="drawVec()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</td>
+				<td style="width: 50%">
+					<canvas id="canvas" style="width: 100%">
+
+					</canvas>
+				</td>
+				<td style="width: 25%">
+					<div style="border-style: solid; border-width: medium; border-color: black; padding-top: 8.5%; padding-bottom: 7.5%; width: 85%; margin-left: 7.5%; border-radius: 1em; text-align: center;">
+						r &nbsp;=&nbsp; <span id="output_r">0.000000</span>
+						<br><br>
+						&theta; &nbsp;=&nbsp; <span id="output_t">0.000000</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<p id="scroll_item4" style="width: 100%; text-align: center; font-size: 2em; margin-top: 6%; line-height: 2em">
+			(x, y) &nbsp; &rarr; &nbsp; (r, &theta;) , &nbsp; &nbsp; (x, y) &nbsp; &larr; &nbsp; (r, &theta;)
+		</p>
+
+		<table id="scroll_item5" style="width: 90%; margin-left: 5%; margin-top: 6%; border-style: solid; border-width: medium; border-color: black; text-align: center; border-radius: 1.5em; font-size: 1.75em; line-height: 2em;">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding-top: 6.5%; padding-bottom: 6%; padding-left: 7.5%">
+					&nbsp;( r, &theta; ) &nbsp; &rarr; &nbsp; ( x, y )
+					<br>&nbsp;v<sub>(r, &theta;)</sub> &nbsp;=&nbsp; < r, &theta; > &nbsp; &rarr; &nbsp; v<sub>(x, y)</sub> &nbsp;=&nbsp; < x, y >
+					<br>
+					<span style="font-size: 1.1em">
+						<sup>&nbsp;</sup>x &nbsp;=&nbsp; rcos(&theta;)
+						<br><sup>&nbsp;</sup>y &nbsp;=&nbsp; rsin(&theta;)
+					</span>
+				</td>
+				<td style="width: 50%; padding-top: 5%; padding-bottom: 3.5%; padding-right: 6.5%">
+					<img src="images/1/1-6/polar_tri.png" width="67.5%" style="">	
+				</td>			
+			</tr>
+		</table>
+
+		<table id="scroll_item6" style="width: 90%; margin-left: 5%; margin-top: 5.5%; font-size: 1.65em; line-height: 1.85em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 7.5%">
+				</td>
+				<td style="width: 20%; padding-top: 3.5%">
+					P &nbsp;=&nbsp; (1, 0)
+					<br>r = 1 , &nbsp; &theta; = 0
+				</td>
+				<td style="width: 40%; padding-top: 3.5%">
+					<img src="images/1/1-6/polar_invex1.png" width="55%" style="">
+				</td>
+				<td style="width: 25%; padding-top: 3.5%">
+					x &nbsp;=&nbsp; cos(0) &nbsp;=&nbsp; 1
+					<br>y &nbsp;=&nbsp; sin(0) &nbsp;=&nbsp; 0
+				</td>
+				<td style="width: 7.5%">
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 7.5%">
+				</td>
+				<td style="width: 20%; padding-top: 2.5%">
+					P &nbsp;=&nbsp; (1, &pi;/4)
+					<br>r = 1 , &nbsp; &theta; = &pi;/4
+				</td>
+				<td style="width: 40%; padding-top: 2.5%; padding-right: 2.5%">
+					<img src="images/1/1-6/polar_invex2.png" width="52.5%" style="">
+				</td>
+				<td style="width: 25%; padding-top: 2.5%">
+					x &nbsp;=&nbsp; cos(&pi;/4) &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span> / 2
+					<br>y &nbsp;=&nbsp; sin(&pi;/4) &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span> / 2
+				</td>
+				<td style="width: 7.5%">
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 7.5%">
+				</td>
+				<td style="width: 20%; padding-top: 2.5%">
+					P &nbsp;=&nbsp; (1, &pi;/3)
+					<br>r = 1 , &nbsp; &theta; = &pi;/3
+					<br>&nbsp;
+				</td>
+				<td style="width: 40%; padding-top: 2.5%; padding-right: 2.5%">
+					<img src="images/1/1-6/polar_invex3.png" width="45%" style="">
+				</td>
+				<td style="width: 25%; padding-top: 2.5%">
+					x &nbsp;=&nbsp; cos(&pi;/3) &nbsp;=&nbsp; 1 / 2
+					<br>y &nbsp;=&nbsp; sin(&pi;/3) &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">3</span></span> / 2
+					<br>&nbsp;
+				</td>
+				<td style="width: 7.5%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item7" style="width: 90%; margin-left: 5%; margin-top: 5%; border-style: solid; border-width: medium; border-color: black; border-radius: 1.5em; padding: 5%; font-size: 1.5em;">
+			<tr style="width: 100%;">
+				<td style="width: 25%; text-align: center;">
+					<div id="shape_input" style="border-style: solid; border-width: medium; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 90%; margin-left: 5%; margin-top: -0.125em; border-radius: 1em;">
+						<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < r, &theta; >
+						<br>
+						<br>
+						r &nbsp;=&nbsp; <input id="r" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						&theta; &nbsp;=&nbsp; <input id="t" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						<button type="button" class="calc_button" style="font-size: 0.65em; border-style: solid; border-width: medium; border-color: black;" onclick="drawVec_inv('rad')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &pi; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+						<button type="button" class="calc_button" style="font-size: 0.65em; border-style: solid; border-width: medium; border-color: black;" onclick="drawVec_inv('deg')">&nbsp;&nbsp;&nbsp;&nbsp; 180&#176; &nbsp;&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</td>
+				<td style="width: 50%">
+					<canvas id="canvas2" style="width: 100%">
+
+					</canvas>
+				</td>
+				<td style="width: 25%">
+					<div style="border-style: solid; border-width: medium; border-color: black; padding-top: 8.5%; padding-bottom: 7.5%; width: 85%; margin-left: 7.5%; border-radius: 1em; text-align: center;">
+						x &nbsp;=&nbsp; <span id="output_x">0.000000</span>
+						<br><br>
+						y &nbsp;=&nbsp; <span id="output_y">0.000000</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item8" style="width: 90%; margin-left: 5%; margin-top: 6.5%; font-size: 1.75em; line-height: 2em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<table style="width: 100%">
+						<tr style="width: 100%">
+							<td style="width: 40%">
+								<img src="images/1/1-6/polar_unit.png" width="57.5%" style="">
+								
+							</td>
+							<td style="width: 20%">
+								x&#770; &nbsp;=&nbsp; r&#770; cos(&theta;&#770;)
+								<br>y&#770; &nbsp;=&nbsp; r&#770; sin(&theta;&#770;)
+								<br><br>&nbsp; r&#770; &nbsp;=&nbsp; ( x&#770;<sup>2</sup> + y&#770;<sup>2</sup> )<sup>1/2</sup>
+								<br>&theta;&#770; &nbsp;=&nbsp; tan<sup>-1</sup>( y&#770; / x&#770; )
+							</td>
+							<td style="width: 40%">
+								<img src="images/1/1-6/polar_polarunit.png" width="57.5%" style="">
+								
+							</td>						
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 100%; padding-top: 2.5%">
+					<table style="width: 70%; margin-left: 15%">
+						<tr style="width: 100%">
+							<td style="width: 50%; padding-top: 2.5%">
+								<span style="border-top: 0.075em solid #000;">P</span> &nbsp;+&nbsp; kx&#770; &nbsp; = &nbsp; < x &uarr; , y >
+								<br><span style="border-top: 0.075em solid #000;">P</span> &nbsp;−&nbsp; kx&#770; &nbsp; = &nbsp; < x &darr; , y >
+								<br><span style="border-top: 0.075em solid #000;">P</span> &nbsp;+&nbsp; ky&#770; &nbsp; = &nbsp; < x , y &uarr; >
+								<br><span style="border-top: 0.075em solid #000;">P</span> &nbsp;−&nbsp; ky&#770; &nbsp; = &nbsp; < x , y &darr; >
+							</td>
+							<td style="width: 50%; padding-top: 2.5%">
+								<span style="border-top: 0.075em solid #000;">P</span> &nbsp;+&nbsp; kr&#770; &nbsp; = &nbsp; < r &uarr; , &theta; >
+								<br><span style="border-top: 0.075em solid #000;">P</span> &nbsp;−&nbsp; kr&#770; &nbsp; = &nbsp; < r &darr; , &theta; >
+								<br><span style="border-top: 0.075em solid #000;">P</span> &nbsp;+&nbsp; k&theta;&#770; &nbsp; = &nbsp; < r , &theta; &uarr; >
+								<br><span style="border-top: 0.075em solid #000;">P</span> &nbsp;−&nbsp; k&theta;&#770; &nbsp; = &nbsp; < r , &theta; &darr; >							
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item9" style="width: 90%; margin-left: 5%; margin-top: 5%; border-style: solid; border-width: medium; border-color: black; text-align: center; font-size: 1.65em; line-height: 1.85em; border-radius: 2em">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding-top: 5%; padding-bottom: 5.5%; padding-left: 7.5%">
+					f(x) &nbsp;=&nbsp; y ,&nbsp; f<sup>-1</sup>(y) &nbsp;=&nbsp; x
+					<br>g(&theta;) &nbsp;=&nbsp; r ,&nbsp; g<sup>-1</sup>(r) &nbsp;=&nbsp; &theta;
+					<br>
+					<br>f(x) &nbsp; &rarr; &nbsp; g(&theta;)
+					<br><sub>&nbsp;</sub>f(x) &nbsp;=&nbsp; f(rcos(&theta;)) &nbsp;=&nbsp; y &nbsp;=&nbsp; rsin(&theta;)<sub>&nbsp;</sub>
+					<br><sup>&nbsp;</sup>g(&theta;) &nbsp; &rarr; &nbsp; f(x)<sup>&nbsp;</sup>
+					<br>g(&theta;) &nbsp;=&nbsp; g(tan<sup>-1</sup>(y/x)) &nbsp;=&nbsp; r &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;"> x<sup><sub> 2</sub></sup> &nbsp;+&nbsp; y<sup><sub> 2</sub></sup></span></span>
+				</td>
+				<td style="width: 50%; padding-top: 5.5%; padding-bottom: 2.5%; padding-right: 2.5%">
+					<img src="images/1/1-6/polar_conv.png" width="45%" style="">
+					<br>
+					<img src="images/1/1-6/polar_pointvec.png" width="52.5%" style="margin-top: 2.5%; padding-right: 2.5%">	
+				</td>	
+			</tr>
+		</table>
+
+		<table id="scroll_item10" style="width: 60%; margin-left: 20%; margin-top: 6.5%; font-size: 1.5em; line-height: 1.85em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 55%; text-align: left; padding-left: 5%; padding-bottom: 2.5%">
+					f(x) &nbsp;=&nbsp; mx &nbsp;=&nbsp; y , &nbsp; b = 0&nbsp;
+					<br>f(rcos(&theta;)) = mrcos(&theta;) &nbsp;=&nbsp; rsin(&theta;)<sup>&nbsp;</sup>
+					<br>m &nbsp;=&nbsp; rsin(&theta;) / (rcos(&theta;))<sup>&nbsp;</sup>
+					<br>m &nbsp;=&nbsp; sin(&theta;) / cos(&theta;) &nbsp;=&nbsp; tan(&theta;)<sup>&nbsp;</sup>
+					<br>&theta; &nbsp;=&nbsp; tan<sup>-1</sup>(m) &nbsp;=&nbsp; &phi; , &nbsp; r &in; &#8477;
+				</td>
+				<td style="width: 45%;">
+					<img src="images/1/1-6/polar_conv_ex1.png" width="80%" style="">
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 55%; text-align: left; padding-left: 5%; padding-top:2.5%">
+					g<sup>-1</sup>(r) &nbsp;=&nbsp; a &nbsp;, &nbsp; &theta; &in; &#8477;
+					<br>r &nbsp;=&nbsp; a &nbsp; &rarr; &nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;"> x<sup><sub>2</sub></sup> + y<sup><sub>2</sub></sup></span></span> &nbsp;=&nbsp; a
+					<br>x<sup>2</sup> + y<sup>2</sup> &nbsp;=&nbsp; a<sup>2</sup> &nbsp; &rarr; &nbsp; y<sup>2</sup> &nbsp;=&nbsp; a<sup>2</sup> - x<sup>2</sup>
+					<br>f(x) &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;"> a<sup><sub>2</sub></sup> - x<sup><sub>2</sub></sup></span></span> &nbsp;=&nbsp; y
+				</td>
+				<td style="width: 45%; padding-top:5%">
+					<img src="images/1/1-6/polar_conv_ex2.png" width="80%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item11" style="width: 95%; margin-left: 2.5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black; text-align: center; border-radius: 1em; font-size: 1.5em; line-height: 1.75em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<table style="width: 95%; margin-left: 2.5%">
+						<td style="width: 33.33%; padding-top: 5%;">
+							<img src="images/1/1-6/polar_graph1.png" width="70%" style="">
+							<br>r &nbsp;=&nbsp; a
+							<br>&theta; = 0 &nbsp;&rarr;&nbsp; r = a
+							<br>&theta; = &pi;/2 &nbsp;&rarr;&nbsp; r = a
+						</td>
+						<td style="width: 33.33%; padding-top: 5%;">
+							<img src="images/1/1-6/polar_graph2.png" width="70%" style="">
+							<br>&theta; &nbsp;=&nbsp; &phi;
+							<br>r = 0 &nbsp;&rarr;&nbsp; &theta; = &phi;
+							<br>r = 10 &nbsp;&rarr;&nbsp; &theta; = &phi;
+						</td>
+						<td style="width: 33.33%; padding-top: 5%;">
+							<img src="images/1/1-6/polar_graph3.png" width="70%" style="">
+							<br>r &nbsp;=&nbsp; &theta;
+							<br>&theta; = 0 &nbsp;&rarr;&nbsp; r = 0
+							<br>&theta; = &pi;/2 &nbsp;&rarr;&nbsp; r = &pi;/2
+						</td>
+					</table>
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<table style="width: 65%; margin-left: 17.5%">
+						<td style="width: 50%; padding-top: 3.5%; padding-bottom: 6.5%;">
+							<img src="images/1/1-6/polar_graph4.png" width="67.5%" style="">
+							<br>r &nbsp;=&nbsp; asin(&theta;)
+							<br>&theta; = 0 &nbsp;&rarr;&nbsp; r = asin(0) = 0
+							<br>&theta; = &pi;/2 &nbsp;&rarr;&nbsp; r = asin(&pi;/2) = a
+						</td>
+						<td style="width: 50%; padding-top: 3.5%; padding-bottom: 6.5%;">
+							<img src="images/1/1-6/polar_graph5.png" width="70%" style="">
+							<br>r &nbsp;=&nbsp; acos(&theta;)
+							<br>&theta; = 0 &nbsp;&rarr;&nbsp; r = acos(0) = a
+							<br>&theta; = &pi;/2 &nbsp;&rarr;&nbsp; r = acos(&pi;/2) = 0
+						</td>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item12" style="width: 70%; margin-left: 15%; margin-top: 4.5%; font-size: 1.65em; line-height: 2em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 65%; padding-top: 3.5%">
+					&theta; = 0
+					<br>x&#770; &nbsp;=&nbsp; r&#770;cos(&theta;) , &nbsp; cos(&theta;) &nbsp;&asymp;&nbsp; 1 &nbsp; &rarr; &nbsp; r&#770; &nbsp;=&nbsp; x&#770;
+					<br>y&#770; &nbsp;=&nbsp; rsin(&theta;&#770;) , &nbsp; sin(&theta;&#770;) &nbsp;&asymp;&nbsp; &theta;&#770; &nbsp; &rarr; &nbsp; &theta;&#770; &nbsp;=&nbsp; y&#770;
+				</td>
+				<td style="width: 35%; padding-top: 3.5%">
+					<img src="images/1/1-6/polar_unit_ex1.png" width="85%" style="">
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 65%; padding-top: 3.5%">
+					&theta; = &pi;/2
+					<br>x&#770; &nbsp;=&nbsp; rcos(&theta;&#770;) , &nbsp; cos(&theta;) &nbsp;&asymp;&nbsp; -&theta;&#770; &nbsp; &rarr; &nbsp; &theta;&#770; &nbsp;=&nbsp; -x&#770;
+					<br>y&#770; &nbsp;=&nbsp; r&#770;sin(&theta;) , &nbsp; sin(&theta;&#770;) &nbsp;&asymp;&nbsp; 1 &nbsp; &rarr; &nbsp; r&#770; &nbsp;=&nbsp; y&#770;
+				</td>
+				<td style="width: 35%; padding-top: 3.5%">
+					<img src="images/1/1-6/polar_unit_ex2.png" width="52.5%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 6.5%; border-radius: 2.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item13" style="width: 100.1%; font-size: 1.5em; line-height: 1.85em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 3.5%; text-align: center; border-bottom-style: solid; border-width: medium; font-size: 1.2em">
+						< r<sub>1</sub> , &theta;<sub>1</sub> > &nbsp;+&nbsp; < r<sub>2</sub> , &theta;<sub>2</sub> > &nbsp; &ne; &nbsp; < r<sub>1</sub> + r<sub>2</sub> , &theta;<sub>1</sub> + &theta;<sub>2</sub> >
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 5%; text-align: center; border-bottom-style: solid; border-width: medium;">
+						<table style="width: 100%">
+							<tr style="width: 100%">
+								<td style="width: 40%">
+									<span style="border-top: 0.075em solid #000;">u</span> &nbsp; = &nbsp; < r<sub>1</sub> , &theta;<sub>1</sub> > , &nbsp; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < r<sub>2</sub> , &theta;<sub>2</sub> >
+									<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < r<sub>1</sub>cos(&theta;<sub>1</sub>) , r<sub>1</sub>sin(&theta;<sub>1</sub>) >
+									<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < r<sub>2</sub>cos(&theta;<sub>2</sub>) , r<sub>2</sub>sin(&theta;<sub>2</sub>) >
+									<br><span style="border-top: 0.075em solid #000;">a</span> + <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < r<sub>1</sub>cos(&theta;<sub>1</sub>) + r<sub>2</sub>cos(&theta;<sub>2</sub>) , <br>r<sub>1</sub>sin(&theta;<sub>1</sub>) + r<sub>2</sub>sin(&theta;<sub>2</sub>) >
+								</td>
+								<td style="width: 60%;">
+									<br>
+									<img src="images/1/1-6/polar_add.png" width="85%" style="">
+								</td>
+							</tr>
+						</table>
+						<br><span style="border-top: 0.075em solid #000;">u</span> &nbsp; = &nbsp; < <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span> , &pi;/4 > &nbsp; &rarr; &nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span>cos(&pi;/4) , <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span>sin(&pi;/4) > &nbsp; = &nbsp; < 1 , 1 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; < 1 , &pi;/2 > &nbsp; &rarr; &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < cos(&pi;/2) , sin(&pi;/2) > &nbsp;=&nbsp; < 0 , 1 ><sub>&nbsp;</sub>
+						<br><span style="border-top: 0.075em solid #000;">a</span> + <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < 1 , 1 > &nbsp;+&nbsp; < 0 , 1 > &nbsp;=&nbsp; < 1 , 2 >
+						<br><span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; < (1 + 2<sup>2</sup>)<sup>1/2</sup> &nbsp;,&nbsp; tan<sup>-1</sup>(2/1) > &nbsp; = &nbsp; < <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">5</span></span> , tan<sup>-1</sup>(2) >
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 5%; text-align: center; border-bottom-style: solid; border-width: medium;">
+						<table style="width: 100%">
+							<tr style="width: 100%">
+								<td style="width: 40%">
+									<span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; < r<sub>3</sub> , &theta;<sub>3</sub> > , &nbsp; <span style="border-top: 0.075em solid #000;">u</span> &nbsp;=&nbsp; < r<sub>1</sub> , &theta;<sub>1</sub> >
+									<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < r<sub>3</sub>cos(&theta;<sub>3</sub>) , r<sub>3</sub>sin(&theta;<sub>3</sub>) >
+									<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < r<sub>1</sub>cos(&theta;<sub>1</sub>) , r<sub>1</sub>sin(&theta;<sub>1</sub>) >
+									<br><span style="border-top: 0.075em solid #000;">a</span> - <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < r<sub>3</sub>cos(&theta;<sub>3</sub>) - r<sub>1</sub>cos(&theta;<sub>1</sub>) , <br>r<sub>3</sub>sin(&theta;<sub>3</sub>) - r<sub>1</sub>sin(&theta;<sub>1</sub>) >
+								</td>
+								<td style="width: 60%;">
+									<br>
+									<img src="images/1/1-6/polar_sub1.png" width="90%" style="">
+								</td>
+							</tr>
+						</table>
+						<br><span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; < <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">5</span></span> , tan<sup>-1</sup>(2) > &nbsp; &rarr; &nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < 1 , 2 >
+						<br><span style="border-top: 0.075em solid #000;">u</span> &nbsp; = &nbsp; < <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span> , &pi;/4 > &nbsp; &rarr; &nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span> cos(&pi;/4) , <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span> sin(&pi;/4) > &nbsp; = &nbsp; < 1 , 1 ><sub>&nbsp;</sub>
+						<br><span style="border-top: 0.075em solid #000;">a</span> - <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < 1 , 2 > &nbsp;-&nbsp; < 1 , 1 > &nbsp; = &nbsp; < 0 , 1 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; < <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">0 + 1</span></span> &nbsp;,&nbsp; tan<sup>-1</sup>(1/0) > &nbsp; = &nbsp; < 1 , &pi;/2 >
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 5%; text-align: center; border-bottom-style: none;">
+						<table style="width: 100%">
+							<tr style="width: 100%">
+								<td style="width: 40%">
+									<span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; < r<sub>3</sub> , &theta;<sub>3</sub> > , &nbsp; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < r<sub>2</sub> , &theta;<sub>2</sub> >
+									<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < r<sub>3</sub>cos(&theta;<sub>3</sub>) , r<sub>3</sub>sin(&theta;<sub>3</sub>) >
+									<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < r<sub>2</sub>cos(&theta;<sub>2</sub>) , r<sub>2</sub>sin(&theta;<sub>2</sub>) >
+									<br><span style="border-top: 0.075em solid #000;">a</span> - <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < r<sub>3</sub>cos(&theta;<sub>3</sub>) - r<sub>2</sub>cos(&theta;<sub>2</sub>) , <br>r<sub>3</sub>sin(&theta;<sub>3</sub>) - r<sub>2</sub>sin(&theta;<sub>2</sub>) >
+								</td>
+								<td style="width: 60%;">
+									<br>
+									<img src="images/1/1-6/polar_sub2.png" width="82.5%" style="">
+								</td>
+							</tr>
+						</table>
+						<br><span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; < <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">5</span></span> , tan<sup>-1</sup>(2) > &nbsp; &rarr; &nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < 1 , 2 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; < 1 , &pi;/2 > &nbsp; &rarr; &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < cos(&pi;/2) , sin(&pi;/2) > &nbsp; = &nbsp; < 0 , 1 ><sub>&nbsp;</sub>
+						<br><span style="border-top: 0.075em solid #000;">a</span> - <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < 1 , 2 > &nbsp;-&nbsp; < 0 , 1 > &nbsp; = &nbsp; < 1 , 1 >
+						<br><span style="border-top: 0.075em solid #000;">u</span> &nbsp; = &nbsp; < <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">1 + 1</span></span> &nbsp;,&nbsp; tan<sup>-1</sup>(1/1) > &nbsp; = &nbsp; < <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span> , &pi;/4 >
+					</td>
+				</tr>
+			</table>
 		</div>
-		<div class='main-nav'>
-			<a href="index.html">0</a>
-			<a class="active" href="1-0.html">1</a>
-			<a href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
+
+		<table id="scroll_item14" style="width: 95%; margin-left: 2.5%; margin-top: 6.5%; border-style: solid; border-width: medium; border-color: black; text-align: center; font-size: 1.75em; border-radius: 1.5em; line-height: 1.95em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<table style="width: 95%; margin-left: 2.5%">
+						<td style="width: 60%; padding-top: 3.5%;">
+							<img src="images/1/1-6/polar_d.png" width="62.5%" style="">
+						</td>
+						<td style="width: 40%; padding-top: 3.5%; padding-right: 2.5%;">
+							U &nbsp;=&nbsp; (r<sub>1</sub>, &theta;<sub>1</sub>)
+							<br>P &nbsp;=&nbsp; (r<sub>2</sub>, &theta;<sub>2</sub>)
+							<br>
+							<br><span style="border-top: 0.075em solid #000;">U</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">P</span>
+							<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < d , &phi; >
+						</td>
+					</table>
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 100%; padding-top: 2.5%; padding-bottom: 3.5%">
+					<img src="images/1/1-6/polar_norm.png" width="70%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item15" style="width: 95%; margin-left: 2.5%; margin-top: 6.5%; font-size: 1.65em; line-height: 2em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding-left: 7.5%">
+					U &nbsp;=&nbsp; (0, 5) , &nbsp; P &nbsp;=&nbsp; (&pi;/2, 10)
+					<br>d &nbsp;=&nbsp; (5<sup>2</sup> &nbsp;+&nbsp; 10<sup>2</sup> &nbsp;-&nbsp; 2 (5) (10) cos(&pi;/2 - 0))<sup>1/2</sup>
+					<br>d &nbsp;=&nbsp; (5<sup>2</sup> &nbsp;+&nbsp; 10<sup>2</sup> &nbsp;-&nbsp; 100cos(&pi;/2))<sup>1/2</sup>
+					<br>d &nbsp;=&nbsp; (5<sup>2</sup> &nbsp;+&nbsp; 10<sup>2</sup>)<sup>1/2</sup> &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">12500</span></span>
+				</td>
+				<td style="width: 50%">
+					<img src="images/1/1-6/polar_norm_ex.png" width="50%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item16" style="width: 95%; margin-left: 2.5%; margin-top: 6.5%; border-style: solid; border-width: medium; border-color: black; text-align: center; line-height: 1.75em; font-size: 1.5em; border-radius: 1.5em">
+			<tr style="width: 100%">
+				<td style="width: 60%; padding-top: 5%; padding-bottom: 5%; padding-left: 5%">
+					<span style="font-size: 1.05em">U &nbsp;=&nbsp; O &nbsp;=&nbsp; (0, 0) , &nbsp; P &nbsp;=&nbsp; (r<sub>2</sub>, &theta;<sub>2</sub>)
+					<br>d &nbsp;=&nbsp; (0 + r<sub>2</sub><sup>2</sup> - 0)<sup>1/2</sup> &nbsp;=&nbsp; (r<sub>2</sub><sup>2</sup>)<sup>1/2</sup> &nbsp;=&nbsp; r<sub>2</sub></span>
+					<br>
+					<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < 0, 0 > , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < r<sub>2</sub>cos(&theta;<sub>2</sub>) , r<sub>2</sub>sin(&theta;<sub>2</sub>) >
+					<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">b</span> - <span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < r<sub>2</sub>cos(&theta;<sub>2</sub>) , r<sub>2</sub>sin(&theta;<sub>2</sub>) >
+					<br>d &nbsp;=&nbsp;  ||<span style="border-top: 0.075em solid #000;">v</span>|| &nbsp;=&nbsp; ( r<sub>2</sub><sup>2</sup>sin<sup>2</sup>(&theta;<sub>2</sub>) + r<sub>2</sub><sup>2</sup>cos<sup>2</sup>(&theta;<sub>2</sub>) )<sup> 1/2</sup> <br>&nbsp;=&nbsp; ( r<sub>2</sub><sup>2</sup> (sin<sup>2</sup>(&theta;<sub>2</sub>) + cos<sup>2</sup>(&theta;<sub>2</sub>)) )<sup> 1/2</sup> &nbsp;=&nbsp; (r<sub>2</sub><sup>2</sup>)<sup>1/2</sup> &nbsp;=&nbsp; r<sub>2</sub>
+				</td>
+				<td style="width: 40%; padding-top: 3.5%; padding-bottom: 3.5%; padding-right: 2.5%">
+					<img src="images/1/1-6/polar_d_origin.png" width="55%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item17" style="width: 95%; margin-left: 2.5%; margin-top: 3.5%; font-size: 1.5em; line-height: 1.85em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 55%; padding-top: 5%; padding-bottom: 5%; padding-left: 5%">
+					U &nbsp;=&nbsp; (r<sub>1</sub>, &theta;<sub>1</sub>) , P &nbsp;=&nbsp; (r<sub>2</sub>, &theta;<sub>2</sub>)
+					<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < r<sub>1</sub>cos(&theta;<sub>1</sub>) , r<sub>1</sub>sin(&theta;<sub>1</sub>) > , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < r<sub>2</sub>cos(&theta;<sub>2</sub>) , r<sub>2</sub>sin(&theta;<sub>2</sub>) >
+					<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; <span style="border-top: 0.075em solid #000;">b</span> - <span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < &nbsp;r<sub>2</sub>cos(&theta;<sub>2</sub>) - r<sub>1</sub>cos(&theta;<sub>1</sub>) ,<br>r<sub>2</sub>sin(&theta;<sub>2</sub>) - r<sub>1</sub>sin(&theta;<sub>1</sub>)&nbsp; >
+					<br>
+					<br>d &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">v</span>||
+					<br>sin<sup>2</sup>(&theta;) &nbsp;+&nbsp; cos<sup>2</sup>(&theta;) &nbsp;=&nbsp; 1
+					<br>d<sup>2</sup> &nbsp;= &nbsp; (r<sub>2</sub>cos(&theta;<sub>2</sub>) - r<sub>1</sub>cos(&theta;<sub>1</sub>))<sup> 2</sup> &nbsp;+&nbsp; (r<sub>2</sub>sin(&theta;<sub>2</sub>) - r<sub>1</sub>sin(&theta;<sub>1</sub>))<sup> 2</sup>
+					<br>d<sup>2</sup> &nbsp;= &nbsp; r<sub>1</sub>sin<sup>2</sup>(&theta;<sub>1</sub>) &nbsp;+&nbsp; r<sub>1</sub>cos<sup>2</sup>(&theta;<sub>1</sub>) &nbsp;+&nbsp; r<sub>2</sub>sin<sup>2</sup>(&theta;<sub>2</sub>)<br>&nbsp;+&nbsp; r<sub>2</sub>cos<sup>2</sup>(&theta;<sub>2</sub>) &nbsp;-&nbsp; 2r<sub>1</sub>r<sub>2</sub>cos(&theta;<sub>2</sub> - &theta;<sub>1</sub>)
+					<br>d<sup>2</sup> &nbsp;= &nbsp; r<sub>1</sub><sup>2 </sup>( sin<sup>2</sup>(&theta;<sub>1</sub>) + cos<sup>2</sup>(&theta;<sub>1</sub>) ) &nbsp;+&nbsp; r<sub>2</sub><sup>2 </sup>( sin<sup>2</sup>(&theta;<sub>2</sub>) + cos<sup>2</sup>(&theta;<sub>2</sub>) )<br>-&nbsp; 2r<sub>1</sub>r<sub>2</sub>cos(&theta;<sub>2</sub> - &theta;<sub>1</sub>)
+					<br>d<sup>2</sup> &nbsp;= &nbsp; r<sub>1</sub><sup>2</sup>  &nbsp;+&nbsp; r<sub>2</sub><sup>2</sup> &nbsp;-&nbsp; 2r<sub>1</sub>r<sub>2</sub>cos(&theta;<sub>2</sub> - &theta;<sub>1</sub>)
+					<br>( c<sup>2</sup> &nbsp;=&nbsp; a<sup>2</sup>  + b<sup>2</sup> - 2abcos(C) )
+				</td>
+				<td style="width: 45%; padding-top: 3.5%; padding-bottom: 3.5%">
+					<img src="images/1/1-6/polar_tri.png" width="62.5%" style="">
+					<br>
+					<br>
+					<img src="images/1/1-6/polar_loc.png" width="70%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 85%; margin-left: 7.5%; padding: 0px; margin-top: 3.5%; border-radius: 2.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item18" style="width: 100.1%; font-size: 1.75em; line-height: 1.95em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 45%; padding-top: 5%; padding-bottom: 6.5%; padding-left: 5%; border-bottom-style: solid; border-width: medium;">
+						P &nbsp;=&nbsp; ( r, &theta; ) &nbsp;=&nbsp; ( r, &theta; + 2&pi; )
+						<br><span style="border-top: 0.075em solid #000;">P</span> &nbsp;=&nbsp; < r, &theta; > &nbsp;=&nbsp; < r, &theta; + 2&pi; >
+					</td>
+					<td style="width: 55%; padding-top: 5%; padding-bottom: 5%; padding-right: 5%; border-bottom-style: solid; border-width: medium;">
+						<img src="images/1/1-6/polar_rule1.png" width="85%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 45%; padding-top: 5%; padding-bottom: 6.5%; padding-left: 5%">
+						P &nbsp;=&nbsp; ( -r, &theta; ) &nbsp;=&nbsp; ( r, &theta; + &pi; )
+						<br><span style="border-top: 0.075em solid #000;">P</span> &nbsp;=&nbsp; < -r, &theta; > &nbsp;=&nbsp; < r, &theta; + &pi; >
+					</td>
+					<td style="width: 55%; padding-top: 5%; padding-bottom: 5%; padding-right: 5%">
+						<img src="images/1/1-6/polar_rule2.png" width="85%" style="">	
+					</td>		
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item19" style="width: 90%; margin-left: 5%; margin-top: 8.5%; margin-bottom: 7.5%; font-size: 1.65em; line-height: 1.95em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding-right: 2.5%">
+					<img src="images/1/1-6/polar_cyl.png" width="90%" style="">
+				</td>
+				<td style="width: 50%; padding-left: 2.5%">
+					v&#773; &nbsp;&in;&nbsp; &#8477;<sup>3</sup> , &nbsp; v&#773;<sub>&theta;</sub> &nbsp;&in;&nbsp; &#8477;<sup>3</sup>
+					<br>P &nbsp;=&nbsp; ( x , y , z ) &nbsp; &harr; &nbsp; P<sub>&theta;</sub> &nbsp;=&nbsp; ( r , &theta; , z )
+					<br>v&#773; &nbsp;=&nbsp; < x , y , z > &nbsp; &harr; &nbsp; v&#773;<sub>&theta;</sub> &nbsp;=&nbsp; < r , &theta; , z >
+					<br>
+					<br>r &nbsp;=&nbsp; ( x<sup>2</sup> + y<sup>2</sup> )<sup>1/2</sup> , &nbsp; &theta; &nbsp;=&nbsp; tan<sup>-1</sup>( y/x ) , &nbsp; z &nbsp;=&nbsp; z
+					<br>x &nbsp;=&nbsp; rcos(&theta;) , &nbsp; y &nbsp;=&nbsp; rsin(&theta;) , &nbsp; z &nbsp;=&nbsp; z
+				</td>		
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="1-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
 		</div>
 	</header>
 
-	<div class="sub-nav">
-		<a href="1-0.html">0</a>
-		<a href="1-1.html">1</a>
-		<a href="1-2.html">2</a>
-		<a href="1-3.html">3</a>
-		<a href="1-4.html">4</a>
-		<a href="1-5.html">5</a>
-		<a class="active" href="1-6.html">6</a>
-	</div>
+	<script type="text/javascript" src="standard_functions.js"></script>
+	<script type="text/javascript">
+		
+        window.onload = function () {
+			standard_onload();
+
+		  	document.getElementById("output_r").innerHTML = '0.00000';
+		  	document.getElementById("output_t").innerHTML = '0.00000';
+		  	document.getElementById("output_x").innerHTML = '0.00000';
+		  	document.getElementById("output_y").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.85*Math.min(canvas.width, canvas.height);
+
+			ctx.fillStyle = "#DB0000";
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, 0);
+			ctx.lineTo(center_x, canvas.height);
+			ctx.moveTo(canvas.width*0.15, center_y);
+			ctx.lineTo(canvas.width*0.85, center_y);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(canvas.width/2, canvas.height/2, max_size/2, 0, Math.PI * 2, false);
+          	ctx.stroke();
+
+  			var canvas = document.getElementById('canvas2');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.85*Math.min(canvas.width, canvas.height);
+
+			ctx.fillStyle = "#DB0000";
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, 0);
+			ctx.lineTo(center_x, canvas.height);
+			ctx.moveTo(canvas.width*0.15, center_y);
+			ctx.lineTo(canvas.width*0.85, center_y);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(canvas.width/2, canvas.height/2, max_size/2, 0, Math.PI * 2, false);
+          	ctx.stroke();
+        };
+
+        function drawVec() {
+		  	document.getElementById("output_r").innerHTML = '0.00000';
+		  	document.getElementById("output_t").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, 0);
+			ctx.lineTo(center_x, canvas.height);
+			ctx.moveTo(canvas.width*0.15, center_y);
+			ctx.lineTo(canvas.width*0.85, center_y);
+			ctx.stroke();
+
+		  	var max_size = 0.85*Math.min(canvas.width, canvas.height);
+
+			var Ox = canvas.width/2;
+			var Oy = canvas.height/2;
+
+		  	var x = document.getElementById("x").value;
+		  	x = read(x);
+		  	var y = document.getElementById("y").value;
+		  	y = read(y);
+
+		  	var norm = Math.sqrt(x*x + y*y);
+		  	if ( Math.abs(norm) < 1 ) { var r = norm.toFixed(5); }
+		  	else { var r = norm.toPrecision(6); };
+		  	if (norm > 100000000) {
+		  		r = '&infin;';
+		  	}
+		  	else if (norm < -100000000) {
+		  		r = '-&infin;';
+		  	};
+		  	document.getElementById("output_r").innerHTML = r;
+		  	var ang = Math.atan(y/x);
+		  	if ( Math.abs(ang) < 1 ) { var t = ang.toFixed(5); }
+		  	else { var t = ang.toPrecision(6); };	  	
+		  	if (ang > 100000000) {
+		  		t = '&infin;';
+		  	}
+		  	else if (ang < -100000000) {
+		  		t = '-&infin;';
+		  	};
+		  	document.getElementById("output_t").innerHTML = t;
+
+			var u_x = 0.5*max_size*x/norm;
+			var u_y = 0.5*max_size*y/norm;
+			var xt = Ox + u_x;
+			var yt = Oy - u_y;
+
+			ctx.beginPath();
+			ctx.arc(canvas.width/2, canvas.height/2, max_size/2, 0, Math.PI * 2, false);
+          	ctx.stroke();
+
+			ctx.lineWidth = 25;
+          	ctx.strokeStyle = "#DB0000";
+			ctx.beginPath();
+			ctx.moveTo(xt, center_y);
+			ctx.lineTo(xt, yt);
+			ctx.stroke();
+			ctx.strokeStyle = "#075AAA";
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(xt, center_y);
+			ctx.stroke();
+			ctx.strokeStyle = "#000000";
+   			ctx.beginPath();
+			ctx.moveTo(Ox, Oy);
+			ctx.lineTo(xt, yt);
+  			ctx.stroke();
+        };
+
+        function drawVec_inv(unit) {
+		  	document.getElementById("output_r").innerHTML = '0.00000';
+		  	document.getElementById("output_t").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas2');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, 0);
+			ctx.lineTo(center_x, canvas.height);
+			ctx.moveTo(canvas.width*0.15, center_y);
+			ctx.lineTo(canvas.width*0.85, center_y);
+			ctx.stroke();
+
+		  	var max_size = 0.85*Math.min(canvas.width, canvas.height);
+
+			var Ox = canvas.width/2;
+			var Oy = canvas.height/2;
+
+		  	var r = document.getElementById("r").value;
+		  	r = read(r);
+		  	var t = document.getElementById("t").value;
+		  	t = read(t);
+		  	if (unit == 'deg') {
+		  		t = Math.PI*t/180;
+		  	};
+
+		  	var x = r*Math.cos(t);
+		  	if ( Math.abs(x) < 1 ) { var x_out = x.toFixed(5); }
+		  	else { var x_out = x.toPrecision(6); };
+		  	if (x > 100000000) {
+		  		x_out = '&infin;';
+		  	}
+		  	else if (x < -100000000) {
+		  		x_out = '-&infin;';
+		  	};
+		  	document.getElementById("output_x").innerHTML = x_out;
+		  	var y = r*Math.sin(t);
+		  	if ( Math.abs(y) < 1 ) { var y_out = y.toFixed(5); }
+		  	else { var y_out = y.toPrecision(6); };
+		  	if (y > 100000000) {
+		  		y_out = '&infin;';
+		  	}
+		  	else if (y < -100000000) {
+		  		y_out = '-&infin;';
+		  	};
+		  	document.getElementById("output_y").innerHTML = y_out;
+
+			var u_x = 0.5*max_size*x/r;
+			var u_y = 0.5*max_size*y/r;
+			var xt = Ox + u_x;
+			var yt = Oy - u_y;
+
+			ctx.beginPath();
+			ctx.arc(canvas.width/2, canvas.height/2, max_size/2, 0, Math.PI * 2, false);
+          	ctx.stroke();
+
+			ctx.lineWidth = 25;
+          	ctx.strokeStyle = "#DB0000";
+			ctx.beginPath();
+			ctx.moveTo(xt, center_y);
+			ctx.lineTo(xt, yt);
+			ctx.stroke();
+			ctx.strokeStyle = "#075AAA";
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(xt, center_y);
+			ctx.stroke();
+			ctx.strokeStyle = "#000000";
+   			ctx.beginPath();
+			ctx.moveTo(Ox, Oy);
+			ctx.lineTo(xt, yt);
+  			ctx.stroke();
+        };
+
+	</script>
 
 </body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
+</html>

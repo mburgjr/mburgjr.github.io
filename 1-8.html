@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<link rel="icon" href="images/link_logo.png">
+<head>
+	<meta charset="UTF-8">
+	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
+	<style>
+	</style>
+</head>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="1-8.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-0.html"><span style="font-size: 1.2em">&#9632;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-1.html">&Theta;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-2.html"><span style="font-size: 0.9em">&#9699;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-3.html"><span style="font-size: 1.25em">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-4.html">&#8737;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-5.html"><span style="font-size: 1.05em">&nearr;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-6.html"><span style="font-size: 1.05em">&#8630;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-7.html"><span style="font-size: 1.5em">&bull;</span></a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="1-8.html"><span style="font-size: 1.2em">&#10541;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-Q.html">?</a></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button10" type="button" onclick="scrollToIndex(10)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button11" type="button" onclick="scrollToIndex(11)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button12" type="button" onclick="scrollToIndex(12)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button13" type="button" onclick="scrollToIndex(13)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button14" type="button" onclick="scrollToIndex(14)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button15" type="button" onclick="scrollToIndex(15)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button16" type="button" onclick="scrollToIndex(16)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button17" type="button" onclick="scrollToIndex(17)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button18" type="button" onclick="scrollToIndex(18)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+
+		<p id="scroll_item0" style="text-align: center; font-size: 2.25em; margin-top: 6.5%">
+			<span style="border-top: 0.075em solid #000;">a</span> &nbsp;&#215;&nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; ?
+		</p>
+
+		<table id="scroll_item1" style="width: 90%; margin-left: 5%; margin-top: 6.5%; border-style: solid; border-width: medium; border-color: black; text-align: center; line-height: 1.85em; font-size: 1.65em; border-radius: 1.5em">
+			<tr style="width: 100%">
+				<td style="width: 55%; padding: 5%; padding-right: 0%">
+					<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < x<sub>1 </sub>, y<sub>1 </sub>, z<sub>1 </sub> > , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < x<sub>2 </sub>, y<sub>2 </sub>, z<sub>2 </sub> >
+					<br>
+					<br><span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=<span style="font-size: 0.95em"><br>< &nbsp;y<sub>1 </sub>z<sub>2 </sub> - y<sub>2 </sub>z<sub>1 </sub> , &nbsp;z<sub>1 </sub>x<sub>2 </sub> - z<sub>2 </sub>x<sub>1 </sub> , &nbsp;x<sub>1 </sub>y<sub>2 </sub> - x<sub>2 </sub>y<sub>1</sub>&nbsp; ></span>
+					<br>
+					<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp;&in;&nbsp; &#8477;<sup>3</sup> , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;&in;&nbsp; &#8477;<sup>3</sup>
+					<br><span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;&in;&nbsp; &#8477;<sup>3</sup>
+				</td>
+				<td style="width: 45%; padding: 5%; padding-left: 0%">
+					<img src="images/1/1-8/cross_def.png" width="75%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item2" style="width: 90%; margin-left: 5%; margin-top: 6.5%; font-size: 1.85em; line-height: 0.95em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 60%; padding: 5%; padding-right: 0%; padding-left: 15%; padding-top: 0%">
+					<img src="images/1/1-8/cross_pairs.png" width="90%">
+				</td>
+				<td style="width: 40%; padding: 5%; text-align: left; padding-bottom: 8%; padding-top: 0%">
+					x&#770; : &nbsp; y<sub>1 </sub>z<sub>2 </sub> - y<sub>2 </sub>z<sub>1 </sub>
+					<br><br><br><br>
+					y&#770; : &nbsp; z<sub>1 </sub>x<sub>2 </sub> - z<sub>2 </sub>x<sub>1 </sub>
+					<br><br><br><br>
+					z&#770; : &nbsp; x<sub>1 </sub>y<sub>2 </sub> - x<sub>2 </sub>y<sub>1 </sub>
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item3" style="margin-top: 3.5%;">
+			<img src="images/1/1-8/cross_det.png" width="75%" style="margin-left: 12.5%">
+			<p style="text-align: center; font-size: 1.75em; margin-top: 3.5%; line-height: 1.75em">
+				(y<sub>1 </sub>z<sub>2 </sub> - y<sub>2 </sub>z<sub>1 </sub>) x&#770; &nbsp;=&nbsp; < y<sub>1 </sub>z<sub>2 </sub> - y<sub>2 </sub>z<sub>1 </sub> , 0 , 0 >
+				<br>(z<sub>1 </sub>x<sub>2 </sub> - z<sub>2 </sub>x<sub>1 </sub>) y&#770; &nbsp;=&nbsp; < 0 , z<sub>1 </sub>x<sub>2 </sub> - z<sub>2 </sub>x<sub>1 </sub> , 0 >
+				<br>(x<sub>1 </sub>y<sub>2 </sub> - x<sub>2 </sub>y<sub>1 </sub>) z&#770; &nbsp;=&nbsp; < 0 , 0 , x<sub>1 </sub>y<sub>2 </sub> - x<sub>2 </sub>y<sub>1 </sub> >
+			</p>
+		</div>
+
+		<table id="scroll_item4" style="width: 80%; margin-left: 10%; margin-top: 6.5%; border-style: solid; border-width: medium; border-color: black; text-align: center; line-height: 1.85em; font-size: 1.65em; border-radius: 1.5em">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding: 5%; padding-left: 12.5%">
+					&#8737; <span style="border-top: 0.075em solid #000;">a</span> ,&nbsp;<span style="border-top: 0.075em solid #000;">b</span> &nbsp;&ne;&nbsp; &pi;/2
+					<br>&#8737; <span style="border-top: 0.075em solid #000;">a</span> ,&nbsp;<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; &pi;/2
+					<br>&#8737; <span style="border-top: 0.075em solid #000;">b</span> ,&nbsp;<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; &pi;/2
+					<br><br>
+					<span style="font-size: 1.25em; line-height: 1.2em"><span style="border-top: 0.075em solid #000;">a</span> &nbsp;&perp;&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>
+					<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp;&perp;&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span></span>
+				</td>
+				<td style="width: 50%; padding: 5.5%; padding-bottom: 2.5%; padding-right: 15%">
+					<img src="images/1/1-8/cross_perp.png" width="87.5%">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item5" style="margin-top: 6.5%;">
+			<p style="text-align: center; width: 100%; font-size: 1.65em; line-height: 1.5em">
+				<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < x<sub>1 </sub>, y<sub>1 </sub>, z<sub>1 </sub> >
+				<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < x<sub>2 </sub>, y<sub>2 </sub>, z<sub>2 </sub> >
+				<br><span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < &nbsp;y<sub>1 </sub>z<sub>2 </sub> - y<sub>2 </sub>z<sub>1 </sub> , &nbsp;z<sub>1 </sub>x<sub>2 </sub> - z<sub>2 </sub>x<sub>1 </sub> , &nbsp;x<sub>1 </sub>y<sub>2 </sub> - x<sub>2 </sub>y<sub>1 </sub>&nbsp; >
+			</p>
+
+			<table style="width: 100%; margin-top: 3.5%; font-size: 1.5em; line-height: 1.75em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 62.5%;">
+						<span style="border-top: 0.075em solid #000;">a</span> &nbsp;&bull;&nbsp; (<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>) &nbsp;=
+						<br>=&nbsp; x<sub>1 </sub> ( y<sub>1 </sub>z<sub>2 </sub> - y<sub>2 </sub>z<sub>1 </sub> ) &nbsp;+&nbsp; y<sub>1 </sub> ( z<sub>1 </sub>x<sub>2 </sub> - z<sub>2 </sub>x<sub>1 </sub> ) &nbsp;+&nbsp; z<sub>1 </sub> ( x<sub>1 </sub>y<sub>2 </sub> - x<sub>2 </sub>y<sub>1 </sub> )
+						<br>=&nbsp; x<sub>1 </sub>y<sub>1 </sub>z<sub>2 </sub> &nbsp;-&nbsp; x<sub>1 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;+&nbsp; y<sub>1 </sub>z<sub>1 </sub>x<sub>2 </sub> &nbsp;-&nbsp; y<sub>1 </sub>z<sub>2 </sub>x<sub>1 </sub> &nbsp;+&nbsp; z<sub>1 </sub>x<sub>1 </sub>y<sub>2 </sub> &nbsp;-&nbsp; z<sub>1 </sub>x<sub>2 </sub>y<sub>1 </sub>
+						<br>=&nbsp; x<sub>1 </sub>y<sub>1 </sub>z<sub>2 </sub> &nbsp;-&nbsp; x<sub>1 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;+&nbsp; x<sub>2 </sub>y<sub>1 </sub>z<sub>1 </sub> &nbsp;-&nbsp; x<sub>1 </sub>y<sub>1 </sub>z<sub>2 </sub> &nbsp;+&nbsp; x<sub>1 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;-&nbsp; x<sub>2 </sub>y<sub>1 </sub>z<sub>1 </sub>
+						<br>=&nbsp; x<sub>1 </sub>y<sub>1 </sub>z<sub>2 </sub> &nbsp;-&nbsp; x<sub>1 </sub>y<sub>1 </sub>z<sub>2 </sub> &nbsp;+&nbsp; x<sub>1 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;-&nbsp; x<sub>1 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;+&nbsp; x<sub>2 </sub>y<sub>1 </sub>z<sub>1 </sub> &nbsp;-&nbsp; x<sub>2 </sub>y<sub>1 </sub>z<sub>1 </sub>
+						<br>=&nbsp; 0 &nbsp;+&nbsp; 0 &nbsp;+&nbsp; 0 &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&perp;&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>
+						<br>
+						<br>
+						<span style="border-top: 0.075em solid #000;">b</span> &nbsp;&bull;&nbsp; (<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>) &nbsp;=
+						<br>=&nbsp; x<sub>2 </sub> ( y<sub>1 </sub>z<sub>2 </sub> - y<sub>2 </sub>z<sub>1 </sub> ) &nbsp;+&nbsp; y<sub>2 </sub> ( z<sub>1 </sub>x<sub>2 </sub> - z<sub>2 </sub>x<sub>2 </sub> ) &nbsp;+&nbsp; z<sub>1 </sub> ( x<sub>1 </sub>y<sub>2 </sub> - x<sub>2 </sub>y<sub>1 </sub> )
+						<br>=&nbsp; x<sub>2 </sub>y<sub>1 </sub>z<sub>2 </sub> &nbsp;-&nbsp; x<sub>2 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;+&nbsp; y<sub>2 </sub>z<sub>1 </sub>x<sub>2 </sub> &nbsp;-&nbsp; y<sub>2 </sub>z<sub>2 </sub>x<sub>1 </sub> &nbsp;+&nbsp; z<sub>2 </sub>x<sub>1 </sub>y<sub>2 </sub> &nbsp;-&nbsp; z<sub>2 </sub>x<sub>2 </sub>y<sub>1 </sub>
+						<br>=&nbsp; x<sub>2 </sub>y<sub>1 </sub>z<sub>2 </sub> &nbsp;-&nbsp; x<sub>2 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;+&nbsp; x<sub>2 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;-&nbsp; x<sub>1 </sub>y<sub>2 </sub>z<sub>2 </sub> &nbsp;+&nbsp; x<sub>1 </sub>y<sub>2 </sub>z<sub>2 </sub> &nbsp;-&nbsp; x<sub>2 </sub>y<sub>1 </sub>z<sub>2 </sub>
+						<br>=&nbsp; x<sub>2 </sub>y<sub>1 </sub>z<sub>2 </sub> &nbsp;-&nbsp; x<sub>2 </sub>y<sub>1 </sub>z<sub>2 </sub> &nbsp;+&nbsp; x<sub>2 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;-&nbsp; x<sub>2 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;+&nbsp; x<sub>1 </sub>y<sub>2 </sub>z<sub>2 </sub> &nbsp;-&nbsp; x<sub>1 </sub>y<sub>2 </sub>z<sub>2 </sub>
+						<br>=&nbsp; 0 &nbsp;+&nbsp; 0 &nbsp;+&nbsp; 0 &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;&perp;&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>
+					</td>
+					<td style="width: 37.5%;">
+						<img src="images/1/1-8/cross_perp_proof.png" width="75%"> 
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item6" style="width: 95%; margin-left: 2.5%; margin-top:5.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 1.5em; font-size: 1.5em; padding: 5%">
+			<tr style="width: 100%;">
+				<td style="width: 22.5%; text-align: center;">
+					<div id="shape_input" style="border-style: solid; border-width: medium; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 100%; margin-top: -0.125em; border-radius: 1em;">
+						<span style="border-top: 0.075em solid #000;">u</span> &nbsp;=&nbsp; < x<sub>1</sub>, y<sub>1</sub>, z<sub>1</sub> >
+						<br><br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < x<sub>2</sub>, y<sub>2</sub>, z<sub>2</sub> >
+						<br>
+						<br>
+						x<sub>1</sub> &nbsp;=&nbsp; <input id="x1" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						y<sub>1</sub> &nbsp;=&nbsp; <input id="y1" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						z<sub>1</sub> &nbsp;=&nbsp; <input id="z1" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						x<sub>2</sub> &nbsp;=&nbsp; <input id="x2" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						y<sub>2</sub> &nbsp;=&nbsp; <input id="y2" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						z<sub>2</sub> &nbsp;=&nbsp; <input id="z2" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						<button type="button" class="calc_button" style="font-size: 0.75em; border-style: solid; border-width: medium; border-color: black; border-radius: 0.5em;" onclick="drawVec()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</td>
+				<td style="width: 45%">
+					<canvas id="canvas" style="width: 100%">
+
+					</canvas>
+				</td>
+				<td style="width: 32.5%">
+					<div style="border-style: solid; border-width: medium; border-color: black; padding-top: 8.5%; padding-bottom: 7.5%; width: 100%;  border-radius: 1em; text-align: center;">
+						<span style="border-top: 0.075em solid #000;">u</span> &#215; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; <span id="output">< 0.00, 0.00, 0.00 ></span>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item7" style="margin-top: 6.5%;">
+			<table style="width: 100%; font-size: 1.65em; line-height: 1.85em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 35%;">
+						<img src="images/1/1-8/cross_units.png" width="70%"> 
+					</td>
+					<td style="width: 65%;">
+						x&#770; &nbsp;&#215;&nbsp; y&#770; &nbsp; = &nbsp; z&#770; &nbsp; = &nbsp; < 1, 0, 0 > &nbsp;&#215;&nbsp; < 0, 1, 0 > &nbsp; = &nbsp; < 0, 0, 1 >
+						<br>y&#770; &nbsp;&#215;&nbsp; z&#770; &nbsp; = &nbsp; x&#770; &nbsp; = &nbsp; < 0, 1, 0 > &nbsp;&#215;&nbsp; < 0, 0, 1 > &nbsp; = &nbsp; < 1, 0, 0 >
+						<br>z&#770; &nbsp;&#215;&nbsp; x&#770; &nbsp; = &nbsp; y&#770; &nbsp; = &nbsp; < 0, 0, 1 > &nbsp;&#215;&nbsp; < 1, 0, 0 > &nbsp; = &nbsp; < 0, 1, 0 >
+						<br>x&#770; &nbsp;&perp;&nbsp; y&#770; &nbsp;&perp;&nbsp; z&#770;
+					</td>
+				</tr>
+			</table>
+
+			<p style="margin-top: 5%; text-align: center; width: 100%; font-size: 2em; line-height: 2em">
+				<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < yz - yz , zx - zx , xy - xy > &nbsp; = &nbsp; < 0 , 0 , 0 >
+			</p>
+		</div>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 6.5%; border-radius: 2.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item8" style="width: 100.1%; font-size: 1.75em; line-height: 1.5em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 100%; border-bottom-style: solid; border-width: medium;">
+						<table style="width: 100%">
+							<tr style="width: 100%">
+								<td style="width: 50%; padding: 5%; padding-right: 0%; padding-left: 7.5%">
+									<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < x<sub>1 </sub>, y<sub>1 </sub> > , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < x<sub>2 </sub>, y<sub>2 </sub> >
+									<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp;&in;&nbsp; &#8477;<sup>2</sup> , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;&in;&nbsp; &#8477;<sup>2</sup><sub>&nbsp;</sub>
+									<br><span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; &rarr; &nbsp; <span style="color: red; font-weight: bold; font-size: 1.25em">&#215;</span><sup>&nbsp;</sup>
+									<br>
+									<br>&nbsp;&nbsp;&nbsp;<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < x<sub>1 </sub>, y<sub>1 </sub>, 0 > , &nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&in;&nbsp; &#8477;<sup>3</sup>
+									<br>&nbsp;&nbsp;&nbsp;<span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < x<sub>2 </sub>, y<sub>2 </sub>, 0 > , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;&in;&nbsp; &#8477;<sup>3</sup><sub><sub>&nbsp;</sub></sub>
+									<br>&nbsp;&nbsp;&nbsp;<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < 0 , 0 , &nbsp;x<sub>1 </sub>y<sub>2 </sub> - x<sub>2 </sub>y<sub>1 </sub> ><sup><sup>&nbsp;</sup></sup>
+								</td>
+								<td style="width: 50%; padding: 5%; padding-left: 0%;">
+									<img src="images/1/1-8/cross_2d.png" width="72.5%"> 
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 5%; padding-right: 0%;">
+						<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < x<sub>1 </sub>, y<sub>1 </sub>, z<sub>1 </sub>, t<sub>1 </sub> > , &nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&in;&nbsp; &#8477;<sup>4</sup>
+						<br>&nbsp;<span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < x<sub>2 </sub>, y<sub>2 </sub>, z<sub>2 </sub>, t<sub>2 </sub> > , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;&in;&nbsp; &#8477;<sup>4</sup><sub><sub>&nbsp;</sub></sub>
+						<br>&nbsp;<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; &rarr; &nbsp; <span style="color: red; font-weight: bold; font-size: 1.25em">&#215;</span><sup><sup>&nbsp;</sup></sup>
+						<br><span style="border-top: 0.075em solid #000;">c</span> &nbsp;&perp;&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp;, &nbsp; <span style="border-top: 0.075em solid #000;">c</span> &nbsp;&perp;&nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;, &nbsp; <span style="border-top: 0.075em solid #000;">c</span> &nbsp;<span style="color: red; font-weight: bold; font-size: 1.25em">&#215;</span>
+					</td>
+				</tr>		
+			</table>
+		</div>
+
+		<div id="scroll_item9" style="margin-top: 6.5%;">
+			<p style="text-align: center; width: 100%; font-size: 2em; line-height: 2em">
+				<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; &ne; &nbsp;&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>
+				<br><span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; -<span style="border-top: 0.075em solid #000;">b</span> &#215; <span style="border-top: 0.075em solid #000;">a</span>
+			</p>
+
+			<table style="width: 100%; margin-top: 2.5%; font-size: 1.5em; line-height: 1.7em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 60%;">
+						<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < x<sub>1 </sub>, y<sub>1 </sub>, z<sub>1 </sub> >
+						<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < x<sub>2 </sub>, y<sub>2 </sub>, z<sub>2 </sub> >
+						<br><span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < &nbsp;y<sub>1 </sub>z<sub>2 </sub> - y<sub>2 </sub>z<sub>1 </sub> , &nbsp;z<sub>1 </sub>x<sub>2 </sub> - z<sub>2 </sub>x<sub>1 </sub> , &nbsp;x<sub>1 </sub>y<sub>2 </sub> - x<sub>2 </sub>y<sub>1 </sub>&nbsp; >
+						<br><span style="border-top: 0.075em solid #000;">b</span> &#215; <span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < &nbsp;y<sub>2 </sub>z<sub>1 </sub> - y<sub>2 </sub>z<sub>1 </sub> , &nbsp;z<sub>2 </sub>x<sub>1 </sub> - z<sub>1 </sub>x<sub>2 </sub> , &nbsp;x<sub>2 </sub>y<sub>1 </sub> - x<sub>1 </sub>y<sub>2 </sub>&nbsp; >
+						<br>=&nbsp; < &nbsp;-y<sub>1 </sub>z<sub>2 </sub> + y<sub>2 </sub>z<sub>1 </sub> , &nbsp;-z<sub>1 </sub>x<sub>2 </sub> + z<sub>2 </sub>x<sub>1 </sub> , &nbsp;-x<sub>1 </sub>y<sub>2 </sub> + x<sub>2 </sub>y<sub>1 </sub>&nbsp; >
+						<br><span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; -<span style="border-top: 0.075em solid #000;">b</span> &#215; <span style="border-top: 0.075em solid #000;">a</span><sup><sup>&nbsp;</sup></sup>
+						<br>
+						<br>z&#770; &nbsp;&#215;&nbsp; x&#770; &nbsp; = &nbsp; &nbsp;y&#770; &nbsp; = &nbsp; < 0, 0, 1 > &nbsp;&#215;&nbsp; < 1, 0, 0 > &nbsp; = &nbsp; < 0, 1, 0 >
+						<br>x&#770; &nbsp;&#215;&nbsp; z&#770; &nbsp; = &nbsp; -y&#770; &nbsp; = &nbsp; < 1, 0, 0 > &nbsp;&#215;&nbsp; < 0, 0, 1 > &nbsp; = &nbsp; < 0, -1, 0>
+						<br>
+						<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < 1, 3, 0 > , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < -4, 2, 0 >
+						<br><span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < 0, 0, 12 + 2 > &nbsp;=&nbsp; < 0, 0, 14 >
+						<br><span style="border-top: 0.075em solid #000;">b</span> &#215; <span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < 0, 0, -12 - 2 > &nbsp;=&nbsp; < 0, 0, -14 >
+					</td>
+					<td style="width: 40%;">
+						<img src="images/1/1-8/cross_neg.png" width="75%"> 
+					</td>
+				</tr>
+			</table>
+
+			<p style="margin-top: 3.5%; text-align: center; width: 100%; font-size: 2em; line-height: 2em">
+				<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; -<span style="border-top: 0.075em solid #000;">b</span> &#215; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; &harr; &nbsp; <span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; || &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &#215; <span style="border-top: 0.075em solid #000;">a</span>
+				<br><span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;,&nbsp; <span style="border-top: 0.075em solid #000;">b</span> &#215; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; &perp; &nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp;,&nbsp; <span style="border-top: 0.075em solid #000;">b</span>
+			</p>
+		</div>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 6.5%; border-radius: 2.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item10" style="width: 100.1%; font-size: 1.65em; line-height: 1.85em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium;">
+						<span style="border-top: 0.075em solid #000;">u</span> &nbsp;||&nbsp; <span style="border-top: 0.075em solid #000;">v</span>
+						<br>A &nbsp;=&nbsp; H &#215; W
+						<br>A &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">u</span>|| sin(&theta;) &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">v</span>|| sin(&theta;)
+						<br>A &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">u</span>|| W sin(&theta;) &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">v</span>|| W sin(&theta;)
+						<br>
+						<br>P &nbsp;=&nbsp; 2||<span style="border-top: 0.075em solid #000;">u</span>|| + 2W &nbsp;=&nbsp; 2||<span style="border-top: 0.075em solid #000;">v</span>|| + 2W
+					</td>
+					<td style="width: 50%; padding: 5%; padding-left: 0%; padding-bottom: 1.5%; border-bottom-style: solid; border-width: medium;">
+						<img src="images/1/1-8/cross_parallelogram.png" width="75%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; font-size: 1.15em; line-height: 2.25em">
+						A &nbsp;=&nbsp; || <span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> ||
+						<br>P &nbsp;=&nbsp; 2||<span style="border-top: 0.075em solid #000;">a</span>|| + 2||<span style="border-top: 0.075em solid #000;">b</span>||
+						<br><span style="font-size: 0.9em">P &nbsp;&harr;&nbsp; + &nbsp; , &nbsp; A &nbsp;&harr;&nbsp; &#215;</span>
+					</td>
+					<td style="width: 50%; padding: 5%; padding-left: 0%; padding-bottom: 1.5%; padding-right: 10%">
+						<img src="images/1/1-8/cross_area.png" width="95%">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<p id="scroll_item11" style="text-align: center; width: 100%; font-size: 1.5em; line-height: 1.65em; margin-top: 6.5%">
+			||<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>||<sup> 2</sup> &nbsp;=&nbsp; (<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>) &nbsp;&bull;&nbsp; (<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>)
+			<br>=&nbsp; ( y<sub>1 </sub>z<sub>2 </sub> - y<sub>2 </sub>z<sub>1 </sub> )<sup> 2</sup> &nbsp;+&nbsp; ( z<sub>1 </sub>x<sub>2 </sub> - z<sub>2 </sub>x<sub>1 </sub> )<sup> 2</sup> &nbsp;+&nbsp; ( x<sub>1 </sub>y<sub>2 </sub> - x<sub>2 </sub>y<sub>1 </sub> )<sup> 2</sup>
+			<br>=&nbsp; y<sub>1</sub><sup>2 </sup>z<sub>2</sub><sup>2 </sup> &nbsp;-&nbsp; 2y<sub>1 </sub>z<sub>2 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;+&nbsp; y<sub>2</sub><sup>2 </sup>z<sub>1</sub><sup>2 </sup> &nbsp;+&nbsp; z<sub>1</sub><sup>2 </sup>x<sub>2</sub><sup>2 </sup> &nbsp;-&nbsp; 2z<sub>1 </sub>x<sub>2 </sub>z<sub>2 </sub>x<sub>1 </sub> &nbsp;+&nbsp; z<sub>2</sub><sup>2 </sup>x<sub>1</sub><sup>2 </sup> &nbsp;+&nbsp; x<sub>1</sub><sup>2 </sup>y<sub>2</sub><sup>2 </sup> &nbsp;-&nbsp; 2x<sub>1 </sub>y<sub>2 </sub>x<sub>2 </sub>y<sub>1 </sub> &nbsp;+&nbsp; x<sub>2</sub><sup>2 </sup>y<sub>1</sub><sup>2 </sup>
+			<br>
+			<br>
+			( ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| )<sup> 2</sup> &nbsp;=&nbsp; ( x<sub>1</sub><sup>2 </sup> + y<sub>1</sub><sup>2 </sup> + z<sub>1</sub><sup>2 </sup>) ( x<sub>2</sub><sup>2 </sup> + y<sub>2</sub><sup>2 </sup> + z<sub>2</sub><sup>2 </sup>)
+			<br>=&nbsp; x<sub>1</sub><sup>2 </sup>x<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; x<sub>1</sub><sup>2 </sup>y<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; x<sub>1</sub><sup>2 </sup>z<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; y<sub>1</sub><sup>2 </sup>x<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; y<sub>1</sub><sup>2 </sup>y<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; y<sub>1</sub><sup>2 </sup>z<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; z<sub>1</sub><sup>2 </sup>x<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; z<sub>1</sub><sup>2 </sup>y<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; z<sub>1</sub><sup>2 </sup>z<sub>2</sub><sup>2 </sup>
+			<br>
+			<br>
+			( <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&bull;&nbsp; <span style="border-top: 0.075em solid #000;">b</span> )<sup> 2</sup> &nbsp;=&nbsp; ( x<sub>1</sub>x<sub>2</sub> &nbsp;+&nbsp; y<sub>1</sub>y<sub>2</sub> &nbsp;+&nbsp; z<sub>1</sub>z<sub>2</sub> )<sup> 2</sup>
+			<br>=&nbsp; x<sub>1</sub><sup>2 </sup>x<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; y<sub>1</sub><sup>2 </sup>y<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; z<sub>1</sub><sup>2 </sup>z<sub>2</sub><sup>2 </sup> &nbsp;+&nbsp; 2x<sub>1 </sub>y<sub>2 </sub>x<sub>2 </sub>y<sub>1 </sub> &nbsp;+&nbsp; 2y<sub>1 </sub>z<sub>2 </sub>y<sub>2 </sub>z<sub>1 </sub> &nbsp;+&nbsp; 2z<sub>1 </sub>x<sub>2 </sub>z<sub>2 </sub>x<sub>1 </sub>
+		</p>
+
+		<table id="scroll_item12" style="width: 100%; margin-top: 4%; font-size: 1.5em; line-height: 2em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 60%;">
+					&#8737; <span style="border-top: 0.075em solid #000;">a</span> ,&nbsp;<span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; &theta;
+					<br>||<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>||<sup> 2</sup> &nbsp;=&nbsp; ( ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| )<sup> 2</sup> &nbsp;-&nbsp; ( <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&bull;&nbsp; <span style="border-top: 0.075em solid #000;">b</span> )<sup> 2</sup>
+					<br>=&nbsp; ( ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| )<sup>2</sup> &nbsp;-&nbsp; ( ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| cos(&theta;) )<sup> 2</sup>
+					<br>=&nbsp; ( ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| )<sup>2</sup> &nbsp;-&nbsp; ( ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| )<sup>2</sup> cos<sup>2</sup>(&theta;)
+					<br>=&nbsp; ( ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| )<sup>2</sup> ( 1 - cos<sup>2</sup>(&theta;) ) &nbsp;=&nbsp; ( ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| )<sup>2</sup> sin<sup>2</sup>(&theta;)
+					<br>&rarr; &nbsp; ||<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>|| &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| sin(&theta;)<sup>&nbsp;</sup>
+					<br>
+					<br>
+					W &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">a</span>|| , &nbsp; H &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">b</span>|| sin(&theta;)
+					<br>A &nbsp;=&nbsp; WH &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| sin(&theta;) &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>|| &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">b</span> &#215; <span style="border-top: 0.075em solid #000;">a</span>||
+					<br>
+					<br>
+					<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < 1, 4, -1 > , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < -3, 1, 5 >
+					<br><span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < 20 + 1 , 3 - 5 , 1 + 12 >  &nbsp;=&nbsp; < 21 , -2 , 13 >
+					<br>A &nbsp;=&nbsp; ||<span style="border-top: 0.075em solid #000;">a</span> &#215; <span style="border-top: 0.075em solid #000;">b</span>|| &nbsp;=&nbsp; (441 + 4 + 169)<sup>1/2</sup> &nbsp;=&nbsp; (614)<sup>1/2</sup> &nbsp;&asymp;&nbsp; 24.78
+				</td>
+				<td style="width: 40%; padding-top: 2.5%">
+					<img src="images/1/1-8/cross_dot_tri.png" width="45%"> 
+					<br><br><br>
+					<img src="images/1/1-8/cross_p_ex.png" width="85%"> 
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item13" style="width: 80%; margin-left: 10%; margin-top: 6.5%; border-style: solid; border-width: medium; border-color: black; text-align: center; line-height: 2em; font-size: 1.75em; border-radius: 1.5em">
+			<tr style="width: 100%">
+				<td style="width: 100%; padding: 3.5%;">
+					<span style="border-top: 0.075em solid #000;">a</span> &nbsp;&bull;&nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; ||<span style="border-top: 0.075em solid #000;">a</span>||<sup> 2</sup> &nbsp;+&nbsp; ||<span style="border-top: 0.075em solid #000;">b</span>||<sup> 2</sup> &nbsp;-&nbsp; 2 ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| cos(&theta;)
+					<br>|| <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&#215;&nbsp; <span style="border-top: 0.075em solid #000;">b</span> || &nbsp; = &nbsp; ||<span style="border-top: 0.075em solid #000;">a</span>|| ||<span style="border-top: 0.075em solid #000;">b</span>|| sin(&theta;)
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item14" style="width: 90%; margin-left: 5%; margin-top: 7.5%; font-size: 2.15em; line-height: 2em; text-align: center">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding-left: 15%">
+					<img src="images/1/1-8/cross_n_intro.png" width="80%"> 
+				</td>
+				<td style="width: 50%; padding-right: 15%">
+					n&#770; &nbsp;&perp;&nbsp; <span style="border-top: 0.075em solid #000;">a</span> ,&nbsp; <span style="border-top: 0.075em solid #000;">b</span>
+					<br>&nbsp;
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item15" style="width: 80%; margin-left: 10%; margin-top: 2.5%; border-style: solid; border-width: medium; border-color: black; text-align: center; line-height: 2em; font-size: 1.65em; border-radius: 1.5em">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding: 5%; padding-left: 8.5%; padding-top: 6.5%; padding-right: 0;">
+					<span style="border-top: 0.075em solid #000;">n</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&#215;&nbsp; <span style="border-top: 0.075em solid #000;">b</span>
+					<br>
+					<br>a&#770; &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">a</span> / ||<span style="border-top: 0.075em solid #000;">a</span>|| , &nbsp; b&#770; &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">b</span> / ||<span style="border-top: 0.075em solid #000;">b</span>||
+					<br>n&#770; &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">n</span> / ||<span style="border-top: 0.075em solid #000;">n</span>||
+					<br>n&#770; &nbsp;=&nbsp; ( <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&#215;&nbsp; <span style="border-top: 0.075em solid #000;">b</span> ) / || <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&#215;&nbsp; <span style="border-top: 0.075em solid #000;">b</span> ||
+					<br>n&#770; &nbsp;=&nbsp; a&#770; &nbsp;&#215;&nbsp; b&#770;
+				</td>
+				<td style="width: 50%; padding: 2.5%; padding-top: 5%; line-height: 0.9em">
+					<img src="images/1/1-8/cross_n_sphere.png" width="45%">
+					<br><br>
+					<img src="images/1/1-8/cross_n_perp.png" width="45%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item16" style="width: 100%; margin-top: 6.5%; font-size: 1.5em; line-height: 1.75em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 60%;">
+					n&#770; &nbsp;=&nbsp; < n<sub>1</sub> , n<sub>2</sub> , n<sub>3</sub> > , &nbsp; P &nbsp;=&nbsp; ( x<sub>0</sub> , y<sub>0</sub> , z<sub>0</sub> )
+					<br>&nbsp;x&#773; &nbsp;=&nbsp; < x , y , z ><sub><sub>&nbsp;</sub></sub>
+					<br>n&#770; &bull; (x&#773; - P&#773;) &nbsp;=&nbsp; n&#773; &bull; (x&#773; - P&#773;) &nbsp;=&nbsp; 0
+					<br>n<sub>1 </sub>( x - x<sub>0 </sub>) &nbsp;+&nbsp; n<sub>2 </sub>( y - y<sub>0 </sub>) &nbsp;+&nbsp; n<sub>3 </sub>( z - z<sub>0 </sub>) &nbsp;=&nbsp; 0
+					<br>
+					<br>n&#773; &nbsp;=&nbsp; < 1, 2, 2 > , &nbsp; ||n&#773;|| &nbsp;=&nbsp; <span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">9</span></span> &nbsp;=&nbsp; 3
+					<br>n&#770; &nbsp;=&nbsp; < 1/3 , 2/3 , 2/3 > , &nbsp; P &nbsp;=&nbsp; ( 1, 3, 2 )
+					<br>1/3 (x - 1) &nbsp;+&nbsp; 2/3 (y - 3) &nbsp;+&nbsp; 2/3 (z - 2) &nbsp;=&nbsp; 0
+					<br>(x - 1) &nbsp;+&nbsp; 2 (y - 3) &nbsp;+&nbsp; 2 (z - 2) &nbsp;=&nbsp; 0
+					<br>
+					<br>n&#770; &nbsp;=&nbsp; z&#770; &nbsp;=&nbsp; < 0, 0, 1 > , &nbsp; P &nbsp;=&nbsp; O &nbsp;=&nbsp; ( 0, 0, 0 )
+					<br>0 (x - 0) &nbsp;+&nbsp; 0 (y - 0) &nbsp;+&nbsp; 1 (z - 0) &nbsp;=&nbsp; 0
+					<br>z &nbsp;=&nbsp; 0 , &nbsp; ( x, y ) &nbsp;&in;&nbsp; &#8477;<sup>2</sup>
+				</td>
+				<td style="width: 40%; line-height: 0.9em">
+					<img src="images/1/1-8/cross_n_plane.png" width="62.5%"> 
+					<br><br><br>
+					<img src="images/1/1-8/cross_n_ex.png" width="65%"> 
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item17" style="width: 90%; margin-left: 5%; margin-top: 6.5%; border-style: solid; border-width: medium; border-color: black; text-align: center; line-height: 1.85em; font-size: 1.65em; border-radius: 2em">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding: 5%; padding-left: 10%">
+					P &nbsp;=&nbsp; ( x<sub>0</sub> , y<sub>0</sub> , z<sub>0</sub> )
+					<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">U</span> &nbsp;-&nbsp; <span style="border-top: 0.075em solid #000;">P</span> &nbsp; , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">Q</span> &nbsp;-&nbsp; <span style="border-top: 0.075em solid #000;">P</span>
+					<br>n&#770; &nbsp;=&nbsp; ( <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&#215;&nbsp; <span style="border-top: 0.075em solid #000;">b</span> ) / || <span style="border-top: 0.075em solid #000;">a</span> &nbsp;&#215;&nbsp; <span style="border-top: 0.075em solid #000;">b</span> ||
+					<br>
+					<br><span style="font-size: 0.9em; line-height: 0.85em">P &nbsp;=&nbsp; ( 0, 4, 4 ) , &nbsp;U &nbsp;=&nbsp; ( 2, 3, 0 ) ,<br>Q &nbsp;=&nbsp; ( 0, 3, 3 )
+					<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < 2, -1, -4 > , &nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < 0, -1, -1 >
+					<br>n&#773; &nbsp;=&nbsp; < -2 - 1 , 0 + 2 , -2 - 0 ><br>=&nbsp; < -3, 2, -2 >
+					<br>0 &nbsp;=&nbsp; -3x &nbsp;+&nbsp; 2 ( y - 4 ) &nbsp;+&nbsp; 2 ( z - 4 )</span>
+				</td>
+				<td style="width: 50%; padding: 2.5%; padding-top: 5%; padding-left: 0%; padding-right: 5%">
+					<img src="images/1/1-8/cross_n_ptp.png" width="80%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item18" style="width: 90%; margin-left: 5%; margin-top: 7.5%; margin-bottom: 6.5%; font-size: 1.75em; line-height: 2em; border-collapse: collapse; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 30%;">
+					<img src="images/1/1-8/cross_ang3d.png" width="90%">
+				</td>
+				<td style="width: 30%">
+					<img src="images/1/1-8/cross_ang2d.png" width="70%">
+				</td>
+				<td style="width: 40%; padding-left: 2.5%">
+					n&#773; &nbsp;&in;&nbsp; &#8477;<sup>2</sup>
+					<br>n&#773; &nbsp;=&nbsp; < -sin(&theta;) , cos(&theta;) >
+					<br>&nbsp;||n&#773;|| &nbsp;=&nbsp; cos<sup>2</sup>(&theta;) &nbsp;+&nbsp; sin<sup>2</sup>(&theta;) &nbsp;=&nbsp; 1<sub>&nbsp;</sub>
+					<br>m<sub>n</sub> &nbsp;=&nbsp; -cos(&theta;)/sin(&theta;) &nbsp;=&nbsp; -1/tan(&theta;)
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="1-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
+		</div>
+	</header>
+
+	<script type="text/javascript" src="standard_functions.js"></script>
+	<script type="text/javascript">
+        window.onload = function () {
+			standard_onload();
+
+		  	document.getElementById("output").innerHTML = '< 0.00, 0.00, 0.00 >';
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.65*Math.min(canvas.width, canvas.height);
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#A9A9A9";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x, center_y + max_size);
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+			ctx.stroke();
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x, center_y - max_size);
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+			ctx.stroke();
+        };
+
+        function drawVec() {
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.65*Math.min(canvas.width, canvas.height);
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#A9A9A9";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x, center_y + max_size);
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+			ctx.stroke();
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x, center_y - max_size);
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+			ctx.stroke();
+
+			ctx.lineWidth = 25;
+
+			var Ox = canvas.width/2;
+			var Oy = canvas.height/2;
+
+		  	var x1 = document.getElementById("x1").value;
+		  	x1 = read(x1);
+		  	var y1 = document.getElementById("y1").value;
+		  	y1 = read(y1);
+		  	var z1 = document.getElementById("z1").value;
+		  	z1 = read(z1);
+
+		  	var norm1 = Math.sqrt(x1*x1 + y1*y1 + z1*z1);
+
+		  	var x2 = document.getElementById("x2").value;
+		  	x2 = read(x2);
+		  	var y2 = document.getElementById("y2").value;
+		  	y2 = read(y2);
+		  	var z2 = document.getElementById("z2").value;
+		  	z2 = read(z2);
+
+		  	var norm2 = Math.sqrt(x2*x2 + y2*y2 + z2*z2);
+		  	var norm = 1.25*Math.max(norm1, norm2);
+
+			var u_x = max_size*x1/norm;
+			var u_y = max_size*y1/norm;
+			var u_z = max_size*z1/norm;
+			var xt = Ox - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8);
+			var yt = Oy - u_z + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8);
+
+			ctx.strokeStyle = "#EB2228";
+   			ctx.beginPath();
+			ctx.moveTo(Ox, Oy);
+			ctx.lineTo(xt, yt);
+  			ctx.stroke();
+
+			var u_x = max_size*x2/norm;
+			var u_y = max_size*y2/norm;
+			var u_z = max_size*z2/norm;
+			var xt = Ox - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8);
+			var yt = Oy - u_z + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8);
+
+			ctx.strokeStyle = "#66B2FF";
+   			ctx.beginPath();
+			ctx.moveTo(Ox, Oy);
+			ctx.lineTo(xt, yt);
+  			ctx.stroke();
+
+			var x3 = y1*z2 - y2*z1;
+			var y3 = z1*x2 - z2*x1;
+			var z3 = x1*y2 - y1*x2;
+			var u_x = max_size*x3/norm;
+			var u_y = max_size*y3/norm;
+			var u_z = max_size*z3/norm;
+			var xt = Ox - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8);
+			var yt = Oy - u_z + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8);
+
+			ctx.strokeStyle = "#7D1DD1";
+   			ctx.beginPath();
+			ctx.moveTo(Ox, Oy);
+			ctx.lineTo(xt, yt);
+  			ctx.stroke();
+
+  			if (Math.abs(x3) < 1) { var x = x3.toFixed(2); }
+  			else if (Math.abs(x3) >= 1000) { var x = x3.toPrecision(1) }
+  			else { var x = x3.toPrecision(3) };
+		  	if (Math.abs(y3) < 1) { var y = y3.toFixed(2); }
+  			else if (Math.abs(y3) >= 1000) { var y = y3.toPrecision(1) }
+  			else { var y = y3.toPrecision(3) };
+  			if (Math.abs(z3) < 1) { var z = z3.toFixed(2); }
+  			else if (Math.abs(z3) >= 1000) { var z = z3.toPrecision(1) }
+  			else { var z = z3.toPrecision(3) };
+		  	document.getElementById("output").innerHTML = '< ' + x.toString() + ', ' + y.toString() + ', ' + z.toString() + ' >';
+  		};
+
+	</script>
+
+</body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
+</html>

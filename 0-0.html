@@ -5,119 +5,20 @@
 </script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
 <link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
 	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
 	<style>
-		body {
-		  margin: 0;
-		  font-family: Arial;
-		  text-decoration: none;
-		  width: 100%;
-		}
-
-		.header {
-			background-color: #000066;
-			text-align: left;
-			color: white;
-			width: 100%;
-		}
-
-		.header div.info {
-			text-align: right;
-			vertical-align: top;
-			padding-right: 1%;
-			padding-top: 0.6%;
-			float: right;
-		}
-
-		.header div.logo {
-			float: left;
-		}
-		
-		.header a {
-		  	text-decoration: none;
-			font-size: 1vw;
-			font-weight: bold;
-			color: white;
-		}
-
-		a.sub_active {
-			background-color: #FFFFFF;
-			color: #66B2FF;
-		}
-
-		td {
-			padding: 0.4%;
-		}
-
-		td a {
-		    display:block;
-		    width:100%;
-		}
-
-		td.main_active {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.main_access:hover {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.main_access:hover a {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub_access {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub_access a {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		  font-size: 1.1vw;
-		}
-
-		td.sub_access:hover {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_access:hover a {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_active {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_active a {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		  font-size: 1.1vw;
-		}
-
-		.logo_image {
-			width: 80%;
-			padding: 0%;
-		}
 
 		.dot_numbers {
 			float: left;
 			font-weight: "400";
-			font-size: 1.25rem;
+			font-size: 1.2em;
 			line-height: 0.7em;
 			margin-top: 5%;
 			width: 100%;
@@ -148,11 +49,12 @@
 		.calculator {
 			float: right;
 			font-weight: "400";
-			font-size: 1rem;
+			font-size: 1em;
 			padding: 7.5%;
 			border-width: 1px;
-			border-style: solid;
-			border-color: #C0C0C0;
+			border-style: solid; 
+			border-width: medium;
+			border-color: #C0B0B0;
 			margin-top: 12.5%;
 			width: 70%;
 		}
@@ -163,329 +65,1905 @@
 
 		p {
 			font-weight: bold;
-			font-size: 1rem;
+			font-size: 1em;
 		}
 
 		.form-control {
-	        font-size: 1rem;
+	        font-size: 1em;
+		}
+
+		input[class="0C_slider"]::-webkit-slider-runnable-track {
+		    background: white;
+		}
+
+		input[class="0C_slider"]::-moz-range-track {
+			background-color: white;
+		}
+
+		input[class="0C_slider"]::-ms-fill-upper {  
+			background-color: white;
+		}
+
+		[class="button_green"] {
+			color: white;
+			background-color: #0A8543;
+		}
+
+		[class="button_red"] {
+			color: white;
+			background-color: #DB0000;
+		}
+
+		[class="button_green"]:hover {
+			color: #0A8543;
+			background-color: white;
+		}
+
+		[class="button_red"]:hover {
+			color: #DB0000;
+			background-color: white;
+		}
+
+		[class="2A_answer"] {
+			color: black;
+			background-color: white;
+			border: solid lightgray medium;
+		}
+
+		[class="2A_answer"]:hover {
+			color: white;
+			background-color: gray;
+			border: solid black medium;
+		}
+
+		[class="2A_answer_clicked"] {
+			color: black;
+			background-color: white;
+			border: solid black medium;
+		}
+
+		[class="2A_answer_clicked"]:hover {
+			color: black;
+			background-color: gray;
+			border: solid black medium;
+		}
+
+		[class="5A_answer"] {
+			color: white;
+			background-color: black;
+			border: solid black medium;
+		}
+
+		[class="5A_answer"]:hover {
+			color: black;
+			background-color: white;
+			border: solid black medium;
+		}
+
+		[class="5A_answer_clicked"] {
+			color: black;
+			background-color: white;
+			border: solid white medium;
+		}
+
+		[class="5A_answer_clicked"]:hover {
+			color: black;
+			background-color: white;
+			border: solid black medium;
+		}
+
+		[class="7A_check"] {
+			color: black;
+			background-color: white;
+			border: solid lightgray medium;
+		}
+
+		[class="7A_check"]:hover {
+			color: white;
+			background-color: gray;
+			border: solid black medium;
+		}
+
+		[class="7A_check_clicked"] {
+			color: black;
+			background-color: white;
+			border: solid black medium;
+		}
+
+		[class="7A_check_clicked"]:hover {
+			color: white;
+			background-color: gray;
+			border: solid black medium;
+		}
+
+		[id="8A_results"] {
+			top: 25%;
 		}
 
 	</style>
-
-	<header class='header'>
-		<table style="width:100%; border: none; border-collapse: collapse;">
-			<tr style="background-color: #000066">
-				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%; padding-bottom: 0.5%"><img src="images/logo_cut.png" class="logo_image" width="100%"></td>
-				<td class="main_active" style="text-align: center; width: 7.5%"><a href="0-0.html">0</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="1-0.html">1</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
+</head>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
 			</tr>
-			<tr style="background-color: #66B2FF">
-				<td class="sub"></td>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
 				<td class="sub_active" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_active" href="0-0.html">#</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-1.html">+</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-2.html">&#215;</a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-3.html">&#247;</a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html">^</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html"><span style="font-size: 0.95em">^</span></a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-5.html">&#8730;</a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-6.html">&#402;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-6.html"><span style="font-size: 0.95em">&#402;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-7.html"><span style="padding-bottom: 50%">&#9697;</span></a></td>
 				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-Q.html">?</a></td>
-				<td class="sub"></td>
-				<td class="sub"></td>
 				<td class="sub"></td>
 			</tr>
 		</table>
-	</header>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
 
-</head>
-<body>
-
-	<div style="width: 105rem; margin: 0 auto;">
-	<table style="width: 100%,; text-align: center; margin-top: 5%">
-		<tr style="width: 100%">
-			<td style="width: 25%">
-			</td>
-			<td style="width: 20%">
-				<img src="images/0-0/num_intro_people.png" width=100%>
-			</td>
-			<td style="width: 10%">
-			</td>
-			<td style="width: 20%; text-align: center">
-				<img src="images/0-0/num_intro_hill.png" width=100%>
-			</td>
-			<td style="width: 25%">
-			</td>
-		</tr>
-	</table>
-
-	<table style="vertical-align: top; width: 100%; margin-top: 5%; font-size: 1rem">
-		<tr style="width: 100%">
-			<td style="width: 5%">
-			</td>
-			<td style="width: 55%; border-style: solid; border-color: black; padding: 1%">
-				<table style="width:100%; border-collapse: collapse;">
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;0
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;0
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679;</span>
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;-1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;-2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;-3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;-4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;-5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;-6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%"> 
-							&nbsp;7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;-7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;-8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							&nbsp;-9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							11 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679;</span>
-						</td>
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-11 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							13 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-13 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							17 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-17 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							18 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-18 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-					<tr style="width:100%">
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-						</td>
-						<td style="width:50%; line-height: 0.9em; border-style: solid; border-color: lightgray; border-width: 0.25rem; padding: 1%">
-							-20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1.225rem">&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202; &nbsp;&#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-						</td>
-					</tr>
-				</table>
-			</td>
-			<td style="width:7.5%">
-			</td>
-			<td style="width: 25%; vertical-align: top; border-style: solid; text-align: left">
-				<div style="margin-top: 5%">
-					<form action="#" class="form-inline" style="text-align: center">
-					  
-					  <input type="text" id="first" class="form-control" placeholder=" A">
-					  
-					</form>
-
-					<p id="result" style="line-height: 1.1em; border-style: solid; border-color: lightgray; padding: 5%; margin-left: 10%; margin-right: 10%; margin-top: 5%"></p>
-				</div>
-			</td>
-			<td style="width: 7.5%">
-			</td>
-		</tr>
-	</table>
-
-	<table style="width:100%; margin-bottom: 2.5%; margin-top: 7.5%">
-		<tr style="width: 100%">
-			<td style="width: 55%; text-align: center">
-				<img src="images/0-0/bar_numbers.png" width=80%>
-				<p style="font-size: 2.75rem; text-align: center; margin-top: 7.5%"> 
-					+ &nbsp;>&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 3rem">&#9679; &nbsp; &#9679; &nbsp; &#9679;</span> &nbsp; > &nbsp; <span style="font-size: 3rem">&#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-					<br>- &nbsp;<&nbsp; + &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 3rem">&#9675; &nbsp; &#9675; &nbsp; &#9675;</span> &nbsp; < &nbsp; <span style="font-size: 3rem">&#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-				</p>
-			</td>
-			<td style="width: 45%; text-align: center; vertical-align: center">
-				<p style="font-size: 2.75rem; text-align: center"> 
-					&nbsp;A &nbsp; = &nbsp; <span style="font-size: 3rem">&#9679; &nbsp; &#9679; &nbsp; &#9679;</span>
-					<br> -A &nbsp; = &nbsp; <span style="font-size: 3rem">&#9675; &nbsp; &#9675; &nbsp; &#9675;</span>
-				</p>
-				<img src="images/0-0/gopher.png" width=80% style="margin-top: 3.5%">
-				<img src="images/0-0/color_numbers.png" width=75% style="margin-top: 5%">
-			</td>
-		</tr>
-	</table>
-
-	<p style="margin-top:5%; text-align: center; font-size: 2.5rem; font-weight: 400; line-height: 2em">
-		A &nbsp;=&nbsp; 0, 1, 2, 3, 4, 5...
-		<br>B &nbsp;=&nbsp; 0, 1, 2, 3, 4, 5...
-	</p>
-
-	<p style="text-align: center; margin-bottom: 2.5%; margin-top: 5%; font-weight:400; font-size: 1rem">Ⓒ MBC Output 2020 </p>
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button10" type="button" onclick="scrollToIndex(10)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button11" type="button" onclick="scrollToIndex(11)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button12" type="button" onclick="scrollToIndex(12)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button13" type="button" onclick="scrollToIndex(13)" class="scroll_button">&nbsp;</td></tr>
+		</table>
 	</div>
 
+	<div class="wrapper" id="wrapper">
+		<div id="0" style="width: 100%; margin-top: 6.5%;">
+			<table id="0A" style="width: 100%; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 20%">
+					</td>
+					<td style="width: 25%">
+						<img src="images/0/0-0/num_intro_people.png" width=100%>
+					</td>
+					<td style="width: 10%">
+					</td>
+					<td style="width: 25%;">
+						<img src="images/0/0-0/num_intro_hill.png" width=100%>
+					</td>
+					<td style="width: 20%">
+					</td>
+				</tr>
+			</table>
+
+			<table style="width: 100%; margin-top: 4%; background-color: white;">
+				<tr style="width: 100%">
+					<td style="width: 46.25%">
+						<div id="0B" class="outlined" style="width: 100%; height: 100%; text-align: center; border-radius: 1.5em;">
+
+							<table style="width: 100%;">
+								<tr style="width: 100%;">
+									<td style="width: 45%; padding: 5%; padding-bottom: 3%; padding-left: 7.5%; padding-top: 4.5%">
+										<img id="0B_display_L" src="images/0/0-0/num_compare_people_3.png" width=100%>
+									</td>
+									<td style="width: 10%; font-size: 3em;">
+										<div id="0B_comparator">=</div>
+									</td>
+									<td style="width: 45%; padding: 5%; padding-bottom: 3%; padding-right: 7.5%; padding-top: 4.5%">
+										<img id="0B_display_R" src="images/0/0-0/num_compare_people_3.png" width=100%>
+									</td>
+								</tr>
+							</table>
+
+							<table style="width: 100%; background-color: lightgray; border-bottom-left-radius: 1.35em; border-bottom-right-radius: 1.35em; border-top: solid black medium;">
+								<tr style="width: 100%;">
+									<td style="width: 45%; padding: 5%; padding-top: 3.5%; padding-bottom: 3.5%; padding-left: 7.5%;">
+										<button class="button_red" id="0B_button_L_minus" onclick="onclick_0B('L', 'minus')" style="width: 2.5em; height: 1.5em; font-size: 1.75em; border-top-left-radius: 0.5em; border-bottom-left-radius: 0.5em; margin-right: -0.15em; border: solid black medium;">
+											<div style="width: 100%; display:flex; justify-content: center;">
+												<b>&thinsp;&minus;&thinsp;</b>
+											</div>
+										</button>
+										<button class="button_green" id="0B_button_L_plus" onclick="onclick_0B('L', 'plus')" style="width: 2.5em; height: 1.5em; font-size: 1.75em; border-top-right-radius: 0.5em; border-bottom-right-radius: 0.5em; margin-left: -0.15em; border: solid black medium;">
+											<div style="width: 100%; display:flex; justify-content: center;">
+												<b>&thinsp;+&thinsp;</b>
+											</div>
+										</button>
+									</td>
+									<td style="width: 10%;">
+									</td>
+									<td style="width: 45%; padding: 5%; padding-top: 3.5%; padding-bottom: 3.5%; padding-right: 7.5%;">
+										<button class="button_red" id="0B_button_R_minus" onclick="onclick_0B('R', 'minus')" style="width: 2.5em; height: 1.5em; font-size: 1.75em; border-top-left-radius: 0.5em; border-bottom-left-radius: 0.5em; margin-right: -0.15em; border: solid black medium;">
+											<div style="width: 100%; display:flex; justify-content: center;">
+												<b>&thinsp;&minus;&thinsp;</b>
+											</div>
+										</button>
+										<button class="button_green" id="0B_button_R_plus" onclick="onclick_0B('R', 'plus')" style="width: 2.5em; height: 1.5em; font-size: 1.75em; border-top-right-radius: 0.5em; border-bottom-right-radius: 0.5em; margin-left: -0.15em; border: solid black medium;">
+											<div style="width: 100%; display:flex; justify-content: center;">
+												<b>&thinsp;+&thinsp;</b>
+											</div>
+										</button>
+									</td>
+								</tr>
+							</table>
+
+						</div>
+					</td>
+					<td style="width: 7.5%">
+					</td>
+					<td style="width: 46.25%;">
+						<div class="outlined" id="0C" style="width: 100%; height: 100%; text-align: center; border-radius: 1.5em;">
+
+							<table style="width: 100%;">
+								<tr style="width: 100%;  position: relative;">
+									<td style="width: 45%;  position: relative; height: 100%; padding: 5%; padding-top: 2.5%; padding-left: 7.5%;">
+										<div style="position: relative;">
+											<img id="0C_display_L_background" style="width: 100%; height: 100%" src="images/0/0-0/num_compare_hill_background.png">
+											<img id="0C_display_L_top" style="width: 100%; position: absolute; top: 40%; left: 0px; height: 42.5%" src="images/0/0-0/num_compare_hill_top.png">
+											<img id="0C_display_L_bottom" style="width: 100%; position: absolute; bottom: 0px; left: 0px;" src="images/0/0-0/num_compare_hill_bottom.png">
+										</div>
+									</td>
+									<td id="0C_comparator" style="width: 10%; font-size: 3em;">
+										=
+									</td>
+									<td style="width: 45%;  position: relative; height: 100%; padding: 5%; padding-top: 2.5%; padding-right: 7.5%;">
+										<div style="position: relative;">
+											<img id="0C_display_R_background" style="width: 100%; height: 100%" src="images/0/0-0/num_compare_hill_background.png">
+											<img id="0C_display_R_top" style="width: 100%; position: absolute; top: 40%; left: 0px; height: 42.5%" src="images/0/0-0/num_compare_hill_top.png">
+											<img id="0C_display_R_bottom" style="width: 100%; position: absolute; bottom: 0px; left: 0px;" src="images/0/0-0/num_compare_hill_bottom.png">
+										</div>
+									</td>
+								</tr>
+							</table>
+
+							<table style="width: 100%; background-color: lightgray; border-bottom-left-radius: 1.35em; border-bottom-right-radius: 1.35em; border-top: solid black medium;">
+								<tr style="width: 100%;  position: relative; vertical-align: center;">
+									<td style="width: 45%;  position: relative; height: 100%; font-size: 1.75em; height: 1.5em; padding: 5%; padding-top: 3.5%; padding-bottom: 3.5%; padding-left: 7.5%;">
+										<div style="width: 100%; display:flex; justify-content: center;">
+											<label style="padding-right: 0.25em">0</label><input type="range" class="0C_slider" id="0C_slider_L" oninput="oninput_0C('L')" style="width: 60%; opacity: 1; background-color: lightgray;"><label style="padding-left: 0.25em">&#11014;</label>
+										</div>
+									</td>
+									<td style="width: 10%;">
+									</td>
+									<td style="width: 45%;  position: relative; height: 100%; font-size: 1.75em; height: 1.5em; padding: 5%; padding-top: 3.5%; padding-bottom: 3.5%; padding-right: 7.5%;">
+										<div style="width: 100%; display:flex; justify-content: center;">
+											<label style="padding-right: 0.25em">0</label><input type="range" class="0C_slider" id="0C_slider_R" oninput="oninput_0C('R')" style="width: 60%; opacity: 1; background-color: lightgray;"><label style="padding-left: 0.25em">&#11014;</label>
+										</div>
+									</td>
+								</tr>
+							</table>
+
+						</div>
+					</td>
+			</table>
+		</div>
+
+		<div id="1" style="width: 100%; margin-top: 20%;">
+
+			<table id="1A" class="unselectable" style="width: 80%; padding-left: 1.5%; padding-right: 1.5%; margin-left: 10%; margin-top: 0%; text-align: center; font-size: 1.75em; font-weight: bold; line-height: 0.6em">
+				<tr style="width: 100%;">
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: gray"><br>0<br>&nbsp;</div>
+					</td>
+					<td style="width: 2.5%; font-size: 0.85em">
+						&rarr;
+					</td>
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: #FFD630"><br>1<br>&nbsp;</div>
+					</td>
+					<td style="width: 2.5%; font-size: 0.85em">
+						&rarr;
+					</td>
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: #DB0000"><br>2<br>&nbsp;</div>
+					</td>
+					<td style="width: 2.5%; font-size: 0.85em">
+						&rarr;
+					</td>
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: blue"><br>3<br>&nbsp;</div>
+					</td>
+					<td style="width: 2.5%; font-size: 0.85em">
+						&rarr;
+					</td>
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: #FF8000"><br>4<br>&nbsp;</div>
+					</td>
+					<td style="width: 2.5%; font-size: 0.85em">
+						&rarr;
+					</td>
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: black"><br>5<br>&nbsp;</div>
+					</td>
+					<td style="width: 2.5%; font-size: 0.85em">
+						&rarr;
+					</td>
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: #FF66B3"><br>6<br>&nbsp;</div>
+					</td>
+					<td style="width: 2.5%; font-size: 0.85em">
+						&rarr;
+					</td>
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: #0A8543"><br>7<br>&nbsp;</div>
+					</td>
+					<td style="width: 2.5%; font-size: 0.85em">
+						&rarr;
+					</td>
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: #712FBD"><br>8<br>&nbsp;</div>
+					</td>
+					<td style="width: 2.5%; font-size: 0.85em">
+						&rarr;
+					</td>
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: #CC49C3"><br>9<br>&nbsp;</div>
+					</td>
+					<td style="width: 2.5%; font-size: 0.85em">
+						&rarr;
+					</td>
+					<td style="width: 6.8%">
+						<div style="width: 100%; height: 100%; color: white; border-radius: 50%; border: solid black medium; background-color: gray"><br>10<br>&nbsp;</div>
+					</td>
+				</tr>
+			</table>
+
+			<table class="unselectable, outlined" style="width: 85%; padding-left: 1.5%; padding-right: 1.5%; margin-left: 7.5%; margin-top: 5%; text-align: center; border-radius: 3.5em;">
+				<tr id="1B" style="width: 100%;">
+					<td style="width: 93.5%; padding: 2.5%; padding-left: 3.5%; padding-right: 3.5%;">
+						<table  style="width: 100%; font-size: 2em;">
+							<tr style="width: 100%">
+								<td class="1B_step_0" style="width: 5%">
+									0
+								</td>
+								<td class="1B_step_1" style="width: 5%; font-size: 0.85em">
+									<&thinsp;
+								</td>
+								<td class="1B_step_1" style="width: 5%">
+									1
+								</td>
+								<td class="1B_step_2" style="width: 5%; font-size: 0.85em">
+									<&thinsp;
+								</td>
+								<td class="1B_step_2" style="width: 5%">
+									2
+								</td>
+								<td class="1B_step_3" style="width: 5%; font-size: 0.85em">
+									<&thinsp;
+								</td>
+								<td class="1B_step_3" style="width: 5%">
+									3
+								</td>
+								<td class="1B_step_4" style="width: 5%; font-size: 0.85em">
+									<&thinsp;
+								</td>
+								<td class="1B_step_4" style="width: 5%">
+									4
+								</td>
+								<td class="1B_step_5" style="width: 5%; font-size: 0.85em">
+									<&thinsp;
+								</td>
+								<td class="1B_step_5" style="width: 5%">
+									5
+								</td>
+								<td class="1B_step_6" style="width: 5%; font-size: 0.85em">
+									<&thinsp;
+								</td>
+								<td class="1B_step_6" style="width: 5%">
+									6
+								</td>
+								<td class="1B_step_7" style="width: 5%; font-size: 0.85em">
+									<&thinsp;
+								</td>
+								<td class="1B_step_7" style="width: 5%">
+									7
+								</td>
+								<td class="1B_step_8" style="width: 5%; font-size: 0.85em">
+									<&thinsp;
+								</td>
+								<td class="1B_step_8" style="width: 5%">
+									8
+								</td>
+								<td class="1B_step_9" style="width: 5%; font-size: 0.85em">
+									<&thinsp;
+								</td>
+								<td class="1B_step_9" style="width: 5%">
+									9
+								</td>
+								<td class="1B_step_10" style="width: 5%; font-size: 0.85em">
+									<&thinsp;
+								</td>
+								<td class="1B_step_10" style="width: 5%">
+									10
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="width: 6.5%; text-align: center">
+						<a id="1B_step_button" class="step_button" onclick="onclick_1B()" style="margin-left: 0%; width: 1.5em; height: 1.5em; font-size: 1.25em; line-height: 1.35em; border-radius: 0.5em; letter-spacing: -0.1em;">
+							<span style="font-weight: bold; font-size: 0.65em">l</span>&#9666;&#9666;&nbsp;
+						</a>
+					</td>
+				</tr>
+			</table>
+
+			<div id="1C" style="width: 60%; margin-left: 19.5%; margin-top: 7.5%">
+				<img src="images/0/0-0/num_person_to_dot.png" width=100%>
+			</div>
+		</div>
+
+		<div id="2" class="CQ, unselectable" style="width: 85%; margin-top: 20%; margin-left: 7.5%; height: 100%">
+			<table id="2A" class="outlined" style="width: 100%; border-radius: 2.5em; font-size: 1.4em; line-height: 1.85em; height: 100%">
+				<tr style="width: 100%; height: 100%">
+					<td style="height: 100%; width: 60%; padding: 2.5%; padding-right: 0%; padding-top: 5%; padding-bottom: 5%; text-align: center; vertical-align: bottom; font-size: 2.25em;">
+						<span style="width: 32.5%"></span><span style="display: inline-block; width: 45%"><img id="2A_display" src="images/0/0-0/num_fingers_5.png" width=100% style="display: inline-block;"></span><span style="display: inline-block; width: 22.5%; line-height: 0.75em"> &nbsp; =&nbsp; ?<br><br><br><br><br><br></span>
+					</td>
+					<td style="height: 100%; width: 40%; padding: 5%; text-align: center; text-align: center">
+						<table style="width: 100%;">
+							<tr style="width: 100%">
+								<td class="2A_answer" id="2A_answer_0" onclick="onclick_2A('answer', '0')" style="width: 80%; border-radius: 0.5em">
+									0
+								</td>
+								<td id="2A_response_0" style="width: 20%; font-size: 2em">
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="2A_answer" id="2A_answer_1" onclick="onclick_2A('answer', '1')" style="width: 80%; border-radius: 0.5em">
+									1
+								</td>
+								<td id="2A_response_1" style="width: 20%; font-size: 2em">
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="2A_answer" id="2A_answer_2" onclick="onclick_2A('answer', '2')" style="width: 80%; border-radius: 0.5em">
+									2
+								</td>
+								<td id="2A_response_2" style="width: 20%; font-size: 2em">
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="2A_answer" id="2A_answer_3" onclick="onclick_2A('answer', '3')" style="width: 80%; border-radius: 0.5em">
+									3
+								</td>
+								<td id="2A_response_3" style="width: 20%; font-size: 2em">
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="2A_answer" id="2A_answer_4" onclick="onclick_2A('answer', '4')" style="width: 80%; border-radius: 0.5em">
+									4
+								</td>
+								<td id="2A_response_4" style="width: 20%; font-size: 2em">
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="2A_answer" id="2A_answer_5" onclick="onclick_2A('answer', '5')" style="width: 80%; border-radius: 0.5em">
+									5
+								</td>
+								<td id="2A_response_5" style="width: 20%; font-size: 2em">
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 80%;">
+									&nbsp;
+								</td>
+								<td style="width: 20%;">
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="next_button" onclick="onclick_2A('next', '')" style="width: 80%; border-radius: 0.5em; font-size: 1.25em;">
+									&#10145;
+								</td>
+								<td style="width: 20%;">
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="3" style="width: 100%; margin-top: 20%; height: 100%">
+			<table id="3A" class="outlined" style="width: 100%; border-radius: 1.5em; font-size: 1.45em; height: 100%">
+				<tr style="width: 100%; height: 100%">
+					<td style="width: 70%; border: none black medium; padding: 2.5%;">
+						<div style="width: 100%; border-radius: 1em; border: solid lightgray medium; padding: 0%;">
+							<table style="width: 100%; border-collapse: collapse;">
+								<tr style="width: 100%;">
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-left: none; border-top: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.15em">1&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">&bull;</div>
+									</td>
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-right: none; border-top: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.5em">11&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">
+											&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+											<br>&bull;
+										</div>
+									</td>
+								</tr>
+								<tr style="width: 100%;">
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-left: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.15em">2&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">&bull; &bull;</div>
+									</td>
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-right: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.5em">12&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">
+											&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+											<br>&bull; &bull;
+										</div>
+									</td>
+								</tr>
+								<tr style="width: 100%;">
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-left: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.15em">3&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">&bull; &bull; &bull;</div>
+									</td>
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-right: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.5em">13&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">
+											&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+											<br>&bull; &bull; &bull;
+										</div>
+									</td>
+								</tr>
+								<tr style="width: 100%;">
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-left: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.15em">4&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">&bull; &bull; &bull; &bull;</div>
+									</td>
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-right: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.5em">14&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">
+											&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+											<br>&bull; &bull; &bull; &bull;
+										</div>
+									</td>
+								</tr>
+								<tr style="width: 100%;">
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-left: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.15em">5&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">&bull; &bull; &bull; &bull; &bull;</div>
+									</td>
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-right: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.5em">15&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">
+											&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+											<br>&bull; &bull; &bull; &bull; &bull;
+										</div>
+									</td>
+								</tr>
+								<tr style="width: 100%;">
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-left: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.15em">6&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">&bull; &bull; &bull; &bull; &bull; &bull;</div>
+									</td>
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-right: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.5em">16&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">
+											&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+											<br>&bull; &bull; &bull; &bull; &bull; &bull;
+										</div>
+									</td>
+								</tr>
+								<tr style="width: 100%;">
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-left: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.15em">7&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">&bull; &bull; &bull; &bull; &bull; &bull; &bull;</div>
+									</td>
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-right: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.5em">17&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">
+											&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+											<br>&bull; &bull; &bull; &bull; &bull; &bull; &bull;
+										</div>
+									</td>
+								</tr>
+								<tr style="width: 100%;">
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-left: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.15em">8&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</div>
+									</td>
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-right: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.5em">18&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">
+											&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+											<br>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+										</div>
+									</td>
+								</tr>
+								<tr style="width: 100%;">
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-left: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.15em">9&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</div>
+									</td>
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-right: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.5em">19&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">
+											&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+											<br>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+										</div>
+									</td>
+								</tr>
+								<tr style="width: 100%;">
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-left: none; border-bottom: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.15em">10&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</div>
+									</td>
+									<td style="width: 50%; padding: 1.25%; border: solid lightgray medium; border-right: none; border-bottom: none;">
+										<div style="width: 25%; float: left; text-align: center; vertical-align: center; line-height: 0.67em; padding-top: 0.5em">20&nbsp;&nbsp;</div>
+										<div style="width: 75%; float: left; text-align: left; vertical-align: center; font-size: 1.75em; line-height: 0.45em">
+											&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+											<br>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td class="unselectable" style="width: 30%; border: none black medium; height: 100%; padding: 0px; text-align: center;">
+						<table style="height: 90%; width: 100%; margin-top: 5%">
+							<tr style="height: 5%; width: 100%">
+								<td style="height: 5%; width: 100%; vertical-align: top; padding-bottom: 4.5%">
+									<form action="#" class="form-inline" style="text-align: center; margin-top: 0px; margin-bottom: 0px">
+										<input style="padding: 0.25em; width: 70%;" type="text" id="3A_input" class="form-control" placeholder="A" oninput="oninput_3A()">
+									</form>
+								</td>
+							</tr>
+							<tr style="height: 95%; width: 100%">
+								<td style="height: 95%; width: 100%; padding: 5%; padding-bottom: 7.5%; padding-right: 10%; padding-left: 10%; text-align: left; font-size: 1.75em; line-height: 0.5em; text-align: center; vertical-align: center">
+									<div style="height: 100%; border-style: solid; border-width: medium; border-color: lightgray; border-radius: 0.75em; text-align: left; padding-left: 12.5%">
+										<p id="3A_display">
+										</p>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="4" style="width: 85%; margin-top: 20%; margin-left: 7.5%; height: 100%">
+			<table id="4A" class="outlined" style="width: 100%; border-radius: 3.5em; font-size: 1.45em; height: 100%">
+				<tr style="width: 100%; height: 100%">
+					<td style="height: 100%; width: 10%; padding: 2.5%; padding-right: 0%; padding-top: 5%; text-align: center;">
+						<button class="button_green" id="4A_button_L_plus" onclick="onclick_4A('L', 'plus')" style="width: 60%; height: 2.5em; font-size: 1.5em; line-height: 0.1em; border-top-right-radius: 0.5em; border-top-left-radius: 0.5em; border: solid black medium;">
+							<div style="width: 100%; display:flex; justify-content: center;">
+								<b>+</b>
+							</div>
+						</button>
+						<button class="button_red" id="4A_button_L_minus" onclick="onclick_4A('L', 'minus')" style="width: 60%; height: 2.5em; font-size: 1.5em; line-height: 0.1em; border-bottom-right-radius: 0.5em; border-bottom-left-radius: 0.5em; border: solid black medium; margin-top: -0.1em">
+							<div style="width: 100%; display:flex; justify-content: center;">
+								<b>&minus;</b>
+							</div>
+						</button>
+					</td>
+					<td style="height: 100%; width: 35%; padding: 3.5%; padding-top: 5%; font-size: 2.5em; line-height: 0.5em; text-align: center; vertical-align: center;">
+						<div id="4A_L" style="height: 100%; border-style: solid; border-width: medium; border-color: lightgray; border-radius: 0.75em; text-align: left; padding-left: 24.5%">
+							<p id="4A_display_L">
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+							</p>
+						</div>
+					</td>
+					<td class="unselectable" style="height: 100%; width: 10%; padding: 2.5%; padding-top: 5%; font-size: 3.5em; line-height: 0.24em; text-align: center;">
+						<br><br><br><br><br><br><br><br><br><br><br><span id="4A_comparator">=</span><br><br><br><br><br><br><br><br><br><br><br>
+					</td>
+					<td style="height: 100%; width: 35%; padding: 3.5%; padding-top: 5%; font-size: 2.5em; line-height: 0.5em; text-align: center; vertical-align: center;">
+						<div id="4A_R" style="height: 100%; border-style: solid; border-width: medium; border-color: lightgray; border-radius: 0.75em; text-align: left; padding-left: 24.5%">
+							<p id="4A_display_R">
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+							</p>
+						</div>
+					</td>
+					<td style="height: 100%; width: 10%; padding: 2.5%; padding-left: 0%; padding-top: 5%; text-align: center;">
+						<button class="button_green" id="4A_button_R_plus" onclick="onclick_4A('R', 'plus')" style="width: 60%; height: 2.5em; font-size: 1.5em; line-height: 0.1em; border-top-right-radius: 0.5em; border-top-left-radius: 0.5em; border: solid black medium;">
+							<div style="width: 100%; display:flex; justify-content: center;">
+								<b>+</b>
+							</div>
+						</button>
+						<button class="button_red" id="4A_button_R_minus" onclick="onclick_4A('R', 'minus')" style="width: 60%; height: 2.5em; font-size: 1.5em; line-height: 0.1em; border-bottom-right-radius: 0.5em; border-bottom-left-radius: 0.5em; border: solid black medium; margin-top: -0.1em">
+							<div style="width: 100%; display:flex; justify-content: center;">
+								<b>&minus;</b>
+							</div>
+						</button>
+					</td>
+				</tr>
+				<tr style="width: 100%; height: 100%">
+					<td style="height: 100%; width: 10%; padding-bottom: 5%;">
+					</td>
+					<td style="height: 100%; width: 35%; padding-bottom: 5%; text-align: center;">
+						<input style="padding: 0.25em; width: 70%;" type="text" id="4A_input_L" class="form-control" value="30" oninput="oninput_4A()">
+					</td>
+					<td style="height: 100%; width: 10%; padding-bottom: 5%;">
+					</td>
+					<td style="height: 100%; width: 35%; padding-bottom: 5%; text-align: center;">
+						<input style="padding: 0.25em; width: 70%;" type="text" id="4A_input_R" class="form-control" value="30" oninput="oninput_4A()">
+					</td>
+					<td style="height: 100%; width: 10%; padding-bottom: 5%;">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="5" class="CQ, unselectable" style="width: 85%; margin-top: 20%; margin-left: 7.5%; height: 100%">
+			<table id="5A" class="outlined" style="width: 100%; border-radius: 3.5em; font-size: 1.45em; height: 100%">
+				<tr style="width: 100%; height: 100%">
+					<td style="height: 100%; width: 5%; padding-bottom: 0%">
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</td>
+					<td style="height: 100%; width: 35%; padding: 3.5%; padding-top: 5%; font-size: 2.5em; line-height: 0.5em; text-align: center; vertical-align: center; padding-bottom: 0%">
+						<div id="5A_L" style="height: 100%; border-style: solid; border-width: medium; border-color: lightgray; border-radius: 0.75em; text-align: left; padding-left: 24.5%">
+							<p id="5A_display_L">
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+							</p>
+						</div>
+					</td>
+					<td class="unselectable" style="height: 100%; width: 20%; padding: 2.5%; padding-top: 5%; text-align: center; padding-bottom: 0%">
+						<table style="width: 65%; margin-left: 17.5%; font-size: 0.85em">
+							<tr style="width: 100%">
+								<td style="width: 100%; font-size: 2.5em; line-height: 1em; color: black; border-radius: 0.25em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="5A_answer" id="5A_answer_l" onclick="onclick_5A('answer', 'l')" style="width: 100%; font-size: 2.5em; line-height: 1.5em; border-radius: 0.25em; font-weight: bold;">
+									<
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; line-height: 0.25em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="5A_answer" id="5A_answer_e" onclick="onclick_5A('answer', 'e')" style="width: 100%; font-size: 2.5em; line-height: 1.5em; border-radius: 0.25em; font-weight: bold;">
+									=
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; line-height: 0.25em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="5A_answer" id="5A_answer_g" onclick="onclick_5A('answer', 'g')" style="width: 100%; font-size: 2.5em; line-height: 1.5em; border-radius: 0.25em; font-weight: bold;">
+									>
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td id="5A_response" style="width: 100%; font-size: 2.5em; line-height: 1.75em; color: black; border-radius: 0.25em">
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="height: 100%; width: 35%; padding: 3.5%; padding-top: 5%; font-size: 2.5em; line-height: 0.5em; text-align: center; vertical-align: center; padding-bottom: 0%">
+						<div id="5A_R" style="height: 100%; border-style: solid; border-width: medium; border-color: lightgray; border-radius: 0.75em; text-align: left; padding-left: 24.5%">
+							<p id="5A_display_R">
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull;<br>&bull; &bull; &bull; &bull; &bull;<br>
+							</p>
+						</div>
+					</td>
+					<td style="height: 100%; width: 5%; padding-bottom: 0%">
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</td>
+				</tr>
+				<tr style="width: 100%; height: 100%">
+					<td style="height: 100%; width: 5%; padding-bottom: 2.5%;">
+					</td>
+					<td style="height: 100%; width: 35%; padding-bottom: 2.5%; text-align: center; font-size: 1.15em">
+						<span id="5A_value_L">50</span>
+					</td>
+					<td style="height: 100%; width: 20%; padding-bottom: 2.5%; padding-right: 1.25%; padding-left: 1.25%">
+						<table style="width: 75%; margin-left: 12.5%;">
+							<tr style="width: 100%">
+								<td class="next_button" onclick="onclick_5A('next', '')" style="width: 100%; border-radius: 0.5em; font-size: 1.25em; line-height: 1.5em; text-align: center;">
+									&#10145;
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="height: 100%; width: 35%; padding-bottom: 2.5%; text-align: center; font-size: 1.15em">
+						<span id="5A_value_R">20</span>
+					</td>
+					<td style="height: 100%; width: 5%; padding-bottom: 2.5%;">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="6" style="width: 100%; margin-top: 20%;">
+			<table style="width: 100%;">
+				<tr style="width: 100%">
+					<td style="width: 70%; padding-right: 2.5%">
+						<img id="6A" style="width: 85%; margin-left: 7.5%;" src="images/0/0-0/num_bars_intro.png">
+
+						<div id="6B" style="width: 85%; height: 100%; text-align: center; margin-left: 7.5%; margin-top: 7.5%">
+
+							<table style="width: 100%;">
+								<tr style="width: 100%;">
+									<td style="width: 35%; padding-right: 2.5%">
+										<div style="position: relative;">
+											<img id="6B_display_L_background" style="width: 100%; height: 100%" src="images/0/0-0/num_compare_chicken_background.png">
+											<img id="6B_display_L_foreground" style="width: 100%; position: absolute; top: 0%; left: 0%;" src="images/0/0-0/num_compare_chicken.png">
+										</div>
+									</td>
+									<td id="6B_comparator" style="width: 30%; font-size: 3em;">
+										<img id="6B_comparator_img" style="width: 90%; margin-left: 5%;" src="images/0/0-0/num_compare_croc_left.png">
+									</td>
+									<td style="width: 35%; padding-left: 2.5%">
+										<div style="position: relative;">
+											<img id="6B_display_R_background" style="width: 100%; height: 100%" src="images/0/0-0/num_compare_chicken_background.png">
+											<img id="6B_display_R_foreground" style="width: 75%; position: absolute; top: 12.5%; left: 12.5%;" src="images/0/0-0/num_compare_chicken.png">
+										</div>
+									</td>
+								</tr>
+							</table>
+
+							<table style="width: 100%;">
+								<tr style="width: 100%;  position: relative; vertical-align: center;">
+									<td style="width: 35%;  position: relative; font-size: 1.75em; height: 1em; padding-top: 3.5%">
+										<div style="width: 100%; display:flex; justify-content: center;">
+											<label style="padding-right: 0.35em">0</label><input type="range" class="6B_slider" id="6B_slider_L" oninput="oninput_6B('L')" value=100 style="width: 55%; opacity: 1; background-color: white;"><label style="padding-left: 0.35em">&#11014;</label>
+										</div>
+									</td>
+									<td style="width: 30%;">
+									</td>
+									<td style="width: 35%;  position: relative; font-size: 1.75em; height: 1em; padding-top: 3.5%;">
+										<div style="width: 100%; display:flex; justify-content: center;">
+											<label style="padding-right: 0.35em">0</label><input type="range" class="6B_slider" id="6B_slider_R" oninput="oninput_6B('R')" value=50 style="width: 55%; opacity: 1; background-color: white;"><label style="padding-left: 0.35em">&#11014;</label>
+										</div>
+									</td>
+								</tr>
+							</table>
+
+						</div>
+					</td>
+					<td style="width: 30%; padding-left: 2.5%">
+						<img id="6C" style="width: 80%; margin-left: 12.5%;" src="images/0/0-0/num_compare_bar_ref.png">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="7" class="CQ, unselectable" style="width: 90%; margin-top: 20%; margin-left: 5%; height: 100%">
+			<table id="7A" class="outlined" style="width: 100%; border-radius: 2.5em; font-size: 1.5em; line-height: 2em; height: 100%">
+				<tr style="width: 100%; height: 100%">
+					<td style="height: 100%; width: 60%; padding: 7.5%; padding-right: 1.5%; padding-left: 8.5%">
+						<img style="width: 100%; margin-left: 0%;" src="images/0/0-0/num_bars_cq.png">
+					</td>
+					<td style="height: 100%; width: 40%; padding: 5%; padding-bottom: 2.5%; padding-top: 2.5%; text-align: center; text-align: center">
+						<table style="width: 80%; margin-left: 10%">
+							<tr style="width: 100%">
+								<td style="width: 100%; font-size: 2.5em; line-height: 1.5em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="7A_check" id="7A_check_1" onclick="onclick_7A('check', '1')" style="width: 100%; border-radius: 0.5em">
+									1
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; border-radius: 0.5em; line-height: 0.15em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="7A_check" id="7A_check_4" onclick="onclick_7A('check', '4')" style="width: 100%; border-radius: 0.5em">
+									4
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; border-radius: 0.5em; line-height: 0.15em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td class="7A_check" id="7A_check_10" onclick="onclick_7A('check', '10')" style="width: 100%; border-radius: 0.5em">
+									10
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td id="7A_response" style="width: 100%; font-size: 2.5em; line-height: 1.75em">
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="8" style="width: 100%; margin-top: 20%; padding-top: 1.5%;">
+			<table class="unselectable, outlined" style="width: 85%; padding-left: 1.5%; padding-right: 1.5%; margin-left: 7.5%;text-align: center; border-radius: 3.5em;">
+				<tr id="8A" style="width: 100%;">
+					<td style="width: 93.5%; padding: 2.5%; padding-left: 3.5%; padding-right: 3.5%;">
+						<table style="width: 100%; font-size: 1.85em;">
+							<tr style="width: 100%;">
+								<td class="8A_step_0" style="width: 5%">
+									0<br>0
+								</td>
+								<td class="8A_step_1" style="width: 5%">
+									&nbsp;<br>&rarr;
+								</td>
+								<td class="8A_step_1" style="width: 5%">
+									0<br>1
+								</td>
+								<td class="8A_step_2" style="width: 5%">
+									&nbsp;<br>&rarr;
+								</td>
+								<td class="8A_step_2" style="width: 5%">
+									0<br>2
+								</td>
+								<td class="8A_step_3" style="width: 5%">
+									&nbsp;<br>&rarr;
+								</td>
+								<td class="8A_step_3" style="width: 5%">
+									0<br>3
+								</td>
+								<td class="8A_step_4" style="width: 5%">
+									&nbsp;<br>&rarr;
+								</td>
+								<td class="8A_step_4" style="width: 5%">
+									0<br>4
+								</td>
+								<td class="8A_step_5" style="width: 5%">
+									&nbsp;<br>&rarr;
+								</td>
+								<td class="8A_step_5" style="width: 5%">
+									0<br>5
+								</td>
+								<td class="8A_step_6" style="width: 5%">
+									&nbsp;<br>&rarr;
+								</td>
+								<td class="8A_step_6" style="width: 5%">
+									0<br>6
+								</td>
+								<td class="8A_step_7" style="width: 5%">
+									&nbsp;<br>&rarr;
+								</td>
+								<td class="8A_step_7" style="width: 5%">
+									0<br>7
+								</td>
+								<td class="8A_step_8" style="width: 5%">
+									&nbsp;<br>&rarr;
+								</td>
+								<td class="8A_step_8" style="width: 5%">
+									0<br>8
+								</td>
+								<td class="8A_step_9" style="width: 5%">
+									&nbsp;<br>&rarr;
+								</td>
+								<td class="8A_step_9" style="width: 5%">
+									0<br>9
+								</td>
+								<td class="8A_step_10" style="width: 5%">
+									&uarr;&nbsp;
+								</td>
+								<td class="8A_step_10" style="width: 5%">
+									1<br>0
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="width: 6.5%; text-align: center">
+						<a id="8A_step_button" class="step_button" onclick="onclick_8A()" style="margin-left: 0%; width: 1.5em; height: 1.5em; font-size: 1.25em; line-height: 1.35em; border-radius: 0.5em; letter-spacing: -0.1em;">
+							<span style="font-weight: bold; font-size: 0.65em">l</span>&#9666;&#9666;&nbsp;
+						</a>
+					</td>
+				</tr>
+			</table>
+
+			<table id="8B" style="width: 90%; margin-left: 5%; font-size: 1.35em; line-height: 1.25em; margin-top: 3%;">
+				<tr style="width: 100%">
+					<td class="unselectable" style="width: 1%; text-align: center;">
+						&uarr;<br>&uarr;<br>&uarr;<br>&uarr;<br>&uarr;<br>&uarr;<br>&uarr;<br>&uarr;<br>&uarr;
+					</td>
+					<td style="width: 4%; text-align: center;">
+						9<br>8<br>7<br>6<br>5<br>4<br>3<br>2<br>1<br>0
+					</td>
+					<td class="unselectable" style="width: 11.667%">
+						<img style="width: 92.5%; padding-top: 2.5%" src="images/0/0-0/num_levels_arrow.png">
+					</td>
+					<td style="width: 5%; text-align: center;">
+						19<br>18<br>17<br>16<br>15<br>14<br>13<br>12<br>11<br>10
+					</td>
+					<td class="unselectable" style="width: 11.667%">
+						<img style="width: 92.5%; padding-top: 2.5%" src="images/0/0-0/num_levels_arrow.png">
+					</td>
+					<td style="width: 5%; text-align: center;">
+						29<br>28<br>27<br>26<br>25<br>24<br>23<br>22<br>21<br>20
+					</td>
+					<td class="unselectable" style="width: 11.667%">
+						<img style="width: 92.5%; padding-top: 2.5%" src="images/0/0-0/num_levels_arrow.png">
+					</td>
+					<td style="width: 5%; text-align: center;">
+						39<br>38<br>37<br>36<br>35<br>34<br>33<br>32<br>31<br>30
+					</td>
+					<td class="unselectable" style="width: 11.667%">
+						<img style="width: 92.5%; padding-top: 2.5%" src="images/0/0-0/num_levels_arrow.png">
+					</td>
+					<td style="width: 5%; text-align: center;">
+						49<br>48<br>47<br>46<br>45<br>44<br>43<br>42<br>41<br>40
+					</td>
+					<td class="unselectable" style="width: 11.667%">
+						<img style="width: 92.5%; padding-top: 2.5%" src="images/0/0-0/num_levels_arrow.png">
+					</td>
+				</tr>
+			</table>
+
+			<img id="8C" style="width: 90%; margin-left: 5.75%;" src="images/0/0-0/num_levels_hill.png">
+		</div>
+
+		<div id="9" style="width: 100%; margin-top: 20%;">
+
+			<table id="9A" style="width: 80%; margin-left: 10%; margin-top: 4.5%; font-size: 1.85em">
+				<tr style="width: 100%">
+					<td style="width: 5%">
+					</td>
+					<td style="width: 10%; padding-bottom: 2.5%; text-align: right;">
+						11 &nbsp; = &nbsp;
+					</td>
+					<td style="width: 30%; font-size: 1.5em; line-height: 0.5em; padding-bottom: 2.5%">
+						&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+					</td>
+					<td style="width: 10%">
+					</td>
+					<td style="width: 10%; padding-bottom: 2.5%; text-align: right;">
+						21 &nbsp; = &nbsp;
+					</td>
+					<td style="width: 30%; font-size: 1.5em; line-height: 0.5em; padding-bottom: 2.5%">
+						&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+						<br>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+					</td>
+					<td style="width: 5%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 5%">
+					</td>
+					<td style="width: 10%; text-align: right;">
+						&rarr; &nbsp;
+					</td>
+					<td style="width: 30%; font-size: 1.5em; line-height: 0.5em;">
+						&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+						<br>&bull;
+					</td>
+					<td style="width: 10%">
+					</td>
+					<td style="width: 10%; text-align: right;">
+						&rarr; &nbsp;
+					</td>
+					<td style="width: 30%; font-size: 1.5em; line-height: 0.5em;">
+						&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+						<br>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+						<br>&bull;
+					</td>
+					<td style="width: 5%">
+					</td>
+				</tr>
+			</table>
+
+			<table class="outlined" style="width: 90%; margin-left: 5%; border-radius: 3em; margin-top: 5.5%; text-align: center">
+				<tr style="width: 100%;">
+					<td id="9B" style="width: 50%; text-align: center; padding: 2.5%; padding-bottom: 3.5%; border-right: solid black medium;">
+						<img id="9B_display" style="width: 82.5%;" src="images/0/0-0/num_levels_ex1_step4.png">
+						<a id="9B_step_button" class="step_button" onclick="onclick_9_10('9B')" style="width: 1.5em; height: 1.5em; font-size: 1.25em; line-height: 1.35em; border-radius: 0.5em; letter-spacing: -0.1em; margin: 0 auto;">
+							<span style="font-weight: bold; font-size: 0.65em">l</span>&#9666;&#9666;&nbsp;
+						</a>
+					</td>
+					<td id="9C" style="width: 50%; text-align: center; padding: 2.5%; padding-bottom: 3.5%">
+						<img id="9C_display" style="width: 82.5%;" src="images/0/0-0/num_levels_ex2_step5.png">
+						<a id="9C_step_button" class="step_button" onclick="onclick_9_10('9C')" style="width: 1.5em; height: 1.5em; font-size: 1.25em; line-height: 1.35em; border-radius: 0.5em; letter-spacing: -0.1em; margin: 0 auto;">
+							<span style="font-weight: bold; font-size: 0.65em">l</span>&#9666;&#9666;&nbsp;
+						</a>
+					</td>					
+				</tr>
+			</table>
+		</div>
+
+		<div id="10" class="outlined" style="width: 85%; margin-left: 7.5%; margin-top: 20%; border-radius: 2.5em;">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr id="10A" style="width: 100%">
+					<td style="width: 95%; padding: 5%; padding-right: 1.25%; padding-top: 2.5%; border-bottom: solid black medium;">
+						<img id="10A_display" style="width: 90%; margin-left: 5%;" src="images/0/0-0/num_levels_grid_step4.png">
+					</td>
+					<td style="width: 5%; padding: 5%; padding-left: 2.5%; border-bottom: solid black medium; text-align: center;">
+						<a id="10A_step_button" class="step_button" onclick="onclick_9_10('10A')" style="margin-left: 0%; width: 1.5em; height: 1.5em; font-size: 1.25em; line-height: 1.35em; border-radius: 0.5em; letter-spacing: -0.1em;">
+							<span style="font-weight: bold; font-size: 0.65em">l</span>&#9666;&#9666;&nbsp;
+						</a>
+					</td>
+				</tr>
+
+				<tr id="10B" style="width: 100%">
+					<td style="width: 95%; padding: 5%; padding-right: 1.25%; padding-bottom: 2.5%">
+						<img id="10B_display" style="width: 90%; margin-left: 5%;" src="images/0/0-0/num_levels_bags_step4.png">
+					</td>
+					<td style="width: 5%; padding: 5%; padding-left: 2.5%; text-align: center;">
+						<a id="10B_step_button" class="step_button" onclick="onclick_9_10('10B')" style="margin-left: 0%; width: 1.5em; height: 1.5em; font-size: 1.25em; line-height: 1.35em; border-radius: 0.5em; letter-spacing: -0.1em;">
+							<span style="font-weight: bold; font-size: 0.65em">l</span>&#9666;&#9666;&nbsp;
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="11" class="CQ, unselectable" style="width: 80%; margin-top: 20%; margin-left: 10%; height: 100%">
+			<table id="11A" class="outlined" style="width: 100%; border-radius: 3.5em; font-size: 1.45em; height: 100%">
+				<tr style="width: 100%; height: 100%">
+					<td style="height: 100%; width: 5%;">
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					</td>
+					<td style="height: 100%; width: 52.5%; padding: 5%; font-size: 2.5em; line-height: 0.5em; text-align: center; vertical-align: center; padding-top: 7.5%; padding-bottom: 7.5%;">
+						<div style="height: 100%; border-style: solid; border-width: medium; border-color: lightgray; border-radius: 0.75em; text-align: left; padding-left: 15.75%">
+							<p id="11A_display">
+								&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>
+								&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>
+							</p>
+						</div>
+					</td>
+					<td style="width: 5%; font-size: 3em; text-align: center">
+						=
+					</td>
+					<td style="width: 30%; padding: 5%; text-align: left; vertical-align: center;">
+						<table style="width: 80%;">
+							<tr style="width: 100%">
+								<td style="width: 70%">
+									&nbsp;
+								</td>
+								<td style="width: 30%">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%; line-height: 1.75em">
+								<td style="width: 70%">
+									&nbsp;
+								</td>
+								<td style="width: 30%">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%; line-height: 0.5em">
+								<td style="width: 70%">
+									&nbsp;
+								</td>
+								<td style="width: 30%">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%; font-size: 1em; line-height: 1em;">
+								<td style="width: 70%; padding-right: 8.5%">
+									<input id="11A_input" maxlength="6" style="width: 100%; font-size: 1em; line-height: 1em;">
+								</td>
+								<td id="11A_response" style="width: 30%; font-size: 1.75em; text-align: right; ">&nbsp;</td>
+							</tr>
+							<tr style="width: 100%; line-height: 0.5em">
+								<td style="width: 70%">
+									&nbsp;
+								</td>
+								<td style="width: 30%">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td id="11A_check" class="next_button" onclick="onclick_11A()" style="width: 70%; line-height: 1.5em; border-radius: 0.5em; text-align: center;">&nbsp;</td>
+								<td style="width: 30%">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 70%">
+									&nbsp;
+								</td>
+								<td style="width: 30%">
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="12" class="outlined" style="width: 90%; margin-left: 5%; margin-top: 20%; margin-bottom: 20%; border-radius: 2.5em;">
+
+			<table style="width: 100%; font-size: 2em; text-align: center; border-bottom: solid black medium;">
+				<tr style="width: 100%">
+					<td id="12A" style="width: 100%; padding: 3.5%; vertical-align: middle;">
+						A &nbsp; &nbsp;= &nbsp;&nbsp; <input id="12A_input" style="font-size: 1em; width: 1em; text-align: center" maxlength="1" placeholder="?" oninput="oninput_12()"> &nbsp; &nbsp;=&nbsp; &nbsp; 
+						<div style="height: 2em; width: 3em; border: solid black medium; border-radius: 0.5em; text-align: center; vertical-align: middle; font-size: 1.5em; line-height: 0.5em; display: inline-block;">
+							<div id="12A_results" style="display: block; position: relative;"></div>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<table style="width: 100%;">
+				<tr style="width: 100%">
+					<td id="12B" style="width: 35%; padding: 2.5%; padding-right: 0%;">
+						<img id="12B_display" style="width: 75%; margin-left: 15%;" src="images/0/0-0/num_var_arrows_q.png">
+					</td>
+					<td id="12C" style="width: 65%; padding: 2.5%;">
+						<img id="12C_display" style="width: 80%; margin-left: 7.5%;" src="images/0/0-0/num_var_rocket_q.png">
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+
+		<div id="13" class="CQ, unselectable, outlined" style="width: 100%; margin-top: 20%; margin-left: 0%; height: 100%; margin-bottom: 20%; border-radius: 2.5em;">
+			<table id="13" style="width: 100%; font-size: 1.5em; line-height: 2em; height: 100%; border-collapse: collapse;">
+				<tr style="width: 100%; height: 100%">
+					<td class="unselectable" style="height: 100%; width: 27.5%; padding: 5%; padding-top: 2.5%; padding-bottom: 2.5%; padding-left: 6.5%">
+						<img style="width: 100%; margin-left: 0%;" src="images/0/0-0/num_var_cq_A.png">
+					</td>
+					<td class="unselectable" style="height: 100%; width: 22.5%; padding: 5%; padding-top: 2.5%; padding-bottom: 2.5%; padding-left: 0%; padding-right: 7.5%; text-align: center; text-align: center; border-right: solid black medium;">
+						<table style="width: 100%; margin-left: 10%">
+							<tr style="width: 100%">
+								<td style="width: 100%; font-size: 2.5em; line-height: 1.75em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; border-radius: 0.5em; line-height: 0.15em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; border-radius: 0.5em; padding-right: 8.5%; text-align: center; font-size: 1.75em">
+									A &nbsp; = &nbsp; <input id="13A_input" placeholder="?" maxlength="1" style="width: 15%; font-size: 0.85em; line-height: 1em; text-align: center">
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; border-radius: 0.5em; line-height: 0.75em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; line-height: 1.25em">
+									<div id="13A_check" class="next_button" onclick="onclick_13('A')" style="width: 89.5%; border-radius: 0.5em; margin-left: 0%">&nbsp;</div>
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; border-radius: 0.5em; line-height: 0.15em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td id="13A_response" style="width: 100%; font-size: 2.5em; line-height: 1.75em; text-align: center; padding-right: 10%;">
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="unselectable" style="height: 100%; width: 27.5%; padding: 5%; padding-top: 2.5%; padding-bottom: 2.5%; padding-left: 6.5%">
+						<img style="width: 100%; margin-left: 0%;" src="images/0/0-0/num_var_cq_B.png">
+					</td>
+					<td class="unselectable" style="height: 100%; width: 22.5%; padding: 5%; padding-top: 2.5%; padding-bottom: 2.5%; padding-left: 0%; padding-right: 7.5%; text-align: center; text-align: center">
+						<table style="width: 100%; margin-left: 10%">
+							<tr style="width: 100%">
+								<td style="width: 100%; font-size: 2.5em; line-height: 1.75em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; border-radius: 0.5em; line-height: 0.15em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; border-radius: 0.5em; padding-right: 8.5%; text-align: center; font-size: 1.75em">
+									B &nbsp; = &nbsp; <input id="13B_input" placeholder="?" maxlength="1" style="width: 15%; font-size: 0.85em; line-height: 1em; text-align: center">
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; border-radius: 0.5em; line-height: 0.75em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; line-height: 1.25em">
+									<div id="13B_check" class="next_button" onclick="onclick_13('B')" style="width: 89.5%; border-radius: 0.5em; margin-left: 0%">&nbsp;</div>
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 100%; border-radius: 0.5em; line-height: 0.15em">
+									&nbsp;
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td id="13B_response" style="width: 100%; font-size: 2.5em; line-height: 1.75em; text-align: center; padding-right: 10%;">
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="0-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
+		</div>
+	</header>
+
+	<script type="text/javascript" src="standard_functions.js"></script>
 	<script type="text/javascript">
-		var first = document.getElementById('first');
-		var result = document.getElementById('result');
 
-		first.addEventListener("input", show);
+		function onclick_0B(side, operator) {
+			var display = document.getElementById('0B_display_' + side);
+			var src = display.src;
+			var value = parseInt(src.charAt(src.length - 5));
 
-		function show() {
+			if (operator == 'plus') {
+				value += 1;
+			}
+			else if (operator == 'minus') {
+				value -= 1;
+			};
+
+			if (value > 6) { value = 6; };
+			if (value < 0) { value = 0; };
+			src = src.substring(0, src.length - 5) + value.toString() + src.substring(src.length - 4);
+			display.src = src;
+
+			if (side == 'L') {
+				var L_val = value;
+				var display_R = document.getElementById('0B_display_R');
+				var src_R = display_R.src;
+				var R_val = parseInt(src_R.charAt(src_R.length - 5));
+			}
+			else if (side == 'R') {
+				var R_val = value;
+				var display_L = document.getElementById('0B_display_L');
+				var src_L = display_L.src;
+				var L_val = parseInt(src_L.charAt(src_L.length - 5));
+			};
+
+			if (L_val == R_val) {
+				document.getElementById('0B_comparator').innerHTML = '=';
+			};
+			if (L_val < R_val) {
+				document.getElementById('0B_comparator').innerHTML = '<';
+			};
+			if (L_val > R_val) {
+				document.getElementById('0B_comparator').innerHTML = '>';
+			};
+		};
+
+		function oninput_0C(side) {
+			var value = document.getElementById('0C_slider_' + side).value / 100;
+
+			var total_ht = $('#0C_display_' + side + '_background').height();
+			var top_ht = $('#0C_display_' + side + '_top').height();
+			var bottom_ht = $('#0C_display_' + side + '_bottom').height();
+			$('#0C_display_' + side + '_top').height(value*(total_ht - bottom_ht));
+			$('#0C_display_' + side + '_top').css('top', ((1 - value)*(total_ht - bottom_ht) + 0.05*total_ht).toString() + 'px');
+ 
+			var L_val = parseFloat($('#0C_display_L_top').height());
+			var R_val = parseFloat($('#0C_display_R_top').height());
+
+			if (Math.abs(L_val - R_val) <= 1) {
+				document.getElementById('0C_comparator').innerHTML = '=';
+			}
+			else {
+				if (L_val < R_val) {
+					document.getElementById('0C_comparator').innerHTML = '<';
+				};
+				if (L_val > R_val) {
+					document.getElementById('0C_comparator').innerHTML = '>';
+				};
+			};
+		};
+
+		function onclick_1B() {
+			// Increment numbers or reset
+			if ($('.1B_step_10').css('color') == 'rgb(0, 0, 0)') {
+				for (var i = 1; i <= 10; i++) {
+					$('.1B_step_' + i.toString()).css('color', 'white');
+				};
+				document.getElementById('1B_step_button').innerHTML = '<span style="font-size: 1.15em">&#9656;</span>';
+			}
+			else {
+				for (var i = 1; i <= 10; i++) {
+					if ($('.1B_step_' + i.toString()).css('color') == 'rgb(255, 255, 255)') {
+						$('.1B_step_' + i.toString()).css('color', 'black');
+						if (i == 10) {
+							document.getElementById('1B_step_button').innerHTML = '<span style="font-weight: bold; font-size: 0.675em">l</span>&#9666;&#9666;&nbsp;';
+						};
+						break;
+					};
+				};
+			};
+		};
+
+		function onclick_2A(command, input) {
+			if (command == 'answer') {
+				for (var i = 0; i < 6; i++) {
+					document.getElementById('2A_response_' + i.toString()).innerHTML = '';
+					document.getElementById('2A_answer_' + i.toString()).className = '2A_answer';
+				};
+
+				document.getElementById('2A_answer_' + input.toString()).className = '2A_answer_clicked';
+
+				var src = document.getElementById('2A_display').src;
+				var fingers = src.charAt(src.length - 5);
+
+				if (parseInt(input) == parseInt(fingers)) { var marker = '&#10004;'; var color = green; }
+				else { var marker = '&#10008;'; var color = red; };
+				document.getElementById('2A_response_' + input.toString()).style.color = color;
+				document.getElementById('2A_response_' + input.toString()).innerHTML = marker;
+			}
+			else if (command == 'next') {
+
+				for (var i = 0; i < 6; i++) {
+					document.getElementById('2A_response_' + i.toString()).innerHTML = '';
+					document.getElementById('2A_answer_' + i.toString()).className = '2A_answer';
+				};
+
+				var r = Math.floor(Math.random() * Math.floor(4)) + 1;
+				var display = document.getElementById('2A_display');
+				var src = display.src;
+				var fingers = parseInt(src.charAt(src.length - 5));
+				fingers += parseInt(r);
+				fingers = fingers % 6;
+				display.src = 'images/0/0-0/num_fingers_' + fingers.toString() + '.png';
+				console.log(display.src);
+			};
+		};
+
+		function oninput_3A() {
+
+			var input = document.getElementById('3A_input');
+			var display = document.getElementById('3A_display');
 		  
-			var num = parseFloat(first.value) || 0;
+			var num = parseFloat(input.value) || 0;
 
-			if (num < -500 || num > 500) {
-				result.innerHTML = 'ERR';
+			if (num > 200) { var show = 200; }
+			else if (num < 0) { var show = 0; }
+			else { var show = num; }
+			input.value = show;
+
+			var left = show % 10
+			var rows = (show - left) / 10
+
+			var per_row = String('&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>')
+			var per_left = String("&bull; ")
+
+			display.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+		};
+
+		function onclick_4A(side, operator) {
+			var value = parseInt(document.getElementById('4A_input_' + side).value);
+			if (operator == 'plus') {
+				value += 1;
 			}
+			else if (operator == 'minus') {
+				value -= 1;
+			};
+			document.getElementById('4A_input_' + side).value = value.toString();
+			oninput_4A();
+		};
 
-			if (num <= 500 && num >= 0) {
-				var left = num % 10
-				var rows = (num - left) / 10
+		function oninput_4A() {
 
-				var per_row = String('&#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf &nbsp;&nbsp; &#x25cf <br>')
-				var per_left = String("&#x25cf &nbsp;&nbsp; ")
+			var input = document.getElementById('4A_input_L');
+			var display = document.getElementById('4A_display_L');
+		  
+			var num = parseFloat(input.value) || 0;
 
-				result.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+			if (num > 50) { var show = 50; }
+			else if (num < 0) { var show = 0; }
+			else { var show = num; }
+			input.value = show;
+
+			var left = show % 5
+			var rows = (show - left) / 5
+
+			var per_row = String('&bull; &bull; &bull; &bull; &bull;<br>')
+			var per_left = String("&bull; ")
+
+			display.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+
+			var L_val = show;
+
+			var input = document.getElementById('4A_input_R');
+			var display = document.getElementById('4A_display_R');
+		  
+			var num = parseFloat(input.value) || 0;
+
+			if (num > 50) { var show = 50; }
+			else if (num < 0) { var show = 0; }
+			else { var show = num; }
+			input.value = show;
+
+			var left = show % 5
+			var rows = (show - left) / 5
+
+			var per_row = String('&bull; &bull; &bull; &bull; &bull;<br>')
+			var per_left = String("&bull; ")
+
+			display.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+
+			var R_val = show;
+
+			if (L_val == R_val) {
+				document.getElementById('4A_comparator').innerHTML = '=';
+			};
+			if (L_val < R_val) {
+				document.getElementById('4A_comparator').innerHTML = '<';
+			};
+			if (L_val > R_val) {
+				document.getElementById('4A_comparator').innerHTML = '>';
+			};
+		};
+
+		function onclick_5A(command, input) {
+
+			if (command == 'answer') {
+
+				document.getElementById('5A_response').innerHTML = '&nbsp;';
+				document.getElementById('5A_answer_l').className = '5A_answer';
+				document.getElementById('5A_answer_e').className = '5A_answer';
+				document.getElementById('5A_answer_g').className = '5A_answer';
+
+				document.getElementById('5A_answer_' + input.toString()).className = '5A_answer_clicked';
+
+				var L_val = parseInt(document.getElementById('5A_value_L').innerHTML);
+				var R_val = parseInt(document.getElementById('5A_value_R').innerHTML);
+
+				if (L_val < R_val) { var answer = 'l'; };
+				if (L_val == R_val) { var answer = 'e'; };
+				if (L_val > R_val) { var answer = 'g'; };
+
+				if (input == answer) {
+					var marker = '&#10004;';
+					var color = green;
+				}
+				else {
+					var marker = '&#10008;';
+					var color = red;
+				};
+				document.getElementById('5A_response').style.color = color;
+				document.getElementById('5A_response').innerHTML = marker;
 			}
-			else if (num >= -500) {
-				num = -1 * num
-				var left = num % 10
-				var rows = (num - left) / 10
+			else if (command == 'next') {
 
-				var per_row = '&#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb &nbsp;&nbsp; &#x25cb <br>'
-				var per_left = '&#x25cb &nbsp;&nbsp; '
+				document.getElementById('5A_response').innerHTML = '&nbsp;';
+				document.getElementById('5A_answer_l').className = '5A_answer';
+				document.getElementById('5A_answer_e').className = '5A_answer';
+				document.getElementById('5A_answer_g').className = '5A_answer';
 
-				result.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+				var display = document.getElementById('5A_display_L');
+				var num = Math.floor(Math.random() * 51);
+
+				var left = num % 5;
+				var rows = (num - left) / 5;
+
+				var per_row = String('&bull; &bull; &bull; &bull; &bull;<br>');
+				var per_left = String("&bull; ");
+
+				display.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+				document.getElementById('5A_value_L').innerHTML = num.toString();
+
+				var display = document.getElementById('5A_display_R');
+				var num = Math.floor(Math.random() * 51);
+
+				var left = num % 5
+				var rows = (num - left) / 5
+
+				var per_row = String('&bull; &bull; &bull; &bull; &bull;<br>')
+				var per_left = String("&bull; ")
+
+				display.innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+				document.getElementById('5A_value_R').innerHTML = num.toString();
+			};
+		};
+
+		function oninput_6B(side) {
+			var value = document.getElementById('6B_slider_' + side).value / 100;
+			value = 0.5*(value + 1); // Change mapping to between 50 and 100
+
+			var total_ht = $('#6B_display_' + side + '_background').height();
+			$('#6B_display_' + side + '_foreground').width(value*total_ht);
+			$('#6B_display_' + side + '_foreground').height(value*total_ht);
+			$('#6B_display_' + side + '_foreground').css('top', 0.5*(1 - value)*total_ht + 'px');
+			$('#6B_display_' + side + '_foreground').css('left', 0.5*(1 - value)*total_ht + 'px');
+ 
+			var L_val = parseFloat($('#6B_display_L_foreground').height());
+			var R_val = parseFloat($('#6B_display_R_foreground').height());
+
+			if (Math.abs(L_val - R_val) <= 1) {
+				document.getElementById('6B_comparator_img').src = 'images/0/0-0/num_compare_croc_equal.png';
 			}
-			else if (num < -500 || num > 500) {
-				result.innerHTML = 'ERR';
+			else {
+				if (L_val < R_val) {
+					document.getElementById('6B_comparator_img').src = 'images/0/0-0/num_compare_croc_right.png';
+				};
+				if (L_val > R_val) {
+					document.getElementById('6B_comparator_img').src = 'images/0/0-0/num_compare_croc_left.png';
+				};
+			};
+		};
+
+		function onclick_7A(command, input) {
+			if (command == 'check') {
+				document.getElementById('7A_response').innerHTML = "&nbsp;";
+
+				if (document.getElementById('7A_check_' + input.toString()).className == "7A_check") {
+					document.getElementById('7A_check_1').className = "7A_check";
+					document.getElementById('7A_check_4').className = "7A_check";
+					document.getElementById('7A_check_10').className = "7A_check";
+					document.getElementById('7A_check_' + input.toString()).className = "7A_check_clicked";
+
+					if (input == '4') {
+						var marker = '&#10004;';
+						var color = green;
+					}
+					else {
+						var marker = '&#10008;';
+						var color = red;
+					};
+					document.getElementById('7A_response').style.color = color;
+					document.getElementById('7A_response').innerHTML = marker;
+				}
+				else {
+					document.getElementById('7A_check_1').className = "7A_check";
+					document.getElementById('7A_check_4').className = "7A_check";
+					document.getElementById('7A_check_10').className = "7A_check";
+				};
+			};
+		};
+
+		function onclick_8A() {
+			// Increment numbers or reset
+			if ($('.8A_step_10').css('color') == 'rgb(0, 0, 0)') {
+				for (var i = 1; i <= 10; i++) {
+					$('.8A_step_' + i.toString()).css('color', 'white');
+				};
+				document.getElementById('8A_step_button').innerHTML = '<span style="font-size: 1.15em">&#9656;</span>';
 			}
-		}
+			else {
+				for (var i = 1; i <= 10; i++) {
+					if ($('.8A_step_' + i.toString()).css('color') == 'rgb(255, 255, 255)') {
+						$('.8A_step_' + i.toString()).css('color', 'black');
+						if (i == 10) {
+							document.getElementById('8A_step_button').innerHTML = '<span style="font-weight: bold; font-size: 0.675em">l</span>&#9666;&#9666;&nbsp;';
+						};
+						break;
+					};
+				};
+			};
+		};
+
+		function onclick_9_10(subsection) {
+			// Increment numbers or reset
+			if (subsection == '9C') { var maxstep = 5; }
+			else { var maxstep = 4; };
+
+			var display = document.getElementById(subsection + '_display');
+			src = display.src;
+			var step = parseInt(src.charAt(src.length - 5));
+			var new_step = (step + 1) % (maxstep + 1);
+			if (new_step == 0) { new_step = 1 };
+
+			src = src.substring(0, src.length - 5) + new_step.toString() + src.substring(src.length - 4);
+			display.src = src;
+
+			if (new_step == maxstep) {
+				document.getElementById(subsection + '_step_button').innerHTML = '<span style="font-size: 1.15em">&#9656;</span>';
+			}
+			else {
+				document.getElementById(subsection + '_step_button').innerHTML = '<span style="font-weight: bold; font-size: 0.675em">l</span>&#9666;&#9666;&nbsp;';
+			};
+		};
+
+		function onclick_11A() {
+			if (document.getElementById("11A_check").innerHTML == '&nbsp;' || document.getElementById("11A_check").innerHTML == ' ') {
+
+				var answer = localStorage.getItem("11A_answer");
+				var input = document.getElementById("11A_input").value;
+
+				if (isNumeric(input)) {
+					if (parseInt(input) == answer) {
+						var marker = '&#10004;';
+						var color = green;
+						document.getElementById("11A_check").innerHTML = '&#10145;';
+					}
+					else {
+						var marker = '&#10008;';
+						var color = red;
+						document.getElementById("11A_check").innerHTML = '&nbsp;';
+					};
+				}
+				else {
+					var marker = '&#10008;';
+					var color = red;
+					document.getElementById("11A_check").innerHTML = '&nbsp;';
+				};
+				document.getElementById('11A_response').style.color = color;
+				document.getElementById('11A_response').innerHTML = marker;
+			}
+			else {
+				document.getElementById("11A_input").value = '';
+				document.getElementById("11A_check").innerHTML = '&nbsp;';
+				document.getElementById("11A_response").innerHTML = '&nbsp;';
+				document.getElementById('11A_response').style.color = '#000000';
+
+				var num = Math.floor(Math.random() * 101);
+				localStorage.setItem("11A_answer", num);
+
+				var left = num % 10;
+				var rows = (num - left) / 10;
+
+				var per_row = String('&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;<br>');
+				var per_left = String("&bull; ");
+
+				document.getElementById("11A_display").innerHTML = per_row.repeat(rows) + per_left.repeat(left);
+			};
+		};
+
+		function oninput_12() {
+			var input = document.getElementById('12A_input');
+			var results_A = document.getElementById('12A_results');
+			var display_B = document.getElementById('12B_display');
+			var display_C = document.getElementById('12C_display');
+			var value = input.value;
+
+			if (!isNumeric(value)) {
+				results_A.innerHTML = '';
+				display_B.src = 'images/0/0-0/num_var_arrows_q.png';
+				display_C.src = 'images/0/0-0/num_var_rocket_q.png';
+				return;
+			}
+			else {
+				if (value < 1) {
+					value = 1;
+					input.value = value.toString();
+				}
+				else if (value > 5) {
+					value = 5;
+					input.value = value.toString();
+				};
+			};
+
+			if (value == 1) { var dot_str = '&bull;'; var pct = 35; }
+			else if (value == 2) { var dot_str = '&bull; &bull;'; var pct = 35; }
+			else if (value == 3) { var dot_str = '&bull; &bull; &bull;'; var pct = 35; }
+			else if (value == 4) { var dot_str = '&bull; &bull;<br>&bull; &bull;'; var pct = 25; }
+			else if (value == 5) { var dot_str = '&bull; &bull; &bull;<br>&bull; &bull;'; var pct = 25; };
+
+			results_A.innerHTML = dot_str;
+			$('#12A_results').css('top', pct.toString() + '%');
+			display_B.src = 'images/0/0-0/num_var_arrows_' + value.toString() + '.png';
+			display_C.src = 'images/0/0-0/num_var_rocket_' + value.toString() + '.png';		
+		};
+
+		function onclick_13(letter) {
+			if (letter == 'A') { var answer = 3; }
+			else if (letter == 'B') { var answer = 5; };
+
+			console.log(answer);
+			console.log('13' + letter + '_input');
+			var input = document.getElementById('13' + letter + '_input').value;
+			console.log(input);
+			if (isNumeric(input)) {
+				if (parseInt(input) == answer) {
+					var marker = '&#10004;';
+					var color = green;
+				}
+				else {
+					var marker = '&#10008;';
+					var color = red;
+				};
+			}
+			else {
+				var marker = '&#10008;';
+				var color = red;
+			};
+			document.getElementById('13' + letter + '_response').style.color = color;
+			document.getElementById('13' + letter + '_response').innerHTML = marker;
+		};
+
+		window.onload = function () {
+			standard_onload();
+
+			localStorage.setItem("11A_answer", 100);
+
+			for (var i = 0; i <= 10; i++) {
+				$('.8A_step_' + i.toString()).css('color', 'black');
+				$('.1B_step_' + i.toString()).css('color', 'black');
+				document.getElementById('8A_step_button').innerHTML = '<span style="font-weight: bold; font-size: 0.675em">l</span>&#9666;&#9666;&nbsp;';
+				document.getElementById('1B_step_button').innerHTML = '<span style="font-weight: bold; font-size: 0.675em">l</span>&#9666;&#9666;&nbsp;';
+			};
+		};
 	</script>
 
 </body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
 </html>

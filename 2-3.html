@@ -1,118 +1,767 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
+	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
 	<style>
-		body {
-		  margin: 0;
-		  font-family: Arial;
-		  text-decoration: none;
+
+		input {
+			width: 50%
 		}
 
-		.header {
-			background-color: #000066;
-			text-align: left;
-			color: white;
-		}
-
-		.header div.info {
-			text-align: right;
-			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
-			float: right;
-		}
-
-		.header div.logo {
-			float: left;
-		}
-		
-		.header a {
-		  	text-decoration: none;
-			font-size: 20px;
-			font-weight: bold;
-			color: white;
-		}
-
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
-		}
-
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
-
-		.main-nav a:hover {
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		.main-nav a.active {
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		.sub-nav {
-		  overflow: hidden;
-		  background-color: #66B2FF;
-		}
-
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
-
-		.sub-nav a:hover {
-		  background-color: #FFFFFF;
-		  color: #66B2FF;
-		}
-
-		.sub-nav a.active {
-		  background-color: #FFFFFF;
-		  color: #66B2FF;
-		}
 	</style>
-
 </head>
-<body>
-	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="1-0.html">1</a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="2-3.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-0.html">&Delta;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-1.html">&#402;'(x)</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-2.html"><span style="font-size: 1.5em">&#8978;</span></a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="2-3.html"><span style="font-size: 0.95em">lim</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-4.html">&#8721;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-5.html">&int;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-6.html"><span style="font-size: 1.25em">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-7.html"><span style="font-size: 1.05em">u</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-8.html"><span style="font-size: 1.1em">&orarr;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-Q.html">?</a></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button10" type="button" onclick="scrollToIndex(10)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button11" type="button" onclick="scrollToIndex(11)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button12" type="button" onclick="scrollToIndex(12)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button13" type="button" onclick="scrollToIndex(13)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button14" type="button" onclick="scrollToIndex(14)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button15" type="button" onclick="scrollToIndex(15)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button16" type="button" onclick="scrollToIndex(16)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button17" type="button" onclick="scrollToIndex(17)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button18" type="button" onclick="scrollToIndex(18)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button19" type="button" onclick="scrollToIndex(19)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button20" type="button" onclick="scrollToIndex(20)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button21" type="button" onclick="scrollToIndex(21)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+
+		<table id="scroll_item0" style="width: 100%; font-size: 1.75em; line-height: 2em; margin-top: 3.5%;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center; padding-left: 5%; padding-right: 0%;">
+					&Delta;x &nbsp;&asymp;&nbsp; 0
+					<br>&#402;(x) &nbsp;&asymp;&nbsp; &#402;(x - &Delta;x)
+					<br>&#402;(x) &nbsp;&asymp;&nbsp; &#402;(x - &Delta;x) &nbsp;+&nbsp; &Delta;x &#402;'(x - &Delta;x)
+					<br>
+					<br>&#402;'(x - &Delta;x) &nbsp;=&nbsp; &Delta;&#402; / &Delta;x
+					<br>&Delta;x &#402;'(x - &Delta;x) &nbsp;=&nbsp; &Delta;&#402; &nbsp;&asymp;&nbsp; 0
+					</td>
+				<td style="width: 50%; padding-right: 5%; text-align: center; padding-left: 0%; line-height: 1.75em; font-size: 0.95em">
+					<img src="images/2/2-3/lim_intro1.png" width="75%" style="margin-bottom: 3.5%">
+					<img src="images/2/2-3/lim_intro2.png" width="75%" style="margin-bottom: 0%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item1" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 5.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-3/lim_intro_chain.png" width="60%" style="margin-bottom: 0%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item2" style="width: 85%; border-radius: 3.5em; margin-left: 7.5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center; font-size: 1.55em; line-height: 2em; padding: 3.5%; padding-right: 0%; padding-left: 6.5%">
+					<img src="images/2/2-3/lim_defn.png" width="70%" style="margin-bottom: 2.5%">
+					<br>&#402;(x) &nbsp;=&nbsp; x
+					<br>lim <sub>x &rarr; 3 </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; 3
+					<br>2.999 &nbsp; &rarr; &nbsp; 3
+					<br>&#402;(2.999) &nbsp;=&nbsp; 2.999 &nbsp; &rarr; &nbsp; 3 &nbsp;=&nbsp; &#402;(3)
+				</td>
+				<td style="width: 50%; padding: 5%; text-align: center; padding-left: 0%; padding-top: 6%">
+					<img src="images/2/2-3/lim_defn_arrow.png" width="55%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item3" style="width: 100%; font-size: 1.65em; line-height: 1.95em; margin-top: 6.5%;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center; padding-left: 5%; padding-right: 0%;">
+					&#402;(x<sub>0</sub> - &Delta;x) &nbsp;=&nbsp; 1
+					<br>&#402;(x<sub>0</sub>) &nbsp;=&nbsp; und.
+					<br>&#402;(x<sub>0</sub> + &Delta;x) &nbsp;=&nbsp; 2
+					<br>
+					<br><img src="images/2/2-3/lim_undQ.png" width="92.5%" style="margin-bottom: 0%">
+					</td>
+				<td style="width: 50%; padding-right: 5%; text-align: center; padding-left: 5%; line-height: 1.75em; font-size: 0.95em">
+					<img src="images/2/2-3/lim_jump.png" width="80%" style="margin-bottom: 0%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item4" style="width: 85%; border-radius: 3.5em; margin-left: 7.5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center; font-size: 1.55em; line-height: 2em; padding: 5.5%; padding-top: 6.5%; padding-right: 0%; padding-left: 6.5%">
+					<img src="images/2/2-3/lim_not_f_und.png" width="85%" style="margin-bottom: 2.5%">
+					<br>&#402;(x<sub>0</sub>) &nbsp;=&nbsp; und.
+					<br>lim <sub>x &rarr; x<sub>0</sub> </sub> &nbsp;&#402;(x) &nbsp; &ne; &nbsp; &#402;(x<sub>0</sub>)
+					<br>lim <sub>x &rarr; x<sub>0</sub> </sub> &nbsp;&#402;(x) &nbsp; = &nbsp; &#402;(x<sub>0</sub> &nbsp;&plusmn;&nbsp; &Delta;x)
+					<br>&Delta;x &nbsp;&rarr;&nbsp; 0
+				</td>
+				<td style="width: 50%; padding: 5%; text-align: center; padding-left: 0%; padding-top: 6.5%">
+					<img src="images/2/2-3/lim_und_hole.png" width="62.5%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item5" style="width: 100%; font-size: 1.65em; line-height: 1.95em; margin-top: 6.5%;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center; padding-left: 5%; padding-right: 0%;">
+					&epsilon; &nbsp;>&nbsp; 0 &nbsp;, &nbsp; &delta; &nbsp;>&nbsp; 0
+					<br>0 &nbsp;<&nbsp; | x &nbsp;-&nbsp; x<sub>0</sub> | &nbsp;<&nbsp; &delta;
+					<br>0 &nbsp;<&nbsp; | &#402;(x) &nbsp;-&nbsp; L | &nbsp;<&nbsp; &epsilon;
+					<br>
+					<br>L &nbsp;-&nbsp; &epsilon; &nbsp; < &nbsp; lim <sub>x &rarr; x<sub>0</sub> </sub> &nbsp;&#402;(x) &nbsp; < &nbsp; L &nbsp;+&nbsp; &epsilon;
+					<br>lim <sub>x &rarr; x<sub>0</sub> </sub> &#402;(x) &nbsp;=&nbsp; L
+					</td>
+				<td style="width: 50%; padding-right: 5%; text-align: center; padding-left: 5%; line-height: 1.75em; font-size: 0.95em; padding-top: 1.5%">
+					<img src="images/2/2-3/lim_eps.png" width="85%" style="margin-bottom: 0%">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item6" style="width: 100.1%; font-size: 1.55em; line-height: 2em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; -x (x - 4) &nbsp;=&nbsp; -x<sup>2</sup> &nbsp;+&nbsp; 4x
+						<br>&#402;(2) &nbsp;=&nbsp; 4
+						<br>lim <sub>x &rarr; 2 </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(2) &nbsp;=&nbsp; 4
+						<br>&#402;(1.999) &nbsp;&asymp;&nbsp; 4
+						</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top:4.5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-3/lim_ex1.png" width="52.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; (x<sup>2</sup> - x) / (x - 1)
+						<br>&#402;(1) &nbsp;=&nbsp; 0 / 0 &nbsp;=&nbsp; und.
+						<br>lim <sub>x &rarr; 1 </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(1 - &Delta;&#402;)
+						<br>&#402;(0.99) &nbsp;=&nbsp; -0.0099 / -0.01 &nbsp;&asymp;&nbsp; 1
+						<br>lim <sub>x &rarr; 1 </sub> &nbsp;=&nbsp; 1
+					</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top:4.5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-3/lim_ex2.png" width="52.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%;">
+						&#402;(x) &nbsp;=&nbsp; 3
+						<br>&#402;(&infin;) &nbsp;=&nbsp; 3
+						<br>lim <sub>x &rarr; &infin; </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(&infin;) &nbsp;=&nbsp; 3
+						<br>&#402;(10<sup>10</sup> ) &nbsp;=&nbsp; 3
+					</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top:4.5%; padding-bottom: 3.5%;">
+						<img src="images/2/2-3/lim_ex3.png" width="52.5%" style="">	
+					</td>		
+				</tr>
+			</table>
 		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
+
+		<table id="scroll_item7" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 6.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-3/lim_car.png" width="80%" style="margin-bottom: 0%">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item8" style="width: 95%; border-radius: 3.5em; margin-left: 2.5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 67.5%; text-align: center; padding-bottom: 3.5%; padding-right: 0%; padding-top: 5%; padding-left: 5%">
+					<img src="images/2/2-3/lim_piecewise.png" width="100%" style="margin-bottom: 0%">
+					</td>
+				<td style="width: 32.5%; padding-right: 5%; text-align: center; padding-left: 3.5%; line-height: 1.95em; font-size: 1.65em; padding-top: 1.5%">
+					x<sub>0</sub> &nbsp;=&nbsp; 6
+					<br>&#402;(x<sub>0</sub> + &Delta;x) &nbsp;&ne;&nbsp; &#402;(x<sub>0</sub> - &Delta;x)
+					<br>lim <sub>x &rarr; x<sub>0</sub> </sub> &nbsp;=&nbsp; ?
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item9" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 8.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-3/lim_ball_joint_connected.png" width="90%" style="margin-bottom: 2%">
+					<br>&#402;(x - &Delta;x) &nbsp; &asymp; &nbsp; &#402;(x) &nbsp; &asymp; &nbsp; &#402;(x + &Delta;x) &nbsp;, &nbsp; &nbsp; &Delta;x &nbsp;&asymp;&nbsp; 0
+					<br>
+					<br><img src="images/2/2-3/lim_timeline.png" width="40%" style="margin-top: 3.5%">
+				</td>
+			</tr>
+		</table>
+
+		<div  id="scroll_item10" style="width: 95%; margin-left: 2.5%; padding: 0px; margin-top: 5%; border-radius: 2.5em; border-style: solid; border-width: medium; text-align: center; padding-top: 5%">
+			<img src="images/2/2-3/lim_plusmn_sides.png" width="87.5%">
+			<table style="width: 100.1%; font-size: 1.75em; line-height: 1.95em; border-collapse: collapse; border-top-style: solid; border-width: medium; border-color: black; margin-top: 5%">
+				<tr style="width: 100%">
+					<td style="width: 60%; padding: 5%; border-width: medium;">
+					<img src="images/2/2-3/lim_plusmn_agree.png" width="90%" style="margin-bottom: 0%">
+						</td>
+					<td style="width: 40%; padding-right: 6.5%; border-width: medium; padding-left: 0%; padding-top: 5.5%; padding-bottom: 4.5%;">
+					<img src="images/2/2-3/lim_plusmn_arrows.png" width="100%" style="margin-bottom: 0%">
+					</td>		
+				</tr>
+			</table>
 		</div>
-		<div class='main-nav'>
-			<a href="index.html">0</a>
-			<a href="1-0.html">1</a>
-			<a class="active" href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
+
+		<table id="scroll_item11" style="width: 100%; font-size: 1.55em; line-height: 1.95em; margin-top: 6.5%;">
+			<tr style="width: 100%">
+				<td style="width: 35%; text-align: center; padding: 0%;">
+					(x - &Delta;x) &nbsp;+&nbsp; &Delta;x &nbsp;=&nbsp; x
+					<br>&Delta;&#402; &nbsp;=&nbsp; &#402;(x) &nbsp;-&nbsp; &#402;(x - &Delta;x)
+					<br>&#402;(x) &nbsp;=&nbsp; &#402;(x - &Delta;x) &nbsp;+&nbsp; &Delta;&#402;
+					<br>&#402;(x) &nbsp;=&nbsp; &#402;(x - &Delta;x) &nbsp;+&nbsp; &Delta;x &#402;'(x)
+					<br>&Delta;x &rarr; 0 &nbsp; , &nbsp; &#402;(x) &nbsp;&rarr;&nbsp; &#402;(x - &Delta;x)
+					<br>
+					<br>(x + &Delta;x) &nbsp;&minus;&nbsp; &Delta;x &nbsp;=&nbsp; x
+					<br>&Delta;&#402; &nbsp;=&nbsp; &#402;(x + &Delta;x) &nbsp;-&nbsp; &#402;(x)
+					<br>&#402;(x) &nbsp;=&nbsp; &#402;(x + &Delta;x) &nbsp;-&nbsp; &Delta;&#402;
+					<br>&#402;(x) &nbsp;=&nbsp; &#402;(x + &Delta;x) &nbsp;-&nbsp; &Delta;x &#402;'(x)
+					<br>&Delta;x &rarr; 0 &nbsp; , &nbsp; &#402;(x) &nbsp;&rarr;&nbsp; &#402;(x + &Delta;x)
+					</td>
+				<td style="width: 40%; text-align: center; padding-right: 2.5%">
+					<img src="images/2/2-3/lim_plusmn_tri1.png" width="65%" style="margin-bottom: 7.5%">
+					<img src="images/2/2-3/lim_plusmn_tri2.png" width="65%" style="margin-bottom: 0%">
+				</td>
+				<td style="width: 25%; padding-right: 5%; text-align: center;">
+					<img src="images/2/2-3/lim_plusmn_sink.png" width="85%" style="margin-bottom: 0%">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item12" style="width: 100.1%; font-size: 1.55em; line-height: 2em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; 8 ,&nbsp; x < 4 
+						<br>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;=&nbsp; 4 ,&nbsp; x &geq; 4 
+						<br>&#402;(3.99) &nbsp;=&nbsp; 8 , &nbsp; &#402;(4) &nbsp;=&nbsp; 4
+						<br>lim <sub>x &rarr; 4<sup>−</sup> </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(4 - &Delta;x) &nbsp;=&nbsp; 8
+						<br>lim <sub>x &rarr; 4<sup>+</sup> </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(4 + &Delta;x) &nbsp;=&nbsp; 4
+						<br>lim <sub>x &rarr; 4<sup>−</sup> </sub> &nbsp;&#402;(x) &nbsp;&ne;&nbsp; lim <sub>x &rarr; 4<sup>+</sup> </sub> &nbsp;&#402;(x)
+						<br>&rarr; &nbsp; lim <sub>x &rarr; 4 </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; und.
+						</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top:4.5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-3/lim_plusmn_ex1.png" width="52.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; x<sup>2</sup> &nbsp;+&nbsp; 1 ,&nbsp; x &leq; 0
+						<br>&nbsp; &nbsp; &nbsp;&nbsp;=&nbsp; x &nbsp;+&nbsp; 1 ,&nbsp; x &geq; 0
+						<br>&#402;(-0.001) &nbsp;&asymp;&nbsp; 0 , &nbsp; &#402;(0.001) &nbsp;&asymp;&nbsp; 0
+						<br>lim <sub>x &rarr; 0<sup>−</sup> </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(0 - &Delta;x) &nbsp;=&nbsp; 0
+						<br>lim <sub>x &rarr; 0<sup>+</sup> </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(0 + &Delta;x) &nbsp;=&nbsp; 0
+						<br>lim <sub>x &rarr; 0<sup>−</sup> </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; lim <sub>x &rarr; 0<sup>+</sup> </sub> &nbsp;&#402;(x)
+						<br>=&nbsp; lim <sub>x &rarr; 0 </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; 0
+					</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top:4.5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-3/lim_plusmn_ex2.png" width="52.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; tan(x)
+						<br>&#402;(&pi;/2 - 0.001) &nbsp;&asymp;&nbsp; &infin; , &nbsp; &#402;(&pi;/2 + 0.001) &nbsp;&asymp;&nbsp; -&infin;
+						<br>lim <sub>x &rarr; &pi;/2<sup>−</sup> </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(&pi;/2 - &Delta;x) &nbsp;=&nbsp; &infin;
+						<br>lim <sub>x &rarr; &pi;/2<sup>+</sup> </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(&pi;/2 + &Delta;x) &nbsp;=&nbsp; -&infin;
+						<br>lim <sub>x &rarr; &pi;/2<sup>−</sup> </sub> &nbsp;&#402;(x) &nbsp;&ne;&nbsp; lim <sub>x &rarr; &pi;/2<sup>+</sup> </sub> &nbsp;&#402;(x)
+						<br>&rarr; &nbsp; lim <sub>x &rarr; &pi;/2 </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; und.
+					</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top:4.5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-3/lim_plusmn_ex3.png" width="52.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%;">
+						&#402;(x) &nbsp;=&nbsp; sec(x)
+						<br>&#402;(3&pi;/2 - 0.001) &nbsp;&asymp;&nbsp; -&infin; , &nbsp; &#402;(3&pi;/2 + 0.001) &nbsp;&asymp;&nbsp; &infin;
+						<br>lim <sub>x &rarr; 3&pi;/2<sup>−</sup> </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(3&pi;/2 - &Delta;x) &nbsp;=&nbsp; -&infin;
+						<br>lim <sub>x &rarr; 3&pi;/2<sup>+</sup> </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; &#402;(3&pi;/2 + &Delta;x) &nbsp;=&nbsp; &infin;
+						<br>lim <sub>x &rarr; 3&pi;/2<sup>−</sup> </sub> &nbsp;&#402;(x) &nbsp;&ne;&nbsp; lim <sub>x &rarr; 3&pi;/2<sup>+</sup> </sub> &nbsp;&#402;(x)
+						<br>&rarr; &nbsp; lim <sub>x &rarr; 3&pi;/2 </sub> &nbsp;&#402;(x) &nbsp;=&nbsp; und.
+					</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top:4.5%; padding-bottom: 3.5%;">
+						<img src="images/2/2-3/lim_plusmn_ex4.png" width="52.5%" style="">	
+					</td>		
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item13" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 6.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-3/lim_banker.png" width="95%" style="margin-bottom: 5%; margin-left: 0%; margin-right: 5%">
+					<br><img src="images/2/2-3/lim_smiles.png" width="75%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item14" style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 1.5em; font-size: 1.5em; padding: 5%">
+			<tr style="width: 100%;">
+				<td style="width: 25%; text-align: center; line-height: 2em">
+					<div id="shape_input" style="border-style: solid; border-width: medium; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 95%; margin-left: 5%; margin-top: -0.125em; border-radius: 1em">
+						&#402;(x) &nbsp;=&nbsp; <input id="f" type="text" value="0" style="font-size: 1em; width: 45%"/>
+						<br>
+						x<sub>0</sub> &nbsp;=&nbsp; <input id="x" type="text" value="0" style="font-size: 1em; width: 52.5%"/>
+						<br>
+						<button type="button" class="calc_button" style="font-size: 0.75em; border-style: solid; border-width: medium; border-color: black; border-radius: 0em; width: 80%;" onclick="drawLimitPoints()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</td>
+				<td style="width: 42.5%">
+					<canvas id="canvas" style="width: 100%">
+					</canvas>
+				</td>
+				<td style="width: 32.5%">
+					<div style="border-style: solid; border-width: medium; border-color: black; padding-top: 7.5%; padding-bottom: 7.5%; width: 100%; margin-left: 0%; text-align: center; border-radius: 1em">
+						lim <sub>x &rarr; x<sub>0</sub><sup>&minus;</sup> </sub> &nbsp;&#402; &nbsp;=&nbsp; <span id="output_L_min">0.00000</span>
+						<br><br>lim <sub>x &rarr; x<sub>0</sub><sup>+</sup> </sub> &nbsp;&#402; &nbsp;=&nbsp; <span id="output_L_plus">0.00000</span>
+						<br><br>lim <sub>x &rarr; x<sub>0</sub> </sub> &nbsp; &#402; &nbsp;=&nbsp; <span id="output_L">0.00000</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item15" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 7.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-3/lim_lhop_intro.png" width="80%" style="margin-bottom: 0%">
+				</td>
+			</tr>
+		</table>
+
+		<div  id="scroll_item16" style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 5%; border-radius: 2.5em; border-style: solid; border-width: medium; text-align: center;">
+			<table style="width: 100.1%; font-size: 2.35em; line-height: 2em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 45%; padding: 5%; padding-bottom: 2.5%; padding-right: 2.5%; padding-bottom: 4%; padding-top: 7.5%">
+						lim &nbsp;&#402; / g &nbsp; &rarr; &nbsp; 0 / 0 ?
+					</td>
+					<td style="width: 55%; padding: 5%; padding-bottom: 2.5%; padding-left: 0%; padding-top: 7.5%">
+						<img src="images/2/2-3/lim_lhop_0_0_def.png" width="80%" style="margin-bottom: 0%">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 45%; padding: 5%; padding-top: 2.5%; padding-right: 2.5%; padding-bottom: 6.5%">
+						lim &nbsp;&#402; / g &nbsp; &rarr; &nbsp; &infin; / &infin; ?
+					</td>
+					<td style="width: 55%; padding: 5%; padding-top: 2.5%; padding-left: 0%">
+						<img src="images/2/2-3/lim_lhop_inf_inf_def.png" width="80%" style="margin-bottom: 0%">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item17" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 7.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-3/lim_ind_1Q.png" width="90%" style="margin-bottom: 5%">
+					<br><img src="images/2/2-3/lim_ind_equal.png" width="80%" style="margin-bottom: 0%">
+				</td>
+			</tr>
+		</table>
+
+		<div  id="scroll_item18" style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 5.5%; border-radius: 3em; border-style: solid; border-width: medium; text-align: center;">
+			<table style="width: 100.1%; font-size: 1.75em; line-height: 1.95em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 5%; padding-top: 5.5%; padding-bottom: 4.5%">
+						<img src="images/2/2-3/lim_lhop_chain.png" width="90%" style="margin-bottom: 0%">
+					</td>		
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item19" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 7.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-3/lim_lhop_proof.png" width="85%" style="margin-bottom: 0%">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 7.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item20" style="width: 100.1%; font-size: 1.5em; line-height: 1.85em; border-collapse: collapse; text-align: left;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium; padding-left: 12.5%">
+						&#402;(x) / g(x) &nbsp;=&nbsp; (x - 1) / (x<sup>2</sup> - 1)
+						<br>&#402;(1) &nbsp;=&nbsp; 0 / 0
+						<br>lim <sub>x &rarr; 1 </sub> &nbsp;&#402;(x) / g(x) &nbsp;=&nbsp; 0 / 0 &nbsp;=&nbsp; &#402;'(1) / g'(1)
+						<br>&#402;'(x) &nbsp;=&nbsp; 1 , &nbsp; g'(x) &nbsp;=&nbsp; 2x
+						<br>&#402;'(1) / g'(1) &nbsp;=&nbsp; 1 / 2  &nbsp;=&nbsp; 0.5
+						<br>lim <sub>x &rarr; 1 </sub> &nbsp;&#402;(x) / g(x) &nbsp;=&nbsp; 0.5
+						<br>&#402;(0.999) &nbsp;=&nbsp; 0.001 / 0.001999 &nbsp;&asymp;&nbsp; 0.5
+						</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top:4.5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium; text-align: center;">
+						<img src="images/2/2-3/lim_lhop_ex1.png" width="52.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium; padding-left: 11.5%">
+						&#402;(x) / g(x) &nbsp;=&nbsp; (x + 1) / x , &nbsp; &#402;(&infin;) &nbsp;=&nbsp; &infin; / &infin;
+						<br>lim <sub>x &rarr; &infin; </sub> &nbsp;&#402;(x) / g(x) &nbsp;=&nbsp; &infin; / &infin; &nbsp;=&nbsp; &#402;'(&infin;) / g'(&infin;)
+						<br>&#402;'(x) &nbsp;=&nbsp; 1 , &nbsp; g'(x) &nbsp;=&nbsp; 1
+						<br>&#402;'(&infin;) / g'(&infin;) &nbsp;=&nbsp; 1 / 1  &nbsp;=&nbsp; 1
+						<br>lim <sub>x &rarr; &infin; </sub> &nbsp;&#402;(x) / g(x) &nbsp;=&nbsp; 1
+						<br>&#402;(1000) &nbsp;=&nbsp; 1001 / 1000 &nbsp;=&nbsp; 1.001 &nbsp;&asymp;&nbsp; 1
+						</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top:4.5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium; text-align: center;">
+						<img src="images/2/2-3/lim_lhop_ex2.png" width="52.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; padding-left: 11.5%">
+						&#402;(x) / g(x) &nbsp;=&nbsp; (x - sin(x)) / x<sup>2</sup> , &nbsp; &#402;(0) &nbsp;=&nbsp; 0 / 0
+						<br>lim <sub>x &rarr; 0 </sub> &nbsp;&#402;(x) / g(x) &nbsp;=&nbsp; 0 / 0 &nbsp;=&nbsp; &#402;'(0) / g'(0)
+						<br>&#402;'(x) &nbsp;=&nbsp; 1 - cos(x) , &nbsp; g'(x) &nbsp;=&nbsp; 2x
+						<br>&#402;'(0) / g'(0) &nbsp;=&nbsp; 0 / 0
+						<br>&#402;''(x) &nbsp;=&nbsp; sin(x) , &nbsp; g''(x) &nbsp;=&nbsp; 2
+						<br>&#402;''(0) / g''(0) &nbsp;=&nbsp; 0 / 2  &nbsp;=&nbsp; 0
+						<br>lim <sub>x &rarr; 0 </sub> &nbsp;&#402;(x) / g(x) &nbsp;=&nbsp; 0
+						<br>&#402;(0.001) &nbsp;&asymp;&nbsp; 0 / 0.001 &nbsp;=&nbsp; 0
+					</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top:4.5%; padding-bottom: 3.5%; text-align: center;">
+						<img src="images/2/2-3/lim_lhop_ex3.png" width="52.5%" style="">	
+					</td>		
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item21" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 6.5%; margin-bottom: 2.5%">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-3/lim_lhop_concept1.png" width="65%" style="margin-bottom: 5%">
+					<img src="images/2/2-3/lim_lhop_concept2.png" width="60%" style="margin-bottom: 0%">
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="2-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
 		</div>
 	</header>
 
-	<div class="sub-nav">
-		<a href="2-0.html">0</a>
-		<a href="2-1.html">1</a>
-		<a href="2-2.html">2</a>
-		<a class="active" href="2-3.html">3</a>
-		<a href="2-4.html">4</a>
-		<a href="2-5.html">5</a>
-		<a href="2-6.html">6</a>
-	</div>
+	<script type="text/javascript" src="standard_functions.js"></script>
+	<script type="text/javascript">
+		
+        window.onload = function () {
+        	standard_onload();
+
+		  	document.getElementById("output_L_min").innerHTML = '0.00000';
+		  	document.getElementById("output_L_plus").innerHTML = '0.00000';
+		  	document.getElementById("output_L").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+        };
+
+        function drawLimitPoints() {
+		  	document.getElementById("output_L_min").innerHTML = '0.00000';
+		  	document.getElementById("output_L_plus").innerHTML = '0.00000';
+		  	document.getElementById("output_L").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.9*Math.min(canvas.width, canvas.height);
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+
+			ctx.fillStyle = "#DB0000";
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 25;
+
+			var Ox = canvas.width/2;
+			var Oy = canvas.height/2;
+
+		  	var x = document.getElementById("x").value;
+		  	x = read(x);
+		  	var f = document.getElementById("f").value;
+			f = f.split("^").join("**");
+			f = f.split("×").join("*");
+			f = f.split("pi").join("(3.141592653)");
+			f = f.split("&pi;").join("(3.141592653)");
+			f = f.split("π").join("(3.141592653)");
+			f = f.split("sin").join("Math.sin");
+			f = f.split("cos").join("Math.cos");
+			f = f.split("tan").join("Math.tan");
+			f = f.split("sec").join("Math.sec");
+			f = f.split("csc").join("Math.csc");
+			f = f.split("cot").join("Math.cot");
+			f = f.split("asin").join("Math.asin");
+			f = f.split("acos").join("Math.acos");
+			f = f.split("atan").join("Math.atan");
+			f = f.split("asec").join("Math.asec");
+			f = f.split("acsc").join("Math.acsc");
+			f = f.split("acot").join("Math.acot");
+			f = f.split("sin**-1").join("Math.asin");
+			f = f.split("cos**-1").join("Math.acos");
+			f = f.split("tan**-1").join("Math.atan");
+			f = f.split("sec**-1").join("Math.asec");
+			f = f.split("csc**-1").join("Math.acsc");
+			f = f.split("cot**-1").join("Math.acot");
+			f = f.split("arcsin").join("Math.asin");
+			f = f.split("arccos").join("Math.acos");
+			f = f.split("arctan").join("Math.atan");
+			f = f.split("arcsec").join("Math.asec");
+			f = f.split("arccsc").join("Math.acsc");
+			f = f.split("arccot").join("Math.acot");
+			f = f.split("e").join("Math.E");
+			f = f.split("0(").join("0*(");
+			f = f.split("1(").join("1*(");
+			f = f.split("2(").join("2*(");
+			f = f.split("3(").join("3*(");
+			f = f.split("4(").join("4*(");
+			f = f.split("5(").join("5*(");
+			f = f.split("6(").join("6*(");
+			f = f.split("7(").join("7*(");
+			f = f.split("8(").join("8*(");
+			f = f.split("9(").join("9*(");
+			f = f.split("x(").join("x*(");
+			f = f.split("0x").join("0*x");
+			f = f.split("1x").join("1*x");
+			f = f.split("2x").join("2*x");
+			f = f.split("3x").join("3*x");
+			f = f.split("4x").join("4*x");
+			f = f.split("5x").join("5*x");
+			f = f.split("6x").join("6*x");
+			f = f.split("7x").join("7*x");
+			f = f.split("8x").join("8*x");
+			f = f.split("9x").join("9*x");
+			f = f.split("xx").join("x*x");
+
+			var dx = 0.00000000001;
+			var f0 = eval(f.replace(/x/gi, (x - 2*dx).toString()));
+			var f1 = eval(f.replace(/x/gi, (x - dx).toString()));
+			var f2 = eval(f.replace(/x/gi, x.toString()));
+			var f3 = eval(f.replace(/x/gi, (x + dx).toString()));
+			var f4 = eval(f.replace(/x/gi, (x + 2*dx).toString()));
+			var dy = f3 - f1;
+
+			console.log(f);
+			console.log(f.replace(/x/gi, (x - 2*dx).toString()));
+			console.log([f0, f1, f2, f3, f4]);
+			var deriv = 0.5*dy/dx;
+			if (Math.abs(deriv % 1) < 0.0001) {
+				deriv = Math.round(deriv);
+			};
+
+			var y = deriv;
+			var x = 1;
+
+    		var B = x;
+    		var H = y;
+    		var W = 0.0;
+
+		  	if ( Math.abs(f1) < 1 ) { var lower_limit = f1.toFixed(5); }
+		  	else { var lower_limit = f1.toPrecision(6); };
+		  	if (f1 > 100000000) {
+		  		lower_limit = '&infin;';
+		  	}
+		  	else if (f1 < -100000000) {
+		  		lower_limit = '-&infin;';
+		  	};
+			document.getElementById("output_L_min").innerHTML = lower_limit;
+
+		  	if ( Math.abs(f3) < 1 ) { var upper_limit = f3.toFixed(5); }
+		  	else { var upper_limit = f3.toPrecision(6); };
+		  	if (f3 > 100000000) {
+		  		upper_limit = '&infin;';
+		  	}
+		  	else if (f3 < -100000000) {
+		  		upper_limit = '-&infin;';
+		  	};
+			document.getElementById("output_L_plus").innerHTML = upper_limit;
+
+			if (lower_limit == upper_limit) {
+				var limit = lower_limit.toString()
+			}
+			else if (Math.abs(lower_limit - upper_limit)/upper_limit > 0.95 || Math.abs(lower_limit - upper_limit) < 0.000005 ) {
+				var limit = ((lower_limit - upper_limit)/2).toString()
+			}
+			else {
+				var limit = 'und.'
+			}
+			document.getElementById("output_L").innerHTML = limit;
+
+			var lower_deriv = (f1 - f0)/dx;
+			var upper_deriv = (f4 - f3)/dx;
+
+			if (B > 0 || H > 0) {
+				ctx.fillStyle = "#DB0000";
+				ctx.strokeStyle = "#C0C0C0";
+				ctx.lineWidth = 50;
+
+				var ratio = W/H;
+				var max = Math.max(B, H);
+				H = max_size*H/max;
+				B = max_size*B/max;
+				W = ratio*H;
+
+				var zeroX = canvas.width/2 - B/2;
+				var zeroY = canvas.height/2 - H/2;
+
+				ctx.strokeStyle = "#999999";
+				ctx.beginPath();
+				ctx.moveTo(zeroX, canvas.height - zeroY);
+				ctx.lineTo(zeroX + B, canvas.height - zeroY - H);
+      			ctx.stroke();
+
+				ctx.strokeStyle = "#000000";
+				ctx.fillStyle = "#FFFFFF";
+				ctx.beginPath();
+				ctx.arc(canvas.width/2, canvas.height/2, 0.1*max_size, 0, 2 * Math.PI);
+				ctx.stroke();
+				ctx.fill();
+
+				ctx.fillStyle = "#000000";
+				ctx.beginPath();
+				ctx.arc(zeroX, canvas.height - zeroY, 0.015*max_size, 0, 2 * Math.PI);
+				ctx.stroke();
+				ctx.fill();
+				ctx.beginPath();
+				ctx.arc(zeroX + B, canvas.height - zeroY - H, 0.015*max_size, 0, 2 * Math.PI);
+				ctx.stroke();
+				ctx.fill();
+
+				if (Math.abs(lower_deriv) < 1.5) {
+					ctx.beginPath();
+					ctx.moveTo(zeroX, canvas.height - zeroY);
+					ctx.lineTo(zeroX + 0.15*max_size, canvas.height - zeroY - lower_deriv*0.15*max_size);
+	      			ctx.stroke();
+	      		}
+				else {
+					ctx.beginPath();
+					ctx.moveTo(zeroX, canvas.height - zeroY);
+					ctx.lineTo(zeroX + 0.15*max_size/lower_deriv, canvas.height - zeroY - 0.15*max_size);
+	      			ctx.stroke();
+	      		};
+	      		if (Math.abs(upper_deriv) < 1.5) {
+					ctx.beginPath();
+					ctx.moveTo(zeroX + B, canvas.height - zeroY - H);
+					ctx.lineTo(zeroX + B - 0.15*max_size, canvas.height - zeroY - H + upper_deriv*0.15*max_size);
+	      			ctx.stroke();
+	      		}
+	      		else {
+					ctx.beginPath();
+					ctx.moveTo(zeroX + B, canvas.height - zeroY - H);
+					ctx.lineTo(zeroX + B - 0.15*max_size/upper_deriv, canvas.height - zeroY - H + 0.15*max_size);
+	      			ctx.stroke();
+	      		}
+      		};
+        };
+
+	</script>
 
 </body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
+</html>

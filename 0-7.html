@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<link rel="icon" href="images/link_logo.png">
+<head>
+	<meta charset="UTF-8">
+	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
+	<style>
+
+		.mobile-calculator {
+			display: none;
+		}
+
+		table.div_examples {
+			padding-left: 0%;
+			line-height: 1.25em;
+			font-size: 1.1em;
+		}
+
+		.fraction, .numerator, .denominator {
+		    padding: 0 5px;
+		    width: 0.65em;
+		}
+
+		.fraction {
+		    display: inline-block;
+		    text-align: center;    
+		}
+
+		.denominator{
+		    border-top: 1px solid #000;
+		    display: block;
+		}
+
+		input{
+			width: 25%;
+			font-size: 1.05em;
+		}
+
+		button.graph:hover {
+			background-color: #66B2FF;
+		}
+
+		button.graph {
+			height: 0.75em;
+			width: 5%;
+			font-size: 1.9em;
+			font-weight: bold;
+			vertical-align: middle;
+			text-align: center;
+			background-color: #000066;
+			border-style: solid; 
+			border-width: medium;
+			border-color: #66B2FF;
+			color: white;
+		}
+
+	</style>
+</head>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="0-7.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="1-0.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_access" href="0-0.html">#</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-1.html">+</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-2.html">&#215;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-3.html">&#247;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-4.html"><span style="font-size: 0.95em">^</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-5.html">&#8730;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-6.html"><span style="font-size: 0.95em">&#402;</span></a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="0-7.html"><span style="padding-bottom: 50%">&#9697;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="0-Q.html">?</a></td>
+				<td class="sub"></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button10" type="button" onclick="scrollToIndex(10)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button11" type="button" onclick="scrollToIndex(11)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button12" type="button" onclick="scrollToIndex(12)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button13" type="button" onclick="scrollToIndex(13)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+
+		<div id="scroll_item0" style="margin-top: 6.5%;">
+			<p style="text-align: center; width: 100%; font-size: 2em;">
+				&#402;(x) &nbsp;=&nbsp; g(x) &nbsp;+&nbsp; h(x) &nbsp;=&nbsp; ?
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&#402;(x) &nbsp;=&nbsp; g(x) &nbsp;&#215;&nbsp; h(x) &nbsp;=&nbsp; ?
+			</p>
+
+			<img src="images/0/0-7/fut_add_concept.png" width="70%" style="margin-top: 5%; margin-left: 16.5%">
+		</div>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 6.5%; border-radius: 2.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item1" style="width: 100.1%; margin: -0.1em; font-size: 1.5em; line-height: 2em; border-collapse: collapse; >
+				<tr style="width: 100%">
+					<td style="width: 32.5%; padding-top: 5%; padding-bottom: 5%; padding-left: 6.5%; border-bottom-style: solid; border-width: medium; ">
+						g(x) &nbsp;=&nbsp; x + 3
+						<br>h(x) &nbsp;=&nbsp; 2x - 2
+						<br>
+						<br>&#402;(x) &nbsp;=&nbsp; g(x) &nbsp;+&nbsp; h(x)
+						<br>&#402;(x) &nbsp;=&nbsp; (x + 3) &nbsp;+&nbsp; (2x - 2)
+						<br>&#402;(x) &nbsp;=&nbsp; (1 + 2)x &nbsp;+&nbsp; (3 - 2) 
+						<br>&#402;(x) &nbsp;=&nbsp; 3x + 1
+					</td>
+					<td style="width: 30%; text-align: center; padding-top: 2.5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium; font-size: 1.1em">
+						<table style="width: 85%; margin-top: 5%; margin-bottom: 5%; margin-left: 7.5%; border-style: solid; border-width: medium; font-size: 0.8em; border-color: black; border-collapse: collapse; line-height: 2.15em">
+							<tr style="width: 100%; font-weight: bold">
+								<td style="width: 25%; background-color: #696969; color: white; border-color: black; border-bottom-style: solid; border-width: medium;">
+									x
+								</td>
+								<td style="width: 25%; background-color: #696969; color: white; border-color: black; border-bottom-style: solid; border-width: medium;">
+									g(x)
+								</td>
+								<td style="width: 25%; background-color: #696969; color: white; border-color: black; border-bottom-style: solid; border-width: medium;">
+									h(x)
+								</td>
+								<td style="width: 25%; background-color: #696969; color: white; border-color: black; border-bottom-style: solid; border-width: medium;">
+									&#402;(x)
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									0
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									3
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									-2
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									1
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									1
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									4
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									0
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									4
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									2
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									5
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									2
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									7
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									3
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									6
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									4
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									10
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									4
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									7
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									6
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									13
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									5
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									8
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									8
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									16
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="width: 37.5%; padding-top: 3.5%; padding-bottom: 2.5%; padding-right: 3.5%; padding-left: 3.5%; text-align: center; border-bottom-style: solid; border-width: medium;">
+						<img src="images/0/0-7/quad_add_graphs.png" width="80%" style="">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 32.5%; padding-top: 5%; padding-bottom: 5%; padding-left: 6.5%; border-bottom-style: none;">
+						g(x) &nbsp;=&nbsp; 3x + 2
+						<br>h(x) &nbsp;=&nbsp; x - 1
+						<br>
+						<br>&#402;(x) &nbsp;=&nbsp; g(x) &nbsp;&#215;&nbsp; h(x)
+						<br>&#402;(x) &nbsp;=&nbsp; (3x + 2) &nbsp;&#215;&nbsp; (x - 1)
+						<br>&#402;(x) &nbsp;=&nbsp; 3x(x - 1) &nbsp;+&nbsp; 2(x - 1)
+						<br>&#402;(x) &nbsp;=&nbsp; 3x<sup>2</sup> - x - 2
+					</td>
+					<td style="width: 30%; text-align: center; padding-top: 2.5%; padding-bottom: 2.5%; border-bottom-style: none; font-size: 1.1em">
+						<table style="width: 85%; margin-top: 5%; margin-bottom: 5%; margin-left: 7.5%; border-style: solid; border-width: medium; font-size: 0.8em; border-color: black; border-collapse: collapse; line-height: 2.15em">
+							<tr style="width: 100%; font-weight: bold;">
+								<td style="width: 25%; background-color: #696969; color: white; border-color: black; border-bottom-style: solid; border-width: medium;">
+									x
+								</td>
+								<td style="width: 25%; background-color: #696969; color: white; border-color: black; border-bottom-style: solid; border-width: medium;">
+									g(x)
+								</td>
+								<td style="width: 25%; background-color: #696969; color: white; border-color: black; border-bottom-style: solid; border-width: medium;">
+									h(x)
+								</td>
+								<td style="width: 25%; background-color: #696969; color: white; border-color: black; border-bottom-style: solid; border-width: medium;">
+									&#402;(x)
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									0
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									2
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									-1
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									-2
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									1
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									5
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									0
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									0
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									2
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									8
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									1
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									8
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									3
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									11
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									2
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									22
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									4
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									14
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									3
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									42
+								</td>
+							</tr>
+							<tr style="width: 100%">
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									5
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									17
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									4
+								</td>
+								<td style="width: 25%; border-bottom-style: solid; border-width: medium;">
+									68
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="width: 37.5%; padding-top: 3.5%; padding-bottom: 2.5%; padding-right: 3.5%; padding-left: 3.5%; text-align: center; border-bottom-style: none;">
+						<img src="images/0/0-7/quad_mult_graphs.png" width="80%" style="">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item2" style="width: 90%; margin-left: 5%; margin-top: 7.5%; font-size: 1.65em; line-height: 1.85em;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center;">
+					<img src="images/0/0-7/quad_foil.png" width="80%" style="">
+				</td>
+				<td style="width: 50%; padding-left: 5%">
+					y &nbsp;=&nbsp; (ax + b) &#215; (cx + d)
+					<br>y &nbsp;=&nbsp; ax(cx + d) &nbsp;+&nbsp; b(cx + d)
+					<br>y &nbsp;=&nbsp; ax &#215; cx &nbsp;+&nbsp; ax &#215; d &nbsp;+&nbsp; b &#215; cx &nbsp;+&nbsp; b &#215; d
+					<br>y &nbsp;=&nbsp; (ac)x<sup>2</sup> &nbsp;+&nbsp; (ad + bc)x &nbsp;+&nbsp; bd
+					<br>
+					<br>y &nbsp;=&nbsp; (5x - 4) &#215; (2x + 8)
+					<br>y &nbsp;=&nbsp; 5x(2x + 8) &nbsp;+&nbsp; -4(2x + 8)
+					<br>y &nbsp;=&nbsp; 5x &#215; 2x &nbsp;+&nbsp; 5x &#215; 8 &nbsp;+&nbsp; -4 &#215; 2x &nbsp;+&nbsp; -4 &#215; 8
+					<br>y &nbsp;=&nbsp; 10x<sup>2</sup> &nbsp;+&nbsp; 32x &nbsp;-&nbsp; 32
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item3" style="width: 90%; margin-left: 5%; margin-top: 3.5%; font-size: 1.65em; line-height: 1.85em;">
+			<tr style="width: 100%">
+				<td style="width: 55%; padding-left: 5%">
+					y &nbsp;=&nbsp; (ax + b) &#215; (cx + d) &#215; (wx + q)
+					<br>y &nbsp;=&nbsp; ((ac) x<sup>2</sup> &nbsp;+&nbsp; (ad + bc) x &nbsp;+&nbsp; bd) &#215; (wx + q)
+					<br>y &nbsp;=&nbsp; (acw) x<sup>3</sup> &nbsp;+&nbsp; (acq + adw + bcw) x<sup>2</sup>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;+&nbsp; (adq + bcq + bdw) x &nbsp;+&nbsp; bdq
+					<br>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y &nbsp;=&nbsp; (ax + b)<sup>2</sup>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y &nbsp;=&nbsp; (ax + b) (ax + b)
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y &nbsp;=&nbsp; a<sup>2</sup>x<sup>2</sup> + 2abx + b<sup>2</sup>
+				</td>
+				<td style="width: 45%; text-align: center; padding-top: 5%">
+					<img src="images/0/0-7/quad_pascal.png" width="95%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<p style="margin-top: 3.5%; font-size: 1.65em; line-height: 1.85em; text-align: center; ">
+			y &nbsp;=&nbsp; (x + 1)<sup>2</sup> &nbsp;=&nbsp; x<sup>2</sup> + 2x + 1
+			<br>y &nbsp;=&nbsp; (x + 1)<sup>3</sup> &nbsp;=&nbsp; x<sup>3</sup> + 3x<sup>2</sup> + 3x + 1
+			<br>y &nbsp;=&nbsp; (x + 1)<sup>4</sup> &nbsp;=&nbsp; x<sup>4</sup> + 4x<sup>3</sup> + 6x<sup>2</sup> + 4x + 1
+		</p>
+
+		<table id="scroll_item4" style="width: 95%; margin-left: 2.5%; margin-top: 7.5%; font-size: 1.6em; line-height: 1.85em; text-align: center; border-style: solid; border-width: medium; border-color: black; border-radius: 2.5em;">
+			<tr style="width: 100%">
+				<td style="width: 60%; padding: 5%; padding-right: 0%; padding-left: 7.5%">
+					&#402;(r) &nbsp;=&nbsp; 0 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					r &nbsp;=&nbsp; r<span style="font-size: 0.7em"><sub>1</sub></span> ,&nbsp; r<span style="font-size: 0.7em"><sub>2</sub></span>
+					<br>y &nbsp;=&nbsp; ax<sup>2</sup> + bx + c &nbsp; &harr; &nbsp; y &nbsp;=&nbsp; ( k<span style="font-size: 0.7em"><sub>1 </sub></span>x + d<span style="font-size: 0.7em"><sub>1 </sub></span>) ( k<span style="font-size: 0.7em"><sub>2 </sub></span>x + d<span style="font-size: 0.7em"><sub>2 </sub></span>)
+					<br>k<span style="font-size: 0.7em"><sub>1 </sub></span>r<span style="font-size: 0.7em"><sub>1</sub></span> + d<span style="font-size: 0.7em"><sub>1 </sub></span> &nbsp;=&nbsp; 0 
+					&nbsp;&nbsp;&rarr;&nbsp;&nbsp; 
+					x &nbsp;=&nbsp; r<span style="font-size: 0.7em"><sub>1</sub></span> &nbsp;=&nbsp; -d<span style="font-size: 0.7em"><sub>1 </sub></span>/ k<span style="font-size: 0.7em"><sub>1</sub></span>
+					<br>k<span style="font-size: 0.7em"><sub>2 </sub></span>r<span style="font-size: 0.7em"><sub>2</sub></span> + d<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; 0 
+					&nbsp;&nbsp;&rarr;&nbsp;&nbsp; 
+					x &nbsp;=&nbsp; r<span style="font-size: 0.7em"><sub>2</sub></span> &nbsp;=&nbsp; -d<span style="font-size: 0.7em"><sub>2 </sub></span>/ k<span style="font-size: 0.7em"><sub>2</sub></span>
+					<br>
+					<br>k<span style="font-size: 0.7em"><sub>1 </sub></span>(-d<span style="font-size: 0.7em"><sub>1 </sub></span>/ k<span style="font-size: 0.7em"><sub>1</sub></span>) &nbsp;+&nbsp; d<span style="font-size: 0.7em"><sub>1 </sub></span> &nbsp;=&nbsp; -d<span style="font-size: 0.7em"><sub>1 </sub></span> &nbsp;+&nbsp; d<span style="font-size: 0.7em"><sub>1 </sub></span> &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; 0 &#215; ( k<span style="font-size: 0.7em"><sub>2 </sub></span>x + d<span style="font-size: 0.7em"><sub>2 </sub></span>) &nbsp;=&nbsp; 0
+					<br>k<span style="font-size: 0.7em"><sub>2 </sub></span>(-d<span style="font-size: 0.7em"><sub>2 </sub></span>/ k<span style="font-size: 0.7em"><sub>2</sub></span>) &nbsp;+&nbsp; d<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; -d<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;+&nbsp; d<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; ( k<span style="font-size: 0.7em"><sub>1 </sub></span>x + d<span style="font-size: 0.7em"><sub>1 </sub></span>) &#215; 0 &nbsp;=&nbsp; 0
+				</td>
+				<td style="width: 40%; padding: 5%">
+					<img src="images/0/0-7/quad_r_graph.png" width="100%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item5" style="width: 90%; margin-left: 3.5%; margin-top: 7.5%; font-size: 1.65em; line-height: 1.85em;">
+			<tr style="width: 100%;">
+				<td style="width: 50%; text-align: center">
+					&#402;(x) &nbsp;=&nbsp; x<sup>2</sup> + x - 6
+					<br>&#402;(x) &nbsp;=&nbsp; 0 &nbsp;&nbsp;&rarr;&nbsp;&nbsp; x = 2 ,&nbsp; x = -3
+					<br>r<span style="font-size: 0.7em"><sub>1 </sub></span> = 2 ,&nbsp; r<span style="font-size: 0.7em"><sub>2 </sub></span> = -3 &nbsp;&nbsp;&rarr;&nbsp;&nbsp; &#402;(r) = 0
+				</td>
+				<td style="width: 50%; text-align: center">
+					&#402;(x) &nbsp;=&nbsp; x<sup>2</sup> + x - 6 &nbsp;=&nbsp; (x - 2) (x + 3)
+					<br>&#402;(2) &nbsp;=&nbsp; (2 - 2) (2 + 3) &nbsp;=&nbsp; 0 &#215; 5 &nbsp;=&nbsp; 0
+					<br>&#402;(-3) &nbsp;=&nbsp; (-3 - 2) (-3 + 3) &nbsp;=&nbsp; -5 &#215; 0 &nbsp;=&nbsp; 0
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item6" style="width: 95%; margin-left: 2.5%; margin-top: 6.5%; font-size: 1.85em; line-height: 2em; border-style: solid; border-width: medium; padding: 3.5%; border-color: black; border-radius: 2.5em;">
+			<tr style="width: 100%;">
+				<td style="width: 27.5%; text-align: left; padding-left: 3.5%; padding-top: 3.5%; padding-bottom: 3.5%">
+					a &nbsp;=&nbsp; k<span style="font-size: 0.7em"><sub>1 </sub></span>k<span style="font-size: 0.7em"><sub>2</sub></span>
+					<br>b &nbsp;=&nbsp; k<span style="font-size: 0.7em"><sub>1 </sub></span>d<span style="font-size: 0.7em"><sub>2</sub></span> + k<span style="font-size: 0.7em"><sub>2 </sub></span>d<span style="font-size: 0.7em"><sub>1</sub></span>
+					<br>c &nbsp;=&nbsp; d<span style="font-size: 0.7em"><sub>1 </sub></span>d<span style="font-size: 0.7em"><sub>2</sub></span>
+				</td>
+				<td style="width: 40%; text-align: center; padding-top: 3.5%; padding-bottom: 3.5%; padding-right: 1.5%">
+					<img src="images/0/0-7/quad_connections.png" width="100%" style="">
+				</td>
+				<td style="width: 32.5%; text-align: left; padding-left: 6.5%; padding-top: 3.5%; padding-bottom: 3.5%">
+					k<span style="font-size: 0.7em"><sub>1 </sub></span> &nbsp;=&nbsp; -d<span style="font-size: 0.7em"><sub>1 </sub></span>/ r<span style="font-size: 0.7em"><sub>1 </sub></span> &nbsp;=&nbsp; a / k<span style="font-size: 0.7em"><sub>2</sub></span>
+					<br>k<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; -d<span style="font-size: 0.7em"><sub>2 </sub></span>/ r<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; a / k<span style="font-size: 0.7em"><sub>1</sub></span>
+					<br>d<span style="font-size: 0.7em"><sub>1 </sub></span> &nbsp;=&nbsp; -k<span style="font-size: 0.7em"><sub>1 </sub></span>r<span style="font-size: 0.7em"><sub>1 </sub></span> &nbsp;=&nbsp; c / d<span style="font-size: 0.7em"><sub>2</sub></span>
+					<br>d<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; -k<span style="font-size: 0.7em"><sub>2 </sub></span>r<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; c / d<span style="font-size: 0.7em"><sub>1</sub></span>
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item7" style="margin-top: 5%;">
+			<p style="width: 90%; font-size: 1.75em; line-height: 2em; text-align: center; padding-left: 5%">
+				&#402;(x) &nbsp;=&nbsp; ax<sup>2</sup> + bx + c &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y = 0 &nbsp;&rarr;&nbsp; x = r
+			</p>
+			<table style="width: 90%; margin-left: 5%; margin-top: 0%; font-size: 1.65em; line-height: 1.85em;">
+				<tr style="width: 100%">
+					<td style="text-align: left; padding-left: 6.5%; width:47.5%">
+						ax<sup>2</sup> + bx + c &nbsp;=&nbsp; 0
+						<br>4a<sup>2</sup>x<sup>2</sup> + 4abx + 4ac &nbsp;=&nbsp; 0
+						<br>4a<sup>2</sup>x<sup>2</sup> + 4abx &nbsp;=&nbsp; -4ac
+						<br>4a<sup>2</sup>x<sup>2</sup> + 4abx + b<sup>2</sup> &nbsp;=&nbsp; b<sup>2</sup> - 4ac
+						<br>(2ax + b)<sup>2</sup> &nbsp;=&nbsp; b<sup>2</sup> - 4ac
+						<br>2ax + b &nbsp;=&nbsp; &plusmn;(b<sup>2</sup> - 4ac)<sup>1/2</sup>
+						<br>2ax &nbsp;=&nbsp; -b &plusmn; (b<sup>2</sup> - 4ac)<sup>1/2</sup>
+						<br>x &nbsp;=&nbsp; r &nbsp;=&nbsp; (-b &plusmn; (b<sup>2</sup> - 4ac)<sup>1/2</sup>) / (2a)
+					</td>
+					<td style="width: 52.5%; text-align: center">
+						<img src="images/0/0-7/quad_eqn.png" width="95%" style="">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item8" class="calc_table" style="width:85%; margin-top: 6.5%; border-radius: 2.5em; margin-left: 7.5%; padding-top: 2.5%; padding-bottom: 2.5%; font-size: 0.95em; border-style: solid; border-color: black; border-width: medium">
+			<tr style="width:100%">
+			    <td style="width: 45%; font-size: 1.65em; line-height: 1.85em; vertical-align: center">
+			    	<p style="border-style: solid; border-width: medium; border-color: lightgray; padding: 5%; width: 50%; margin-left: 20%; text-align: left; padding-left: 15%; border-radius: 1em">
+				    	y &nbsp;=&nbsp; ax<sup>2</sup> + bx + c
+				    	<br>a &nbsp;=&nbsp; <input type="text" style="font-size: 0.85em; width: 50%" id="a" class="form-control" placeholder=" #">	
+				    	<br>b &nbsp;=&nbsp; <input type="text" style="font-size: 0.85em; width: 50%" id="b" class="form-control" placeholder=" #">	
+				    	<br>c &nbsp;=&nbsp; <input type="text" style="font-size: 0.85em; width: 50%" id="c" class="form-control" placeholder=" #">
+				    	<br>
+						<button class="calc_button" type="button" class="graph" onclick="getRoots()" style="font-size: 1em; line-height: 0.5em; width: 72.5%; height: 1.25em; color: black; border-style: solid; border-width: medium; border-color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+				    </p>
+			    	<p style="border-style: solid; border-width: medium; border-color: lightgray; padding: 5%; width: 60%; margin-left: 20%; text-align: center; border-radius: 1em">
+			    		r<span style="font-size: 0.7em"><sub>1 </sub></span> &nbsp;=&nbsp; <span id="r1" style="width: 50%; font-size: 0.85em"></span>
+			    		<br>
+			    		r<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; <span id="r2" style="width: 50%; font-size: 0.85em"></span>
+			    	</p>
+				</td>
+				<td style="width: 55%">
+				    <table style="width: 50%; font-size: 1em; margin-left: 20%"> 
+				        <tr>
+				            <td>
+				            </td>
+				            <td style="text-align: center">
+				                <p id="pos_y">&nbsp;&nbsp;5</p>
+				            </td>
+				            <td>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td style="text-align: right;">
+				                <p id="neg_x">-5</p>
+				            </td>
+				            <td style="text-align: center; padding-left: 3.5%">
+				                <div id="MGC-Calculator" style="width:100%"></div>
+				            </td>
+				            <td style="text-align: left; padding-left: 3.5%">
+				                <p id="pos_x">5</p>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td>
+				            </td>
+				            <td style="text-align: center">
+				                <p id="neg_y">&nbsp;-5</p>
+				            </td>
+				            <td>
+				            </td>
+				        </tr>
+				    </table>
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item9" style="width: 95%; margin-left: 2.5%; margin-top: 6.5%; border-style: solid; border-width: medium; border-radius: 2.5em; text-align: center; font-size: 1.65em; line-height: 1.85em">
+			<table style="width: 100%">
+				<tr style="width: 100%">
+					<td style="width: 33.33%; vertical-align: top; padding: 3.5%; padding-right: 0%">
+						b<sup>2</sup> &nbsp;>&nbsp; 4ac<br><br>
+						<img src="images/0/0-7/quad_real_r.png" width="77.5%" style="">
+						<br>
+						<span style="font-size: 0.9em; line-height: 0.8em">
+							<br>b<sup>2</sup> - 4ac &nbsp;>&nbsp; 0
+							<br><span style="font-size: 0.925em">r &nbsp;=&nbsp; (-b &plusmn; (b<sup>2</sup> - 4ac)<sup>1/2</sup>) / (2a)</span>
+							<br>r<span style="font-size: 0.7em"><sub>1</sub></span> &nbsp;=&nbsp; # ,&nbsp; r<span style="font-size: 0.7em"><sub>2</sub></span> &nbsp;=&nbsp; #
+						</span>
+					</td>
+					<td style="width: 33.33%; vertical-align: top; padding: 3.5%">
+						b<sup>2</sup> &nbsp;=&nbsp; 4ac<br><br>
+						<img src="images/0/0-7/quad_one_r.png" width="90%" style="">
+						<br>
+						<span style="font-size: 0.9em; line-height: 0.8em">
+							<br>b<sup>2</sup> - 4ac &nbsp;=&nbsp; 0
+							<br>r &nbsp;=&nbsp; (-b &plusmn; (0)<sup>1/2</sup>) / (2a)
+							<br>r &nbsp;=&nbsp; -b / (2a)
+							<br>r<span style="font-size: 0.7em"><sub>1</sub></span> &nbsp;=&nbsp; r<span style="font-size: 0.7em"><sub>2</sub></span> &nbsp;=&nbsp; #
+						</span>
+					</td>
+					<td style="width: 33.33%; vertical-align: top; padding: 3.5%; padding-left: 0%">
+						b<sup>2</sup> &nbsp;<&nbsp; 4ac<br><br>
+						<img src="images/0/0-7/quad_imag_r.png" width="81%" style="">
+						<br>
+						<span style="font-size: 0.9em; line-height: 0.8em">
+							<br>b<sup>2</sup> - 4ac &nbsp;<&nbsp; 0
+							<br>r<sup>2</sup> &nbsp;<&nbsp; 0
+							<br>r &nbsp;=&nbsp; -b / (2a) &nbsp;&plusmn;&nbsp; wi
+							<br>i &nbsp;&ne;&nbsp; # ,&nbsp; r &nbsp;&ne;&nbsp; #
+						</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item10" style="width: 90%; margin-left: 5%; margin-top: 7.5%; text-align: center; font-size: 1.75em; line-height: 2em;">
+			<tr style="width: 100%">
+				<td style="width: 65%">
+					<img src="images/0/0-7/quad_min_x.png" width="60%" style="">
+				</td>
+				<td style="width: 35%; text-align: left; padding-left: 0%">
+					&nbsp; x &nbsp;=&nbsp; ( r<span style="font-size: 0.7em"><sub>1 </sub></span> + r<span style="font-size: 0.7em"><sub>2 </sub></span>)/2 &nbsp;=&nbsp; -b / (2a)
+					<br>a &nbsp;>&nbsp; 0 &nbsp;&nbsp;&rarr;&nbsp;&nbsp; &#402;(-b/(2a)) &nbsp;<&nbsp; &#402;(x)
+					<br>a &nbsp;<&nbsp; 0 &nbsp;&nbsp;&rarr;&nbsp;&nbsp; &#402;(-b/(2a)) &nbsp;>&nbsp; &#402;(x)
+				</td>
+			</tr>		
+		</table>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 7.5%; border-radius: 2.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item11" style="width: 100.1%; border-color: black; font-size: 1.5em; line-height: 1.95em; text-align: center; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 3.5%">
+						&#402;(x) &nbsp;=&nbsp; ax<sup>2</sup> + bx + c ,&nbsp;&nbsp;&nbsp; &infin; = 1/0
+						<br>&#402;(&infin;) &nbsp;=&nbsp; a(&infin;)<sup>2</sup> + b(&infin;) + c
+						<br>&infin;<sup>2</sup> > &infin; > c &nbsp;&rarr;&nbsp; &#402;(&infin;) &nbsp;&#8776;&nbsp; a(&infin;)<sup>2</sup>
+						<br>a > 0 ,&nbsp; x = &infin; ,&nbsp; &#402;(x) &nbsp;=&nbsp; a(&infin;)<sup>2</sup> &nbsp;=&nbsp; &infin;
+						<br>a > 0 ,&nbsp; x = -&infin; ,&nbsp; &#402;(x) &nbsp;=&nbsp; a(-&infin;)<sup>2</sup> &nbsp;=&nbsp; &infin;
+					</td>
+					<td style="width: 50%; padding-top: 5%; padding-bottom: 5%">
+						<img src="images/0/0-7/quad_aposinf.png" width="65%" style="">				
+					</td>
+				</tr>
+				<tr style="width: 100%; border-top-style: solid; border-width: medium;">
+					<td style="width: 50%; padding: 3.5%">
+						&#402;(x) &nbsp;=&nbsp; ax<sup>2</sup> + bx + c ,&nbsp;&nbsp;&nbsp; &infin; = 1/0
+						<br>&#402;(&infin;) &nbsp;=&nbsp; a(&infin;)<sup>2</sup> + b(&infin;) + c
+						<br>&infin;<sup>2</sup> > &infin; > c &nbsp;&rarr;&nbsp; &#402;(&infin;) &nbsp;&#8776;&nbsp; a(&infin;)<sup>2</sup>
+						<br>a < 0 ,&nbsp; x = &infin; ,&nbsp; &#402;(x) &nbsp;=&nbsp; a(&infin;)<sup>2</sup> &nbsp;=&nbsp; -&infin;
+						<br>a < 0 ,&nbsp; x = -&infin; ,&nbsp; &#402;(x) &nbsp;=&nbsp; a(-&infin;)<sup>2</sup> &nbsp;=&nbsp; -&infin;				
+					</td>
+					<td style="width: 50%; padding-top: 5%; padding-bottom: 5%">
+						<img src="images/0/0-7/quad_aneginf.png" width="65%" style="">				
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item12" style="width: 90%; margin-left: 5%; margin-top: 5%; border-style: solid; border-width: medium; border-radius: 2.5em; border-color: black; font-size: 1.65em; line-height: 1.85em">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding: 3.5%; padding-left: 10%">
+					&#402;(x) &nbsp;=&nbsp; ax<sup>2</sup> + bx + c
+					<br>&#402;(r) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; r &nbsp;=&nbsp; r<span style="font-size: 0.7em"><sub>1</sub></span> ,&nbsp; r<span style="font-size: 0.7em"><sub>2</sub></span>
+					<br>
+					<br>g(x) &nbsp;=&nbsp; m(ax<sup>2</sup> + bx + c)
+					<br>0 &nbsp;=&nbsp; m &#215; 0
+					<br>g(x) &nbsp;=&nbsp; &#402;(x) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; r &nbsp;=&nbsp; r<span style="font-size: 0.7em"><sub>1</sub></span> ,&nbsp; r<span style="font-size: 0.7em"><sub>2</sub></span>
+				</td>
+				<td style="width: 50%; padding-top: 5%; padding-bottom: 5%; padding-right: 5%">
+					<img src="images/0/0-7/quad_scaling.png" width="75%" style="">				
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item13" style="margin-top: 6.5%; margin-bottom: 2.85%">
+			<p style="font-size: 1.65em; line-height: 1.85em; text-align: center; width: 100%;">
+				a &nbsp;=&nbsp; 1 , &nbsp; y &nbsp;=&nbsp; x<sup>2</sup> + bx + c
+				<br>&rarr; &nbsp; y &nbsp;=&nbsp; ( x - r<span style="font-size: 0.7em"><sub>1 </sub></span>) ( x - r<span style="font-size: 0.7em"><sub>2 </sub></span>) 
+				<br>-r<span style="font-size: 0.7em"><sub>1 </sub></span> - r<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; b , &nbsp;&nbsp; r<span style="font-size: 0.7em"><sub>1 </sub></span>r<span style="font-size: 0.7em"><sub>2</sub></span> &nbsp;=&nbsp; c
+			</p>
+
+			<table style="width: 100%; font-size: 1.5em; line-height: 2em; text-align: center; width: 100%; margin-top: 2.5%">
+				<tr style="width: 100%">
+					<td style="width: 50%">
+						y &nbsp;=&nbsp; 2x<sup>2</sup> + 10x + 12
+						<br>2x<sup>2</sup> + 10x + 12 &nbsp;=&nbsp; 0 &nbsp;&nbsp;&rarr;&nbsp;&nbsp; x<sup>2</sup> + 5x + 6 &nbsp;=&nbsp; 0
+						<br>-r<span style="font-size: 0.7em"><sub>1 </sub></span> - r<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; 5 , &nbsp; -r<span style="font-size: 0.7em"><sub>1 </sub></span>r<span style="font-size: 0.7em"><sub>2</sub></span> &nbsp;=&nbsp; 6
+						<br>6 &nbsp;=&nbsp; 1 &#215; 6 &nbsp;=&nbsp; 2 &#215; 3
+						<br>m = 2 , &nbsp; r<span style="font-size: 0.7em"><sub>1 </sub></span> = -2 , &nbsp; r<span style="font-size: 0.7em"><sub>2 </sub></span> = -3
+						<br>(-2)<sup>2</sup> + 5(-2) + 6 &nbsp;=&nbsp; 0 , &nbsp; (-3)<sup>2</sup> + 5(-3) + 6 &nbsp;=&nbsp; 0
+						<br>y &nbsp;=&nbsp; 2 (x + 3) (x + 2)
+					</td>
+					<td style="width: 50%">
+						y &nbsp;=&nbsp; x<sup>2</sup> + x - 12
+						<br>x<sup>2</sup> + x - 12 &nbsp;=&nbsp; 0
+						<br>-r<span style="font-size: 0.7em"><sub>1 </sub></span> - r<span style="font-size: 0.7em"><sub>2 </sub></span> &nbsp;=&nbsp; 1 , &nbsp; -r<span style="font-size: 0.7em"><sub>1 </sub></span>r<span style="font-size: 0.7em"><sub>2</sub></span> &nbsp;=&nbsp; -12
+						<br>12 &nbsp;=&nbsp; 1 &#215; 12 &nbsp;=&nbsp; 2 &#215; 6 &nbsp;=&nbsp; 3 &#215; 4
+						<br>r<span style="font-size: 0.7em"><sub>1 </sub></span> = 3 , &nbsp; r<span style="font-size: 0.7em"><sub>2 </sub></span> = -4
+						<br>(3)<sup>2</sup> + (3) - 12 &nbsp;=&nbsp; 0 , &nbsp; (-4)<sup>2</sup> + (-4) + 12 &nbsp;=&nbsp; 0
+						<br>y &nbsp;=&nbsp; (x - 3) (x + 4)
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="0-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
+		</div>
+	</header>
+
+	<script type="text/javascript" src="standard_functions.js"></script>
+	<script type="text/javascript">
+
+		window.onload = function () {
+			standard_onload();
+		};
+
+		function getRoots() {
+			var a = parseFloat(document.getElementById("a").value);
+			var b = parseFloat(document.getElementById("b").value);
+			var c = parseFloat(document.getElementById("c").value);
+
+			var r1 = (-b + Math.sqrt(b*b - 4*a*c))/(2*a);
+			var r2 = (-b - Math.sqrt(b*b - 4*a*c))/(2*a);
+			if (b*b >= 4*a*c) {
+    			if (Math.abs(r1) < 1) { var r1 = r1.toFixed(5); }
+    			else { var r1 = r1.toPrecision(6) };
+	    		document.getElementById("r1").innerHTML = r1.toString().replace('Infinity', '&#8734;');
+    			if (Math.abs(r2) < 1) { var r2 = r2.toFixed(5); }
+    			else { var r2 = r2.toPrecision(6) };
+	    		document.getElementById("r2").innerHTML = r2.toString().replace('Infinity', '&#8734;');
+	    	}
+	    	else {
+    			if (Math.abs(-b/(2*a)) < 1) { var rr = (-b/(2*a)).toFixed(5); }
+    			else { var rr = (-b/(2*a)).toPrecision(6) };
+    			if (Math.sqrt(4*a*c - b*b) < 1) { var ri = Math.sqrt(4*a*c - b*b).toFixed(5); }
+    			else { var ri = Math.sqrt(4*a*c - b*b).toPrecision(6) };
+	    		rr = rr.toString().replace('Infinity', '&#8734;');
+	    		ri = ri.toString().replace('Infinity', '&#8734;');
+	    		document.getElementById("r1").innerHTML = rr + ' + ' + ri + 'i';
+	    		document.getElementById("r2").innerHTML = rr + ' − ' + ri + 'i';
+	    	};
+		};
+
+		$(document).ready(function(){
+			var calc = new MGC.Calculator("MGC-Calculator");
+			
+			$(".graph").click(function(){
+				var id = this.id.substring(0, 3);
+				
+				if($("#in" + id).attr("readonly") !== "readonly"){
+					calc.clearFunc(func, color);
+					var a = document.getElementById("a").value;
+					var b = document.getElementById("b").value;
+					var c = document.getElementById("c").value;
+
+					if (b*b >= 4*a*c) {
+						var r1 = (-b + Math.sqrt(b*b - 4*a*c))/(2*a);
+						var r2 = (-b - Math.sqrt(b*b - 4*a*c))/(2*a);
+			    		var m = Math.max(Math.abs(r1), Math.abs(r2));
+			    	}
+			    	else {
+						var r1 = (-b + Math.sqrt(-b*b + 4*a*c))/(2*a);
+						var r2 = (-b - Math.sqrt(-b*b + 4*a*c))/(2*a);
+			    		var ymax = a*(-b/(2*a))*(-b/(2*a)) + b*(-b/(2*a)) + c;
+			    		var m = Math.max(Math.abs(r1), Math.abs(r2), Math.abs(ymax));
+			    	};
+
+			    	m = Math.ceil(m/5) + 1;
+			    	m = m*5;
+
+			    	if (m < 150) {
+						// var func = $("#in" + id).val();
+						var func = a + '*x*x + ' + b + '*x + ' + c;
+						var color = $("." + id + "div").css("background-color");
+						
+						if(calc.graphFunc(func, color)){ 
+							//check expression validity
+						}
+						else{
+							$("#in" + id).val("ERR");
+						}
+
+						calc.setMax(m, "x");
+
+						var pos_x = document.getElementById('pos_x');
+						pos_x.innerHTML = m;
+						var pos_y = document.getElementById('pos_y');
+						pos_y.innerHTML = m;
+						var neg_x = document.getElementById('neg_x');
+						neg_x.innerHTML = -m;
+						var neg_y = document.getElementById('neg_y');
+						neg_y.innerHTML = -m;
+					}
+					else {
+						m = 5;
+						calc.setMax(m, "x");
+
+						var pos_x = document.getElementById('pos_x');
+						pos_x.innerHTML = m;
+						var pos_y = document.getElementById('pos_y');
+						pos_y.innerHTML = m;
+						var neg_x = document.getElementById('neg_x');
+						neg_x.innerHTML = -m;
+						var neg_y = document.getElementById('neg_y');
+						neg_y.innerHTML = -m;						
+					}
+				}
+			});
+
+			$("#xmax").change(function(){
+				calc.setMax($(this).val(), "x");
+				$("#xmin").val("-" + $(this).val());
+
+				var pos_x = document.getElementById('pos_x');
+				pos_x.innerHTML = $(this).val();
+				var pos_y = document.getElementById('pos_y');
+				pos_y.innerHTML = $(this).val();
+				var neg_x = document.getElementById('neg_x');
+				neg_x.innerHTML = -$(this).val();
+				var neg_y = document.getElementById('neg_y');
+				neg_y.innerHTML = -$(this).val();
+			});
+				
+		});
+
+		var MGC = {};
+
+		//MGC Calculator
+		MGC.Calculator = function(id){
+			"use strict";
+			var thisCalc = this;
+
+			var xMax = 5;
+			var xMaxVal = 40;
+			var xScale = 1;
+			var yMax = 5;
+			var yMaxVal = 40;
+			var yScale = 1;
+			
+			/*
+				-start coordinates-
+				The coordinate (0, 0) on the canvas is the 
+				upper-left hand corner. This is updated
+				according to the current scales and max/mins
+			*/
+			var xStart = 0;
+			var yStart = 0;
+			
+			//arrays for drawing every function graph
+			var funcArr = []; //array of functions
+			var colorArr = []; //array of functions
+			
+			//canvas and context
+			var canvas = null;
+			var context = null;
+
+			canvas = createCanvas(); //make a canvas for the graph output
+			
+			if(document.getElementById(id) === null){ //append canvas to the body
+				document.body.appendChild(canvas);
+			}
+			else{ //append canvas to the element at id
+				document.getElementById(id).appendChild(canvas);
+			}
+			
+			context = getContext(canvas); //init context
+
+			drawGraph(); //draw an empty grid
+			
+			/*start public methods*/	
+			this.graphFunc = function(func, color){
+				func = func.toLowerCase();
+				func = func.replace("^", "**");
+				
+				if(cleanExp(func) !== null){
+					funcArr.push(func); //save function
+					colorArr.push(color); //save color
+					drawGraph(); //draw new graph
+					return true;
+				}
+				else{
+					return false;
+				}
+				
+			};
+			
+			this.clearFunc = function(func, color){
+				var i = colorArr.indexOf(color);
+				
+				if(i > -1){
+					funcArr.splice(i, 1); //emove function name
+					colorArr.splice(i, 1); //emove color
+					drawGraph(); //draw new graph
+				}
+			};
+			
+			this.setMax = function(value, axis){
+					//value currently has to be symmetrical
+					//also between 0 and 1000
+					if(value > 0 && value < 1000){ 
+						if(axis === "x"){
+							xMax = value;
+							xMaxVal = canvas.width / 2 / xMax;
+							yMax = xMax;
+							yMaxVal = xMaxVal;
+						}				
+						drawGraph();
+					}
+					
+			};
+			
+			/*
+				will eventually need public get and set 
+				functions for all values:
+				---scale
+				---min
+				---canvas size
+			*/
+			/*end public methods*/
+			
+			/*start private methods*/
+			function createCanvas(){
+				//create a canvas
+				canvas = document.createElement("canvas");
+				
+				if(canvas === null){ //check canvas
+					throw MGC.Errors.canvasErr;
+				}
+				
+				//add and initalize canvas
+				canvas.appendChild(document.createTextNode(MGC.Errors.tagErr));
+				canvas.height = 400;
+				canvas.width = 400;
+				
+				return canvas;
+			}
+			
+			function getContext(){
+				//get a context
+				context = canvas.getContext("2d");
+				
+				if(context === null){ //check 2D context
+					throw MGC.Error.contextErr;
+				}
+				
+				return context;
+			}
+			
+			function drawGraph(){
+			
+				//update starting positions
+				xStart = 0.5 * canvas.width;
+				yStart = 0.5 * canvas.height;
+				
+				//draw a white background
+				context.fillStyle = "#ffffff";
+				context.fillRect(0, 0, canvas.width, canvas.height);
+				
+				context.lineWidth = 1; //set line width for grid
+				context.strokeStyle = "#cccccc";
+				context.beginPath();
+				
+				//set up the grid
+				for(var i = 0; i < canvas.width; i++){
+					context.moveTo(i * (xMaxVal / xScale), 0);
+					context.lineTo(i * (xMaxVal / xScale), canvas.width);
+					
+					context.moveTo(0, i * (yMaxVal / yScale));
+					context.lineTo(canvas.height, i * (yMaxVal / yScale));
+				}
+				
+				//draw the grid
+				context.stroke();
+				context.closePath();
+				
+				context.lineWidth = 1; //set line width for axises
+				
+				//draw x and y axis
+				context.beginPath();
+				context.moveTo(0, yStart);
+				context.lineTo(canvas.width, yStart);
+				context.moveTo(xStart, 0);
+				context.lineTo(xStart, canvas.height);
+				context.strokeStyle = "#000000";
+				context.stroke();
+				context.closePath();
+				
+				context.lineWidth = 3; //reset line width
+				
+				//draw the functions in the array
+				for(i = 0; i < funcArr.length; i++){
+					drawFunction(i);
+				}
+			}
+			
+			function drawFunction(i){
+				var func = cleanExp(funcArr[i]);
+				var color = colorArr[i];
+				var x, y, max, min;
+
+				if(func === null){ //invalid expression
+					thisCalc.clearFunc(funcArr[i]);
+					alert("ERR");
+					return;
+				}
+				
+				max = (canvas.width - xStart) / xScale;
+				min = -xStart / xScale;
+				
+				context.beginPath();
+				context.lineWidth = 3;
+				context.strokeStyle = '#DB0000';
+				
+				//move to first coordinate
+				x = xScale * min;
+				
+				try{ //expression might not evaluate
+					y = xMaxVal * eval(func);
+				}
+				catch(err){
+					try {
+						var f = funcArr[i].replace(/x/gi, '*x');
+						func = cleanExp(f);
+						y = xMaxVal * eval(func);
+					}
+					catch(e) {
+						thisCalc.clearFunc(funcArr[i]);
+						alert("ERR");
+						return;
+					};
+				}
+					
+				context.moveTo(xStart + x, yStart - y);
+				
+				for(var j = min + 1; j <= max; j++){
+					x = xScale * j;
+					
+					try{ //expression might not evaluate
+						y = xMaxVal * eval(func);
+					}
+					catch(err){
+						thisCalc.clearFunc(funcArr[i]);
+						alert("ERR");
+						return;
+					}
+					
+					context.lineTo(xStart + x, yStart - y);
+				
+				}
+				
+				context.stroke();
+				context.closePath();
+			}
+			
+			function cleanExp(exp){
+				var result = "";
+				
+				//emove spaces
+				exp = exp.replace(/\s/g, '');
+				
+				//attempt to stop some code injection
+				if(exp.indexOf("var") !== -1 || exp.indexOf("func") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("{") !== -1 || exp.indexOf("}") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("[") !== -1 || exp.indexOf("]") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("=") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp === ""){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				
+				for(var i = 0; i < exp.length; i++){
+					
+					if(i+2 < exp.length && exp[i+1] === "^"){
+						result += "pow(x, " + exp[i+2] + ")";
+						i += 2;
+					}
+					else{
+						result += exp[i];
+					}
+					
+				}
+				
+				//scale x
+				result = result.replace(/x/gi, "x/xMaxVal");
+				
+				//replace special numbers
+				result = result.replace(/e/gi, "Math.E");
+				result = result.replace(/pi/gi, "Math.PI");		
+				
+				return result;
+			}
+			
+			function pow(x, e){
+				return Math.pow(x, e);
+			}
+			
+			function sin(x){
+				return Math.sin(x);
+			}
+				
+			function asin(x){
+				return Math.asin(x);
+			}
+			
+			function arcsin(x){
+				return Math.asin(x);
+			}
+			
+			function cos(x){
+				return Math.cos(x);
+			}
+			
+			function acos(x){
+				return Math.acos(x);
+			}
+			
+			function arccos(x){
+				return Math.acos(x);
+			}
+			
+			function tan(x){
+				return Math.tan(x);
+			}
+			
+			function atan(x){
+				return Math.atan(x);
+			}
+			
+			function arctan(x){
+				return Math.atan(x);
+			}
+			
+			function log(x){
+				return Math.log(x);
+			}
+			/*end private methods*/
+		};
+
+		//MGC Errors
+		MGC.Errors = {
+			tagErr		:	"Your browser does not seem to support the canvas tag.",
+			canvasErr	:	"MGC_CANVAS_ERR: could not create a canvas element",
+			contextErr	:	"MGC_CONTEXT_ERR: could not get a 2d context",
+			expWarn		:	"MGC_EXPRESSION_WARNING: expression contains illegal characters"
+		};
+
+	</script>
+	
+</body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
+</html>

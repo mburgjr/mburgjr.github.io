@@ -1,118 +1,741 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
+	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
 	<style>
-		body {
-		  margin: 0;
-		  font-family: Arial;
-		  text-decoration: none;
-		}
-
-		.header {
-			background-color: #000066;
-			text-align: left;
-			color: white;
-		}
-
-		.header div.info {
-			text-align: right;
-			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
-			float: right;
-		}
-
-		.header div.logo {
-			float: left;
-		}
-		
-		.header a {
-		  	text-decoration: none;
-			font-size: 20px;
-			font-weight: bold;
-			color: white;
-		}
-
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
-		}
-
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
-
-		.main-nav a:hover {
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		.main-nav a.active {
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		.sub-nav {
-		  overflow: hidden;
-		  background-color: #66B2FF;
-		}
-
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
-
-		.sub-nav a:hover {
-		  background-color: #FFFFFF;
-		  color: #66B2FF;
-		}
-
-		.sub-nav a.active {
-		  background-color: #FFFFFF;
-		  color: #66B2FF;
-		}
 	</style>
-
 </head>
-<body>
-	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="1-5.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-0.html"><span style="font-size: 1.2em">&#9632;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-1.html">&Theta;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-2.html"><span style="font-size: 0.9em">&#9699;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-3.html"><span style="font-size: 1.25em">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-4.html">&#8737;</a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="1-5.html"><span style="font-size: 1.05em">&nearr;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-6.html"><span style="font-size: 1.05em">&#8630;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-7.html"><span style="font-size: 1.5em">&bull;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-8.html"><span style="font-size: 1.2em">&#10541;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-Q.html">?</a></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button10" type="button" onclick="scrollToIndex(10)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button11" type="button" onclick="scrollToIndex(11)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button12" type="button" onclick="scrollToIndex(12)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button13" type="button" onclick="scrollToIndex(13)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button14" type="button" onclick="scrollToIndex(14)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button15" type="button" onclick="scrollToIndex(15)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button16" type="button" onclick="scrollToIndex(16)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button17" type="button" onclick="scrollToIndex(17)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button18" type="button" onclick="scrollToIndex(18)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+		
+		<div id="scroll_item0" style="margin-top: 6%;">
+			<img src="images/1/1-5/vec_intro.png" width="65%" style="margin-left: 16.5%">
+			<img src="images/1/1-5/vec_shapes.png" width="55%" style="margin-top: 6%; margin-left: 22.5%">
 		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
+
+		<table id="scroll_item1" style="width: 90%; margin-left: 5%; margin-top: 6.5%; border-style: solid; border-width: medium; border-color: black; text-align: center; border-radius: 1.5em; font-size: 1.75em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%; border-bottom-style: solid; border-width: medium; padding-top: 5%; padding-bottom: 5%">
+					<table style="width: 100%">
+						<tr style="width: 100%">
+							<td style="width: 60%">
+								<img src="images/1/1-5/vec_pointdelta.png" width="60%" style="">
+							</td>
+							<td style="width: 40%; text-align: left; padding-bottom: 1.5%; font-size: 1.05em; line-height: 1.5em;">
+								v &nbsp; =&nbsp; # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &in; &#8477;
+								<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; =&nbsp; < #, # > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &in; &#8477;<sup>2</sup><sub>&nbsp;</sub>
+								<br>&#8477; &nbsp;=&nbsp; 0 , 0.1 , 0.2 , ...&nbsp;, &infin;
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<table style="width: 100%">
+						<tr style="width: 100%">
+							<td style="width: 45%; padding-top: 6.5%; padding-bottom: 3.5%; text-align: center; padding-left: 6.5%">
+								P &nbsp; = &nbsp; ( x, y ) ,&nbsp;&nbsp; O &nbsp; = &nbsp; ( 0, 0 )
+								<br><span style="border-top: 0.075em solid #000;">P</span> &nbsp; = &nbsp; < x, y > ,&nbsp;&nbsp; <span style="border-top: 0.075em solid #000;">O</span> &nbsp; = &nbsp; < 0, 0 >
+								<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; <span style="border-top: 0.075em solid #000;">P</span> &nbsp;-&nbsp; <span style="border-top: 0.075em solid #000;">O</span> &nbsp; = &nbsp; < x, y >
+								<br><span style="border-top: 0.075em solid #000;">O</span> &nbsp;+&nbsp; <span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; <span style="border-top: 0.075em solid #000;">P</span>
+								<br><br><img src="images/1/1-5/vec_basicex.png" width="60%" style="margin-top: 2.5%">
+							</td>
+							<td style="width: 55%; padding-top: 6.5%; padding-bottom: 5%; text-align: center;">
+								<img src="images/1/1-5/vec_def.png" width="65%" style="">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item2" style="width: 100%; margin-left: 0%; margin-top: 6.5%; font-size: 1.85em; line-height: 2em; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 35%">
+					<img src="images/1/1-5/vec_A2B.png" width="85%" style="">
+				</td>
+				<td style="width: 30%; padding-right: 3.5%">
+					<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">v</span><sub>1</sub> + <span style="border-top: 0.075em solid #000;">v</span><sub>2</sub> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">P</span> - <span style="border-top: 0.075em solid #000;">U</span>
+					<br><span style="border-top: 0.075em solid #000;">P</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">P</span>
+					<br><span style="border-top: 0.075em solid #000;">U</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">U</span>
+				</td>
+				<td style="width: 35%">
+					<img src="images/1/1-5/vec_add_concept.png" width="100%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 100%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item3" style="width: 100.1%; margin-left: 0%; font-size: 1.5em; line-height: 1.85em; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 37.5%; padding: 3.5%; text-align: center; border-bottom-style: solid; border-width: medium; ">
+						<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < x<sub>1</sub>, y<sub>1</sub> >
+						<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < x<sub>2</sub>, y<sub>2</sub> >
+						<br><span style="border-top: 0.075em solid #000;">a</span> &nbsp;+&nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < x<sub>1</sub> + x<sub>2</sub> , y<sub>1</sub> + y<sub>2</sub> >
+						<br>
+						<br><span style="border-top: 0.075em solid #000;">u</span> &nbsp;=&nbsp; < 2, 4 > ,&nbsp;&nbsp; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 5, 1 >
+						<br><span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 7, 5 >
+					</td>
+					<td style="width: 62.5%; text-align: center; padding-right: 5%; border-bottom-style: solid; border-width: medium; ">
+						<br>
+						<img src="images/1/1-5/vec_add.png" width="92.5%" style="">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 37.5%; padding: 3.5%; text-align: center; border-bottom-style: solid; border-width: medium; ">
+						<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < x<sub>1</sub>, y<sub>1</sub> >
+						<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < x<sub>2</sub>, y<sub>2</sub> >
+						<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp;-&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < x<sub>2</sub> - x<sub>1</sub> , y<sub>2</sub> - y<sub>1</sub> >
+						<br>
+						<br><span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 7, 5 > ,&nbsp;&nbsp; <span style="border-top: 0.075em solid #000;">u</span> &nbsp;=&nbsp; < 2, 4 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 5, 1 >
+					</td>
+					<td style="width: 62.5%; text-align: center; padding-right: 5%; padding-top: 4%; padding-bottom: 5%; border-bottom-style: solid; border-width: medium; ">
+						<br>
+						<img src="images/1/1-5/vec_sub1.png" width="95%" style="">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 37.5%; padding: 3.5%; text-align: center; border-bottom-style: none;">
+						<span style="border-top: 0.075em solid #000;">a</span> &nbsp;+&nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;-&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; <span style="border-top: 0.075em solid #000;">b</span>&nbsp;
+						<br>
+						<br><span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 7, 5 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 5, 1 >
+						<br><span style="border-top: 0.075em solid #000;">u</span> &nbsp;=&nbsp; < 2, 4 >
+					</td>
+					<td style="width: 62.5%; text-align: center; border-bottom-style: none; padding-top: 4%; padding-bottom: 5%; padding-right: 5%">
+						<br>
+						<img src="images/1/1-5/vec_sub2.png" width="100%" style="">
+					</td>
+				</tr>
+			</table>
 		</div>
-		<div class='main-nav'>
-			<a href="index.html">0</a>
-			<a class="active" href="1-0.html">1</a>
-			<a href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
+
+		<img id="scroll_item4" src="images/1/1-5/vec_sub_concept.png" width="60%" style="margin-left: 20%; margin-top: 7.5%">
+
+		<div id="scroll_item5" style="margin-top: 7.5%;">
+			<table style="width: 90%; margin-left: 5%; font-size: 1.65em; line-height: 1.85em; border-style: solid; border-width: medium; border-color: black; border-top-left-radius: 1.5em">
+				<tr style="width: 100%">
+					<td style="width:40%; text-align: left; padding: 5%; padding-left: 9.5%; ">
+						<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < x, y >
+						<br>k &#215; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; k<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < kx, ky >
+						<br>
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 3, 4 >
+						<br>2 &#215; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; 2<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 6, 8 >
+					</td>
+					<td style="width:60%; text-align: center; padding: 5%; padding-right: 8.5%; ">
+						<img src="images/1/1-5/vec_scale.png" width="95%" style="">
+					</td>
+				</tr>
+			</table>
+			<table style="width: 90%; margin-left: 5%; margin-top: -0.12em; border-style: solid; border-width: medium; border-color: black; border-bottom-right-radius: 1.5em; border-bottom-left-radius: 1.5em; border-top-style: none; text-align: center; font-size: 1.65em; line-height: 1.85em">
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 5%">
+						<span style="border-top: 0.075em solid #000;">x</span> &nbsp; = &nbsp; < 1, 0 > , &nbsp; &nbsp; <span style="border-top: 0.075em solid #000;">y</span> &nbsp; = &nbsp; < 0, 1 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; x <span style="border-top: 0.075em solid #000;">x</span> &nbsp;+&nbsp; y <span style="border-top: 0.075em solid #000;">y</span> &nbsp; = &nbsp; x < 1, 0 > &nbsp;+&nbsp; y < 0, 1 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; < x, 0 > &nbsp;+&nbsp; < 0, y > &nbsp; = &nbsp; < x, y >
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<img id="scroll_item6" src="images/1/1-5/vec_norm.png" width="55%" style="margin-left: 22.5%; margin-top: 8.5%">
+
+		<table id="scroll_item7" style="width: 95%; margin-left: 2.5%; margin-top: 6.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 2.5em; line-height: 3em">
+			<tr style="width: 100%;">
+				<td style="width: 60%; text-align: center; padding: 5%; padding-right: 2.5%">
+					<img src="images/1/1-5/vec_d_btwnpoints.png" width="92.5%" style="">
+					<br><br>
+					<img src="images/1/1-5/vec_dist.png" width="85%" style="">
+				</td>
+				<td style="width: 40%; padding: 5%; padding-left: 0%">
+					<img src="images/1/1-5/vec_norm_trees.png" width="90%" style="margin-left: 10%">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item8" style="margin-top: 6.5%;">
+			<p style="text-align: center; width: 100%; line-height: 1.95em; font-size: 2em">
+				|x| &nbsp;=&nbsp; |-x| , &nbsp;&nbsp; ||<span style="border-top: 0.075em solid #000;">v</span>|| &nbsp;=&nbsp; ||-<span style="border-top: 0.075em solid #000;">v</span>||
+			</p>
+			<table style="width: 90%; margin-top: 0%; margin-left: 5%; font-size: 2em; line-height: 2.25em; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 45%; padding-left: 5%">
+						kx &nbsp;&rarr;&nbsp;&nbsp;&nbsp; k &darr; ,&nbsp; |x| &darr; &nbsp;&nbsp;&nbsp;&nbsp; k &uarr; ,&nbsp; |x| &uarr;&nbsp;&nbsp;
+						<br>
+						<br>k<span style="border-top: 0.075em solid #000;">v</span> &nbsp;&rarr;&nbsp; k &darr; ,&nbsp; ||<span style="border-top: 0.075em solid #000;">v</span>|| &darr; &nbsp;&nbsp;&nbsp;&nbsp; k &uarr; ,&nbsp; ||<span style="border-top: 0.075em solid #000;">v</span>|| &uarr;
+					</td>
+					<td style="width: 55%">
+						<img src="images/1/1-5/vec_magn.png" width="60%" style="">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item9" style="width: 90%; margin-left: 5%; margin-top: 5%; border-style: solid; border-width: medium; border-color: black; border-radius: 1.5em; font-size: 1.5em; padding: 5%">
+			<tr style="width: 100%;">
+				<td style="width: 25%; text-align: center;">
+					<div id="shape_input" style="border-style: solid; border-width: medium; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 90%; margin-left: 5%; margin-top: -0.125em; border-radius: 1em">
+						<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < x, y >
+						<br>
+						<br>
+						x &nbsp;=&nbsp; <input id="x" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						y &nbsp;=&nbsp; <input id="y" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						<button type="button" class="calc_button" style="font-size: 0.75em; border-style: solid; border-width: medium; border-color: black; border-radius: 0.5em" onclick="drawVec()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</td>
+				<td style="width: 50%">
+					<canvas id="canvas" style="width: 100%">
+
+					</canvas>
+				</td>
+				<td style="width: 25%">
+					<div style="border-style: solid; border-width: medium; border-color: black; padding-top: 7.5%; padding-bottom: 7.5%; width: 90%; text-align: center; margin-left: 5%; border-radius: 1em">
+						||<span style="border-top: 0.075em solid #000;">v</span>|| &nbsp;=&nbsp; <span id="output_l">0.000000</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<p id="scroll_item10" style="text-align: center; width: 100%; line-height: 2em; margin-top: 5%; font-size: 2em">
+			P &nbsp;=&nbsp; (x, y, z) &nbsp;&nbsp;&rarr;&nbsp;&nbsp; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; ?
+		</p>
+
+		<table id="scroll_item11" style="width: 90%; margin-left: 5%; margin-top: 5%; border-style: solid; border-width: medium; border-color: black; line-height: 1.85em; padding: 5%; border-radius: 2em; font-size: 1.65em; line-height: 2em">
+			<tr style="width: 100%;">
+				<td style="width: 50%; text-align: center;">
+					P &nbsp;=&nbsp; (x, y, z) , &nbsp; O &nbsp;=&nbsp; (0, 0, 0)
+					<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">P</span> &nbsp;-&nbsp; <span style="border-top: 0.075em solid #000;">O</span> &nbsp;=&nbsp; < x, y, z >
+					<br><span style="border-top: 0.075em solid #000;">O</span> &nbsp;+&nbsp; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; <span style="border-top: 0.075em solid #000;">P</span>
+					<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;&in;&nbsp; &#8477;<sup>3</sup> ,&nbsp;&nbsp; ( 3D )
+					<br>( &#8477;<sup>3</sup> &rarr; (#, #, #) ,&nbsp;&nbsp; &#8477;<sup>2</sup> &rarr; (#, #) ,&nbsp;&nbsp; &#8477; &rarr; # )
+				</td>
+				<td style="width: 50%; text-align: center; padding-top: 1.5%">
+					<img src="images/1/1-5/vec_3d_intro.png" width="85%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item12" style="margin-top: 6.5%">
+			<table style="width: 90%; margin-left: 5%; font-size: 1.65em; line-height: 1.85em;">
+				<tr style="width: 100%">
+					<td style="width:40%; text-align: left; padding-left: 6.5%">
+						<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < x, y, z >
+						<br>k &#215; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; k<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < kx, ky, kz >
+						<br>
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 2, 4, 3 >
+						<br>2 &#215; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; 2<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 4, 8, 6 >
+					</td>
+					<td style="width:60%; text-align: center;">
+						<img src="images/1/1-5/vec_3d_scale.png" width="90%" style="">
+					</td>
+				</tr>
+			</table>
+			<table style="width: 95%; margin-left: 2.5%; margin-top: 2.5%; border-color: black; text-align: center; font-size: 1.65em; line-height: 1.85em;">
+				<tr style="width: 100%">
+					<td style="width: 100%; padding: 3.5%; padding-bottom: 0%">
+						<span style="border-top: 0.075em solid #000;">x</span> &nbsp; = &nbsp; < 1, 0, 0 > , &nbsp; &nbsp; <span style="border-top: 0.075em solid #000;">y</span> &nbsp; = &nbsp; < 0, 1, 0 > , &nbsp; &nbsp; <span style="border-top: 0.075em solid #000;">z</span> &nbsp; = &nbsp; < 0, 0, 1 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; x <span style="border-top: 0.075em solid #000;">x</span> &nbsp;+&nbsp; y <span style="border-top: 0.075em solid #000;">y</span> &nbsp;+&nbsp; z <span style="border-top: 0.075em solid #000;">z</span> &nbsp; = &nbsp; x< 1, 0, 0 > &nbsp;+&nbsp; y< 0, 1, 0 > &nbsp;+&nbsp; z< 0, 0, 1 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; = &nbsp; < x, 0, 0 > &nbsp;+&nbsp; < 0, y, 0 > &nbsp;+&nbsp; < 0, 0, z > &nbsp; = &nbsp; < x, y, z >
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div style="width: 100%; margin-left: 0%; padding: 0px; margin-top: 6.5%; border-radius: 2.5em; border-style: solid; border-width: medium; font-size: 1.5em; line-height: 1.85em;">
+			<table id="scroll_item13" style="width: 100.1%; border-style: none; border-color: black; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 5%; text-align: center; border-bottom-style: solid; border-width: medium; ">
+						<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < x<sub>1</sub>, y<sub>1</sub>, z<sub>1</sub> >
+						<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < x<sub>2</sub>, y<sub>2</sub>, z<sub>2</sub> >
+						<br><span style="font-size: 0.9em"><span style="border-top: 0.075em solid #000;">a</span> &nbsp;+&nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp; = &nbsp; < x<sub>1</sub> + x<sub>2</sub> , y<sub>1</sub> + y<sub>2</sub> , z<sub>1</sub> + z<sub>2</sub> ></span>
+						<br>
+						<br><span style="border-top: 0.075em solid #000;">u</span> &nbsp;=&nbsp; < 2, 6, 0 > ,&nbsp;&nbsp; <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 0, 0, 5 >
+						<br><span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 2, 6, 5 >
+					</td>
+					<td style="width: 60%; text-align: center; padding-right: 5%; border-bottom-style: solid; border-width: medium; ">
+						<img src="images/1/1-5/vec_3d_add.png" width="92.5%" style="">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 5%; text-align: center; border-bottom-style: solid; border-width: medium; ">
+						<span style="border-top: 0.075em solid #000;">a</span> &nbsp;=&nbsp; < x<sub>1</sub>, y<sub>1</sub>, z<sub>1</sub> >
+						<br><span style="border-top: 0.075em solid #000;">b</span> &nbsp;=&nbsp; < x<sub>2</sub>, y<sub>2</sub>, z<sub>2</sub> >
+						<br><span style="font-size: 0.9em"><span style="border-top: 0.075em solid #000;">b</span> &nbsp;-&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; < x<sub>2</sub> - x<sub>1</sub> , y<sub>2</sub> - y<sub>1</sub> , z<sub>2</sub> - z<sub>1</sub> ></span>
+						<br>
+						<br><span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 2, 6, 5 > ,&nbsp;&nbsp; <span style="border-top: 0.075em solid #000;">u</span> &nbsp;=&nbsp; < 2, 6, 0 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 0, 0, 5 >
+					</td>
+					<td style="width: 60%; text-align: center; padding-right: 5%; padding-top: 5%; padding-bottom: 5%; border-bottom-style: solid; border-width: medium; ">
+						<br>
+						<img src="images/1/1-5/vec_3d_sub1.png" width="95%" style="">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 40%; padding: 3.5%; text-align: center; border-bottom-style: none;">
+						<span style="border-top: 0.075em solid #000;">a</span> &nbsp;+&nbsp; <span style="border-top: 0.075em solid #000;">b</span> &nbsp;-&nbsp; <span style="border-top: 0.075em solid #000;">a</span> &nbsp; = &nbsp; <span style="border-top: 0.075em solid #000;">b</span>&nbsp;
+						<br>
+						<br><span style="border-top: 0.075em solid #000;">u</span> + <span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 2, 6, 5 >
+						<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < 0, 0, 5 >
+						<br><span style="border-top: 0.075em solid #000;">u</span> &nbsp;=&nbsp; < 2, 6, 0 >
+					</td>
+					<td style="width: 60%; text-align: center; padding-right: 5%; border-bottom-style: none; padding-top: 5%; padding-bottom: 5%;">
+						<img src="images/1/1-5/vec_3d_sub2.png" width="92.5%" style="">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item14" style="margin-top: 6.5%">
+			<img src="images/1/1-5/vec_proof.png" width="60%" style="margin-left: 20%;">
+			<img src="images/1/1-5/vec_proof_h.png" width="20%" style="margin-left: 40%; margin-top: 5%">
+			<img src="images/1/1-5/vec_3d_norm.png" width="65%" style="margin-left: 17.5%; margin-top: 2.5%">
+			<img src="images/1/1-5/vec_3d_btwnpoints.png" width="60%" style="margin-left: 20%; margin-top: 2.5%">
+		</div>
+
+		<table id="scroll_item15" style="width: 90%; margin-left: 5%; margin-top: 6.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 1.5em; padding: 5%; font-size: 1.5em">
+			<tr style="width: 100%;">
+				<td style="width: 25%; text-align: center;">
+					<div id="shape_input" style="border-style: solid; border-width: medium; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 90%; margin-left: 5%; margin-top: -0.125em; border-radius: 1em">
+						<span style="border-top: 0.075em solid #000;">v</span> &nbsp;=&nbsp; < x, y, z >
+						<br>
+						<br>
+						x &nbsp;=&nbsp; <input id="x3" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						y &nbsp;=&nbsp; <input id="y3" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						z &nbsp;=&nbsp; <input id="z3" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						<button type="button" class="calc_button" style="font-size: 0.75em; border-style: solid; border-width: medium; border-color: black; border-radius: 0.5em" onclick="drawVec_3d()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</td>
+				<td style="width: 50%">
+					<canvas id="canvas2" style="width: 100%">
+
+					</canvas>
+				</td>
+				<td style="width: 25%">
+					<div style="border-style: solid; border-width: medium; border-color: black; padding-top: 7.5%; padding-bottom: 7.5%; width: 90%; margin-left: 5%; border-radius: 1em; text-align: center;">
+						||<span style="border-top: 0.075em solid #000;">v</span>|| &nbsp;=&nbsp; <span id="output_l3">0.00000</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<img id="scroll_item16" src="images/1/1-5/vec_norm_transpose.png" width="52.5%" style="margin-left: 23.75%; margin-top: 7.5%;">
+
+		<table id="scroll_item17" style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 2.5em; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 100%; padding-top: 2%">
+					<table style="width: 80%; margin-left: 10%">
+						<tr style="width: 100%">
+							<td style="width: 40%; padding: 3.5%">
+								<img src="images/1/1-5/vec_unit.png" width="60%" style="">
+							</td>
+							<td style="width: 60%; padding: 3.5%">
+								<img src="images/1/1-5/vec_unit_concept.png" width="65%" style="">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr style="width: 100%">
+				<td style="width: 100%; padding-bottom: 4.5%; text-align: center; font-size: 1.65em; line-height: 1.85em; padding-top: 2.5%">
+					<span style="border-top: 0.075em solid #000;">x</span> &nbsp; = &nbsp; < 3, 0 > ,&nbsp;&nbsp; ||<span style="border-top: 0.075em solid #000;">x</span>|| &nbsp; = &nbsp; 3 &nbsp; &rarr; &nbsp; x&#770; &nbsp; = &nbsp; <span style="border-top: 0.075em solid #000;">x</span> / ||<span style="border-top: 0.075em solid #000;">x</span>|| &nbsp; = &nbsp; < 1, 0 >
+					<br><span style="border-top: 0.075em solid #000;">x</span> &nbsp; = &nbsp; < 2, 2 > ,&nbsp;&nbsp; ||<span style="border-top: 0.075em solid #000;">x</span>|| &nbsp; = &nbsp; 2<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span> &nbsp; &rarr; &nbsp; x&#770; &nbsp; = &nbsp; <span style="border-top: 0.075em solid #000;">x</span> / ||<span style="border-top: 0.075em solid #000;">x</span>|| &nbsp; = &nbsp; < 1/<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span>, 1/<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">2</span></span> >
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item18" style="width: 90%; margin-left: 5%; margin-top: 6.5%; margin-bottom: 6%; font-size: 1.85em; line-height: 2em; text-align: center;">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					P &nbsp;=&nbsp; ( x, y, z, t )
+					<br><span style="border-top: 0.075em solid #000;">v</span> &nbsp; &in; &nbsp; &#8477;<sup>4</sup><sub>&nbsp;</sub>
+					<br>
+					<img src="images/1/1-5/vec_4d.png" width="57.5%" style=""><sup>&nbsp;</sup>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="1-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
 		</div>
 	</header>
 
-	<div class="sub-nav">
-		<a href="1-0.html">0</a>
-		<a href="1-1.html">1</a>
-		<a href="1-2.html">2</a>
-		<a href="1-3.html">3</a>
-		<a href="1-4.html">4</a>
-		<a class="active" href="1-5.html">5</a>
-		<a href="1-6.html">6</a>
-	</div>
+	<script type="text/javascript" src="standard_functions.js"></script>
+	<script type="text/javascript">
+
+        window.onload = function () {
+			standard_onload();
+
+		  	document.getElementById("output_l").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.85*Math.min(canvas.width, canvas.height);
+
+			ctx.fillStyle = "#DB0000";
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, 0);
+			ctx.lineTo(center_x, canvas.height);
+			ctx.moveTo(canvas.width*0.15, center_y);
+			ctx.lineTo(canvas.width*0.85, center_y);
+			ctx.stroke();
+
+  			var canvas = document.getElementById('canvas2');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.85*Math.min(canvas.width, canvas.height);
+		  	max_size = 0.65*max_size;
+			ctx.strokeStyle = "#A9A9A9";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x, center_y + max_size);
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+			ctx.stroke();
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x, center_y - max_size);
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+			ctx.stroke();
+        };
+
+        function drawVec() {
+		  	document.getElementById("output_l").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.85*Math.min(canvas.width, canvas.height);
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, 0);
+			ctx.lineTo(center_x, canvas.height);
+			ctx.moveTo(canvas.width*0.15, center_y);
+			ctx.lineTo(canvas.width*0.85, center_y);
+			ctx.stroke();
+
+			ctx.fillStyle = "#DB0000";
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 25;
+
+			var Ox = canvas.width/2;
+			var Oy = canvas.height/2;
+
+		  	var x = document.getElementById("x").value;
+		  	x = read(x);
+		  	var y = document.getElementById("y").value;
+		  	y = read(y);
+
+		  	var norm = Math.sqrt(x*x + y*y);
+		  	if ( Math.abs(norm) < 1 ) { var l = norm.toFixed(5); }
+		  	else { var l = norm.toPrecision(6); };
+		  	if (norm > 100000000) {
+		  		l = '&infin;';
+		  	}
+		  	else if (norm < -100000000) {
+		  		l = '-&infin;';
+		  	};
+			document.getElementById("output_l").innerHTML = l;
+
+			var u_x = 0.6*max_size*x/norm;
+			var u_y = 0.6*max_size*y/norm;
+			var xt = Ox + u_x;
+			var yt = Oy - u_y;
+
+			ctx.strokeStyle = "#DB0000";
+			ctx.beginPath();
+			ctx.moveTo(xt, center_y);
+			ctx.lineTo(xt, yt);
+			ctx.stroke();
+			ctx.strokeStyle = "#075AAA";
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(xt, center_y);
+			ctx.stroke();
+			ctx.strokeStyle = "#000000";
+   			ctx.beginPath();
+			ctx.moveTo(Ox, Oy);
+			ctx.lineTo(xt, yt);
+  			ctx.stroke();
+        };
+
+        function drawVec_3d() {
+		  	document.getElementById("output_l").innerHTML = '0.00000';
+
+  			var canvas = document.getElementById('canvas2');
+    		var ctx = canvas.getContext('2d');
+    		canvas.width = 2*window.innerWidth;
+    		canvas.height = 2*window.innerHeight;
+			ctx.fillStyle = "#FFFFFF";
+		  	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		  	var max_size = 0.85*Math.min(canvas.width, canvas.height);
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+			ctx.fillStyle = "#DB0000";
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 25;
+
+			var Ox = canvas.width/2;
+			var Oy = canvas.height/2;
+
+		  	var x = document.getElementById("x3").value;
+		  	x = read(x);
+		  	var y = document.getElementById("y3").value;
+		  	y = read(y);
+		  	var z = document.getElementById("z3").value;
+		  	z = read(z);
+
+		  	var norm = Math.sqrt(x*x + y*y + z*z);
+		  	if ( Math.abs(norm) < 1 ) { var l = norm.toFixed(5); }
+		  	else { var l = norm.toPrecision(6); };
+		  	if (norm > 100000000) {
+		  		l = '&infin;';
+		  	}
+		  	else if (norm < -100000000) {
+		  		l = '-&infin;';
+		  	};
+			document.getElementById("output_l3").innerHTML = l;
+
+		  	var center_x = canvas.width/2;
+		  	var center_y = canvas.height/2;
+
+		  	max_size = 0.65*max_size;
+			ctx.strokeStyle = "#A9A9A9";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x, center_y + max_size);
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y - max_size*Math.sin(Math.PI/8));
+			ctx.stroke();
+
+			ctx.strokeStyle = "#C0C0C0";
+			ctx.lineWidth = 22.5;
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x, center_y - max_size);
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x + max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x - max_size*Math.cos(Math.PI/8), center_y + max_size*Math.sin(Math.PI/8));
+			ctx.stroke();
+
+			var u_x = 0.75*max_size*x/norm;
+			var u_y = 0.75*max_size*y/norm;
+			var u_z = 0.75*max_size*z/norm;
+			var xt = center_x - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8);
+			var yt = center_y - u_z + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8);
+			ctx.lineWidth = 25;
+			if (z < 0) {
+				ctx.strokeStyle = "#000000";
+	   			ctx.beginPath();
+				ctx.moveTo(center_x, center_y);
+				ctx.lineTo(xt, yt);
+	  			ctx.stroke();
+	  		};
+			ctx.strokeStyle = "#075AAA";
+			ctx.beginPath();
+			ctx.moveTo(center_x, center_y);
+			ctx.lineTo(center_x - u_x*Math.cos(Math.PI/8), center_y + u_x*Math.sin(Math.PI/8));
+			ctx.stroke();
+			ctx.strokeStyle = "#DB0000";
+			ctx.beginPath();
+			ctx.moveTo(center_x - u_x*Math.cos(Math.PI/8), center_y + u_x*Math.sin(Math.PI/8));
+			ctx.lineTo(center_x - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8), center_y + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8));
+			ctx.stroke();
+			if (x != y) {
+				ctx.strokeStyle = "#00995F";
+				ctx.beginPath();
+				ctx.moveTo(center_x - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8), center_y + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8));
+				ctx.lineTo(xt, yt);
+				ctx.stroke();
+			};
+			if (z > 0) {
+				ctx.strokeStyle = "#000000";
+	   			ctx.beginPath();
+				ctx.moveTo(center_x, center_y);
+				ctx.lineTo(xt, yt);
+	  			ctx.stroke();
+	  		};
+			if (x == y) {
+				ctx.strokeStyle = "#00995F";
+				ctx.beginPath();
+				ctx.moveTo(center_x - u_x*Math.cos(Math.PI/8) + u_y*Math.cos(Math.PI/8), center_y + u_x*Math.sin(Math.PI/8) + u_y*Math.sin(Math.PI/8));
+				ctx.lineTo(xt, yt);
+				ctx.stroke();
+			};
+        };
+
+	</script>
 
 </body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
+</html>

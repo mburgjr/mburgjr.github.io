@@ -1,118 +1,1082 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
+<link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
-	<title>Hue.EDU</title>
+	<title>Hue Edu</title>
+	<link rel="stylesheet" href="standard_styles.css">
 	<style>
-		body {
-		  margin: 0;
-		  font-family: Arial;
-		  text-decoration: none;
+
+		input {
+			width: 50%
 		}
 
-		.header {
-			background-color: #000066;
-			text-align: left;
-			color: white;
-		}
-
-		.header div.info {
-			text-align: right;
-			vertical-align: top;
-			padding-right: 20px;
-			padding-top: 14px;
-			float: right;
-		}
-
-		.header div.logo {
-			float: left;
-		}
-		
-		.header a {
-		  	text-decoration: none;
-			font-size: 20px;
-			font-weight: bold;
-			color: white;
-		}
-
-		.main-nav {
-		  overflow: hidden;
-		  background-color: #000066;
-		}
-
-		.main-nav a {
-		  float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 16px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
-
-		.main-nav a:hover {
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		.main-nav a.active {
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		.sub-nav {
-		  overflow: hidden;
-		  background-color: #66B2FF;
-		}
-
-		.sub-nav a {
-	      float: left;
-		  color: white;
-		  text-align: center;
-		  font-weight: 600;
-		  padding: 8px 48px;
-		  text-decoration: none;
-		  font-size: 17px;
-		}
-
-		.sub-nav a:hover {
-		  background-color: #FFFFFF;
-		  color: #66B2FF;
-		}
-
-		.sub-nav a.active {
-		  background-color: #FFFFFF;
-		  color: #66B2FF;
-		}
 	</style>
-
 </head>
-<body>
-	<header class='header'>
-		<div class='info'>
-			<a href='info.html'>INFO</a>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="1-0.html">1</a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="2-2.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-0.html">&Delta;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-1.html">&#402;'(x)</a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="2-2.html"><span style="font-size: 1.5em">&#8978;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-3.html"><span style="font-size: 0.95em">lim</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-4.html">&#8721;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-5.html">&int;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-6.html"><span style="font-size: 1.25em">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-7.html"><span style="font-size: 1.05em">u</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-8.html"><span style="font-size: 1.1em">&orarr;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="2-Q.html">?</a></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
+
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button10" type="button" onclick="scrollToIndex(10)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button11" type="button" onclick="scrollToIndex(11)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button12" type="button" onclick="scrollToIndex(12)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button13" type="button" onclick="scrollToIndex(13)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button14" type="button" onclick="scrollToIndex(14)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button15" type="button" onclick="scrollToIndex(15)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button16" type="button" onclick="scrollToIndex(16)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button17" type="button" onclick="scrollToIndex(17)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button18" type="button" onclick="scrollToIndex(18)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button19" type="button" onclick="scrollToIndex(19)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button20" type="button" onclick="scrollToIndex(20)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button21" type="button" onclick="scrollToIndex(21)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+
+		<table id="scroll_item0" style="margin-top: 5%; text-align: center; width: 90%; margin-left: 5%; font-size: 2em; line-height: 2em">
+			<tr style="width: 100%">
+				<td style="width: 100%">
+					<img src="images/2/2-2/peak_intro.png" width="65%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item1" style="width: 90%; border-radius: 3.5em; margin-left: 5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 27.5%; text-align: center; font-size: 1.75em; line-height: 2em; padding: 5%; padding-right: 0%;">
+					&#402;(x<sub>0</sub>) &nbsp;&ge;&nbsp; &#402;(x)
+					<br>x &nbsp;&in;&nbsp; &#8477;
+					<br>&#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0
+					<br>max(&#402;(x)) &nbsp;=&nbsp; &#402;(x<sub>0</sub>)
+				</td>
+				<td style="width: 42.5%; padding: 5%; text-align: center;  padding-bottom: 5%; padding-top: 6.5%; padding-left: 2.5%">
+					<img src="images/2/2-2/peak_max_def.png" width="80%" style="">
+				</td>
+				<td style="width: 30%; padding: 5%; text-align: center; padding-left: 0%;">
+					<img src="images/2/2-2/peak_max_lin.png" width="90%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item2" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 6.5%;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center; padding-left: 5%; padding-right: 0%;">
+					&#402;'(x<sub>0</sub> - &Delta;x) &nbsp;>&nbsp; 0
+					<br>&#402;(x<sub>0</sub>) &nbsp;&asymp;&nbsp; &#402;(x<sub>0</sub> - &Delta;x) + &#402;'(x<sub>0</sub> - &Delta;x)
+					<br>&#402;(x<sub>0</sub>) &nbsp;>&nbsp; &#402;(x<sub>0</sub> - &Delta;x)
+					<br>
+					<br>&#402;'(x<sub>0</sub> + &Delta;x) &nbsp;<&nbsp; 0
+					<br>&#402;(x<sub>0</sub> + &Delta;x) &nbsp;&asymp;&nbsp; &#402;(x<sub>0</sub>) + &#402;'(x<sub>0</sub> + &Delta;x)
+					<br>&#402;(x<sub>0</sub> + &Delta;x) &nbsp;<&nbsp; &#402;(x<sub>0</sub>)
+					<br>
+					<br>&#402;(x<sub>0</sub> - &Delta;x) &nbsp;<&nbsp; &#402;(x<sub>0</sub>) &nbsp;>&nbsp; &#402;(x<sub>0</sub> + &Delta;x)
+				</td>
+				<td style="width: 50%; padding-right: 5%; text-align: center; padding-left: 0%; line-height: 1.75em; font-size: 0.95em">
+					<img src="images/2/2-2/peak_max_proof.png" width="75%" style="margin-bottom: 1.5%">
+					<br>
+					<br>&#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; &Delta;y &nbsp;=&nbsp; 0
+					<br>&#402;(x<sub>0</sub>) &nbsp;&ge;&nbsp; &#402;(x) ,&nbsp; x &nbsp;&in;&nbsp; &#8477;
+					<br>&#402;(x<sub>0</sub> + &Delta;x) &nbsp;&asymp;&nbsp; &#402;(x<sub>0</sub>) + &Delta;y &nbsp;=&nbsp; &#402;(x<sub>0</sub>)
+					<br>&#402;(x<sub>0</sub> + &Delta;x) &nbsp;&le;&nbsp; &#402;(x<sub>0</sub>)
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 95%; margin-left: 2.5%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item3" style="width: 100.1%; font-size: 1.6em; line-height: 1.95em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; x &nbsp;, &nbsp; &#402;'(x) &nbsp;=&nbsp; 1 &nbsp;&ne;&nbsp; 0
+						<br>x<sub>0</sub> &nbsp;=&nbsp; &infin;
+						<br>&#402;(&infin;) &nbsp;=&nbsp; &infin; &nbsp;&ge;&nbsp; &#402;(x) &nbsp;, &nbsp; x &nbsp;&in;&nbsp; &#8477;
+						<br>max(&#402;(x)) &nbsp;=&nbsp; &infin;
+						</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-2/peak_max_ex1.png" width="41.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; -(x - 1)(x - 8) &nbsp;=&nbsp; -x<sup>2</sup> + 9x - 8 
+						<br>&#402;'(x) &nbsp;=&nbsp; -2x + 9 &nbsp;, &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0
+						<br>x<sub>0</sub> &nbsp;=&nbsp; 9/2 &nbsp;=&nbsp; 4.5
+						<br>&#402;(4.5) &nbsp;=&nbsp; 12.25 &nbsp;&ge;&nbsp; &#402;(x) &nbsp;, &nbsp; x &nbsp;&in;&nbsp; &#8477;
+						<br>max(&#402;(x)) &nbsp;=&nbsp; 12.25
+					</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-2/peak_max_ex2.png" width="55%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%;">
+						&#402;(x) &nbsp;=&nbsp; -(x - 1)(x - 5)(x - 7)(x - 10)
+						<br>=&nbsp; -x<sup>4</sup> + 23x<sup>3</sup> - 177x<sup>2</sup> + 505x - 350
+						<br>&#402;'(x) &nbsp;=&nbsp; -4x<sup>3</sup> + 69x<sup>2</sup> - 354x + 505 &nbsp;, &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0
+						<br>x<sub>0</sub> &nbsp;=&nbsp; 2.374 , 5.976 , 8.9
+						<br>&#402;(2.374) &nbsp;=&nbsp; 127.287 &nbsp;>&nbsp; &#402;(8.9) &nbsp;>&nbsp; &#402;(5.976)
+						<br>max(&#402;(x)) &nbsp;=&nbsp; 127.287
+					</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 2.5%;">
+						<img src="images/2/2-2/peak_max_ex3.png" width="60%" style="">	
+					</td>		
+				</tr>
+			</table>
 		</div>
-		<div class='logo'>
-			<img src="images/Logo_cut.png" width=175 height=28 hspace=18 vspace=10>
+
+		<table id="scroll_item4" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 6.5%;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center; padding-left: 5%; padding-right: 0%;">
+					<img src="images/2/2-2/peak_max_mtns.png" width="75%" style="margin-bottom: 1.5%">
+				</td>
+				<td style="width: 50%; padding-right: 5%; text-align: center; padding-left: 0%;">
+					&#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; &#402;(x<sub>0</sub> - &Delta;x) &nbsp;<&nbsp; &#402;(x<sub>0</sub>) &nbsp;>&nbsp; &#402;(x<sub>0</sub> + &Delta;x)
+					<br>&#402;'(x<sub>1</sub>) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; &#402;(x<sub>1</sub> - &Delta;x) &nbsp;<&nbsp; &#402;(x<sub>1</sub>) &nbsp;>&nbsp; &#402;(x<sub>1</sub> + &Delta;x)
+					<br>&#402;(x<sub>0</sub>) &nbsp;>&nbsp; &#402;(x<sub>1</sub>) &nbsp; &rarr; &nbsp; &#402;(x<sub>0</sub>) &nbsp;>&nbsp; &#402;(x) , &nbsp; x &nbsp;&in;&nbsp; &#8477;
+					<br>max(&#402;(x)) &nbsp;=&nbsp; &#402;(x<sub>0</sub>)
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item5" style="width: 90%; border-radius: 3.5em; margin-left: 5%; margin-top: 5.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 27.5%; text-align: center; font-size: 1.75em; line-height: 2em; padding: 5%; padding-right: 0%;">
+					&#402;(x<sub>0</sub>) &nbsp;&le;&nbsp; &#402;(x)
+					<br>x &nbsp;&in;&nbsp; &#8477;
+					<br>&#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0
+					<br>min(&#402;(x)) &nbsp;=&nbsp; &#402;(x<sub>0</sub>)
+				</td>
+				<td style="width: 42.5%; padding: 5%; text-align: center;  padding-bottom: 5%; padding-top: 6.5%; padding-left: 2.5%">
+					<img src="images/2/2-2/peak_min_def.png" width="80%" style="">
+				</td>
+				<td style="width: 30%; padding: 5%; text-align: center; padding-left: 0%;">
+					<img src="images/2/2-2/peak_min_lin.png" width="90%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item6" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 6.5%;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center; padding-left: 5%; padding-right: 0%;">
+					&#402;'(x<sub>0</sub> - &Delta;x) &nbsp;<&nbsp; 0
+					<br>&#402;(x<sub>0</sub>) &nbsp;&asymp;&nbsp; &#402;(x<sub>0</sub> - &Delta;x) + &#402;'(x<sub>0</sub> - &Delta;x)
+					<br>&#402;(x<sub>0</sub>) &nbsp;<&nbsp; &#402;(x<sub>0</sub> - &Delta;x)
+					<br>
+					<br>&#402;'(x<sub>0</sub> + &Delta;x) &nbsp;>&nbsp; 0
+					<br>&#402;(x<sub>0</sub> + &Delta;x) &nbsp;&asymp;&nbsp; &#402;(x<sub>0</sub>) + &#402;'(x<sub>0</sub> + &Delta;x)
+					<br>&#402;(x<sub>0</sub> + &Delta;x) &nbsp;>&nbsp; &#402;(x<sub>0</sub>)
+					<br>
+					<br>&#402;(x<sub>0</sub> - &Delta;x) &nbsp;>&nbsp; &#402;(x<sub>0</sub>) &nbsp;<&nbsp; &#402;(x<sub>0</sub> + &Delta;x)
+				</td>
+				<td style="width: 50%; padding-right: 5%; text-align: center; padding-left: 0%; line-height: 1.75em; font-size: 0.95em">
+					<img src="images/2/2-2/peak_min_proof.png" width="75%" style="margin-bottom: 1.5%">
+					<br>
+					<br>&#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; &Delta;y &nbsp;=&nbsp; 0
+					<br>&#402;(x<sub>0</sub>) &nbsp;&le;&nbsp; &#402;(x) ,&nbsp; x &nbsp;&in;&nbsp; &#8477;
+					<br>&#402;(x<sub>0</sub> + &Delta;x) &nbsp;&asymp;&nbsp; &#402;(x<sub>0</sub>) + &Delta;y &nbsp;=&nbsp; &#402;(x<sub>0</sub>)
+					<br>&#402;(x<sub>0</sub> + &Delta;x) &nbsp;&ge;&nbsp; &#402;(x<sub>0</sub>)
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 95%; margin-left: 2.5%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item7" style="width: 100.1%; font-size: 1.6em; line-height: 1.95em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; 4 - x &nbsp;, &nbsp; &#402;'(x) &nbsp;=&nbsp; -1 &nbsp;&ne;&nbsp; 0
+						<br>x<sub>0</sub> &nbsp;=&nbsp; &infin;
+						<br>&#402;(&infin;) &nbsp;=&nbsp; -&infin; &nbsp;&le;&nbsp; &#402;(x) &nbsp;, &nbsp; x &nbsp;&in;&nbsp; &#8477;
+						<br>min(&#402;(x)) &nbsp;=&nbsp; -&infin;
+						</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-2/peak_min_ex1.png" width="41.5%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; (x - 5)<sup>2</sup> + 1 &nbsp;=&nbsp; x<sup>2</sup> - 10x + 26
+						<br>&#402;'(x) &nbsp;=&nbsp; 2x - 10 &nbsp;, &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0
+						<br>x<sub>0</sub> &nbsp;=&nbsp; 10/2 &nbsp;=&nbsp; 5
+						<br>&#402;(5) &nbsp;=&nbsp; 1 &nbsp;&le;&nbsp; &#402;(x) &nbsp;, &nbsp; x &nbsp;&in;&nbsp; &#8477;
+						<br>min(&#402;(x)) &nbsp;=&nbsp; 1
+					</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 2.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-2/peak_min_ex2.png" width="55%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%;">
+						&#402;(x) &nbsp;=&nbsp; (x - 2)(x - 6)(x - 10)(x - 12)
+						<br>=&nbsp; x<sup>4</sup> - 30x<sup>3</sup> + 308x<sup>2</sup> - 1224x + 1440
+						<br>&#402;'(x) &nbsp;=&nbsp; 4x<sup>3</sup> - 90x<sup>2</sup> + 616x - 1224 &nbsp;, &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0
+						<br>x<sub>0</sub> &nbsp;=&nbsp; 3.493 , 7.859 , 11.148
+						<br>&#402;(3.493) &nbsp;=&nbsp; -207.191 &nbsp;<&nbsp; &#402;(11.148) &nbsp;<&nbsp; &#402;(7.859)
+						<br>min(&#402;(x)) &nbsp;=&nbsp; -207.191
+					</td>
+					<td style="width: 50%; padding-right: 3.5%; padding-top: 5%; padding-bottom: 2.5%;">
+						<img src="images/2/2-2/peak_min_ex3.png" width="60%" style="">	
+					</td>		
+				</tr>
+			</table>
 		</div>
-		<div class='main-nav'>
-			<a href="index.html">0</a>
-			<a href="1-0.html">1</a>
-			<a class="active" href="2-0.html">2</a>
-			<a href="3-0.html">3</a>
-			<a href="4-0.html">4</a>
-			<a href="5-0.html">5</a>
+
+		<table id="scroll_item8" style="width: 100%; font-size: 1.65em; line-height: 1.85em; margin-top: 7.5%;">
+			<tr style="width: 100%">
+				<td style="width: 50%; text-align: center; padding-left: 5%; padding-right: 0%;">
+					<img src="images/2/2-2/peak_min_valleys.png" width="75%" style="margin-bottom: 1.5%">
+				</td>
+				<td style="width: 50%; padding-right: 5%; text-align: center; padding-left: 0%;">
+					&#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; &#402;(x<sub>0</sub> - &Delta;x) &nbsp;>&nbsp; &#402;(x<sub>0</sub>) &nbsp;<&nbsp; &#402;(x<sub>0</sub> + &Delta;x)
+					<br>&#402;'(x<sub>1</sub>) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; &#402;(x<sub>1</sub> - &Delta;x) &nbsp;>&nbsp; &#402;(x<sub>1</sub>) &nbsp;<&nbsp; &#402;(x<sub>1</sub> + &Delta;x)
+					<br>&#402;(x<sub>0</sub>) &nbsp;<&nbsp; &#402;(x<sub>1</sub>) &nbsp; &rarr; &nbsp; &#402;(x<sub>0</sub>) &nbsp;<&nbsp; &#402;(x) , &nbsp; x &nbsp;&in;&nbsp; &#8477;
+					<br>min(&#402;(x)) &nbsp;=&nbsp; &#402;(x<sub>0</sub>)
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item9" style="width: 100.1%; font-size: 1.75em; line-height: 2.05em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 3.5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						max(&#402;(x)) &nbsp;=&nbsp; &#402;(x<sub>0</sub>)
+						<br>max(&#402;(x)) &nbsp;&ge;&nbsp; &#402;(x) &nbsp;, &nbsp; x &nbsp;&in;&nbsp; &#8477;
+						<br>max(&#402;(x)) &nbsp;&ge;&nbsp; &#402;(a) &nbsp;&forall;&nbsp; a &nbsp;&in;&nbsp; &#8477;
+						</td>
+					<td style="width: 50%; padding: 3.5%; padding-left: 0%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-2/peak_max_pool.png" width="55%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 3.5%; padding-right: 0%;">
+						min(&#402;(x)) &nbsp;=&nbsp; &#402;(x<sub>0</sub>)
+						<br>min(&#402;(x)) &nbsp;&le;&nbsp; &#402;(x) &nbsp;, &nbsp; x &nbsp;&in;&nbsp; &#8477;
+						<br>min(&#402;(x)) &nbsp;&le;&nbsp; &#402;(a) &nbsp;&forall;&nbsp; a &nbsp;&in;&nbsp; &#8477;
+					</td>
+					<td style="width: 50%; padding: 3.5%; padding-left: 0%;">
+						<img src="images/2/2-2/peak_min_pool.png" width="55%" style="">	
+					</td>		
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item10" style="width: 100%; font-size: 1.55em; line-height: 1.85em; margin-top: 5.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-2/peak_ball.png" width="90%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item11" class="calc_table" style="width:85%; margin-top: 7.5%; border-radius: 2.5em; margin-left: 7.5%; padding-top: 2.5%; padding-bottom: 2.5%; font-size: 0.95em; border-style: solid; border-color: black; border-width: medium">
+			<tr style="width:100%">
+			    <td style="width: 45%; font-size: 1.65em; line-height: 1.85em; vertical-align: center">
+			    	<p style="border-style: solid; border-width: medium; border-color: lightgray; padding: 5%; width: 50%; margin-left: 20%; text-align: left; padding-left: 15%; border-radius: 1em">
+				    	y &nbsp;=&nbsp; ax<sup>2</sup> + bx + c
+				    	<br>a &nbsp;=&nbsp; <input type="text" style="font-size: 0.85em; width: 50%" id="a" class="form-control" placeholder=" #">	
+				    	<br>b &nbsp;=&nbsp; <input type="text" style="font-size: 0.85em; width: 50%" id="b" class="form-control" placeholder=" #">	
+				    	<br>c &nbsp;=&nbsp; <input type="text" style="font-size: 0.85em; width: 50%" id="c" class="form-control" placeholder=" #">
+				    	<br>
+						<button class="calc_button" type="button" class="graph" onclick="getRoots()" style="font-size: 1em; line-height: 0.5em; width: 80%; height: 1.25em; color: black; border-style: solid; border-width: medium; border-color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+				    </p>
+			    	<p style="border-style: solid; border-width: medium; border-color: lightgray; padding: 5%; width: 60%; margin-left: 20%; text-align: center; border-radius: 1em">
+			    		max(y) &nbsp;=&nbsp; <span id="max_val" style="width: 50%; font-size: 0.85em"></span>
+			    		<br>
+			    		min(y) &nbsp;=&nbsp; <span id="min_val" style="width: 50%; font-size: 0.85em"></span>
+			    	</p>
+				</td>
+				<td style="width: 55%">
+				    <table style="width: 50%; font-size: 1em; margin-left: 20%"> 
+				        <tr>
+				            <td>
+				            </td>
+				            <td style="text-align: center">
+				                <p id="pos_y">&nbsp;&nbsp;5</p>
+				            </td>
+				            <td>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td style="text-align: right;">
+				                <p id="neg_x">-5</p>
+				            </td>
+				            <td style="text-align: center; padding-left: 3.5%">
+				                <div id="MGC-Calculator" style="width:100%"></div>
+				            </td>
+				            <td style="text-align: left; padding-left: 3.5%">
+				                <p id="pos_x">5</p>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td>
+				            </td>
+				            <td style="text-align: center">
+				                <p id="neg_y">&nbsp;-5</p>
+				            </td>
+				            <td>
+				            </td>
+				        </tr>
+				    </table>
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item12" style="width: 100%; font-size: 1.55em; line-height: 1.85em; margin-top: 6.5%;">
+			<tr style="width: 100%">
+				<td style="width: 37.5%; padding-left: 5%; text-align: center; padding-right: 0%;">
+					&#8477;<sup>3</sup> : &nbsp; z &nbsp;=&nbsp; &#402;(x, y)
+					<br>max(&#402;(x, y)) &nbsp;&ge;&nbsp; &#402;(x, y) &nbsp;, &nbsp; x, y &nbsp;&in;&nbsp; &#8477;<sup>2</sup>
+					<br>max(&#402;(x, y)) &nbsp;&ge;&nbsp; &#402;(a, b) &nbsp;&forall;&nbsp; a, b &nbsp;&in;&nbsp; &#8477;<sup>2</sup>
+					<br>min(&#402;(x, y)) &nbsp;&le;&nbsp; &#402;(x, y) &nbsp;, &nbsp; x, y &nbsp;&in;&nbsp; &#8477;<sup>2</sup>
+					<br>min(&#402;(x, y)) &nbsp;&le;&nbsp; &#402;(a, b) &nbsp;&forall;&nbsp; a, b &nbsp;&in;&nbsp; &#8477;<sup>2</sup>
+				</td>
+				<td style="width: 62.5%; text-align: center;">
+					<img src="images/2/2-2/peak_3d.png" width="87.5%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 90%; margin-left: 5%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item13" style="width: 100.1%; font-size: 2em; line-height: 2.05em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%;">
+						&#402;'(x) &nbsp;=&nbsp; 0 &nbsp; &rarr; &nbsp; &#402;(x) &nbsp;=&nbsp; max(&#402;(x))? ,&nbsp; min(&#402;(x))?
+					</td>	
+				</tr>
+			</table>
+			<table style="width: 100.1%; font-size: 1.5em; line-height: 1.75em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 47.5%; padding: 3.5%; padding-right: 0%; border-bottom-style: solid; border-top-style: solid; border-width: medium">
+						&#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0 &rarr; &nbsp; &Delta;y &nbsp;=&nbsp; 0
+						<br>&#402;'(x<sub>0</sub> - &Delta;x) &nbsp;>&nbsp; 0 &nbsp; &rarr; &nbsp; &Delta;x &nbsp;>&nbsp; 0 , &nbsp; &Delta;y &nbsp;>&nbsp; 0
+						<br>&rarr; &nbsp; &#402;(x<sub>0</sub> - &Delta;x) &nbsp;<&nbsp; &#402;(x<sub>0</sub>)
+						<br>&#402;'(x<sub>0</sub> + &Delta;x) &nbsp;<&nbsp; 0 &nbsp; &rarr; &nbsp; &Delta;x &nbsp;>&nbsp; 0 , &nbsp; &Delta;y &nbsp;<&nbsp; 0
+						<br>&rarr; &nbsp; &#402;(x<sub>0</sub> + &Delta;x) &nbsp;<&nbsp; &#402;(x<sub>0</sub>)
+						<br>&#402;(x<sub>0</sub> - &Delta;x) &nbsp;<&nbsp; &#402;(x<sub>0</sub>) &nbsp;>&nbsp; &#402;(x<sub>0</sub> + &Delta;x)
+						<br>max(&#402;(x)) &nbsp;=&nbsp; &#402;(x<sub>0</sub>)
+						</td>
+					<td style="width: 52.5%; padding: 5%; padding-left: 0%; border-bottom-style: solid; border-top-style: solid; border-width: medium">
+						<img src="images/2/2-2/peak_deltay_max.png" width="90%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 47.5%; padding: 3.5%; padding-right: 0%;">
+						&#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0 &rarr; &nbsp; &Delta;y &nbsp;=&nbsp; 0
+						<br>&#402;'(x<sub>0</sub> - &Delta;x) &nbsp;<&nbsp; 0 &nbsp; &rarr; &nbsp; &Delta;x &nbsp;>&nbsp; 0 , &nbsp; &Delta;y &nbsp;<&nbsp; 0
+						<br>&rarr; &nbsp; &#402;(x<sub>0</sub> - &Delta;x) &nbsp;>&nbsp; &#402;(x<sub>0</sub>)
+						<br>&#402;'(x<sub>0</sub> + &Delta;x) &nbsp;>&nbsp; 0 &nbsp; &rarr; &nbsp; &Delta;x &nbsp;>&nbsp; 0 , &nbsp; &Delta;y &nbsp;>&nbsp; 0
+						<br>&rarr; &nbsp; &#402;(x<sub>0</sub> + &Delta;x) &nbsp;>&nbsp; &#402;(x<sub>0</sub>)
+						<br>&#402;(x<sub>0</sub> - &Delta;x) &nbsp;>&nbsp; &#402;(x<sub>0</sub>) &nbsp;<&nbsp; &#402;(x<sub>0</sub> + &Delta;x)
+						<br>min(&#402;(x)) &nbsp;=&nbsp; &#402;(x<sub>0</sub>)
+					</td>
+					<td style="width: 52.5%; padding: 5%; padding-left: 0%;">
+						<img src="images/2/2-2/peak_deltay_min.png" width="90%" style="">	
+					</td>		
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item14" style="width: 100%; font-size: 1.55em; line-height: 1.85em; margin-top: 7.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center; padding-right: 2.5%">
+					<img src="images/2/2-2/peak_mtnvalley_tri.png" width="52.5%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item15" style="width: 100%; font-size: 1.55em; line-height: 1.85em; margin-top: 3.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-2/peak_choose_crit.png" width="92.5%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 95%; border-radius: 3.5em; margin-left: 2.5%; margin-top: 6.5%; border-style: solid; border-width: medium; border-color: black; border-collapse: collapse;">
+			<table id="scroll_item16" style="width: 100.1%; border-collapse: collapse;">
+				<tr style="width: 100%">
+					<td style="width: 45%; text-align: center; font-size: 1.6em; line-height: 1.85em; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; -x<sup>2</sup>
+						<br>&#402;'(x) &nbsp;=&nbsp; -2x
+						<br>&#402;'(-1) &nbsp;=&nbsp; 2 &nbsp;, &nbsp; &#402;'(0) &nbsp;=&nbsp; 0 &nbsp;, &nbsp; &#402;'(1) &nbsp;=&nbsp; -2
+						<br>+ &nbsp; &rarr; &nbsp; 0 &nbsp; &rarr; &nbsp; -
+						<br>
+						<br>&#402;(x) &nbsp;=&nbsp; x<sup>2</sup>
+						<br>&#402;'(x) &nbsp;=&nbsp; 2x
+						<br>&#402;'(-1) &nbsp;=&nbsp; -2 &nbsp;, &nbsp; &#402;'(0) &nbsp;=&nbsp; 0 &nbsp;, &nbsp; &#402;'(1) &nbsp;=&nbsp; 2
+						<br>- &nbsp; &rarr; &nbsp; 0 &nbsp; &rarr; &nbsp; +
+					</td>
+					<td style="width: 55%; padding: 5%; text-align: center; padding-left: 0%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-2/peak_2nd_rule_intro.png" width="90%" style="">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 45%; text-align: center; font-size: 1.75em; line-height: 2.05em; padding: 5%; padding-bottom: 4%">
+						&Delta;y &nbsp; &rarr; &nbsp; &#402;'(x)
+						<br>&Delta;y' &nbsp; &rarr; &nbsp; &#402;''(x)
+						<br>&#402;''(x) &nbsp;=&nbsp; &Delta;y' / &Delta;x &nbsp;=&nbsp; &Delta;&Delta;y / &Delta;x
+						<br><br>
+						<img src="images/2/2-2/peak_2nd_formula.png" width="77.5%" style="">
+					</td>
+					<td style="width: 55%; padding: 5%; text-align: center;  padding-bottom: 5%; padding-top: 6.5%; padding-left: 0%">
+						<img src="images/2/2-2/peak_2nd_def.png" width="92.5%" style="">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item17" style="width: 100%; font-size: 2em; line-height: 1.75em; margin-top: 7.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center;">
+					<img src="images/2/2-2/peak_deriv_seq.png" width="85%" style="">
+					<br>
+					<br>&#402;(x) &nbsp; &rarr; &nbsp; &#402;'(x) &nbsp; &rarr; &nbsp; &#402;''(x) &nbsp; &rarr; &nbsp; ... &nbsp; &rarr; &nbsp; &#402;<sup>&infin;</sup>(x) &nbsp;=&nbsp; 0
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item18" style="width: 97.5%; border-radius: 2.5em; margin-left: 1.25%; margin-top: 7.5%; border-style: solid; border-width: medium; border-color: black;">
+			<tr style="width: 100%">
+				<td style="width: 45%; text-align: center; font-size: 1.5em; line-height: 1.85em; padding: 3.5%; padding-right: 1%; padding-top: 5%; padding-bottom: 5%">
+					&#402;'(x) &nbsp;=&nbsp; 0
+					<br>&#402;''(x) &nbsp;<&nbsp; 0 &nbsp; &rarr; &nbsp; &Delta;y' &nbsp;<&nbsp; 0
+					<br>&#402;'(x + &Delta;x) &nbsp;-&nbsp; &#402;'(x - &Delta;x) &nbsp;=&nbsp; &Delta;y' &nbsp;<&nbsp; 0
+					<br>&rarr; &nbsp; &#402;'(x - &Delta;x) &nbsp;>&nbsp; 0 &nbsp;, &nbsp; &#402;'(x + &Delta;x) &nbsp;<&nbsp; 0
+					<br><b>&#402;'(x) &nbsp;=&nbsp; 0 ,&nbsp; &#402;''(x) &nbsp;<&nbsp; 0 &nbsp; &rarr; &nbsp; max(&#402;(x)) &nbsp;=&nbsp; &#402;(x)</b>
+					<br>
+					<br>&#402;'(x) &nbsp;=&nbsp; 0
+					<br>&#402;''(x) &nbsp;>&nbsp; 0 &nbsp; &rarr; &nbsp; &Delta;y' &nbsp;>&nbsp; 0
+					<br>&#402;'(x + &Delta;x) &nbsp;-&nbsp; &#402;'(x - &Delta;x) &nbsp;=&nbsp; &Delta;y' &nbsp;>&nbsp; 0
+					<br>&rarr; &nbsp; &#402;'(x - &Delta;x) &nbsp;<&nbsp; 0 &nbsp;, &nbsp; &#402;'(x + &Delta;x) &nbsp;<&nbsp; 0
+					<br><b>&#402;'(x) &nbsp;=&nbsp; 0 ,&nbsp; &#402;''(x) &nbsp;>&nbsp; 0 &nbsp; &rarr; &nbsp; max(&#402;(x)) &nbsp;=&nbsp; &#402;(x)</b>
+				</td>
+				<td style="width: 55%; padding: 3.5%; text-align: center; padding-left: 0%; padding-top: 5%; padding-bottom: 5%">
+					<img src="images/2/2-2/peak_2nd_rule_def.png" width="90%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item19" style="width: 100%; font-size: 1.55em; line-height: 1.85em; margin-top: 6.5%;">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center; padding-right: 2.5%">
+					<img src="images/2/2-2/peak_2nd_mtnvalley.png" width="55%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 95%; margin-left: 2.5%; padding: 0px; margin-top: 6.5%; border-radius: 1.5em; border-style: solid; border-width: medium;">
+			<table id="scroll_item20" style="width: 100.1%; font-size: 1.5em; line-height: 1.95em; border-collapse: collapse; text-align: center;">
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; -(x - 1)(x - 8) &nbsp;=&nbsp; -x<sup>2</sup> + 9x - 8 
+						<br>&#402;'(x) &nbsp;=&nbsp; -2x + 9 &nbsp;, &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0
+						<br>x<sub>0</sub> &nbsp;=&nbsp; 9/2 &nbsp;=&nbsp; 4.5
+						<br>&#402;''(x) &nbsp;=&nbsp; -2 &nbsp;<&nbsp; 0 &nbsp; &rarr; &nbsp; max(&#402;(x))
+						<br>&#402;(4.5) &nbsp;=&nbsp; 12.25 &nbsp;&ge;&nbsp; &#402;(x) &nbsp;, &nbsp; x &nbsp;&in;&nbsp; &#8477;
+						<br>max(&#402;(x)) &nbsp;=&nbsp; &#402;(x) &nbsp;=&nbsp; 12.25
+						</td>
+					<td style="width: 50%; padding-right: 2.5%; padding-top: 5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-2/peak_ex1.png" width="55%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; border-bottom-style: solid; border-width: medium">
+						&#402;(x) &nbsp;=&nbsp; (x - 5)<sup>2</sup> + 1 &nbsp;=&nbsp; x<sup>2</sup> - 10x + 26
+						<br>&#402;'(x) &nbsp;=&nbsp; 2x - 10 &nbsp;, &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0
+						<br>x<sub>0</sub> &nbsp;=&nbsp; 10/2 &nbsp;=&nbsp; 5
+						<br>&#402;''(x) &nbsp;=&nbsp; 2 &nbsp;>&nbsp; 0 &nbsp; &rarr; &nbsp; min(&#402;(x))
+						<br>&#402;(5) &nbsp;=&nbsp; 1 &nbsp;&le;&nbsp; &#402;(x) &nbsp;, &nbsp; x &nbsp;&in;&nbsp; &#8477;
+						<br>min(&#402;(x)) &nbsp;=&nbsp; 1
+					</td>
+					<td style="width: 50%; padding-right: 2.5%; padding-top: 5%; padding-bottom: 3.5%; border-bottom-style: solid; border-width: medium">
+						<img src="images/2/2-2/peak_ex2.png" width="50%" style="">	
+					</td>		
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 50%; padding: 5%; padding-right: 0%; font-size: 0.95em">
+						&#402;(x) &nbsp;=&nbsp; (x - 1)(x - 3)(x - 5) &nbsp;=&nbsp; -x<sup>3</sup> + 9x<sup>2</sup> - 23x + 15
+						<br>&#402;'(x) &nbsp;=&nbsp; -3x<sup>2</sup> + 18x - 23 &nbsp;, &nbsp; &#402;'(x<sub>0</sub>) &nbsp;=&nbsp; 0
+						<br>x<sub>0</sub> &nbsp;=&nbsp; 1.845 , 4.155
+						<br>&#402;''(x) &nbsp;=&nbsp; -6x + 18
+						<br>&#402;''(1.845) &nbsp;=&nbsp; -6(1.845) + 18 &nbsp;=&nbsp; 6.93 &nbsp;>&nbsp; 0 &nbsp; &rarr; &nbsp; min(&#402;(x))
+						<br>&#402;''(4.155) &nbsp;=&nbsp; -6(4.155) + 18 &nbsp;=&nbsp; -6.93 &nbsp;<&nbsp; 0 &nbsp; &rarr; &nbsp; max(&#402;(x))
+					</td>
+					<td style="width: 50%; padding-right: 2.5%; padding-top: 5%; padding-bottom: 3.5%;">
+						<img src="images/2/2-2/peak_ex3.png" width="50%" style="">	
+					</td>		
+				</tr>
+			</table>
+			<p style="font-size: 1.5em; line-height: 1.95em; border-collapse: collapse; text-align: center; margin-top: -1%; margin-bottom: 5%">
+				&#402;(-&infin;) &nbsp;=&nbsp; &infin; &nbsp; &rarr; &nbsp; max(&#402;(x)) &nbsp;=&nbsp; &#402;(-&infin;) &nbsp;=&nbsp; &infin;
+				<br>&#402;(&infin;) &nbsp;=&nbsp; -&infin; &nbsp; &rarr; &nbsp; min(&#402;(x)) &nbsp;=&nbsp; &#402;(&infin;) &nbsp;=&nbsp; -&infin;
+			</p>
+		</div>
+
+		<table id="scroll_item21" style="width: 100%; font-size: 1.55em; line-height: 1.85em; margin-top: 7.5%; margin-bottom: 8.5%">
+			<tr style="width: 100%">
+				<td style="width: 100%; text-align: center; padding-right: 2.5%">
+					<img src="images/2/2-2/peak_concept.png" width="87.5%" style="">
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="2-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
 		</div>
 	</header>
 
-	<div class="sub-nav">
-		<a href="2-0.html">0</a>
-		<a href="2-1.html">1</a>
-		<a class="active" href="2-2.html">2</a>
-		<a href="2-3.html">3</a>
-		<a href="2-4.html">4</a>
-		<a href="2-5.html">5</a>
-		<a href="2-6.html">6</a>
-	</div>
+	<script type="text/javascript" src="standard_functions.js"></script>
+	<script type="text/javascript">
+
+		window.onload = function () {
+			standard_onload();
+		};
+
+		function getRoots() {
+			var a = parseFloat(document.getElementById("a").value);
+			var b = parseFloat(document.getElementById("b").value);
+			var c = parseFloat(document.getElementById("c").value);
+
+			if (a > 0) {
+				var x0 = -b/(2*a);
+				var max_val = '&#8734;';
+				var min_val = a*x0*x0 + b*x0 + c;
+    			if (Math.abs(min_val) < 1) { var min_val = min_val.toFixed(5); }
+    			else { var min_val = min_val.toPrecision(6) };
+
+	    		document.getElementById("min_val").innerHTML = min_val.toString().replace('Infinity', '&#8734;');
+	    		document.getElementById("max_val").innerHTML = max_val.toString().replace('Infinity', '&#8734;');
+	    	}
+	    	else if (a < 0) {
+				var x0 = -b/(2*a);
+				var min_val = '-&#8734;';
+				var max_val = a*x0*x0 + b*x0 + c;
+    			if (Math.abs(max_val) < 1) { var min_val = max_val.toFixed(5); }
+    			else { var max_val = max_val.toPrecision(6) };
+
+	    		document.getElementById("min_val").innerHTML = min_val.toString().replace('Infinity', '&#8734;');
+	    		document.getElementById("max_val").innerHTML = max_val.toString().replace('Infinity', '&#8734;');
+	    	}
+	    	else {
+	    		document.getElementById("min_val").innerHTML = '-&#8734;';
+	    		document.getElementById("max_val").innerHTML = '&#8734;';
+	    	};
+		};
+
+		$(document).ready(function(){
+			var calc = new MGC.Calculator("MGC-Calculator");
+			
+			$(".graph").click(function(){
+				var id = this.id.substring(0, 3);
+				
+				if($("#in" + id).attr("readonly") !== "readonly"){
+					calc.clearFunc(func, color);
+					var a = document.getElementById("a").value;
+					var b = document.getElementById("b").value;
+					var c = document.getElementById("c").value;
+
+					if (b*b >= 4*a*c) {
+						var r1 = (-b + Math.sqrt(b*b - 4*a*c))/(2*a);
+						var r2 = (-b - Math.sqrt(b*b - 4*a*c))/(2*a);
+			    		var m = Math.max(Math.abs(r1), Math.abs(r2));
+			    	}
+			    	else {
+						var r1 = (-b + Math.sqrt(-b*b + 4*a*c))/(2*a);
+						var r2 = (-b - Math.sqrt(-b*b + 4*a*c))/(2*a);
+			    		var ymax = a*(-b/(2*a))*(-b/(2*a)) + b*(-b/(2*a)) + c;
+			    		var m = Math.max(Math.abs(r1), Math.abs(r2), Math.abs(ymax));
+			    	};
+
+			    	m = Math.ceil(m/5) + 1;
+			    	m = m*5;
+
+			    	if (m < 150) {
+						// var func = $("#in" + id).val();
+						var func = a + '*x*x + ' + b + '*x + ' + c;
+						var color = $("." + id + "div").css("background-color");
+						
+						if(calc.graphFunc(func, color)){ 
+							//check expression validity
+						}
+						else{
+							$("#in" + id).val("ERR");
+						}
+
+						calc.setMax(m, "x");
+
+						var pos_x = document.getElementById('pos_x');
+						pos_x.innerHTML = m;
+						var pos_y = document.getElementById('pos_y');
+						pos_y.innerHTML = m;
+						var neg_x = document.getElementById('neg_x');
+						neg_x.innerHTML = -m;
+						var neg_y = document.getElementById('neg_y');
+						neg_y.innerHTML = -m;
+					}
+					else {
+						m = 5;
+						calc.setMax(m, "x");
+
+						var pos_x = document.getElementById('pos_x');
+						pos_x.innerHTML = m;
+						var pos_y = document.getElementById('pos_y');
+						pos_y.innerHTML = m;
+						var neg_x = document.getElementById('neg_x');
+						neg_x.innerHTML = -m;
+						var neg_y = document.getElementById('neg_y');
+						neg_y.innerHTML = -m;						
+					}
+				}
+			});
+
+			$("#xmax").change(function(){
+				calc.setMax($(this).val(), "x");
+				$("#xmin").val("-" + $(this).val());
+
+				var pos_x = document.getElementById('pos_x');
+				pos_x.innerHTML = $(this).val();
+				var pos_y = document.getElementById('pos_y');
+				pos_y.innerHTML = $(this).val();
+				var neg_x = document.getElementById('neg_x');
+				neg_x.innerHTML = -$(this).val();
+				var neg_y = document.getElementById('neg_y');
+				neg_y.innerHTML = -$(this).val();
+			});
+				
+		});
+
+		var MGC = {};
+
+		//MGC Calculator
+		MGC.Calculator = function(id){
+			"use strict";
+			var thisCalc = this;
+
+			var xMax = 5;
+			var xMaxVal = 40;
+			var xScale = 1;
+			var yMax = 5;
+			var yMaxVal = 40;
+			var yScale = 1;
+			
+			/*
+				-start coordinates-
+				The coordinate (0, 0) on the canvas is the 
+				upper-left hand corner. This is updated
+				according to the current scales and max/mins
+			*/
+			var xStart = 0;
+			var yStart = 0;
+			
+			//arrays for drawing every function graph
+			var funcArr = []; //array of functions
+			var colorArr = []; //array of functions
+			
+			//canvas and context
+			var canvas = null;
+			var context = null;
+
+			canvas = createCanvas(); //make a canvas for the graph output
+			
+			if(document.getElementById(id) === null){ //append canvas to the body
+				document.body.appendChild(canvas);
+			}
+			else{ //append canvas to the element at id
+				document.getElementById(id).appendChild(canvas);
+			}
+			
+			context = getContext(canvas); //init context
+
+			drawGraph(); //draw an empty grid
+			
+			/*start public methods*/	
+			this.graphFunc = function(func, color){
+				func = func.toLowerCase();
+				func = func.replace("^", "**");
+				
+				if(cleanExp(func) !== null){
+					funcArr.push(func); //save function
+					colorArr.push(color); //save color
+					drawGraph(); //draw new graph
+					return true;
+				}
+				else{
+					return false;
+				}
+				
+			};
+			
+			this.clearFunc = function(func, color){
+				var i = colorArr.indexOf(color);
+				
+				if(i > -1){
+					funcArr.splice(i, 1); //emove function name
+					colorArr.splice(i, 1); //emove color
+					drawGraph(); //draw new graph
+				}
+			};
+			
+			this.setMax = function(value, axis){
+					//value currently has to be symmetrical
+					//also between 0 and 1000
+					if(value > 0 && value < 1000){ 
+						if(axis === "x"){
+							xMax = value;
+							xMaxVal = canvas.width / 2 / xMax;
+							yMax = xMax;
+							yMaxVal = xMaxVal;
+						}				
+						drawGraph();
+					}
+					
+			};
+			
+			/*
+				will eventually need public get and set 
+				functions for all values:
+				---scale
+				---min
+				---canvas size
+			*/
+			/*end public methods*/
+			
+			/*start private methods*/
+			function createCanvas(){
+				//create a canvas
+				canvas = document.createElement("canvas");
+				
+				if(canvas === null){ //check canvas
+					throw MGC.Errors.canvasErr;
+				}
+				
+				//add and initalize canvas
+				canvas.appendChild(document.createTextNode(MGC.Errors.tagErr));
+				canvas.height = 400;
+				canvas.width = 400;
+				
+				return canvas;
+			}
+			
+			function getContext(){
+				//get a context
+				context = canvas.getContext("2d");
+				
+				if(context === null){ //check 2D context
+					throw MGC.Error.contextErr;
+				}
+				
+				return context;
+			}
+			
+			function drawGraph(){
+			
+				//update starting positions
+				xStart = 0.5 * canvas.width;
+				yStart = 0.5 * canvas.height;
+				
+				//draw a white background
+				context.fillStyle = "#ffffff";
+				context.fillRect(0, 0, canvas.width, canvas.height);
+				
+				context.lineWidth = 1; //set line width for grid
+				context.strokeStyle = "#cccccc";
+				context.beginPath();
+				
+				//set up the grid
+				for(var i = 0; i < canvas.width; i++){
+					context.moveTo(i * (xMaxVal / xScale), 0);
+					context.lineTo(i * (xMaxVal / xScale), canvas.width);
+					
+					context.moveTo(0, i * (yMaxVal / yScale));
+					context.lineTo(canvas.height, i * (yMaxVal / yScale));
+				}
+				
+				//draw the grid
+				context.stroke();
+				context.closePath();
+				
+				context.lineWidth = 1; //set line width for axises
+				
+				//draw x and y axis
+				context.beginPath();
+				context.moveTo(0, yStart);
+				context.lineTo(canvas.width, yStart);
+				context.moveTo(xStart, 0);
+				context.lineTo(xStart, canvas.height);
+				context.strokeStyle = "#000000";
+				context.stroke();
+				context.closePath();
+				
+				context.lineWidth = 3; //reset line width
+				
+				//draw the functions in the array
+				for(i = 0; i < funcArr.length; i++){
+					drawFunction(i);
+				}
+			}
+			
+			function drawFunction(i){
+				var func = cleanExp(funcArr[i]);
+				var color = colorArr[i];
+				var x, y, max, min;
+
+				if(func === null){ //invalid expression
+					thisCalc.clearFunc(funcArr[i]);
+					alert("ERR");
+					return;
+				}
+				
+				max = (canvas.width - xStart) / xScale;
+				min = -xStart / xScale;
+				
+				context.beginPath();
+				context.lineWidth = 3;
+				context.strokeStyle = '#DB0000';
+				
+				//move to first coordinate
+				x = xScale * min;
+				
+				try{ //expression might not evaluate
+					y = xMaxVal * eval(func);
+				}
+				catch(err){
+					try {
+						var f = funcArr[i].replace(/x/gi, '*x');
+						func = cleanExp(f);
+						y = xMaxVal * eval(func);
+					}
+					catch(e) {
+						thisCalc.clearFunc(funcArr[i]);
+						alert("ERR");
+						return;
+					};
+				}
+					
+				context.moveTo(xStart + x, yStart - y);
+				
+				for(var j = min + 1; j <= max; j++){
+					x = xScale * j;
+					
+					try{ //expression might not evaluate
+						y = xMaxVal * eval(func);
+					}
+					catch(err){
+						thisCalc.clearFunc(funcArr[i]);
+						alert("ERR");
+						return;
+					}
+					
+					context.lineTo(xStart + x, yStart - y);
+				
+				}
+				
+				context.stroke();
+				context.closePath();
+			}
+			
+			function cleanExp(exp){
+				var result = "";
+				
+				//emove spaces
+				exp = exp.replace(/\s/g, '');
+				
+				//attempt to stop some code injection
+				if(exp.indexOf("var") !== -1 || exp.indexOf("func") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("{") !== -1 || exp.indexOf("}") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("[") !== -1 || exp.indexOf("]") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp.indexOf("=") !== -1){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				else if(exp === ""){
+					//console.log(MGC.Errors.expWarn);
+					return null;
+				}
+				
+				for(var i = 0; i < exp.length; i++){
+					
+					if(i+2 < exp.length && exp[i+1] === "^"){
+						result += "pow(x, " + exp[i+2] + ")";
+						i += 2;
+					}
+					else{
+						result += exp[i];
+					}
+					
+				}
+				
+				//scale x
+				result = result.replace(/x/gi, "x/xMaxVal");
+				
+				//replace special numbers
+				result = result.replace(/e/gi, "Math.E");
+				result = result.replace(/pi/gi, "Math.PI");		
+				
+				return result;
+			}
+			
+			function pow(x, e){
+				return Math.pow(x, e);
+			}
+			
+			function sin(x){
+				return Math.sin(x);
+			}
+				
+			function asin(x){
+				return Math.asin(x);
+			}
+			
+			function arcsin(x){
+				return Math.asin(x);
+			}
+			
+			function cos(x){
+				return Math.cos(x);
+			}
+			
+			function acos(x){
+				return Math.acos(x);
+			}
+			
+			function arccos(x){
+				return Math.acos(x);
+			}
+			
+			function tan(x){
+				return Math.tan(x);
+			}
+			
+			function atan(x){
+				return Math.atan(x);
+			}
+			
+			function arctan(x){
+				return Math.atan(x);
+			}
+			
+			function log(x){
+				return Math.log(x);
+			}
+			/*end private methods*/
+		};
+
+		//MGC Errors
+		MGC.Errors = {
+			tagErr		:	"Your browser does not seem to support the canvas tag.",
+			canvasErr	:	"MGC_CANVAS_ERR: could not create a canvas element",
+			contextErr	:	"MGC_CONTEXT_ERR: could not get a 2d context",
+			expWarn		:	"MGC_EXPRESSION_WARNING: expression contains illegal characters"
+		};
+	</script>
 
 </body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
+</html>

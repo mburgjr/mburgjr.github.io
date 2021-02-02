@@ -1,358 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<link rel="stylesheet" href="jquery/jquery-ui-1.9.1.custom.min.css" />
+<script src="jquery/jquery-1.8.2.js"></script>
+<script src="jquery/jquery-ui-1.9.1.custom.min.js"></script>
 <link rel="icon" href="images/link_logo.png">
 <head>
 	<meta charset="UTF-8">
 	<title>Hue Edu</title>
-		<style>
-		body {
-		  margin: 0;
-		  font-family: Arial;
-		  text-decoration: none;
-		  align-self: center;
-		  width: 100%;
-		}
+	<link rel="stylesheet" href="standard_styles.css">
+	<style>
 
-		a {
-		  text-decoration: none;			
-		}
-
-		.header {
-			background-color: #000066;
-			text-align: left;
-			color: white;
-			width: 100%;
-		}
-
-		.header div.info {
-			text-align: right;
-			vertical-align: top;
-			padding-right: 1%;
-			padding-top: 0.6%;
-			float: right;
-		}
-
-		.header div.logo {
-			float: left;
-		}
-		
-		.header a {
-		  	text-decoration: none;
-			font-size: 1vw;
-			font-weight: bold;
-			color: white;
-		}
-
-		a.sub_active {
-			background-color: #FFFFFF;
-			color: #000066;
-		}
-
-		td {
-			padding: 0.4%;
-		}
-
-		td a {
-		    display:block;
-		    width:100%;
-		}
-
-		td.main_active {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.main_access:hover {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.main_access:hover a {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub_access {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		}
-
-		td.sub_access a {			
-		  background-color: #66B2FF;
-		  color: #FFFFFF;
-		  font-size: 1.1vw;
-		}
-
-		td.sub_access:hover {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_access:hover a {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_active {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		}
-
-		td.sub_active a {			
-		  background-color: #FFFFFF;
-		  color: #000066;
-		  font-size: 1.1vw;
-		}
-
-		.logo_image {
-			width: 80%;
-			padding: 0%;
-		}
-
-		.mobile-calculator {
-			display: none;
-		}
-
-		.fraction {
-		    display: inline-block;
-		    text-align: center;    
-		}
-
-		.denominator{
-		    border-top: 1px solid #000;
-		    display: block;
-		}
-
-		#q_button {
-			border-width: 0.25rem;
-			border-style: solid;
-			border-color: #000066;
-		}
-
-		#q_button:hover {
-			border-width: 0.25rem;
-			border-style: solid;
-			border-color: #66B2FF;
+		input {
+			width: 50%
 		}
 
 	</style>
 </head>
-<body>
-	<header class='header'>
-		<table style="width:100%; border: none; border-collapse: collapse;">
-			<tr>
-				<td class="main" style="width:10%; text-align: center; padding-top: 0.75%; padding-bottom: 0.5%"><img src="images/logo_cut.png" class="logo_image"></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="0-0.html">0</a></td>
-				<td class="main_active" style="text-align: center; width: 7.5%"><a href="1-2.html">1</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="2-0.html">2</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="3-0.html">3</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="4-0.html">4</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="5-0.html">5</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="6-0.html">6</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="7-0.html">7</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="8-0.html">8</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href="calculator.html" target="_blank">&#8862;</a></td>
-				<td class="main_access" style="text-align: center; width: 7.5%"><a href='info.html'>INFO</a></td>
-			</tr>
-			<tr>
-				<td class="sub" style="text-align: center"></td>
-				<td class="sub_access" style="text-align: center; padding-top: 0.5%; padding-bottom: 0.5%"><a class="sub_access" href="1-0.html"><span style="font-size: 1.2vmax">&#9632;</span></a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-1.html">&Theta;</a></td>
-				<td class="sub_active" style="text-align: center"><a class="sub_active" href="1-2.html"><span style="font-size: 0.9vmax">&#9699;</span></a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-3.html"><span style="font-size: 1.2vmax">&#8767;</span></a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-4.html">_</a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-5.html">_</a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-6.html">_</a></td>
-				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-Q.html">?</a></td>
-				<td class="sub"></td>
-				<td class="sub"></td>
-				<td class="sub"></td>
-			</tr>
-		</table>
-	</header>
-
-	<div style="width: 110rem; margin: 0 auto;">
-	<table style="width: 60%; margin-left: 20%; margin-top: 6.5%">
-		<tr style="width: 100%; text-align: center;">
-			<td style="width: 50%">
-				<img src="images/1-2/pyth_intro_right.png" width="65%" style="">
-			</td>
-			<td style="width: 50%; font-size: 2.15rem; line-height: 2.15em">
-				A = 3 , &nbsp;&nbsp;&nbsp; B = 4
-				<br>&darr;
-				<br>C = ?
-			</td>
+<header class='header' id="header" style="position: sticky; width: 100vw; max-width: 100%; top: 0; margin-top: 0px; padding-top: 0px; height: 5vmax; z-index: 5">
+	<table style="width:100%; height: 100%; border: none; border-collapse: collapse; z-index: 5">
+		<tr style="background-color: #000066; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
+		</tr>
+		<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+			<td style="width:100%;"></td>
 		</tr>
 	</table>
+	<div class="header_wrapper" id="header_wrapper" style="width: 100%; height: 5vmax; margin: 0 auto; z-index: 6; position: fixed; top: 0; margin-left: 0; margin-right: 0; left: 0; right: 0; text-align: center;">
+		<table style="width:100%; height: 100%; border: none; border-collapse: collapse;">
+			<tr style="background-color: #000066; width: 100%; height: 50%;">
+				<td class="main" style="width:11.25%; text-align: center; padding-top: 0.25%; padding-bottom: 0%"><a href="./index.html"><img src="images/logo_cut.png" class="logo_image"></a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="0-0.html">0</a></td>
+				<td class="main_active" style="text-align: center; width: 8.875%"><a href="1-2.html">1</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="2-0.html">2</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="3-0.html">3</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="4-0.html">4</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="5-0.html">5</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="6-0.html">6</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="7-0.html">7</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="8-0.html">8</a></td>
+				<td class="main_access" style="text-align: center; width: 8.875%"><a href="9-0.html">9</a></td>
+			</tr>
+			<tr style="background-color: #66B2FF; width: 100%; height: 50%;">
+				<td class="sub" style="text-align: center"></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-0.html"><span style="font-size: 1.2em">&#9632;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-1.html">&Theta;</a></td>
+				<td class="sub_active" style="text-align: center"><a class="sub_active" href="1-2.html"><span style="font-size: 0.9em">&#9699;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-3.html"><span style="font-size: 1.25em">&#8767;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-4.html">&#8737;</a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-5.html"><span style="font-size: 1.05em">&nearr;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-6.html"><span style="font-size: 1.05em">&#8630;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-7.html"><span style="font-size: 1.5em">&bull;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-8.html"><span style="font-size: 1.2em">&#10541;</span></a></td>
+				<td class="sub_access" style="text-align: center"><a class="sub_access" href="1-Q.html">?</a></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body id="body" style="width: 100vw; max-width: 100%;">
 
-	<div style="width: 80%; margin-left: 10%; border-style: solid; border-color: black; border-width: 0.25rem; margin-top: 5%; padding-top: 2%; padding-bottom: 3.5%">
-		<p style="text-align: center; font-size: 2.25rem; line-height: 2.5em">
-			C &nbsp;>&nbsp; A , &nbsp;&nbsp;&nbsp; C &nbsp;>&nbsp; B
-			<br>
-			<b>&theta; = &pi;<i>/</i>2 ,&nbsp;&nbsp;&nbsp;&theta;&deg; = 90&deg; &nbsp;&nbsp;&nbsp; &rarr; &nbsp;&nbsp;&nbsp;&nbsp; A<sup>2</sup> &nbsp;+&nbsp; B<sup>2</sup> &nbsp;=&nbsp; C<sup>2</sup></b>
-		</p>
-		<table style="width: 100%; margin-top: 2.5%">
+	<div id="left_sidebar">
+		<table id="scroll_buttons">
+			<tr style="width: 100%;"><td id="scroll_button0" type="button" onclick="scrollToIndex(0)" class="scroll_button_active">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button1" type="button" onclick="scrollToIndex(1)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button2" type="button" onclick="scrollToIndex(2)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button3" type="button" onclick="scrollToIndex(3)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button4" type="button" onclick="scrollToIndex(4)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button5" type="button" onclick="scrollToIndex(5)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button6" type="button" onclick="scrollToIndex(6)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button7" type="button" onclick="scrollToIndex(7)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button8" type="button" onclick="scrollToIndex(8)" class="scroll_button">&nbsp;</td></tr>
+			<tr style="width: 100%;"><td id="scroll_button9" type="button" onclick="scrollToIndex(9)" class="scroll_button">&nbsp;</td></tr>
+		</table>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+		<table id="scroll_item0" style="width: 60%; margin-left: 20%; margin-top: 6.5%">
 			<tr style="width: 100%; text-align: center;">
 				<td style="width: 50%">
-					<img src="images/1-2/pyth_radius.png" width="70%" style="">
+					<img src="images/1/1-2/pyth_intro_right.png" width="80%" style="">
 				</td>
-				<td style="width: 50%; font-size: 2.15rem; line-height: 2.25em; text-align: left; padding-left: 3.5%">
-					&nbsp;A &nbsp;=&nbsp; 3 , &nbsp;&nbsp;&nbsp; B &nbsp;=&nbsp; 4
-					<br>&rarr;&nbsp; C &nbsp;=&nbsp; ( 3<sup>2</sup> + 4<sup>2</sup> )<sup>1/2</sup> &nbsp;=&nbsp; 25<sup>1/2</sup> &nbsp;=&nbsp; 5
+				<td style="width: 50%; font-size: 2em; line-height: 2.15em">
+					A = 3 , &nbsp;&nbsp;&nbsp; B = 4
+					<br>&darr;
+					<br>C = ?
+				</td>
+			</tr>
+		</table>
+
+		<div id="scroll_item1" style="width: 80%; margin-left: 7.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 1.5em; padding: 2.5%; margin-top: 6.5%; padding-bottom: 4%">
+			<p style="text-align: center; font-size: 1.85em; line-height: 2em">
+				C &nbsp;>&nbsp; A , &nbsp;&nbsp;&nbsp; C &nbsp;>&nbsp; B<sub>&nbsp;</sub>
+				<br>
+				<span style="font-weight: bold; font-size: 1.2em">&theta; = &pi;<i>/</i>2 ,&nbsp;&nbsp;&nbsp;&theta;&deg; = 90&deg; &nbsp;&nbsp;&nbsp; &rarr; &nbsp;&nbsp;&nbsp;&nbsp; A<sup>2</sup> &nbsp;+&nbsp; B<sup>2</sup> &nbsp;=&nbsp; C<sup>2</sup></span>
+			</p>
+			<table style="width: 100%; margin-top: 2.5%">
+				<tr style="width: 100%; text-align: center;">
+					<td style="width: 50%">
+						<img src="images/1/1-2/pyth_radius.png" width="67.5%" style="">
+					</td>
+					<td style="width: 50%; font-size: 1.65em; line-height: 1.85em; text-align: left; padding-left: 3.5%">
+						&nbsp;A &nbsp;=&nbsp; 3 , &nbsp;&nbsp;&nbsp; B &nbsp;=&nbsp; 4
+						<br>&rarr;&nbsp; C &nbsp;=&nbsp; ( 3<sup>2</sup> + 4<sup>2</sup> )<sup>1/2</sup> &nbsp;=&nbsp; 25<sup>1/2</sup> &nbsp;=&nbsp; 5
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="scroll_item2" style="margin-top: 7.5%">
+			<table style="width: 90%; margin-left: 2.5%">
+				<tr style="width: 100%; text-align: center; font-size: 1.75em; line-height: 1.5em">
+					<td style="width: 50%">
+						<img src="images/1/1-2/pyth_proof_2.png" width="60%" style="">
+						<br>
+						<br>
+						A &nbsp;=&nbsp; c<sup>2</sup> &nbsp;+&nbsp; 4 &#215; (ab/2)
+						<br>
+						A &nbsp;=&nbsp; c<sup>2</sup> &nbsp;+&nbsp; 2ab
+					</td>
+					<td style="width: 50%">
+						<img src="images/1/1-2/pyth_proof_1.png" width="60%" style="">		
+						<br>
+						<br>
+						A &nbsp;=&nbsp; (a + b)<sup>2</sup> &nbsp;=&nbsp; a(a + b) &nbsp;+&nbsp; b(a + b)
+						<br>
+						A &nbsp;=&nbsp; a<sup>2</sup> &nbsp;+&nbsp; ab &nbsp;+&nbsp; ba &nbsp;+&nbsp; b<sup>2</sup> &nbsp;=&nbsp; a<sup>2</sup> &nbsp;+&nbsp; 2ab &nbsp;+&nbsp; b<sup>2</sup>		
+					</td>
+				</tr>
+			</table>
+			
+			<p style="width: 100%; margin-top: 2.5%; text-align: center; font-size: 1.75em; line-height: 1.5em">
+				S &nbsp;=&nbsp; a + b
+				&nbsp;&nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp; A &nbsp;=&nbsp; S<sup>2</sup> &nbsp;=&nbsp; (a + b)<sup>2</sup>
+				<br>
+				A &nbsp;=&nbsp; c<sup>2</sup> &nbsp;+&nbsp; 2ab &nbsp;=&nbsp; a<sup>2</sup> &nbsp;+&nbsp; 2ab &nbsp;+&nbsp; b<sup>2</sup>
+				<br>
+				c<sup>2</sup> &nbsp;+&nbsp; 2ab &nbsp;=&nbsp; a<sup>2</sup> &nbsp;+&nbsp; 2ab &nbsp;+&nbsp; b<sup>2</sup> 
+				&nbsp;&nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;
+				a<sup>2</sup> &nbsp;+&nbsp; b<sup>2</sup> &nbsp;=&nbsp; c<sup>2</sup>
+			</p>
+		</div>
+
+		<table id="scroll_item3" style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-style: solid; border-width: medium; border-color: black; border-radius: 1.5em">
+			<tr style="width: 100%; text-align: center; font-size: 2em; line-height: 2em">
+				<td style="width: 50%; padding-top: 6.5%; padding-bottom: 4.5%; padding-left: 2.5%">
+					<img src="images/1/1-2/pyth_intro_right.png" width="45%" style="">
+					<br>
+					<img src="images/1/1-2/pyth_lengths.png" width="50%" style="margin-top: 5%">					
+				</td>
+				<td style="width: 50%; padding-top: 5%; padding-bottom: 4.5%; padding-right: 2.5%">
+					<img src="images/1/1-2/pyth_proof_3.png" width="60%" style="">	
+				</td>
+			</tr>
+		</table>
+
+		<img id="scroll_item4" src="images/1/1-2/pyth_houses.png" width="40%" style="margin-left: 30%; margin-top: 5.5%">
+
+		<table id="scroll_item5" style="width: 100%; margin-top: 5%; text-align: center; font-size: 1.65em; line-height: 1.95em">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding-left: 7.5%">
+					<img src="images/1/1-2/pyth_345.png" width="30%" style=""><br>
+					C &nbsp;=&nbsp; (A<sup>2</sup> + B<sup>2</sup>)<sup>1/2</sup> &nbsp;=&nbsp; (3<sup>2</sup> + 4<sup>2</sup>)<sup>1/2</sup>
+					<br>=&nbsp; (9 + 16)<sup>1/2</sup> &nbsp;=&nbsp; (25)<sup>1/2</sup> &nbsp;=&nbsp; 5<sub>&nbsp;</sub>
+					<br>A &nbsp;=&nbsp; 3, &nbsp; B &nbsp;=&nbsp; 4 &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 5<sup>&nbsp;</sup>
+					<br>A &nbsp;=&nbsp; 6, &nbsp; B &nbsp;=&nbsp; 8 &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 10
+					<br>A &nbsp;=&nbsp; 3K, &nbsp; B &nbsp;=&nbsp; 4K &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 5K
+				</td>
+				<td style="width: 50%; padding-right: 7.5%; padding-top: 2.5%">
+					<img src="images/1/1-2/pyth_51213.png" width="50%" style="margin-bottom: 6.5%;"><br>
+					C &nbsp;=&nbsp; (A<sup>2</sup> + B<sup>2</sup>)<sup>1/2</sup> &nbsp;=&nbsp; (5<sup>2</sup> + 12<sup>2</sup>)<sup>1/2</sup>
+					<br>=&nbsp; (25 + 144)<sup>1/2</sup> &nbsp;=&nbsp; (169)<sup>1/2</sup> &nbsp;=&nbsp; 13<sub>&nbsp;</sub>
+					<br>A &nbsp;=&nbsp; 5, &nbsp; B &nbsp;= &nbsp;12 &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 13<sup>&nbsp;</sup>
+					<br>A &nbsp;=&nbsp; 10, &nbsp; B &nbsp;=&nbsp; 24 &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 26
+					<br>A &nbsp;=&nbsp; 5K, &nbsp; B &nbsp;=&nbsp; 12K &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 13K
+				</td>
+			</tr>
+		</table>
+
+		<table id="scroll_item6" style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-radius: 1.5em; border-style: solid; border-width: medium; border-color: black; padding: 5%">
+			<tr style="width: 100%;">
+				<td style="width: 25%; text-align: center;">
+					<div id="shape_input" style="border-style: solid; border-width: medium; border-radius: 1em; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 90%; margin-left: 5%; margin-top: -0.25vw; font-size: 1.5em">
+						A &nbsp;=&nbsp; <input id="A" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						B &nbsp;=&nbsp; <input id="B" type="text" value="0" style="font-size: 1em; width: 50%"/>
+						<br>
+						<br>
+						<button type="button" class="calc_button" style="font-size: 1em; border-style: solid; border-width: medium; border-color: black; border-radius: 0.5em" onclick="drawTriangle()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</td>
+				<td style="width: 50%">
+					<canvas id="canvas" style="width: 100%">
+					</canvas>
+				</td>
+				<td style="width: 25%">
+					<div style="border-style: solid; border-width: medium; border-radius: 1em; border-color: black; padding-top: 7.5%; padding-bottom: 7.5%; width: 90%; margin-left: 5%; text-align: center; font-size: 1.5em">
+						C &nbsp;=&nbsp; <span id="C">0.000000</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+
+		<table id="scroll_item7" style="width: 100%; margin-top: 7.5%; text-align: center; font-size: 1.65em; line-height: 1.95em">
+			<tr style="width: 100%">
+				<td style="width: 50%; padding-left: 15%">
+					&theta; &nbsp;&ne;&nbsp; &pi;/2 , &nbsp; &theta;&deg; &nbsp;=&nbsp; 90&deg;
+					<br>c<sup>2</sup> &nbsp;&ne;&nbsp; a<sup>2</sup> + b<sup>2</sup>
+					<br>c &nbsp;&ne;&nbsp; ( a<sup>2</sup> + b<sup>2</sup> )<sup>1/2</sup>
+				</td>
+				<td style="width: 50%; padding-right: 17.5%">
+					<img src="images/1/1-2/pyth_nonright.png" width="80%" style="">
+				</td>
+			</tr>
+		</table>
+
+		<div style="width: 95%; margin-left: 2.5%; padding: 0px; margin-top: 6.5%; border-radius: 3em; border-style: solid; border-width: medium;">
+			<table id="scroll_item8" style="width: 100.1%; border-style: none; border-color: black; font-size: 1.5em; line-height: 2em; text-align: center; border-collapse: collapse;">
+				<tr style="width: 100%;">
+					<td style="width: 35%; padding-left: 5%; border-bottom-style: solid">
+						<img src="images/1/1-2/pyth_454590.png" width="77.5%" style="">
+					</td>
+					<td style="width: 30%; padding-bottom: 5%; border-bottom-style: solid">
+						&theta; &nbsp;=&nbsp; &pi;/2, &nbsp; &theta;&deg; &nbsp;=&nbsp; 90&deg;
+						<br>&alpha; &nbsp;=&nbsp; &phi; &nbsp;=&nbsp; &pi;/4
+						<br>&alpha;&deg; &nbsp;=&nbsp; &phi;&deg; &nbsp;=&nbsp; 45&deg;
+						<br>
+						<br>A &nbsp;=&nbsp; B &nbsp;=&nbsp; X
+						<br>C &nbsp;=&nbsp; (X<sup>2</sup> + X<sup>2</sup>)<sup>1/2</sup>
+						<br>=&nbsp; (2X<sup>2</sup>)<sup>1/2</sup> &nbsp;=&nbsp; X<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&thinsp;2</span></span>
+						<br>D &nbsp;=&nbsp; S<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&thinsp;2</span></span>
+					</td>
+					<td style="width: 35%; padding-right: 5%; border-bottom-style: solid">
+						<img src="images/1/1-2/pyth_square.png" width="77.5%" style="">
+					</td>
+				</tr>
+				<tr style="width: 100%">
+					<td style="width: 35%; padding-top: 5%; padding-bottom: 5%; padding-left: 3.5%">
+						<img src="images/1/1-2/pyth_306090.png" width="70%" style="">
+					</td>
+					<td style="width: 30%; padding-top: 5%; padding-bottom: 5%">
+						&theta; &nbsp;=&nbsp; &pi;/2, &nbsp; &theta;&deg; &nbsp;=&nbsp; 90&deg;
+						<br>&alpha; &nbsp;=&nbsp; &pi;/6, &nbsp; &alpha;&deg; &nbsp;=&nbsp; 30&deg;
+						<br>&phi; &nbsp;=&nbsp; &pi;/3, &nbsp; &phi;&deg; &nbsp;=&nbsp; 60&deg;
+						<br>
+						<br>B &nbsp;=&nbsp; X , &nbsp; A &nbsp;=&nbsp; X<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.065em solid #000; padding-top: 0px;">&thinsp;3</span></span>
+						<br>C &nbsp;=&nbsp; (3X<sup>2</sup> + X<sup>2</sup>)<sup>1/2</sup>
+						<br>=&nbsp; (4X<sup>2</sup>)<sup>1/2</sup> &nbsp;=&nbsp; 2X
+						<br>H &nbsp;=&nbsp; (L<sup>2</sup> + W<sup>2</sup>)<sup>1/2</sup>
+					</td>
+					<td style="width: 35%; padding-top: 5%; padding-bottom: 5%; padding-right: 5%">
+						<img src="images/1/1-2/pyth_rect.png" width="65%" style="">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table id="scroll_item9" style="width: 100%; text-align: center; margin-top: 6.5%; margin-bottom: 0%; font-size: 1.65em; line-height: 1.75em">
+			<tr style="width: 100%">
+				<td style="width: 50%">
+					<p style="width: 100%; text-align: center">
+						&theta; &nbsp;=&nbsp; &pi;/2 , &nbsp;&nbsp;&nbsp; &alpha; &nbsp;+&nbsp; &phi; &nbsp;=&nbsp; &pi;/2
+						<br>&theta;&deg; &nbsp;=&nbsp; 90&deg; , &nbsp;&nbsp;&nbsp; &alpha; &nbsp;+&nbsp; &phi; &nbsp;=&nbsp; 90&deg;
+						<br>&darr;
+						<br>&alpha; &nbsp;>&nbsp; 0 , &nbsp;&nbsp;&nbsp; &alpha; &nbsp;<&nbsp; &pi;/2 , &nbsp;&nbsp;&nbsp; &alpha;&deg; &nbsp;<&nbsp; 90&deg;
+						<br>&phi; &nbsp;>&nbsp; 0 , &nbsp;&nbsp;&nbsp; &phi; &nbsp;<&nbsp; &pi;/2 , &nbsp;&nbsp;&nbsp; &phi;&deg; &nbsp;<&nbsp; 90&deg;
+						<br>&darr;
+						<br>a &nbsp;+&nbsp; b &nbsp;>&nbsp; c , &nbsp;&nbsp;&nbsp; a &nbsp;<&nbsp; c , &nbsp;&nbsp;&nbsp; b &nbsp;<&nbsp; c
+						<br>a &nbsp;>&nbsp; 0 , &nbsp;&nbsp;&nbsp; b &nbsp;>&nbsp; 0 , &nbsp;&nbsp;&nbsp; a &nbsp;&ne;&nbsp; c , &nbsp;&nbsp;&nbsp; b &nbsp;&ne;&nbsp; c
+					</p>
+				</td>
+				<td style="width: 50%; text-align: center;">
+					<img src="images/1/1-2/pyth_tri_full.png" width="50%" style="">
+					<br><br>
+					<img src="images/1/1-2/pyth_ineq.png" width="100%" style="">
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="right_sidebar">
+		<table style="margin-top: 0px; height: 100%; width: 60%; margin-right: 0px; margin-left: 40%;">
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 15%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td id="right_sidebar_button" onclick="show_controller('true')" style="width: 37.5%; padding-right: 5%">
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height: 42.5%;">
+				<td style="width: 62.5%">&nbsp;</td>
+				<td style="width: 37.5%">
+					&nbsp;
 				</td>
 			</tr>
 		</table>
 	</div>
 
-	<table style="width: 95%; margin-left: 1%; margin-top: 7.5%">
-		<tr style="width: 100%; text-align: center; font-size: 2rem; line-height: 2em">
-			<td style="width: 50%">
-				<img src="images/1-2/pyth_proof_2.png" width="65%" style="">
-				<br>
-				<br>
-				A &nbsp;=&nbsp; c<sup>2</sup> &nbsp;+&nbsp; 4 &#215; (ab/2)
-				<br>
-				A &nbsp;=&nbsp; c<sup>2</sup> &nbsp;+&nbsp; 2ab
-			</td>
-			<td style="width: 50%">
-				<img src="images/1-2/pyth_proof_1.png" width="65%" style="">		
-				<br>
-				<br>
-				A &nbsp;=&nbsp; (a + b)<sup>2</sup> &nbsp;=&nbsp; a(a + b) &nbsp;+&nbsp; b(a + b)
-				<br>
-				A &nbsp;=&nbsp; a<sup>2</sup> &nbsp;+&nbsp; ab &nbsp;+&nbsp; ba &nbsp;+&nbsp; b<sup>2</sup> &nbsp;=&nbsp; a<sup>2</sup> &nbsp;+&nbsp; 2ab &nbsp;+&nbsp; b<sup>2</sup>		
-			</td>
-		</tr>
-	</table>
-	
-	<p style="width: 100%; margin-top: 2.5%; text-align: center; font-size: 2rem; line-height: 2em">
-		S &nbsp;=&nbsp; a + b
-		&nbsp;&nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp; A &nbsp;=&nbsp; S<sup>2</sup> &nbsp;=&nbsp; (a + b)<sup>2</sup>
-		<br>
-		A &nbsp;=&nbsp; c<sup>2</sup> &nbsp;+&nbsp; 2ab &nbsp;=&nbsp; a<sup>2</sup> &nbsp;+&nbsp; 2ab &nbsp;+&nbsp; b<sup>2</sup>
-		<br>
-		c<sup>2</sup> &nbsp;+&nbsp; 2ab &nbsp;=&nbsp; a<sup>2</sup> &nbsp;+&nbsp; 2ab &nbsp;+&nbsp; b<sup>2</sup> 
-		&nbsp;&nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;
-		a<sup>2</sup> &nbsp;+&nbsp; b<sup>2</sup> &nbsp;=&nbsp; c<sup>2</sup>
-	</p>
+	<header class='header' id="b_header" style="position: fixed; margin-left: 0; margin-right: 0; width: 100vw; max-width: 100%; bottom: 0; padding-top: 0px; height: 2vmax; z-index: 5;">
+		<table style="width:100%; border: none; border-collapse: collapse; z-index: 5; bottom: 0; height: 100%">
+			<tr style="background-color: #000066; width: 100%; height: 100%;">
+				<td style="width:100%;"></td>
+			</tr>
+		</table>
+		<div class="header_wrapper" id="b_header_wrapper" style="width: 100%; margin: 0 auto; z-index: 6; position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+			<table style="width:100%; border: none; border-collapse: collapse;">
+				<tr style="background-color: #000066; width: 100%; height: 100%;">
+					<td class="b_access" style="text-align: center; width: 20%"><a href="calculator.html" target="_blank">&#8862;</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="dictionary.html" target="_blank">=</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="1-Q.html" target="_blank">?</a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="info.html" target="_blank"><span style="font-size: 0.9em">&#105;</span></a></td>
+					<td class="b_access" style="text-align: center; width: 20%"><a href="guide.html" target="_blank"><span style="font-size: 0.9em">GUIDE</span></a></td>
+				</tr>
+			</table>
+		</div>
+	</header>
 
-	<table style="width: 90%; margin-left: 5%; margin-top: 6.5%; border-style: solid; border-color: black; border-width: 0.25rem;">
-		<tr style="width: 100%; text-align: center; font-size: 2rem; line-height: 2em">
-			<td style="width: 50%; padding-top: 5%; padding-bottom: 5%">
-				<img src="images/1-2/pyth_tri.png" width="50%" style="">
-				<img src="images/1-2/pyth_lengths.png" width="50%" style="margin-top: 5%">					
-			</td>
-			<td style="width: 50%; padding-top: 5.5%; padding-bottom: 5%">
-				<img src="images/1-2/pyth_proof_3.png" width="62.5%" style="">	
-			</td>
-		</tr>
-	</table>
-
-	<table style="width: 100%; margin-top: 6.5%; text-align: center; font-size: 2rem; line-height: 2em">
-		<tr style="width: 100%">
-			<td style="width: 50%">
-				A &nbsp;=&nbsp; 3, &nbsp; B &nbsp;=&nbsp; 4 &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 5
-				<br>A &nbsp;=&nbsp; 6, &nbsp; B &nbsp;=&nbsp; 8 &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 10
-				<br>A &nbsp;=&nbsp; 3K, &nbsp; B &nbsp;=&nbsp; 4K &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 5K
-			</td>
-			<td style="width: 50%">
-				A &nbsp;=&nbsp; 5, &nbsp; B &nbsp;= &nbsp;12 &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 13
-				<br>A &nbsp;=&nbsp; 10, &nbsp; B &nbsp;=&nbsp; 24 &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 26
-				<br>A &nbsp;=&nbsp; 5K, &nbsp; B &nbsp;=&nbsp; 12K &nbsp;&rarr;&nbsp; C &nbsp;=&nbsp; 13K
-			</td>
-		</tr>
-	</table>
-
-	<table style="width: 90%; margin-left: 5%; margin-top: 7.5%; border-style: solid; border-color: black; border-width: 0.2vw; padding: 5%">
-		<tr style="width: 100%;">
-			<td style="width: 25%; text-align: center;">
-				<div id="shape_input" style="border-style: solid; border-color: black; padding-top: 10%; padding-bottom: 10%; width: 90%; margin-left: 5%; margin-top: -0.25vw; border-width: 0.25rem; font-size: 1.5rem">
-					A &nbsp;=&nbsp; <input id="A" type="text" value="0" style="font-size: 1.75rem; width: 40%"/>
-					<br>
-					<br>
-					B &nbsp;=&nbsp; <input id="B" type="text" value="0" style="font-size: 1.75rem; width: 40%"/>
-					<br>
-					<br>
-					<button type="button" style="font-size: 1.25rem" onclick="drawTriangle()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-				</div>
-			</td>
-			<td style="width: 50%">
-				<canvas id="canvas" style="width: 100%">
-				</canvas>
-			</td>
-			<td style="width: 25%">
-				<div style="border-style: solid; border-color: black; padding-top: 7.5%; padding-bottom: 7.5%; width: 90%; margin-left: 5%; border-width: 0.25rem; font-size: 1.75rem; text-align: left;">
-					&nbsp;&nbsp;&nbsp;&nbsp; C &nbsp;=&nbsp; <span id="C">0.0000000</span>
-				</div>
-			</td>
-		</tr>
-	</table>
-
-	<table style="width: 95%; margin-left: 2.5%; margin-top: 6.5%; border-style: solid; border-color: black; border-width: 0.25rem; font-size: 2rem; line-height: 1.9em; text-align: center">
-		<tr style="width: 100%;">
-			<td style="width: 37.5%; border-bottom-style: solid; padding-top: 5%; padding-bottom: 5%">
-				<img src="images/1-2/pyth_454590.png" width="72.5%" style="">
-			</td>
-			<td style="width: 25%; border-bottom-style: solid; padding-top: 5%; padding-bottom: 5%">
-				&theta; &nbsp;=&nbsp; &pi;/2, &nbsp; &theta;&deg; &nbsp;=&nbsp; 90&deg;
-				<br>&alpha; &nbsp;=&nbsp; &phi; &nbsp;=&nbsp; &pi;/4
-				<br>&alpha;&deg; &nbsp;=&nbsp; &phi;&deg; &nbsp;=&nbsp; 45&deg;
-				<br>
-				<br>A &nbsp;=&nbsp; B &nbsp;=&nbsp; X
-				<br>C &nbsp;=&nbsp; (X<sup>2</sup> + X<sup>2</sup>)<sup>1/2</sup>
-				<br>=&nbsp; (2X<sup>2</sup>)<sup>1/2</sup> &nbsp;=&nbsp; X<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;2</span></span>
-				<br>D &nbsp;=&nbsp; S<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;2</span></span>
-			</td>
-			<td style="width: 37.5%; border-bottom-style: solid; padding-top: 6%; padding-bottom: 4%">
-				<img src="images/1-2/pyth_square.png" width="72.5%" style="">
-			</td>
-		</tr>
-		<tr style="width: 100%">
-			<td style="width: 37.5%; padding-top: 5%; padding-bottom: 5%">
-				<img src="images/1-2/pyth_306090.png" width="67.5%" style="">
-			</td>
-			<td style="width: 25%; padding-top: 5%; padding-bottom: 5%">
-				&theta; &nbsp;=&nbsp; &pi;/2, &nbsp; &theta;&deg; &nbsp;=&nbsp; 90&deg;
-				<br>&alpha; &nbsp;=&nbsp; &pi;/6, &nbsp; &alpha;&deg; &nbsp;=&nbsp; 30&deg;
-				<br>&phi; &nbsp;=&nbsp; &pi;/3, &nbsp; &phi;&deg; &nbsp;=&nbsp; 60&deg;
-				<br>
-				<br>B &nbsp;=&nbsp; X, &nbsp; A &nbsp;=&nbsp; X<span style="white-space: nowrap; font-weight: 400; letter-spacing: -0.025em;">&radic;<span style="font-weight: 400; border-top: 0.15rem solid #000; padding-top: 0px;">&thinsp;3</span></span>
-				<br>C &nbsp;=&nbsp; (3X<sup>2</sup> + X<sup>2</sup>)<sup>1/2</sup>
-				<br>=&nbsp; (4X<sup>2</sup>)<sup>1/2</sup> &nbsp;=&nbsp; 2X
-				<br>H &nbsp;=&nbsp; (L<sup>2</sup> + W<sup>2</sup>)<sup>1/2</sup>
-			</td>
-			<td style="width: 37.5%; padding-top: 5%; padding-bottom: 5%">
-				<img src="images/1-2/pyth_rect.png" width="60%" style="">
-			</td>
-		</tr>
-	</table>
-
-	<p style="width: 100%; margin-top: 6.5%; text-align: center; font-size: 2rem; line-height: 2em">
-		&theta; &nbsp;=&nbsp; &pi;/2 , &nbsp;&nbsp;&nbsp; &alpha; &nbsp;+&nbsp; &phi; &nbsp;=&nbsp; &pi;/2
-		<br>&theta;&deg; &nbsp;=&nbsp; 90&deg; , &nbsp;&nbsp;&nbsp; &alpha; &nbsp;+&nbsp; &phi; &nbsp;=&nbsp; 90&deg;
-		<br>&darr;
-		<br>&alpha; &nbsp;>&nbsp; 0 , &nbsp;&nbsp;&nbsp; &alpha; &nbsp;<&nbsp; &pi;/2 , &nbsp;&nbsp;&nbsp; &alpha;&deg; &nbsp;<&nbsp; 90&deg;
-		<br>&phi; &nbsp;>&nbsp; 0 , &nbsp;&nbsp;&nbsp; &phi; &nbsp;<&nbsp; &pi;/2 , &nbsp;&nbsp;&nbsp; &phi;&deg; &nbsp;<&nbsp; 90&deg;
-		<br>&darr;
-		<br>a &nbsp;+&nbsp; b &nbsp;>&nbsp; c , &nbsp;&nbsp;&nbsp; a &nbsp;<&nbsp; c , &nbsp;&nbsp;&nbsp; b &nbsp;<&nbsp; c
-		<br>a &nbsp;>&nbsp; 0 , &nbsp;&nbsp;&nbsp; b &nbsp;>&nbsp; 0 , &nbsp;&nbsp;&nbsp; a &nbsp;&ne;&nbsp; c , &nbsp;&nbsp;&nbsp; b &nbsp;&ne;&nbsp; c
-	</p>
-
-	<div id="q_button" style="width: 30%; margin-left: 35%; background-color: #000066; font-size: 1.5rem; text-align: center; margin-top: 6.5%; font-weight: bold; padding: 0.35%">
-		<a href="1-Q.html" style="color: white; width: 100%; display:block;">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
-	</div>
-	<p style="text-align: center; margin-bottom: 2.5%; margin-top: 2%; font-size: 1rem">Ⓒ MBC Output 2020 </p>
-	</div>
-
+	<script type="text/javascript" src="standard_functions.js"></script>
 	<script type="text/javascript">
+		window.onscroll = function() {scrollFunction()};
+
+		function viewportToPixels(value) {
+		  var parts = value.match(/([0-9\.]+)(vh|vw)/)
+		  var q = Number(parts[1])
+		  var side = window[['innerHeight', 'innerWidth'][['vh', 'vw'].indexOf(parts[2])]]
+		  return side * (q/100)
+		};
+
+		function scrollFunction() {
+			// Move dots
+			var scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+			scrollTop = scrollTop + window.innerHeight/2;
+			var height = document.getElementById("scroll_buttons").offsetHeight;
+			scrollTop = scrollTop - height/2;
+			var header_ht = Math.max(viewportToPixels('4.5vh'), viewportToPixels('4.5vw'));
+			scrollTop = scrollTop - header_ht;
+			document.getElementById("scroll_buttons").style.marginTop = scrollTop.toString() + 'px';
+
+			// Check if dot is active, update css
+			var inZone = 'none';
+			var numOfDots = 10;
+			var tolerance = 100; // px
+			var scroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+			localStorage.setItem('scroll', scroll);
+
+			for (index = 0; index < numOfDots; index++) {
+				if (inZone == 'none') {
+					var vmax = Math.max(viewportToPixels('1vh'), viewportToPixels('1vw'));
+					var header_ht = 5*vmax;
+					var above = document.getElementById("scroll_item" + index.toString()).offsetTop;
+					var height = document.getElementById("scroll_item" + index.toString()).offsetHeight;
+					var mid = Math.max(above + height/2, 0);
+
+					var view_radius = window.innerHeight/2;
+					var y = mid - view_radius + 3.5*vmax;
+					if (height > (window.innerHeight - 5*vmax) && mid != 0) {
+						y = mid - height/2 - 2.5*vmax;
+					};
+
+					var pos = scroll + window.innerHeight/2;
+					var top = above + 4*vmax;
+					var bottom = above + height + 4*vmax;
+
+					if ((y >= scroll - tolerance && y <= scroll + tolerance) || (pos >= top && pos <= bottom)) {
+						inZone = index;
+					};
+				};
+			};
+
+			var totalH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+			if (scroll > totalH - innerHeight - tolerance) {
+				inZone = numOfDots - 1 ;
+			};
+			if (scroll < tolerance) {
+				inZone = 0 ;
+			};
+
+			for (index = 0; index < numOfDots; index++) {
+				if (inZone == index) {
+					document.getElementById("scroll_button" + index.toString()).style.backgroundColor = '#DB0000';
+				}
+				else {
+					document.getElementById("scroll_button" + index.toString()).style.backgroundColor = '#66B2FF';
+				};
+			};
+		};
+
+		function scrollToIndex(index) {
+			// Scroll to view
+			var vmax = Math.max(viewportToPixels('1vh'), viewportToPixels('1vw'));
+			var header_ht = 5*vmax;
+			var above = document.getElementById("scroll_item" + index.toString()).offsetTop;
+			var height = document.getElementById("scroll_item" + index.toString()).offsetHeight;
+			var mid = Math.max(above + height/2, 0);
+
+			var view_radius = window.innerHeight/2;
+			var y = mid - view_radius + 3.5*vmax;
+			if (height > (window.innerHeight - 5*vmax) && mid != 0) {
+				y = mid - height/2 - 2.5*vmax;
+			};
+			window.scrollTo(0, y);
+
+			scrollFunction();
+
+		};
+
+		function updateSize() {
+			var tenth = 0.0085 * window.innerWidth * window.devicePixelRatio;
+			var fsize = `${tenth}px`;
+			document.getElementById("wrapper").style.fontSize = fsize;
+			document.getElementById("header_wrapper").style.fontSize = fsize;
+			document.getElementById("body").style.fontSize = fsize;
+
+			var browserZoomLevel = Math.round(window.devicePixelRatio * 100);
+			var width = window.innerWidth * window.devicePixelRatio;
+			if (browserZoomLevel > 100) {
+				document.getElementById("header").style.width = width.toString() + 'px';
+				document.getElementById("header").style.maxWidth = null;
+				document.getElementById("b_header").style.width = width.toString() + 'px';
+				document.getElementById("b_header").style.maxWidth = null;
+				document.getElementById("body").style.width = width.toString() + 'px';
+				document.getElementById("body").style.maxWidth = null;
+			}
+			else {
+				document.getElementById("header").style.width = '100vw';
+				document.getElementById("header").style.maxWidth = '100%';
+				document.getElementById("b_header").style.width = '100vw';
+				document.getElementById("b_header").style.maxWidth = '100%';
+				document.getElementById("body").style.width = '100vw';
+				document.getElementById("body").style.maxWidth = '100%';
+
+			};
+		};
+
+        function read(x) {
+		  	x = x.split("^").join("**");
+		  	x = x.split("pi").join("(3.141592653)");
+		  	x = x.split("&pi;").join("(3.141592653)");
+		  	x = x.split("π").join("(3.141592653)");
+			x = x.split("×").join("*");
+			x = x.split("sin").join("Math.sin");
+			x = x.split("cos").join("Math.cos");
+			x = x.split("tan").join("Math.tan");
+			x = x.split("sec").join("Math.sec");
+			x = x.split("csc").join("Math.csc");
+			x = x.split("cot").join("Math.cot");
+			x = x.split("asin").join("Math.asin");
+			x = x.split("acos").join("Math.acos");
+			x = x.split("atan").join("Math.atan");
+			x = x.split("asec").join("Math.asec");
+			x = x.split("acsc").join("Math.acsc");
+			x = x.split("acot").join("Math.acot");
+			x = x.split("sin**-1").join("Math.asin");
+			x = x.split("cos**-1").join("Math.acos");
+			x = x.split("tan**-1").join("Math.atan");
+			x = x.split("sec**-1").join("Math.asec");
+			x = x.split("csc**-1").join("Math.acsc");
+			x = x.split("cot**-1").join("Math.acot");
+			x = x.split("arcsin").join("Math.asin");
+			x = x.split("arccos").join("Math.acos");
+			x = x.split("arctan").join("Math.atan");
+			x = x.split("arcsec").join("Math.asec");
+			x = x.split("arccsc").join("Math.acsc");
+			x = x.split("arccot").join("Math.acot");
+			x = x.split("e").join("Math.E");
+			x = x.split("0(").join("0*(");
+			x = x.split("1(").join("1*(");
+			x = x.split("2(").join("2*(");
+			x = x.split("3(").join("3*(");
+			x = x.split("4(").join("4*(");
+			x = x.split("5(").join("5*(");
+			x = x.split("6(").join("6*(");
+			x = x.split("7(").join("7*(");
+			x = x.split("8(").join("8*(");
+			x = x.split("9(").join("9*(");
+			x = x.split("x(").join("x*(");
+			x = x.split("y(").join("y*(");
+			x = x.split("0x").join("0*x");
+			x = x.split("1x").join("1*x");
+			x = x.split("2x").join("2*x");
+			x = x.split("3x").join("3*x");
+			x = x.split("4x").join("4*x");
+			x = x.split("5x").join("5*x");
+			x = x.split("6x").join("6*x");
+			x = x.split("7x").join("7*x");
+			x = x.split("8x").join("8*x");
+			x = x.split("9x").join("9*x");
+			x = x.split("xx").join("x*x");
+			x = x.split("yx").join("y*x");
+		  	x = eval(x);
+			return x
+        };
+		
+        $(window).resize(function() { 
+        	updateSize();
+		});
 		
         window.onload = function () {
-		  	document.getElementById("output_A").innerHTML = '0.0000000';
+			updateSize();
+
+			if (!localStorage.getItem("scroll")) {
+				window.scrollTo(0, localStorage.getItem("scroll"));
+			};
+			scrollFunction();
+
+		  	document.getElementById("output_A").innerHTML = '0.00000';
         };
 
         function drawTriangle() {
@@ -368,7 +531,8 @@
     		var B = parseFloat(document.getElementById("B").value);
     		var H = parseFloat(document.getElementById("A").value);
     		var W = 0.0;
-    		var C = (Math.sqrt(B*B + H*H)).toPrecision(8);
+			if (Math.abs(Math.sqrt(B*B + H*H)) < 1) { var C = (Math.sqrt(B*B + H*H)).toFixed(5); }
+			else { var C = (Math.sqrt(B*B + H*H)).toPrecision(6) };
     		document.getElementById("C").innerHTML = C;
 
 			if (B > 0 && H > 0) {
@@ -397,4 +561,7 @@
 	</script>
 
 </body>
+
+<!-- Copyright 2020, MBC Output LLC -->
+
 </html>
