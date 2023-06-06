@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Michael Burgess"
+title                    : "Home"
 title_separator          : "-"
 name                     : &name "Michael Burgess"
 description              : &description "personal description"
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : # "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "https://www.linkedin.com/in/michael-burgess-8a8b7816b/"
   orcid            : 
   pinterest        :
   soundcloud       :
