@@ -4,18 +4,19 @@
 
 .masthead {
   position: relative;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 5px solid $navbar-color-bottom;
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
   z-index: 20;
+  background-color: $navbar-color;
 
   &__inner-wrap {
     @include container;
     @include clearfix;
     padding: 1em 1em 1em;
-    font-family: $sans-serif-narrow;
+    font-family: $sans-serif;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
@@ -32,6 +33,7 @@
 }
 
 .masthead__menu {
+  background-color: $navbar-color;
 
   ul {
     margin: 0;
@@ -42,12 +44,13 @@
 }
 
 .masthead__menu-item {
+  background-color: $navbar-color;
   display: block;
   list-style-type: none;
   white-space: nowrap;
 
-  &--lg {
-    padding-right: 2em;
-    font-weight: 700;
-  }
+  // &--lg {
+  //   // padding-right: 2em;
+  //   font-weight: 700;
+  // }
 }

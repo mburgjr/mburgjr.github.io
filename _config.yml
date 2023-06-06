@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Home"
+title                    : "Home 🏠"
 title_separator          : "-"
 name                     : &name "Michael Burgess"
 description              : &description "personal description"

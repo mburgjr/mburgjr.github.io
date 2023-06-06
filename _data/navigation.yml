@@ -1,11 +1,11 @@
 # main links links
 main:
     
-  - title: "Publications"
+  - title: "Publications 📝"
     url: /publications/
     
-  - title: "Portfolio"
+  - title: "Portfolio ⚙️"
     url: /portfolio/
   
-  - title: "Resume"
+  - title: "Resume 💼"
     url: /files/resume.pdf
