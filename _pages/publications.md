@@ -1,5 +1,6 @@
 ---
 layout: archive
+entries_layout: grid
 title: "Publications"
 permalink: /publications/
 author_profile: true

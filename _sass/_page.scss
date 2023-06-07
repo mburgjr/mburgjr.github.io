@@ -35,8 +35,8 @@
 }
 
 .page__title {
-  margin-top: 0;
-  margin-bottom: 1em; // Added this manually to make the home page look better
+  margin-top: 0.25em;
+  margin-bottom: 1.5em; // Added this manually to make the home page look better
   line-height: 1;
 
   & + .page__meta {

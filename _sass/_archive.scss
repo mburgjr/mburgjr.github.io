@@ -15,7 +15,8 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
+    color: $text-color;
 
     &:hover {
       text-decoration: underline;
@@ -27,16 +28,25 @@
   }
 }
 
+.archive__item-title {
+  font-size: 1.05em;
+}
+
 .archive__subtitle {
   margin: 1.414em 0 0;
   padding-bottom: 0.5em;
-  font-size: $type-size-5;
+  font-size: $type-size-6;
   color: mix(#fff, $gray, 25%);
   border-bottom: 1px solid $border-color;
 
   + .list__item .archive__item-title {
     margin-top: 0.5em;
   }
+}
+
+.archive__item {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1em;
 }
 
 .archive__item-title {
@@ -59,7 +69,7 @@
 
 .archive__item-excerpt {
   margin-top: 0;
-  font-size: $type-size-6;
+  font-size: 0.85em;
 
   & + p {
     text-indent: 0;
@@ -77,10 +87,6 @@
 .archive__item:hover {
   .archive__item-teaser {
     box-shadow: 0 0 10px rgba(#000, 0.25);
-  }
-
-  .archive__item-title {
-    text-decoration: underline;
   }
 }
 
