@@ -7,7 +7,7 @@ date: 2023-05-12
 venue: 'MIT dSpace'
 paperurl: 'http://mburgjr.github.io/files/ug_thesis.pdf'
 citation: 'Burgess, Michael. 2023. "Decoupled Kinodynamic Planning for a Quadruped Robot over Complex Terrain." <i>MIT dSpace</i>.'
-image: '/images/ug_thesis.png'
+image: '/images/publications/ug_thesis.png'
 ---
 
 [Accessible here.](http://mburgjr.github.io/files/ug_thesis.pdf)

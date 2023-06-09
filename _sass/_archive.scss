@@ -30,6 +30,7 @@
 
 .archive__item-title {
   font-size: 1.5em;
+  margin-top: 1em;
 }
 
 .archive__subtitle {
@@ -46,7 +47,8 @@
 
 .archive__item {
   border-bottom: 1px solid $border-color;
-  padding-bottom: 1em;
+  padding-top: 1.25em;
+  padding-bottom: 0.5em;
 }
 
 .archive__item-title {
@@ -62,7 +64,6 @@
 .page__content {
 
   .archive__item-title {
-    margin-top: 1em;
     border-bottom: none;
   }
 }
@@ -76,11 +77,26 @@
   }
 }
 
+.archive__item-teaser-container {
+  height: 150px; 
+  width: 250px; 
+  position: relative;
+}
+
 .archive__item-teaser {
   border-radius: $border-radius;
   overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
   img {
-    width: 100%;
+    height: auto; 
+    width: auto; 
+    max-width: 250px;
+    max-height: 150px;
   }
 }
 
