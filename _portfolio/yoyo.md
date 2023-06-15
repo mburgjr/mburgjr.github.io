@@ -1,6 +1,6 @@
 ---
 title: "Yo-yo Manufacturing"
-date: "May 10 2022"
+date: "May 01 2022"
 excerpt: "May 2022 - Worked on a team to design and mass produce custom plastic yo-yos. Parts were manufactured using injection molding and thermoforming processes."
 collection: portfolio
 image: "/images/portfolio/yoyo.jpg"
