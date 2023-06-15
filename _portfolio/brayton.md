@@ -3,10 +3,10 @@ title: "Brayton Energy: Analytical Design"
 date: "August 01 2019"
 excerpt: "August 2019 - Used mechanical and fluid simulations to inform the design of a header block for a heat exchanger in a concentrated solar power plant."
 collection: portfolio
-image: "/images/portfolio/brayton_preview.png"
+image: "/images/portfolio/brayton_preview.PNG"
 ---
 
-<img src="/images/portfolio/brayton.png" width="600"/>
+<img src="/images/portfolio/brayton.PNG" width="600"/>
 
 <br>
 **Tools:** Solidworks, ANSYS, Materials research
@@ -19,6 +19,6 @@ This part was required to last 30 years and facilitate homogeneous flow of CO<su
 
 Outside of this main project, I did some materials research and designed experiments to find the best materials for the heat exchanger.
 
-<img src="/images/portfolio/brayton2.png" width="600"/>
+<img src="/images/portfolio/brayton2.PNG" width="600"/>
 
-<img src="/images/portfolio/brayton1.png" width="500"/>
+<img src="/images/portfolio/brayton1.PNG" width="500"/>

@@ -3,7 +3,7 @@ title: "Rock Skipping Robot"
 date: "December 10 2022"
 excerpt: "December 2022 - Developed a control architecture to pick-up a rock from a known location and skip it across water. The system was implemented and tested in a custom physics-based simulator."
 collection: portfolio
-image: "/images/portfolio/skipping.png"
+image: "/images/portfolio/skipping.PNG"
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6xeFivpRMuo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

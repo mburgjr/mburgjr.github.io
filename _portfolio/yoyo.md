@@ -13,7 +13,7 @@ image: "/images/portfolio/yoyo.jpg"
 
 Worked on a team of 6 students to design and manufacturer 50 yo-yos over the course of a semester. All parts were made using injection molding or thermoforming and assembled exclusively through pressfits. This required high-toleranced manufacturing processes.
 
-<img src="/images/portfolio/yoyo_assembly.png" width="450"/>
+<img src="/images/portfolio/yoyo_assembly.PNG" width="450"/>
 
 The design workflow went as follows. We used CAD to model our assembly. This CAD was used to manufacture molds out of aluminum on CNC machines. These molds were loaded into an injection molding machine to mass-produce plastic parts.
 

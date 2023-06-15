@@ -3,10 +3,10 @@ title: "Markforged: Part Packing"
 date: "August 01 2022"
 excerpt: "August 2022 - Developed a geometric algorithm to optimize the packing space on 3D printing build plate. Using simulated annealing approach, could fit 15+% more parts than previous method."
 collection: portfolio
-image: "/images/portfolio/packing.png"
+image: "/images/portfolio/packing.PNG"
 ---
 
-<img src="/images/portfolio/packing_improvement.png" width="720"/>
+<img src="/images/portfolio/packing_improvement.PNG" width="720"/>
 
 <br>
 **Tools:** TypeScript, React, Simulated annealing, Geometric data structures

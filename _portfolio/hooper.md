@@ -3,7 +3,7 @@ title: "Hula Hooping Robot"
 date: "December 02 2022"
 excerpt: "December 2022 - Built a robot to learn more about the mechanical principles of hula hooping. Abstracted the system to two degrees of freedom and simulated trajectories before implementing on hardware."
 collection: portfolio
-image: "/images/portfolio/hooper.png"
+image: "/images/portfolio/hooper.PNG"
 ---
 
 <iframe width="560" height="315" src="https://youtube.com/embed/R8OzNzAQ-fU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
