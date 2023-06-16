@@ -3,7 +3,7 @@ title: "CaBER Video Processing Library"
 date: "January 02 2022"
 excerpt: "January 2022 - Wrote a code library which could be used to automatically characterize fluids from footage of CaBER experiments. This is helpful in studying the behavior of non-Newtonian fluids."
 collection: portfolio
-image: "/images/portfolio/caber.png"
+image: "/images/portfolio/caber_preview.png"
 ---
 
 <img src="/images/portfolio/caber_schematic.png" width="750"/>
