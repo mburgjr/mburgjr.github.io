@@ -1,9 +1,10 @@
 ---
-title: "Underactuated Skateboard Control System"
+title: "Underactuated Skateboard Control System ⭐"
 date: "May 10 2022"
 excerpt: "May 2022 - Optimized dynamic trajectories to perform tricks on a simplified 2D skateboarding model. By controlling just the center of mass position of the rider, we can manipulate the board's movement."
 collection: portfolio
 image: "/images/portfolio/skateboard.png"
+type: "robotics"
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TLPu6HTDCCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -4,6 +4,7 @@ date: "May 01 2023"
 excerpt: "May 2023 - Worked on a team to design and mass produce custom plastic yo-yos. Parts were manufactured using injection molding and thermoforming processes."
 collection: portfolio
 image: "/images/portfolio/yoyo.jpg"
+type: "mechanical"
 ---
 
 <img src="/images/portfolio/yoyo.gif" width="400"/>

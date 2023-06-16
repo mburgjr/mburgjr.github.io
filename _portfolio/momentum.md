@@ -5,6 +5,7 @@ excerpt: "January 2019 - Prototyped a system that could be placed in an autonomo
 collection: portfolio
 type: "robotics"
 image: "/images/portfolio/momentum.jpg"
+type: "computer"
 ---
 
 <img src="/images/portfolio/momentum_pitch.png" width="450"/>

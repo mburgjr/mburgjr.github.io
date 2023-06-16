@@ -4,6 +4,7 @@ date: "August 01 2019"
 excerpt: "August 2019 - Used mechanical and fluid simulations to inform the design of a header block for a heat exchanger in a concentrated solar power plant."
 collection: portfolio
 image: "/images/portfolio/brayton_preview.PNG"
+type: "mechanical"
 ---
 
 <img src="/images/portfolio/brayton.PNG" width="600"/>

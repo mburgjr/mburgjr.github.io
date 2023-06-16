@@ -48,6 +48,17 @@ a {
   }
 }
 
+.page__subtitle {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 0.75em;
+  margin-bottom: 0em;
+  line-height: 1;
+  font-size: 1.25em;
+  font-weight: bold;
+  font-size: $type-size-3;
+}
+
 .page__lead {
   font-family: $global-font-family;
   font-size: $type-size-4;

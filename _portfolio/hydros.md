@@ -1,9 +1,10 @@
 ---
-title: "Firehose Cleaner"
+title: "Firehose Cleaner ⭐"
 date: "December 01 2022"
 excerpt: "December 2022 - Designed a portable system to clean carcinogens off a firehose after a fire. The system is fully hydro-powered and has washing and spooling components."
 collection: portfolio
 image: "/images/portfolio/hydros.PNG"
+type: "mechanical"
 ---
 
 <img src="/images/portfolio/hydros_sys.PNG" width="550"/>

@@ -4,6 +4,7 @@ date: "May 01 2021"
 excerpt: "May 2021 - Tested and refined a machine learning architecture that could be used to predict the onset of turbulence across an airfoil."
 collection: portfolio
 image: "/images/portfolio/nasa.png"
+type: "computer"
 ---
 <img src="/images/portfolio/nasa_architecture.png" width="700"/>
 

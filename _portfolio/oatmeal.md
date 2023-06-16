@@ -1,9 +1,10 @@
 ---
-title: "Oatmeal Viscosity Experiment"
+title: "Oatmeal Viscosity Experiment ⭐"
 date: "December 01 2021"
 excerpt: "December 2021 - Conducted an experiment for an undergrad course at MIT where I measured the viscosity of oatmeal with changing recipe."
 collection: portfolio
 image: "/images/portfolio/oatmeal.png"
+type: "mechanical"
 ---
 
 <img src="/images/portfolio/oatmeal_schematic.PNG" width="600"/>

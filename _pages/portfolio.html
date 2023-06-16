@@ -7,8 +7,40 @@ author_profile: true
 
 {% include base_path %}
 
+<p style="line-height: 1.95em; font-size: 0.95em;">
+  My portfolio is broken into three categories:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <b>🠖</b> &nbsp;&nbsp; <a href="#robotics">Robotics</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <b>🠖</b> &nbsp;&nbsp; <a href="#computer">Computer science</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <b>🠖</b> &nbsp;&nbsp; <a href="#mechanical">Mechanical engineering</a><br>
+  Any projects with ⭐'s next to them indicate work that I am most proud of.
+</p>
+
+<h2 class="page__subtitle" itemprop="headline" id="robotics">
+  Robotics:
+</h2>
 
 {% for post in site.portfolio reversed %}
-  {% include archive-single.html %}
+  {% if post.type == "robotics" %}
+    {% include archive-single.html %}
+  {% endif %}
 {% endfor %}
 
+<h2 class="page__subtitle" style="margin-top: 3.5em" itemprop="headline" id="computer">
+  Computer Science / Software:
+</h2>
+
+{% for post in site.portfolio reversed %}
+  {% if post.type == "computer" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
+
+<h2 class="page__subtitle" style="margin-top: 3.5em" itemprop="headline" id="mechanical">
+  Mechanical Engineering:
+</h2>
+
+{% for post in site.portfolio reversed %}
+  {% if post.type == "mechanical" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}

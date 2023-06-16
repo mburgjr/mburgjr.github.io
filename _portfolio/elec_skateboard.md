@@ -5,6 +5,7 @@ excerpt: "January 2019 - Designed and built an electric skateboard to gain hands
 collection: portfolio
 type: "robotics"
 image: "/images/portfolio/elec_skateboard_preview.jpg"
+type: "mechanical"
 ---
 
 <img src="/images/portfolio/elec_skateboard.gif" width="300"/>
