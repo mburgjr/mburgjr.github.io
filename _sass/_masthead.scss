@@ -11,11 +11,12 @@
           animation-delay: 0.15s;
   z-index: 20;
   background-color: $navbar-color;
+  margin-bottom: 3em;
 
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 1em 1em 1em;
+    padding: 0.75em 0.75em 0.75em;
     font-family: $sans-serif;
 
     @include breakpoint($x-large) {
