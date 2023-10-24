@@ -16,7 +16,7 @@ I designed and conducted an experiment to measure the change in oatmeal texture 
 
 The volume of fluid used to cook the oatmeal with respect to volume of oats was varied over a number of samples. Viscosity was measured for each using a force probe. This probe was pulled through the samples at constant velocity. Through force balance, we can determine the viscosity of the sample by measuring drag force.
 
-<img src="/images/portfolio/oatmeal_fbd.PNG" width="600"/>
+<img src="/images/portfolio/oatmeal_FBD.PNG" width="600"/>
 
 The experiment showed a exponential decay in viscosity as relative amount of fluid increased. Additionally, we found that almond milk led to less viscous oatmeal in every case. These results can be used to inform oatmeal cooking. Typically, boxes of oatmeal recommend a volumetric ratio of 2.
 
