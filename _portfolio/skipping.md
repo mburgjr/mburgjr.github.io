@@ -20,4 +20,4 @@ The system had some limitations and could not properly grip the rock for speeds 
 
 Awarded an <i>Outstanding Project Award</i> from the class staff!
 
-The final paper for the project can be accessed [here](/files/skipping_paper.pdf).
+The final paper for the project can be accessed [here](https://arxiv.org/pdf/2310.14492.pdf).

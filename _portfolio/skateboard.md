@@ -18,6 +18,6 @@ The skater is abstracted to a point mass and fixed to the board, only able to co
 
 The system performed well and displayed that it was feasible to execute tricks just by moving center of mass angle. In the future, I would like to expand the number of tricks performed and test this control schema on a real system. All materials for this project are available below:
 
-The final paper for the project can be accessed [here](/files/skateboard_paper.pdf).
+The final paper for the project can be accessed [here](https://arxiv.org/pdf/2310.11599.pdf).
 
 Code for the project can be accessed [here](https://deepnote.com/workspace/michael-burgess-b67c2881-5871-430a-b606-dad33dbda088/project/6832-Final-Project-Skateboard-Jump-7fac7dad-0438-4795-8446-c54cd54f4787/%2Fnotebook.ipynb).
