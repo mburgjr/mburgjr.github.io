@@ -8,7 +8,7 @@ image: "/images/portfolio/momentum.jpg"
 type: "computer"
 ---
 
-<img src="/images/portfolio/momentum_pitch.png" width="450"/>
+<img src="/images/portfolio/momentum_pitch.PNG" width="450"/>
 
 <br>
 **Tools:** Python, Machine learning, Arduino, Raspberry Pi
