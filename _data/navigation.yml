@@ -8,4 +8,7 @@ main:
     url: /portfolio/
   
   - title: "Resume 💼"
-    url: /files/resume.pdf
+    url: /files/burgess_resume.pdf
+  
+  - title: "CV 📚"
+    url: /files/burgess_cv.pdf
