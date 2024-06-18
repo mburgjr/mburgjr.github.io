@@ -7,7 +7,7 @@ date: 2024-06-06
 venue: 'Under Review'
 paperurl: ''
 citation: 'Currently under review.'
-image: '/images/publications/modulus.png'
+image: '/images/publications/modulus_preview.png'
 ---
 
 <!-- [Accessible here.](https://dspace.mit.edu/handle/1721.1/151851) -->

@@ -22,4 +22,4 @@ The experiment showed a exponential decay in viscosity as relative amount of flu
 
 <img src="/images/portfolio/oatmeal_graph.jpg" width="350"/> <img src="/images/portfolio/oatmeal_equations.PNG" width="250"/>
 
-The full final poster for the project can be accessed [here](/files/oatmeal_poster.pdf).
+The full final poster for the project can be viewed [here](/files/oatmeal_poster.pdf).
