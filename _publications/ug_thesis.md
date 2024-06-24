@@ -6,7 +6,7 @@ excerpt: ''
 date: 2023-05-12
 venue: 'MIT dSpace'
 paperurl: 'https://dspace.mit.edu/handle/1721.1/151851'
-citation: 'M. Burgess, "Decoupled Kinodynamic Planning for a Quadruped Robot over Complex Terrain". <i>MIT dSpace</i>. 2023.'
+citation: "M. Burgess, Decoupled Kinodynamic Planning for a Quadruped Robot over Complex Terrain. <i>MIT dSpace</i>. 2023."
 image: '/images/publications/ug_thesis.png'
 ---
 
