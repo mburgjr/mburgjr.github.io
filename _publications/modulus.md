@@ -10,10 +10,31 @@ citation: 'M. Burgess, "Decoupled Kinodynamic Planning for a Quadruped Robot ove
 image: '/images/publications/ug_thesis.png'
 ---
 
-Accessible [here](https://dspace.mit.edu/handle/1721.1/151851).
+Currently under review.
 
-**Abstract:** High-level planning for hybrid-dynamic, legged systems can be challenging due to a need to simultaneously satisfy kinematic and dynamic constraints. Previously developed sampling-based approaches can rapidly generate plans that satisfy kinematic constraints, but often lead to dynamically infeasible trajectories. On the other hand, traditional optimization-based approaches can reliably produce feasible trajectories, but are computationally inefficient. In this work, we leverage the strengths of these popular techniques to develop an advantageous novel motion planning formulation. Our methodology decouples kinematic and dynamic constraints to quickly generate emergent, feasible trajectories for legged systems across complex terrains. We decouple constraints into two separate processes. First, we rapidly sample footstep positions across a given terrain using an RRT-like search algorithm. This allows us to satisfy kinematic constraints without committing to a full state trajectory which could be dynamically infeasible, as is a common failure of other sampling-based approaches. Then, we can solve an optimization problem to generate a dynamically feasible trajectory using these contact positions. Since contact locations have already been determined, our optimization problem has a reduced decision space and does not require inconvenient complementarity constraints. As a result, this optimization can be solved more efficiently than traditional trajectory optimization formulations. Implemented in simulation for a 2D quadruped robot, our novel formulation is shown to generate trajectories in less than 15% of the computation time needed for traditional, coupled planning methods. Furthermore, experiments demonstrate that our method maintains a consistent average solve time across sets of randomly generated terrains, regardless of their complexity.
+Pre-print accessible [here](https://arxiv.org/abs/2406.15304).
 
+Open-source code available on [GitHub](https://github.com/GelSight-lab/TactileEstimateModulus). Dataset available on [HuggingFace](https://huggingface.co/datasets/mburgjr/GelSight-YoungsModulus).
+
+**Abstract:** Compliance is a useful parametrization of tactile information that humans often utilize in manipulation tasks. It can be used to inform low-level contact-rich actions or characterize objects at a high-level. In robotic manipulation, existing approaches to estimate compliance have struggled to generalize across object shape and material. Using camera-based tactile sensors, we present a novel approach to parametrize compliance through Young's modulus (E). We evaluate our method over a novel dataset of 285 common objects, including a wide array of shapes and materials with Young's moduli ranging from 5.0 kPa to 250 GPa. Data is collected over automated parallel grasps of each object. Combining analytical and data-driven approaches, we develop a hybrid system using a multi-tower neural network to analyze a sequence of tactile images from grasping. This system is shown to estimate the Young's modulus of unseen objects within an order of magnitude at 74.2% accuracy across our dataset. This is a drastic improvement over a purely analytical baseline, which exhibits only 28.9% accuracy. Importantly, this estimation system performs irrespective of object geometry and demonstrates robustness across object materials. Thus, it could be applied in a general robotic manipulation setting to characterize unknown objects and inform decision-making, for instance to sort produce by ripeness.
+
+<img src="/images/publications/modulus_teaser.png" width="700"/>
+
+### Banana Demo
+
+We apply our estimation system to assess the compliance of various bananas in a manipulation scene. We can use a measure of compliance to discern whether bananas are real or fake and how ripe they may be.
+
+<video width="500" controls>
+  <source src="/images/publications/banana_demo.mp4" type="video/mp4">
+</video>
+
+### Ball Demo
+
+More generally, we can apply our estimation system to assess the compliance of general objects, in this case balls. We can use a measure of compliance to create safe grasping policies and inform high-level decision-making.
+
+<video width="500" controls>
+  <source src="/images/publications/ball_demo.mp4" type="video/mp4">
+</video>
 
 <!-- ---
 title: "Learning Object Compliance via Young's Modulus from Single Grasps with Camera-Based Tactile Sensors"
