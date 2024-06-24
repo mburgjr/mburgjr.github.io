@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Michael Burgess"
+  name             : "Michael Burgess (he/him)"
   avatar           : "profile.jpg"
   bio              : "Graduate student at MIT studying robotic manipulation."
   location         : "Cambridge, MA"
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : # "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/michael-burgess-8a8b7816b/"
+  linkedin         : "michael-burgess-8a8b7816b"
   orcid            : 
   pinterest        :
   soundcloud       :
@@ -113,7 +113,7 @@ author:
   vine             :
   weibo            :
   xing             :
-  youtube          : "https://www.youtube.com/@mburgjr"
+  youtube          : "mburgjr"
   wikipedia        :
 
 
