@@ -4,9 +4,9 @@ collection: publications
 permalink: /publication/modulus
 excerpt: ''
 date: 2024-06-06
-venue: 'Currently under review'
+venue: 'under review'
 paperurl: 'https://arxiv.org/abs/2406.15304'
-citation: 'M. Burgess, "Decoupled Kinodynamic Planning for a Quadruped Robot over Complex Terrain". <i>MIT dSpace</i>. 2024.'
+citation: 'M. Burgess, "Learning Object Compliance via Young's Modulus from Single Grasps with Camera-Based Tactile Sensors". <i>MIT dSpace</i>. 2024.'
 image: '/images/publications/modulus_preview.png'
 ---
 
