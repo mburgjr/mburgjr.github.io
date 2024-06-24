@@ -4,15 +4,15 @@ collection: publications
 permalink: /publication/modulus
 excerpt: ''
 date: 2024-06-06
-venue: 'Under Review'
-paperurl: ''
-citation: 'Currently under review.'
+venue: 'Currently under review'
+paperurl: 'https://arxiv.org/abs/2406.15304'
+citation: 'M. Burgess, “Learning Object Compliance via Young's Modulus from Single Grasps with Camera-Based Tactile Sensors”, <i>	arXiv</i>. 2024.'
 image: '/images/publications/modulus_preview.png'
 ---
 
-<!-- [Accessible here.](https://dspace.mit.edu/handle/1721.1/151851) -->
-
 Currently under review.
+
+Pre-print accessible [here](https://arxiv.org/abs/2406.15304).
 
 Open-source code available on [GitHub](https://github.com/GelSight-lab/TactileEstimateModulus). Dataset available on [HuggingFace](https://huggingface.co/datasets/mburgjr/GelSight-YoungsModulus).
 
