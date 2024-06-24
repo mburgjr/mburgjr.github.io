@@ -1,11 +1,11 @@
 ---
-title: "Decoupled Kinodynamic Planning for a Quadruped Robot over Complex Terrain"
+title: "Learning Object Compliance via Young's Modulus from Single Grasps with Camera-Based Tactile Sensors"
 collection: publications
 permalink: /publication/modulus
 excerpt: ''
-date: 2023-05-12
+date: 2024-06-06
 venue: 'MIT dSpace'
-paperurl: 'https://dspace.mit.edu/handle/1721.1/151851'
+paperurl: 'https://arxiv.org/abs/2406.15304'
 citation: 'M. Burgess, "Decoupled Kinodynamic Planning for a Quadruped Robot over Complex Terrain". <i>MIT dSpace</i>. 2024.'
 image: '/images/publications/modulus_preview.png'
 ---
