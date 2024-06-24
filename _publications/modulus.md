@@ -10,9 +10,7 @@ citation: "M. Burgess, Learning Object Compliance via Young's Modulus from Singl
 image: '/images/publications/modulus_preview.png'
 ---
 
-Currently under review.
-
-Pre-print accessible [here](https://arxiv.org/abs/2406.15304).
+Currently under review. Pre-print accessible [here](https://arxiv.org/abs/2406.15304).
 
 Open-source code available on [GitHub](https://github.com/GelSight-lab/TactileEstimateModulus). Dataset available on [HuggingFace](https://huggingface.co/datasets/mburgjr/GelSight-YoungsModulus).
 
