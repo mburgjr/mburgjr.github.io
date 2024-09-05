@@ -22,7 +22,7 @@ Then, we built our full system to test hypotheses. This used a linkage system wi
 
 We tested both circular and spiral hip trajectories. In the end, we found that spiral trajectories caused the fastest rise to steady state for the hoop.
 
-The final poster made for this project can be accessed [here](/files/hooper_poster).
+The final poster made for this project can be accessed [here](/files/hooper_poster.pdf).
 
 The project was nominated into [“MIT de Florez Awards Competition”](http://web.mit.edu/deflorez/) for mechanical engineering research!
 
