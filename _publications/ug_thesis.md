@@ -1,7 +1,7 @@
 ---
 title: "Decoupled Kinodynamic Planning for a Quadruped Robot over Complex Terrain"
 collection: publications
-permalink: /publications/ug_thesis
+permalink: /publication/ug_thesis
 excerpt: ''
 date: 2023-05-12
 venue: 'MIT dSpace'
