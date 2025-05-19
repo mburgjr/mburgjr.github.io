@@ -18,6 +18,4 @@ Open-source code and CAD files are available on [GitHub](https://github.com/GelS
 
 <img src="/images/publications/get_teaser.png" width="680"/>
 
-<br>
-
 <img src="/images/publications/get_assembly.png" width="700"/>
