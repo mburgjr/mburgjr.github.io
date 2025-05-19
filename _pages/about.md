@@ -8,9 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hello! My name is Michael Burgess. 
-
-I am a recent graduate from MIT, now working full-time at [RAI Institute](https://rai-inst.com/) as an applied scientist. In this role, I am working to develop effective perception and control pipelines for an agile manipulation platform capable of completing dynamic actions at high speeds with high accuracy and repeatability.
+Hello! I am a recent graduate from MIT, now working full-time at [RAI Institute](https://rai-inst.com/) as an applied scientist. In this role, I am working to develop effective perception and control pipelines for an agile manipulation platform capable of completing dynamic actions at high speeds with high accuracy and repeatability.
 
 Previously, I received a Master's degree from MIT, where I conducted research on high-resolution tactile sensing for robotics in the [Perceptual Science Group](http://persci.mit.edu/home) under [Prof. Ted Adelson](https://www.csail.mit.edu/person/ted-adelson). During my time in this lab, I developed algorithms for estimating the compliance of grasped objects and created a set of fingers designed to be used across a wide array of manipulation tasks.
 
