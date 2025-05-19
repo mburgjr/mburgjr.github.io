@@ -1,7 +1,7 @@
 ---
 title: "Learning Object Compliance via Young's Modulus from Single Grasps with Camera-Based Tactile Sensors"
 collection: publications
-permalink: /publication/modulus
+permalink: /publications/modulus
 excerpt: ''
 date: 2025-03-01
 venue: 'arXiv'

@@ -2,7 +2,7 @@
 layout: archive
 entries_layout: grid
 title: "Publications"
-permalink: /publication/
+permalink: /publications/
 author_profile: true
 ---
 
