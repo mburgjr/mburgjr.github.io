@@ -22,7 +22,7 @@ During my undergraduate years at MIT, I worked as a research assistant in the [B
 
 <!-- Most notably, I developed a "decoupled" planning system that utilized rapid sampling methods to generate a path of footsteps and a formal dynamic optimization to determine a continuous trajectory for the robot. This showed performance improvements over traditional approaches to locomotion planning for legged systems. This project was [my undergraduate thesis](https://dspace.mit.edu/handle/1721.1/151851). -->
 
-Throughout my young career, I have garnered vast multidisciplinary expertise. Outside of robotics, I have had the opportunity to work on complex fluids research projects, challenging mechanical design problems, software development, and much more. All noteworthy projects that I've worked on are shown through my portfolio on this web page.
+Throughout my young career, I have garnered vast multidisciplinary expertise. Outside of robotics, I have had the opportunity to work on complex fluids research projects, challenging mechanical design problems, software development, and more. All noteworthy projects that I've worked on are shown through my portfolio here.
 
 <!-- I'm always looking to work on exciting projects, please reach out with opportunities or questions. At present, I'm most interested in developing perceptive autonomous systems capable to address real-world problems toward sustainability. -->
 
