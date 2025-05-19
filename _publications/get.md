@@ -1,7 +1,7 @@
 ---
 title: "Grasp EveryThing (GET): 1-DoF, 3-Fingered Gripper with Tactile Sensing for Robust Grasping"
 collection: publications
-permalink: /publication/modulus
+permalink: /publication/get
 excerpt: ''
 date: 2025-05-14
 venue: 'arXiv'
